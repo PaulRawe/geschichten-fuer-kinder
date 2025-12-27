@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toms wunderbare Kindergartenwelt - Staffel 1 mit 7 magischen Episoden">
+    <title>Toms wunderbare Kindergartenwelt - Staffel 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #d35400;
+            transform: translateX(-5px);
+        }
+
+        .hero-section {
+            margin-top: 20px;
+        }
+
+        .hero-title {
+            color: #d35400;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.3);
+            background: linear-gradient(135deg, #fab1a0 0%, #fdcb6e 100%);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .reading-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #a29bfe 0%, #fd79a8 100%);
+            padding: 12px 24px;
+            border-radius: 25px;
+            color: #6c5ce7;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .intro-text {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Episodes Section */
+        .episodes-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #d35400;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 40px;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .episode-card {
+            background: linear-gradient(135deg, #fab1a0 0%, #ffeaa7 100%);
+            border-radius: 20px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(230, 126, 34, 0.4);
+            border-color: #e67e22;
+        }
+
+        .episode-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #fdcb6e 0%, #ffeaa7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .episode-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .episode-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #e67e22;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .episode-content {
+            padding: 25px;
+        }
+
+        .episode-title {
+            color: #333;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .episode-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .episode-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 2px solid rgba(230, 126, 34, 0.2);
+        }
+
+        .episode-duration {
+            color: #e67e22;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-button {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .episode-card:hover .read-button {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        /* Info Box */
+        .parent-info {
+            background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(116, 185, 255, 0.3);
+            border-left: 6px solid #0984e3;
+        }
+
+        .parent-info-title {
+            color: #0984e3;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .parent-info-text {
+            color: #2c3e50;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .parent-info-text strong {
+            color: #0984e3;
+        }
+
+        .parent-info-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d35400;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #d35400;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1em;
+            }
+
+            .episodes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header,
+            .intro-section,
+            .episodes-section {
+                padding: 30px 25px;
+            }
+
+            .section-title {
+                font-size: 1.6em;
+            }
+
+            .parent-info {
+                padding: 30px 25px;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.7em;
+            }
+
+            .episode-title {
+                font-size: 1.1em;
+            }
+
+            .episode-image {
+                height: 160px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <header>
+            <a href="abenteuergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <div class="hero-section">
+                <h1 class="hero-title">Toms wunderbare Kindergartenwelt</h1>
+                <p class="hero-subtitle">Staffel 1: Von ersten Freundschaften bis zu magischen Abenteuern</p>
+                <div class="hero-image-container">
+                    <img src="bilder/abenteuer/tom/tom.png" alt="Tom">
+                </div>
+                <div class="reading-time">
+                    <span>📖</span>
+                    <span>Vorlesezeit pro Episode: ca. 5-7 Minuten</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Intro Section -->
+        <div class="intro-section">
+            <div class="intro-text">
+                <p><strong>Willkommen in Toms wunderbarer Kindergartenwelt!</strong></p>
+                <p>In dieser Geschichte geht es um die Welt, so wie ein kleines Kind sie wahrnimmt. Um Gefühle, die manchmal ganz leise sind und manchmal sehr groß. Um Gedanken, die noch keine richtigen Worte haben, aber trotzdem wichtig sind.</p>
+                <p>Begleite Tom auf seinem Weg durch den Kindergarten, wo er neue Freunde findet, mutig wird – und schließlich ein magisches Geheimnis entdeckt, das alles verändert. Eine Geschichte über Ankommen, Freundschaft und die wunderbare Magie des Alltags.</p>
+            </div>
+        </div>
+
+        <!-- Werbung nach Intro -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Episodes Section -->
+        <div class="episodes-section">
+            <h2 class="section-title">7 wunderbare Episoden</h2>
+            <p class="section-description">
+                Klicke auf eine Episode, um die Geschichte zu lesen
+            </p>
+            
+            <div class="episodes-grid">
+                <!-- Episode 1 -->
+                <a href="ts1e1.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 1</span>
+                        <img src="bilder/abenteuer/tom/t1.png" alt="Toms großer Kindergarten-Tag">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Toms großer Kindergarten-Tag</h3>
+                        <p class="episode-description">Tom erlebt seinen ersten Tag im Kindergarten. Zwischen Unsicherheit und Neugier entdeckt er gemeinsam mit neuen Freunden ein geheimnisvolles Rumpeln im Garten. Die vermeintliche Gefahr entpuppt sich als spannendes Gartenfahrzeug – und Tom erkennt, dass der Kindergarten ein Ort voller Abenteuer, Freundschaft und Entdeckungen ist.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 2 -->
+                <a href="ts1e2.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 2</span>
+                        <img src="bilder/abenteuer/tom/t2.png" alt="Toms erster großer Freundschaftstag">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Toms erster großer Freundschaftstag</h3>
+                        <p class="episode-description">Am Freundschaftstag lernen Tom und seine Freunde Teamarbeit. Die Suche nach einem fehlenden Puzzleteil führt sie zu einer kleinen Gartenmaus, die bunte Dinge sammelt. Statt Ärger entsteht Mitgefühl, und gemeinsam bauen sie der Maus ein Zuhause. Am Ende kündigt ein neues geheimnisvolles Geräusch das nächste Abenteuer an.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 3 -->
+                <a href="ts1e3.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 3</span>
+                        <img src="bilder/abenteuer/tom/t3.png" alt="Das geheimnisvolle Platschen im Garten">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Das geheimnisvolle Platschen im Garten</h3>
+                        <p class="episode-description">Nach einem Regentag entdecken die Kinder einen verborgenen Wasserlauf im Garten und ein kleines Boot mit einer rätselhaften Botschaft über Teamarbeit. Die Spur führt sie zu einem geheimen Eingang, einer leuchtenden Kugel und einem summenden Tunnel – Hinweise auf eine verborgene Welt unter dem Kindergarten.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 4 -->
+                <a href="ts1e4.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 4</span>
+                        <img src="bilder/abenteuer/tom/t4.png" alt="Das Summen aus dem geheimen Tunnel">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Das Summen aus dem geheimen Tunnel</h3>
+                        <p class="episode-description">Die Kinder begegnen einem echten Wassergeist, der ihre Zusammenarbeit bestätigt. Ein neues Kind, Leo, stößt zur Gruppe und vervollständigt das Team. Der Wassergeist kündigt ein weiteres Geheimnis unter dem Apfelbaum an und übergibt Tom einen magischen Wasserschlüssel, der ein neues Kapitel einleitet.
+.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 5 -->
+                <a href="ts1e5.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 5</span>
+                        <img src="bilder/abenteuer/tom/t5.png" alt="Das Geheimnis unter dem Apfelbaum">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Das Geheimnis unter dem Apfelbaum</h3>
+                        <p class="episode-description">Unter dem Apfelbaum entdecken die Kinder einen verborgenen Schacht, bewacht von einem freundlichen Mooswesen. Mit dem Wasserschlüssel öffnen sie ein verborgenes Wasserschloss. Frau Sonnenschein offenbart, dass der Garten alte Geheimnisse kennt – und erlaubt den Kindern, den Weg in die Tiefe gemeinsam zu gehen.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 6 -->
+                <a href="ts1e6.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 6</span>
+                        <img src="bilder/abenteuer/tom/t6.png" alt="Das Geheimnis der flüsternden Eiche">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Das Geheimnis der flüsternden Eiche</h3>
+                        <p class="episode-description">Eine geheimnisvolle Eiche beginnt zu reagieren und führt Tom, Mia und Jan zu einem leuchtenden Ring in einem Schuppen. Ein magisches Tor entsteht, das auf eine andere Welt hinweist. Die Kinder erkennen, dass sie Teil von etwas Größerem geworden sind – und dass ihre Entscheidungen Konsequenzen haben werden.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 7 -->
+                <a href="ts1e7.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 7</span>
+                        <img src="bilder/abenteuer/tom/t7.png" alt="Tom und das Tor der wunderbaren Wege">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Tom und das Tor der wunderbaren Wege</h3>
+                        <p class="episode-description">Das Tor öffnet sich zu einer fantastischen Welt. Die Kinder erfahren von einem bedrohten Reich, einem verschwundenen magischen Ring und einer Schattenkreatur. Gemeinsam mit Frau Hummel betreten sie die andere Welt, stellen sich der Gefahr und werden als neue Hüter anerkannt. Die Staffel endet mit der direkten Konfrontation und einem offenen Ausgang.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Werbung nach Episoden -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Info für Eltern -->
+        <div class="parent-info">
+            <div class="parent-info-title">
+                <span>💙</span>
+                <span>Für Eltern & Begleiter:innen</span>
+            </div>
+            <div class="parent-info-text">
+                <p><strong>Eine Geschichte zum Mitfühlen und Verstehen</strong></p>
+                <p>Diese Geschichte lädt dazu ein, zuzuhören – nicht nur mit den Ohren, sondern auch mit dem Herzen. Sie zeigt die Welt aus der Perspektive eines kleinen Kindes: intensiv, ehrlich und feinfühlig.</p>
+                <p><strong>Themen:</strong> Ankommen in neuen Situationen, erste Freundschaften, Mut, Neugier und die Entdeckung des Magischen im Alltag. Die Geschichte entwickelt sich von realistischen Kindergarten-Erlebnissen hin zu einem fantasievollen Abenteuer.</p>
+                <p><strong>Aufbau:</strong> Die ersten Episoden zeigen Toms Alltag im Kindergarten. Ab Episode 3 kommen zunehmend magische Elemente hinzu, bis in Episode 6 und 7 eine richtige Fantasy-Welt entsteht.</p>
+                <p><strong>Tipp:</strong> Die Geschichte eignet sich perfekt zum gemeinsamen Vorlesen über eine Woche. Jede Episode endet mit einem kleinen Cliffhanger, der Vorfreude auf die nächste Geschichte macht. Sprechen Sie mit Ihrem Kind über die Gefühle und Erlebnisse von Tom – vielleicht erkennt es sich selbst darin wieder!</p>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben und die hohe Kletterwand - Eine Geschichte über Mut und Selbstvertrauen">
+    <title>Ben und die hohe Kletterwand - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5a962 0%, #fcc882 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d68838;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f5a962;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #f5a962 0%, #fcc882 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #d68838;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #d68838;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(214, 136, 56, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #d68838;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f5a962;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #d68838;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #d68838;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f5a962 0%, #fcc882 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fde9d3 0%, #fcc882 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(245, 169, 98, 0.2);
+            border-left: 6px solid #d68838;
+        }
+
+        .info-box-title {
+            color: #a66b28;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #f7c89a 0%, #f5a962 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(245, 169, 98, 0.3);
+            border-left: 6px solid #d68838;
+        }
+
+        .technique-box-title {
+            color: #a66b28;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #d68838;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #d68838;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f5a962;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f5a962;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Mut / Selbstvertrauen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Mut / Selbstvertrauen</div>
+            <h1>Ben und die hohe Kletterwand</h1>
+            <p class="story-intro">
+                Ben ist ein neugieriger Junge mit schnellen Beinen und einem wachen Blick. Er liebt den Spielplatz, besonders das Rennen, Rutschen und Verstecken. Doch es gibt eine Sache, die er immer nur von unten betrachtet: die hohe Kletterwand aus Holz mit bunten Griffen und einer kleinen Glocke ganz oben. Eine warmherzige Geschichte darüber, dass Selbstvertrauen mit jedem kleinen Schritt wächst und der mutigste Schritt oft der erste ist.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/mut2.png" alt="Ben und die hohe Kletterwand">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Ben war ein neugieriger Junge mit schnellen Beinen und einem wachen Blick. Er liebte den Spielplatz, besonders das Rennen, Rutschen und Verstecken. Doch es gab eine Sache, die er immer nur von unten betrachtete: die hohe Kletterwand aus Holz, mit bunten Griffen und einer kleinen Glocke ganz oben.</p>
+
+                <p>Jedes Mal, wenn Ben davorstand, spürte er ein Kribbeln in seinem Bauch. Seine Hände wurden ein wenig kalt, und sein Blick wanderte nach oben. <em>Das ist zu hoch</em>, dachte er. <em>Was, wenn ich abrutsche? Was, wenn alle sehen, dass ich es nicht schaffe?</em></p>
+
+                <p>Andere Kinder kletterten hinauf, lachten und läuteten die Glocke. Ben machte einen Schritt zurück. Er tat so, als würde ihn etwas anderes interessieren. Doch in seinem Inneren wünschte er sich, mutig zu sein.</p>
+
+                <p>An diesem Nachmittag setzte sich Bens Vater neben ihn auf die Bank. „Du schaust die Wand schon lange an", sagte er ruhig. „Was sagt dein Bauch?"</p>
+
+                <p>Ben überlegte. „Er ist ganz durcheinander", antwortete er ehrlich.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🧗 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p><strong>„Manchmal zeigt uns der Bauch, dass etwas wichtig ist"</strong>, sagte der Vater. <strong>„Mut heißt nicht, gleich ganz hoch zu klettern."</strong></p>
+
+                <p>Ben schaute noch einmal zur Wand. Die bunten Griffe wirkten jetzt nicht mehr ganz so fremd. „Vielleicht nur ein Stück", murmelte er.</p>
+
+                <p>Ben ging zur Wand und legte eine Hand an den ersten Griff. Er spürte das raue Holz. Dann setzte er einen Fuß auf den unteren Stein. Sein Herz klopfte, aber er blieb ruhig stehen.</p>
+
+                <p>„Das reicht schon", rief der Vater ermutigend.</p>
+
+                <p>Ben blieb einen Moment so stehen. Dann stieg er wieder herunter. Ein Lächeln huschte über sein Gesicht. Er hatte es versucht.</p>
+
+                <p>Am nächsten Tag kletterte Ben zwei Griffe höher. Am dritten Tag noch einen mehr. Jedes Mal wuchs etwas in ihm – langsam und leise.</p>
+
+                <p>Ben verstand: <strong>Selbstvertrauen entsteht nicht oben an der Glocke. Es wächst mit jedem kleinen Schritt, den man sich zutraut. Und manchmal ist der mutigste Schritt der erste.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🧗</span>
+                <span>Die Ben-Technik – Schritt für Schritt wachsen</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, schrittweise Selbstvertrauen aufzubauen:</strong></p>
+                <ul>
+                    <li><strong>Das Kribbeln im Bauch wahrnehmen:</strong> „Mein Bauch ist durcheinander" – das Gefühl ehrlich erkennen</li>
+                    <li><strong>Nicht alles auf einmal wollen:</strong> „Vielleicht nur ein Stück" – kleine Schritte sind genug</li>
+                    <li><strong>Den ersten Griff berühren:</strong> Eine Hand ausstrecken, das Material spüren – der erste Kontakt zählt</li>
+                    <li><strong>Einen Fuß setzen:</strong> Nicht hochklettern müssen – einfach nur einen Fuß auf den ersten Stein setzen</li>
+                    <li><strong>Jeden Tag ein bisschen mehr:</strong> Heute ein Griff, morgen zwei – Selbstvertrauen wächst langsam und leise</li>
+                </ul>
+                <p>Diese Technik zeigt, dass man nicht sofort das Ziel erreichen muss. Sie vermittelt, dass Selbstvertrauen mit jedem kleinen Schritt wächst und dass der mutigste Schritt oft der erste ist – nicht der höchste.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was liebt Ben am Spielplatz?<br>
+                • Was betrachtet Ben immer nur von unten?<br>
+                • Was spürt Ben, wenn er vor der Kletterwand steht?<br>
+                • Welche Gedanken hat Ben im Kopf?<br>
+                • Was fragt Bens Vater ihn?<br>
+                • Was macht Ben als Erstes an der Kletterwand?<br>
+                • Was passiert am nächsten Tag? Und am dritten Tag?<br>
+                • Wo entsteht Selbstvertrauen – oben an der Glocke oder unterwegs?<br>
+                • Hast du auch schon mal etwas Schritt für Schritt gelernt?<br>
+                • Welcher Schritt ist oft der mutigste?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fina, die kleine Fuchsfreundin - Ein spannendes Abenteuer über Hilfsbereitschaft, Freundschaft und Entdeckungen">
+    <title>Fina, die kleine Fuchsfreundin - Tiergeschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f97316;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #c2410c;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #f97316;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #c2410c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #f97316;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #fdba74;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f97316;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #c2410c;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #22c55e;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+            border-left: 6px solid #f97316;
+        }
+
+        .magic-box p {
+            color: #7c2d12;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #bbf7d0 0%, #86efac 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+            border-left: 6px solid #22c55e;
+        }
+
+        .info-box-title {
+            color: #14532d;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #166534;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #c2410c;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+            border-color: #f97316;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #c2410c;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f97316 0%, #c2410c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #f97316;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f97316;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c2410c;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #c2410c;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="tiergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Tiergeschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Tiergeschichte</div>
+            <h1>Fina, die kleine Fuchsfreundin</h1>
+            <p class="story-intro">
+                Ein spannendes Abenteuer über einen schlauen kleinen Fuchs, der lernt, dass Hilfsbereitschaft und Freundschaft die schönsten Geschenke sind
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/tiergeschichten/t3.png" alt="Fina, die kleine Fuchsfreundin">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">🦊 Seite 1 🦊</div>
+            <div class="story-content">
+                <p>Fina war ein kleiner, schlauer Fuchs mit feurig rotem Fell und einem weißen Schwanzspitzen-Fleck, der immer wie ein kleines Flämmchen leuchtete, wenn sie durch den Wald sprang. Sie lebte in einem gemütlichen Bau unter den Wurzeln einer alten Eiche, zusammen mit ihrer Familie.</p>
+
+                <p>Eines Morgens, als die Sonne gerade die ersten Strahlen durch die Bäume schickte, hörte Fina ein seltsames Geräusch. Es klang wie leises Wimmern, das von der Richtung des nahen Waldbachs kam. <strong>Neugierig spitzte Fina ihre Ohren und folgte dem Geräusch vorsichtig durch das hohe Gras.</strong></p>
+
+                <p>Am Ufer des Bachs entdeckte sie ein kleines Kaninchen, das sich in einem Netz aus alten Ästen verfangen hatte. <em>„Oh nein!"</em>, piepste Fina. „Keine Sorge, ich helfe dir." Vorsichtig näherte sie sich und begann, die Äste mit ihren Pfoten auseinanderzuschieben.</p>
+
+                <p>Das Kaninchen zitterte vor Angst, aber Fina sprach beruhigend auf es ein: <em>„Alles wird gut, ich pass auf dich auf."</em> Nach einigem Ziehen und Drücken gelang es ihr, das Kaninchen zu befreien. Das kleine Tier hüpfte glücklich auf und ab. „Danke! Ich heiße Hoppel", sagte es aufgeregt. <strong>„Ohne dich hätte ich das nie geschafft!"</strong></p>
+
+                <p>Fina lächelte. „Schön, dich kennenzulernen, Hoppel. Aber sei vorsichtig – hier im Wald gibt es manchmal gefährliche Stellen." Hoppel nickte eifrig. „Ja, ich passe besser auf. Aber ich würde so gern den ganzen Wald sehen. Willst du mich begleiten?"</p>
+
+                <p>Fina überlegte kurz. Sie liebte Abenteuer, und es machte ihr Freude, Hoppel zu helfen. <strong>„Natürlich!"</strong>, piepste sie. „Aber wir müssen vorsichtig sein. Im Wald gibt es viele Tiere, die wir respektieren müssen."</p>
+
+                <p>Und so machten sich die beiden Freunde auf den Weg. Sie liefen durch moosige Pfade, sprangen über kleine Bäche und schauten neugierig hinter jeden Baum. <em>Fina zeigte Hoppel die schönsten Blumen, die höchsten Grashalme und die kleinsten Insekten, die auf den Blättern tanzten.</em></p>
+
+                <p>Doch gerade als sie an einem besonders großen Baum vorbeikamen, hörten sie ein tiefes, langsames Schnurren aus den Wurzeln. Fina blieb stehen, die Ohren gespitzt. <strong>„Was könnte das sein?"</strong> flüsterte sie Hoppel zu.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">🌟 🌳 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">🦊 Seite 2 🦊</div>
+            <div class="story-content">
+                <p>Fina und Hoppel trauten ihren Augen kaum. Aus dem Wurzelgewirr des alten Baumes lugte ein riesiges, kuscheliges Tier hervor – ein schlafendes Wildschwein namens Wuschel. Sein Fell war dunkelbraun und zottelig, und es schnarchte so laut, dass die Blätter leicht zitterten.</p>
+
+                <p><em>„Oh, das ist nur Wuschel"</em>, flüsterte Fina beruhigend. „Er ist freundlich, aber ziemlich empfindlich. Wir müssen leise sein." Hoppel nickte eifrig und duckte sich hinter Fina. „Er sieht so groß aus!", piepste Hoppel. „Ich habe noch nie ein Wildschwein so nah gesehen."</p>
+
+                <p>Fina schmunzelte. „Keine Sorge, er tut uns nichts. Aber wir müssen vorsichtig sein, damit er nicht aufwacht." Ganz leise schlichen sie an Wuschel vorbei, als plötzlich ein Ast unter Hoppels Pfote knackte.</p>
+
+                <p>Wuschel öffnete ein Auge und brummte leise. Hoppel erschrak und sprang zurück, doch Fina beruhigte ihn sofort: <strong>„Alles gut, er ist freundlich. Komm, wir zeigen ihm, warum wir hier sind."</strong></p>
+
+                <p>Hoppel sammelte seinen Mut und piepste: „Hallo, Wuschel! Wir wollten nur durch den Wald gehen und die schönsten Plätze sehen." Das Wildschwein blinzelte, schnaubte einmal und nickte. <em>„Ich sehe, ihr seid freundlich. Dann passt auf, ich zeige euch einen geheimen Pfad."</em></p>
+
+                <p>Fina und Hoppel folgten Wuschel durch einen schmalen Tunnel aus Wurzeln und Blättern. Bald standen sie vor einer Lichtung, die voller Blumen, Schmetterlinge und glitzernder Tautropfen war. <strong>„Wow!"</strong>, piepste Hoppel begeistert. „So etwas habe ich noch nie gesehen!"</p>
+
+                <p>Fina nickte. „Das ist ein besonderer Ort im Wald. Nur wenige Tiere kennen ihn." Wuschel brummte zustimmend und rollte sich zufrieden im weichen Moos zusammen. <em>„Hier könnt ihr spielen, lernen und die Natur bewundern."</em></p>
+
+                <p>Die beiden Freunde verbrachten den ganzen Tag damit, zwischen den Blumen zu tollen, Schmetterlinge zu beobachten und den Glitzertropfen zuzuschauen, wie sie in der Sonne funkelten. Fina erklärte Hoppel alles, was sie über den Wald wusste, und Hoppel erzählte Geschichten über seine Abenteuer.</p>
+
+                <p>Als die Sonne begann unterzugehen, wussten Fina und Hoppel, dass es Zeit war, nach Hause zu gehen. Sie verabschiedeten sich von Wuschel, versprachen, bald wiederzukommen, und machten sich auf den Rückweg.</p>
+
+                <p><strong>„Heute war ein besonderer Tag"</strong>, piepste Hoppel zufrieden. „Ich habe so viel gelernt und neue Freunde gefunden." Fina lächelte. <em>„Und das ist erst der Anfang unserer Abenteuer im Wald. Gemeinsam werden wir noch viele schöne Orte entdecken."</em></p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Fina und Hoppel haben neue Freunde gefunden und wissen: Jeder Tag im Wald kann ein Abenteuer sein ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wie hat sich Hoppel wohl gefühlt, als Fina ihm geholfen hat?<br>
+                • Warum ist es wichtig, anderen zu helfen, auch wenn man sie noch nicht kennt?<br>
+                • Was hätte passieren können, wenn Fina einfach vorbeigelaufen wäre?<br>
+                • Welche Eigenschaften hat Fina, die sie zu einer guten Freundin machen?<br>
+                • Hast du auch schon mal jemandem geholfen, der in Schwierigkeiten war?<br>
+                • Was denkst du, warum Wuschel den geheimen Ort mit Fina und Hoppel geteilt hat?<br>
+                • Wie können wir im echten Leben vorsichtig sein, aber trotzdem mutig neue Dinge entdecken?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Tiergeschichten</h2>
+            <div class="nav-buttons">
+                <a href="tiergeschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Tiergeschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

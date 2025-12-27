@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Willi der Wurm - Zwei spannende Staffeln voller Unterwasserabenteuer">
+    <title>Willi der Wurm - Staffelübersicht</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .hero-section {
+            margin-top: 20px;
+        }
+
+        .hero-title {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .intro-text {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Season Section */
+        .season-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .season-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .season-title {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .season-subtitle {
+            color: #764ba2;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .season-description {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .episode-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .episode-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .episode-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .episode-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .episode-content {
+            padding: 25px;
+        }
+
+        .episode-title {
+            color: #333;
+            font-size: 1.25em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .episode-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .episode-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .episode-duration {
+            color: #667eea;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .episode-card:hover .read-button {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Season 2 Styling */
+        .season-2 .season-title {
+            color: #48c6ef;
+        }
+
+        .season-2 .season-subtitle {
+            color: #6f86d6;
+        }
+
+        .season-2 .episode-card {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+
+        .season-2 .episode-number {
+            color: #48c6ef;
+        }
+
+        .season-2 .episode-image {
+            background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+        }
+
+        .season-2 .episode-duration {
+            color: #48c6ef;
+        }
+
+        .season-2 .read-button {
+            background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+        }
+
+        .season-2 .episode-card:hover {
+            border-color: #48c6ef;
+            box-shadow: 0 15px 35px rgba(72, 198, 239, 0.4);
+        }
+
+        /* Info Box */
+        .parent-info {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .parent-info-title {
+            color: #d35400;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .parent-info-text {
+            color: #2c3e50;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .parent-info-text strong {
+            color: #d35400;
+        }
+
+        .parent-info-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1em;
+            }
+
+            .episodes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header,
+            .intro-section,
+            .season-section {
+                padding: 30px 25px;
+            }
+
+            .season-title {
+                font-size: 1.8em;
+            }
+
+            .season-subtitle {
+                font-size: 1.1em;
+            }
+
+            .parent-info {
+                padding: 30px 25px;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.7em;
+            }
+
+            .episode-title {
+                font-size: 1.1em;
+            }
+
+            .episode-image {
+                height: 160px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <header>
+            <a href="abenteuergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <div class="hero-section">
+                <h1 class="hero-title">Willi der Wurm</h1>
+                <p class="hero-subtitle">Unterwasserabenteuer voller Mut und Neugier</p>
+                <div class="hero-image-container">
+                    <img src="bilder/abenteuer/willi/willi.png" alt="Willi der Wurm">
+                </div>
+            </div>
+        </header>
+
+        <!-- Intro Section -->
+        <div class="intro-section">
+            <div class="intro-text">
+                <p><strong>Willkommen in Willis Welt!</strong> Willi ist klein, freundlich und sehr neugierig. Er lebt am Meer und entdeckt eines Tages eine Welt, die tief unter der Wasseroberfläche verborgen liegt. Dort warten spannende Abenteuer, geheimnisvolle Orte und neue Freunde auf ihn. Willi ist kein Held, der alles sofort kann – er hat manchmal Fragen, ist vorsichtig und muss Mut sammeln. Doch genau das macht ihn stark!</p>
+            </div>
+        </div>
+
+        <!-- Werbung nach Intro -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- STAFFEL 1 -->
+        <div class="season-section">
+            <div class="season-header">
+                <h2 class="season-title">Staffel 1</h2>
+                <p class="season-subtitle">Willi und die Tiefsee</p>
+                <p class="season-description">
+                    Die Entdecker-Staffel mit 9 Episoden: Willi erhält sein eigenes U-Boot und entdeckt leuchtende Pyramiden, magische Muscheln und uralte Geheimnisse am Meeresgrund. Eine zusammenhängende Geschichte über Mut, Vertrauen und die Wunder der Tiefsee.
+                </p>
+            </div>
+            
+            <div class="episodes-grid">
+                <!-- Episode 1 -->
+                <a href="willis1e1.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 1</span>
+                        <img src="bilder/abenteuer/willi/s1e1.png" alt="Die geheimnisvolle Pyramide">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Die geheimnisvolle Pyramide</h3>
+                        <p class="episode-description">Willi erhält von Onkel Hans ein eigenes U-Boot. Auf seinem ersten Tauchgang entdeckt er eine leuchtende Pyramide am Meeresgrund, die ihm eine magische Muschel schenkt.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 2 -->
+                <a href="willis1e2.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 2</span>
+                        <img src="bilder/abenteuer/willi/s1e2.png" alt="Die Stimme aus der Tiefe">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Die Stimme aus der Tiefe</h3>
+                        <p class="episode-description">Die Muschel beginnt zu vibrieren und führt Willi zurück zur Pyramide. Dort hört er zum ersten Mal eine sanfte Stimme, die ihm einen Weg weist und Lichtsymbole zeigt.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 3 -->
+                <a href="willis1e3.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 3</span>
+                        <img src="bilder/abenteuer/willi/s1e3.png" alt="Der schlafende Wächter">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Der schlafende Wächter</h3>
+                        <p class="episode-description">Willi begegnet einer riesigen, uralten Meeresschildkröte, dem Wächter der „ersten Tür". Er erfährt, dass er einen Schlüssel finden muss, um weiterzukommen.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 4 -->
+                <a href="willis1e4.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 4</span>
+                        <img src="bilder/abenteuer/willi/s1e4.png" alt="Das singende Riff">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Das singende Riff</h3>
+                        <p class="episode-description">Ein farbenprächtiges, magisches Riff singt eine Melodie. Leuchtende Fische führen Willi durch einen Korallentunnel zu einer Lichtkugel.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 5 -->
+                <a href="willis1e5.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 5</span>
+                        <img src="bilder/abenteuer/willi/s1e5.png" alt="Der Schlüssel aus Licht">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Der Schlüssel aus Licht</h3>
+                        <p class="episode-description">Willi taucht in einen goldenen Lichtstrom hinab und findet dort den „Schlüssel aus Licht" – ein sanft pulsierendes Energieobjekt.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 6 -->
+                <a href="willis1e6.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 6</span>
+                        <img src="bilder/abenteuer/willi/s1e6.png" alt="Die zweite Pyramide">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Die erste Tiefseetür</h3>
+                        <p class="episode-description">Willi entdeckt die ältere, tiefere Pyramide. Der Schlüssel öffnet die „zweite Tür" – ein Strudel aus warmem Licht entsteht.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 7 -->
+                <a href="willis1e7.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 7</span>
+                        <img src="bilder/abenteuer/willi/s1e7.png" alt="Das Herz der Tiefe">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Der Wächter der Schattenströmung</h3>
+                        <p class="episode-description">Willi reist durch den Lichtstrudel in eine verborgene Kammer. Dort sieht er die Geschichte der Tiefsee und erfährt, dass er auserwählt wurde.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 8 -->
+                <a href="willis1e8.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 8</span>
+                        <img src="bilder/abenteuer/willi/s1e8.png" alt="Der Strom der Erinnerungen">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Der Strom der Erinnerungen</h3>
+                        <p class="episode-description">Die Pyramiden zeigen Willis letzten Auftrag: Er muss ein leuchtendes Fragment zurück an die Oberfläche bringen.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 9 -->
+                <a href="willis1e9.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 9</span>
+                        <img src="bilder/abenteuer/willi/s1e9.png" alt="Das Herz der Tiefsee">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Das Herz der Tiefsee</h3>
+                        <p class="episode-description">Das große Staffelfinale! Willi entdeckt das Herz der Tiefsee und erkennt: Mit Neugier und einem offenen Herzen kann auch ein kleiner Wurm Großes verändern.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Werbung zwischen Staffeln -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- STAFFEL 2 -->
+        <div class="season-section season-2">
+            <div class="season-header">
+                <h2 class="season-title">Staffel 2</h2>
+                <p class="season-subtitle">Willi und die Urlaubskuppel Aqualuna</p>
+                <p class="season-description">
+                    Die Wohlfühl- & Freundschafts-Staffel mit 5 Episoden: Willi entdeckt eine friedliche Unterwasserinsel unter einer schützenden Kuppel. Er lernt Fizzi kennen und erlebt entspannte Urlaubstage voller Freundschaft, Spaß und Geborgenheit.
+                </p>
+            </div>
+            
+            <div class="episodes-grid">
+                <!-- Episode 1 -->
+                <a href="willis2e1.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 1</span>
+                        <img src="bilder/abenteuer/willi/s2e1.png" alt="Ankunft in Aqualuna">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Ankunft in Aqualuna</h3>
+                        <p class="episode-description">Willi entdeckt eine friedliche Unterwasserinsel unter einer schützenden Kuppel. Dort lernt er Fizzi kennen – einen lebhaften, fröhlichen Fisch, der sein Urlaubsbegleiter wird.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~5 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 2 -->
+                <a href="willis2e2.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 2</span>
+                        <img src="bilder/abenteuer/willi/s2e2.png" alt="Der Strandtag mit Fizzi">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Der Strandtag mit Fizzi</h3>
+                        <p class="episode-description">Willi erlebt seinen ersten Urlaubstag. Er findet den perfekten Strandplatz, baut Sandwelten und lernt Inselbewohner kennen.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 3 -->
+                <a href="willis2e3.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 3</span>
+                        <img src="bilder/abenteuer/willi/s2e3.png" alt="Die Kokosnuss-Überraschung">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Die Kokosnuss-Überraschung</h3>
+                        <p class="episode-description">Willi nimmt am Kokosnuss-Sammelfest teil. Gemeinsam mit Koko und Fizzi baut er eigene Muschel-Kokos-Schalen und erlebt ein lustiges Kokosrollenrennen.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 4 -->
+                <a href="willis2e4.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 4</span>
+                        <img src="bilder/abenteuer/willi/s2e4.png" alt="Der Tag im Muschel-Spa">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Der Tag im Muschel-Spa</h3>
+                        <p class="episode-description">Willi besucht das Muschel-Spa. Wärmende Wasserblasen, sanfte Muschelklänge und eine perlmuttfarbene Kokoscreme verwöhnen ihn. Er trifft auch eine alte Seeschildkröte, die ihm Geschichten erzählt.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Episode 5 -->
+                <a href="willis2e5.html" class="episode-card">
+                    <div class="episode-image">
+                        <span class="episode-number">Episode 5</span>
+                        <img src="bilder/abenteuer/willi/s2e5.png" alt="Die Überraschung unter der Palme">
+                    </div>
+                    <div class="episode-content">
+                        <h3 class="episode-title">Die Überraschung unter der Palme</h3>
+                        <p class="episode-description">Das große Staffelfinale! Alle Inselbewohner bereiten Willi eine große Abschiedsfeier. Sie schenken ihm eine persönliche Strandhütte – damit er immer wieder zurückkehren kann. Willi erkennt: Aqualuna ist sein zweites Zuhause geworden.</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">⏱️ ~6 Min.</span>
+                            <span class="read-button">Jetzt lesen</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Werbung nach Staffel 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Info für Eltern -->
+        <div class="parent-info">
+            <div class="parent-info-title">
+                <span>💙</span>
+                <span>Für Eltern & Begleiter:innen</span>
+            </div>
+            <div class="parent-info-text">
+                <p><strong>Zwei Staffeln – Zwei Abenteuer</strong></p>
+                <p>Willis Geschichten sind in zwei unterschiedliche Staffeln aufgeteilt, die verschiedene Stimmungen und Themen haben:</p>
+                <p><strong>Staffel 1 – Willi und die Tiefsee:</strong> Eine zusammenhängende Entdecker-Saga über Mut, Vertrauen und das Geheimnisvolle. Willi wächst an seinen Aufgaben und entdeckt eine magische Unterwasserwelt. Perfekt für Kinder, die spannende Abenteuer mit mystischen Elementen lieben.</p>
+                <p><strong>Staffel 2 – Willi und die Urlaubskuppel Aqualuna:</strong> Eine entspannte Wohlfühl-Staffel über Freundschaft, Entspannung und das Genießen schöner Momente. Ideal zum Runterkommen vor dem Schlafengehen oder für Kinder, die sanfte, beruhigende Geschichten bevorzugen.</p>
+                <p><strong>Tipp:</strong> Sie können beide Staffeln unabhängig voneinander lesen. Staffel 1 eignet sich für längere Vorleserunden, während Staffel 2 perfekt für entspannte Abende ist. Jede Episode ist in sich abgeschlossen, baut aber auf die vorherige auf.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+<script src="cookies.js"></script>
+</body>
+</html>

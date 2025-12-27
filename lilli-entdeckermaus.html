@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lilli, die kleine Entdeckermaus - Ein spannendes Abenteuer über Neugier, Mut und Freundschaft">
+    <title>Lilli, die kleine Entdeckermaus - Tiergeschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #52c234 0%, #078a2b 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #52c234;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #078a2b;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #52c234 0%, #078a2b 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #52c234;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #078a2b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(82, 194, 52, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #52c234;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #a8e6cf;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #52c234;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #078a2b;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(82, 194, 52, 0.3);
+            border-left: 6px solid #52c234;
+        }
+
+        .magic-box p {
+            color: #065f46;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #078a2b;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(82, 194, 52, 0.3);
+            border-color: #52c234;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #078a2b;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #52c234 0%, #078a2b 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #52c234;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #52c234;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #078a2b;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #078a2b;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="tiergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Tiergeschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Tiergeschichte</div>
+            <h1>Lilli, die kleine Entdeckermaus</h1>
+            <p class="story-intro">
+                Ein spannendes Abenteuer über eine neugierige kleine Maus, die ein geheimnisvolles Blatt findet und den magischen Zauberwald entdeckt
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/tiergeschichten/t1.png" alt="Lilli, die kleine Entdeckermaus">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">🐭 Seite 1 🐭</div>
+            <div class="story-content">
+                <p>In einem sonnendurchfluteten Wald lebte Lilli, eine kleine, mutige Maus mit braunem Fell und neugierigen Knopfaugen. Jeden Morgen sprang sie aus ihrem Nest, schnupperte die frische Luft und erkundete voller Freude ihre Umgebung. <strong>Sie liebte bunte Blumen, summende Bienen und glitzernde Pfützen.</strong></p>
+
+                <p>Eines Tages entdeckte Lilli im hohen Gras etwas Ungewöhnliches: ein golden schimmerndes Blatt, das leicht vibrierte. <em>„Wie wunderschön!", piepste sie erstaunt.</em> Vorsichtig nahm sie es in die Pfoten. Es fühlte sich an, als wolle es ihr etwas erzählen.</p>
+
+                <p>Neugierig folgte Lilli dem Gefühl, das sie leitete, tiefer in den Wald. Sie sprang über Wurzeln, schlich an einem schlafenden Igel vorbei und bemerkte, wie der Wald immer stiller wurde. <strong>Plötzlich hörte sie leises Kichern.</strong> Hinter einem Busch saßen drei bunte Eichhörnchen – sie hielten ein Blatt, das genauso glitzerte wie ihres.</p>
+
+                <p><em>„Hallo, darf ich mit euch spielen?"</em>, fragte Lilli schüchtern. Die Eichhörnchen sprangen aufgeregt. „Komm mit! Wir zeigen dir etwas Besonderes!"</p>
+
+                <p>Gemeinsam rannten sie durch den Wald, vorbei an leuchtenden Pilzen und glitzernden Tautropfen, bis sie vor einem riesigen Baum stehen blieben. Sein Stamm war so groß, dass Lilli ihn kaum umfassen konnte.</p>
+
+                <p><strong>„Hier beginnt unser Abenteuer"</strong>, flüsterte das kleinste Eichhörnchen geheimnisvoll.</p>
+
+                <p>Lilli spürte ein Kribbeln im Bauch. Sie wusste nicht, was sie erwartete – aber sie wusste, dass sie mutig genug war, es herauszufinden.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">🌟 🌳 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">🐭 Seite 2 🐭</div>
+            <div class="story-content">
+                <p>Der große Baum hatte eine kleine Höhle im Stamm. <strong>„Das ist der Eingang zum Zauberwald"</strong>, erklärten die Eichhörnchen. Lilli zögerte kurz, doch ihre Neugier siegte. Vorsichtig trat sie ein.</p>
+
+                <p><em>Drinnen funkelte es überall.</em> Glühwürmchen schwebten durch die Luft, und glitzernde Blätter hingen wie Laternen an den Wänden. Ein freundliches Reh trat aus dem Schatten. „Willkommen, Lilli. Wir haben auf dich gewartet."</p>
+
+                <p>Erstaunt fragte Lilli: „Woher kennt ihr meinen Namen?" Das Reh lächelte. <strong>„Das Blatt, das du gefunden hast, sucht mutige Herzen."</strong></p>
+
+                <p>Die Eichhörnchen erklärten aufgeregt: „Im Zauberwald gibt es magisches Wasser. Wer davon trinkt, kann die Sprache der Tiere verstehen." Lillis Augen leuchteten. Vorsichtig näherte sie sich der Quelle.</p>
+
+                <p>Doch plötzlich knackte es. Ein Schatten huschte vorbei, die Glühwürmchen zogen sich zurück. Lilli hielt den Atem an.</p>
+
+                <p>Ein kleines, graues Tier trat hervor. „Ich bin Momo, der Waldspäher", sagte es ruhig. <em>„Keine Angst. Aber bevor du vom Wasser trinken darfst, musst du zeigen, dass du freundlich und aufmerksam bist."</em></p>
+
+                <p>Momo erklärte die Aufgabe: In der Nähe des Wasserfalls lebten Schmetterlingselfen, die Hilfe brauchten. Lilli nickte entschlossen. „Ich helfe gern."</p>
+
+                <p>Gemeinsam machten sie sich auf den Weg durch leuchtende Farnfelder. <strong>Plötzlich hörten sie leises Weinen.</strong> Hinter einem Busch saß eine kleine Schmetterlingselfe mit verletztem Flügel.</p>
+
+                <p>Lilli wusste sofort: Jetzt kam es auf ihr Herz an.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🦋 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">🐭 Seite 3 🐭</div>
+            <div class="story-content">
+                <p>Lilli trat vorsichtig zur weinenden Schmetterlingselfe. <em>„Keine Angst, wir helfen dir"</em>, piepste sie sanft. Die Eichhörnchen sammelten Blätter und Moos, das Reh wachte ruhig daneben. Gemeinsam bereiteten sie der Elfe ein weiches Lager und stützten ihren verletzten Flügel.</p>
+
+                <p>Langsam beruhigte sich die Elfe. „Danke", flüsterte sie lächelnd. „Ihr seid echte Freunde." Momo nickte zufrieden. <strong>„Freundlichkeit ist der größte Mut."</strong></p>
+
+                <p>Als Dank führte die Elfe die Gruppe zu einem kleinen Wasserfall, dessen Wasser in allen Farben schimmerte. „Hier darfst du trinken", sagte sie.</p>
+
+                <p>Lilli nahm einen kleinen Schluck. <em>Ein warmes Kribbeln durchströmte sie – und plötzlich verstand sie jedes Wort um sich herum.</em> Die Eichhörnchen jubelten, das Reh lachte leise, und Momo sagte stolz: „Jetzt bist du eine Freundin des Zauberwaldes."</p>
+
+                <p>Die Sonne ging langsam unter, und der Wald leuchtete golden. Lilli kuschelte sich in ein Moosbett neben ihre neuen Freunde. <strong>Sie wusste, dass dies nur der Anfang war.</strong></p>
+
+                <p>Der Wald summte leise, als wolle er sagen: Hier bist du willkommen, Lilli. Und viele Abenteuer warten noch auf dich.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so wurde Lilli zur Freundin des Zauberwaldes, und ihre Neugier führte sie zu den schönsten Abenteuern ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn du ein magisches Blatt finden würdest?<br>
+                • Warum war es wichtig, dass Lilli der Schmetterlingselfe geholfen hat?<br>
+                • Welche Tiere würdest du gerne im Zauberwald treffen?<br>
+                • Was bedeutet es für dich, "freundlich und aufmerksam" zu sein?<br>
+                • Hast du auch schon einmal jemandem geholfen, der Hilfe brauchte?<br>
+                • Was kannst du von Lillis Mut und Neugier lernen?<br>
+                • Würdest du auch vom magischen Wasser trinken wollen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Tiergeschichten</h2>
+            <div class="nav-buttons">
+                <a href="tiergeschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Tiergeschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

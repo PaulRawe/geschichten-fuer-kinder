@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lilli und der Wolkenwald - Ein magisches Märchen über Neugier, Freundlichkeit und Abenteuer">
+    <title>Lilli und der Wolkenwald - Märchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #059669;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #047857;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #059669;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #047857;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(52, 211, 153, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #059669;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d1fae5;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #047857;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(52, 211, 153, 0.3);
+            border-left: 6px solid #34d399;
+        }
+
+        .magic-box p {
+            color: #065f46;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #047857;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
+            border-color: #34d399;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #047857;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #059669;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #059669;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #047857;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #047857;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="maerchen.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Märchen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Märchen</div>
+            <h1>Lilli und der Wolkenwald</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über ein neugieriges Mädchen, das mit einer goldenen Eule den geheimnisvollen Wolkenwald entdeckt
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/maerchen/lilli-wolkenwald.png" alt="Lilli und der Wolkenwald">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 1 ✨</div>
+            <div class="story-content">
+                <p>Es war einmal ein kleines Mädchen namens Lilli, das in einem winzigen Dorf am Rande eines großen, geheimnisvollen Waldes lebte. Lilli hatte leuchtend rote Locken und Augen, die vor Neugier funkelten. Jeden Tag schaute sie aus ihrem Fenster und stellte sich vor, wie es wohl hinter den Hügeln und Bäumen des Waldes aussehen mochte. <strong>Die Dorfbewohner erzählten Geschichten von magischen Kreaturen, sprechenden Tieren und einem Wolkenwald, der nur bei Sonnenuntergang aus den Nebeln auftauchte.</strong> Doch niemand wagte sich hinein.</p>
+
+                <p>Eines Abends, als die Sonne langsam hinter den Hügeln verschwand und die Wolken wie Watte am Himmel hingen, hörte Lilli ein leises Kichern aus dem Garten. Sie folgte den Geräuschen und entdeckte eine kleine, goldene Eule, die auf einem Ast saß und mit ihren funkelnden Augen zu ihr hinübersah. <em>„Hallo Lilli!", piepste die Eule, „ich bin Flitzi, der Wächter des Wolkenwaldes. Willst du ein Abenteuer erleben?"</em> Lilli staunte. Eine sprechende Eule! Und sie wollte wirklich ein Abenteuer erleben.</p>
+
+                <p>Flitzi erzählte ihr, dass der Wolkenwald ein Ort voller leuchtender Blumen, singender Bäche und sprechender Tiere sei. Aber nur Kinder mit reinem Herzen könnten ihn finden. Lilli spürte, wie ihr Herz schneller klopfte. „Kann ich wirklich gehen?" fragte sie schüchtern. Flitzi nickte und breitete seine glitzernden Flügel aus. <strong>„Komm mit mir, bevor die Sonne untergeht. Danach verschwindet der Wald wieder im Nebel."</strong></p>
+
+                <p>Sie schlich sich durch das hohe Gras, überquerte einen kleinen Bach und plötzlich – vor ihren Augen – erhob sich der Wolkenwald wie ein Traum aus dicken, weißen Wolken, in denen bunte Blumen wuchsen. <em>Die Bäume sahen aus wie Zuckerwatte, und leuchtende Glühwürmchen schwebten in der Luft.</em> Lilli konnte ihren Augen kaum trauen. Flitzi flog voran und winkte ihr, ihm zu folgen.</p>
+
+                <p>Plötzlich hörten sie ein Rascheln im Gebüsch. Lilli hielt den Atem an. Wer oder was konnte das sein? Ein leises Kichern ertönte wieder, und die Blätter bewegten sich wie von selbst. Flitzi schaute sie warnend an. „Manche Wesen im Wolkenwald sind scheu. Wir müssen vorsichtig sein. Aber ich glaube, sie werden uns vertrauen, wenn sie sehen, dass du freundlich bist."</p>
+
+                <p>Lilli nickte entschlossen und trat näher. Da, zwischen den Zuckerwattenbäumen, erschien ein kleiner, grüner Kobold mit funkelnden Augen und einem schelmischen Lächeln. „Wer seid ihr?", fragte er neugierig. Lilli verbeugte sich höflich. „Ich bin Lilli. Ich will den Wolkenwald kennenlernen." Der Kobold kicherte. <strong>„Na gut, aber zuerst müsst ihr mir ein Rätsel lösen. Seid ihr bereit?"</strong></p>
+
+                <p>Und gerade, als Lilli zu antworten ansetzen wollte, breitete sich plötzlich ein geheimnisvoller Nebel aus und umhüllte sie von allen Seiten…</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌳 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 2 ✨</div>
+            <div class="story-content">
+                <p>Der Nebel wirbelte um Lilli und Flitzi herum, sodass alles um sie herum verschwamm. Doch Lilli spürte keine Angst, nur ein kribbelndes Gefühl der Aufregung. Der kleine Kobold, der zuvor im Gebüsch gestanden hatte, erschien plötzlich vor ihr und grinste breit. <strong>„Wenn ihr mein Rätsel richtig löst, darfst du den Wolkenwald erkunden und seine Geheimnisse kennenlernen"</strong>, sagte er mit funkelnder Stimme.</p>
+
+                <p>„Hier ist das Rätsel", begann der Kobold: „Ich habe einen Hals, aber keinen Kopf, zwei Arme, aber keine Hände, ich trage Dinge, doch kann sie nicht halten. Was bin ich?" Lilli überlegte einen Moment. Sie dachte an alles, was sie bisher im Wolkenwald gesehen hatte: sprechende Blumen, leuchtende Bäche, sogar die goldene Eule Flitzi. Dann lächelte sie plötzlich. <em>„Eine Kleidung!", rief sie. „Denn sie hat einen Hals und Arme, und man trägt sie, aber sie hält nichts selbst."</em></p>
+
+                <p>Der Kobold klatschte begeistert in seine kleinen Hände. „Richtig! Du hast das Rätsel gelöst. Willkommen im Wolkenwald, Lilli!" Mit einem fröhlichen Pfeifen verschwand der Nebel, und die Sonne tauchte die Zuckerwattenbäume in warmes, goldenes Licht. <strong>Lilli konnte die leuchtenden Blumen, die tanzenden Glühwürmchen und die plätschernden Bäche sehen, die wie kleine Musikanten klangen.</strong></p>
+
+                <p>Flitzi flog zu ihr und zwinkerte. „Jetzt kannst du alles erkunden, aber denk daran: Der Wolkenwald zeigt sich nur, wenn man freundlich und neugierig ist." Lilli lief über den weichen Waldboden, lachte mit den Blumen, die ihr Hallo sagten, und lauschte den Liedern der singenden Bäche. <em>Überall entdeckte sie neue Freunde: eine Familie kleiner Feen, die in den Blüten wohnten, einen Fuchs, der Geschichten erzählte, und sogar einen alten Baum, der ihr leise Geheimnisse des Waldes zuflüsterte.</em></p>
+
+                <p>Als die Sonne hinter den Hügeln verschwand, spürte Lilli, wie sich die Wolken langsam wieder zusammenzogen. „Es ist Zeit, nach Hause zu gehen", sagte Flitzi sanft. Lilli nickte. Sie versprach, den Wolkenwald nie zu vergessen und immer freundlich und neugierig zu bleiben. Mit einem letzten Blick auf die leuchtenden Bäume schloss sie die Augen, und plötzlich war sie wieder in ihrem Garten, die goldene Eule auf ihrer Schulter.</p>
+
+                <p>Von diesem Tag an erzählte Lilli niemandem genau, was sie im Wolkenwald erlebt hatte. Doch manchmal, wenn sie nachts aus dem Fenster schaute, sah sie in den Wolken flüchtige Umrisse von Zuckerwattenbäumen und Glühwürmchen. <strong>Sie wusste: Der Wolkenwald würde immer da sein, für alle Kinder, die neugierig, mutig und freundlich sind.</strong></p>
+
+                <p>Und Lilli schlief mit einem glücklichen Lächeln ein, bereit für neue Abenteuer am nächsten Tag.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so wurde Lilli zur Freundin des Wolkenwaldes, und ihre Neugier führte sie zu den schönsten Abenteuern ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn du den Wolkenwald besuchen könntest?<br>
+                • Warum war es wichtig, dass Lilli freundlich und neugierig war?<br>
+                • Welches Rätsel würdest du dem Kobold stellen?<br>
+                • Was bedeutet es für dich, ein „reines Herz" zu haben?<br>
+                • Welche magischen Wesen würdest du gerne im Wolkenwald treffen?<br>
+                • Was kannst du von Lillis Neugier und Mut lernen?<br>
+                • Hast du auch schon einmal etwas Geheimnisvolles entdeckt?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Märchen</h2>
+            <div class="nav-buttons">
+                <a href="maerchen.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Märchen</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mia und der Regenbogenfisch - Ein magisches Märchen über Freundschaft, Teilen und Zusammenhalt">
+    <title>Mia und der Regenbogenfisch - Märchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #2a5298;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #7e22ce;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #2a5298;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(126, 34, 206, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #7e22ce;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e0e7ff;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #7e22ce;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #2a5298;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            border-left: 6px solid #2a5298;
+        }
+
+        .magic-box p {
+            color: #1e3a8a;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #2a5298;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.3);
+            border-color: #2a5298;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2a5298;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72 0%, #7e22ce 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #7e22ce;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2a5298;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #2a5298;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="maerchen.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Märchen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Märchen</div>
+            <h1>Mia und der Regenbogenfisch</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über ein mutiges Mädchen, das einem traurigen Regenbogenfisch hilft und die wahre Bedeutung von Freundschaft entdeckt
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/maerchen/mia-regenbogenfisch.png" alt="Mia und der Regenbogenfisch">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 1 ✨</div>
+            <div class="story-content">
+                <p>Mia war ein fröhliches Mädchen, das am Ufer eines glitzernden Sees lebte. Sie liebte es, den Fischen zuzusehen, wie sie im Wasser spielten und die Sonnenstrahlen auf ihren Schuppen funkelten. Eines Morgens bemerkte Mia etwas Seltsames: <strong>Ein kleiner Fisch schwamm direkt auf sie zu, seine Schuppen glänzten in allen Farben des Regenbogens, aber er sah traurig aus.</strong></p>
+
+                <p>„Hallo", sagte Mia vorsichtig. „Warum bist du so traurig?" Der Fisch seufzte leise. <em>„Ich bin Rico, der Regenbogenfisch. Früher hatte ich all meine Schuppen, und alle Fische bewunderten mich. Doch eines Tages haben sie mich ausgelacht, weil ich keine Freundinnen und Freunde hatte. Jetzt fühle ich mich ganz allein."</em> Mia spürte, wie ihr Herz weich wurde. Sie wollte Rico helfen.</p>
+
+                <p>Rico erzählte ihr, dass er seine bunten Schuppen verloren hatte, als er versuchte, anderen zu gefallen. Nun wünschte er sich nichts mehr, als wieder Freunde zu finden und das Gefühl von Zusammenhalt zu erleben. Mia nickte. <strong>„Dann helfe ich dir, deine Schuppen wiederzufinden. Zusammen schaffen wir das!"</strong> Rico lächelte vorsichtig.</p>
+
+                <p>Mia und Rico schwammen durch den See, vorbei an Seerosen und schimmernden Wasserpflanzen. Unterwegs trafen sie einen alten, weisen Karpfen, der ihnen den Weg zu den verlorenen Schuppen zeigen konnte. <em>„Ihr müsst den Wasserfall der Farben erreichen", sagte der Karpfen, „dort verstecken sich die Schuppen, die du, Rico, brauchst. Aber passt auf: Nur wer freundlich und mutig ist, kann sie wiederfinden."</em></p>
+
+                <p>Mia spürte ein Kribbeln der Aufregung. Zusammen schwammen sie weiter, bis der Wasserfall vor ihnen auftauchte – er glitzerte wie flüssiges Silber, und überall sprangen kleine bunte Lichter umher. Doch plötzlich tauchte ein Schatten auf, und eine Gruppe neugieriger Fische versperrte ihnen den Weg. „Wer seid ihr?", fragten sie neugierig. Mia atmete tief ein. <strong>„Wir wollen nur helfen und Freunde sein", sagte sie mutig.</strong></p>
+
+                <p>Die Fische musterten sie einen Moment, dann lachte einer von ihnen. <em>„Wenn ihr so freundlich seid, dürft ihr weiter. Aber Vorsicht – der Wasserfall der Farben ist voller Überraschungen!"</em> Mia hielt Ricos Flosse fest, und sie schwammen weiter, gespannt, was sie hinter dem Wasserfall erwarten würde…</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌈 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 2 ✨</div>
+            <div class="story-content">
+                <p>Hinter dem Wasserfall der Farben war alles wie in einem Traum: Glitzernde Tropfen hingen in der Luft, und zwischen den Spritzern lagen bunte Schuppen, die in allen Regenbogenfarben leuchteten. Rico sprang vor Freude auf und ab. <strong>„Da sind sie!", rief er.</strong> Doch die Schuppen schwebten auf und ab, wie ein kleines Rätsel, das es zu lösen galt.</p>
+
+                <p>Mia überlegte. <em>„Wir müssen sie vorsichtig einsammeln, aber wir dürfen sie nicht streiten oder gierig nehmen. Freundschaft bedeutet Teilen."</em> Rico nickte und zusammen sammelten sie die Schuppen, eine nach der anderen. Jede Schuppe, die sie vorsichtig berührten, begann zu leuchten und zurück in Ricos Flosse zu gleiten. <strong>Bald strahlte Rico wie ein kleiner Regenbogen selbst.</strong></p>
+
+                <p>Die anderen Fische sahen zu und waren beeindruckt. „Wow!", riefen sie, „Rico sieht wunderschön aus, und er hat so viele Freunde gefunden!" Rico lächelte glücklich. <em>„Ich habe gelernt, dass Freundschaft wertvoller ist als alles Funkeln der Welt."</em> Mia grinste. Zusammen sprangen sie durch das glitzernde Wasser, und die Sonne spiegelte sich in den bunten Schuppen.</p>
+
+                <p>Als die Sonne langsam unterging, verabschiedete sich Mia. „Wir sehen uns wieder, Rico. Pass auf dich auf!" Rico winkte mit seiner Schwanzflosse. <strong>„Danke, Mia. Du hast mir gezeigt, dass Mut, Freundlichkeit und Teilen das Herz stärker machen als jede Schuppe."</strong></p>
+
+                <p>Von diesem Tag an spielten Mia und Rico oft zusammen. Sie schwammen durch den See, lachten mit den anderen Fischen und erzählten die Geschichte von den Regenbogenschuppen weiter – damit alle wussten, dass Freundschaft das schönste Geschenk ist.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so wurden Mia und Rico die besten Freunde, und der See war wieder voller Freude und buntem Lachen ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Warum war Rico am Anfang so traurig?<br>
+                • Was hat Mia getan, um Rico zu helfen?<br>
+                • Was bedeutet es, ein guter Freund zu sein?<br>
+                • Warum war Teilen so wichtig beim Einsammeln der Schuppen?<br>
+                • Wie hat sich Rico gefühlt, als er seine Schuppen wiedergefunden hat?<br>
+                • Was können wir von Mias Mut und Freundlichkeit lernen?<br>
+                • Hast du schon einmal jemandem geholfen, der traurig war?<br>
+                • Was ist wichtiger: schön aussehen oder gute Freunde haben?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Märchen</h2>
+            <div class="nav-buttons">
+                <a href="maerchen.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Märchen</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

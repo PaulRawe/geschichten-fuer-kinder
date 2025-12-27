@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luna und der flüsternde Stern - Eine sanfte Gute-Nacht-Geschichte über Mut und Sterne">
+    <title>Luna und der flüsternde Stern - Gute-Nacht-Geschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #2a5298;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #7e22ce;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #2a5298;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(126, 34, 206, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #7e22ce;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #2a5298;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .sleepy-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            border-left: 6px solid #2a5298;
+        }
+
+        .sleepy-box p {
+            color: #1e3a8a;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #2a5298;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.3);
+            border-color: #2a5298;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2a5298;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72 0%, #7e22ce 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #7e22ce;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2a5298;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #2a5298;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .sleepy-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="gute-nacht-geschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Gute-Nacht-Geschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gute-Nacht-Geschichte</div>
+            <h1>Luna und der flüsternde Stern</h1>
+            <p class="story-intro">
+                Ein silberner Stern schwebt zu Luna ans Fenster und nimmt sie mit auf eine sanfte Reise durch den Nachthimmel
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gutenacht/gn1.png" alt="Luna und der flüsternde Stern">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Es war einmal ein kleines Mädchen namens Luna. Luna liebte Sterne. Jeden Abend, bevor sie ins Bett ging, schaute sie aus ihrem Fenster und winkte den funkelnden Lichtern am Himmel zu.</p>
+
+                <p>Eines Abends, als der Mond besonders rund und freundlich aussah, hörte Luna plötzlich ein ganz leises Flüstern. <em>"Hallo? Wer ist da?"</em> fragte sie neugierig. Da blinkte ein kleiner, silberner Stern direkt vor ihrem Fenster. <em>"Ich bin Flix"</em>, flüsterte der Stern. <em>"Und ich habe mich verirrt. Kannst du mir helfen, wieder nach Hause zu finden?"</em></p>
+
+                <p>Luna klatschte vor Freude in die Hände. "Ja, natürlich! Aber… wie kann ich dir helfen? Ich bin doch nur ein kleines Mädchen."</p>
+
+                <p>Flix funkelte noch heller. <em>"Manchmal hilft ein kleines Herz mehr als jede große Laterne. Wenn du mir deine Hand gibst, können wir gemeinsam fliegen."</em></p>
+
+                <p>Luna zögerte einen Moment. Es war dunkel draußen, und sie fühlte sich ein bisschen unsicher. Aber dann erinnerte sie sich an ihre Lieblingskuscheldecke und wie sicher sie sich fühlte, wenn Mama sie in den Arm nahm. Also griff sie nach Flix' leuchtender Hand – und plötzlich schwebten sie beide aus dem Fenster, über Dächer, Bäume und kleine Gassen hinweg.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ ✨ 🌙</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Sie flogen durch Wolken, die wie Zuckerwatte schmeckten, und Luna lachte vor Freude, dass ihr Herz fast hüpfte. Flix erzählte von den anderen Sternen, die nachts Geschichten am Himmel malten: Ein Drache, der schläft, eine Katze, die auf einem Mond balanciert, und sogar ein kleiner Planet, der immer kichert, wenn man ihn anschaut.</p>
+
+                <p>Nach einer Weile kam Luna an einen Ort, der so hell war, dass er wie ein Regenbogen aus Licht aussah. <strong>"Hier ist mein Zuhause!"</strong>, rief Flix. Luna winkte allen Sternen zu, die freundlich zurückblinzelten.</p>
+
+                <p><em>"Danke, dass du mich nach Hause gebracht hast, Luna"</em>, sagte Flix. <em>"Du bist mutiger, als du denkst."</em></p>
+
+                <p>Plötzlich spürte Luna wieder die warme Geborgenheit ihres Zimmers. Sie war zurück im Bett, ihre Kuscheldecke eng um sich gewickelt, und Flix funkelte noch einmal durch das Fenster. <em>"Bis morgen, Luna! Träume süß!"</em></p>
+
+                <p>Luna schloss die Augen und lächelte. Die Sterne draußen sahen jetzt irgendwie anders aus – als würden sie ihr zuzwinkern. <strong>Und in ihrem Herzen wusste sie: Egal, wie dunkel die Nacht ist, ein kleines mutiges Herz kann große Abenteuer erleben.</strong></p>
+            </div>
+        </div>
+
+        <div class="sleepy-box">
+            <p>🌟 Und so schlief Luna ein, umgeben von Sternen und Träumen 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Gute Nacht und süße Träume ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wenn ein Stern zu dir käme, welche Farbe hätte er?<br>
+                • Was würdest du am Himmel gerne sehen, wenn du mit Luna fliegen könntest?<br>
+                • Woran erinnerst du dich, wenn du dich unsicher fühlst und Mut brauchst?<br>
+                • Welcher Stern draußen könnte wohl Flix sein?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Gute-Nacht-Geschichten</h2>
+            <div class="nav-buttons">
+                <a href="gute-nacht-geschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Geschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

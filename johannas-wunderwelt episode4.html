@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die Krachpiraten vom Poltersee - Johanna und die Wunderwelt, Staffel 1 Episode 4">
+    <title>Episode 4: Die Krachpiraten vom Poltersee - Johanna und die Wunderwelt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f5576c;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f5576c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #f5576c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            color: #f5576c;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f5576c;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f093fb;
+            font-style: italic;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f5576c;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #f5576c;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #f5576c;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f093fb;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="johanna-und-die-wunderwelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 4 von 7</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 4</div>
+            <h1>Die Krachpiraten vom Poltersee ✨</h1>
+            <p class="episode-intro">
+                Johanna begegnet den lauten Krachpiraten und muss dem Poltersee-Monster helfen, den verlorenen Donner-Kompass zu finden!
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/johanna/johannaS1E4.png" alt="Die Krachpiraten vom Poltersee">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 1 – Das rumpelnde Erwachen</h2>
+            <div class="story-content">
+                <p>An diesem Nachmittag war Johanna eigentlich viel zu müde zum Spielen. Sie hatte gerade noch mit ihrer Bauklotz-Burg gekämpft und wollte sich nur ganz kurz aufs Kuschelkissen legen. Doch kaum machte sie die Augen zu, begann es im Zimmer zu rumpeln. Erst leise, wie ein Murmeln, dann stärker, bis es wie ein Gewitter klang. Rumpel-rappel-rumms!</p>
+
+                <p>Johanna riss die Augen auf. <strong>"Ronja? Hasi? Was war das?"</strong> Ihre beiden Stofffreunde, die immer noch halb unter der Decke lagen, schauten ebenfalls verschlafen, aber dann begann Ronja, die Einhornpuppe, plötzlich zu grinsen.</p>
+
+                <p><em>"Johanna! Das klingt nach… Piraten!"</em> rief sie begeistert.</p>
+
+                <p>"Nach welchen Piraten?" fragte Johanna misstrauisch. Piraten fand sie toll – aber Krachpiraten? Das hörte sich seltsam an.</p>
+
+                <p>Bevor Ronja antworten konnte, vibrierte der Teppich unter ihnen. Die bunten Flecken darauf begannen zu wirbeln und verlangsamten sich dann, bis sie wie ein glitzernder See wirkten. Ein See im Kinderzimmer! Mit kleinen Wellen aus Glitzerstaub und einem leichten, aber sehr verdächtigen Polter-platsch.</p>
+
+                <p>"Willkommen am… Poltersee!" sagte Ronja, als sei das das Normalste der Welt.</p>
+
+                <p>"Aber wieso poltert es? Wasser poltert doch nicht", wunderte Johanna.</p>
+
+                <p>Da fuhr plötzlich ein kleiner, wackeliger Holzschiff-Klipper aus dem schimmernden See heraus. Auf dem Mast wehte eine Fahne aus kariertem Taschentuch, und an Deck standen drei Spielzeugfiguren: ein Trommler-Bär mit Hut, ein Klapper-Skelett und ein Mini-Pirat mit übergroßer Trompete.</p>
+
+                <p><strong>"Wir sind die Krachpiraten vom Poltersee!"</strong> brüllte der Trompetenpirat – so laut, dass Johannas Haarspangen vibrierten.</p>
+
+                <p>"Oh je…" murmelte Hasi und hielt sich die langen Plüschohren zu.</p>
+
+                <p>"Wir brauchen eure Hilfe!" rief der Pirat weiter. "Unser Donner-Kompass ist verschwunden! Ohne ihn finden wir nie den Weg zurück in die Stillebucht!"</p>
+
+                <p>Johannas Herz pochte. Ein Abenteuer… und Piraten… und ein glitzernder See!</p>
+
+                <p>Aber da legte das Krachpiraten-Schiff an – und unter ihnen begann der Poltersee plötzlich unruhig zu brodeln.</p>
+
+                <p>Etwas Großes kam näher. Sehr groß. Und sehr laut…</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 2 – Das Poltersee-Monster</h2>
+            <div class="story-content">
+                <p>Der Poltersee vibrierte wie ein Handy auf Superlautstärke. Kleine Glitzerwirbel tanzten über die Oberfläche, doch im Zentrum wölbte sich das Wasser – höher, höher, höher! Johanna trat automatisch einen Schritt zurück und hielt Ronja fester.</p>
+
+                <p>"Äh, was kommt denn da?" fragte sie mit einem mulmigen Gefühl im Bauch.</p>
+
+                <p>Die Krachpiraten standen stramm an Deck. "Das Poltersee-Monster!" rief der Trompetenpirat. "Es wacht über den Donner-Kompass. Aber seit gestern ist es… na ja… etwas schlecht gelaunt."</p>
+
+                <p>"Schlecht gelaunt?" Hasi quiekte. "Wie schlecht gelaunt reden wir? So 'Ich-möchte-keine-Möhre'-schlecht? Oder 'Ich-hab-heute-Montag'-schlecht?"</p>
+
+                <p>Das Skelett klapperte nervös mit den Knochen. "Eher 'ich-will-alles-poltern-und-niemand-soll-schlafen'-schlecht."</p>
+
+                <p>Johanna schluckte. Das klang nicht gut.</p>
+
+                <p>Mit einem gewaltigen <strong>PLATSCH-POLTER-BUMMS</strong> schoss etwas aus dem See: ein massiges Wesen aus schimmernden Wasserwellen, überall glitzerte es wie tausend glasklare Murmeln. Und das Gesicht? Breites Grinsen, aber die Augen funkelten wie jemand, der gleich Unsinn machen will.</p>
+
+                <p><em>"Hiiiiii!"</em> brüllte es. Das Schrei-Monster ließ die Möbel vibrieren.</p>
+
+                <p>"Das ist Polti", seufzte Ronja. "Eigentlich freundlich. Aber manchmal… sehr laut."</p>
+
+                <p>"Wir müssen es beruhigen", sagte Johanna entschlossen. "Sonst kommen wir nie an den Donner-Kompass!"</p>
+
+                <p>Die Piraten nickten wild. "Wir haben schon alles versucht! Singen, tanzen, Witze erzählen! Nichts!"</p>
+
+                <p>Johanna dachte nach. "Vielleicht ist Polti überreizt? Manchmal bin ich auch laut, wenn ich müde bin."</p>
+
+                <p>Polti polterte noch einmal, diesmal so kräftig, dass Johannas Kuschelkissen vom Regal fiel.</p>
+
+                <p>Dann geschah etwas Seltsames: Polti zeigte mit seinen Wellenarmen direkt auf Johanna. Und dann auf das Piratenschiff. Und dann wieder auf Johanna.</p>
+
+                <p>"Er will… dass DU mitkommst!" rief Ronja überrascht.</p>
+
+                <p>Johanna keuchte. "Wohin?"</p>
+
+                <p>Doch Polti begann bereits, sich wieder in die Tiefe zu senken – und hinterließ eine glitzernde Strömung, die eindeutig wie ein Weg aussah.</p>
+
+                <p>Ein Weg ins Unbekannte.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 3 – Die Stillebucht und der Donner-Kompass</h2>
+            <div class="story-content">
+                <p>"Wir folgen Polti!" entschied Johanna mutig, obwohl ihr Herz flatterte wie ein kleiner Vogel im Bauch. Die Krachpiraten jubelten sofort – natürlich viel zu laut.</p>
+
+                <p><strong>"Leinen los und volle Polterkraft voraus!"</strong> brüllte der Trompetenpirat und stieß in sein Instrument, dass es nur so dröhnte.</p>
+
+                <p>Johanna, Ronja und Hasi kletterten auf das schaukelnde Schiff. Kaum hatten sie sich festgehalten, glitt es über den glitzernden Weg, den Polti hinterlassen hatte. Der Poltersee war zwar laut, aber wunderschön: Über ihnen schwebten leuchtende Pusteblumenwolken, unter ihnen funkelten Punkte wie kleine Sterne.</p>
+
+                <p>"Da vorne!" rief das Klapper-Skelett und zeigte auf eine Bucht, die in der Ferne auftauchte. Anders als der Rest des Sees war sie vollkommen still. Kein Tropfen bewegte sich.</p>
+
+                <p><em>"Die Stillebucht"</em>, flüsterte Ronja. "Hier verliert jedes Geräusch seine Kraft."</p>
+
+                <p>Das Schiff glitt hinein – und sofort verstummte der Trompetenpirat mitten in einem Ton, der wie ein Kuhmoo zweiter Klasse geklungen hätte. Er öffnete den Mund, aber es kam kein einziger Laut heraus.</p>
+
+                <p>"Das ist ja unheimlich", sagte Johanna. Oder sie dachte es. Sie war sich plötzlich nicht sicher – denn nichts war zu hören. Nicht einmal das Wasser.</p>
+
+                <p>In der Mitte der Bucht schwebte ein Objekt: rund, goldglänzend, mit kleinen Blitzen an den Kanten.</p>
+
+                <p><strong>Der Donner-Kompass.</strong></p>
+
+                <p>Gerade als Johanna ihn greifen wollte, bebte die Stille. Ein dunkler Schatten erhob sich hinter dem Kompass – ein riesiger, schlammiger Seegeist mit triefenden Augen. Und der war ganz und gar nicht still.</p>
+
+                <p>Er hob die Arme, die wie glitschige Algen hingen, und selbst ohne Geräusch verstand Johanna, was er wollte:</p>
+
+                <p>Den Kompass – und zwar sofort.</p>
+
+                <p>Ronja packte Johannas Arm. Hasi klammerte sich an ihre Schulter. Die Piraten standen stumm, aber ihre Augen waren voller Panik.</p>
+
+                <p>Johanna spürte, dass sie jetzt entscheiden musste. Schnell.</p>
+
+                <p>Doch plötzlich zuckte ein Blitz aus dem Kompass – direkt auf sie zu.</p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Was passiert mit Johanna? Kann sie den Donner-Kompass sicher bergen?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Fortsetzung folgt in Episode 5! ✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was glaubst du, was der Blitz aus dem Kompass bedeutet?<br>
+                • Polti war sehr laut und überreizt. Kennst du das Gefühl, wenn man zu aufgedreht ist?<br>
+                • Die Stillebucht ist ein Ort ohne Geräusche. Wie würde sich das anfühlen?<br>
+                • Was würdest du tun, wenn der schlammige Seegeist vor dir stehen würde?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="johannas-wunderwelt episode3.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Der Wolken-Garten der Träumchen-Tiere</div>
+                </a>
+                
+                <a href="johannas-wunderwelt episode5.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 5</div>
+                </a>
+
+                <a href="johanna-und-die-wunderwelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+             <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

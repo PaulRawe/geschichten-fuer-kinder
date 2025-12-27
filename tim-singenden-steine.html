@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tim und die singenden Steine - Ein magisches Märchen über Mut, Freundlichkeit und Abenteuer">
+    <title>Tim und die singenden Steine - Märchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #047857 0%, #10b981 50%, #34d399 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #059669;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #047857;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #059669;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #047857;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #059669;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d1fae5;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #047857;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            border-left: 6px solid #10b981;
+        }
+
+        .magic-box p {
+            color: #065f46;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #047857;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #047857;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #047857 0%, #10b981 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #059669;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #059669;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #047857;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #047857;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="maerchen.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Märchen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Märchen</div>
+            <h1>Tim und die singenden Steine</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über einen mutigen Jungen, der sprechende Steine entdeckt und dem Wald seine Freude zurückbringt
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/maerchen/tim-singenden-steine.png" alt="Tim und die singenden Steine">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 1 ✨</div>
+            <div class="story-content">
+                <p>Tim war ein kleiner Junge mit wilden braunen Haaren und großen, neugierigen Augen. Er liebte es, draußen zu spielen und die Geheimnisse des Waldes hinter seinem Haus zu entdecken. Eines Tages, als die Sonne schien und die Vögel fröhlich zwitscherten, stolperte Tim über etwas Hartes im Gras. <strong>Es war ein kleiner, runder Stein, der in allen Farben des Regenbogens funkelte.</strong> Aber das Seltsamste war: Der Stein summte leise, wie eine winzige Melodie.</p>
+
+                <p>Tim hob den Stein auf und lauschte gespannt. „Hallo…?", flüsterte er vorsichtig. Plötzlich begann der Stein lauter zu summen, und eine kleine Stimme piepste: <em>„Endlich hast du mich gefunden! Ich bin Pipo, der singende Stein. Willst du ein Abenteuer erleben?"</em> Tim rieb sich die Augen. Ein sprechender, singender Stein! „Oh ja!", rief er begeistert.</p>
+
+                <p>Pipo erklärte, dass der Wald voller singender Steine sei, die magische Lieder konnten. Doch einige Steine waren verschwunden, und der Wald begann traurig zu werden. Tim wusste sofort: Er wollte helfen. <strong>Pipo sprang auf Tims Hand und summte ein fröhliches Lied, das wie kleine Funken durch die Luft tanzte.</strong> Gemeinsam machten sie sich auf den Weg zu einem geheimen Teil des Waldes, der von riesigen Bäumen und bunten Blumen übersät war.</p>
+
+                <p>Unterwegs trafen sie auf einen frechen Kobold namens Kiki. Kiki war grün, hatte spitze Ohren und grinste schelmisch. „Wer seid ihr?", fragte Kiki neugierig. „Wir suchen die verlorenen singenden Steine", antwortete Tim. Kiki kicherte. <em>„Das ist gar nicht so einfach! Aber wenn ihr mir helft, ein Rätsel zu lösen, zeige ich euch den geheimen Steinpfad."</em></p>
+
+                <p>Tim nickte entschlossen. Pipo summte ein ermutigendes Lied, und zusammen überlegten sie, wie sie das Rätsel lösen konnten. Plötzlich raschelte es im Gebüsch, und aus den Schatten blickten glitzernde Augen auf sie. Kiki grinste breit: „Bereit? Hier kommt das Rätsel…"</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌈 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 2 ✨</div>
+            <div class="story-content">
+                <p><em>„Ich kann singen, doch habe keine Stimme. Ich kann tanzen, doch habe keine Füße. Ich bin überall im Wald, doch werde oft übersehen. Wer bin ich?"</em> Tim dachte lange nach. Er schaute Pipo an, der fröhlich summte, und dann zu Kiki, der gespannt wartete. Schließlich lachte Tim. „Die singenden Steine!", rief er. „Sie singen, sie bewegen sich, und sie sind überall!"</p>
+
+                <p>Kiki klatschte begeistert in die Hände. „Richtig! Ihr seid wirklich mutig und klug. Ich zeige euch den geheimen Pfad." <strong>Plötzlich öffnete sich ein kleiner Durchgang zwischen zwei alten Bäumen, und Tim und Pipo traten hinein.</strong> Der Wald verwandelte sich vor ihren Augen: Bunte Steine leuchteten im Boden, summten fröhliche Lieder und tanzten wie winzige Sonnenfunken. Tim konnte gar nicht aufhören zu staunen.</p>
+
+                <p>„Seht nur!", rief Pipo. „Alle Steine sind zurückgekehrt!" Tim lief zwischen den singenden Steinen hindurch, lachte und fühlte sich, als würde er selbst singen. Kiki hüpfte neben ihnen und summte im Takt der Steine. <em>Gemeinsam halfen sie sogar, einige Steine an die richtigen Plätze zu bringen, und der Wald leuchtete vor Freude und Musik.</em></p>
+
+                <p>Am Ende des Tages, als die Sonne unterging, setzte sich Tim auf einen großen Stein und hörte den Waldbewohnern zu, wie sie die Lieder der Steine summten. Pipo kletterte auf seine Schulter. <strong>„Danke, Tim. Ohne dich wäre der Wald traurig geblieben. Du bist jetzt ein Freund aller singenden Steine."</strong></p>
+
+                <p>Tim lächelte glücklich. Er wusste, dass er diesen Tag nie vergessen würde. Jeden Tag summte Pipo ein kleines Lied, damit Tim an das Abenteuer dachte und daran, dass Mut, Freundlichkeit und Neugier die schönsten Abenteuer bringen können.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so wurde Tim zum Freund aller singenden Steine, und der Wald war wieder voller Freude und Musik ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn du einen sprechenden Stein finden würdest?<br>
+                • Warum war es wichtig, dass Tim dem Wald geholfen hat?<br>
+                • Was bedeutet das Rätsel von Kiki? Kannst du es in deinen eigenen Worten erklären?<br>
+                • Wie fühlte sich Tim wohl, als er die singenden Steine gefunden hat?<br>
+                • Was sind deine Lieblingsabenteuer in der Natur?<br>
+                • Was kannst du von Tims Mut und Freundlichkeit lernen?<br>
+                • Wenn du einen magischen Stein hättest, was würdest du dir wünschen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Märchen</h2>
+            <div class="nav-buttons">
+                <a href="maerchen.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Märchen</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

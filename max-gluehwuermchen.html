@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Max und die Nacht der Glühwürmchen - Ein magisches Märchen über Mut, Hilfsbereitschaft und die Schönheit der Nacht">
+    <title>Max und die Nacht der Glühwürmchen - Märchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f59e0b;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #1e1b4b 0%, #fbbf24 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #f59e0b;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #1e1b4b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #f59e0b;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #fef3c7;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f59e0b;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #1e1b4b;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #fbbf24;
+        }
+
+        .magic-box p {
+            color: #fef3c7;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #1e1b4b;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+            border-color: #fbbf24;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #1e1b4b;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e1b4b 0%, #fbbf24 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.2);
+        }
+
+        .footer-brand {
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f59e0b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1e1b4b;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #1e1b4b;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="maerchen.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Märchen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Märchen</div>
+            <h1>Max und die Nacht der Glühwürmchen</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über einen mutigen Jungen, der den Glühwürmchen hilft und lernt, dass selbst ein kleines Licht die Dunkelheit erhellen kann
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/maerchen/max-gluehwuermchen.png" alt="Max und die Nacht der Glühwürmchen">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 1 ✨</div>
+            <div class="story-content">
+                <p>Max war ein aufgeweckter Junge mit lockigem Haar und einer Vorliebe für Abenteuer. Eines lauen Sommerabends spielte er im Garten, als plötzlich ein winziges Licht durch die Dunkelheit flackerte. Es war ein Glühwürmchen, das leise summte und vor Freude blinkte. <strong>„Hallo!", rief Max neugierig. „Wer bist du?"</strong></p>
+
+                <p>Das Glühwürmchen antwortete mit einer kleinen Stimme: <em>„Ich heiße Lumi und ich brauche deine Hilfe. Heute Nacht ist die Nacht der Glühwürmchen, und wir müssen alle Lichter des Waldes zusammenbringen, bevor die Sonne aufgeht. Ohne uns wird der Wald traurig und dunkel."</em> Max staunte. <strong>„Ich kann helfen!", rief er.</strong></p>
+
+                <p>Lumi führte Max durch das hohe Gras, über kleine Hügel und zu einem geheimen Eingang im Wald, der im Mondlicht schimmerte. Die Bäume dort waren so alt, dass ihre Äste wie Arme in den Himmel ragten, und kleine Lichter flogen zwischen ihnen hin und her. <em>„Hier wohnen die Glühwürmchen", erklärte Lumi. „Aber einige von uns haben sich verirrt."</em></p>
+
+                <p>Max hörte ein leises Weinen. Unter einem Busch sah er ein paar Glühwürmchen, die sich nicht mehr zurechtfanden. <strong>„Keine Sorge, wir bringen euch zurück", sagte Max sanft.</strong> Er streckte seine Hände aus, und die kleinen Lichter flogen mutig zu ihm. Lumi summte vor Freude und zeigte ihm den Weg zu einem großen, leuchtenden Baum, der den Mittelpunkt der Lichtversammlung darstellte.</p>
+
+                <p>Doch plötzlich hörten sie ein Rascheln im Gebüsch. Ein kleiner, scheuer Fuchs erschien. <strong>„Wer seid ihr?", fragte er neugierig.</strong> Max erklärte, dass sie den Glühwürmchen helfen wollten. Der Fuchs nickte langsam. <em>„Ich passe auf, dass niemand die Lichter stört, aber ihr müsst vorsichtig sein. Die Glühwürmchen sind empfindlich."</em> Max versprach, vorsichtig zu sein, und zusammen gingen sie weiter, gespannt, ob sie alle Glühwürmchen rechtzeitig finden würden…</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🌟 💫</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 2 ✨</div>
+            <div class="story-content">
+                <p>Max und Lumi erreichten schließlich die Lichtung des großen Baumes. Die Glühwürmchen flogen aufgeregt umher, aber einige hatten sich zwischen Dornen und hohen Gräsern versteckt. Max sammelte sie vorsichtig auf seinen Händen, während Lumi ihnen sanft den Weg wies. Bald waren alle Glühwürmchen versammelt.</p>
+
+                <p><em>„Jetzt müssen wir gemeinsam ein Lied summen", erklärte Lumi.</em> Max stimmte leise mit ein. Die Glühwürmchen blinkten im Takt, und der Baum begann in den schönsten Farben zu leuchten. Die gesamte Lichtung erstrahlte, und kleine Funken tanzten in der Luft. Max konnte seinen Augen kaum trauen. Der Wald war hell, fröhlich und voller Magie.</p>
+
+                <p>Der Fuchs beobachtete zufrieden: <em>„Gut gemacht, Max. Du hast den Wald gerettet."</em> Max lächelte stolz. Er fühlte sich mutig und glücklich, weil er gesehen hatte, wie wichtig Freundlichkeit und Hilfsbereitschaft sind. Lumi summte ein letztes, fröhliches Lied, und die Glühwürmchen flogen zurück in den Himmel, um anderen zu zeigen, wie schön Freundschaft und Zusammenarbeit sind.</p>
+
+                <p>Als die Sonne langsam aufging, brachte Lumi Max sicher zurück zu seinem Garten. <em>„Danke, dass du geholfen hast, Max. Die Glühwürmchen werden diese Nacht nie vergessen."</em> Max winkte und schaute noch einmal zu den Glühwürmchen auf. Er wusste, dass er etwas Besonderes erlebt hatte.</p>
+
+                <p>Von diesem Tag an konnte Max nachts oft die winzigen Lichter zwischen den Bäumen sehen und spürte die Magie des Waldes. Er hatte gelernt: <strong>Wenn man mutig ist und anderen hilft, kann selbst ein kleines Licht die Dunkelheit erhellen.</strong></p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so erinnerte sich Max immer an die magische Nacht, in der kleine Lichter große Wunder vollbrachten 💫✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was hat Max im Garten entdeckt?<br>
+                • Warum brauchte Lumi Max' Hilfe?<br>
+                • Welche Aufgabe hatten die Glühwürmchen in dieser Nacht?<br>
+                • Wie hat Max den verirrten Glühwürmchen geholfen?<br>
+                • Welche Rolle spielte der Fuchs in der Geschichte?<br>
+                • Was passierte, als alle Glühwürmchen versammelt waren?<br>
+                • Was hat Max über Mut und Hilfsbereitschaft gelernt?<br>
+                • Hast du schon einmal jemandem in der Dunkelheit geholfen?<br>
+                • Warum ist es wichtig, auch kleinen Tieren zu helfen?<br>
+                • Was bedeutet der Satz: „Ein kleines Licht kann die Dunkelheit erhellen"?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Märchen</h2>
+            <div class="nav-buttons">
+                <a href="maerchen.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Märchen</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

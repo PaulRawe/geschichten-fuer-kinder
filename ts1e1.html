@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toms großer Kindergarten-Tag - Tom und seine Abenteuer, Staffel 1 Episode 1">
+    <title>Episode 1: Toms großer Kindergarten-Tag - Tom und seine Abenteuer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #00f2fe;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #00f2fe;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #00f2fe;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Story Content */
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #00f2fe;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #4facfe;
+            font-style: italic;
+        }
+
+        /* Inline Image */
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #00f2fe;
+            font-size: 2em;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Cliffhanger Box */
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Episode Navigation */
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #00f2fe;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        /* Reading Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #00f2fe;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4facfe;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #4facfe;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <!-- Sticky Navigation -->
+        <nav class="sticky-nav">
+            <a href="abenteuer-tom.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 1 von 7</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 1</div>
+            <h1>Toms großer Kindergarten-Tag</h1>
+            <p class="episode-intro">
+                Tom ist drei Jahre alt und heute ist sein erster Tag im Kindergarten. Ein aufregender Tag voller neuer Freunde und geheimnisvoller Entdeckungen wartet auf ihn!
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/tom/t1.png" alt="Toms großer Kindergarten-Tag">
+            </div>
+        </header>
+
+        <!-- Story Content - Seite 1 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Tom war drei Jahre alt und heute war ein ganz besonderer Tag: sein erster Tag im Kindergarten. Seine Mama hatte ihm schon so viel erzählt – von bunten Spielsachen, anderen Kindern und einem riesigen Garten. Doch als sie Hand in Hand auf das große, rote Gebäude zugingen, wurde Tom plötzlich ganz still. Sein Herz klopfte ein kleines bisschen schneller. Neues war aufregend, aber eben auch ein bisschen unheimlich.</p>
+
+                <p>Im Eingangsraum roch es nach frischer Farbe und warmem Frühstück. An den Wänden hingen Zeichnungen: bunte Regenbögen, kichernde Sonnen und ein Elefant mit Rollschuhen. Tom staunte. Die Erzieherin, Frau Sonnenschein – so stellte sie sich wirklich vor –, kniete sich zu ihm herunter und lächelte freundlich.</p>
+
+                <p><strong>„Hallo Tom. Schön, dass du da bist. Wir freuen uns schon auf dich."</strong></p>
+
+                <p>Tom nickte und drückte Mamas Hand etwas fester. Bald trafen sie auf die anderen Kinder. Da war Mia, die ein Kleid mit glitzernden Sternen trug. Felix, der unbedingt später Feuerwehrmann werden wollte, und Alva, die schon jetzt die Tür zur Bauecke im Blick hatte.</p>
+
+                <p>„Willst du mit mir die Rutsche im Garten ausprobieren?", fragte Mia. Tom wusste nicht, was er antworten sollte. Doch als er aus dem Fenster sah und eine riesige, gelbe Rutsche entdeckte, kribbelte es in seinem Bauch. Vielleicht würde das doch ein richtig toller Tag werden.</p>
+
+                <p>Gerade als er den Mut fasste, nickte und Mia hinterherlaufen wollte, hörte er plötzlich aus dem Garten ein seltsames Geräusch – ein <em>rumpelndes, polterndes, rollendes</em> Geräusch, das ganz bestimmt nicht von der Rutsche kam.</p>
+
+                <p>Tom blieb stehen.</p>
+
+                <p>Was war das?</p>
+
+                <p>Und genau in diesem Moment wurde es richtig spannend...</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 2 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Tom drückte sein Gesicht ans Fenster. Wieder dieses Rumpeln. Mia kam zurückgelaufen und stellte sich neben ihn. „Hast du das auch gehört?", fragte sie neugierig. Tom nickte ernst. Die beiden spähten in den Garten. Die Rutsche stand still, die Schaukel bewegte sich nur ganz leicht im Wind. Nichts Auffälliges. Und doch – da war etwas.</p>
+
+                <p>„Kommt ihr mit raus?", rief Frau Sonnenschein. „Heute suchen wir heraus, was unser Kindergarten-Garten alles kann."</p>
+
+                <p>Tom spürte, wie sein Herz hüpfte. Abenteuer mochte er ja eigentlich. Also atmete er tief ein und ging mit den anderen nach draußen.</p>
+
+                <p>Der Garten war riesengroß. Es gab einen Sandkasten mit einem Piratenschiff, bunte Balanciersteine, Sträucher zum Verstecken und sogar eine kleine Wasserpumpe.</p>
+
+                <p>Doch kaum hatten sie den Garten betreten, rumpelte es wieder. Diesmal etwas näher. Felix rief begeistert: „Ich bin Feuerwehrmann! Ich untersuche das!" und rannte in Richtung der Hecke.</p>
+
+                <p>Tom folgte etwas schüchterner, aber mit wachsender Neugier. Hinter der Hecke führte ein schmaler Pfad zu einem Holzschuppen. Das Rumpeln kam eindeutig von dort. Mia, Felix, Alva und Tom standen nun davor. Der Schuppen war alt, aber bunt bemalt – mit Blumen, Wolken und einem Drachen, der aussah, als hätte er gerade Schluckauf.</p>
+
+                <p>„Sollen wir nachsehen?", flüsterte Mia.</p>
+
+                <p>Tom fühlte, wie sein Herz schneller schlug. Vielleicht war es ein Tier? Oder ein besonders lautes Spielzeug? Oder etwas, das niemand erwartet?</p>
+
+                <p>Gerade als Felix die Hand nach dem Türgriff ausstreckte, rumpelte es erneut – diesmal so heftig, dass der Boden unter ihnen vibrierte.</p>
+
+                <p><strong>Die Tür des Schuppens bewegte sich.</strong></p>
+
+                <p>Langsam.</p>
+
+                <p>Knarrend.</p>
+
+                <p>Und öffnete sich einen Spalt...</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 3 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Alle hielten den Atem an. Tom konnte sein Herz fast bis in die Fingerspitzen schlagen spüren. Aus dem kleinen Spalt quoll erst nur Dunkelheit. Dann hörte man ein tiefes... quietschendes... Rollen.</p>
+
+                <p>Felix schob mutig die Tür weiter auf – und plötzlich stand dort kein Monster, kein wildes Tier, sondern ein großer, bunter Wagen auf vier Rädern. Auf dem Dach thronte eine Sirene aus Holz, die wohl das laute Rumpeln verursacht hatte, weil sie locker war.</p>
+
+                <p><strong>„Das ist unser Garten-Fahrzeug!"</strong>, rief Frau Sonnenschein lachend, die gerade dazu kam. „Wir holen damit Erde, Wasser oder Spielsachen. Man kann es sogar selbst ziehen."</p>
+
+                <p>Die Kinder sahen sich an – und dann Tom.</p>
+
+                <p>„Willst du vorne ziehen?", fragte Mia.</p>
+
+                <p>Tom schluckte. Und dann kam ein Gefühl wie Sonnenwärme in seinem Bauch.</p>
+
+                <p><em>„Ja"</em>, sagte er.</p>
+
+                <p>Gemeinsam zogen sie den Wagen heraus, und Tom war der stolze Anführer. Der Wagen polterte über den Weg, aber diesmal war das Rumpeln nicht unheimlich, sondern aufregend. Sie luden Sandspielzeug ein, bauten gemeinsam eine riesige Burg im Sandkasten und Tom lernte sogar, wie man einen perfekten Eimer-Turm macht, ohne dass er umfällt.</p>
+
+                <p>Als der Vormittag endete, kam Mama in den Garten. Tom rannte lachend zu ihr.</p>
+
+                <p>„Mama, ich habe Freunde gefunden! Und ein geheimes Rumpelauto! Und eine Riesenburg gebaut! Und morgen gehen wir wieder!"</p>
+
+                <p>Seine Mama hob ihn hoch und lächelte. „Das klingt nach einem großartigen Tag."</p>
+
+                <p>Tom nickte mit funkelnden Augen.</p>
+
+                <p>Aber tief in seinem Inneren fragte er sich schon:</p>
+
+                <p>Was würde er wohl morgen entdecken?</p>
+
+                <p>Und was, wenn der Garten noch viel mehr Geheimnisse versteckt hielt...?</p>
+            </div>
+        </div>
+
+        <!-- Cliffhanger -->
+        <div class="cliffhanger-box">
+            <p>Die Antwort würde er bald erfahren...</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Wie geht es weiter? Finde es in Episode 2 heraus! ✨</p>
+        </div>
+
+        <!-- Info Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Erinnerst du dich an deinen ersten Tag im Kindergarten?<br>
+                • Was hättest du gemacht, wenn du das Rumpeln gehört hättest?<br>
+                • Welches Spielzeug oder welcher Bereich im Kindergarten gefällt dir am besten?<br>
+                • Was glaubst du, wird Tom morgen im Kindergarten erleben?</p>
+            </div>
+        </div>
+
+        <!-- Werbung vor Navigation -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Episode Navigation -->
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="#" class="nav-button disabled">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Keine vorherige Episode</div>
+                </a>
+                
+                <a href="ts1e2.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 2</div>
+                </a>
+
+                <a href="abenteuer-tom.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reading Progress Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

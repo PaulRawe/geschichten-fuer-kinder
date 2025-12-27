@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der kleine Drache Fin und das große Dunkel - Eine Geschichte über Angst">
+    <title>Der kleine Drache Fin und das große Dunkel - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #f5576c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-placeholder {
+            color: white;
+            font-size: 3em;
+            opacity: 0.3;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #667eea;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(168, 237, 234, 0.3);
+            border-left: 6px solid #48c6ef;
+        }
+
+        .technique-box-title {
+            color: #0984e3;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-placeholder {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .hero-placeholder {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Angst</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Angst</div>
+            <h1>Der kleine Drache Fin und das große Dunkel</h1>
+            <p class="story-intro">
+                Fin ist ein kleiner Drache, der tagsüber mutig durch die Berge fliegt. Doch sobald die Nacht hereinbricht und die Dunkelheit seine Höhle füllt, wird alles anders. Ein Glühwürmchen zeigt ihm, dass die Dunkelheit nicht leer ist – und dass man Angst nicht wegschieben muss, sondern ihr ruhig begegnen kann.
+            </p>
+            <div class="hero-image-container">
+                <div class="hero-image-container">
+                <img src="bilder/gefühle/angst3.png">
+            </div>
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Fin war ein kleiner Drache mit schimmernd grünem Schuppenfell und winzigen Flügeln, die noch nicht stark genug waren, um ihn lange zu tragen. Er lebte in einer Höhle hoch oben in den Bergen. Am Tag war Fin fröhlich und neugierig. Er flog kurze Strecken, spielte mit Steinen und übte, kleine Feuerfunken zu spucken.</p>
+
+                <p>Doch sobald die Sonne unterging, veränderte sich alles. Die Berge wurden still, die Schatten lang, und die Dunkelheit kroch langsam in Fins Höhle. Dann spürte Fin ein Zittern in seinen Beinen. Die Dunkelheit machte ihm Angst, denn er konnte nicht sehen, was in ihr verborgen war.</p>
+
+                <p><em>„Was, wenn etwas in der Dunkelheit ist?"</em>, fragte er sich jedes Mal.</p>
+
+                <p>Fin zündete oft ein kleines Feuer an, nur um das Licht zu sehen. Aber an einem Abend geschah etwas Seltsames: Der Mond versteckte sich hinter dicken Wolken, und es wurde dunkler als je zuvor. Fins Feuer reichte nicht aus.</p>
+
+                <p>Fin rollte sich zusammen und schloss die Augen. Sein Herz klopfte laut, und er fühlte sich ganz klein.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🌟 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Da hörte Fin eine sanfte Stimme. <strong>„Du bist nicht allein."</strong> Vor ihm schwebte ein kleines Glühwürmchen und leuchtete warm.</p>
+
+                <p><strong>„Die Dunkelheit ist nicht leer"</strong>, sagte es. <strong>„Sie ist voller Dinge, die du nur anders wahrnimmst."</strong></p>
+
+                <p>Das Glühwürmchen zeigte Fin, wie man in der Nacht hört: den Wind, die leisen Schritte kleiner Tiere, das eigene Atmen. Fin lernte, seine Angst nicht wegzuschieben, sondern ruhig zu bleiben.</p>
+
+                <p>Immer wenn die Angst stärker wurde, zählte Fin: <strong>fünf Dinge, die er hören konnte, vier, die er fühlen konnte, und drei, die ihm Sicherheit gaben.</strong></p>
+
+                <p>Langsam merkte Fin, dass die Dunkelheit ihm nichts antat. Sie war einfach da.</p>
+
+                <p>Als der Mond wieder erschien, fühlte Fin sich mutiger. Seitdem braucht er kein Feuer mehr, um einzuschlafen. Und wenn die Angst kommt, weiß Fin: <em>Er kann ihr ruhig begegnen.</em></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🧘</span>
+                <span>Die 5-4-3-Technik gegen Angst</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern (und Erwachsenen), im Hier und Jetzt anzukommen, wenn die Angst groß wird:</strong></p>
+                <ul>
+                    <li><strong>5 Dinge</strong>, die du hören kannst (z.B. Vögel, Wind, Schritte)</li>
+                    <li><strong>4 Dinge</strong>, die du fühlen kannst (z.B. die Decke, den Boden unter den Füßen)</li>
+                    <li><strong>3 Dinge</strong>, die dir Sicherheit geben (z.B. Mama ist da, mein Kuscheltier, mein sicheres Zimmer)</li>
+                </ul>
+                <p>Diese Technik lenkt die Aufmerksamkeit weg von den angstmachenden Gedanken und hin zu den realen, sicheren Dingen im Moment.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wovor hatte Fin Angst?<br>
+                • Was hat das Glühwürmchen zu Fin gesagt?<br>
+                • Was bedeutet „Die Dunkelheit ist nicht leer"?<br>
+                • Was hat Fin gezählt, als die Angst stärker wurde?<br>
+                • Wollen wir die 5-4-3-Technik zusammen ausprobieren?<br>
+                • Gibt es Situationen, in denen du Angst hast? Was könnte dir helfen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

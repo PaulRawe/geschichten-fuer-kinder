@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zauberhafte Märchen für Kinder - Magische Geschichten mit sprechenden Tieren, Zauberblumen und geheimnisvollen Schlössern">
+    <title>Märchen - Zauberhafte Kindergeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            margin-top: 20px;
+        }
+
+        .hero-title {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-emoji {
+            font-size: 6em;
+        }
+
+        /* Vorwort Section */
+        .intro-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .intro-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .intro-text {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.9;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+        }
+
+        .intro-highlight {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #f39c12;
+            font-weight: 600;
+            color: #d35400;
+            font-size: 1.15em;
+            text-align: center;
+        }
+
+        /* Werbung */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Märchen Grid */
+        .tales-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 45px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tales-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .tale-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 35px 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tale-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .tale-card:hover::before {
+            opacity: 0.95;
+        }
+
+        .tale-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .tale-icon {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s ease;
+        }
+
+        .tale-card:hover .tale-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .adventure-image-placeholder {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .adventure-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .tale-card:hover .adventure-image-placeholder {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .tale-name {
+            color: #333;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .tale-card:hover .tale-name {
+            color: white;
+        }
+
+        .tale-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+
+        .tale-card:hover .tale-description {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Info Box für Eltern */
+        .parent-info {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .parent-info-title {
+            color: #006266;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .parent-info-text {
+            color: #2c3e50;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .parent-info-text strong {
+            color: #006266;
+        }
+
+        .parent-info-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .tales-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header {
+                padding: 35px 25px 30px;
+            }
+
+            .intro-section,
+            .tales-section {
+                padding: 35px 25px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .intro-title {
+                font-size: 1.6em;
+            }
+
+            .tale-card {
+                padding: 30px 25px;
+            }
+
+            .parent-info {
+                padding: 30px 25px;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.7em;
+            }
+
+            .tale-name {
+                font-size: 1.2em;
+            }
+
+            .hero-emoji {
+                font-size: 4em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1 class="hero-title">Zauberhafte Märchenwelt</h1>
+                <div class="hero-image-container">
+                    <img src="bilder/maerchen/maerchen.png" alt="Zauberhafte Märchenwelt">
+                </div>
+            </div>
+        </header>
+
+        <!-- Vorwort -->
+        <div class="intro-section">
+            <h2 class="intro-title">Vorwort</h2>
+            <div class="intro-text">
+                <p>Liebe Kinder, liebe Eltern, herzlich willkommen in einer Welt voller Magie, Abenteuer und Freundschaft!</p>
+                
+                <div class="intro-highlight">
+                    Acht zauberhafte Märchen warten darauf, entdeckt zu werden!
+                </div>
+                
+                <p><strong>Für die Kinder:</strong> Lasst euch verzaubern! Stellt euch vor, wie ihr mit Lilli durch den Wolkenwald fliegt, wie ihr Mia helft, die Regenbogenschuppen zu finden, oder wie ihr Max begleitet, um den Wald der Glühwürmchen zu retten. Jedes Abenteuer zeigt, wie Mut, Freundlichkeit und Neugier die größten Wunder bewirken können.</p>
+                
+                <p><strong>Für die Eltern:</strong> Diese Geschichten sind nicht nur zum Vorlesen gedacht, sondern auch als kleine Lernreisen. Die Märchen vermitteln Werte wie Freundschaft, Hilfsbereitschaft, Mut und das Vertrauen in die eigene Fantasie. Sie laden zu Gesprächen ein, regen die Vorstellungskraft an und schaffen gemeinsame Momente voller Staunen und Freude.</p>
+                
+                <p>Jede Geschichte ist in zwei Seiten unterteilt, damit das Vorlesen spannend bleibt und die Kinder beim Umblättern neugierig auf das nächste Abenteuer warten.</p>
+                
+                <div class="intro-highlight">
+                    Lasst euch verzaubern, traut euch zu träumen und entdeckt die Magie, die in jedem von euch steckt!
+                </div>
+            </div>
+        </div>
+
+        <!-- Werbung nach Vorwort -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Märchen Sammlung -->
+        <div class="tales-section">
+            <h2 class="section-title">Unsere Märchen</h2>
+            <p class="section-description">
+                Tauche ein in magische Welten voller sprechender Tiere, funkelnder Steine, fliegender Koffer und geheimnisvoller Schlösser!
+            </p>
+            
+            <div class="tales-grid">
+                <!-- Tim und die singenden Steine -->
+                <a href="tim-singenden-steine.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/tim-singenden-steine.png" alt="Tim und die singenden Steine">
+                    </div>
+                    <div class="tale-name">Tim und die singenden Steine</div>
+                    <div class="tale-description">Tim entdeckt magische Steine, die singen können, und macht sich auf, den verzauberten Wald zu retten</div>
+                </a>
+
+                <!-- Mia und der Regenbogenfisch -->
+                <a href="mia-regenbogenfisch.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/mia-regenbogenfisch.png" alt="Mia und der Regenbogenfisch">
+                    </div>
+                    <div class="tale-name">Mia und der Regenbogenfisch</div>
+                    <div class="tale-description">Ein Unterwasserabenteuer über Freundschaft und die Suche nach den verlorenen Regenbogenschuppen</div>
+                </a>
+
+                <!-- Ben und der fliegende Koffer -->
+                <a href="ben-fliegende-koffer.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/ben-fliegender-koffer.png" alt="Ben und der fliegende Koffer">
+                    </div>
+                    <div class="tale-name">Ben und der fliegende Koffer</div>
+                    <div class="tale-description">Eine abenteuerliche Reise zur Wolkeninsel und die Suche nach dem geheimnisvollen Zauberschlüssel</div>
+                </a>
+
+                <!-- Sophie und die Zauberblume -->
+                <a href="sophie-zauberblume.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/sophie-zauberblume.png" alt="Sophie und die Zauberblume">
+                    </div>
+                    <div class="tale-name">Sophie und die Zauberblume</div>
+                    <div class="tale-description">Sophie entdeckt eine magische Blume, die Wünsche erfüllt und lernt, was wahre Wünsche bedeuten</div>
+                </a>
+
+                <!-- Max und die Nacht der Glühwürmchen -->
+                <a href="max-gluehwuermchen.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/max-gluehwuermchen.png" alt="Max und die Nacht der Glühwürmchen">
+                    </div>
+                    <div class="tale-name">Max und die Nacht der Glühwürmchen</div>
+                    <div class="tale-description">Ein nächtliches Abenteuer im Wald, um die verlorenen Glühwürmchen nach Hause zu bringen</div>
+                </a>
+
+                <!-- Emma und der Wolkenzauberer -->
+                <a href="emma-wolkenzauberer.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/emma-wolkenzauberer.png" alt="Emma und der Wolkenzauberer">
+                    </div>
+                    <div class="tale-name">Emma und der Wolkenzauberer</div>
+                    <div class="tale-description">Emma malt den Himmel bunt und rettet die Wolkenwelt vor der dunklen Bedrohung</div>
+                </a>
+
+                <!-- Leon und das Zauberschloss im Nebel -->
+                <a href="leon-zauberschloss.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/leon-zauberschloss.png" alt="Leon und das Zauberschloss im Nebel">
+                    </div>
+                    <div class="tale-name">Leon und das Zauberschloss im Nebel</div>
+                    <div class="tale-description">Ein geheimnisvolles Schloss, ein tapferer Junge und die Suche nach dem magischen Kristall</div>
+                </a>
+
+                <!-- Lilli und der Wolkenwald -->
+                <a href="lilli-wolkenwald.html" class="tale-card">
+                    <div class="adventure-image-placeholder">
+                        <img src="bilder/maerchen/lilli-wolkenwald.png" alt="Lilli und der Wolkenwald">
+                    </div>
+                    <div class="tale-name">Lilli und der Wolkenwald</div>
+                    <div class="tale-description">Mit der goldenen Eule Flitzi durch den geheimnisvollen Wolkenwald voller Wunder</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Werbung zwischen Content -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Info für Eltern -->
+        <div class="parent-info">
+            <div class="parent-info-title">
+                <span>💚</span>
+                <span>Für Eltern & Begleiter:innen</span>
+            </div>
+            <div class="parent-info-text">
+                <p><strong>Märchen fördern Fantasie, Empathie und wichtige Werte.</strong></p>
+                <p>Diese Geschichten vermitteln spielerisch wichtige Lektionen über Mut, Freundschaft, Hilfsbereitschaft und Selbstvertrauen. Jedes Märchen lädt dazu ein, gemeinsam über die Erlebnisse der Charaktere zu sprechen und die Botschaften auf das eigene Leben zu übertragen.</p>
+                <p>Nehmen Sie sich Zeit beim Vorlesen. Die zweigeteilte Struktur jeder Geschichte ermöglicht natürliche Pausen für Gespräche und Fragen. Lassen Sie die Bilder im Kopf entstehen und genießen Sie diese besonderen Momente der Nähe und des gemeinsamen Staunens.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+<script src="cookies.js"></script>
+</body>
+</html>

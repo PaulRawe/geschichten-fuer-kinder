@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kostenlose Kindergeschichten zum Vorlesen für Kinder von 2-8 Jahren. Märchen, Abenteuer, Gute-Nacht-Geschichten und mehr.">
+    <title>Zauberhafte Kindergeschichten - Kostenlose Geschichten zum Vorlesen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header mit mehr Weißraum */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.8em;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.15em;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* Hero Image - größer und einladender */
+        .hero-image {
+            margin-top: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Kategorien - luftiger und größer */
+        .categories-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .category-card:hover::before {
+            opacity: 0.95;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .category-icon {
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-icon img {
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .category-card:hover .category-icon img {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .category-name {
+            color: #333;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-card:hover .category-name {
+            color: white;
+        }
+
+        .category-description {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .category-card:hover .category-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Info-Box für Eltern */
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        /* Dezente Werbung */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Footer - übersichtlicher */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Cookie Banner - moderner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
+            padding: 25px;
+            z-index: 1000;
+            display: none;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .cookie-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .cookie-text a {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .cookie-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .cookie-accept {
+            background: #667eea;
+            color: white;
+        }
+
+        .cookie-accept:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cookie-decline {
+            background: #e9ecef;
+            color: #555;
+        }
+
+        .cookie-decline:hover {
+            background: #dee2e6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header {
+                padding: 35px 25px 30px;
+            }
+
+            .categories-section {
+                padding: 35px 25px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .category-card {
+                padding: 30px 25px;
+            }
+
+            .category-icon img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .info-box {
+                padding: 25px;
+            }
+
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .cookie-btn {
+                width: 100%;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .category-icon img {
+                width: 160px;
+                height: 160px;
+            }
+
+            .category-name {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <header>
+            <h1>🌟 Zauberhafte Kindergeschichten 🌟</h1>
+            <p class="subtitle">Kostenlose Geschichten zum Vorlesen für Kinder von 2-8 Jahren</p>
+
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <img src="bilder/index/vorwort.png" alt="Zauberhafte Kindergeschichten - Willkommen in unserer Welt der Geschichten">
+            </div>
+        </header>
+
+        <!-- Info-Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Warum Vorlesen so wertvoll ist</span>
+            </div>
+            <p class="info-box-text">
+                Vorlesen stärkt die Bindung zwischen Eltern und Kindern, fördert die Sprachentwicklung und regt die Fantasie an. Unsere sorgfältig ausgewählten Geschichten sind perfekt auf verschiedene Altersgruppen abgestimmt und bieten für jeden Moment die passende Erzählung – ob zum Einschlafen, Lernen oder einfach zum gemeinsamen Lachen.
+            </p>
+        </div>
+
+        <!-- Kategorien -->
+        <div class="categories-section">
+            <h2 class="section-title">Entdecke unsere Geschichtenwelten</h2>
+            <p class="section-description">
+                Wähle eine Kategorie und tauche ein in wundervolle Abenteuer, lehrreiche Geschichten und zauberhafte Momente
+            </p>
+            <div class="categories-grid">
+                <a href="maerchen.html" class="category-card">
+                    <div class="category-icon">
+                        <img src="bilder/maerchen/3.png" alt="Märchen">
+                    </div>
+                    <div class="category-name">Märchen</div>
+                    <div class="category-description">Klassische und moderne Märchen voller Zauber</div>
+                </a>
+                <a href="abenteuergeschichten.html" class="category-card">
+                    <div class="category-icon">
+                        <img src="bilder/abenteuer/5.png" alt="Abenteuergeschichten">
+                    </div>
+                    <div class="category-name">Abenteuer&shy;geschichten</div>
+                    <div class="category-description">Spannende Reisen und mutige Helden</div>
+                </a>
+                <a href="gute-nacht-geschichten.html" class="category-card">
+                    <div class="category-icon">
+                        <img src="bilder/gutenacht/2.png" alt="Gute-Nacht-Geschichten">
+                    </div>
+                    <div class="category-name">Gute-Nacht-Geschichten</div>
+                    <div class="category-description">Sanfte Geschichten zum Einschlafen</div>
+                </a>
+                <a href="tiergeschichten.html" class="category-card">
+                    <div class="category-icon">
+                        <img src="bilder/tiergeschichten/1.png" alt="Tiergeschichten">
+                    </div>
+                    <div class="category-name">Tier&shy;geschichten</div>
+                    <div class="category-description">Lustige und lehrreiche Tierabenteuer</div>
+                </a>
+                <a href="geschichten-ueber-gefuehle.html" class="category-card">
+                    <div class="category-icon">
+                        <img src="bilder/gefühle/4.png" alt="Geschichten über Gefühle">
+                    </div>
+                    <div class="category-name">Geschichten über Gefühle</div>
+                    <div class="category-description">Emotionen verstehen und verarbeiten</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dezente Werbung -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                <!-- Hier Google AdSense Code einfügen -->
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>🍪 Wir verwenden Cookies</strong><br>
+                Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Banner Management
+        function showCookieBanner() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieBanner').classList.add('show');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+            // Hier Google AdSense und andere Tracking-Skripte laden
+            console.log('Cookies akzeptiert - Tracking aktiviert');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').classList.remove('show');
+            console.log('Nur notwendige Cookies - Kein Tracking');
+        }
+
+        // Cookie Banner beim Laden anzeigen
+        window.addEventListener('load', showCookieBanner);
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

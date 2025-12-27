@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Riss hinter dem Kleiderschrank - Johanna und die Wunderwelt, Staffel 1 Episode 6">
+    <title>Episode 6: Der Riss hinter dem Kleiderschrank - Johanna und die Wunderwelt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #764ba2;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            color: #764ba2;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #764ba2;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #764ba2;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #764ba2;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #764ba2;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="johanna-und-die-wunderwelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 6 von 7</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 6</div>
+            <h1>Der Riss hinter dem Kleiderschrank 🌟</h1>
+            <p class="episode-intro">
+                Johanna und ihre Freunde betreten das Reich der Verlorenen Dinge und entdecken, wer wirklich hinter dem Diebstahl steckt!
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/johanna/johannaS1E6.png" alt="Der Riss hinter dem Kleiderschrank">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 1 – Das Portal der Polterwege</h2>
+            <div class="story-content">
+                <p>Das Portal pulsierte wie ein riesiges, schimmerndes Seifenblasenherz. Johanna konnte ihr eigenes Spiegelbild darin erkennen – aber nicht nur ihres. Hinter ihr standen Ronja, Hasi, die Krachpiraten und Polti. Und irgendwo tief im Glitzern bewegte sich die dunkle Silhouette, die den Donner-Kompass gestohlen hatte.</p>
+
+                <p><em>"Bereit?"</em>, fragte Ronja leise.</p>
+
+                <p>"So bereit wie ein vierjähriges Mädchen sein kann", murmelte Johanna und nahm Polti an der Hand. Oder eher an der Wellenhand.</p>
+
+                <p>Sie machten einen Schritt. Das Portal fühlte sich warm an, wie Sommerluft. Ein Kribbeln lief über Johannas Arme, als sie hindurchtraten.</p>
+
+                <p>Die Welt drehte sich kurz, und dann standen sie an einem Ort, der aussah, als wäre er unter Johannas Kleiderschrank gewachsen. Hohe, dunkle Regale ragten wie Bäume empor. In ihnen steckten Kisten, Schachteln, vergessene Handschuhe, sogar eine Socke, die vor Monaten verschwunden war.</p>
+
+                <p><strong>"Willkommen im Reich der Verlorenen Dinge"</strong>, sagte Ronja ehrfürchtig.</p>
+
+                <p>"Hier landen Sachen, die verschwinden?", fragte Hasi mit großen Augen.</p>
+
+                <p>"Genau!", meinte Ronja. "Aber… hier gibt es auch Dinge, die gar nicht verschwunden sind. Dinge, die sich einfach verstecken wollen."</p>
+
+                <p>Es war dämmrig. Aus manchen Regalen tropfte Staub wie Schneeflocken. Und dann hörten sie es: Ein tiefes, rhythmisches Poltern. Als würde ein Riese stampfen – langsam und mächtig.</p>
+
+                <p>"Der Dieb!", flüsterte der Trompetenpirat.</p>
+
+                <p>Polti zeigte mit zitterndem Arm nach vorn. Ein Pfad aus glitzernden, verlorenen Münzen führte tiefer in den Wald aus Regalen. Der Boden vibrierte mit jedem Poltern.</p>
+
+                <p>"Wir müssen vorsichtig sein", warnte Ronja. "Der Hüter sagte, das Wesen wird immer lauter."</p>
+
+                <p>Johanna nickte und trat voran. Der Staub tanzte um sie herum, und aus der Ferne hörte sie das leise Klingeln des Donner-Kompasses.</p>
+
+                <p>Doch plötzlich schob sich ein Schatten in den Weg – nicht groß, aber schnell. Zwei leuchtende Knopfaugen starrten sie an.</p>
+
+                <p>"Wer… oder was ist das?", keuchte Hasi.</p>
+
+                <p>Das Wesen sprang näher. Und Johanna erkannte:</p>
+
+                <p>Es war eine alte, lebendige Spieluhr… mit Zähnen.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 2 – Die Tick-Tack-Täuscherin</h2>
+            <div class="story-content">
+                <p>Die Spieluhr war klein – aber unheimlich flink. Ihr Metallkörper war alt, mit Kratzern übersät. Wenn sie sich bewegte, klirrten winzige Zahnräder, und der Deckel auf ihrem Rücken klappte auf wie ein kleines Maul.</p>
+
+                <p><strong>"Tick… Tack… TICK!"</strong> fauchte das Ding und hüpfte auf die Gruppe zu.</p>
+
+                <p>Die Piraten sprangen auseinander. Polti machte einen empörten „Pflopp"-Laut. Hasi versteckte sich sofort hinter Johannas Bein.</p>
+
+                <p>"Vorsicht!", rief Ronja. "Das ist eine Tick-Tack-Täuscherin! Alte Spieluhren, die vergessen wurden. Sie mögen keine neuen Sachen… oder lauten Sachen… oder eigentlich irgendwas."</p>
+
+                <p>Das Wesen hüpfte direkt vor Johanna und bleckte seine winzigen, glitzernden Zahnräder wie Zähne.</p>
+
+                <p>Doch anstatt nach ihr zu schnappen, schüttelte es heftig den Kopf und wies mit seinem Deckel nach hinten.</p>
+
+                <p><em>"Tick! Tack! Weg! Sofort weg!"</em></p>
+
+                <p>"Ich glaube nicht, dass sie uns fressen will", sagte Johanna vorsichtig. "Ich glaube, sie will uns warnen."</p>
+
+                <p>Ronja lauschte. "Sie sagt… der Dieb ist stärker geworden. Er hat den Donner-Kompass geöffnet. Und jetzt wächst der Riss."</p>
+
+                <p>Alle hielten die Luft an.</p>
+
+                <p>"Wie viel wächst er denn?", fragte Hasi zaghaft.</p>
+
+                <p>Das Spieluhrwesen machte eine Geste, die eindeutig „sehr groß" bedeutete – sein Deckel klappte so weit nach oben, dass es fast umfiel.</p>
+
+                <p>Dann hörten sie es: Ein schrilles, metallisches KRRRRRRTSCH irgendwo tief im Reich der Verlorenen Dinge. Wie ein Spalt, der weiter reißt.</p>
+
+                <p>"Wir müssen schneller werden!" rief der Trompetenpirat.</p>
+
+                <p>Die Tick-Tack-Täuscherin stolperte vor ihnen her und zeigte den Weg. Der Pfad aus verlorenen Münzen wurde breiter, heller – und am Ende konnten sie ein blau-goldenes Flackern sehen.</p>
+
+                <p>"Der Kompass!", rief Ronja.</p>
+
+                <p>Doch als sie näherkamen, wurde Johanna plötzlich ganz still.</p>
+
+                <p>Vor ihnen lag ein großer, dunkler Schatten. Und als er sich erhob, sah sie die Umrisse eines gewaltigen Körpers – zusammengesetzt aus alten Kuscheltieren, Spielsachen und Schrott, alles aufeinandergetürmt und von einer einzigen Kraft zusammengehalten.</p>
+
+                <p>Ein Monstrum aus verlorenen Dingen.</p>
+
+                <p>Und es hielt den Donner-Kompass in seiner Faust.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 3 – Das Erwachen des Sammelriesen</h2>
+            <div class="story-content">
+                <p>Jetzt sah Johanna den Dieb klar: Ein riesiges Wesen, mindestens dreimal so groß wie ihr Kleiderschrank. Sein Körper bestand aus Kuscheltieren ohne Partner, Puzzle-Stücken, Holzklötzen, aussortierten Bauwerken, zerknülltem Geschenkpapier und allem, was ein Kinderzimmer jemals „verlegt" hatte. Ein Auge war ein Knopf, das andere ein abgebrochener Murmelglaskopf. Und im Zentrum seiner Brust leuchtete etwas Blau-Goldenes auf – der Donner-Kompass.</p>
+
+                <p>"Der… Der… DER ist der Dieb?!", stotterte Hasi.</p>
+
+                <p>Ronja nickte ernst. "Der Sammelriese. Er zieht alles an, was verloren geht. Und jetzt… auch den Donner."</p>
+
+                <p>Der Riese brüllte – laut, aber nicht böse. Eher verzweifelt. Und als er die Hand hob, sah Johanna plötzlich etwas, das ihr Herz weicher machte: Viele der Dinge, aus denen der Riese bestand, wirkten traurig. Einsam. Als hätten sie nur jemanden gebraucht, der sie wiederfindet.</p>
+
+                <p><strong>"Er ist nicht böse"</strong>, sagte Johanna leise. "Er ist… allein."</p>
+
+                <p>Die Piraten schauten überrascht zu ihr. Polti neigte seinen wässrigen Kopf. Die Tick-Tack-Täuscherin scharrte am Boden.</p>
+
+                <p>"Aber er hat den Kompass!", rief der Trompetenpirat. "Und wenn er damit weitermacht, geht die Wunderwelt kaputt!"</p>
+
+                <p>Der Riese hob den Kompass über seinen Kopf. Das Licht darin flackerte unruhig.</p>
+
+                <p>Dann donnerte es – obwohl hier eigentlich gar kein Himmel war.</p>
+
+                <p>Ein Funke sprang aus dem Kompass, zischte durch die Luft und fuhr in die Regale. Sofort begann alles zu wackeln. Ein Regal nach dem anderen kippte langsam zur Seite. Der Boden vibrierte.</p>
+
+                <p>"Der Riss öffnet sich weiter!", rief Ronja.</p>
+
+                <p>Vor ihnen klaffte plötzlich ein Spalt – tief, funkelnd, aber gefährlich wie ein Blitz, der nicht weiß, wohin.</p>
+
+                <p>Johanna ballte die Fäuste.</p>
+
+                <p>"Ich muss mit ihm reden. Er ist nicht böse. Er braucht Hilfe. Und ich… ich kann das."</p>
+
+                <p>"Bist du sicher?", fragte Hasi mit zitternder Stimme.</p>
+
+                <p>Der Riese beugte sich nach unten, sein Schatten fiel über Johanna, und sein Knopf-Auge glitzerte wie eine einzelne, traurige Träne.</p>
+
+                <p>Johanna trat einen Schritt vor.</p>
+
+                <p>Doch genau in diesem Moment begann der Donner-Kompass noch heller zu strahlen – und ein Funke sprang direkt auf Johanna zu.</p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Kann Johanna den Sammelriesen verstehen? Wird sie den Riss schließen können?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Das große Finale folgt in Episode 7! ⚡✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Johanna sagt, der Sammelriese ist nicht böse, sondern allein. Hast du auch schon mal jemanden getroffen, der auf den ersten Blick gruselig wirkte, aber eigentlich nur traurig war?<br>
+                • Was glaubst du, warum sammelt der Riese all die verlorenen Dinge?<br>
+                • Im Reich der Verlorenen Dinge gibt es Sachen, die sich verstecken wollen. Hast du auch Dinge, die immer verschwinden?<br>
+                • Johanna hat Mut, auf den großen Riesen zuzugehen. Wann hattest du das letzte Mal Mut?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="johannas-wunderwelt episode5.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Der Hüter der Stillebucht</div>
+                </a>
+                
+                <a href="johannas-wunderwelt episode7.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 7 - Das große Finale</div>
+                </a>
+
+                <a href="johanna-und-die-wunderwelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

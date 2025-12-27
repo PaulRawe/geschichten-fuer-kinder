@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Herzfunke der Wunderwelt - Johanna und die Wunderwelt, Staffel 1 Episode 7 - Das große Finale">
+    <title>Episode 7: Der Herzfunke der Wunderwelt - Johanna und die Wunderwelt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .finale-badge {
+            background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #e74c3c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            color: #764ba2;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #764ba2;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #764ba2;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .finale-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .finale-box h3 {
+            color: #d35400;
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .finale-box p {
+            color: #d35400;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .season-end-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 25px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(126, 214, 223, 0.4);
+            border: 3px solid #38ada9;
+        }
+
+        .season-end-box h2 {
+            color: #006266;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .season-end-box p {
+            color: #2c3e50;
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .teaser-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .teaser-box h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .teaser-box p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #764ba2;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f39c12 0%, #e74c3c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #764ba2;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .finale-box h3,
+            .season-end-box h2 {
+                font-size: 1.5em;
+            }
+
+            .finale-box p,
+            .season-end-box p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="johanna-und-die-wunderwelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">🎬 STAFFELFINALE</span>
+        </nav>
+
+        <header>
+            <div class="finale-badge">⭐ Das große Staffelfinale ⭐</div>
+            <div class="episode-meta">Staffel 1 • Episode 7</div>
+            <h1>Der Herzfunke der Wunderwelt ✨</h1>
+            <p class="episode-intro">
+                Johanna muss den Sammelriesen beruhigen und die Wunderwelt retten. Das emotionale Finale von Staffel 1!
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/johanna/johannaS1E7.png" alt="Der Herzfunke der Wunderwelt">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 1 – Der Funke der Erinnerung</h2>
+            <div class="story-content">
+                <p>Der Funke aus dem Donner-Kompass traf Johanna mitten auf die Brust – warm, hell und vibrierend wie ein kleiner Stern. Für einen Moment verschwand alles um sie herum: der Sammelriese, die Regale, die Piraten, selbst Ronja und Hasi. Johanna stand plötzlich in völliger Stille.</p>
+
+                <p>Dann hörte sie es. Erst ganz leise, dann deutlicher.</p>
+
+                <p>Kinderlachen. Ihr eigenes.</p>
+
+                <p>Und eine Stimme: <em>"Wo bist du denn wieder hin? Komm raus, kleiner Freund!"</em></p>
+
+                <p>Vor ihr erschien ein Bild aus früheren Tagen: Johanna als ganz kleines Baby, auf einer Decke sitzend. Vor ihr lag ein winziges Stofftier – ein grauer Mini-Hund mit einem abgewetzten Ohr. Johanna griff danach. Liebte ihn. Schlief mit ihm. Aber… irgendwann war er verschwunden.</p>
+
+                <p><em>"Das ist Bello…"</em>, flüsterte sie. Ihr erstes Spielzeug.</p>
+
+                <p>Ihr Herz zog sich zusammen. <em>"Ich habe ihn nie wieder gefunden…"</em></p>
+
+                <p>Und plötzlich begriff sie: Der Sammelriese bestand aus all den Dingen, die irgendjemand vermisst hatte. Dingen, die nie absichtlich vergessen wurden. Dingen, die jemand liebte.</p>
+
+                <p>Die Vision verblasste.</p>
+
+                <p>Die Wirklichkeit kehrte zurück – und der Sammelriese stand wieder vor ihr. Groß. Laut. Aber seine Augen sahen so verloren aus wie Bellos Augen damals.</p>
+
+                <p>Johanna trat vor. <strong>"Ich weiß, warum du den Kompass genommen hast"</strong>, sagte sie leise. "Du willst nicht, dass noch mehr Dinge verloren gehen. Du willst, dass jemand dich sieht. Und… dich lieb hat."</p>
+
+                <p>Der Riese hielt inne. Der Kompass in seiner Brust flackerte schwächer.</p>
+
+                <p><strong>"Ich sehe dich"</strong>, sagte Johanna. "Und du musst uns nicht wehtun. Lass uns dir helfen."</p>
+
+                <p>Für einen Moment glaubte sie, es hätte funktioniert.</p>
+
+                <p>Die Regale hörten auf zu beben. Der Riese senkte seine Hand. Der Kompass funkelte sanfter.</p>
+
+                <p>Doch dann – ein tiefer Riss sprang über den Boden. Der Donner-Kompass zuckte wild. Ein Stück des Riesenkörpers fiel klappernd ab. Er brüllte auf vor Schmerz.</p>
+
+                <p>Ronja schrie: "Johanna! Der Riese verliert die Kontrolle! Wenn der Kompass zerbricht, stürzt die ganze Wunderwelt ein!"</p>
+
+                <p>Der Riese schwankte – und fiel direkt auf Johanna zu.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 2 – Das Herz des Kompasses</h2>
+            <div class="story-content">
+                <p>Johanna wich nicht zurück. Trotz der Angst, trotz des Bebens, trotz des riesigen Schatten, der drohend über ihr stand.</p>
+
+                <p>Sie streckte die Hände hoch – genau in dem Moment, in dem der Sammelriese zusammenbrach.</p>
+
+                <p>Doch statt sie zu zerquetschen, landete seine riesige, schwere Hand ganz sanft neben ihr. Ein weicher Stoß aus Staub und Federn wirbelte auf. Der Riese brüllte nicht mehr – er wimmerte.</p>
+
+                <p><strong>"Er hat Schmerzen"</strong>, sagte Johanna mit zitternder Stimme. "Und Angst."</p>
+
+                <p>Der Donner-Kompass surrte unruhig in seiner Brust. Funken tanzten darüber wie wütende Fliegen.</p>
+
+                <p>"Johanna, du musst ihn beruhigen!", rief Ronja. "Der Kompass reagiert auf Gefühle. Wenn er Angst spürt, wird er unberechenbar."</p>
+
+                <p>"Wie beruhigt man einen Riesen aus Kram?!" rief der Trompetenpirat.</p>
+
+                <p>Johanna wusste es plötzlich.</p>
+
+                <p>Sie legte beide Hände auf die große, verkratzte Brust des Sammelriesen – direkt über den leuchtenden Kompass.</p>
+
+                <p><strong>"Ich war auch schon mal allein"</strong>, sagte sie sanft. "Ich war auch schon traurig. Aber dann habe ich Freunde gefunden. Ronja. Hasi. Polti. Die Krachpiraten. Und du bist auch nicht verloren. Du gehörst dazu… wenn du willst."</p>
+
+                <p>Der Riese starrte sie an.</p>
+
+                <p>Sein Knopf-Auge füllte sich mit einer glitzernden Träne.</p>
+
+                <p>Da hörte der Kompass abrupt auf zu zucken.</p>
+
+                <p>Das blaue Licht wurde warmgelb.</p>
+
+                <p>Die Funken löschten sich. Der Riese atmete ruhiger.</p>
+
+                <p>"Es funktioniert!", rief Ronja erleichtert. "Deine Gefühle… beruhigen ihn!"</p>
+
+                <p><strong>"Er braucht Liebe, nicht Angst"</strong>, sagte Johanna leise.</p>
+
+                <p>Plötzlich löste sich der Kompass aus der Brust des Riesens. Ganz vorsichtig. Ganz freiwillig.</p>
+
+                <p>Er schwebte zu Johanna herab wie eine glitzernde Schneeflocke und landete in ihren Händen.</p>
+
+                <p>Und dann passierte das Unfassbare:</p>
+
+                <p>Ein Riss öffnete sich nicht – sondern schloss sich.</p>
+
+                <p>Der riesige Spalt im Boden heilte, Kisten rückten zurück, die Regale richteten sich auf.</p>
+
+                <p>Der Sammelriese sackte erschöpft zusammen, doch sein Gesicht wirkte friedlich.</p>
+
+                <p>"Johanna", flüsterte Ronja, "du hast die Wunderwelt gerettet."</p>
+
+                <p>Doch da begann der Kompass plötzlich hellgelb zu glühen – heller als jemals zuvor.</p>
+
+                <p>"Ähm… warum strahlt er jetzt so?", fragte Hasi nervös.</p>
+
+                <p>Zu spät.</p>
+
+                <p>Der Kompass explodierte in einem Strahlenwirbel aus Licht.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 3 – Ein neues Gleichgewicht</h2>
+            <div class="story-content">
+                <p>Das Licht verschluckte alles. Die Regale, die Piraten, Ronja, Hasi – sogar der Sammelriese verschwamm wie ein nasser Malkasten. Johanna fühlte sich, als würde sie durch Sternenstaub fliegen. Dann landete sie plötzlich weich. Auf Teppich.</p>
+
+                <p>Sie öffnete die Augen – und war in ihrem Kinderzimmer.</p>
+
+                <p>Der Poltersee war verschwunden.</p>
+
+                <p>Die Regale der verlorenen Dinge ebenfalls.</p>
+
+                <p>Alles sah aus… wie immer.</p>
+
+                <p><em>"War alles nur ein Traum?"</em>, flüsterte sie.</p>
+
+                <p><strong>"NEIN!"</strong>, rief plötzlich eine ganze Gruppe von Stimmen.</p>
+
+                <p>Johanna erschrak – doch dann lachte sie. Da standen sie alle: Ronja auf dem Bett, Hasi auf der Decke, die Krachpiraten auf dem Regalbrett. Polti ploppte vor Freude wie ein kleiner Springbrunnen.</p>
+
+                <p>"Wir sind zurück!", jubelte Ronja. "Und die Wunderwelt ist wieder stabil."</p>
+
+                <p>"Und sauber!", fügte der Trompetenpirat an. "Der Riss ist geheilt!"</p>
+
+                <p>"Und der Sammelriese?", fragte Johanna besorgt.</p>
+
+                <p>"Er ist eingeschlafen", erklärte Ronja. "Er ruht jetzt – nicht einsam, sondern bewacht von der Wunderwelt. Er ist nicht mehr verloren."</p>
+
+                <p>Johanna atmete erleichtert auf.</p>
+
+                <p>Dann bemerkte sie es: In ihrer Hand lag etwas. Ein winziger, goldener Splitter. Ein Bruchstück des Donner-Kompasses, das sanft glühte wie ein Nachtlicht.</p>
+
+                <p>"Was… ist das?", fragte sie.</p>
+
+                <p>Ronja lächelte. <strong>"Ein Geschenk. Ein Herzfunke. Er verbindet dich mit der Wunderwelt. Solange er bei dir ist, bleibt das Reich offen."</strong></p>
+
+                <p>Johanna strahlte.</p>
+
+                <p>"Heißt das… ich kann zurück? Wann immer ich will?"</p>
+
+                <p>"Wann immer du bereit bist für neue Abenteuer!", rief Polti und sprang begeistert gegen ihr Bein.</p>
+
+                <p>Johanna lachte, glücklich und voller Vorfreude.</p>
+
+                <p>Sie legte den Herzfunken vorsichtig auf ihr Nachttischchen. Das Licht glitzerte wie ein kleiner Sonnenaufgang.</p>
+
+                <p><em>"Dann…"</em>, sagte sie, <em>"beginnt Staffel 2 wohl bald."</em></p>
+
+                <p>Doch bevor sie weitersprechen konnte, begann der Herzfunke plötzlich pulsend zu leuchten.</p>
+
+                <p>"Äh, Johanna…", sagte Hasi leise.</p>
+
+                <p>"Der Funke… der zeigt auf deinen Kleiderschrank."</p>
+
+                <p>Der Schrank knarrte. Ganz leicht.</p>
+
+                <p>Etwas rührte sich dahinter.</p>
+
+                <p>Ein neues Abenteuer wartete schon.</p>
+            </div>
+        </div>
+
+        <div class="finale-box">
+            <h3>🎬 ENDE VON STAFFEL 1 🎬</h3>
+            <p>Johanna hat die Wunderwelt gerettet und einen Herzfunken erhalten!</p>
+            <p>Aber was verbirgt sich hinter dem Kleiderschrank?</p>
+            <p style="margin-top: 20px; font-size: 1.3em;">Die Antwort gibt es in Staffel 2! ✨</p>
+        </div>
+
+        <div class="season-end-box">
+            <h2>✨ Staffel 1 ist abgeschlossen! ✨</h2>
+            <p>Johanna hat in sieben aufregenden Episoden gelernt:</p>
+            <p>💫 Freundschaft ist die stärkste Magie</p>
+            <p>🌟 Mut bedeutet nicht, keine Angst zu haben</p>
+            <p>💝 Jeder verdient Liebe und Verständnis</p>
+            <p>🎭 Verlorene Dinge sind nie wirklich weg</p>
+            <p style="margin-top: 25px; font-weight: 700;">Vielen Dank fürs Mitlesen!</p>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="johannas-wunderwelt episode5.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Der Riss hinter dem Kleiderschrank</div>
+                </a>
+                
+               
+
+                <a href="johanna-und-die-wunderwelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

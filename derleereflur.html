@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der leere Flur - Eine sanfte Gute-Nacht-Geschichte über Ruhe und Einschlafen">
+    <title>Der leere Flur - Gute-Nacht-Geschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #2a5298;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #7e22ce;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #2a5298;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(126, 34, 206, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #7e22ce;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #2a5298;
+            font-style: italic;
+        }
+
+        .poem-verse {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            border-left: 4px solid #2a5298;
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #1e3a8a;
+            line-height: 1.9;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .sleepy-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            border-left: 6px solid #2a5298;
+        }
+
+        .sleepy-box p {
+            color: #1e3a8a;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #2a5298;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.3);
+            border-color: #2a5298;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2a5298;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72 0%, #7e22ce 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #7e22ce;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2a5298;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #2a5298;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .sleepy-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="gute-nacht-geschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Gute-Nacht-Geschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gute-Nacht-Geschichte</div>
+            <h1>Der leere Flur</h1>
+            <p class="story-intro">
+                Tom verlässt sein Bett und entdeckt den nächtlichen Flur – eine Geschichte über die beruhigende Stille der Nacht
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gutenacht/gn24.png" alt="Der leere Flur">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Tom saß auf der Kante seines Bettes und lauschte. Das Haus war still, nur das entfernte Ticken der Uhr war zu hören. Es war spät, die Nacht hatte bereits begonnen, und alles fühlte sich ruhig, fast schwerelos an. <em>Die Wände seines Zimmers wirkten weich im Dunkel, die Schatten bewegten sich nur minimal, als hielten sie die Zeit an.</em></p>
+
+                <p>Er bemerkte die kleinen Details um sich herum: den Teppich, der leicht nachgibt, die Vorhänge, die ein wenig am Rahmen zogen, und die Tür, die einen Spalt offen stand. Durch diesen Spalt fiel ein Lichtkegel auf den Flur. Nicht hell, nur ausreichend, dass die Leere sichtbar wurde, die den Flur ausfüllte.</p>
+
+                <p>Tom spürte die Kühle des Bodens unter seinen nackten Füßen, als er aufstand. Jeder Schritt war leise, gedämpft durch den Teppich. <strong>Der Flur wirkte weiter, größer als tagsüber, und doch nicht bedrohlich. Es war eine Leere, die gleichzeitig Sicherheit bot. Kein Geräusch, keine Bewegung – nur Stille, die ihn willkommen hieß.</strong></p>
+
+                <p>Er blieb stehen und betrachtete den Lichtkegel. Die Schatten der Türen, der kleinen Regale, der Bilder an der Wand – alles wirkte verändert, als hätte die Nacht einen anderen Sinn für Formen und Größen. Tom konnte die Details sehen, die ihm tagsüber nie auffielen. <em>Es war, als beobachte er den Flur zum ersten Mal.</em></p>
+
+                <p>Die Uhr tickte weiter, gleichmäßig, beruhigend. Tom bemerkte, dass er langsamer atmete, dass die Anspannung seines Tages begann, sich zu lösen. Er lehnte sich leicht gegen die Wand, spürte die kühle Tapete, die ihn unterstützte, als würde sie ihm sagen, dass alles gut war.</p>
+
+                <p>Dann hörte er ein leises Geräusch. Fast hätte er es sich eingebildet, aber nein – ein sanftes Knarren, als würde irgendwo im Haus jemand oder etwas sich bewegen. Nicht schnell, nicht laut, sondern so, dass es die Stille ergänzte. Tom war nicht erschrocken, nur aufmerksam.</p>
+
+                <p>Er ging ein paar Schritte weiter und sah, wie der Lichtkegel sich leicht verschob. Die Türen schienen anders zu stehen, die Schatten verschoben sich langsam. <strong>Es fühlte sich an, als ob der Flur atmete, als sei er lebendig, aber auf eine stille, beruhigende Weise.</strong> Tom blieb stehen, lauschte.</p>
+
+                <p>Und während er dort stand, spürte er, dass die Nacht noch etwas für ihn bereithielt, etwas, das sich nur zeigte, wenn man ganz still wartete …</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌙 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Tom ließ sich wieder auf die Bettrand fallen, die Beine unter die Decke gezogen. Die Geräusche im Flur waren verschwunden, nur das leise Ticken der Uhr blieb. Es war genug, um zu wissen, dass alles seinen Platz hatte, dass die Welt um ihn herum sicher war. <strong>Der Flur war leer, aber die Leere fühlte sich nicht einsam an. Sie fühlte sich weich, freundlich, als würde sie ihn willkommen heißen.</strong></p>
+
+                <p>Seine Gedanken wurden ruhiger, langsamer. Alles, was tagsüber wichtig schien, begann sich aufzulösen. Die Ereignisse, die Gespräche, die kleinen Sorgen – sie entfernten sich, ohne dass er sie loslassen musste. Nur der Moment war da, und darin war Ruhe.</p>
+
+                <p>Die Dunkelheit draußen wirkte nun weniger dunkel, eher sanft und einhüllend. Tom stellte sich vor, dass sie wie eine Decke über alles gelegt wurde, den Flur, das Haus und ihn selbst. Alles lag ruhig, schwerelos und bereit, zu ruhen.</p>
+
+                <p>Er spürte die Matratze unter sich, wie sie ihn sanft hielt. Die Decke legte sich wie eine schützende Hülle um ihn. <em>Jeder Atemzug war gleichmäßig, tief und sicher. Kein Geräusch störte, kein Gedanke drängte. Alles war so, wie es sein sollte.</em></p>
+
+                <p>Tom ließ sich zurücklehnen, die Augen geschlossen. Die Bilder seines Zimmers verschwammen, die Umrisse der Möbel wurden weich. Alles verschmolz zu einer beruhigenden Stille. Es war nicht dunkel oder bedrohlich, sondern still, vertraut und wie ein sanftes Warten.</p>
+
+                <p>Langsam fühlte er, wie der Schlaf kam, leise, unaufdringlich. Kein Rufen, kein Drängen, nur eine ruhige Einladung, die er annahm. Die Nacht umarmte ihn, das Haus hielt ihn, der Flur war leer, und trotzdem war er nicht allein. Alles war richtig.</p>
+
+                <p>Und während die Uhr weiterhin leise tickte, sank Tom tiefer in den Schlaf. Nicht bewusst, nicht erzwingend, sondern getragen von der stillen Sicherheit, die nur die Nacht bringen konnte.</p>
+            </div>
+        </div>
+
+        <div class="sleepy-box">
+            <p>🌟 Gute Nacht 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so schläft Tom sanft ein, umgeben von der stillen Sicherheit der Nacht ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Kennst du das Gefühl, dass nachts alles anders aussieht als am Tag?<br>
+                • Wie fühlt sich die Stille in deinem Haus an, wenn alle schlafen?<br>
+                • Was bedeutet es, dass „der Flur atmete"?<br>
+                • Hast du manchmal auch das Bedürfnis, nachts durch dein Zuhause zu gehen?<br>
+                • Was macht dir das Gefühl von Sicherheit, wenn es dunkel ist?<br>
+                • Welche Geräusche hörst du nachts in deinem Haus?<br>
+                • Was bedeutet es für dich, dass „die Leere nicht einsam ist"?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Gute-Nacht-Geschichten</h2>
+            <div class="nav-buttons">
+                <a href="gute-nacht-geschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Geschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

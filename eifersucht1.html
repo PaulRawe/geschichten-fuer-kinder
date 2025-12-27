@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emil Elefant und der neue Freund - Eine Geschichte über Eifersucht und Neid">
+    <title>Emil Elefant und der neue Freund - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8fbc8f 0%, #a8d5a8 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #6b8e6b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #a8d5a8;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #8fbc8f 0%, #a8d5a8 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #6b8e6b;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #6b8e6b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(107, 142, 107, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #6b8e6b;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #a8d5a8;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #6b8e6b;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #6b8e6b;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #8fbc8f 0%, #a8d5a8 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #dff0df 0%, #c9e8c9 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(143, 188, 143, 0.2);
+            border-left: 6px solid #6b8e6b;
+        }
+
+        .info-box-title {
+            color: #4a7a4a;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #b8e0b8 0%, #a8d5a8 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(168, 213, 168, 0.3);
+            border-left: 6px solid #6b8e6b;
+        }
+
+        .technique-box-title {
+            color: #4a7a4a;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #6b8e6b;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #6b8e6b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #a8d5a8;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #a8d5a8;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Eifersucht / Neid</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Eifersucht / Neid</div>
+            <h1>Emil Elefant und der neue Freund</h1>
+            <p class="story-intro">
+                Emil liebt es, mit seinem besten Freund Leo zu spielen. Doch als die neue Giraffe Gina kommt und alle Aufmerksamkeit bekommt, verdreht sich etwas in Emils Bauch. Ein warmes, seltsames Gefühl macht sich breit – Eifersucht. Mama Elefant zeigt ihm, dass dieses Gefühl normal ist und dass neue Freunde alte Freundschaften nicht weniger wertvoll machen.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/neid1.png" alt="Emil Elefant und der neue Freund">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Emil war ein kleiner Elefant mit großen Ohren und einem noch größeren Herz. Er lebte mit seiner Familie am Rand des Dschungels, wo es nach reifen Mangos und feuchter Erde roch. Emil liebte es, mit seinen Freunden zu spielen, besonders mit Leo, dem kleinen Affen, der immer lustige Sprünge machte und Witze erzählte.</p>
+
+                <p>Eines Morgens kam ein neues Tier in die Nähe des Spielplatzes: eine junge Giraffe namens Gina. Sie war groß, freundlich und neugierig. Sofort waren alle Kinder neugierig auf sie. Emil spürte, wie etwas in ihm sich verdrehte. Sein Bauch fühlte sich schwer an, seine Ohren zuckten leicht – ein neues, seltsames Gefühl.</p>
+
+                <p>Als Leo Gina begrüßte und lachte, fühlte Emil sich plötzlich klein und unbedeutend. <em>„Warum lacht er nicht mit mir zuerst?"</em>, dachte er. Die anderen Kinder schienen Gina ebenfalls toll zu finden. Emil wollte eigentlich lachen und mitspielen, doch etwas hielt ihn zurück.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🐘 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Emil setzte sich allein unter einen Baum und beobachtete die anderen. In seinem Herzen brodelte ein warmes Gefühl, das er nicht kannte – Eifersucht. Er wollte nicht, dass Gina alles bekommt, was er sich auch gewünscht hätte. Gleichzeitig fühlte er sich traurig und ausgeschlossen.</p>
+
+                <p>Mama Elefant bemerkte Emils Stimmung. Sie setzte sich neben ihn und legte ihren Rüssel sanft auf seinen Rücken. <strong>„Manchmal kommt ein neues Kind, und wir fühlen uns plötzlich unsicher oder neidisch"</strong>, sagte sie. <strong>„Das ist normal."</strong></p>
+
+                <p>Emil hörte zu und spürte, dass er nicht alleine war. Mama schlug vor, dass Emil Gina langsam kennenlernen könne, ohne seine eigenen Gefühle zu verdrängen. Emil atmete tief durch. Er stand auf, wischte die Traurigkeit von seinen Augen und ging zu Gina.</p>
+
+                <p>Gemeinsam mit Leo spielte er später Fangen – und merkte, dass es Spaß machen konnte, einen neuen Freund zu haben, ohne dass seine alten Freundschaften weniger wert waren.</p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🐘</span>
+                <span>Die Emil-Technik – Eifersucht erkennen und annehmen</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, mit Eifersucht und Neid umzugehen:</strong></p>
+                <ul>
+                    <li><strong>Das Gefühl benennen:</strong> „Ich fühle mich eifersüchtig" – aussprechen dürfen</li>
+                    <li><strong>Einen Moment Abstand nehmen:</strong> Sich zurückziehen, beobachten, durchatmen</li>
+                    <li><strong>Darüber sprechen:</strong> Mit einem Elternteil oder einer Vertrauensperson reden</li>
+                    <li><strong>Die eigenen Stärken erkennen:</strong> „Was macht mich besonders?"</li>
+                    <li><strong>Langsam öffnen:</strong> Sich der neuen Situation nähern, wenn man bereit ist</li>
+                </ul>
+                <p>Diese Technik vermittelt, dass Eifersucht ein normales Gefühl ist und dass man sowohl alte als auch neue Freundschaften schätzen kann. Sie stärkt das Selbstwertgefühl und die emotionale Flexibilität.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was macht Emil besonders gerne?<br>
+                • Wer ist Emils bester Freund?<br>
+                • Wer kommt neu auf den Spielplatz?<br>
+                • Wie hat sich Emil gefühlt, als alle mit Gina spielen wollten?<br>
+                • Was hat Mama Elefant zu Emil gesagt?<br>
+                • Was hat Emil am Ende gemacht?<br>
+                • Hast du dich schon mal eifersüchtig gefühlt?<br>
+                • Was hilft dir, wenn du dich ausgeschlossen fühlst?<br>
+                • Können alte und neue Freundschaften beide wichtig sein?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

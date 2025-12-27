@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Das Geheimnis unter dem Apfelbaum - Tom und seine Abenteuer, Staffel 1 Episode 5">
+    <title>Episode 5: Das Geheimnis unter dem Apfelbaum - Tom und seine Abenteuer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #c471f5;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f093fb;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #f093fb;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+            margin-top: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f093fb;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f5576c;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f093fb;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #f093fb;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4);
+            border-color: #f093fb;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #8b5cf6;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+            border-left: 6px solid #f093fb;
+        }
+
+        .info-box-title {
+            color: #6b46c1;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #f093fb;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f5576c;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f5576c;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="abenteuer-tom.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 5 von 7</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 5</div>
+            <h1>Das Geheimnis unter dem Apfelbaum</h1>
+            <p class="episode-intro">
+                Über den Köpfen der Kinder knackt es bedrohlich. Der Wasserschlüssel wird warm in Toms Hand. Was verbirgt sich unter dem alten Apfelbaum? Und wer ist der geheimnisvolle Hüter?
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/tom/t5.png" alt="Das Geheimnis unter dem Apfelbaum">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Über den Köpfen der Kinder knackte es erneut. Ein tiefes, hölzernes Knarren ging durch die Krone des Apfelbaums, als würde dort oben ein riesiges Gewicht liegen. Tom spürte, wie der kleine Wasserschlüssel in seiner Hand warm wurde, fast so, als reagierte er auf das Geräusch.</p>
+
+                <p><strong>„Da oben… bewegt sich was"</strong>, flüsterte Mia.</p>
+
+                <p>Alle blickten gespannt hoch. Die Äste waren dicht voller Blätter, und Regentropfen glitzerten darauf wie kleine Sterne.</p>
+
+                <p>„Vielleicht sitzt ein Vogel da", sagte Alva zögerlich.</p>
+
+                <p>„Ein sehr schwerer Vogel", murmelte Felix.</p>
+
+                <p>Leo ging vorsichtig einen Schritt vor. „Der Wassergeist sagte, dass unter dem Baum etwas versteckt ist. Vielleicht… passiert oben nur etwas, weil unten etwas auf uns wartet."</p>
+
+                <p>Tom nickte. „Dann müssen wir nachsehen. Aber vorsichtig."</p>
+
+                <p>Sie umrundeten den Stamm des Apfelbaums. Von Nahem wirkte der Baum größer als sonst – als würde er sich plötzlich mächtiger aufrichten. Ein Ast schüttelte sich, und ein roter Apfel fiel direkt vor Toms Füße.</p>
+
+                <p>„Vielleicht will der Baum uns etwas zeigen", sagte Mia.</p>
+
+                <p>Tom hob den Apfel auf. Er war ungewöhnlich schwer. Als er ihn drehte, entdeckte er auf der Unterseite ein eingraviertes Symbol: ein kleiner Kreis mit einem Wasserzeichen in der Mitte – genau wie das Muster auf dem Wasserschlüssel.</p>
+
+                <p><strong>„Das gehört zusammen!"</strong>, rief Felix begeistert.</p>
+
+                <p>Leo kniete sich hin. „Aber was sollen wir damit machen?"</p>
+
+                <p>In diesem Moment vibrierte der Boden leicht. Ein dumpfer Ton drang aus der Erde, als würde darunter ein riesiges Herz schlagen.</p>
+
+                <p>„Das kommt von da!", rief Tom und deutete auf eine Stelle hinter dem Baumstamm.</p>
+
+                <p>Zwischen zwei Wurzeln schimmerte etwas Blaues. Ein Licht, das vorher nicht sichtbar gewesen war.</p>
+
+                <p><em>„Da ist ein Eingang!"</em>, rief Mia.</p>
+
+                <p>Gerade als sie näherkamen, ertönte ein lautes Poltern in der Baumkrone.</p>
+
+                <p>Alle blickten panisch nach oben.</p>
+
+                <p>Etwas fiel herunter.</p>
+
+                <p>Etwas Großes.</p>
+
+                <p>Und es landete direkt vor ihnen.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Die Kinder wichen einen Schritt zurück. Vor ihnen, im nassen Gras, lag ein großer, moosgrüner Ball. Doch als Felix ihn anstupste, wackelte er – und zwei kleine Augen öffneten sich.</p>
+
+                <p><strong>„Das… ist ein Tier!"</strong>, rief Alva erschrocken.</p>
+
+                <p>Der Ball entrollte sich. Und plötzlich stand da ein Wesen, das aussah wie eine Mischung aus Igel, Mooskugel und Wasserspur. Sein Fell war grün und weich wie frisches Moos, sein Körper rund wie ein Ball. Aus seinem Rücken ragten kleine Zweige, auf denen winzige Wassertropfen glitzerten.</p>
+
+                <p>„Was bist du?", fragte Tom fasziniert.</p>
+
+                <p>Das Wesen schüttelte sich, und ein leises, knisterndes Brummen ertönte – fast wie das Summen des Wassergeists, nur tiefer.</p>
+
+                <p>Leo trat langsam vor. „Vielleicht ist es der Hüter vom Baum. Der Wassergeist hat gesagt, dass unter dem Apfelbaum ein Geheimnis ist… Vielleicht passt dieses Wesen darauf auf."</p>
+
+                <p>Das Mooswesen bewegte sich unbeholfen, aber freundlich. Es stupste Toms Hand an und blickte dann auf den Wasserschlüssel.</p>
+
+                <p><em>„Es will, dass wir ihm folgen"</em>, sagte Mia.</p>
+
+                <p>Das Wesen watschelte zu der Stelle zwischen den Wurzeln. Das blaue Licht wurde stärker.</p>
+
+                <p>„Da ist wirklich etwas", flüsterte Alva.</p>
+
+                <p>Die Kinder knieten sich hin. Zwischen den Wurzeln war eine kleine Vertiefung im Boden, durch die Wasser in feinen Linien nach unten floss – wie ein Miniaturwasserfall. Und mitten darin steckte eine runde Metallplatte mit einer Schlitzöffnung – exakt in der Form des Wasserschlüssels.</p>
+
+                <p><strong>„Das ist ein Schloss!"</strong>, rief Felix. „Ein Wasserschloss!"</p>
+
+                <p>Tom holte tief Luft. Sein Bauch war voller Spannung.</p>
+
+                <p>„Soll ich… den Schlüssel reinstecken?", fragte er.</p>
+
+                <p>Alle nickten.</p>
+
+                <p>Tom führte den kleinen, glitzernden Wasserschlüssel langsam in die Öffnung.</p>
+
+                <p>Sofort begann die Metallplatte zu leuchten. Wasser schoss kurz in die Höhe, dann sank es ab – und unter ihnen öffnete sich der Boden.</p>
+
+                <p>Ein geheimer Schacht wurde sichtbar.</p>
+
+                <p>Doch bevor sie sehen konnten, wohin er führte, heulte plötzlich der Wind auf – und der Mooshüter machte ein warnendes Geräusch.</p>
+
+                <p><em>Etwas kam näher.</em></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Der Wind riss an den Zweigen des Apfelbaums, und das Summen des geöffneten Wasserschlosses füllte den ganzen Garten. Die Kinder drängten sich eng zusammen, während das Mooswesen sich schützend vor die Öffnung stellte.</p>
+
+                <p>„Was kommt da?", flüsterte Mia.</p>
+
+                <p>Leo lauschte. „Es ist kein Tier… es klingt eher wie… Schritte."</p>
+
+                <p>Felix stellte sich breitbeinig hin. „Wenn es ein Monster ist, beschütze ich uns!"</p>
+
+                <p>Tom musste trotz der Spannung lächeln. Felix war immer sofort bereit.</p>
+
+                <p>Doch die Schritte wurden langsamer – und schließlich tauchte eine Gestalt hinter einem Strauch auf.</p>
+
+                <p>Es war Frau Sonnenschein.</p>
+
+                <p><strong>„Ihr seid ja hier!"</strong>, rief sie erleichtert. „Ich habe euch gesucht. Ihr wart plötzlich so leise."</p>
+
+                <p>Die Kinder sahen sich an. Niemand wusste, ob sie den geheimen Schacht zeigen sollten.</p>
+
+                <p>Doch dann fiel Frau Sonnenscheins Blick auf das Mooswesen. Einen Moment lang erstarrte sie – nur einen ganz kurzen Moment – und dann lächelte sie geheimnisvoll.</p>
+
+                <p>„Ah. Ihr habt also den Hüter kennengelernt."</p>
+
+                <p>„Sie kennen ihn?", rief Felix.</p>
+
+                <p>Frau Sonnenschein nickte. „Natürlich. Er wohnt hier seit vielen Jahren. Er zeigt sich nur selten – nur dann, wenn Kinder bereit sind, etwas Besonderes zu entdecken."</p>
+
+                <p>Tom zeigte ihr den Schacht. „Dürfen wir… da rein?"</p>
+
+                <p>Frau Sonnenschein kniete sich hin und sah in die Öffnung. Das blaue Licht spiegelte sich in ihren Augen.</p>
+
+                <p><em>„Dieser Garten hat viele Geheimnisse. Aber jedes Geheimnis braucht ein Team, das mutig genug ist, ihm zu folgen."</em></p>
+
+                <p>Sie legte Tom sanft eine Hand auf die Schulter.</p>
+
+                <p>„Wenn ihr möchtet – ja. Der Schacht gehört zu eurem Abenteuer."</p>
+
+                <p>Die Kinder sahen sich an.</p>
+
+                <p>Mia nickte.</p>
+
+                <p>Leo atmete tief ein.</p>
+
+                <p>Felix grinste breit.</p>
+
+                <p>Alva wirkte nervös, aber entschlossen.</p>
+
+                <p>Und Tom fühlte das Kribbeln, das ihm sagte, dass dies der Moment war, auf den alles hingesteuert hatte.</p>
+
+                <p>Sie stellten sich um den Schacht.</p>
+
+                <p>Das Mooswesen rollte an ihre Seite und brummte ermutigend.</p>
+
+                <p>Tom nahm als Erster die kleine, natürliche Leiter, die an der Schachtwand erschien.</p>
+
+                <p><strong>„Los geht's"</strong>, sagte er mutig.</p>
+
+                <p>Die Kinder folgten ihm – einer nach dem anderen.</p>
+
+                <p>Und als der letzte Fuß die Erde verließ, schloss sich der Schacht lautlos über ihnen.</p>
+
+                <p>Unter ihnen öffnete sich ein heller Gang.</p>
+
+                <p>Ein neuer Ort.</p>
+
+                <p>Ein neues Geheimnis.</p>
+
+                <p>Und das Abenteuer wurde größer als je zuvor…</p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Der geheime Gang ruft...</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Wohin führt der Schacht unter dem Apfelbaum? ✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was denkst du, versteckt sich unter dem Apfelbaum?<br>
+                • Wie würdest du dich fühlen, wenn du den Mooshüter treffen würdest?<br>
+                • Warum ist es wichtig, dass Frau Sonnenschein den Kindern vertraut?<br>
+                • Würdest du auch den Mut haben, in den geheimen Schacht zu klettern?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="ts1e4.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Episode 4: Das Geheimnis des Apfelbaums</div>
+                </a>
+                
+                <a href="ts1e6.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 6</div>
+                </a>
+
+                <a href="abenteuer-tom.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

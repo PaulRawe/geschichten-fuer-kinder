@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emma und der Wolkenzauberer - Ein magisches Märchen über Mut, Kreativität und Abenteuer">
+    <title>Emma und der Wolkenzauberer - Märchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #7c3aed;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #8b5cf6;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #7c3aed;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #8b5cf6;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e9d5ff;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #8b5cf6;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #7c3aed;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #e9d5ff 0%, #ddd6fe 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.3);
+            border-left: 6px solid #a78bfa;
+        }
+
+        .magic-box p {
+            color: #5b21b6;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #7c3aed;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e9d5ff 0%, #ddd6fe 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(167, 139, 250, 0.3);
+            border-color: #a78bfa;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #7c3aed;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #8b5cf6;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #7c3aed;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #7c3aed;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="maerchen.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Märchen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Märchen</div>
+            <h1>Emma und der Wolkenzauberer</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über ein mutiges Mädchen, das mit einem Wolkenzauberer den Himmel in bunten Farben malt
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/maerchen/emma-wolkenzauberer.png" alt="Emma und der Wolkenzauberer">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 1 ✨</div>
+            <div class="story-content">
+                <p>Emma war ein aufgewecktes Mädchen mit langen, braunen Haaren und einer großen Liebe zum Himmel. Jeden Abend schaute sie staunend zu den Wolken hoch und stellte sich vor, wie sie darin fliegen und Abenteuer erleben könnte. Eines Abends, als die Sonne gerade unterging, sah sie ein sanftes Leuchten am Himmel. <strong>Plötzlich erschien ein freundlicher Mann, der auf einer Wolke schwebte.</strong> „Hallo Emma!", rief er. „Ich bin Aurelio, der Wolkenzauberer. Willst du mir helfen, den Himmel zu malen?"</p>
+
+                <p>Emma konnte ihren Augen kaum trauen. Ein Wolkenzauberer! „Oh ja!", rief sie begeistert. Aurelio lächelte und winkte ihr, ihm auf eine Wolke zu folgen. Kaum berührte Emma die weiche Wolkenfläche, fühlte sie, wie sie leicht wie eine Feder wurde. <em>Zusammen schwebten sie über die Felder, Dörfer und Flüsse, während Aurelio die Wolken in den schönsten Farben malte: rosa, golden, violett und funkelnd wie Sterne.</em></p>
+
+                <p>„Aber Vorsicht, Emma", warnte Aurelio plötzlich. „Manche dunkle Wolken wollen die Schönheit des Himmels zerstören. Wir müssen sie vertreiben, bevor sie alles trüben." Gerade in diesem Moment sah Emma eine riesige dunkle Wolke, die langsam den Himmel verdunkelte. <strong>Sie zischte bedrohlich und schien die Farben zu verschlucken.</strong></p>
+
+                <p>Emma spürte einen kleinen Stich der Angst, aber Aurelio legte ihr beruhigend die Hand auf die Schulter. „Mut, Emma. Wir schaffen das zusammen." Gemeinsam flogen sie näher an die dunkle Wolke heran. Plötzlich begann die Wolke zu knurren und wirbelte wie ein Sturm umher. Emma musste schnell denken. <em>Sie erinnerte sich an die bunten Farben, die Aurelio ihr gezeigt hatte, und summte ein Lied, das die Wolken beruhigte.</em></p>
+
+                <p>Die dunkle Wolke zögerte und begann langsam zu schimmern. „Du bist mutig, Emma", sagte Aurelio. „Aber wir müssen noch mehr Farben nutzen, um den Himmel vollständig zu retten." Emma nickte. Sie griff nach den schillernden Wolkenfarben und bereitete sich auf den letzten großen Zauber vor, der den Himmel retten würde…</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌈 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 2 ✨</div>
+            <div class="story-content">
+                <p>Emma begann, die Wolkenfarben wie ein Regenbogen über die dunkle Wolke zu streuen. Rosa, goldene und violette Farbtöne wirbelten durch den Himmel, und die dunkle Wolke begann zu leuchten. <strong>Schließlich verwandelte sie sich in eine kleine, freundliche Wolke, die lächelte und die anderen Wolken bewunderte.</strong></p>
+
+                <p>„Geschafft!", rief Aurelio fröhlich. „Dank dir, Emma, strahlt der Himmel wieder in all seinen Farben." Emma fühlte ein warmes Kribbeln in ihrem Bauch. <em>Sie hatte gelernt, dass Mut, Kreativität und Freundlichkeit selbst die finstersten Wolken vertreiben können.</em></p>
+
+                <p>Die beiden flogen noch einmal über die Felder, während die Sonne langsam unterging. Aurelio erklärte: „Die Wolkenfarben zeigen, dass man durch Freundlichkeit und Mut alles verschönern kann." Emma nickte und lächelte stolz. Sie wusste, dass sie dieses Abenteuer nie vergessen würde.</p>
+
+                <p>Bevor Emma wieder sicher auf ihrem Dach landete, bedankte sie sich bei Aurelio. „Danke, dass du mich in den Himmel gebracht hast. Ich werde die Farben nie vergessen." Aurelio lächelte. <strong>„Und du wirst immer mutig bleiben, Emma. Denke daran: Der Himmel wartet auf alle, die das Herz am richtigen Fleck haben."</strong></p>
+
+                <p>Von diesem Tag an schaute Emma jede Nacht zu den Wolken und sah die bunten Farben leuchten. Sie wusste: Mit Mut und Fantasie kann man selbst die dunkelsten Wolken in ein wunderschönes Abenteuer verwandeln.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so wurde Emma zur Freundin des Wolkenzauberers, und der Himmel leuchtete jeden Abend in den schönsten Farben ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn du auf einer Wolke fliegen könntest?<br>
+                • Warum war es wichtig, dass Emma mutig war?<br>
+                • Wie hat Emma die dunkle Wolke verwandelt?<br>
+                • Was bedeuten die Wolkenfarben für dich?<br>
+                • Hast du schon einmal etwas Dunkles oder Trauriges in etwas Schönes verwandelt?<br>
+                • Was kannst du von Emmas Kreativität und Mut lernen?<br>
+                • Wenn du Wolken malen könntest, welche Farben würdest du wählen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Märchen</h2>
+            <div class="nav-buttons">
+                <a href="maerchen.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Märchen</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

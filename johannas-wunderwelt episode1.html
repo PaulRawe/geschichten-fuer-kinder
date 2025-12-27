@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der geheimnisvolle Funken - Johanna und die Wunderwelt, Staffel 1 Episode 1">
+    <title>Episode 1: Der geheimnisvolle Funken - Johanna und die Wunderwelt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f5576c;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f5576c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #f5576c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Story Content */
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f5576c;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f093fb;
+            font-style: italic;
+        }
+
+        /* Inline Image */
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f5576c;
+            font-size: 2em;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Cliffhanger Box */
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Episode Navigation */
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #f5576c;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        /* Reading Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #f5576c;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f093fb;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <!-- Sticky Navigation -->
+        <nav class="sticky-nav">
+            <a href="johanna-und-die-wunderwelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 1 von 7</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 1</div>
+            <h1>Der geheimnisvolle Funken</h1>
+            <p class="episode-intro">
+                Johannas Spielzeuge erwachen zum Leben und eine geheimnisvolle Kiste taucht auf. Was verbirgt sich in der Wunderwelt?
+            </p>
+            <div class="hero-image-container">
+                <!-- Hier kommt das Episode-Hauptbild -->
+                <img src="bilder/abenteuer/johanna/johannaS1E1.png" alt="Der geheimnisvolle Funken">
+            </div>
+        </header>
+
+        <!-- Story Content - Teil 1 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Als Johanna an diesem Morgen die Augen öffnete, ahnte sie noch nicht, dass heute alles anders werden würde. Die ersten Sonnenstrahlen fielen wie goldene Fäden in ihr Kinderzimmer, und in einer der Strahlen glitzerte etwas. Es funkelte nicht nur -- es tanzte! Ein winziger, leuchtender Funken wirbelte in der Luft herum und schwebte, als hätte er einen eigenen Willen, direkt auf Johannas Bett zu.</p>
+
+                <p>„Was bist du denn?", flüsterte Johanna und setzte sich mit großen Augen auf. Der Funken antwortete nicht mit Worten -- er machte einen kleinen Luftsprung, als würde er lachen. Dann schoss er quer durch das Zimmer und wirbelte wie ein kleiner Stern um ihre Spielzeuge herum.</p>
+
+                <p><strong>In diesem Moment passierte es.</strong></p>
+
+                <p>Ihr Lieblingshasen Kuschel-Karl rieb sich verschlafen die Augen. Die Holzlokomotive „Puff-Puff" räusperte sich und machte ein leises <em>tuuuut</em>. Und die kleine Puppe Mimi blinzelte und strich sich ihr Kleid glatt.</p>
+
+                <p>Johanna starrte auf ihre lebendig gewordenen Spielzeuge. „Ihr... ihr seid wach!"</p>
+
+                <p>„Und wie!", quietschte Mimi. „Dieser Funken hat uns aufgeweckt! Uiuiui, das hat gekribbelt!"</p>
+
+                <p>Kuschel-Karl machte einen Hopser. „Endlich können wir mit dir reden! Weißt du eigentlich, wie viele Geschichten wir dir erzählen wollen?"</p>
+
+                <p>Johanna konnte nur lachen. Alles fühlte sich plötzlich warm und aufregend an -- als wäre ein Feuerwerk direkt in ihrem Kinderzimmer gestartet.</p>
+
+                <p>Der Funken schwebte wieder zu ihr, tippte sanft ihre Nase an und begann plötzlich, schneller zu flackern. So schnell, dass Johannas Herz ein bisschen raste.</p>
+
+                <p>„Ähm... Karl? Mimi? Was bedeutet das?", fragte sie.</p>
+
+                <p>„Das", sagte Puff-Puff mit ungewohnt ernster Stimme, „heißt ... das nächste Abenteuer beginnt JETZT."</p>
+
+                <p>Der Funken zischte zur Tür -- und schob sie langsam einen Spalt auf.</p>
+
+                <p>Johanna schluckte.</p>
+
+                <p>Was war dahinter?</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Teil 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Teil 2 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Johanna glitt aus ihrem Bett und tappte vorsichtig zur Tür. Der Funken schwebte davor und blinkte aufgeregt, als wolle er rufen: <em>Komm mit! Schnell!</em> Auch ihre Spielzeuge hüpften hinterher.</p>
+
+                <p>„Ich habe dieses Kichern noch nie gehört", flüsterte Mimi und versteckte sich ein bisschen hinter Johannas Bein.</p>
+
+                <p>„Ich bin sicher, es gibt dafür eine vernünftige Erklärung", behauptete Kuschel-Karl mutig -- obwohl seine langen Ohren leicht zitterten.</p>
+
+                <p>Puff-Puff rollte neben ihnen her. „Vielleicht... vielleicht ist es ein neues Spielzeug? Eines, das der Funke geweckt hat?"</p>
+
+                <p>„Aber wir haben doch gestern keine neuen bekommen", sagte Johanna. Oder...?</p>
+
+                <p>Sie öffnete die Tür ein kleines Stück weiter. Das Kichern wurde lauter. Es war hell und glockenartig, als käme es von jemandem, der einfach nicht aufhören konnte, sich zu freuen.</p>
+
+                <p>Dann sah Johanna es: Mitten im Flur stand eine geheimnisvolle kleine Kiste. Gestern Abend war sie definitiv noch nicht dort gewesen. Sie war kunterbunt bemalt und hatte ein kleines goldenes Schloss -- doch das Schloss war offen, und der Deckel wackelte wie ein wackeliger Zahn.</p>
+
+                <p>„Oh oh...", murmelte Mimi.</p>
+
+                <p>Der Funken sauste zur Kiste und begann, darüber zu kreisen. Offensichtlich wollte er, dass Johanna hineinsah.</p>
+
+                <p>„Vielleicht sollten wir sie erst mal zumachen?", schlug Kuschel-Karl vor, aber da war es schon zu spät.</p>
+
+                <p><strong>Der Deckel sprang auf.</strong></p>
+
+                <p>Mit einem <em>BOING</em> schoss eine kunterbunte Kugel heraus, prallte gegen die Wand, gegen den Boden, gegen die Decke -- und landete direkt vor Johannas Füßen. Sie hatte große Augen, Sommersprossen und ein riesiges Lächeln.</p>
+
+                <p>„Hallo! Ich bin Kicher-Kugel Klara!", rief sie quietschvergnügt. „Und ich hab sooooo viele Ideen, was wir heute spielen können! Aber zuerst müsst ihr mir helfen!"</p>
+
+                <p>„Wobei denn?", fragte Johanna.</p>
+
+                <p>Klaras Gesicht wurde plötzlich ernst.</p>
+
+                <p>„Etwas Wichtiges ist in die Wunderwelt entwischt. Durch ein geheimes Tor! Und wenn wir es nicht zurückholen... ohje... dann wird es hier SEHR chaotisch!"</p>
+
+                <p>Johanna spürte, wie ihre Finger kribbelten.</p>
+            </div>
+
+            <!-- Inline Story Image -->
+            <div class="story-image">
+                <img src="bilder/abenteuer/johanna/kicherkugel.png" alt="Kicher-Kugel Klara">
+                <p class="story-image-caption">Kicher-Kugel Klara springt aus der geheimnisvollen Kiste</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Teil 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Teil 3 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Kicher-Kugel Klara hüpfte aufgeregt hin und her. „Das geheime Tor erscheint nur, wenn jemand mutig genug ist, ihm zu folgen! Und -- Überraschung -- das seid ihr!"</p>
+
+                <p>Johanna staunte. „Ein Tor in die Wunderwelt? Noch mehr als dieses Kinderzimmer?"</p>
+
+                <p>Der Funken tanzte vor ihr und formte für einen Moment die Gestalt eines winzigen Schlüssels -- und dann eines kleinen Herzens. Mimi quietschte vor Begeisterung. „Ich glaube, er sagt: Du kannst es öffnen, Johanna!"</p>
+
+                <p>„Na großartig", murmelte Puff-Puff, „ein Tor in eine unbekannte Welt. Was soll schon schiefgehen?" Doch insgeheim sah er neugierig aus.</p>
+
+                <p>Klara rollte fröhlich den Flur hinunter. „Kommt schon! Es ist nicht weit! Aber wir müssen uns beeilen, bevor das Entlaufene Unsinn macht!"</p>
+
+                <p>„Was ist denn entlaufen?", fragte Johanna.</p>
+
+                <p>Klara hielt inne. Ihr Grinsen wurde schief. „Ein kleiner... naja... sehr lebhafter Freund. Er heißt Wirbel-Wuzi. Und er... wirbelt. Sehr viel. Immer. Überall."</p>
+
+                <p>„Oh je", seufzte Karl.</p>
+
+                <p>Sie folgten Klara bis zur Wand am Ende des Flurs. Dort nichts Außergewöhnliches -- nur weiße Tapete und ein Bild von Johanna, wie sie im Sandkasten sitzen. Doch Klara rollte direkt auf das Bild zu und stupste es mit der Nase an.</p>
+
+                <p>Ein <em>leises Summen</em> erfüllte den Flur. Die Wand begann zu schimmern. Farben liefen wie Regenbogenfarben den Putz hinunter. Die Tapete glitt zur Seite wie ein Vorhang -- und dahinter erschien ein glitzerndes, rundes Tor, das aussah wie eine Mischung aus Seifenblase und Sternenlicht.</p>
+
+                <p>Johanna hielt den Atem an.</p>
+
+                <p>„Tritt näher", sagte der Funken mit einem kleinen, klingenden „Ting".</p>
+
+                <p>Johanna fühlte, wie ihre Spielzeuge enger an sie rückten. Mimi nahm ihre Hand. Karl stellte sich mutig neben sie. Puff-Puff räusperte sich und sagte: „Na gut. Wir schaffen das. Gemeinsam."</p>
+
+                <p>Dann geschah das Unerwartete: Hinter dem Tor hörte Johanna etwas rumpeln. Etwas rennen. Etwas kichern.</p>
+
+                <p>Hoher. Wild. Unkontrolliert.</p>
+
+                <p>Klara quietschte: „Oh nein! Er ist direkt hinter dem Tor! Haltet euch fest!"</p>
+
+                <p>Johanna machte einen Schritt vor.</p>
+            </div>
+        </div>
+
+        <!-- Cliffhanger -->
+        <div class="cliffhanger-box">
+            <p>Und in diesem Moment sprang etwas auf sie zu -- direkt aus dem flimmernden Licht...</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Wie geht es weiter? Finde es in Episode 2 heraus! ✨</p>
+        </div>
+
+        <!-- Info Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was glaubst du, springt aus dem Tor?<br>
+                • Wärst du auch mutig genug, durch das Tor zu gehen?<br>
+                • Welches deiner Spielzeuge würde als erstes lebendig werden?<br>
+                • Was würdest du mit deinen Spielzeugen machen, wenn sie sprechen könnten?</p>
+            </div>
+        </div>
+
+        <!-- Werbung vor Navigation -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Episode Navigation -->
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="#" class="nav-button disabled">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Keine vorherige Episode</div>
+                </a>
+                
+                <a href="johannas-wunderwelt episode2.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Die Jagd nach Wirbel-Wuzi</div>
+                </a>
+
+                <a href="johanna-und-die-wunderwelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reading Progress Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

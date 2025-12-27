@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noah und das lange Wochenende - Eine Geschichte über Einsamkeit und Alleinsein">
+    <title>Noah und das lange Wochenende - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #5a7d95;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #7b9eb5;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #5a7d95;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #5a7d95;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(90, 125, 149, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #5a7d95;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #7b9eb5;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #5a7d95;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #5a7d95;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #7b9eb5 0%, #a8c5d9 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e6f0f5 0%, #a8c5d9 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(123, 158, 181, 0.2);
+            border-left: 6px solid #5a7d95;
+        }
+
+        .info-box-title {
+            color: #3d5a6d;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #a8c5d9 0%, #7b9eb5 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(123, 158, 181, 0.3);
+            border-left: 6px solid #5a7d95;
+        }
+
+        .technique-box-title {
+            color: #3d5a6d;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #5a7d95;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #5a7d95;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #7b9eb5;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #7b9eb5;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Einsamkeit / Alleinsein</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Einsamkeit / Alleinsein</div>
+            <h1>Noah und das lange Wochenende</h1>
+            <p class="story-intro">
+                Noah ist ein ruhiger Junge, der gern baut und es mag, wenn jemand neben ihm sitzt – auch ohne Worte. Doch an diesem Wochenende sind alle beschäftigt, und Noah bleibt mit seinem Opa allein. Während er einen hohen Turm baut, spürt er eine Leere in seiner Brust. Eine Geschichte darüber, dass es mutig ist, über Einsamkeit zu sprechen – und dass Nähe manchmal mit einem einzigen Satz beginnt.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/einsam3.png" alt="Noah und das lange Wochenende">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Noah war ein ruhiger Junge, der gern baute. Mit Bauklötzen, mit Stöcken, mit allem, was er finden konnte. Er mochte es, wenn jemand neben ihm saß, auch wenn sie nicht redeten. Dann fühlte er sich sicher.</p>
+
+                <p>An diesem Wochenende jedoch waren viele Dinge anders. Seine Eltern mussten arbeiten, seine Schwester war bei einer Freundin, und Noah blieb zu Hause bei seinem Opa. Der Opa war freundlich, aber er las viel Zeitung und sprach nicht besonders viel.</p>
+
+                <p>Am Samstagmorgen baute Noah allein im Wohnzimmer einen hohen Turm. Er wurde höher und höher. Doch niemand sah zu. Niemand sagte etwas. Noah schaute kurz zur Tür, dann wieder auf seinen Turm.</p>
+
+                <p>Ein leises, schweres Gefühl legte sich in seine Brust. Es war nicht Traurigkeit. Es war etwas anderes. Etwas Leeres. Noah setzte sich auf den Boden und zog die Beine an.</p>
+
+                <p><em>Alle sind beschäftigt</em>, dachte er. <em>Niemand braucht mich gerade.</em></p>
+
+                <p>Der Tag zog sich. Die Uhr tickte laut. Noah spürte: Er war allein – und es fühlte sich einsam an.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 👦 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Noah erinnerte sich an etwas, das seine Mutter oft sagte: <em>„Wenn du dich einsam fühlst, darfst du das sagen."</em></p>
+
+                <p>Er stand auf und ging langsam zu seinem Opa. „Opa", sagte er leise, „mir ist irgendwie leer."</p>
+
+                <p>Der Opa legte die Zeitung beiseite und schaute Noah an. „Danke, dass du mir das sagst", sagte er ruhig.</p>
+
+                <p>Sie setzten sich gemeinsam an den Tisch. Noah holte seine Bauklötze dazu. Der Opa fragte, was Noah baute. Noah erklärte es genau.</p>
+
+                <p>Der Turm wuchs wieder. Und diesmal war jemand da.</p>
+
+                <p>Noah spürte, wie die Leere kleiner wurde. Sie verschwand nicht ganz, aber sie war nicht mehr allein bei ihm.</p>
+
+                <p><strong>Noah lernte: Einsamkeit wird leichter, wenn man sie teilt. Und manchmal beginnt Nähe mit einem einzigen Satz.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>👦</span>
+                <span>Die Noah-Technik – Einsamkeit aussprechen</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, Einsamkeit zu erkennen und auszusprechen:</strong></p>
+                <ul>
+                    <li><strong>Das Gefühl im Körper spüren:</strong> Wo sitzt die Leere? In der Brust? Im Bauch? Fühlt sie sich schwer oder kalt an?</li>
+                    <li><strong>Den Unterschied erkennen:</strong> Ist das Traurigkeit – oder etwas anderes? Einsamkeit fühlt sich oft leer und still an</li>
+                    <li><strong>Die eigenen Gedanken bemerken:</strong> Denke ich „Niemand braucht mich" oder „Alle sind beschäftigt"?</li>
+                    <li><strong>Sich erlauben, es zu sagen:</strong> „Mir ist irgendwie leer" oder „Ich fühle mich einsam" – das ist mutig, nicht schwach</li>
+                    <li><strong>Einfache Worte finden:</strong> Man muss nicht viel erklären – manchmal reicht ein kurzer Satz</li>
+                    <li><strong>Zu jemandem gehen:</strong> Nicht warten, bis jemand es merkt – selbst den ersten Schritt machen</li>
+                    <li><strong>Verstehen:</strong> Einsamkeit wird leichter, wenn man sie teilt – sie muss nicht allein getragen werden</li>
+                </ul>
+                <p>Diese Technik zeigt Kindern, dass es in Ordnung ist, das Bedürfnis nach Nähe auszusprechen. Sie lernen, dass Menschen oft helfen möchten, wenn sie wissen, was los ist – und dass ein einziger Satz manchmal reicht, um Verbindung herzustellen.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was baute Noah gerne?<br>
+                • Wo waren Noahs Eltern und seine Schwester?<br>
+                • Bei wem blieb Noah zu Hause?<br>
+                • Was baute Noah am Samstagmorgen?<br>
+                • Was spürte Noah in seiner Brust?<br>
+                • Was dachte Noah, während er allein spielte?<br>
+                • Was hatte Noahs Mutter ihm gesagt?<br>
+                • Was sagte Noah zu seinem Opa?<br>
+                • Wie reagierte der Opa?<br>
+                • Was machten Noah und sein Opa dann zusammen?<br>
+                • Hast du dich auch schon mal leer gefühlt?<br>
+                • Fällt es dir leicht oder schwer, über solche Gefühle zu sprechen?<br>
+                • Zu wem gehst du, wenn du dich einsam fühlst?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der verlorene Klang im Wald - Alex' große kleine Welt, Staffel 1 Episode 4">
+    <title>Episode 4: Der verlorene Klang im Wald - Alex' große kleine Welt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #764ba2;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Story Content */
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        /* Page Title */
+        .page-title {
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c7b3ff;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #764ba2;
+            font-size: 2em;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Cliffhanger Box */
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Episode Navigation */
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 237, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        /* Reading Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe4b5 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 228, 181, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <!-- Sticky Navigation -->
+        <nav class="sticky-nav">
+            <a href="alexgrossekleinewelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 4 von 7</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 4</div>
+            <h1>Der verlorene Klang im Wald</h1>
+            <p class="episode-intro">
+                Ein Tier hat seine Stimme verloren, und Alex begibt sich mit Lumo und dem Elch auf die Suche. Doch im Wald wartet nicht nur die gesuchte Stimme, sondern auch eine geheimnisvolle Begegnung.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/alex/a4.png" alt="Der verlorene Klang im Wald">
+            </div>
+        </header>
+
+        <!-- Story Content - Seite 1 -->
+        <div class="story-section">
+            <div class="page-title">Seite 1</div>
+            <div class="story-content">
+                <p>Alex saß im Wohnzimmer, der Teppich lag still und friedlich da, als wäre er einfach nur ein Teppich. Das kleine weiße Wesen, das er Lumo nannte, ruhte in seiner Hand wie ein flauschiger Wattebausch.</p>
+
+                <p>Draußen hörte Alex das Brüllen des Elchs – aber diesmal klang es nicht nach Gefahr. Es klang eher wie ein Ruf, wie wenn Mama ruft: „Komm essen, Alex!"</p>
+
+                <p>Alex hob Lumo vorsichtig hoch. „Hast du das gehört?"</p>
+
+                <p>Lumo öffnete ein Auge. „Mm-hmm… das klingt nach jemandem, der Hilfe braucht."</p>
+
+                <p>Alex nickte. Sein Bauch fühlte wieder dieses Kitzeln, das er immer bekam, wenn ein Abenteuer wartete. Aber ein gutes Abenteuer – eins, das warm und spannend war, nicht dunkel und unheimlich.</p>
+
+                <p>Gemeinsam gingen sie zur Terrassentür. Der Garten leuchtete in hellem Sonnenlicht, die Blumen wackelten sanft im Wind, und Schmetterlinge flatterten umher.</p>
+
+                <p>Der Elch stand am Rand des Gartens. Heute wirkte er viel freundlicher, fast so, als würde er lächeln. Neben ihm stand ein zweites Tier – kleiner, rundlicher, mit einem dicken braunen Fell und Ohren wie zwei flauschige Kissen.</p>
+
+                <p>Es machte ein trauriges <em>Hmmmpf</em>.</p>
+
+                <p>Alex ging näher. „Hallo. Was ist denn los?"</p>
+
+                <p>Der Elch neigte den Kopf. Das braune Tier sah Alex mit großen, runden Augen an. Lumo zitterte leicht vor Neugier.</p>
+
+                <p>„Er hat etwas verloren", erklärte Lumo. „Etwas ganz Wichtiges."</p>
+
+                <p>Alex setzte sich ins Gras. „Was denn?"</p>
+
+                <p>Das kleine braune Tier öffnete das Maul – aber statt eines Lauts kam nur ein kleines, pfeifendes Krächzen.</p>
+
+                <p>„Er hat seine Stimme verloren", flüsterte Lumo. „Sie ist irgendwo im Wald verschwunden. Und er kann niemanden mehr rufen."</p>
+
+                <p>Alex' Augen wurden groß. Eine Stimme, die verloren geht? Wie ein Ball, der unter ein Sofa rollt? Oder ein Bauklotz unter die Heizung?</p>
+
+                <p>„Wir müssen sie finden", sagte Alex sofort.</p>
+
+                <p>Der Elch blinzelte zustimmend. Das braune Tier nickte heftig.</p>
+
+                <p>Alex stand auf.</p>
+
+                <p>Und genau in diesem Moment hörte er es: ein leises Lied, das aus dem Wald kam – wie ein fliegender Ton, der jemanden suchte.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 2 -->
+        <div class="story-section">
+            <div class="page-title">Seite 2</div>
+            <div class="story-content">
+                <p>Alex spitzte die Ohren. Das Lied war hell und freundlich, wie ein kleines Glöckchen, das vor sich hin schwebte. Es kam aus der Richtung der großen Bäume, die am Garten anfingen.</p>
+
+                <p>„Da ist sie!", rief Alex begeistert. „Die Stimme!"</p>
+
+                <p>Lumo hüpfte aufgeregt auf seiner Schulter herum. „Beeilen wir uns, bevor sie weiterfliegt!"</p>
+
+                <p>Der Elch stapfte voraus, sein Fell glitzerte in der Sonne, und das braune Tier trottete dicht hinter Alex her, immer wieder hoffnungsvoll schniefend.</p>
+
+                <p>Im Wald war es angenehm kühl. Die Blätter rauschten sanft über ihren Köpfen, und die Sonne malte kleine Lichtkreise auf den Boden. Alex mochte diesen Ort – er war wie ein großes, grünes Zimmer voller Geheimnisse, aber solche, die freundlich waren.</p>
+
+                <p>Das glitzernde Lied tanzte von Baum zu Baum.</p>
+
+                <p>Mal klang es nah, mal etwas weiter weg – wie ein fröhlicher Vogel, der verstecken spielte.</p>
+
+                <p>„Da lang!", rief Alex und zeigte auf einen großen, bemoosten Stein.</p>
+
+                <p>Alle liefen los. Hinter dem Stein flatterte etwas goldenes Licht hervor. Nicht hell, nicht heiß, sondern weich und warm wie Kerzenschein.</p>
+
+                <p>„Das ist die Stimme?", fragte Alex staunend.</p>
+
+                <p>Lumo nickte. „Ja! Manche Stimmen sind kleine Lichtwesen. Sie brauchen jemanden, der gut zu ihnen ist."</p>
+
+                <p>Das goldene Stimmchen schwebte näher und stupste Alex an die Nase. Es kitzelte so sehr, dass er lachen musste.</p>
+
+                <p>Dann schwebte sie zum braunen Tier. Ein kleines, weiches Geräusch ertönte: <em>bmmm…</em></p>
+
+                <p>So, als würde die Stimme sagen: „Da bist du ja!"</p>
+
+                <p>Das braune Tier öffnete vorsichtig das Maul – und plötzlich schallte ein lautes, fröhliches <strong>„HOOOOOOO!"</strong> durch den Wald.</p>
+
+                <p>Die Bäume bebten leicht, als würden sie lachen.</p>
+
+                <p>Der kleine Besitzer seiner Stimme hüpfte vor Freude im Kreis. Alex freute sich so sehr, dass sein Herz wie eine kleine Trommel klopfte.</p>
+
+                <p>Doch plötzlich verstummte der Wald.</p>
+
+                <p>Ein Schatten huschte über den Boden.</p>
+
+                <p>Nicht dunkel, nicht gefährlich – aber schnell.</p>
+
+                <p>Der Elch hob den Kopf. Lumo klammerte sich an Alex' Hemd.</p>
+
+                <p>„Ach nein…", murmelte das kleine Wesen. „Nicht der. Nicht jetzt."</p>
+
+                <p>Alex drehte sich um.</p>
+
+                <p>Am Waldrand stand ein neues Tier. Groß. Beweglich. Und so leise, dass Alex es vorher nie gehört hatte.</p>
+
+                <p>Und es schaute direkt Alex an.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 3 -->
+        <div class="story-section">
+            <div class="page-title">Seite 3</div>
+            <div class="story-content">
+                <p>Das Tier war größer als der Elch, aber gleichzeitig wirkte es weich und freundlich. Sein Fell schimmerte silbern, und seine Augen waren hell wie Sterne. Es sah Alex an, fast neugierig – so, als hätte es lange gewartet, ihn endlich zu treffen.</p>
+
+                <p>Alex machte einen Schritt auf das neue Tier zu. „Hallo…?"</p>
+
+                <p>Es legte den Kopf leicht schief und bewegte die Ohren, die ganz lang waren und an zwei weiche Federn erinnerten.</p>
+
+                <p>Lumo flüsterte: „Das ist ein Mondläufer!"</p>
+
+                <p>„Ein was?", fragte Alex.</p>
+
+                <p>Lumo setzte sich auf seine Handfläche. „Mondläufer sind Tiere, die nur auftauchen, wenn ein Kind besonders mutig war. Und du… warst sehr mutig heute."</p>
+
+                <p>Alex spürte, wie seine Wangen warm wurden. Mutig? Er?</p>
+
+                <p>Das silberne Tier kam langsam näher. Es war so leise wie ein Traum. Als es direkt vor Alex stand, beugte es sich zu ihm herunter und tippte sanft seine Stirn an.</p>
+
+                <p>Ein leuchtender Funke sprang über – weich, warm, wie eine winzige freundliche Sternschnuppe.</p>
+
+                <p>„Er hat dir etwas geschenkt", flüsterte Lumo. „Eine Erinnerung. Für später."</p>
+
+                <p>„Für wann später?"</p>
+
+                <p>„Das wirst du merken, wenn es soweit ist."</p>
+
+                <p>Das silberne Tier wandte sich um, spazierte ein paar Schritte — und löste sich plötzlich in viele kleine Lichtpunkte auf, die zwischen den Bäumen verschwanden.</p>
+
+                <p>Es war, als hätte jemand den Wald kurz mit Sternen bestreut.</p>
+
+                <p>Alex lächelte.</p>
+
+                <p>Das braune Tier brüllte glücklich seine neue alte Stimme in die Luft.</p>
+
+                <p>Der Elch nickte zufrieden.</p>
+
+                <p>Lumo glitzerte vor Freude.</p>
+
+                <p>Doch als sie den Rückweg antreten wollten, blieb Alex stehen.</p>
+
+                <p>Etwas klang komisch.</p>
+
+                <p>Ganz leise.</p>
+
+                <p>Wie ein Echo.</p>
+
+                <p>Ein zweites Echo.</p>
+
+                <p>„Hast du das gehört?", fragte er.</p>
+
+                <p>Lumo schüttelte den Kopf.</p>
+
+                <p>Aber Alex hörte es ganz genau:</p>
+
+                <p>Eine Stimme – eine Kinderstimme – die tief im Wald rief:</p>
+
+                <p><em>„Hilfe…? Hallo…? Ist da jemand…?"</em></p>
+
+                <p>Alex' Bauch kribbelte wieder. Es war das größte Abenteuer-Kribbeln, das er je gespürt hatte.</p>
+
+                <p>Da war noch jemand im Wald – und er brauchte Alex.</p>
+            </div>
+        </div>
+
+        <!-- Cliffhanger -->
+        <div class="cliffhanger-box">
+            <p>Wer ruft da aus dem Wald? Und wird Alex den Weg zu ihm finden?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Das Abenteuer geht weiter in Episode 5! ✨</p>
+        </div>
+
+        <!-- Info Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was glaubst du, wer im Wald um Hilfe ruft?<br>
+                • Warum war der Mondläufer bei Alex?<br>
+                • Was könnte die „Erinnerung für später" sein?<br>
+                • Wie hat sich Alex gefühlt, als er mutig genannt wurde?<br>
+                • Was würdest du tun, wenn du eine Stimme um Hilfe hören würdest?</p>
+            </div>
+        </div>
+
+        <!-- Werbung vor Navigation -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Episode Navigation -->
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="as1e3.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Die Nacht, in der die Schatten spielten</div>
+                </a>
+                
+                <a href="as1e5.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 5</div>
+                </a>
+
+                <a href="alexgrossekleinewelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+           <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reading Progress Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

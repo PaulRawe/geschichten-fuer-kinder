@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex und das Flüstergras - Alex' große kleine Welt, Staffel 1 Episode 1">
+    <title>Episode 1: Alex und das Flüstergras - Alex' große kleine Welt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2ecc71;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #27ae60;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #27ae60;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #27ae60;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Story Content */
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #16a085;
+            font-style: italic;
+        }
+
+        /* Page Title */
+        .page-title {
+            color: #27ae60;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d4fc79;
+        }
+
+        /* Inline Image */
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #27ae60;
+            font-size: 2em;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Cliffhanger Box */
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Episode Navigation */
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #27ae60;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 237, 234, 0.4);
+            border-color: #16a085;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #16a085;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        /* Reading Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe4b5 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 228, 181, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2ecc71;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #2ecc71;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <!-- Sticky Navigation -->
+        <nav class="sticky-nav">
+            <a href="alexgrossekleinewelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+		<a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 1 von 7</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 1</div>
+            <h1>Alex und das Flüstergras</h1>
+            <p class="episode-intro">
+                Alex entdeckt, dass das Gras flüstert! Ein glitzerndes Ei bringt ein winziges Wesen hervor, das dringend Hilfe braucht.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/alex/a1.png" alt="Alex und das Flüstergras">
+            </div>
+        </header>
+
+        <!-- Story Content - Seite 1 -->
+        <div class="story-section">
+            <div class="page-title">Seite 1 – Der Garten, der atmete</div>
+            <div class="story-content">
+                <p>Alex war erst drei Jahre alt, aber seine Augen sahen mehr als das, was große Leute sahen. Für ihn war die Welt kein Ort, den man schon verstand, sondern einer, der flüsterte, vibrierte, schimmerte – ein kleines Geheimnis hinter jedem Blatt, unter jedem Stein, in jedem Windstoß.</p>
+
+                <p>An diesem Morgen wachte Alex mit einem Gefühl auf, das wie ein kleines Kitzeln hinter seinem Bauch saß. Es war ein <em>Abenteuergefühl</em>. Das hatte er manchmal, wenn etwas Besonderes passieren wollte. Er wusste nicht, was, aber er wusste, dass es da draußen wartete. Vielleicht hinter der Tür. Vielleicht hinter einem Busch. Vielleicht sogar hinter seinem eigenen Schatten.</p>
+
+                <p>Barfuß tappte er ins Wohnzimmer, öffnete die Terrassentür – und die Welt roch nach warmer Erde und einem Versprechen. Der Garten lag vor ihm wie ein riesiges, grünes Zimmer ohne Wände. Der Wind fuhr durch die Blätter wie durch ein aufgeschlagenes Buch.</p>
+
+                <p>Alex machte ein paar Schritte ins Gras. Es fühlte sich weich an wie warme Watte, und ein Käfer krabbelte ihm neugierig über die Zehen. „Hallo", sagte Alex leise. Der Käfer blieb stehen, als hätte er tatsächlich zugehört.</p>
+
+                <p>Doch dann hörte Alex etwas anderes. Etwas… <strong>Seltsames</strong>. Ein leises, tiefes Schnauben, so als würde irgendwer oder irgendwas tief einatmen. Dann wieder ausatmen. <em>Einatmen. Ausatmen.</em></p>
+
+                <p>„Mama?", rief er. Keine Antwort.</p>
+
+                <p>Alex drehte sich einmal um sich selbst. Der Garten wirkte wie immer. Und doch… nicht. Denn das Geräusch kam wieder. Ein langes, warmes <em>Huuuuuh</em>, gefolgt von einem <em>Pfffffff</em>.</p>
+
+                <p>Alex ging langsam zum großen Busch am Ende des Gartens. Er war so hoch wie Papa, und seine Äste rauschten so, als würden sie miteinander tuscheln.</p>
+
+                <p>Das Schnaufen kam jetzt direkt dahinter hervor.</p>
+
+                <p>Alex hob die Hand und schob mit vorsichtigem Finger ein paar Zweige zur Seite.</p>
+
+                <p>Und dann sah er etwas. Etwas Großes. Etwas, das sich bewegte.</p>
+
+                <p>Bevor Alex genauer hinsehen konnte, raschelte es laut. Etwas im Busch rührte sich – und Alex hielt den Atem an.</p>
+
+                <p><strong>Was immer da war, es war wach geworden.</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 2 -->
+        <div class="story-section">
+            <div class="page-title">Seite 2 – Das große Auge</div>
+            <div class="story-content">
+                <p>Alex stand wie festgewurzelt. Seine kleinen Finger hatten sich im Blattwerk verhakt, und obwohl ein Teil von ihm am liebsten weggelaufen wäre, war der andere Teil viel stärker: der Teil, der wissen wollte. Der Teil, der die Welt entdecken wollte – auch wenn sie gerade tief und laut schnaufte.</p>
+
+                <p>Aus dem Busch drang ein dumpfes Rascheln. Dann lugte etwas Rundes hervor. Erst dachte Alex, es sei ein Ball. Ein sehr großer, sehr erdiger Ball. Doch dann blinzelte der „Ball". Zweimal.</p>
+
+                <p><strong>Es war ein Auge.</strong></p>
+
+                <p>Ein großes, braunes, freundliches Auge.</p>
+
+                <p>Alex setzte sich sofort auf den Po, weil sein Herz so überrascht hüpfte, dass seine Beine einfach beschlossen hatten, kurz aufzugeben. Im selben Moment kam das Wesen weiter aus dem Busch hervor. Ein breiter Kopf. Flausches Fell. Ohren, die weich wirkten wie Wolken.</p>
+
+                <p>Alex kannte dieses Tier. Er hatte es in Bilderbüchern gesehen.</p>
+
+                <p>„Ein… Elch?"</p>
+
+                <p>Das Tier machte einen langsamen Schritt auf ihn zu. Es war riesig. Es roch nach Wald, Regen und einem Hauch von Moos.</p>
+
+                <p>Es senkte den Kopf und schnupperte an Alex' Haaren. Nicht grob. Ganz vorsichtig.</p>
+
+                <p>„Hallo", flüsterte Alex. „Wohnst du hier?"</p>
+
+                <p>Der Elch blinzelte wieder – und schnaubte ihm warm ins Gesicht. Es kitzelte. Alex musste lachen.</p>
+
+                <p>Doch dann geschah etwas, das ihn erneut erstarren ließ:</p>
+
+                <p>Der Elch hob den Kopf, stellte die Ohren auf und schaute nach hinten in den Garten, als hätte er etwas gehört. Seine Muskeln spannten sich.</p>
+
+                <p>Alex spürte es auch. Eine Art Zittern ging durch den Boden. Nicht stark, aber spürbar – so wie der kurze Moment, bevor eine Katze losrennt.</p>
+
+                <p>Der Elch machte ein tiefes, warnendes Brummen.</p>
+
+                <p>Alex drehte sich langsam um.</p>
+
+                <p>Am anderen Ende des Gartens, hinter Papas Werkzeugschuppen, stand etwas.</p>
+
+                <p><em>Etwas Dunkles. Etwas, das er noch nie gesehen hatte.</em></p>
+
+                <p>Nur die Umrisse waren zu erkennen – und sie bewegten sich.</p>
+
+                <p><strong>Ein Schatten löste sich und kroch langsam in ihre Richtung.</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 3 -->
+        <div class="story-section">
+            <div class="page-title">Seite 3 – Der Schatten</div>
+            <div class="story-content">
+                <p>Der große Schatten bewegte sich nicht wie ein Tier. Nicht wie etwas, das Beine hatte. Er wirkte… gleitend, weich, fast so, als würde er über den Boden fließen. Alex rieb sich die Augen. Vielleicht war es ein Trick des Lichts. Mama sagte manchmal, der Morgen mache die Welt ein bisschen träumerisch.</p>
+
+                <p>Aber dies war kein Traum. Das spürte Alex ganz genau.</p>
+
+                <p>Der Elch stellte sich schützend vor ihn. Seine breiten Schultern wirkten wie zwei kleine Hügel. Er stampfte mit einem Huf auf, fest genug, dass Alex das Beben bis in die Finger fühlte.</p>
+
+                <p>Der Schatten hielt inne. Wuchs ein Stück nach oben. Wand sich. Formte Wellen wie Wasser im Dunkeln.</p>
+
+                <p>Alex klammerte sich an das Fell des Elchs.</p>
+
+                <p>„Was ist das?", flüsterte er, obwohl er wusste, dass der Elch ihm keine Antwort geben konnte.</p>
+
+                <p>Doch der Elch bewegte sich. Ganz langsam. Er senkte den Kopf, schnaubte tief – und dann stieß er ein lautes, klagendes Brüllen aus, das durch den ganzen Garten hallte.</p>
+
+                <p><strong>Der Schatten zuckte zurück.</strong></p>
+
+                <p>Und sprang.</p>
+
+                <p>Nicht nach Alex. Nicht zum Elch. Sondern nach oben – an die Wand des Schuppens, wo er sich wie ein dunkler Fleck festkrallte.</p>
+
+                <p>Alex keuchte. Der Fleck begann zu klettern, obwohl er keine Arme, keine Beine hatte – nur Dunkelheit.</p>
+
+                <p>Der Elch hob erneut den Kopf, brüllte, stampfte.</p>
+
+                <p>Der Schatten löste sich ruckartig vom Holz – und huschte in einer schnellen Bewegung über das Dach hinweg, als würde er vor der Sonne fliehen, die nun über die Dächer stieg.</p>
+
+                <p>Dann war er verschwunden.</p>
+
+                <p>Der Garten wurde still. Unglaublich still.</p>
+
+                <p>Der Elch drehte sich zu Alex um, seine Augen weich, aber ernst.</p>
+
+                <p>Und dann geschah etwas, das Alex' Herz wieder schneller schlagen ließ:</p>
+
+                <p><em>Der Boden vibrierte erneut – stärker als zuvor.</em></p>
+
+                <p>Vom Waldrand her drang ein tiefes Grollen.</p>
+
+                <p>Nicht wie ein Tier. Nicht wie ein Auto.</p>
+
+                <p>Sondern wie…</p>
+
+                <p><strong>…etwas Großes, das aufwachte.</strong></p>
+
+                <p>Der Elch trat zurück – und Alex sah, dass sich zwischen den Bäumen etwas bewegte. Etwas viel Größeres als der Elch.</p>
+            </div>
+        </div>
+
+        <!-- Cliffhanger -->
+        <div class="cliffhanger-box">
+            <p>Was verbirgt sich im Wald? Und warum hat der Elch solche Angst?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Wie geht es weiter? Finde es in Episode 2 heraus! ✨</p>
+        </div>
+
+        <!-- Info Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was glaubst du, bewegt sich im Wald?<br>
+                • Hättest du auch Mut gehabt, zum Busch zu gehen?<br>
+                • Warum hat der Elch Alex wohl beschützt?<br>
+                • Was würdest du tun, wenn du einen Elch in deinem Garten findest?<br>
+                • Welche Geräusche macht die Natur, wenn du ganz still bist?</p>
+            </div>
+        </div>
+
+        <!-- Werbung vor Navigation -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Episode Navigation -->
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="#" class="nav-button disabled">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Keine vorherige Episode</div>
+                </a>
+                
+                <a href="as1e2.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Das verlorene Ei im Zauberwald</div>
+                </a>
+
+                <a href="alexgrossekleinewelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reading Progress Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

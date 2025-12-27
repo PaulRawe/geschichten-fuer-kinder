@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mila und der geteilte Apfel - Eine Geschichte über Dankbarkeit und Genügsamkeit">
+    <title>Mila und der geteilte Apfel - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #c7956d 0%, #e8c9a6 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #9d7a53;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #c7956d;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #c7956d 0%, #e8c9a6 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #9d7a53;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #9d7a53;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(157, 122, 83, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #9d7a53;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #c7956d;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #9d7a53;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #9d7a53;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #c7956d 0%, #e8c9a6 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fdf6ef 0%, #e8c9a6 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(199, 149, 109, 0.2);
+            border-left: 6px solid #9d7a53;
+        }
+
+        .info-box-title {
+            color: #7a5d3f;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #e8c9a6 0%, #c7956d 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(199, 149, 109, 0.3);
+            border-left: 6px solid #9d7a53;
+        }
+
+        .technique-box-title {
+            color: #7a5d3f;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #9d7a53;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #9d7a53;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c7956d;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #c7956d;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Dankbarkeit</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Dankbarkeit</div>
+            <h1>Mila und der geteilte Apfel</h1>
+            <p class="story-intro">
+                Mila ist ein Mädchen, das genau weiß, was sie mag – und vor allem, dass Dinge gerecht verteilt sein sollten. Als ihr Opa einen Apfel ungleich teilt, muss Mila lernen, ihren Blick zu verändern. Eine berührende Geschichte darüber, dass Dankbarkeit nicht bedeutet, dass alles gleich sein muss, sondern zu spüren, was gerade reicht.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/dankbar1.png" alt="Mila und der geteilte Apfel">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Mila war ein Mädchen, das sehr genau wusste, was sie mochte – und was nicht. Sie mochte rote Äpfel lieber als grüne, sie mochte große Stücke lieber als kleine, und sie mochte es, wenn Dinge gerecht verteilt wurden. Besonders dann, wenn es um sie selbst ging.</p>
+
+                <p>An diesem Nachmittag ging Mila mit ihrem Opa spazieren. In seiner Tasche hatte er einen Apfel dabei. Als sie sich auf eine Bank setzten, holte der Opa den Apfel hervor und schnitt ihn in zwei Stücke. Das eine Stück war deutlich größer als das andere.</p>
+
+                <p>Mila schaute genau hin. Ihr Bauch spannte sich an. <em>Warum ist das Stück nicht gleich groß?</em>, dachte sie. <em>Das ist unfair.</em></p>
+
+                <p>Der Opa reichte Mila das kleinere Stück und behielt das größere für sich. Mila nahm es, aber ihre Hand fühlte sich schwer an. Der Apfel schmeckte süß, doch Mila kaute langsam. In ihrem Kopf drehte sich alles um das größere Stück.</p>
+
+                <p>Sie sah den Opa an, wie er ruhig aß und in die Bäume schaute. Er wirkte zufrieden. Mila dagegen fühlte sich innerlich unruhig. Etwas fehlte.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🍎 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Nach einer Weile fragte der Opa: <em>„Schmeckt dir der Apfel?"</em></p>
+
+                <p>Mila nickte zögerlich. <em>„Ja… aber dein Stück ist größer."</em></p>
+
+                <p>Der Opa lächelte sanft. <em>„Das stimmt"</em>, sagte er. <em>„Aber schau mal: Ich habe heute schon gegessen. Und ich freue mich, dass ich diesen Apfel mit dir teilen kann."</em></p>
+
+                <p>Mila hielt inne. Sie schaute noch einmal auf ihr Stück. Es war saftig, frisch und genau richtig für ihre Hand. Sie spürte plötzlich, dass sie satt war – nicht nur im Bauch.</p>
+
+                <p>Sie blickte um sich. Die Sonne schien durch die Blätter, Vögel zwitscherten, und der Opa saß neben ihr. Etwas in ihr wurde weich.</p>
+
+                <p><em>„Danke"</em>, sagte Mila leise.</p>
+
+                <p>Der Opa nickte. <em>„Dankbarkeit fühlt sich oft so an"</em>, sagte er. <em>„Wie ein ruhiges Genug."</em></p>
+
+                <p>Mila biss noch einmal in den Apfel. Er schmeckte jetzt noch ein bisschen besser.</p>
+
+                <p><strong>Mila lernte: Dankbarkeit heißt nicht, dass alles gleich sein muss. Sie heißt, zu spüren, was gerade reicht.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🍎</span>
+                <span>Die Mila-Technik – Von Vergleichen zu Genügsamkeit</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, den Fokus vom Vergleichen zum Wertschätzen zu verschieben:</strong></p>
+                <ul>
+                    <li><strong>Vergleiche bemerken:</strong> Wann schaue ich darauf, was andere haben?</li>
+                    <li><strong>Die eigenen Gedanken wahrnehmen:</strong> Was denke ich gerade? Fühlt sich das schwer an?</li>
+                    <li><strong>Auf das eigene schauen:</strong> Was habe ich? Reicht es für mich?</li>
+                    <li><strong>Die Umgebung wahrnehmen:</strong> Was ist noch da außer dem, was ich vergleiche?</li>
+                    <li><strong>Das Gefühl von "Genug" spüren:</strong> Bin ich satt? Warm? Sicher?</li>
+                    <li><strong>Sich erinnern:</strong> Jemand hat mit mir geteilt – das ist ein Geschenk</li>
+                    <li><strong>Dankbarkeit aussprechen:</strong> "Danke" sagen, auch wenn etwas nicht perfekt ist</li>
+                </ul>
+                <p>Diese Technik vermittelt, dass Gerechtigkeit wichtig ist, Dankbarkeit aber bedeutet, das Gute zu sehen, das bereits vorhanden ist – auch wenn nicht alles gleich verteilt ist.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was mochte Mila gerne?<br>
+                • Mit wem ging Mila spazieren?<br>
+                • Was hatte der Opa dabei?<br>
+                • Wie schnitt der Opa den Apfel?<br>
+                • Welches Stück bekam Mila?<br>
+                • Wie fühlte sich Mila zuerst?<br>
+                • Was sagte der Opa über das Teilen?<br>
+                • Was bemerkte Mila um sich herum?<br>
+                • Was bedeutet "ein ruhiges Genug"?<br>
+                • Vergleichst du dich manchmal mit anderen?<br>
+                • Wann fühlst du dich zufrieden mit dem, was du hast?<br>
+                • Wie fühlt es sich an, wenn jemand mit dir teilt?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

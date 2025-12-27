@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Wolken-Garten der Träumchen-Tiere - Johanna und die Wunderwelt, Staffel 1 Episode 3">
+    <title>Episode 3: Der Wolken-Garten der Träumchen-Tiere - Johanna und die Wunderwelt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f5576c;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f5576c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #f5576c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f5576c;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f093fb;
+            font-style: italic;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f5576c;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #f5576c;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #f5576c;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f093fb;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="johanna-und-die-wunderwelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 3 von 7</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 3</div>
+            <h1>Der Wolken-Garten der Träumchen-Tiere</h1>
+            <p class="episode-intro">
+                Johanna muss ihr Herz zeigen und einem verletzten Wolkentier helfen, während der Garten zu zerbrechen droht!
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/johanna/johannaS1E3.png" alt="Der Wolken-Garten der Träumchen-Tiere">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Aus dem glitzernden Nebel trat kein Monster, kein Riese und kein gefährliches Geschöpf… sondern ein Tier. Ein riesiges, sanft leuchtendes, fluffiges Tier, das aussah wie eine Mischung aus Löwe und Wolke. Seine Mähne bestand aus schimmernden Wattefäden, und seine Augen funkelten wie Regenbogentropfen.</p>
+
+                <p>Mimi hielt den Atem an. <em>„Ein Traumlöwe…"</em></p>
+
+                <p>Der Traumlöwe senkte den Kopf vor Johanna.</p>
+
+                <p>„Ich bin Luminor, Hüter des Wolken-Gartens. Nur wer sein Herz zeigt, darf passieren."</p>
+
+                <p>Johanna zupfte an ihrem Kleid. „Mein Herz?"</p>
+
+                <p>„Sag mir jemanden, der für dich wichtig ist", brummte Luminor warm.</p>
+
+                <p>Johanna dachte kurz nach. Dann sagte sie:</p>
+
+                <p>„Meine Mama. Weil sie mich jeden Abend in den Schlaf streichelt. Und weil sie immer da ist, egal was passiert."</p>
+
+                <p>Luminors Mähne leuchtete heller.</p>
+
+                <p>„Wahrheit aus einem kleinen Herzen ist die stärkste Magie."</p>
+
+                <p>Der Nebel teilte sich. Der Weg in den Hügel öffnete sich wie ein glitzernder Tunnel.</p>
+
+                <p>„Der Wirbel-Kern… liegt dort drin", piepste Wirbel-Wuzi. „Aber der Ort verändert sich immer. Er zeigt jedem das, was er fühlt."</p>
+
+                <p>Johanna nickte mutig. „Dann schaffen wir das zusammen."</p>
+
+                <p>Sie traten in den Tunnel und wurden von einem weichen Wind erfasst. Es fühlte sich an, als würde jemand sie liebevoll in den Arm nehmen. Dann landeten sie in einer Welt aus hauchzarten Wolken.</p>
+
+                <p>Schwebende Brücken aus Nebel, Wolkenblumen, die im Wind glucksten, und Tiere aus reinem Traumstoff hüpften herum: Träumchen-Kätzchen, Seifenblasen-Schmetterlinge, Kuschel-Wolkenhüpfer.</p>
+
+                <p><em>„Wow…"</em>, hauchte Mimi.</p>
+
+                <p>Puff-Puff rollte langsam vorwärts. „Das ist… wunderschön."</p>
+
+                <p>Doch mitten in dieser friedlichen Welt hörte man plötzlich ein Schluchzen. Leise, kaum hörbar.</p>
+
+                <p>Johanna folgte dem Geräusch – und sah ein kleines Wolkentier. Es ähnelte einem Hasen, hatte aber winzige Flügel. Die Flügel waren eingerissen, als hätte etwas sie beschädigt. Es schluchzte bitterlich.</p>
+
+                <p>„Was ist passiert?", fragte Johanna besorgt und kniete sich hin.</p>
+
+                <p>Das Tierchen sah zu ihr auf. „Ich… kann nicht mehr fliegen. Und ohne mich fehlt im Garten ein Traum…"</p>
+
+                <p>Es wimmerte leise.</p>
+
+                <p>Doch bevor Johanna helfen konnte, begann der Boden unter ihr plötzlich zu beben.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Der Wolkenboden wackelte wie ein Kissen, das jemand ordentlich durchschüttelte.</p>
+
+                <p>„Was war das?!" rief Karl und machte einen Satz zur Seite.</p>
+
+                <p>Luminors Stimme hallte durch den Garten wie ein Windhauch:</p>
+
+                <p>„Der Garten spürt Kummer… und reagiert darauf."</p>
+
+                <p>Die Wolkenpflanzen zitterten. Ein paar Tiere versteckten sich in schwebenden Nestern. Der ganze Ort wurde plötzlich grau.</p>
+
+                <p>„Wir müssen dem Tierchen helfen, sonst bricht der Gartentraum zusammen!", rief Klara.</p>
+
+                <p>Johanna sah das kleine Wolkenhäschen an, das verzweifelt seine eingerissenen Flügel ansah.</p>
+
+                <p>„Was ist passiert?", fragte sie sanft.</p>
+
+                <p>Das Häschen schniefte. „Ein kleiner Wirbelwind ist vorbeigeflitzt. Er hat mich überrascht. Ich bin erschrocken… und abgestürzt."</p>
+
+                <p>Alle Blicke wanderten zu Wirbel-Wuzi.</p>
+
+                <p>Wuzi ließ die Schultern hängen. „Ich… wollte doch nur spielen. Hab's nicht böse gemeint."</p>
+
+                <p>Das Häschen sagte nichts. Es schüttelte nur traurig den Kopf.</p>
+
+                <p>Johanna dachte kurz nach. Dann lächelte sie mutig. „Wir können dir helfen!"</p>
+
+                <p>„Wie?" fragte Puff-Puff skeptisch.</p>
+
+                <p>Johanna zeigte auf die Wolkenblumen. „Schaut! Ihre Blüten sind weich wie Federn. Wenn wir genug sammeln, können wir die Flügel flicken."</p>
+
+                <p>Klara rollte begeistert. „Eine Wolkenflickerei! Ich liebe's!"</p>
+
+                <p><strong>Alle machten sich ans Werk:</strong></p>
+
+                <p>Karl sammelte vorsichtig große Watteblätter. Mimi suchte zarte Blütenfäden. Puff-Puff rollte die flauschigen Stücke zusammen. Klara sortierte alles. Und Johanna legte sie vorsichtig auf die beschädigten Flügel.</p>
+
+                <p>Wuzi stand daneben, und zum ersten Mal sah er wirklich reuig aus.</p>
+
+                <p>„Es tut mir leid", sagte er leise.</p>
+
+                <p>Das Häschen blickte ihn an – und nickte.</p>
+
+                <p>„Schon gut."</p>
+
+                <p>Als die Flügel geflickt waren, zitterte das Wolkentierchen – und hob ab. Erst ein paar Zentimeter, dann höher. Höher. Schließlich flog es wieder kleine Kreise.</p>
+
+                <p>Sofort färbte sich der Garten wieder bunt. Die Wolkenblumen öffneten sich, die Tiere jubelten leise.</p>
+
+                <p><strong>Doch plötzlich hörte man ein tiefes, dunkles „KRRRRRRSSSSSSCH".</strong></p>
+
+                <p>Alle drehten sich um.</p>
+
+                <p>Ein riesiger Riss ging durch den Boden – und dahinter schimmerte etwas Bedrohliches.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Der Riss öffnete sich weiter, und kalter Wind strömte heraus. Nicht warm und sanft wie zuvor – sondern scharf wie winzige Eiskristalle.</p>
+
+                <p>Luminor erschien neben ihnen, größer und ernster als zuvor.</p>
+
+                <p>„Das ist der Schatten-Bruch", erklärte er. „Er entsteht, wenn ein Traum zu lange verletzt bleibt."</p>
+
+                <p>„War das wegen der Flügel?", fragte Mimi erschrocken.</p>
+
+                <p>„Das… und noch mehr", sagte Luminor mit schwerer Stimme. „Etwas im Garten ist aus dem Gleichgewicht geraten. Und ich fürchte… es hat mit dem Wirbel-Kern zu tun."</p>
+
+                <p>Wuzi japste. „Mein Kern?!"</p>
+
+                <p>„Ja", bestätigte Luminor. „Als du ihn verloren hast, fiel ein Teil deiner Traumkraft in diesen Garten. Zu viel Wirbel… zu wenig Ruhe."</p>
+
+                <p>Der Wind wurde stärker. Aus dem Riss krochen düstere Nebelfäden wie schlafwandelnde Schlangen.</p>
+
+                <p>Johanna packte Mut wie eine warme Decke und wickelte sich innerlich darin ein. „Was müssen wir tun?"</p>
+
+                <p>Luminor senkte seinen Kopf zu ihr. „Der Kern liegt tief im Schatten-Bruch. Doch nur jemand mit einem klaren Herzen kann ihn bergen."</p>
+
+                <p>Johannas Augen wurden groß. „Jemand… wie wer?"</p>
+
+                <p>Luminor lächelte weich. „Wie du."</p>
+
+                <p>Johannas Bauch wurde warm und kribbelig.</p>
+
+                <p>Puff-Puff murmelte: „Ich wusste es… sie ist die Heldin."</p>
+
+                <p>Wuzi hüpfte aufgeregt. „Ich komm auch mit! Ich muss meinen Kern ja wiederfinden!"</p>
+
+                <p>„Aber du darfst nicht zu nah an den Riss", warnte Luminor. „Deine Kraft könnte ihn vergrößern."</p>
+
+                <p>Wuzi schluckte.</p>
+
+                <p>Johanna trat langsam näher. Der Wind zupfte an ihrem Kleid. Dunkle Funken wirbelten um sie herum. Doch sie blieb stehen, fest wie ein kleiner Baum im Sturm.</p>
+
+                <p>„Ich hab keine Angst", flüsterte sie – und es war fast wahr.</p>
+
+                <p>Sie trat an den Rand des Risses… und sah ein glitzerndes Licht tief unten, eingebettet in funkelnden Schattenfäden.</p>
+
+                <p>„Das ist er!", rief sie. „Der Kern!"</p>
+
+                <p>Doch kaum hatte sie es ausgesprochen, bäumte sich eine dunkle Gestalt aus dem Nebel auf – groß, verzerrt, und aus purer Schattenwolke.</p>
+
+                <p>Klara kreischte: „Oje! Ein Traumfresser!"</p>
+
+                <p>Luminor brüllte: „Johanna, weg da!"</p>
+
+                <p>Doch es war zu spät.</p>
+
+                <p><strong>Die Schattenfigur schnellte vor – direkt auf Johanna zu.</strong></p>
+
+                <p>Und aus dem Riss schoss plötzlich eine gewaltige silberne Klaue hervor…</p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Was ist die silberne Klaue? Kann Johanna dem Traumfresser entkommen?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Fortsetzung folgt in Episode 4! ✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was glaubst du, was die silberne Klaue ist?<br>
+                • Wirbel-Wuzi hat versehentlich das Wolkenhäschen verletzt. Wie fühlst du dich, wenn du einen Fehler machst?<br>
+                • Johanna hat gesagt, ihre Mama ist ihr wichtig. Wen würdest du dem Traumlöwen nennen?<br>
+                • Was würdest du tun, wenn du im Wolken-Garten wärst?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="johannas-wunderwelt episode2.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Die Jagd nach Wirbel-Wuzi</div>
+                </a>
+                
+                <a href="johannas-wunderwelt episode4.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 4</div>
+                </a>
+
+                <a href="johanna-und-die-wunderwelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+             <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

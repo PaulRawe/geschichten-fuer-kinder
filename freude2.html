@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tom und der langsame Nachmittag - Eine Geschichte über Freude und innere Zufriedenheit">
+    <title>Tom und der langsame Nachmittag - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f7b267 0%, #ffd89b 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #e8973e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f7b267;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #f7b267 0%, #ffd89b 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #e8973e;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #e8973e;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(232, 151, 62, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #e8973e;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f7b267;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #e8973e;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #e8973e;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f7b267 0%, #ffd89b 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff4e6 0%, #ffd89b 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(247, 178, 103, 0.2);
+            border-left: 6px solid #e8973e;
+        }
+
+        .info-box-title {
+            color: #b5752e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #ffd89b 0%, #f7b267 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(247, 178, 103, 0.3);
+            border-left: 6px solid #e8973e;
+        }
+
+        .technique-box-title {
+            color: #b5752e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #e8973e;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #e8973e;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f7b267;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f7b267;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Freude / Innere Zufriedenheit</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Freude / Innere Zufriedenheit</div>
+            <h1>Tom und der langsame Nachmittag</h1>
+            <p class="story-intro">
+                Tom ist ein aufgeweckter Junge mit vielen Ideen im Kopf. Seine Tage sind meist laut und voller Aktivität. Doch an diesem regnerischen Nachmittag ist alles anders. Keine Freunde, kein Ausflug, keine Pläne. Erst fühlt es sich langweilig an – doch dann entdeckt Tom mit seiner Oma, dass Freude auch in der Stille wohnen kann. Eine berührende Geschichte darüber, dass Ruhe und Langsamkeit manchmal genau das sind, was wir brauchen.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/freude2.png" alt="Tom und der langsame Nachmittag">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Tom war ein aufgeweckter Junge, der viele Ideen im Kopf hatte. Oft wollte er alles gleichzeitig machen: bauen, rennen, malen, fragen. Seine Tage waren meist laut und voll. Doch an diesem Nachmittag war alles anders.</p>
+
+                <p>Draußen regnete es leise. Keine Freunde kamen zu Besuch, kein Ausflug war geplant. Tom saß am Fenster und schaute den Tropfen zu, wie sie über das Glas liefen. Zuerst fühlte sich das langweilig an. Sein Bauch kribbelte unruhig. <em>Was soll ich jetzt nur tun?</em>, dachte er.</p>
+
+                <p>Er holte sich ein Spiel, legte es wieder weg. Er begann zu malen, hörte aber schnell wieder auf. Nichts fühlte sich richtig an. Die Zeit schien langsam zu vergehen.</p>
+
+                <p>Dann setzte sich Toms Oma zu ihm. Sie sagte nichts, sondern reichte ihm eine warme Decke. Gemeinsam saßen sie da und hörten dem Regen zu. Nach einer Weile merkte Tom, dass sein Atem ruhiger wurde.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🌧️ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Tom begann, die Regentropfen zu zählen. Manche waren schnell, andere langsam. Er hörte das leise Ticken der Uhr und spürte die Wärme der Decke auf seinen Beinen. Etwas veränderte sich.</p>
+
+                <p>Die Unruhe in seinem Körper wurde weniger. Stattdessen fühlte er sich ruhig und sicher. Tom lächelte ein wenig.</p>
+
+                <p>„Das fühlt sich gut an", sagte er leise.</p>
+
+                <p>Die Oma nickte. „Manchmal kommt Freude, wenn wir nichts von ihr erwarten", sagte sie.</p>
+
+                <p>Später holte Tom Papier und malte den Regen. Nicht, weil er musste. Sondern weil er Lust hatte. Die Farben flossen ruhig über das Blatt.</p>
+
+                <p>Als der Nachmittag vorbei war, wusste Tom: <strong>Freude kann ganz leise sein. Sie braucht keinen Plan. Manchmal kommt sie einfach, wenn man still wird und den Moment spürt.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🌧️</span>
+                <span>Die Tom-Technik – In der Ruhe ankommen</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, Ruhe und innere Zufriedenheit zu spüren:</strong></p>
+                <ul>
+                    <li><strong>Dem Moment lauschen:</strong> Was höre ich gerade? Regen, eine Uhr, den eigenen Atem – die Geräusche bewusst wahrnehmen</li>
+                    <li><strong>Die Unruhe bemerken:</strong> Spüren, wenn der Körper kribbelig ist – und das ist in Ordnung</li>
+                    <li><strong>Bewusst atmen:</strong> Den Atem beobachten und merken, wie er ruhiger wird</li>
+                    <li><strong>Wärme und Geborgenheit spüren:</strong> Eine Decke, ein gemütlicher Platz – das Gefühl von Sicherheit wahrnehmen</li>
+                    <li><strong>Einfach da sein:</strong> Nicht tun müssen, nicht rennen müssen – nur sein dürfen</li>
+                    <li><strong>Sich sagen: „Das fühlt sich gut an"</strong> – Die stille Freude erkennen</li>
+                </ul>
+                <p>Diese Technik zeigt, dass Freude nicht immer aus Aktivität entsteht. Sie vermittelt, dass Langeweile sich in innere Ruhe verwandeln kann und dass manchmal die stillsten Momente die erfüllendsten sind.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was macht Tom normalerweise gerne?<br>
+                • Warum war dieser Nachmittag anders?<br>
+                • Wie fühlte sich Tom zuerst?<br>
+                • Was machte die Oma?<br>
+                • Was zählte Tom am Fenster?<br>
+                • Wie veränderte sich Toms Gefühl?<br>
+                • Was sagte die Oma über Freude?<br>
+                • Was malte Tom später?<br>
+                • Kennst du auch Tage, an denen erst alles langweilig wirkt?<br>
+                • Hast du schon mal gemerkt, dass Ruhe sich gut anfühlen kann?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

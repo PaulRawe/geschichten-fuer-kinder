@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Benny, der kleine Biber - Ein spannendes Abenteuer über Teamarbeit, Freundschaft und Mut">
+    <title>Benny, der kleine Biber - Tiergeschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #1e40af;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #3b82f6;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #1e40af;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #93c5fd;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #1e40af;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f59e0b;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            border-left: 6px solid #3b82f6;
+        }
+
+        .magic-box p {
+            color: #1e3a8a;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #1e40af;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1e40af;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #1e40af;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="tiergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Tiergeschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Tiergeschichte</div>
+            <h1>Benny, der kleine Biber</h1>
+            <p class="story-intro">
+                Ein spannendes Abenteuer über einen fleißigen kleinen Biber, der lernt, dass Teamarbeit und Freundschaft die größten Schätze sind
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/tiergeschichten/t2.png" alt="Benny, der kleine Biber">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">🦫 Seite 1 🦫</div>
+            <div class="story-content">
+                <p>Benny war ein kleiner Biber mit glänzend braunem Fell und einem breiten, lustigen Schwanz, der beim Schwimmen immer lustige Wellen machte. Er lebte am Rande eines großen, funkelnden Sees, umgeben von hohen Bäumen, die sich sanft im Wind wiegten. <strong>Jeden Morgen paddelte Benny durch das Wasser, sammelte Zweige und bastelte an seinem kleinen Damm.</strong></p>
+
+                <p>Doch an diesem Morgen war alles anders. Als Benny wie immer zur Arbeit schwamm, bemerkte er ein seltsames Geräusch – ein leises Kichern und Plätschern aus der Richtung des Sees, wo normalerweise nur Fische sprangen. Neugierig schwamm er näher und sah drei Entenküken, die wild durch das Wasser planschten und dabei kleine Wellen erzeugten, die fast Bennys Damm umspülten.</p>
+
+                <p><em>„Hey! Passt doch auf!"</em>, rief Benny freundlich, doch die Entenküken waren so aufgeregt, dass sie ihn gar nicht hörten. Sie kicherten und sprangen wie kleine Wasserakrobaten umher. Benny konnte nicht anders, als zu lächeln. „Na gut, wenn ihr Spaß haben wollt…" Er paddelte vorsichtig an ihnen vorbei, doch plötzlich schwappte eine große Welle über ihn hinweg und riss ein paar seiner Zweige mit sich.</p>
+
+                <p>Benny sah entsetzt zu, wie sein sorgfältig gebauter Damm beschädigt wurde. <strong>„Oh nein! Mein Damm!"</strong> Er versuchte, die Zweige aufzufangen, aber die Entenküken sprangen fröhlich weiter, ohne zu bemerken, welches Chaos sie angerichtet hatten.</p>
+
+                <p>Er wusste, dass er jetzt eine Entscheidung treffen musste: Entweder ärgern und schimpfen, oder die Situation clever lösen. Benny schüttelte den Kopf, piepste einmal tief und entschied sich für Plan B. Er schwamm zu den Küken und rief: <em>„Hey, wollt ihr mir helfen, meinen Damm wieder aufzubauen?"</em></p>
+
+                <p>Die Entenküken hielten plötzlich inne. Ihre Augen leuchteten auf. „Wirklich? Wir dürfen helfen?" rief das kleinste Küken. Benny nickte eifrig. „Ja, aber wir müssen zusammenarbeiten. Ich zeige euch, wie man die Zweige richtig stapelt."</p>
+
+                <p>Und so begannen sie gemeinsam, die Zweige auf den Damm zu legen. Benny zeigte jedem Küken, wo es einen Zweig hinlegen sollte, und schon bald merkte er, dass die kleinen Enten mehr Talent hatten, als er gedacht hatte.</p>
+
+                <p>Doch gerade als sie die letzten Zweige setzen wollten, hörten sie ein seltsames Rascheln aus dem Schilf am Ufer. <strong>Benny spitzte die Ohren.</strong> „Was könnte das sein?" fragte er die Küken.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">🌟 💧 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">🦫 Seite 2 🦫</div>
+            <div class="story-content">
+                <p>Benny und die Entenküken blieben still stehen, als das Rascheln im Schilf lauter wurde. Vorsichtig schob Benny ein paar Schilfhalme zur Seite – und traute seinen Augen kaum!</p>
+
+                <p>Dort saß ein kleiner Frosch mit leuchtend grüner Haut und riesigen, neugierigen Augen. Er quakte einmal freundlich: <em>„Hallo! Ich heiße Frido. Wer seid ihr?"</em></p>
+
+                <p>„Ich bin Benny, der Biber, und das sind meine Helfer", piepste Benny. „Wir bauen unseren Damm wieder auf." Die Entenküken plapperten aufgeregt durcheinander: „Wir helfen Benny!"</p>
+
+                <p>Frido nickte eifrig. <strong>„Oh, das ist toll! Ich kenne da ein paar extra starke Zweige am anderen Ufer. Wenn wir die holen, wird euer Damm noch stabiler und sicherer!"</strong> Benny staunte. „Echt? Dann lasst uns schnell losgehen."</p>
+
+                <p>Gemeinsam paddelten sie zum anderen Ufer. Unterwegs sprangen die Entenküken fröhlich im Wasser, während Frido mit seinen kräftigen Beinen geschickt von Seerose zu Seerose hüpfte. Benny beobachtete sie und musste lachen – so ein lustiges Team hatte er noch nie gesehen.</p>
+
+                <p>Am Ufer warteten schon die stärksten Zweige, die Benny je gesehen hatte. Frido half, sie ins Wasser zu rollen, und die Entenküken zogen und schoben, so gut sie konnten. <em>Benny stapelte die Zweige geschickt aufeinander und erzählte dabei Geschichten über die Tiere im Wald, damit die kleinen Helfer bei Laune blieben.</em></p>
+
+                <p>Doch plötzlich kam ein Windstoß auf, der das Wasser leicht aufwühlte. Ein paar Zweige drohten wieder wegzuschwimmen. Benny spürte, wie sein Herz schneller klopfte. <strong>„Oh nein! Wir dürfen nichts verlieren!"</strong> rief er.</p>
+
+                <p>Frido hüpfte flink zwischen den Zweigen hin und her und half, sie zu sichern. Die Entenküken schnatterten aufgeregt, aber niemand gab auf. Gemeinsam schafften sie es, jeden Zweig sicher auf den Damm zu legen.</p>
+
+                <p>Als der letzte Zweig seinen Platz gefunden hatte, stiegen alle erschöpft, aber glücklich auf den Damm. Benny sah sich um: Der Damm war stabiler als je zuvor, und das Wasser plätscherte friedlich an seinen Seiten vorbei.</p>
+
+                <p><em>„Wir haben es geschafft!"</em>, piepste Benny begeistert. Die Entenküken quietschten vor Freude, und Frido quakte stolz. <strong>„Das war Teamarbeit! Zusammen können wir alles schaffen!"</strong></p>
+
+                <p>Benny lächelte zufrieden. Er hatte nicht nur seinen Damm gerettet, sondern auch neue Freunde gefunden. Frido, die Entenküken – sie alle würden noch viele Abenteuer zusammen erleben.</p>
+
+                <p>Und während die Sonne langsam hinter den Bäumen versank, wussten alle, dass dieser Tag ein ganz besonderer Tag am See war – ein Tag voller Spaß, Freundschaft und Mut.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Benny hat seinen Damm gerettet und Freunde fürs Leben gefunden ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn jemand aus Versehen etwas kaputt macht, woran du gearbeitet hast?<br>
+                • Warum hat Benny sich entschieden, nicht zu schimpfen, sondern um Hilfe zu bitten?<br>
+                • Wie hat Teamarbeit Benny geholfen, sein Problem zu lösen?<br>
+                • Welche Fähigkeiten hatte jeder Helfer, die wichtig waren?<br>
+                • Hast du auch schon mal mit anderen zusammengearbeitet, um etwas Schwieriges zu schaffen?<br>
+                • Was bedeutet der Satz „Zusammen können wir alles schaffen" für dich?<br>
+                • Wie fühlt es sich an, wenn man Freunden hilft und Freunde dir helfen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Tiergeschichten</h2>
+            <div class="nav-buttons">
+                <a href="tiergeschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Tiergeschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

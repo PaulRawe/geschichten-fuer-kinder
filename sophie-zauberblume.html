@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sophie und die Zauberblume - Ein magisches Märchen über Mitgefühl, Freundlichkeit und wahre Wünsche">
+    <title>Sophie und die Zauberblume - Märchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 25%, #ec4899 50%, #a855f7 75%, #fbbf24 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ec4899;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #10b981;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #10b981 0%, #ec4899 50%, #fbbf24 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #ec4899;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #10b981;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #ec4899;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #fce7f3;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #ec4899;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #10b981;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #fce7f3 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+            border-left: 6px solid #10b981;
+        }
+
+        .magic-box p {
+            color: #065f46;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #10b981;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #d1fae5 0%, #fce7f3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981 0%, #ec4899 50%, #fbbf24 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #ec4899;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #ec4899;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #10b981;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #10b981;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="maerchen.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Märchen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Märchen</div>
+            <h1>Sophie und die Zauberblume</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über ein neugieriges Mädchen, das eine sprechende Zauberblume entdeckt und lernt, was wahre Wünsche bedeuten
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/maerchen/sophie-zauberblume.png" alt="Sophie und die Zauberblume">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 1 ✨</div>
+            <div class="story-content">
+                <p>Sophie war ein neugieriges Mädchen mit goldbraunen Zöpfen und leuchtenden Augen. Eines Tages entdeckte sie beim Spielen im Garten eine kleine, geheimnisvolle Blume, die in allen Farben des Regenbogens schimmerte. <strong>„Oh!", flüsterte Sophie. „So eine wunderschöne Blume habe ich noch nie gesehen."</strong></p>
+
+                <p>Plötzlich hörte sie eine sanfte Stimme: <em>„Hallo Sophie, ich bin Luma, die Zauberblume."</em> Sophie erschrak erst ein wenig, aber dann lächelte sie vorsichtig. <strong>„Du… du kannst sprechen?"</strong> Luma nickte. <em>„Ja, und ich kann Wünsche erfüllen. Aber Vorsicht: Ein wahrer Wunsch kommt aus dem Herzen und darf anderen nicht schaden."</em></p>
+
+                <p>Sophie dachte nach. Sie wünschte sich oft kleine Dinge – ein neues Spielzeug oder Süßigkeiten –, aber Luma erklärte: <em>„Ein richtiger Wunsch verändert etwas Wichtiges und bringt Freude, nicht nur dir, sondern auch anderen."</em> Sophie nickte und überlegte, was ihr größter Wunsch sein könnte.</p>
+
+                <p>Gerade als sie darüber nachdachte, hörte sie ein leises Weinen aus dem nahegelegenen Wald. Sie ging vorsichtig hinüber und entdeckte ein kleines Rehkitz, das sich in einem Gestrüpp verfangen hatte. <strong>„Oh nein!", rief Sophie. „Wir müssen dir helfen!"</strong> Mit Lumas Hilfe befreite sie das Rehkitz. Luma flackerte vor Freude. <em>„Sophie, das ist ein wahrer Wunsch: Mut und Freundlichkeit zu zeigen."</em></p>
+
+                <p>Plötzlich erschien ein kleiner Schmetterling, der golden schimmerte. <em>„Folge mir, Sophie", sagte er. „Ich bringe dich zu einem Ort, an dem du deine Wünsche ausprobieren kannst."</em> Sophie und das Rehkitz folgten dem Schmetterling in eine Lichtung, auf der die Sonne warm schien. Auf der Lichtung lag eine glitzernde Pfütze, die wie ein Spiegel aussah.</p>
+
+                <p><em>„Hier kannst du deinen Wunsch ausprobieren", erklärte Luma.</em> Sophie kniete sich hin und dachte fest an etwas, das ihr wirklich am Herzen lag. Doch gerade als sie den Wunsch laut sagen wollte, flackerte die Pfütze und ein sanfter Wind wirbelte durch die Lichtung. <strong>Sophie spürte, dass etwas Magisches passieren würde – und ihr Herz klopfte aufgeregt…</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌸 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">✨ Seite 2 ✨</div>
+            <div class="story-content">
+                <p>Sophie sprach ihren Wunsch aus: <strong>„Ich möchte, dass alle Kinder im Dorf heute glücklich spielen können, ohne Sorgen oder Streit."</strong> Sofort begann die Pfütze zu glitzern, und Luma strahlte hell wie die Sonne. Aus der Pfütze sprangen kleine funkelnde Lichter, die in alle Richtungen flogen und das Dorf erreichten.</p>
+
+                <p>Überall spielten Kinder fröhlich, lachten und halfen einander. Sophie konnte sehen, wie Freude und Freundlichkeit sich verbreiteten, und ihr Herz wurde warm. Sogar das Rehkitz hüpfte fröhlich um sie herum. <em>„Siehst du, Sophie?", sagte Luma, „ein wahrer Wunsch bringt Freude für andere und macht auch dich glücklich."</em></p>
+
+                <p>Sophie lächelte. Sie hatte gelernt, dass Wünsche, die aus dem Herzen kommen, mehr wert sind als alles Glitzern der Welt. Luma neigte sich sanft zu ihr. <em>„Du bist mutig und freundlich. Bewahre diese Blume in deinem Herzen, und sie wird immer bei dir sein."</em></p>
+
+                <p>Bevor Sophie nach Hause ging, bedankte sie sich bei Luma und dem Rehkitz. <strong>„Danke, dass ihr mir gezeigt habt, wie wichtig Freundlichkeit und Mitgefühl sind", sagte sie.</strong> Mit einem letzten Blick auf die glitzernde Lichtung machte sie sich auf den Heimweg.</p>
+
+                <p>Von diesem Tag an dachte Sophie immer daran, dass kleine gute Taten große Wunder bewirken können. Sie erzählte niemandem von der Zauberblume, doch manchmal, wenn der Wind sanft durch den Garten wehte, konnte sie ein leises Flüstern hören: <em>„Danke, Sophie, für dein Herz voller Wünsche."</em></p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so bewahrte Sophie die Zauberblume in ihrem Herzen, bereit für kleine Wunder jeden Tag 🌸✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was hat Sophie im Garten entdeckt?<br>
+                • Was bedeutet ein „wahrer Wunsch" laut Luma?<br>
+                • Wie hat Sophie dem Rehkitz geholfen?<br>
+                • Warum war Sophies Wunsch für alle Kinder im Dorf besonders?<br>
+                • Was hat Sophie über Wünsche gelernt?<br>
+                • Hast du schon einmal etwas Gutes für jemand anderen gewünscht?<br>
+                • Was würdest du dir wünschen, wenn du eine Zauberblume finden würdest?<br>
+                • Warum sind kleine gute Taten wichtig?<br>
+                • Wie können wir anderen Menschen Freude bringen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Märchen</h2>
+            <div class="nav-buttons">
+                <a href="maerchen.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Märchen</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

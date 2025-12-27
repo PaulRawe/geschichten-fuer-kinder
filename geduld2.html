@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lina und die Uhr mit den langsamen Zeigern - Eine Geschichte über Geduld und Warten können">
+    <title>Lina und die Uhr mit den langsamen Zeigern - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a47ca4 0%, #c4a7c4 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #6f4e6f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #a47ca4;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #a47ca4 0%, #c4a7c4 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #6f4e6f;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #6f4e6f;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(111, 78, 111, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #6f4e6f;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #a47ca4;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #6f4e6f;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #6f4e6f;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #a47ca4 0%, #c4a7c4 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f4e8f4 0%, #c4a7c4 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(164, 124, 164, 0.2);
+            border-left: 6px solid #6f4e6f;
+        }
+
+        .info-box-title {
+            color: #503750;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #c4a7c4 0%, #a47ca4 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(164, 124, 164, 0.3);
+            border-left: 6px solid #6f4e6f;
+        }
+
+        .technique-box-title {
+            color: #503750;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #6f4e6f;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #6f4e6f;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #a47ca4;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #a47ca4;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Geduld</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Geduld</div>
+            <h1>Lina und die Uhr mit den langsamen Zeigern</h1>
+            <p class="story-intro">
+                Lina ist ein neugieriges Mädchen, in deren Kopf alles schnell geht. Am liebsten hätte sie alles sofort. Doch an diesem Nachmittag muss sie auf eine Geburtstagsfeier warten – und die Zeiger der Uhr bewegen sich so langsam. Eine einfühlsame Geschichte über das Warten und darüber, wie wir die Zeit freundlicher erleben können.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/geduld2.png" alt="Lina und die Uhr mit den langsamen Zeigern">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Lina war ein neugieriges Mädchen. Sie stellte viele Fragen und hatte viele Ideen. In ihrem Kopf ging alles schnell. Wenn sie etwas wollte, dann wollte sie es am liebsten sofort. Besonders schwer fiel ihr das Warten.</p>
+
+                <p>An diesem Nachmittag sollte Lina zu einer Geburtstagsfeier gehen. Sie hatte ihr Kleid schon angezogen, die Schuhe standen bereit, und in ihrem Bauch hüpfte die Vorfreude. Doch es war noch zu früh.</p>
+
+                <p><em>„Wir gehen erst, wenn der große Zeiger oben steht"</em>, sagte ihre Mama und zeigte auf die Uhr.</p>
+
+                <p>Lina schaute auf die Uhr. Die Zeiger bewegten sich kaum. Sie verschränkte die Arme. <em>Das dauert viel zu lange</em>, dachte sie. Sie lief durchs Zimmer, setzte sich wieder hin, stand wieder auf. Die Zeit fühlte sich zäh an, wie Honig.</p>
+
+                <p><em>„Ich kann nicht warten"</em>, sagte Lina laut.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🕐 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Die Mama setzte sich zu ihr. <em>„Warten ist schwer"</em>, sagte sie. <em>„Aber wir können dem Warten helfen."</em></p>
+
+                <p>Sie schlug vor, gemeinsam etwas zu tun. Lina holte Stifte und begann zu malen. Erst malte sie schnell, dann immer langsamer. Sie merkte, wie ihr Atem ruhiger wurde.</p>
+
+                <p>Zwischendurch schaute sie wieder auf die Uhr. Die Zeiger waren weitergewandert. Nicht schnell – aber sie bewegten sich.</p>
+
+                <p>Als der große Zeiger endlich oben stand, fühlte sich das Warten gar nicht mehr so schlimm an. Lina sprang auf, zog ihre Schuhe an und lachte.</p>
+
+                <p>Auf dem Weg zur Feier dachte sie nach. <em>Die Zeit war die ganze Zeit da</em>, merkte sie. <em>Ich musste nur lernen, mit ihr zu gehen.</em></p>
+
+                <p><strong>Lina lernte: Geduld wächst, wenn wir etwas finden, das uns durch das Warten trägt.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🕐</span>
+                <span>Die Lina-Technik – Dem Warten helfen</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, aktiv mit Wartezeiten umzugehen:</strong></p>
+                <ul>
+                    <li><strong>Das Warten anerkennen:</strong> „Warten ist schwer" – das Gefühl ist okay</li>
+                    <li><strong>Eine Brücken-Aktivität finden:</strong> Etwas tun, das die Wartezeit ausfüllt</li>
+                    <li><strong>Langsame Tätigkeiten wählen:</strong> Malen, puzzeln, bauen – Dinge, die Ruhe bringen</li>
+                    <li><strong>Den Atem beobachten:</strong> Wird er von selbst ruhiger beim Tun?</li>
+                <li><strong>Zwischendurch schauen:</strong> Die Zeit bewegt sich – langsam, aber sicher</li>
+                    <li><strong>Nicht nur auf die Uhr starren:</strong> Die Zeit geht nicht schneller, wenn wir sie anschauen</li>
+                    <li><strong>Gemeinsam warten:</strong> Mit jemandem zusammen ist es leichter</li>
+                    <li><strong>Die Zeit als Begleiterin sehen:</strong> Sie ist da und geht ihren Weg</li>
+                </ul>
+                <p>Diese Technik vermittelt, dass Geduld nicht bedeutet, passiv auszuharren. Sie zeigt, dass wir dem Warten helfen können, indem wir uns sinnvoll beschäftigen und mit der Zeit gehen, statt gegen sie anzukämpfen.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was für ein Mädchen ist Lina?<br>
+                • Wohin wollte Lina gehen?<br>
+                • War Lina schon fertig für die Feier?<br>
+                • Was sagte die Mama über die Uhr?<br>
+                • Wie fühlte sich das Warten für Lina an?<br>
+                • Was machte Lina, als sie nicht warten konnte?<br>
+                • Was schlug die Mama vor?<br>
+                • Was tat Lina dann?<br>
+                • Was passierte mit Linas Atem?<br>
+                • Wann stand der große Zeiger oben?<br>
+                • Was hat Lina auf dem Weg gelernt?<br>
+                • Was hilft dir beim Warten?<br>
+                • Worauf wartest du manchmal ungeduldig?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

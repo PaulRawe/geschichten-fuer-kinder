@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tom und das Tor der wunderbaren Wege - Alex' große kleine Welt, Staffel 1 Episode 7 - Staffelfinale">
+    <title>Episode 7: Tom und das Tor der wunderbaren Wege - Alex' große kleine Welt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #764ba2;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .finale-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .page-title {
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c7b3ff;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #764ba2;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .finale-box {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+            border: 3px solid #ffaa00;
+        }
+
+        .finale-box h3 {
+            color: #333;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .finale-box p {
+            color: #444;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 237, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe4b5 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 228, 181, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .finale-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="alexgrossekleinewelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">🌟 STAFFELFINALE 🌟</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 7</div>
+            <div class="finale-badge">✨ STAFFELFINALE ✨</div>
+            <h1>Tom und das Tor der wunderbaren Wege</h1>
+            <p class="episode-intro">
+                Das goldene Tor hat sich geöffnet und führt Tom, Mia und Jan in eine magische Welt. Doch dort wartet eine gefährliche Schattenkreatur, die den goldenen Ring gestohlen hat. Können die Kinder das Reich der Eichenherzen retten?
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/alex/a7.png" alt="Tom und das Tor der wunderbaren Wege">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-title">Seite 1 – Das Tor öffnet sich</div>
+            <div class="story-content">
+                <p>Das Licht aus dem goldenen Riss wurde heller und heller, bis Tom, Mia und Jan instinktiv die Augen schließen mussten. Als es langsam schwächer wurde, öffnete Tom vorsichtig wieder die Augen. Der Riss im Schuppen war nun ein vollständiges Tor – groß genug, dass ein Erwachsener hindurchpassen könnte, aber gleichzeitig so schimmernd und wundersam, dass es wie ein Traum wirkte.</p>
+
+                <p>„Was… ist das?", flüsterte Mia.</p>
+
+                <p>Tom schüttelte den Kopf. „Vielleicht ein Zaubertor? Vielleicht… ein anderer Ort?"</p>
+
+                <p>Jan beugte sich näher. „Da ist etwas drin. Ich sehe Bäume. Und Licht. Und irgendwie… glitzert es."</p>
+
+                <p>Die kleine Lichtkugel, die Tom noch immer in der Hand hielt, löste sich plötzlich von selbst, schwebte zur Toröffnung und blieb dort wie ein funkelnder Wegweiser stehen. „Sie will wirklich, dass wir mitkommen", sagte Tom. Man hörte das Zittern in seiner Stimme – nicht vor Angst, sondern vor gewaltiger Aufregung.</p>
+
+                <p>Gemeinsam atmeten sie tief ein und traten näher. Ein warmer Wind strömte ihnen entgegen. Und dahinter hörten sie etwas Seltsames – eine Melodie. Wie ein leises Lied, das sie herbeirief.</p>
+
+                <p>„Wir gehen zusammen rein", sagte Tom schließlich und streckte erst Mia, dann Jan die Hand hin. Beide nickten.</p>
+
+                <p>Doch genau in dem Moment, als sie den ersten Schritt machen wollten, krachte von draußen ein lauter Ruf durch den Garten.</p>
+
+                <p>„Kinder? Wo seid ihr?"</p>
+
+                <p>Es war Frau Hummel.</p>
+
+                <p>Sie kam schnellen Schrittes um die Ecke, sah den offenen Schuppen, sah die goldenen Lichter – und erstarrte. Ihre Augen weiteten sich. „Nein… das gibt es doch nicht. Nicht wieder."</p>
+
+                <p>„Wieder?!", rief Tom überrascht. „Sie kennen das Tor?"</p>
+
+                <p>Doch bevor Frau Hummel antworten konnte, wurde der Boden unter ihren Füßen leicht durchlässig und das Tor begann unruhig zu flackern – als könnte es gleich wieder verschwinden.</p>
+
+                <p>„Wir müssen uns beeilen!", rief Jan.</p>
+
+                <p>Und dann, ganz plötzlich, erschien im Tor eine Gestalt.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-title">Seite 2 – Die Hüter des Gartens</div>
+            <div class="story-content">
+                <p>Die Gestalt im Tor war klein – ungefähr so groß wie Tom selbst – und bestand aus schimmerndem Holz und weichem Moos. Die Augen leuchteten bernsteinfarben. Das Wesen lächelte vorsichtig, als wäre es froh, endlich jemanden gefunden zu haben.</p>
+
+                <p>„Willkommen, Tom", sagte es mit einer Stimme, die klang wie Wind in Blättern. „Willkommen, ihr Hüter des Gartens."</p>
+
+                <p>Tom spürte Gänsehaut am ganzen Körper. „Du… kennst meinen Namen?"</p>
+
+                <p>Das Wesen nickte. „Ich kenne euch alle. Die Eiche hat euch gewählt. Sie hat eure Freundschaft, euren Mut und eure Neugier gespürt."</p>
+
+                <p>Frau Hummel trat vor und hob beruhigend eine Hand. Doch ihre Stimme klang plötzlich ungewohnt ernst. „Ihr dürft nicht einfach so durchs Tor gehen. Jeder Weg hat seinen Preis. Und jeder Besuch verändert etwas."</p>
+
+                <p>Das Wesen blickte sie ruhig an. „Du hast dein Versprechen damals gebrochen, Hüterin. Diese Kinder jedoch… sie tragen reine Herzen."</p>
+
+                <p>„Wovon sprecht ihr?" Mia klang überwältigt.</p>
+
+                <p>„Unser Reich", sagte das Wesen. „Die Welt hinter dem Tor. Sie ist wundersam – aber sie braucht Hilfe. Etwas hat das Gleichgewicht gestört. Der Ring, den ihr gesehen habt, gehört dorthin. Und er ist verschwunden. Nur jene, die von der Eiche berührt sind, können ihn finden."</p>
+
+                <p>Tom atmete tief ein. Ein Abenteuer. Ein echtes. Und sie waren dafür auserwählt.</p>
+
+                <p>Doch Frau Hummel kniete sich zu ihnen. „Kinder… ich weiß, wie aufregend das klingt. Aber solche Wege sind gefährlich. Und man weiß nie, ob man zurückkommt wie zuvor."</p>
+
+                <p>Das leuchtende Wesen streckte die Hand aus. „Trotzdem müssen sie. Denn ohne den Ring bricht die Verbindung zwischen euren Welten dauerhaft. Und dann… wird die Flüster-Eiche schweigen."</p>
+
+                <p>Tom spürte Mias und Jans Hände an seiner. Zusammen blickten sie auf das Tor.</p>
+
+                <p>Dann begann das Licht im Inneren plötzlich zu zittern. Als würde die Zeit knapp. Als würde der Weg sich gleich schließen.</p>
+
+                <p>Und dann kam ein zweites Wesen aus dem Tor gestürzt – diesmal völlig außer Atem.</p>
+
+                <p>„Schnell!", rief es. „Es ist schon fast zu spät!"</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-title">Seite 3 – Das Reich der Eichenherzen</div>
+            <div class="story-content">
+                <p>Das zweite Wesen sah völlig erschöpft aus. Seine moosigen Schultern hoben und senkten sich hastig, und seine Stimme bebte. „Der Ring… er ist gestohlen worden. Von der Schattenkreatur. Wenn sie ihn aktiviert, verschlingt ihr Reich unseres – und dann wird niemand mehr sicher sein."</p>
+
+                <p>Tom schluckte. „Wir müssen helfen."</p>
+
+                <p>Frau Hummel schloss kurz die Augen. „Wenn ihr geht, begleite ich euch ein Stück. Ich kenne die Wege dort. Und ich kenne die Schattenkreatur besser, als mir lieb ist."</p>
+
+                <p>Die Wesen nickten dankbar. „Dann beeilt euch."</p>
+
+                <p>Es gab keinen Moment der Überlegung mehr. Tom, Mia und Jan traten gemeinsam durch das goldene Tor. Ein warmer Sog ergriff sie, als würden sie durch flüssiges Licht gleiten. Farben wirbelten um sie herum – Grün wie Waldmoos, Blau wie tiefer Himmel, Gold wie die Eiche.</p>
+
+                <p>Plötzlich standen sie in einem riesigen Wald voller glänzender Pflanzen, leuchtender Käfer und schwebender Blüten. Alles funkelte. Alles war lebendig.</p>
+
+                <p>„Willkommen im Reich der Eichenherzen", sagte das erste Wesen.</p>
+
+                <p>Doch sie hatten keine Zeit zu staunen. Ein dunkler Schatten huschte zwischen den Bäumen. Schnell. Lautlos. Gefährlich.</p>
+
+                <p>„Da!", flüsterte Mia.</p>
+
+                <p>Tom spürte einen instinktiven Mut, von dem er nicht wusste, dass er ihn besaß. „Wir finden den Ring. Zusammen."</p>
+
+                <p>Sie folgten den beiden Waldwesen tief in den Wald, bis sie zu einer Lichtung kamen. Dort sahen sie es: Die Schattenkreatur – groß, schwarz, mit glühenden Augen – hielt den goldenen Ring in ihren Klauen.</p>
+
+                <p>„Wir sind zu spät", flüsterte Jan.</p>
+
+                <p>Doch genau in dem Moment hob die Kreatur den Ring – und die Lichtkugel, die sie begleitet hatte, schoss plötzlich vor und stellte sich schützend zwischen die Kinder und das Wesen.</p>
+
+                <p>Ein lauter, grollender Ton füllte die Lichtung.</p>
+
+                <p>Dann begann der Ring zu leuchten.</p>
+
+                <p>Die Schattenkreatur drehte den Kopf zu den Kindern – und sprach zum ersten Mal.</p>
+
+                <p>„Ihr seid also die neuen Hüter."</p>
+
+                <p>Der Boden bebte. Das Licht wurde blendend hell.</p>
+
+                <p>Und genau in diesem Augenblick endete der Tag – und das größte Abenteuer begann gerade erst.</p>
+            </div>
+        </div>
+
+        <div class="finale-box">
+            <h3>🌟 Ende der Staffel 1 🌟</h3>
+            <p>Was wird die Schattenkreatur mit dem Ring tun?</p>
+            <p>Können Tom, Mia und Jan das Reich der Eichenherzen retten?</p>
+            <p>Und was verbirgt Frau Hummel noch vor ihnen?</p>
+            <p style="margin-top: 25px; font-size: 1.1em;">Das Abenteuer geht weiter in Staffel 2! ✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was denkst du, will die Schattenkreatur wirklich?<br>
+                • Warum hat Frau Hummel das Tor schon einmal gesehen?<br>
+                • Was bedeutet es, ein „Hüter des Gartens" zu sein?<br>
+                • Würdest du durch ein magisches Tor gehen, wenn du die Chance hättest?<br>
+                • Was glaubst du, passiert in Staffel 2?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Staffel 1 abgeschlossen!</h2>
+            <div class="nav-buttons">
+                <a href="as1e6.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Das Geheimnis der flüsternden Eiche</div>
+                </a>
+     
+                <a href="alexgrossekleinewelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+           <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

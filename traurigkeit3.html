@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leni und das leise Gefühl - Eine Geschichte über Traurigkeit">
+    <title>Leni und das leise Gefühl - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #b8a9c9 0%, #d4c4dd 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #8674a1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #b8a9c9;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #8674a1 0%, #b8a9c9 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #8674a1;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #8674a1;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(134, 116, 161, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #8674a1;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #b8a9c9;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #8674a1;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #8674a1;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #8674a1 0%, #b8a9c9 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f0ebf5 0%, #e8e0f0 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(134, 116, 161, 0.2);
+            border-left: 6px solid #8674a1;
+        }
+
+        .info-box-title {
+            color: #6b5b7f;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #ddd4e6 0%, #cec4d8 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(184, 169, 201, 0.3);
+            border-left: 6px solid #8674a1;
+        }
+
+        .technique-box-title {
+            color: #6b5b7f;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #8674a1;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #8674a1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b8a9c9;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #b8a9c9;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Traurigkeit</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Traurigkeit</div>
+            <h1>Leni und das leise Gefühl</h1>
+            <p class="story-intro">
+                Leni ist ein ruhiges Kind mit einer großen Welt voller Gefühle. An diesem Tag liegt ein leises, schweres Gefühl in ihrer Brust – eines, für das sie kein richtiges Wort hat. Die Erzieherin zeigt ihr, dass Traurigkeit manchmal keine Worte braucht. Nur Zeit. Und jemanden, der bleibt.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/traurig3.png" alt="Leni und das leise Gefühl">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Leni war ein ruhiges Kind. Sie sprach nicht viel, aber in ihr war eine große Welt voller Gefühle. An manchen Tagen fühlte sich alles leicht an. An anderen Tagen lag ein leises, schweres Gefühl in ihrer Brust, für das Leni kein richtiges Wort hatte.</p>
+
+                <p>An diesem Morgen war so ein Tag. Leni zog sich langsam an, aß still ihr Frühstück und ging in den Kindergarten. Dort spielten die anderen Kinder laut und fröhlich. Leni setzte sich an den Rand des Raumes und beobachtete sie.</p>
+
+                <p>In ihr war es still. Nicht leer, sondern schwer. Sie wollte mitspielen, aber ihre Füße bewegten sich nicht.</p>
+
+                <p>Die Erzieherin bemerkte Leni. Sie setzte sich zu ihr. <em>„Du bist heute sehr leise"</em>, sagte sie sanft. <em>„Möchtest du mir sagen, was los ist?"</em></p>
+
+                <p>Leni schüttelte den Kopf. Sie wusste es selbst nicht genau. Die Traurigkeit war einfach da.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🎨 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Die Erzieherin blieb bei Leni sitzen. Sie drängte nicht. <strong>„Du musst nichts erklären"</strong>, sagte sie ruhig. <strong>„Ich bleibe hier."</strong></p>
+
+                <p>Das tat gut. Leni spürte, dass sie nicht allein war.</p>
+
+                <p>Nach einer Weile stand Leni auf und ging zum Maltisch. Sie nahm ein Blatt Papier und begann zu malen. Zuerst benutzte sie dunkle Farben. Langsame Striche. Dann griff sie zu helleren Farben.</p>
+
+                <p>Während sie malte, veränderte sich das Gefühl in ihr. Es war noch da, aber es wurde leiser.</p>
+
+                <p>Später kam ein anderes Kind dazu und setzte sich neben sie. Sie malten gemeinsam, ohne viel zu sprechen.</p>
+
+                <p>Am Nachmittag spielte Leni wieder ein wenig. Nicht wild, aber ruhig.</p>
+
+                <p>Sie wusste nun: <strong>Traurigkeit braucht manchmal keine Worte. Nur Zeit. Und jemanden, der bleibt.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🎨</span>
+                <span>Die Mal-Technik – Gefühle ohne Worte ausdrücken</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, Traurigkeit auszudrücken, wenn Worte fehlen:</strong></p>
+                <ul>
+                    <li><strong>Einen ruhigen Ort zum Malen vorbereiten:</strong> Papier, Farben, Stifte bereitlegen</li>
+                    <li><strong>Keine Vorgaben machen:</strong> Das Kind darf malen, was es möchte</li>
+                    <li><strong>Mit dunklen Farben beginnen lassen:</strong> Oft wählen Kinder intuitiv Farben, die zu ihrem Gefühl passen</li>
+                    <li><strong>Stille Begleitung anbieten:</strong> Daneben sitzen, ohne zu drängen oder zu reden</li>
+                    <li><strong>Den Prozess beobachten:</strong> Oft wechseln Kinder im Lauf des Malens zu helleren Farben</li>
+                    <li><strong>Optional: Gemeinsam malen:</strong> Nebeneinander kreativ sein ohne Worte</li>
+                </ul>
+                <p>Diese Technik gibt Kindern einen nonverbalen Weg, ihre Gefühle auszudrücken. Das Malen wirkt beruhigend und hilft, schwere Emotionen zu verarbeiten, ohne sie benennen zu müssen.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wie war Leni als Kind?<br>
+                • Wie hat sich Leni an diesem Tag gefühlt?<br>
+                • Was hat die Erzieherin gemacht?<br>
+                • Was hat Leni am Maltisch gemacht?<br>
+                • Welche Farben hat Leni zuerst benutzt?<br>
+                • Was ist passiert, während Leni gemalt hat?<br>
+                • Was hat Leni am Ende verstanden?<br>
+                • Gibt es Tage, an denen du dich auch so fühlst wie Leni?<br>
+                • Was hilft dir, wenn du traurig bist, aber nicht darüber sprechen möchtest?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gute-Nacht-Geschichten für Kinder - Sanfte Geschichten zum Einschlafen mit Luna, Bruno Bär, dem Mondfuchs und vielen mehr.">
+    <title>Gute-Nacht-Geschichten - Zauberhafte Kindergeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* Hero Image */
+        .hero-image {
+            margin-top: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Vorwort Section */
+        .intro-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .intro-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .intro-text {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.9;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+        }
+
+        .intro-highlight {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #38ada9;
+            font-weight: 600;
+            color: #006266;
+            font-size: 1.15em;
+            text-align: center;
+        }
+
+        /* Werbung nach Vorwort */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Stories Section */
+        .stories-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 45px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .story-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 35px 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .story-card:hover::before {
+            opacity: 0.95;
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .story-image-placeholder {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .story-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-card:hover .story-image-placeholder {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .story-name {
+            color: #333;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .story-card:hover .story-name {
+            color: white;
+        }
+
+        .story-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+
+        .story-card:hover .story-description {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Info Box für Eltern */
+        .parent-info {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .parent-info-title {
+            color: #006266;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .parent-info-text {
+            color: #2c3e50;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .parent-info-text strong {
+            color: #006266;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header {
+                padding: 35px 25px 30px;
+            }
+
+            .intro-section,
+            .stories-section {
+                padding: 35px 25px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .intro-title {
+                font-size: 1.6em;
+            }
+
+            .story-card {
+                padding: 30px 25px;
+            }
+
+            .parent-info {
+                padding: 30px 25px;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-name {
+                font-size: 1.2em;
+            }
+
+            .story-image-placeholder {
+                height: 150px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            
+            <h1>Gute-Nacht-Geschichten</h1>
+            <p class="subtitle">Sanfte Geschichten für ruhige Nächte und süße Träume</p>
+
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <img src="bilder/gutenacht/gnmain.png" alt="Gute Nacht Geschichten">
+            </div>
+        </header>
+
+        <!-- Vorwort -->
+        <div class="intro-section">
+            <h2 class="intro-title">Vorwort</h2>
+            <div class="intro-text">
+                <p>Die Nacht kommt leise. Sie bringt Dunkelheit, Stille und manchmal auch Unsicherheit. Für viele Kinder ist das Einschlafen eine Herausforderung – Gedanken kreisen, Ängste melden sich, der Körper will nicht zur Ruhe kommen.</p>
+                
+                <div class="intro-highlight">
+                    Gute-Nacht-Geschichten sind Brücken in den Schlaf.
+                </div>
+                
+                <p>Sie schaffen einen sanften Übergang zwischen Tag und Nacht. Sie nehmen an die Hand, ohne zu drängen. Sie erzählen von kleinen Helden, die selbst müde werden – von Tieren, Sternen und Lichtern, die alle ihren Weg in die Ruhe finden.</p>
+                
+                <p>Diese Geschichten wollen nicht aufwühlen oder aufwecken. Sie wollen begleiten, beruhigen und einhüllen. Sie sind gedacht zum Vorlesen, wenn das Licht schon gedimmt ist, wenn die Stimme leiser wird und der Tag zu Ende geht.</p>
+                
+                <p>Manche Geschichten handeln von magischen Wesen, andere von ganz alltäglichen Momenten – einem Licht im Flur, einem stillen Zimmer, einer leeren Straße. Alle eint: Sie nehmen die Nacht ernst und machen sie zugleich weniger groß.</p>
+                
+                <div class="intro-highlight">
+                    Die Nacht gehört dir – und du bist nicht allein.
+                </div>
+            </div>
+        </div>
+
+        <!-- Werbung nach Vorwort -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Geschichten -->
+        <div class="stories-section">
+            <h2 class="section-title">Unsere Gute-Nacht-Geschichten</h2>
+            <p class="section-description">
+                Wähle eine Geschichte und lass dich in eine Welt voller Ruhe, Sterne und sanfter Träume tragen
+            </p>
+            
+            <div class="stories-grid">
+                <!-- Luna und der flüsternde Stern -->
+                <a href="lunaundderflüsterndestern.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn1.png" alt="Luna und der flüsternde Stern">
+                    </div>
+                    <div class="story-name">Luna und der flüsternde Stern</div>
+                    <div class="story-description">Ein silberner Stern schwebt zu Luna ans Fenster und nimmt sie mit auf eine sanfte Reise durch den Nachthimmel</div>
+                </a>
+
+                <!-- Bruno der Bär -->
+                <a href="bruno.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn2.png" alt="Bruno der Bär">
+                    </div>
+                    <div class="story-name">Bruno der Bär und der verschwundene Mond</div>
+                    <div class="story-description">Der kleine Bär sucht mit seinen Freunden den Mond – und findet ihn durch ein gemeinsames Lied</div>
+                </a>
+
+                <!-- Der kleine Igel -->
+                <a href="derkleineigel.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn3.png" alt="Der kleine Igel">
+                    </div>
+                    <div class="story-name">Der kleine Igel und das flüsternde Sternenkissen</div>
+                    <div class="story-description">Ein magisches Kissen aus Sternenlicht hilft dem Igel und seinen Freunden, sanft einzuschlafen</div>
+                </a>
+
+                <!-- Der kleine Mondfuchs -->
+                <a href="derkleinemondfuchs.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn4.png" alt="Der kleine Mondfuchs">
+                    </div>
+                    <div class="story-name">Der kleine Mondfuchs und der verlorene Schlaf</div>
+                    <div class="story-description">Der Fuchs kann nicht schlafen – bis der Schlaf selbst als sanfter Nebel zu ihm kommt</div>
+                </a>
+
+                <!-- Die kleine Wolkenkatze -->
+                <a href="wolkenkatze.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn5.png" alt="Die kleine Wolkenkatze">
+                    </div>
+                    <div class="story-name">Die kleine Wolkenkatze und der Schlafwind</div>
+                    <div class="story-description">Eine Katze aus Wolken schwebt durch den Himmel und findet Ruhe im sanften Wind</div>
+                </a>
+
+                <!-- Der kleine Dachs -->
+                <a href="derkleinedachs.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn6.png" alt="Der kleine Dachs">
+                    </div>
+                    <div class="story-name">Der kleine Dachs und das Gute-Nacht-Licht</div>
+                    <div class="story-description">Ein warmes Licht begleitet den Dachs durch den dunklen Wald nach Hause</div>
+                </a>
+
+                <!-- Der kleine Biber -->
+                <a href="derkleinebieber.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn7.png" alt="Der kleine Biber">
+                    </div>
+                    <div class="story-name">Der kleine Biber und das Schlaflied vom Fluss</div>
+                    <div class="story-description">Der Fluss singt dem Biber ein Schlaflied aus Wellen und Mondlicht</div>
+                </a>
+
+                <!-- Die kleine Schildkröte -->
+                <a href="diekleineschildkröte.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn8.png" alt="Die kleine Schildkröte">
+                    </div>
+                    <div class="story-name">Die kleine Schildkröte und die wandernde Müdigkeit</div>
+                    <div class="story-description">Am nächtlichen Strand findet die Schildkröte ihre Müdigkeit wie einen sanften Wind</div>
+                </a>
+
+                <!-- Der kleine Waschbär -->
+                <a href="derkleinewaschbaer.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn9.png" alt="Der kleine Waschbär">
+                    </div>
+                    <div class="story-name">Der kleine Waschbär und die leise Nachtuhr</div>
+                    <div class="story-description">Eine geheimnisvolle Uhr tickt immer langsamer und führt den Waschbär in den Schlaf</div>
+                </a>
+
+                <!-- Das kleine Licht im Flur -->
+                <a href="daskleinelichtimflur.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn14.png" alt="Das kleine Licht im Flur">
+                    </div>
+                    <div class="story-name">Das kleine Licht im Flur</div>
+                    <div class="story-description">Ein warmes Licht im dunklen Flur schenkt Geborgenheit und Sicherheit</div>
+                </a>
+
+                <!-- Der Abend hinter dem Fenster -->
+                <a href="derabendhinterdemfenster.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn21.png" alt="Der Abend hinter dem Fenster">
+                    </div>
+                    <div class="story-name">Der Abend hinter dem Fenster</div>
+                    <div class="story-description">Der Blick durch das Fenster in die dunkle Nacht bringt Ruhe und Frieden</div>
+                </a>
+
+                <!-- Das leise Zimmer -->
+                <a href="dasleisezimmer.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn22.png" alt="Das leise Zimmer">
+                    </div>
+                    <div class="story-name">Das leise Zimmer</div>
+                    <div class="story-description">In der Stille des Schlafzimmers findet die Nacht ihren sicheren Ort</div>
+                </a>
+
+                <!-- Der leere Flur -->
+                <a href="derleereflur.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn24.png" alt="Der leere Flur">
+                    </div>
+                    <div class="story-name">Der leere Flur</div>
+                    <div class="story-description">Im stillen Hausflur wird die Nacht zur schützenden Leere</div>
+                </a>
+
+                <!-- Die leere Straße -->
+                <a href="dieleerestarasse.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn28.png" alt="Die leere Straße">
+                    </div>
+                    <div class="story-name">Die leere Straße</div>
+                    <div class="story-description">Der Blick auf die ruhige, leere Straße lässt alle Gedanken still werden</div>
+                </a>
+
+                <!-- Das leise Treppenhaus -->
+                <a href="dasleisetreppenhaus.html" class="story-card">
+                    <div class="story-image-placeholder">
+                        <img src="bilder/gutenacht/gn29.png" alt="Das leise Treppenhaus">
+                    </div>
+                    <div class="story-name">Das leise Treppenhaus</div>
+                    <div class="story-description">Auf den stillen Treppenstufen trägt die Nacht alles und der Schlaf kommt langsam</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Werbung zwischen Content -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Info für Eltern -->
+        <div class="parent-info">
+            <div class="parent-info-title">
+                <span>💚</span>
+                <span>Für Eltern & Begleiter:innen</span>
+            </div>
+            <div class="parent-info-text">
+                <p style="margin-bottom: 15px;"><strong>Gute-Nacht-Geschichten sind Rituale der Sicherheit.</strong></p>
+                <p style="margin-bottom: 15px;">Sie signalisieren: Der Tag ist zu Ende. Die Nacht darf kommen. Ich bin bei dir. Lesen Sie langsam vor, mit ruhiger Stimme. Dimmen Sie das Licht. Schaffen Sie einen geschützten Moment zwischen Wachsein und Schlafen.</p>
+                <p>Manche Kinder schlafen während der Geschichte ein. Andere hören bis zum Ende zu und brauchen danach noch ein paar Minuten Stille. Beides ist richtig. Die Geschichte hat ihren Zweck erfüllt – sie hat begleitet.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+<script src="cookies.js"></script>
+</body>
+</html>

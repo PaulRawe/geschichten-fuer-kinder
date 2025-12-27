@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Hüter der Stillebucht - Johanna und die Wunderwelt, Staffel 1 Episode 5">
+    <title>Episode 5: Der Hüter der Stillebucht - Johanna und die Wunderwelt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f5576c;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f5576c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #f5576c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            color: #f5576c;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f5576c;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f093fb;
+            font-style: italic;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .story-image-caption {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f5576c;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #f5576c;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
+            border-left: 6px solid #38ada9;
+        }
+
+        .info-box-title {
+            color: #006266;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #f5576c;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f093fb;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="johanna-und-die-wunderwelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 5 von 7</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 5</div>
+            <h1>Der Hüter der Stillebucht ⚡</h1>
+            <p class="episode-intro">
+                Johanna erfährt vom geheimnisvollen Hüter, dass die Wunderwelt in großer Gefahr ist – und nur sie kann den Riss reparieren!
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/johanna/johannaS1E5.png" alt="Der Hüter der Stillebucht">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 1 – Der Blitz des Donner-Kompasses</h2>
+            <div class="story-content">
+                <p>Der Blitz aus dem Donner-Kompass zuckte wie ein goldener Faden durch die Stillebucht und traf Johannas Hände, noch bevor sie wusste, was geschah. Es brannte nicht – stattdessen fühlte es sich warm und kribbelig an, als würden ganz viele kleine Sterne auf ihrer Haut tanzen. Und plötzlich… hörte sie wieder die Geräusche. Obwohl doch alles in der Stillebucht eigentlich lautlos sein sollte.</p>
+
+                <p><em>"Johanna? Bist du… okay?"</em> Ronjas Stimme klang seltsam gedämpft, wie durch Watte.</p>
+
+                <p>"Ich glaube… ich höre wieder! Aber nur ganz leise", flüsterte Johanna erstaunt.</p>
+
+                <p>Die Krachpiraten sahen sie mit offenen Mündern an – die Lautlosigkeit ließ sogar ihre überraschten Gesichter komisch stumm wirken. Nur der riesige Seegeist, der über ihnen schwebte, blieb drohend und schweigsam.</p>
+
+                <p>Langsam glitt er näher. Er war groß… sehr groß. Sein ganzer Körper tropfte schimmernde Wasserfäden, die im Licht des Kompasses bläulich glühten. Seine Augen waren nicht wütend, wie Johanna befürchtet hatte – sondern… traurig? Müde? Irgendetwas stimmte hier nicht.</p>
+
+                <p>"Ich glaube, er will uns etwas sagen", murmelte Johanna.</p>
+
+                <p>Der Geist streckte einen Arm aus, der wie fließender Nebel wirkte, und deutete auf den Donner-Kompass. Wieder ein Hinweis – aber keiner der Piraten verstand es.</p>
+
+                <p>Dann, plötzlich, geschah es: Der Kompass drehte sich schnell, schneller, und ein kleiner Blitz sprang auf Ronja über. Die Einhornpuppe zuckte zusammen – und begann zu sprechen. Und diesmal klang ihre Stimme klar. Zu klar.</p>
+
+                <p><strong>"Ich… ich verstehe ihn"</strong>, hauchte Ronja überrascht. "Der Seegeist ist der Hüter der Stillebucht! Und er sagt… der Donner-Kompass wurde gestohlen."</p>
+
+                <p>"Gestohlen?! Von wem denn?" rief Hasi – wobei man eigentlich nur ein lautloses Hasen-Schnappen sah.</p>
+
+                <p>Ronja übersetzte: "Von einem Wesen, das hier nicht hergehört. Jemand, der immer lauter wird. Immer stärker. Und der die Kontrolle über die Wunderwelt verlieren könnte…"</p>
+
+                <p>Johanna spürte, wie sich ihre Nackenhaare aufstellten.</p>
+
+                <p>Wer konnte das sein?</p>
+
+                <p>Da erzitterte der ganze See – als würde etwas Gewaltiges aus der Tiefe aufsteigen.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 2 – Der Ruf der Wunderwelt</h2>
+            <div class="story-content">
+                <p>Das Wasser pulsierte, als spinne es Netze aus Licht. Der Hüter breitete beide geisterhaften Arme aus – der See wurde noch stiller, doch gleichzeitig vibrierte die Luft vor Spannung. Dann deutete er mit einem langen, fließenden Finger direkt… auf Johanna.</p>
+
+                <p>"Äh… ich?" fragte Johanna mit bebender Stimme.</p>
+
+                <p>Ronja hörte zu, dann nickte langsam. "Er sagt… es gibt in der Wunderwelt einen Riss. Einen Bruch. Und du bist die Einzige, die ihn reparieren kann."</p>
+
+                <p>Johanna starrte sie an. <strong>"Ich? Aber ich bin doch nur vier!"</strong></p>
+
+                <p>"Manchmal reicht vier völlig aus", meinte Hasi leise – oder vielleicht dachte er es nur, denn der Ton verschluckte sich wieder in der Stillebucht.</p>
+
+                <p>Der Hüter senkte sich ein wenig, sodass sein leuchtender Blick ganz nah an Johanna war. Und in seinem Wasseraugen sah sie plötzlich Bilder: ihr Kinderzimmer… die bunten Flecken auf dem Teppich… den glitzernden Poltersee… und dahinter einen dunklen Tunnel, der wie ein Riss durch die Wirklichkeit verlief.</p>
+
+                <p><em>Ein Weg. Und am Ende… eine dunkle Silhouette, die etwas Rundes hochhielt – den Donner-Kompass!</em></p>
+
+                <p>"Da ist der Dieb!" rief Johanna.</p>
+
+                <p>Der Kompass in ihrer Hand surrte auf. Eine feine Windböe wirbelte um sie und die Piraten. Dann hörten sie plötzlich wieder Geräusche – erst ein Knacken, dann ein Schwappen, und dann die volle Lautstärke zurück.</p>
+
+                <p><strong>"Yaaaar, endlich kann ich wieder brüllen!"</strong> jubelte der Trompetenpirat viel zu laut.</p>
+
+                <p>Doch der Hüter hob warnend die Hand, und alles verstummte sofort. Auch ohne Magie.</p>
+
+                <p>Ronja übersetzte weiter: "Er sagt… der Riss wird immer größer. Und wenn wir ihn nicht schließen, wird die ganze Wunderwelt durcheinander geraten – und vielleicht ganz verschwinden."</p>
+
+                <p>Johanna schluckte hart. Die Wunderwelt – ihre Wunderwelt!</p>
+
+                <p>Der Hüter zeigte erneut in die Tiefe, wo der glitzernde Weg hell aufzuleuchten begann.</p>
+
+                <p>Ein Tunnel. Eine Reise. Und eine Aufgabe, größer als jedes Abenteuer zuvor.</p>
+
+                <p>"Wir müssen dort hinein", sagte Johanna entschlossen.</p>
+
+                <p>Doch in diesem Moment erhob sich eine zweite, kleinere Schattenfigur aus dem Wasser – mit zwei glänzenden Augen, die wild hin und her sprangen.</p>
+
+                <p>"Halt!" rief Ronja erschrocken. "Das ist…"</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2 class="page-header">Seite 3 – Der polternde Bote</h2>
+            <div class="story-content">
+                <p>Die kleine Schattenfigur stieg aus dem Wasser wie ein Tropfen, der vergessen hatte, wieder runterzufallen. Sie hatte eine runde, spritzige Form, und als sie näher kam, erkannte Johanna sie sofort.</p>
+
+                <p><strong>"Polti?!"</strong> rief sie überrascht.</p>
+
+                <p>Der Poltersee-Geist sprang auf die Reling des Piratenschiffs und schüttelte sich, sodass funkelnde Wassertropfen überall herumkullerten. Alle zogen ihre Köpfe ein – selbst das Klapper-Skelett klapperte sich hinter eine Kiste.</p>
+
+                <p>Polti brummelte etwas aufgeregt, aber diesmal war die Stillebucht magisch genug, dass Ronja seine Worte verstehen konnte.</p>
+
+                <p>"Er sagt… er hat gesehen, wer den Kompass genommen hat", übersetzte Ronja schnell. "Es war… es war…"</p>
+
+                <p>Polti gestikulierte wild mit seinen Wellenarmen, mal rund, mal eckig, mal wie ein Vorschlaghammer.</p>
+
+                <p><em>"… jemand Großes"</em>, übersetzte Ronja. "Und Lautes. Und… und… der Dieb wohnt hinter dem Kleiderschrank! In einem geheimen Reich, das wir noch nicht kennen."</p>
+
+                <p>Johannas Augen wurden riesig. "Noch ein Reich? Neben der Wunderwelt?"</p>
+
+                <p>Der Hüter der Stillebucht nickte langsam, seine Gestalt wabernd und bedeutungsvoll.</p>
+
+                <p>Ronja sprach seine Gedanken aus: "Es gibt einen zweiten Teil der Wunderwelt. Einen, der viel älter ist. Viel lauter. Und viel gefährlicher."</p>
+
+                <p>"Und da sollen wir rein?!" quiekte Hasi.</p>
+
+                <p>"Wenn wir die Wunderwelt retten wollen – ja", sagte Johanna ruhig. Obwohl in ihr alles kribbelte.</p>
+
+                <p>Der Hüter hob seine Arme und erschuf einen schimmernden Ausgang aus der Bucht – ein kreisrundes Portal, das sanft pulsierte wie ein schlagendes Herz.</p>
+
+                <p>"Das ist der Weg", flüsterte Ronja.</p>
+
+                <p>Die Piraten stellten sich mutig auf. Polti hüpfte an Johannas Seite und sah entschlossen aus.</p>
+
+                <p>Johanna atmete tief ein.</p>
+
+                <p><strong>"Dann los. Wir finden den Kompass. Und wir retten die Wunderwelt."</strong></p>
+
+                <p>Doch als sie auf das Portal zugingen, blitzte darin eine vertraute, aber bedrohliche Silhouette auf.</p>
+
+                <p>Groß. Laut. Und sie bewegte sich direkt auf sie zu.</p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Wer ist die mysteriöse Silhouette? Was verbirgt sich hinter dem Kleiderschrank?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Fortsetzung folgt in Episode 6! ⚡</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Der Hüter sagt, Johanna ist die Einzige, die den Riss reparieren kann. Was glaubst du, macht sie so besonders?<br>
+                • Johanna sagt "Ich bin doch nur vier!" – kannst du auch schon wichtige Dinge tun, obwohl du noch klein bist?<br>
+                • Was glaubst du, wer der geheimnisvolle Dieb sein könnte?<br>
+                • Hast du manchmal auch Angst vor neuen Aufgaben, aber machst sie trotzdem?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="johannas-wunderwelt episode4.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Die Krachpiraten vom Poltersee</div>
+                </a>
+                
+                <a href="johannas-wunderwelt episode6.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 6</div>
+                </a>
+
+                <a href="johanna-und-die-wunderwelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+             <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

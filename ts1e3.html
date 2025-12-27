@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Das Geheimnis der Wasserpumpe - Tom und seine Abenteuer, Staffel 1 Episode 3">
+    <title>Episode 3: Das Geheimnis der Wasserpumpe - Tom und seine Abenteuer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #c471f5;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f093fb;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #f093fb;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Story Content */
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #f093fb;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f5576c;
+            font-style: italic;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #f093fb;
+            font-size: 2em;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Cliffhanger Box */
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Episode Navigation */
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #f093fb;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4);
+            border-color: #f093fb;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #8b5cf6;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        /* Reading Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+            border-left: 6px solid #f093fb;
+        }
+
+        .info-box-title {
+            color: #6b46c1;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #f093fb;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f5576c;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f5576c;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <!-- Sticky Navigation -->
+        <nav class="sticky-nav">
+            <a href="abenteuer-tom.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 3 von 7</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 3</div>
+            <h1>Das Geheimnis der Wasserpumpe</h1>
+            <p class="episode-intro">
+                Nach dem aufregenden Freundschaftstag mit Lilli, der kleinen Gartenmaus, hört Tom ein geheimnisvolles Platschen. Was verbirgt sich wohl bei der alten Wasserpumpe im Garten?
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/tom/t3.png" alt="Das Geheimnis der Wasserpumpe">
+            </div>
+        </header>
+
+        <!-- Story Content - Seite 1 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Am dritten Kindergartentag wachte Tom mit einem besonderen Gefühl auf. Es war nicht mehr aufregend oder ein bisschen unheimlich wie am ersten Tag. Nein, heute fühlte es sich vertraut an – wie nach Hause kommen. Er freute sich darauf, Mia, Felix, Alva und natürlich Lilli wiederzusehen.</p>
+
+                <p>Beim Frühstück zu Hause erzählte er Mama von dem geheimnisvollen Platschen, das sie gestern gehört hatten. <strong>„Mama, da ist etwas beim Wasser im Garten. Etwas, das Geräusche macht."</strong></p>
+
+                <p>Mama lächelte. „Vielleicht ein Frosch? Oder ein kleiner Vogel, der badet?"</p>
+
+                <p>Tom schüttelte den Kopf. „Es klang größer. Und es hat… vibriert."</p>
+
+                <p>Im Kindergarten angekommen, stürmten die vier Freunde sofort in den Garten. Die alte Wasserpumpe aus Holz stand am Rand des Spielplatzes, umgeben von bunten Blumen und einem kleinen Kieselsteinweg. Sie war schon ein bisschen morsch, aber sie funktionierte noch – wenn man kräftig pumpte, kam klares, kaltes Wasser heraus.</p>
+
+                <p>„Hört ihr das?", flüsterte Mia und blieb stehen.</p>
+
+                <p>Alle lauschten. <em>Plitsch, platsch, plitsch.</em></p>
+
+                <p>Das Geräusch kam nicht von oben, sondern von unten.</p>
+
+                <p>„Unter der Pumpe?", fragte Felix ungläubig.</p>
+
+                <p>Tom kniete sich hin und spähte durch die Holzbretter. Es gab dort einen kleinen Spalt, durch den man hindurchsehen konnte. Und tatsächlich – es glitzerte! Etwas Nasses, etwas Bewegliches.</p>
+
+                <p>„Was ist das?", fragte Alva gespannt.</p>
+
+                <p>Frau Sonnenschein kam mit einem Eimer in der Hand vorbei. „Ah, ihr habt die Pumpe entdeckt. Wisst ihr, unter der Pumpe ist ein kleiner, unterirdischer Bach. Früher hat man daraus das Wasser für den Garten geholt."</p>
+
+                <p>„Ein Bach? <em>Unter uns?</em>", staunte Tom.</p>
+
+                <p>„Ja. Aber es gibt da ein Problem." Frau Sonnenschein seufzte. „Irgendwas blockiert den Durchfluss. Das Wasser kommt nicht mehr richtig durch. Deshalb müssen wir es jetzt aus dem Haus holen."</p>
+
+                <p>Tom sah seine Freunde an. Dann fragte er mutig: <strong>„Können wir helfen?"</strong></p>
+
+                <p>Frau Sonnenschein lächelte. „Das wäre wunderbar. Aber seid vorsichtig – es ist rutschig und eng."</p>
+
+                <p>Und genau da begann das nächste Abenteuer...</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 2 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Die Kinder zogen sich Gummistiefel und alte Jacken an. Frau Sonnenschein gab ihnen kleine Taschenlampen und einen langen Stock mit einem Netz dran – so etwas wie ein Kescher, aber stabiler.</p>
+
+                <p>„Wenn ihr vorsichtig seid und nicht zu weit geht, könnt ihr versuchen, die Blockade zu finden", erklärte sie. „Aber bleibt immer zusammen!"</p>
+
+                <p>Tom, Mia, Felix und Alva nickten ernst.</p>
+
+                <p>Sie hoben gemeinsam die schweren Holzbretter unter der Pumpe an. Darunter war ein schmaler Zugang, fast wie eine kleine Höhle. Das Wasser floss träge und leise, aber man konnte deutlich sehen, dass es irgendwo stockte.</p>
+
+                <p>„Ich gehe zuerst", sagte Felix mutig.</p>
+
+                <p>„Nein, wir gehen alle zusammen", widersprach Tom sanft. „Frau Sonnenschein hat gesagt, wir sollen zusammenbleiben."</p>
+
+                <p>Felix nickte. „Du hast recht."</p>
+
+                <p>Sie rutschten vorsichtig hinein. Der Boden war kühl und ein bisschen feucht, aber nicht gefährlich. Die Taschenlampen erhellten die Wände – sie waren aus alten Steinen gebaut, zwischen denen Moos wuchs. Es roch nach Erde und frischem Wasser.</p>
+
+                <p>„Das ist wie in einer Schatzhöhle", flüsterte Mia begeistert.</p>
+
+                <p>Sie gingen ein paar Schritte weiter. Das Wasser um ihre Füße herum wurde tiefer – aber nur bis zu den Knöcheln. Tom leuchtete nach vorne. Dort, etwa drei Meter entfernt, sah er etwas Dunkles im Wasser liegen.</p>
+
+                <p>„Da ist es!", rief Alva.</p>
+
+                <p>Sie wateten näher heran. Es war ein großer Ast, der quer über den Bach gefallen war. Daran hatten sich Blätter, Moos und sogar ein alter Stoffbeutel verfangen.</p>
+
+                <p>„Kein Wunder, dass das Wasser nicht durchkommt", stellte Tom fest.</p>
+
+                <p>„Können wir das wegräumen?", fragte Felix.</p>
+
+                <p>Mia griff nach dem Netz-Stock und versuchte, den Ast zu ziehen. Er bewegte sich – aber nur ein kleines bisschen.</p>
+
+                <p>„Zu schwer für eine allein", murmelte sie.</p>
+
+                <p>„Dann machen wir es zusammen", sagte Tom bestimmt.</p>
+
+                <p>Alle vier packten an. Felix und Alva hielten den Ast, Tom und Mia zogen am Netz. Sie zogen, zerrten, rutschten fast aus – und dann, mit einem lauten <em>Platsch!</em>, gab der Ast nach.</p>
+
+                <p>Das Wasser begann sofort schneller zu fließen. Es gurgelte, sprudelte und sang fast wie ein kleiner Wasserfall.</p>
+
+                <p>„Wir haben es geschafft!", jubelte Felix.</p>
+
+                <p>Doch plötzlich bemerkten sie etwas Seltsames.</p>
+
+                <p>Im Stoffbeutel, der am Ast gehangen hatte, <strong>glitzerte etwas.</strong></p>
+
+                <p>Etwas Buntes.</p>
+
+                <p>Etwas Geheimnisvolles...</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 3 -->
+        <div class="story-section">
+            <div class="story-content">
+                <p>Tom nahm den Beutel vorsichtig aus dem Wasser. Er war nass und schwer, aber nicht kaputt. Als er ihn öffnete, kamen lauter kleine, bunte Steine zum Vorschein – rund geschliffen, glänzend und wunderschön.</p>
+
+                <p>„Das sind Edelsteine!", rief Mia überrascht.</p>
+
+                <p>„Nein", korrigierte Alva lächelnd. „Das sind Glasmurmeln. Aber sehr alte."</p>
+
+                <p>Tom hielt eine hoch und das Licht seiner Taschenlampe ließ sie funkeln wie einen echten Diamanten. „Sie sind trotzdem wunderschön."</p>
+
+                <p>Als sie wieder nach oben kletterten, wartete Frau Sonnenschein bereits auf sie. „Ihr habt es geschafft! Das Wasser fließt wieder!", rief sie begeistert.</p>
+
+                <p>Die Kinder zeigten stolz die Murmeln. Frau Sonnenschein staunte. „Diese Murmeln gehörten früher den Kindergartenkindern von vor vielen, vielen Jahren. Sie müssen vor langer Zeit hier heruntergefallen sein."</p>
+
+                <p>„Dürfen wir sie behalten?", fragte Felix hoffnungsvoll.</p>
+
+                <p>„Natürlich. Ihr habt sie gefunden – und ihr habt den Bach gerettet. Das ist ein doppelter Schatz."</p>
+
+                <p>Tom strahlte. Er teilte die Murmeln gerecht unter seinen Freunden auf. Jeder bekam ein paar, und die schönste – eine mit goldenen Streifen – legten sie in Lillis neues Mäusehaus als Geschenk.</p>
+
+                <p>Am Ende des Tages saß Tom auf der Bank im Garten und sah zu, wie das Wasser jetzt wieder klar und fröhlich aus der Pumpe sprudelte. Mia setzte sich neben ihn.</p>
+
+                <p>„Weißt du was, Tom? Zusammen können wir alles schaffen."</p>
+
+                <p>Tom nickte. <strong>„Ja. Und morgen gibt es bestimmt wieder etwas Neues zu entdecken."</strong></p>
+
+                <p>„Glaubst du?", fragte Mia neugierig.</p>
+
+                <p>Tom grinste. „Im Kindergarten gibt es immer etwas zu entdecken."</p>
+
+                <p>Und er hatte recht.</p>
+
+                <p>Denn am nächsten Tag, als die Sonne aufging und Tom wieder zum Kindergarten ging, bemerkte er etwas Seltsames an der großen Eiche neben dem Eingang.</p>
+
+                <p>Etwas hing dort. Etwas Flatterndes.</p>
+
+                <p>Etwas, das vorher nicht da gewesen war...</p>
+
+                <p><em>Was konnte das nur sein?</em></p>
+            </div>
+        </div>
+
+        <!-- Cliffhanger -->
+        <div class="cliffhanger-box">
+            <p>Ein neues Rätsel wartet auf Tom...</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Was wird er wohl in Episode 4 entdecken? ✨</p>
+        </div>
+
+        <!-- Info Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn du einen unterirdischen Bach entdeckst?<br>
+                • Warum war es wichtig, dass die Kinder zusammengearbeitet haben?<br>
+                • Hast du schon mal etwas Altes oder Verstecktes gefunden?<br>
+                • Was glaubst du, hängt an der Eiche beim Kindergarten?</p>
+            </div>
+        </div>
+
+        <!-- Werbung vor Navigation -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Episode Navigation -->
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="ts1e2.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Episode 2: Freundschaftstag</div>
+                </a>
+                
+                <a href="ts1e4.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 4</div>
+                </a>
+
+                <a href="abenteuer-tom.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reading Progress Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

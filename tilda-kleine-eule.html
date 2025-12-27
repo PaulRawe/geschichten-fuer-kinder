@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tilda, die kleine Eule - Ein spannendes Abenteuer über Hilfsbereitschaft, Mut und nächtliche Wunder">
+    <title>Tilda, die kleine Eule - Tiergeschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #4f46e5;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #6366f1;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #4f46e5;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #6366f1;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c7d2fe;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #6366f1;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #4f46e5;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #c7d2fe 0%, #a5b4fc 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            border-left: 6px solid #6366f1;
+        }
+
+        .magic-box p {
+            color: #312e81;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #4f46e5;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #c7d2fe 0%, #a5b4fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            border-color: #6366f1;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #4f46e5;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1 0%, #4f46e5 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #6366f1;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4f46e5;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #4f46e5;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="tiergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Tiergeschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Tiergeschichte</div>
+            <h1>Tilda, die kleine Eule</h1>
+            <p class="story-intro">
+                Ein spannendes Abenteuer über eine kleine Eule, die einem verlorenen Kaninchen hilft und die Wunder der Nacht entdeckt
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/tiergeschichten/t6.png" alt="Tilda, die kleine Eule">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">🦉 Seite 1 🦉</div>
+            <div class="story-content">
+                <p>Tilda war eine kleine, junge Eule mit weichen, braun-weißen Federn und großen, runden Augen, die im Mondlicht funkelten wie Sterne. <strong>Sie lebte hoch oben in einer alten Eiche und liebte die Nächte</strong>, in denen sie den Wald erkunden konnte, während alle anderen Tiere schliefen.</p>
+
+                <p>Eines Abends, als der Vollmond hell am Himmel stand, hörte Tilda ein leises Schluchzen. Neugierig schlug sie ihre Flügel aus und glitt lautlos durch die Nacht. Unter einem großen Farn entdeckte sie ein kleines Kaninchen, das sich verirrt hatte. <em>„Oh je, du siehst traurig aus", piepste Tilda sanft. „Was ist passiert?"</em></p>
+
+                <p>„Ich habe meinen Bau verloren und finde den Weg nach Hause nicht", schluchzte das Kaninchen. Tilda überlegte kurz. <strong>„Keine Sorge, ich helfe dir! Ich kenne die Wege im Wald bei Nacht."</strong> Vorsichtig landete sie neben dem Kaninchen und machte sich bereit, es zu begleiten.</p>
+
+                <p>Während sie durch das silbern beleuchtete Unterholz glitten, hörten sie andere Geräusche: das Plätschern eines Baches, das Rascheln der Blätter und das leise Summen von Glühwürmchen. <em>Tilda erklärte dem Kaninchen, dass der Wald nachts voller kleiner Wunder sei, die man nur sehen könne, wenn man aufmerksam und ruhig sei.</em></p>
+
+                <p>Plötzlich hörte Tilda ein Rascheln über ihnen. Ein kleiner Fuchs lugte neugierig aus dem Gras. „Wer seid ihr?" fragte er. Tilda antwortete: „Ich bin Tilda und wir helfen dem Kaninchen, seinen Bau zu finden." Der kleine Fuchs nickte und wollte helfen.</p>
+
+                <p>Gemeinsam machten sie sich auf den Weg, durch dunkle Schatten und über kleine Lichtungen, wobei Tilda den Weg aus der Luft überwachte. Doch plötzlich blieb das Kaninchen stehen und zitterte: <strong>„Da ist ein Wasserlauf… Ich kann nicht darüber springen!"</strong></p>
+
+                <p>Tilda dachte schnell nach. <em>„Keine Sorge, wir finden einen sicheren Weg. Aber wir müssen leise sein, damit wir keine Tiere aufwecken."</em> Die kleine Eule breitete ihre Flügel aus und blickte in die Ferne…</p>
+            </div>
+        </div>
+
+        <div class="section-divider">🌟 🌙 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">🦉 Seite 2 🦉</div>
+            <div class="story-content">
+                <p>Tilda flog vorsichtig über den Wasserlauf, während das Kaninchen unten auf dem Ufer wartete. Der kleine Fuchs sprang flink von Stein zu Stein und testete die Stabilität der Brücken aus Zweigen und Steinen. <strong>Tilda rief beruhigend: „Keine Angst! Zusammen schaffen wir es!"</strong></p>
+
+                <p>Nach ein paar mutigen Sprüngen und kleinen Flügelschlägen landeten alle sicher auf der anderen Seite. Das Kaninchen hüpfte vor Freude aufgeregt herum. „Danke, Tilda! Ohne dich hätte ich es nie geschafft." <em>Tilda lächelte. „Manchmal muss man nur ruhig und aufmerksam sein – dann findet man immer einen Weg."</em></p>
+
+                <p>Auf dem Heimweg begegneten sie weiteren Waldbewohnern: einer Eidechse, die sich unter einem Stein versteckte, einem Igel, der sich kugelte, und einem Frosch, der fröhlich quakte. <strong>Tilda erklärte dem Kaninchen, wie wichtig es sei, anderen zu helfen und auf die kleinen Zeichen des Waldes zu achten.</strong></p>
+
+                <p>Endlich erreichten sie den Bau des Kaninchens. „Hier bist du sicher", piepste Tilda. Das Kaninchen bedankte sich herzlich und hüpfte hinein. Tilda breitete ihre Flügel aus, bereit, in die Nacht hinauszufliegen.</p>
+
+                <p><em>„Heute habe ich viel gelernt", flüsterte das Kaninchen. „Über Freundschaft, Mut und die Wunder der Nacht."</em> Tilda nickte zufrieden. <strong>„Und ich habe neue Freunde gefunden. Jeder Tag – und jede Nacht – kann ein Abenteuer sein, wenn man aufmerksam ist und helfen will."</strong></p>
+
+                <p>Die Sterne funkelten über ihnen, der Wald summte leise, und Tilda glitt still durch die Nacht, bereit für neue Abenteuer und um anderen Tieren zu helfen.</p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Tilda hat einem Freund geholfen und gelernt, dass die Nacht voller kleiner Wunder steckt ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was würdest du tun, wenn du ein verlorenes Tier im Wald treffen würdest?<br>
+                • Warum war es wichtig, dass Tilda, der Fuchs und das Kaninchen zusammengearbeitet haben?<br>
+                • Welche nächtlichen Tiere kennst du noch?<br>
+                • Was bedeutet es für dich, „aufmerksam und ruhig" zu sein?<br>
+                • Hast du auch schon einmal jemandem geholfen, der sich verirrt hat?<br>
+                • Was kannst du von Tildas Hilfsbereitschaft lernen?<br>
+                • Würdest du auch gerne die Nacht im Wald erleben?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Tiergeschichten</h2>
+            <div class="nav-buttons">
+                <a href="tiergeschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Tiergeschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

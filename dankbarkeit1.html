@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hannes Hase und die vielen kleinen Geschenke - Eine Geschichte über Dankbarkeit">
+    <title>Hannes Hase und die vielen kleinen Geschenke - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #d4a574 0%, #f4d9b8 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a87f4d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #d4a574;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #d4a574 0%, #f4d9b8 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #a87f4d;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #a87f4d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(168, 127, 77, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #a87f4d;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #d4a574;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #a87f4d;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #a87f4d;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #d4a574 0%, #f4d9b8 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef5eb 0%, #f4d9b8 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
+            border-left: 6px solid #a87f4d;
+        }
+
+        .info-box-title {
+            color: #805d3b;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #f4d9b8 0%, #d4a574 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            border-left: 6px solid #a87f4d;
+        }
+
+        .technique-box-title {
+            color: #805d3b;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #a87f4d;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #a87f4d;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4a574;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #d4a574;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Dankbarkeit</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Dankbarkeit</div>
+            <h1>Hannes Hase und die vielen kleinen Geschenke</h1>
+            <p class="story-intro">
+                Hannes ist ein junger Hase, der oft an das denkt, was er gerade nicht hat. Doch an einem besonderen Morgen lernt er, die kleinen Dinge um sich herum neu zu sehen. Eine warmherzige Geschichte darüber, wie Dankbarkeit unseren Blick verändert und wie viele kleine Geschenke uns jeden Tag umgeben – wenn wir lernen, sie zu bemerken.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/dankbar1.png" alt="Hannes Hase und die vielen kleinen Geschenke">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Hannes war ein junger Hase mit langen Ohren und einem schnellen Blick. Er lebte auf einer weiten Wiese nahe eines Waldes, in dem es nach frischem Gras, Blumen und Morgentau roch. Hannes mochte vieles: rennen, knabbern, buddeln. Doch oft dachte er an das, was er gerade nicht hatte.</p>
+
+                <p>An diesem Morgen wachte Hannes auf und spürte ein leichtes Murren in seinem Bauch. Die Sonne schien, aber Hannes dachte: <em>Es ist noch kühl.</em> Das Gras war grün, doch Hannes dachte: <em>Ich hätte lieber Klee.</em> Als er zum Frühstück kam, gab es Möhren. Hannes seufzte. Schon wieder Möhren.</p>
+
+                <p>Seine Mama beobachtete ihn eine Weile. Sie sagte nichts, sondern reichte ihm ruhig sein Frühstück. Hannes knabberte lustlos und schaute über die Wiese. Andere Tiere waren unterwegs. Einige lachten, andere arbeiteten. Alles schien ganz normal.</p>
+
+                <p>Nach dem Frühstück sollte Hannes seiner Mama helfen, Kräuter zu sammeln. Zuerst hatte er keine Lust. Doch dann hoppelte er los. Er spürte den Boden unter seinen Pfoten, hörte die Vögel singen und bemerkte, wie warm die Sonne inzwischen geworden war.</p>
+
+                <p>Ohne es zu merken, wurde sein Schritt langsamer. Er blieb stehen und roch an einer Blume. Sie duftete süß. Hannes hob den Kopf und sah den Himmel. Er war weit und blau.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🐰 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Hannes setzte sich ins Gras. Etwas in ihm wurde ruhig. Sein Bauch fühlte sich nicht mehr so eng an. Er dachte an seinen warmen Bau, an seine Mama, an das Frühstück, das ihn satt gemacht hatte.</p>
+
+                <p><em>„Mama"</em>, sagte Hannes nach einer Weile, <em>„irgendwie fühlt sich gerade alles gut an."</em></p>
+
+                <p>Die Mama lächelte. <em>„Das ist Dankbarkeit"</em>, sagte sie leise. <em>„Sie kommt, wenn wir bemerken, was schon da ist."</em></p>
+
+                <p>Hannes dachte nach. Er sah die Kräuter in seinem Korb, die Sonne auf seinem Fell und die Wiese um sich herum. Nichts davon war neu. Und doch fühlte es sich plötzlich besonders an.</p>
+
+                <p>Als sie nach Hause gingen, hüpfte Hannes leichtfüßiger. Die Möhren zum Abendessen schmeckten besser als am Morgen. Nicht, weil sie anders waren – sondern weil Hannes anders schaute.</p>
+
+                <p><strong>Hannes lernte an diesem Tag: Dankbarkeit bedeutet nicht, immer fröhlich zu sein. Sie bedeutet, einen Moment lang zu sehen, wie viele kleine Geschenke uns umgeben.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🐰</span>
+                <span>Die Hannes-Technik – Dankbarkeit im Alltag entdecken</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, Dankbarkeit zu üben und die kleinen Dinge wahrzunehmen:</strong></p>
+                <ul>
+                    <li><strong>Bewusst wahrnehmen:</strong> Was spüre ich gerade? Was sehe ich? Was höre ich?</li>
+                    <li><strong>Die Sinne nutzen:</strong> Wie fühlt sich der Boden unter meinen Füßen an? Wie riecht die Luft?</li>
+                    <li><strong>Innehalten:</strong> Einen Moment lang stehenbleiben und die Umgebung auf sich wirken lassen</li>
+                    <li><strong>Das Vorhandene sehen:</strong> Was habe ich, das mich heute unterstützt hat?</li>
+                    <li><strong>Die kleinen Dinge wertschätzen:</strong> Ein warmes Zuhause, eine Mahlzeit, ein lieber Mensch</li>
+                    <li><strong>Den Blick verändern:</strong> Nicht auf das schauen, was fehlt, sondern auf das, was da ist</li>
+                    <li><strong>Dankbarkeit aussprechen:</strong> Jemandem sagen, wofür man dankbar ist</li>
+                </ul>
+                <p>Diese Technik vermittelt, dass Dankbarkeit eine Fähigkeit ist, die man üben kann. Sie zeigt, dass unsere Wahrnehmung sich verändert, wenn wir bewusst auf das Gute in unserem Leben achten.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was für ein Tier ist Hannes?<br>
+                • Wo lebte Hannes?<br>
+                • Woran dachte Hannes oft?<br>
+                • Was gab es zum Frühstück?<br>
+                • Was sollte Hannes seiner Mama helfen?<br>
+                • Was bemerkte Hannes, als er langsamer wurde?<br>
+                • Was sagte Hannes' Mama über Dankbarkeit?<br>
+                • Wie fühlte sich Hannes danach?<br>
+                • Warum schmeckten die Möhren am Abend besser?<br>
+                • Was bedeutet Dankbarkeit?<br>
+                • Wofür bist du heute dankbar?<br>
+                • Welche kleinen Dinge machen deinen Tag schön?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die Nacht, in der die Schatten spielten - Alex' große kleine Welt, Staffel 1 Episode 3">
+    <title>Episode 3: Die Nacht, in der die Schatten spielten - Alex' große kleine Welt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #764ba2;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Story Content */
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        /* Page Title */
+        .page-title {
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c7b3ff;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #764ba2;
+            font-size: 2em;
+        }
+
+        /* Ad Container */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        /* Cliffhanger Box */
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Episode Navigation */
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 237, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        /* Reading Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe4b5 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 228, 181, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <!-- Sticky Navigation -->
+        <nav class="sticky-nav">
+            <a href="alexgrossekleinewelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 3 von 7</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 3</div>
+            <h1>Die Nacht, in der die Schatten spielten</h1>
+            <p class="episode-intro">
+                Der Schattenhüter ist erwacht, und Alex muss lernen, dass manche Türen besser geschlossen bleiben sollten. Doch was geschieht, wenn ein Schatten entweicht?
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/alex/a3.png" alt="Die Nacht, in der die Schatten spielten">
+            </div>
+        </header>
+
+        <!-- Story Content - Seite 1 -->
+        <div class="story-section">
+            <div class="page-title">Seite 1</div>
+            <div class="story-content">
+                <p>Mama betrat das Wohnzimmer gerade, als der Teppich sich wieder glättete. Der dunkle Spalt verschwand, als hätte er nie existiert. Das kleine weiße Wesen flitzte blitzschnell unter das Sofa, und Alex saß mitten im Raum, die Taschenlampe in der Hand, starr vor Schreck.</p>
+
+                <p>„Na du?", sagte Mama und lächelte. „Was machst du denn da so still?"</p>
+
+                <p>Alex zögerte. Würde Mama ihm glauben? Dass ein Wesen aus einem Teppich geklettert war und ein riesiges Etwas nach ihm gegriffen hatte? Wohl kaum. Große Leute hörten die Flüstern der Welt nicht so wie Kinder.</p>
+
+                <p>„Ich… spiele", antwortete Alex schließlich.</p>
+
+                <p>Mama nickte, setzte kurz ihren Becher auf den Couchtisch und verschwand wieder Richtung Küche.</p>
+
+                <p>Als die Tür sich schloss, kroch das kleine weiße Wesen vorsichtig wieder hervor, die Fühler zitternd. „Sie hat ihn verscheucht", piepste es leise. „Aber nur kurz. Der Große kommt zurück, wenn es wieder dunkel wird."</p>
+
+                <p>„Wer ist er?", fragte Alex.</p>
+
+                <p>Das Wesen setzte sich auf seine Handfläche. Es fühlte sich kühl an, aber nicht unangenehm.</p>
+
+                <p>„Er ist der Schattenhüter", flüsterte es. „Er gehört unter den Teppich. Da ist die Grenze zwischen den Welten. Du hast sie geöffnet… und er hat Licht gesehen. Das mag er nicht."</p>
+
+                <p>Alex schluckte.</p>
+
+                <p>„Kommt er… heute Nacht wieder?"</p>
+
+                <p>Das Wesen nickte langsam.</p>
+
+                <p>„Und warum bist du hier?"</p>
+
+                <p>Die kleinen Augen blickten ihn ernst an. „Um dir zu helfen. Du hast ihn geweckt. Jetzt musst du ihn wieder schlafen legen."</p>
+
+                <p>Alex wollte gerade fragen, wie das gehen sollte, als plötzlich ein scharfes Knacken durch den Raum hallte.</p>
+
+                <p>Er zuckte zusammen.</p>
+
+                <p>Das Geräusch kam vom Flur.</p>
+
+                <p>Langsam.</p>
+
+                <p>Rhythmisch.</p>
+
+                <p>Wie Schritte.</p>
+
+                <p>Das kleine Wesen vergrub sich sofort in Alex' Ärmel. „Er ist zu früh…", flüsterte es zaghaft. „Viel zu früh…"</p>
+
+                <p>Alex stand auf, sein Herz pochte.</p>
+
+                <p>Das Licht im Flur begann zu flackern, als wolle es ihn warnen.</p>
+
+                <p>Alex machte einen Schritt auf die Wohnzimmertür zu.</p>
+
+                <p>Und dann noch einen.</p>
+
+                <p>Bis er sah, was im Flur stand.</p>
+
+                <p>Es war kein Mensch. Und es hatte keinen Schatten.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 1 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 2 -->
+        <div class="story-section">
+            <div class="page-title">Seite 2</div>
+            <div class="story-content">
+                <p>Alex sah eine Gestalt, die so dunkel war wie ein vergessenes Loch. Sie hatte Konturen, aber keine festen. Sie verschwammen, wuchsen und schrumpften wieder, als suchte sie ständig nach einer Form. Wo ihr Gesicht hätte sein sollen, wogte nur tiefes Schwarz.</p>
+
+                <p>Das Licht im Flur flackerte schneller. Die Gestalt bewegte sich nicht — und doch spürte Alex, dass sie ihn ansah.</p>
+
+                <p>„Ist… ist das der Schattenhüter?", flüsterte er in seinen Ärmel.</p>
+
+                <p>Das kleine weiße Wesen piepste vor Angst: „Nein! Der Schattenhüter ist unten geblieben! Das… das ist ein Schatten, der aus dem Riss entwischt ist, bevor er zuging."</p>
+
+                <p>Der Schatten hob einen Arm. Oder etwas, das wie ein Arm wirkte.</p>
+
+                <p>Das Licht zuckte aus — der Flur lag plötzlich im Dunkeln.</p>
+
+                <p>Alex schnappte nach Luft.</p>
+
+                <p>Dann hörte er es.</p>
+
+                <p>Ein Kratzen.</p>
+
+                <p>Genau wie zuvor aus dem Teppichschacht.</p>
+
+                <p>„Er will ins Zimmer", quietschte das kleine Wesen. „Er braucht einen neuen Platz zum Verstecken!"</p>
+
+                <p>„Was soll ich tun?"</p>
+
+                <p>„Nicht weglaufen. Schatten folgen Bewegungen."</p>
+
+                <p>Alex blieb wie angewurzelt stehen. Sein Atem ging schnell. Seine Finger krampften sich um die Taschenlampe.</p>
+
+                <p>Das Kratzen wurde lauter.</p>
+
+                <p>Die Gestalt kam einen Schritt näher.</p>
+
+                <p>Dann noch einen.</p>
+
+                <p>Sie war jetzt so nah, dass Alex ihr flüssiges Schwarz sehen konnte — wie Tinte, die durch Wasser wabert.</p>
+
+                <p>Das Wesen in seinem Ärmel zitterte. „Du musst ihn irgendwo einschließen. In etwas Kleinem. Schnell!"</p>
+
+                <p>Alex blickte hektisch im Zimmer umher. Eine Schublade? Ein Glas? Eine Kiste?</p>
+
+                <p>Da fiel sein Blick auf die große Spielzeugkiste, die offen am Wohnzimmerrand stand. Groß genug, dass ein Schatten hineingleiten konnte — klein genug, dass er nicht wieder herauskäme, wenn Alex sie zuschlug.</p>
+
+                <p>Er rannte los.</p>
+
+                <p>Der Schatten fauchte — ein Geräusch wie kalter Wind.</p>
+
+                <p>Er raste hinter Alex her, wurde länger, breiter, dunkel wie eine Nacht ohne Sterne.</p>
+
+                <p>Alex warf sich an die Kiste, riss den Deckel hoch.</p>
+
+                <p>Der Schatten sprang.</p>
+
+                <p>Er traf den Rand — und glitt hinein, als wäre er flüssig.</p>
+
+                <p>Alex schloss die Kiste im selben Moment mit einem lauten <strong>KNALL</strong>.</p>
+
+                <p>Der Schatten tobte darin. Schlug gegen die Wände. Zischte.</p>
+
+                <p>Dann wurde es still.</p>
+
+                <p>Atmende Stille.</p>
+
+                <p>Alex hielt den Deckel fest.</p>
+
+                <p>Doch das kleine weiße Wesen pochte panisch gegen seine Brust.</p>
+
+                <p>„Das war nur einer. Nur ein kleiner. Der Große weiß jetzt, wo du bist!"</p>
+
+                <p>Und genau in diesem Moment hörte Alex aus dem Wohnzimmer wieder ein Geräusch.</p>
+
+                <p>Ein tiefes, dröhnendes Grollen.</p>
+
+                <p>Der Teppich begann sich erneut zu heben.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <!-- Werbung nach Seite 2 -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <!-- Story Content - Seite 3 -->
+        <div class="story-section">
+            <div class="page-title">Seite 3</div>
+            <div class="story-content">
+                <p>Die Fasern des Flokatiteppichs standen straff wie Fell, das sich vor Kälte aufstellt. Ein Beben schoss durch den Boden, so stark, dass die Spielzeugkiste neben Alex hüpfte.</p>
+
+                <p>„Er kommt!", quietschte das kleine Wesen. „Der Große kommt! Wir müssen die Grenze schließen!"</p>
+
+                <p>„Wie denn?!", rief Alex verzweifelt.</p>
+
+                <p>Das Wesen sprang vor ihm auf den Teppich und streckte beide Fühler aus. Sie glühten leicht orange, wie zwei winzige Lampen.</p>
+
+                <p>„Du musst die Mitte finden! Genau dort, wo du zuerst den Riss gespürt hast! Leg deine Hand drauf und drück!"</p>
+
+                <p>Alex rannte zum Teppich. In der Mitte bildete sich bereits ein dunkler Wirbel, der sich ausbreitete wie eine Tintenkugel in Wasser. Der Schacht darunter öffnete sich — diesmal viel größer als zuvor.</p>
+
+                <p>Kaltes, schwarzes Licht stieg daraus empor, und ein tiefer, grollender Atemzug erfüllte den Raum.</p>
+
+                <p>Alex kniete sich in die Mitte des Teppichs. Sein Herz raste. Seine Hände zitterten.</p>
+
+                <p>„Jetzt!", rief das kleine Wesen. „Drück!"</p>
+
+                <p>Alex legte seine flache Hand genau auf die vibrierende Stelle. Zuerst fühlte er nur Kälte. Dann ein Zerren, als würde der Teppich versuchen, ihn einzusaugen.</p>
+
+                <p>Die Fühler des kleinen Wesens leuchteten heller.</p>
+
+                <p>Der Teppich spannte sich.</p>
+
+                <p>Doch aus dem dunklen Schacht schob sich bereits etwas Großes nach oben.</p>
+
+                <p>Eine Silhouette.</p>
+
+                <p>Breit.</p>
+
+                <p>Riesig.</p>
+
+                <p>Wie ein massiger Berg mit Augen.</p>
+
+                <p>Ein Auge tauchte auf — groß wie Alex' Kopf, tief wie Nacht.</p>
+
+                <p>Es sah ihn an.</p>
+
+                <p>Alex schrie.</p>
+
+                <p>Und drückte mit aller Kraft.</p>
+
+                <p>Ein Knall.</p>
+
+                <p>Ein Windstoß.</p>
+
+                <p>Ein grelles Leuchten unter seiner Hand — gefolgt von einem Schlag, der ihn rückwärts schleuderte.</p>
+
+                <p>Als er sich wieder hochrappelte, war der Teppich glatt. Der Riss verschwunden. Die Luft warm. Das Licht ruhig.</p>
+
+                <p>Nur das kleine weiße Wesen lag erschöpft auf seinem Schoß.</p>
+
+                <p>„Du… hast es geschafft", flüsterte es. „Er schläft wieder. Vorerst."</p>
+
+                <p>Alex seufzte erleichtert.</p>
+
+                <p>Doch dann hörte er etwas Neues.</p>
+
+                <p>Von draußen.</p>
+
+                <p>Vom Garten.</p>
+
+                <p>Ein tiefes Brüllen.</p>
+
+                <p>Nicht wütend.</p>
+
+                <p>Eher… <em>rufend</em>.</p>
+
+                <p>Das hatte Alex schon einmal gehört.</p>
+
+                <p>Es war der Elch.</p>
+
+                <p>Und diesmal war er nicht allein.</p>
+
+                <p>Denn im Garten antwortete eine zweite, noch viel tiefere Stimme.</p>
+            </div>
+        </div>
+
+        <!-- Cliffhanger -->
+        <div class="cliffhanger-box">
+            <p>Was ruft der Elch? Und wer antwortet ihm aus der Dunkelheit?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Das Abenteuer geht weiter in Episode 4! ✨</p>
+        </div>
+
+        <!-- Info Box für Eltern -->
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was glaubst du, wer im Garten auf den Elch antwortet?<br>
+                • Warum war es wichtig, dass Alex mutig war?<br>
+                • Was würdest du tun, wenn du einen Schatten einfangen müsstest?<br>
+                • Wie stellst du dir den Schattenhüter vor?<br>
+                • Findest du das kleine weiße Wesen auch so hilfreich wie Alex?</p>
+            </div>
+        </div>
+
+        <!-- Werbung vor Navigation -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <!-- Episode Navigation -->
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="as1e2.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Das Geheimnis unter dem Teppich</div>
+                </a>
+                
+                <a href="as1e4.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 4</div>
+                </a>
+
+                <a href="alexgrossekleinewelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+           <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reading Progress Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben Bär vermisst seinen Freund - Eine Geschichte über Traurigkeit und Vermissen">
+    <title>Ben Bär vermisst seinen Freund - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8b7355 0%, #a89584 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #8b7355;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #a89584;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #8b7355 0%, #a89584 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #8b7355;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #8b7355;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #8b7355;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #a89584;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #8b7355;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #8b7355;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b7355 0%, #a89584 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.2);
+            border-left: 6px solid #8b7355;
+        }
+
+        .info-box-title {
+            color: #6b5544;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #d4c4b0 0%, #c4b5a3 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(168, 149, 132, 0.3);
+            border-left: 6px solid #8b7355;
+        }
+
+        .technique-box-title {
+            color: #6b5544;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #8b7355;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #8b7355;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #a89584;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #a89584;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Traurigkeit</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Traurigkeit</div>
+            <h1>Ben Bär vermisst seinen Freund</h1>
+            <p class="story-intro">
+                Ben Bär und sein bester Freund Finn der Fuchs teilen jeden Tag Abenteuer und Geschichten. Doch eines Morgens ist Finn plötzlich weg – umgezogen in einen anderen Teil des Waldes. In Bens Bauch entsteht ein großes, leeres Gefühl. Mama Bär zeigt ihm, dass Traurigkeit wehtun darf und dass Vermissen Liebe ist, die keinen Platz mehr hat.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/traurig2.png" alt="Ben Bär vermisst seinen Freund">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Ben war ein junger Bär mit einem warmen, braunen Fell und einem sehr großen Herzen. Er lebte mit seiner Familie am Rand eines dichten Waldes, in dem es nach Moos, Beeren und frischer Erde roch. Ben liebte seinen Alltag. Besonders liebte er es, ihn mit seinem besten Freund Finn zu teilen, einem kleinen, schlauen Fuchs mit buschigem Schwanz.</p>
+
+                <p>Jeden Tag trafen sich Ben und Finn am gleichen Platz. Sie spielten Fang, erzählten sich Geschichten und erfanden Abenteuer. Wenn Ben lachte, lachte Finn mit. Wenn Finn müde war, wartete Ben.</p>
+
+                <p>Eines Morgens wachte Ben auf und spürte sofort, dass etwas anders war. Der Platz vor seiner Höhle war still. Kein Fuchs wartete dort. Ben schaute sich um, rief nach Finn – aber niemand antwortete.</p>
+
+                <p>Später erfuhr Ben, dass Finn mit seiner Familie in einen anderen Teil des Waldes gezogen war. Ganz plötzlich. Niemand hatte Ben vorher Bescheid gesagt.</p>
+
+                <p>In Bens Bauch entstand ein großes, leeres Gefühl. Es war, als wäre dort ein Loch. Seine Pfoten fühlten sich schwer an, und seine Augen wollten sich schließen.</p>
+
+                <p>Alles im Wald erinnerte Ben an Finn: der Baumstamm, auf dem sie gesessen hatten, der Pfad, den sie jeden Tag gegangen waren, sogar das Rascheln der Blätter.</p>
+
+                <p>Ben wollte spielen – aber allein machte nichts Spaß.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🐻 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Ben setzte sich vor seine Höhle und starrte lange ins Leere. Die Zeit verging langsam. Schließlich kam Mama Bär und setzte sich neben ihn. Sie sagte erst nichts. Sie war einfach da.</p>
+
+                <p>Nach einer Weile flüsterte Ben: <em>„Finn ist weg."</em> Seine Stimme zitterte.</p>
+
+                <p>Mama nickte. <strong>„Du vermisst ihn sehr."</strong></p>
+
+                <p>Da liefen Ben die Tränen über das Fell. Er hatte versucht, sie zurückzuhalten, aber nun durften sie einfach fließen.</p>
+
+                <p>Mama nahm Ben in den Arm. <strong>„Traurigkeit zeigt uns, wie wichtig jemand für uns ist"</strong>, sagte sie ruhig. <strong>„Sie darf wehtun."</strong></p>
+
+                <p>Gemeinsam holten sie eine kleine Kiste. Ben legte Dinge hinein, die ihn an Finn erinnerten: einen Stein, den sie gefunden hatten, ein gemaltes Bild, eine Geschichte.</p>
+
+                <p>Ben erzählte von all den Momenten, die er mit Finn erlebt hatte. Während er erzählte, wurde das Loch in seinem Bauch nicht sofort kleiner – aber wärmer.</p>
+
+                <p>Am nächsten Tag ging Ben wieder hinaus. Er spielte langsamer, ruhiger. Die Traurigkeit war noch da, aber sie tat nicht mehr ganz so weh.</p>
+
+                <p>Ben wusste nun: <strong>Vermissen ist Liebe, die keinen Platz mehr hat. Und Liebe bleibt.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>💝</span>
+                <span>Die Erinnerungs-Kiste – Vermissen einen Platz geben</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, mit dem Verlust oder der Abwesenheit einer geliebten Person umzugehen:</strong></p>
+                <ul>
+                    <li><strong>Eine Erinnerungs-Kiste gestalten:</strong> Eine Schachtel oder Box aussuchen und schön bemalen</li>
+                    <li><strong>Erinnerungsstücke sammeln:</strong> Fotos, Geschenke, selbstgemalte Bilder, kleine Gegenstände</li>
+                    <li><strong>Geschichten erzählen:</strong> Von schönen Momenten mit der vermissten Person berichten</li>
+                    <li><strong>Gefühle ausdrücken:</strong> Weinen ist erlaubt und wichtig</li>
+                    <li><strong>Die Kiste als Ritual nutzen:</strong> Bei Traurigkeit die Kiste öffnen und die Erinnerungen anschauen</li>
+                </ul>
+                <p>Diese Technik gibt der Traurigkeit und dem Vermissen einen konkreten, sicheren Platz. Sie hilft Kindern zu verstehen, dass die Liebe zu jemandem bleibt, auch wenn die Person nicht mehr da ist.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wer war Bens bester Freund?<br>
+                • Was haben Ben und Finn zusammen gemacht?<br>
+                • Was ist passiert, als Ben aufgewacht ist?<br>
+                • Wie hat sich Ben gefühlt, als Finn weg war?<br>
+                • Was hat Mama Bär gemacht, um Ben zu helfen?<br>
+                • Was haben Ben und Mama in die Kiste gelegt?<br>
+                • Was hat Ben am Ende verstanden?<br>
+                • Hast du auch schon mal jemanden vermisst?<br>
+                • Was hilft dir, wenn du jemanden vermisst?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

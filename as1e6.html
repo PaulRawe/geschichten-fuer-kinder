@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tom und das Geheimnis der flüsternden Eiche - Alex' große kleine Welt, Staffel 1 Episode 6">
+    <title>Episode 6: Tom und das Geheimnis der flüsternden Eiche - Alex' große kleine Welt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #764ba2;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .page-title {
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c7b3ff;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #764ba2;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .cliffhanger-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 237, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe4b5 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 228, 181, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="alexgrossekleinewelt.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 6 von 7</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 6</div>
+            <h1>Tom und das Geheimnis der flüsternden Eiche</h1>
+            <p class="episode-intro">
+                Im Kindergarten entdeckt Tom mit seinen Freunden, dass die große Eiche im Garten mehr ist als nur ein Baum. Als ein goldener Funke aus ihrer Rinde schießt, beginnt ein Abenteuer, das sie durch ein geheimnisvolles Tor führt.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/alex/a6.png" alt="Tom und das Geheimnis der flüsternden Eiche">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-title">Seite 1 – Die flüsternde Eiche</div>
+            <div class="story-content">
+                <p>Im Kindergarten war heute etwas anders. Schon beim Ankommen spürte Tom, dass eine leise Spannung in der Luft lag – so, als würde etwas Großes passieren. Die Sonne stand hoch, der Garten duftete nach Sommer, und die große Eiche im Hof warf lange Schatten auf den Boden. Es war dieselbe Eiche, unter der Tom und seine Freunde oft Picknick spielten. Doch heute… sah sie irgendwie größer aus. Geheimnisvoller.</p>
+
+                <p>„Habt ihr das gesehen?", flüsterte Mia und zeigte auf den Stamm. Jan kniff die Augen zusammen. „Da war doch was! Ein Licht… oder?" Tom schüttelte den Kopf, aber sein Herz klopfte schneller. Seit Wochen machten sie sich Geschichten über die Eiche: dass sie Wünsche hören konnte, dass sie manchmal flüsterte, wenn man ganz nah an ihre Rinde ging.</p>
+
+                <p>„Frau Hummel sagt, wir dürfen heute ein Naturtagebuch anfangen", erklärte Mia. „Wir sollen etwas im Garten suchen, das besonders ist." Tom grinste. Wenn die Eiche nicht besonders war, was dann?</p>
+
+                <p>Sie gingen mit ihren kleinen Büchern in den Garten. Tom berührte vorsichtig die Rinde des Baumes. Warm. Glatt. Und dann – ein leichtes Vibrieren. Er zog die Hand erschrocken zurück. „Habt ihr das gespürt?" Jan nickte langsam. „Ich glaube… ich glaube, der Baum will uns etwas sagen."</p>
+
+                <p>Tom presste sein Ohr an die Rinde. Und tatsächlich: ein Flüstern, so leise, dass er kaum sicher war, ob er es wirklich hörte. Ein Wispern, wie ein Luftzug unter einer Decke.</p>
+
+                <p>„Kommt näher", sagte Tom mit erhobenem Finger. „Da ist etwas."</p>
+
+                <p>Mia und Jan standen nun direkt neben ihm, als plötzlich ein dünner Goldfunken aus einer kleinen Rindenspalte schoss – nur einen kurzen Moment lang, aber hell genug, dass alle drei erschrocken zurücksprangen.</p>
+
+                <p>„Das ist nicht normal", hauchte Mia. „Gar nicht."</p>
+
+                <p>In genau diesem Augenblick begann die Erde unter der Eiche leicht zu beben.</p>
+
+                <p>Und Tom erkannte: Irgendetwas verbarg sich dort unten. Etwas, das auf sie wartete.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-title">Seite 2 – Die goldene Lichtkugel</div>
+            <div class="story-content">
+                <p>Ein kaum hörbares Knacken lief durch die Wurzeln der Eiche, als ob etwas im Erdreich erwacht wäre. Tom, Mia und Jan wichen einen Schritt zurück. Doch dann brannte die Neugier stärker als die Angst. Tom holte tief Luft. „Wir müssen nachsehen. Das kann nicht einfach ein normaler Baum sein."</p>
+
+                <p>Jan zeigte auf eine kleine Stelle am Stamm. „Da! Da ist jetzt ein Loch!" Und tatsächlich: Die Rindenspalte, aus der der Goldfunken gekommen war, war größer geworden. Breit genug, dass ein Kinderfinger hineinpasste.</p>
+
+                <p>„Auf keinen Fall anfassen", sagte Mia – direkt bevor Jan natürlich genau seine Fingerspitze hineinsteckte.</p>
+
+                <p>Ein leises Summen vibrierte durch die Luft, und plötzlich glitt ein dünner goldener Faden aus dem Loch, wickelte sich um Jans Finger und schien ihn zu begrüßen. „Es kitzelt!", rief Jan lachend. Tom und Mia atmeten erleichtert aus.</p>
+
+                <p>Doch das Summen wurde lauter. Eine kleine Kugel aus Licht löste sich aus der Spalte und schwebte vor ihnen in der Luft. Nicht größer als eine Murmel, aber strahlend wie eine winzige Sonne. „Ich… glaube, sie will uns folgen", meinte Tom vorsichtig.</p>
+
+                <p>Langsam, vorsichtig stolperten die drei Kinder hinter der Lichtkugel her. Sie führte sie über den Hof, vorbei an der Schaukel, an der Rutsche und schließlich zur Rückseite des Gartens, wo ein kleines, kaum genutztes Holzschuppenhäuschen stand. Die Lichtkugel stoppte – als würde sie auf etwas warten.</p>
+
+                <p>Tom drückte den Griff des Schuppens nach unten. Verschlossen. Mia trat näher. „Da hinten ist ein Fenster. Lass uns schauen." Sie stellte sich auf die Zehenspitzen und späht hinein.</p>
+
+                <p>Was sie sah, ließ ihr der Atem stocken. „Tom… Jan… da drin liegt etwas. Etwas Rundes. Und es leuchtet."</p>
+
+                <p>Tom kletterte neben sie. Sein Herz hämmerte. Auf einem alten Holztisch lag ein großer, goldener Gegenstand. Ein Kreis – nein – ein Ring aus Holz und Metall, mit Runen darauf, die schwach glimmten.</p>
+
+                <p>Und genau in dem Moment, als Tom seine Hand an die Scheibe legte, begann der Ring plötzlich heller zu leuchten.</p>
+
+                <p>Viel heller.</p>
+
+                <p>Zu hell.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-title">Seite 3 – Das goldene Tor</div>
+            <div class="story-content">
+                <p>Ein gleißender Blitz füllte den Schuppen von innen. Tom stolperte zurück, als das Fenster plötzlich vibrierte, als würde etwas von innen dagegen drücken. „Was passiert da drin?!", rief Jan, während die kleine Lichtkugel über ihnen hektisch hin und her schwebte – fast warnend.</p>
+
+                <p>Ein tiefes, warmes Rumpeln war zu hören. Dann ein Klirren. Und schließlich – absolute Stille.</p>
+
+                <p>Tom atmete langsam aus. „Wir müssen da rein."</p>
+
+                <p>„Spinnst du?", fragte Mia. „Da drin explodiert fast etwas!"</p>
+
+                <p>Doch bevor jemand widersprechen konnte, hörten sie das Geräusch erneut: ein Klacken. Als hätte jemand die Tür von innen geöffnet.</p>
+
+                <p>Ganz langsam bewegte sich der Griff des Schuppens – wie von einer unsichtbaren Hand.</p>
+
+                <p>Die Tür öffnete sich einen Spalt. Nur einen kleinen. Aber groß genug, dass warme, goldene Luft nach draußen strömte und ihre Gesichter streifte.</p>
+
+                <p>Tom war der Erste, der sich traute, hineinzusehen.</p>
+
+                <p>Der Tisch war leer.</p>
+
+                <p>Der goldene Ring – verschwunden.</p>
+
+                <p>Nur ein leichter Abdruck im Holz verriet, dass er überhaupt einmal dort gelegen hatte. Und auf dem Boden lag die Lichtkugel – flackernd, als sei sie erschöpft. Tom hob sie vorsichtig auf.</p>
+
+                <p>„Seht mal", sagte Jan plötzlich. „Da!"</p>
+
+                <p>An der Rückwand des Schuppens war ein feiner Riss entstanden. Ein Riss im Holz – nein, nicht im Holz. Im Raum selbst. Ein schmales, golden glühendes Liniennetz, das aussah wie… ein Tor.</p>
+
+                <p>„Ein Durchgang", flüsterte Tom.</p>
+
+                <p>Die Lichtkugel leuchtete wieder auf und schwebte direkt vor den Spalt.</p>
+
+                <p>„Ich glaube… sie will, dass wir folgen", sagte Mia mit zitternder Stimme.</p>
+
+                <p>Tom spürte, wie sein Herz gleichzeitig raste und tanzte. Was immer hinter diesem Tor lag – es wollte entdeckt werden.</p>
+
+                <p>Und im selben Moment begann der Riss sich zu öffnen. Langsam. Leise knisternd. Als würde ein neuer Raum dahinter geboren.</p>
+
+                <p>Tom sah seine Freunde an.</p>
+
+                <p>„Wenn wir da durchgehen… wird alles anders", sagte er.</p>
+
+                <p>Dann wurde das Licht im Tor blendend hell.</p>
+
+                <p>Und etwas – oder jemand – bewegte sich dahinter.</p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Was verbirgt sich hinter dem goldenen Tor? Und wer bewegt sich dort im Licht?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Das Abenteuer geht weiter in Episode 7! ✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was könnte hinter dem goldenen Tor auf die Kinder warten?<br>
+                • Warum hat die Eiche angefangen zu leuchten?<br>
+                • Woher kommt die kleine Lichtkugel?<br>
+                • Was bedeuten die Runen auf dem goldenen Ring?<br>
+                • Würdest du durch das Tor gehen oder lieber draußen bleiben?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="as1e5.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Das Geheimnis unter dem Apfelbaum</div>
+                </a>
+                
+                <a href="as1e7.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Episode 7</div>
+                </a>
+
+                <a href="alexgrossekleinewelt.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+           <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lina Löwin und der erste Schritt - Eine Geschichte über Mut und Selbstvertrauen">
+    <title>Lina Löwin und der erste Schritt - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5a962 0%, #fcc882 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d68838;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f5a962;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #f5a962 0%, #fcc882 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #d68838;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #d68838;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(214, 136, 56, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #d68838;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #f5a962;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #d68838;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #d68838;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #f5a962 0%, #fcc882 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fde9d3 0%, #fcc882 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(245, 169, 98, 0.2);
+            border-left: 6px solid #d68838;
+        }
+
+        .info-box-title {
+            color: #a66b28;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #f7c89a 0%, #f5a962 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(245, 169, 98, 0.3);
+            border-left: 6px solid #d68838;
+        }
+
+        .technique-box-title {
+            color: #a66b28;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #d68838;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #d68838;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f5a962;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #f5a962;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Mut / Selbstvertrauen</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Mut / Selbstvertrauen</div>
+            <h1>Lina Löwin und der erste Schritt</h1>
+            <p class="story-intro">
+                Lina ist eine junge Löwin mit weichem Fell und wachsamen Augen. Sie beobachtet gern, wie die älteren Löwen mutig durch das hohe Gras laufen – doch sie selbst traut sich noch nicht. In ihrem Kopf sind viele Gedanken, die ihre Pfoten am Boden festhalten. Eine warmherzige Geschichte darüber, dass Mut nicht laut sein muss und manchmal mit einem einzigen kleinen Schritt beginnt.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/mut1.png" alt="Lina Löwin und der erste Schritt">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Lina war eine junge Löwin mit weichem Fell und wachsamen Augen. Sie lebte mit ihrem Rudel in der warmen Savanne, wo das Gras im Wind raschelte und die Sonne alles golden färbte. Lina beobachtete gern, wie die älteren Löwen jagten, sprangen und mutig durch das hohe Gras liefen.</p>
+
+                <p>Sie selbst blieb oft ein Stück zurück. Nicht, weil sie nicht wollte – sondern weil sie sich noch nicht traute. In ihrem Kopf waren viele Gedanken. <em>Was, wenn ich stolpere? Was, wenn ich zu langsam bin?</em> Diese Gedanken hielten ihre Pfoten fest am Boden.</p>
+
+                <p>Eines Morgens kündigte die Löwenmutter an, dass Lina heute zum ersten Mal allein ein kleines Stück vorausgehen dürfe. Kein Jagen, kein Kämpfen. Nur gehen. Trotzdem begann Linas Herz schneller zu schlagen. Ihr Bauch fühlte sich eng an.</p>
+
+                <p>Die anderen Jungen sprangen los. Lina blieb stehen. Sie schaute auf ihre Pfoten. Sie fühlten sich schwer an, als gehörten sie nicht richtig zu ihr.</p>
+
+                <p><strong>„Mut fühlt sich oft nicht laut an"</strong>, sagte die Löwenmutter ruhig. <strong>„Manchmal ist er ganz leise und beginnt mit einem Gedanken: Ich versuche es."</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🦁 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Lina atmete tief ein. Sie spürte den warmen Boden unter sich. Dann hob sie langsam eine Pfote. Nur eine. Sie setzte sie vor die andere.</p>
+
+                <p>Nichts Schlimmes passierte.</p>
+
+                <p>Noch ein Schritt. Und noch einer. Mit jedem Schritt wurde ihr Atem ruhiger. Die Gedanken in ihrem Kopf wurden leiser. Lina merkte: Sie musste nicht rennen. Sie musste nicht perfekt sein. Sie musste nur bei sich bleiben.</p>
+
+                <p>Als sie ein paar Schritte gegangen war, drehte sie sich um. Die Löwenmutter nickte ihr stolz zu. Nicht, weil Lina weit gegangen war – sondern weil sie gegangen war.</p>
+
+                <p>In Linas Brust breitete sich ein warmes Gefühl aus. Es war kein lautes Jubeln, sondern eine ruhige Stärke. Das war Selbstvertrauen.</p>
+
+                <p>Lina wusste nun: <strong>Mut heißt nicht, keine Angst zu haben. Mut heißt, trotz der Angst den ersten kleinen Schritt zu machen.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🦁</span>
+                <span>Die Lina-Technik – Der erste kleine Schritt</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, mutig zu werden:</strong></p>
+                <ul>
+                    <li><strong>Die Angst wahrnehmen:</strong> „Ich habe Angst" – und das ist völlig okay</li>
+                    <li><strong>Einen leisen Gedanken fassen:</strong> „Ich versuche es" – Mut beginnt mit einem Gedanken</li>
+                    <li><strong>Nur einen einzigen Schritt machen:</strong> Nicht alles auf einmal – nur den ersten kleinen Schritt</li>
+                    <li><strong>Bei sich bleiben:</strong> Nicht perfekt sein müssen, nicht rennen müssen – nur bei sich selbst bleiben</li>
+                    <li><strong>Das warme Gefühl spüren:</strong> Das ruhige, starke Gefühl in der Brust – das ist Selbstvertrauen</li>
+                </ul>
+                <p>Diese Technik zeigt, dass Mut nicht laut oder groß sein muss. Sie vermittelt, dass ein einziger kleiner Schritt schon mutig ist und dass man nicht perfekt sein muss, um Selbstvertrauen zu entwickeln.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wo lebt Lina und was beobachtet sie gern?<br>
+                • Warum bleibt Lina oft zurück?<br>
+                • Welche Gedanken halten Linas Pfoten am Boden fest?<br>
+                • Was durfte Lina zum ersten Mal tun?<br>
+                • Was sagt die Löwenmutter über Mut?<br>
+                • Was macht Lina als Erstes?<br>
+                • Was passiert, als Lina ihre Pfote hebt?<br>
+                • Was ist Selbstvertrauen?<br>
+                • Hast du schon mal etwas gemacht, obwohl du Angst hattest?<br>
+                • Muss man perfekt sein, um mutig zu sein?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

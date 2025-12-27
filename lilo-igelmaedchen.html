@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lilo, das kleine Igelmädchen - Ein magisches Abenteuer über Mut, Freundlichkeit und Zusammenhalt">
+    <title>Lilo, das kleine Igelmädchen - Tiergeschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #7e22ce;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #a855f7;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #7e22ce;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #a855f7;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e9d5ff;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #a855f7;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #7e22ce;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #22c55e;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .magic-box {
+            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+            border-left: 6px solid #a855f7;
+        }
+
+        .magic-box p {
+            color: #581c87;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #bbf7d0 0%, #86efac 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+            border-left: 6px solid #22c55e;
+        }
+
+        .info-box-title {
+            color: #14532d;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #166534;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #7e22ce;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+            border-color: #a855f7;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #7e22ce;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #a855f7 0%, #7e22ce 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #a855f7;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #7e22ce;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #7e22ce;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .magic-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="tiergeschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Tiergeschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Tiergeschichte</div>
+            <h1>Lilo, das kleine Igelmädchen</h1>
+            <p class="story-intro">
+                Ein magisches Abenteuer über ein mutiges Igelmädchen, das lernt, dass Zusammenhalt und Freundlichkeit zu den schönsten Abenteuern führen
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/tiergeschichten/t4.png" alt="Lilo, das kleine Igelmädchen">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-header">🦔 Seite 1 🦔</div>
+            <div class="story-content">
+                <p>Lilo war ein winziges Igelmädchen mit weichen Stacheln, die wie kleine Punkte glänzten, wenn die Sonne auf sie fiel. Sie lebte in einem gemütlichen Laubhaufen am Rand des Waldes und liebte es, abends über die Wiesen zu streifen, neue Dinge zu entdecken.</p>
+
+                <p>Eines Tages bemerkte Lilo ein seltsames Leuchten im hohen Gras. <strong>Neugierig rollte sie sich ein Stück weiter und entdeckte eine kleine Glaskugel, die in allen Farben des Regenbogens schimmerte.</strong> „Oh, was bist du nur?", piepste Lilo fasziniert. Sie stupste die Kugel vorsichtig an – und plötzlich hörte sie eine leise Stimme.</p>
+
+                <p><em>„Hallo, kleines Igelmädchen"</em>, flüsterte die Kugel. Lilo zuckte erschrocken zusammen. „Wer… wer spricht da?" Die Kugel glitzerte noch heller. „Ich bin das Zauberlicht des Waldes. Ich suche ein mutiges Tier, das mir hilft, meinen Weg zurück zu meinem Baum zu finden."</p>
+
+                <p>Lilo spürte ein aufregendes Kribbeln. Ein Abenteuer! Und sie durfte helfen! <strong>„Ich will helfen!"</strong>, piepste sie mutig. Die Kugel begann sanft zu leuchten und rollte vorsichtig vor ihr her. Lilo folgte ihr durch die Wiesen, über kleine Hügel und zwischen bunten Blumen hindurch.</p>
+
+                <p>Unterwegs trafen sie auf ein Eichhörnchen namens Nino, das neugierig die Zweige entlang kletterte. „Was macht ihr da?", fragte Nino. Lilo erklärte alles: <em>„Wir müssen das Zauberlicht zu seinem Baum bringen."</em> Nino nickte eifrig. „Dann helfe ich euch! Ich kenne viele Wege durch die Baumkronen."</p>
+
+                <p>Gemeinsam setzten sie ihren Weg fort. Das Zauberlicht glitzerte und leuchtete immer stärker, wenn sie richtig abbiegen, vorsichtig über Äste balancieren oder kleine Hindernisse überwinden mussten. <strong>Lilo spürte, wie ihr Herz schneller klopfte – ein richtiges Abenteuer war das!</strong></p>
+
+                <p>Doch plötzlich stießen sie auf einen kleinen, matschigen Bach, der ihnen den Weg versperrte. Das Wasser gluckste und spritzte, und die Kugel begann nervös zu wackeln. <em>„Oh nein, wie kommen wir da rüber?"</em>, piepste Lilo.</p>
+
+                <p>Nino überlegte kurz und rief dann: „Ich habe eine Idee! Wir bauen eine kleine Brücke aus Zweigen und Blättern!" Lilo und Nino sammelten alles, was sie finden konnten, und arbeiteten zusammen, um eine sichere Überquerung zu bauen.</p>
+
+                <p>Gerade als die Brücke fertig war und Lilo die Kugel vorsichtig darüberrollen wollte, hörten sie ein Rascheln aus dem Gras. <strong>Etwas Unbekanntes bewegte sich auf sie zu…</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">🌟 🌳 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-header">🦔 Seite 2 🦔</div>
+            <div class="story-content">
+                <p>Aus dem hohen Gras huschte ein kleiner, scheuer Fuchs hervor. „Wer seid ihr?", fragte er vorsichtig. Lilo trat mutig vor. <strong>„Ich bin Lilo, und wir helfen dem Zauberlicht, seinen Baum zu finden."</strong> Der Fuchs schnupperte neugierig an der Kugel und lächelte schließlich. „Ah, ich weiß, wo sein Baum steht. Folgt mir!"</p>
+
+                <p>Gemeinsam machten sich Lilo, Nino und der kleine Fuchs auf den Weg. Sie balancierten über die selbstgebaute Brücke, sprangen vorsichtig über kleine Wurzeln und hüpften durch glitzernde Pfützen. <em>Das Zauberlicht rollte fröhlich voraus und leuchtete heller und heller, je näher sie dem geheimnisvollen Baum kamen.</em></p>
+
+                <p>Bald erreichten sie eine Lichtung, auf der ein alter, knorriger Baum stand. Seine Äste funkelten im Sonnenlicht, und die Blätter schimmerten leicht wie Silber. „Hier!", rief der Fuchs. Das Zauberlicht rollte vorsichtig auf den Baum zu und begann zu leuchten, als würde es vor Freude tanzen.</p>
+
+                <p>Plötzlich öffnete sich eine kleine Ritze im Stamm, und das Licht glitt sanft hinein. Ein warmer, glitzernder Glanz erfüllte die Lichtung. <em>„Danke, Lilo!"</em>, flüsterte eine leise Stimme aus dem Baum. „Dank dir habe ich meinen Platz wiedergefunden." Lilo lächelte stolz. <strong>„Es war mir eine Freude. Ich helfe immer gerne."</strong></p>
+
+                <p>Nino quietschte vor Freude, und der kleine Fuchs nickte zufrieden. „Ihr wart wirklich mutig und freundlich. Nur so kann man Abenteuer bestehen und Freunde gewinnen." Lilo spürte ein warmes Glücksgefühl in ihrem Bauch. <em>Sie hatte nicht nur das Zauberlicht gerettet, sondern auch neue Freunde gefunden – und wusste, dass noch viele Abenteuer im Wald auf sie warteten.</em></p>
+
+                <p>Als die Sonne langsam hinter den Bäumen verschwand, machten sich Lilo, Nino und der kleine Fuchs auf den Heimweg. Die Vögel zwitscherten leise, und die Glühwürmchen begannen, ihre kleinen Lichter zu entzünden. <strong>Lilo kuschelte sich zufrieden in ihr Laubbett, dachte an den aufregenden Tag zurück und wusste: Mut, Freundlichkeit und Zusammenhalt führen zu den schönsten Abenteuern.</strong></p>
+
+                <p>Und so schlief Lilo ein, während der Wald leise summte und flüsterte, als wolle er sagen: <em>„Heute war ein guter Tag, Lilo – und morgen wartet schon das nächste Abenteuer auf dich."</em></p>
+            </div>
+        </div>
+
+        <div class="magic-box">
+            <p>🌟 Ende 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Lilo hat das Zauberlicht gerettet und neue Freunde gefunden – bereit für viele weitere Abenteuer ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was hat Lilo mutig gemacht, obwohl sie so klein ist?<br>
+                • Wie wichtig war die Zusammenarbeit zwischen Lilo, Nino und dem Fuchs?<br>
+                • Was hättest du gemacht, wenn du eine sprechende Glaskugel gefunden hättest?<br>
+                • Warum ist es wichtig, anderen zu helfen, auch wenn man sie nicht kennt?<br>
+                • Welche Eigenschaften machen Lilo zu einer guten Freundin?<br>
+                • Hast du auch schon mal jemandem geholfen, ein Problem zu lösen?<br>
+                • Was denkst du, welche neuen Abenteuer Lilo noch erleben wird?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Tiergeschichten</h2>
+            <div class="nav-buttons">
+                <a href="tiergeschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Tiergeschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

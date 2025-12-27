@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Abend hinter dem Fenster - Eine sanfte Gute-Nacht-Geschichte über Ruhe und Einschlafen">
+    <title>Der Abend hinter dem Fenster - Gute-Nacht-Geschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #2a5298;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #7e22ce;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #2a5298;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(126, 34, 206, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #7e22ce;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #2a5298;
+            font-style: italic;
+        }
+
+        .poem-verse {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            border-left: 4px solid #2a5298;
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #1e3a8a;
+            line-height: 1.9;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .sleepy-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            border-left: 6px solid #2a5298;
+        }
+
+        .sleepy-box p {
+            color: #1e3a8a;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #2a5298;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.3);
+            border-color: #2a5298;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2a5298;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72 0%, #7e22ce 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #7e22ce;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2a5298;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #2a5298;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .sleepy-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="gute-nacht-geschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Gute-Nacht-Geschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gute-Nacht-Geschichte</div>
+            <h1>Der Abend hinter dem Fenster</h1>
+            <p class="story-intro">
+                Mira sitzt in ihrem Bett und beobachtet, wie der Abend zur Nacht wird – eine Geschichte über den Raum zwischen Wachsein und Schlafen
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gutenacht/gn21.png" alt="Der Abend hinter dem Fenster">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Als es draußen dunkel wurde, saß Mira noch aufrecht in ihrem Bett. Das Fenster war gekippt, und die Abendluft kam langsam ins Zimmer. Sie roch nach Sommer und nach etwas Unbestimmtem, das nur abends existierte. Das Zimmer war aufgeräumt, das Licht gedimmt, und trotzdem fühlte es sich an, als wäre der Tag noch nicht ganz vorbei.</p>
+
+                <p>Mira betrachtete die Schatten an der Wand. Sie bewegten sich kaum, aber sie veränderten sich, je länger man hinsah. Ein Schatten wurde länger, ein anderer verschwand fast vollständig. <em>Es war, als würde der Abend ganz leise arbeiten, ohne bemerkt werden zu wollen.</em></p>
+
+                <p>Von draußen kamen entfernte Geräusche. Ein Auto fuhr vorbei, irgendwo schloss eine Tür, dann wurde es wieder ruhig. Mira zog die Decke etwas höher und lauschte. Sie hatte nicht das Gefühl, wach bleiben zu müssen, aber auch noch nicht bereit zu sein, einzuschlafen. Es war dieser Moment dazwischen, in dem nichts entschieden war.</p>
+
+                <p>Sie setzte sich näher ans Fenster und schaute hinaus. Der Himmel war dunkelblau, fast schwarz, aber nicht leer. Kleine Lichtpunkte waren zu sehen, nicht hell, eher zurückhaltend. Mira fragte sich, ob sie immer da waren oder ob sie nur abends auftauchten, wenn man genau hinsah.</p>
+
+                <p><strong>Die Welt draußen wirkte langsamer als am Tag. Nichts schien es eilig zu haben. Selbst der Wind bewegte sich vorsichtig, als wolle er niemanden stören.</strong> Mira spürte, wie sich diese Ruhe in ihr ausbreitete, ganz allmählich.</p>
+
+                <p>Sie dachte an den Tag zurück, aber ohne Bilder festzuhalten. Es war mehr ein Gefühl als eine Erinnerung. Alles, was wichtig gewesen war, durfte nun zur Seite rücken. Morgen war weit genug weg, um jetzt keine Rolle zu spielen.</p>
+
+                <p>Mira legte sich wieder hin und beobachtete den Fensterspalt. Die Dunkelheit draußen schien nicht näherzukommen, sondern sich freundlich auszubreiten. Sie fragte sich, ob die Nacht sie schon bemerkt hatte oder ob sie noch wartete, bis Mira ganz bereit war.</p>
+
+                <p>Und während sie so dalag und dem Abend hinter dem Fenster zusah, fragte sie sich, ob der Schlaf schon unterwegs war oder ob er erst dann kommen würde, wenn sie aufhörte, nach ihm zu suchen.</p>
+
+                <p><em>Vielleicht, dachte Mira, musste sie einfach noch einen Moment still liegen und dem Abend erlauben, ganz anzukommen …</em></p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌙 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Mira schloss langsam die Augen, nicht fest, nur so weit, dass das Zimmer noch schemenhaft da war. Das Fenster blieb offen, und die Nachtluft strich ruhig durch den Raum. Sie fühlte sich nicht kalt an, sondern genau richtig, wie ein Zeichen, dass alles im Gleichgewicht war.</p>
+
+                <p>Die Geräusche draußen wurden seltener. Was eben noch hörbar gewesen war, entfernte sich oder löste sich ganz auf. Mira hörte nun nur noch ihren Atem. Er ging ruhig und gleichmäßig, ohne dass sie etwas dafür tun musste. Ihr Körper wusste offenbar schon, was jetzt kam.</p>
+
+                <p>Die Gedanken wurden langsamer. Sie tauchten auf und verschwanden wieder, ohne Spuren zu hinterlassen. Mira hielt keinen davon fest. Es war nicht nötig. Der Tag hatte seinen Platz gefunden, und mehr musste nicht getan werden.</p>
+
+                <p>Das Licht im Zimmer war inzwischen so schwach, dass es kaum noch auffiel. Die Schatten hatten ihre Bedeutung verloren. Alles war weich geworden, weniger klar, aber dafür angenehmer. <strong>Mira spürte, wie die Matratze sie trug, ohne Druck, ohne Anstrengung.</strong></p>
+
+                <p>Draußen war der Himmel nun ganz dunkel. Die wenigen Lichter wirkten fern und ruhig. Mira stellte sich vor, dass die Nacht über allem lag, nicht schwer, sondern schützend. Nichts musste bewacht werden, nichts vorbereitet. Alles durfte ruhen.</p>
+
+                <p>Ihre Augen schlossen sich ganz. Der Atem wurde tiefer, der Körper schwerer. Es gab keinen Moment, in dem der Schlaf begann. Er war einfach da, leise und selbstverständlich.</p>
+
+                <p>Das Fenster blieb noch eine Weile geöffnet. Die Nacht zog weiter, das Haus stand still. Mira schlief ruhig, ohne Träume, ohne Gedanken, getragen von der Stille, die sie eingeladen hatte.</p>
+
+                <p>Und während draußen der Abend vollständig zur Nacht wurde, war Mira längst angekommen dort, wo der Tag endet und Ruhe beginnt.</p>
+            </div>
+        </div>
+
+        <div class="sleepy-box">
+            <p>🌟 Gute Nacht 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so schläft Mira sanft ein, getragen von der Stille der Nacht ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Kennst du auch diesen Moment zwischen Wachsein und Schlafen?<br>
+                • Was siehst du, wenn du abends aus deinem Fenster schaust?<br>
+                • Wie fühlt sich die Abendluft für dich an?<br>
+                • Beobachtest du manchmal auch die Schatten an der Wand?<br>
+                • Was hat Mira geholfen, zur Ruhe zu kommen und loszulassen?<br>
+                • Gibt es Geräusche in der Nacht, die du besonders magst?<br>
+                • Was bedeutet es für dich, dass „der Tag seinen Platz gefunden hat"?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Gute-Nacht-Geschichten</h2>
+            <div class="nav-buttons">
+                <a href="gute-nacht-geschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Geschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>
