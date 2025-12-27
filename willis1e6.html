@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die erste Tiefseetür - Willi, der Wurm, Staffel 1 Episode 6">
+    <title>Episode 6: Die erste Tiefseetür - Willi, der Wurm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #764ba2;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #667eea;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .cliffhanger-box {
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(168, 230, 207, 0.4);
+            border-left: 6px solid #3ecc71;
+        }
+
+        .cliffhanger-box p {
+            color: #27ae60;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .cliffhanger-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="abenteuer-willi.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 6 von 9</span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 6</div>
+            <h1>Die erste Tiefseetür</h1>
+            <p class="episode-intro">
+                Willi steht vor der weißen Pyramide – größer und mächtiger als alles, was er je gesehen hat. Der Lichtschlüssel und die Muschel haben die erste Tür geöffnet. Doch was verbirgt sich dahinter? Und wer ist der Wächter, der nicht schläft?
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/willi/S1E6.png" alt="Die erste Tiefseetür">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Willi wagte kaum zu atmen. Die weiße Pyramide vor ihm wirkte nicht einfach gebaut – sie wirkte geboren. Jeder Stein schien Licht in sich zu tragen, als wäre er aus Mondschein geschnitzt worden. Die Muschel und der Lichtschlüssel schwebten an ihrer Spitze, und von ihnen aus ging ein leises, pulsierendes Leuchten aus. Es war kein Summen wie beim singenden Riff und kein tiefes Brummen wie beim schlafenden Wächter. Es klang wie… Flüstern.</p>
+
+                <p><em>Ein sanftes, warmes Flüstern.</em></p>
+
+                <p>Willi steuerte das U-Boot vorsichtig näher. Sein Herz klopfte so laut, dass er sicher war, die Pyramide müsse es hören. <strong>„Ich bin… da"</strong>, sagte er leise, auch wenn seine Stimme im Wasser kaum dringen konnte.</p>
+
+                <p>Da erhellte sich plötzlich die gesamte Vorderseite der Pyramide. Die glatten Steinplatten verwandelten sich in ein riesiges Lichtmuster – Kreise, die sich drehten, Linien, die sich zogen wie Lichtfäden, Spiralen, die sich weit in die Tiefe wanden. Es war, als würde die Pyramide sprechen. Und Willi begriff: Sie tat es wirklich.</p>
+
+                <p>Die Muschel vibrierte.</p>
+
+                <p>Der Schlüssel leuchtete grell auf.</p>
+
+                <p>Und dann hörte Willi es.</p>
+
+                <p>Nicht mit den Ohren.</p>
+
+                <p>Mit dem Herzen.</p>
+
+                <p><strong>„Willi… du bist weiter gegangen."</strong></p>
+
+                <p>Willi fröstelte, aber auf die schöne Art. <strong>„Was… was soll ich tun?"</strong>, fragte er zaghaft.</p>
+
+                <p>Die Pyramide antwortete mit einem langen, warmen Ton, der das Wasser durchdrang wie ein weicher Strom. Die Linien der Pyramide formten ein Bild – Willi selbst, sein U-Boot, die erste Pyramide, das Riff und der Wächter.</p>
+
+                <p>Und dann sah er etwas Neues:</p>
+
+                <p>Eine Tür. Rund. Riesig. Weiß.</p>
+
+                <p>Verborgen tief hinter der Pyramide.</p>
+
+                <p>Willi lehnte sich näher an die Scheibe.</p>
+
+                <p>Die Muschel vibrierte stärker.</p>
+
+                <p>Der Schlüssel drehte sich langsam.</p>
+
+                <p><em>„Die erste Tür ist geöffnet… aber nicht die letzte"</em>, flüsterte eine Stimme.</p>
+
+                <p>Der Raum vibrierte.</p>
+
+                <p>Etwas Erwachte.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🚪 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>In der Ferne, tief unter der weißen Pyramide, begann sich etwas zu bewegen. Zuerst nur ein leises Knacken, wie wenn Muscheln im Sand platzen. Dann ein tiefes Grollen, das durch Willis U-Boot vibrierte. Die Pyramide leuchtete heller, und die Muster auf ihrer Oberfläche rasten schneller, als würden sie auf etwas Dringendes reagieren.</p>
+
+                <p><strong>„Was kommt da?"</strong>, murmelte Willi und drückte seine Fühler nervös an die Scheibe.</p>
+
+                <p>Aus der dunklen Schlucht unter der Pyramide schob sich langsam ein gewaltiger Ring aus Stein heraus. Er war riesig, bestimmt so breit wie Onkel Hans' ganze Schiffswerft. Der Ring war mit feinen Symbolen bedeckt, die aussahen wie kleine Sternbilder — dieselben, die Willi schon auf dem Panzer des Wächters gesehen hatte.</p>
+
+                <p>Langsam, sehr langsam, begann sich der Ring zu drehen.</p>
+
+                <p>Ein Lichtstrahl schoss von der Pyramide aus hinein, traf den inneren Kreis des Rings, und plötzlich leuchteten die Symbole auf. Erst schwach, dann stärker, bis der gesamte Ring wie ein riesiges Portal aus Licht glühte.</p>
+
+                <p>Willi riss die Augen auf.</p>
+
+                <p><strong>Das war die Tür.</strong></p>
+
+                <p>Die Tür, die auf ihn gewartet hatte.</p>
+
+                <p>Doch bevor er etwas tun konnte, vibrierte die Muschel in einem Rhythmus, den er noch nie gespürt hatte – schnell, wild, drängend.</p>
+
+                <p><strong>„Was ist los?"</strong>, fragte Willi erschrocken.</p>
+
+                <p>Der Schlüssel drehte sich schneller, als würde etwas ihn anziehen. Die Muschel leuchtete rotgolden, nicht wie sonst, sondern intensiver — und plötzlich schoss ein Lichtpfeil aus beiden heraus, direkt in das Portal.</p>
+
+                <p>Das Portal antwortete.</p>
+
+                <p><strong>BOOOOMM.</strong></p>
+
+                <p>Nicht laut.</p>
+
+                <p>Aber unendlich tief.</p>
+
+                <p>Der Ring öffnete sich.</p>
+
+                <p>Nicht wie eine Tür aus Holz.</p>
+
+                <p>Sondern wie ein Auge.</p>
+
+                <p><em>Ein Auge, das Willi ansah.</em></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 👁️ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Willi fror für einen Moment ein. Das Portal blickte ihn an – so fühlte es sich jedenfalls an. Die goldenen Linien im inneren Ring wirbelten wie ein Sturm aus Sternen, und in der Mitte öffnete sich ein tiefes Dunkel. Doch es war kein bedrohliches Schwarz. Es sah aus wie der Nachthimmel… voller winziger, schimmernder Lichter.</p>
+
+                <p><strong>„Ich… soll hineingehen"</strong>, flüsterte Willi.</p>
+
+                <p>Es war kein Gedanke.</p>
+
+                <p>Es war Gewissheit.</p>
+
+                <p>Die Muschel und der Schlüssel schwebten vor ihm her, als wollten sie sagen: <em>Vertrau uns.</em> Und obwohl Willis Fühler zitterten, fühlte er keine Angst. Nur Ehrfurcht.</p>
+
+                <p>Langsam lenkte er das U-Boot vorwärts.</p>
+
+                <p>Als er die Grenze des Portals erreichte, zitterte das Wasser kurz, als würde es ihn prüfen. Dann ließ es ihn durch – ohne Widerstand, ohne Druck, ohne Geräusch. Nur Licht. Ein Licht, das ihn umhüllte wie eine warme Decke.</p>
+
+                <p>Das U-Boot glitt hinein.</p>
+
+                <p>Die Außenwelt verschwand.</p>
+
+                <p>Alles wurde still.</p>
+
+                <p>Dann — ganz langsam — entstand vor ihm ein neuer Raum.</p>
+
+                <p>Ein Raum so riesig, dass Willi das Gefühl hatte, in einem Himmel unter Wasser zu schweben. Überall leuchteten Punkte. Manche waren groß wie Felsen, manche klein wie Sandkörner. Und alle zusammen formten sie eine Landschaft aus Licht.</p>
+
+                <p><strong>„Wo… bin ich?"</strong>, fragte Willi ehrfürchtig.</p>
+
+                <p>Da hörte er eine Stimme.</p>
+
+                <p>Klar. Warm. Nah.</p>
+
+                <p><strong>„Im Inneren der Tiefsee. Dort, wo die Wege beginnen."</strong></p>
+
+                <p>Willi drehte sich um — doch niemand war da. Nur das Leuchten, das vibrierte wie ein Herzschlag.</p>
+
+                <p><em>„Du hast die erste Tür geöffnet"</em>, sagte die Stimme. <em>„Doch vieles schläft noch. Und manches sucht dich."</em></p>
+
+                <p>Willi schluckte.</p>
+
+                <p>Sein Herz klopfte heftig.</p>
+
+                <p><strong>„Was… sucht mich?"</strong>, fragte er leise.</p>
+
+                <p><em>„Der nächste Wächter"</em>, antwortete die Stimme.</p>
+
+                <p><strong>„Und er schläft nicht."</strong></p>
+
+                <p>Ein kaltes Schaudern lief Willi über den Rücken.</p>
+
+                <p>Doch gleichzeitig wusste er:</p>
+
+                <p>Er würde weitergehen.</p>
+
+                <p>Denn die Tiefsee hatte ihn gerufen.</p>
+
+                <p><strong>Und Willi der Wurm antwortete.</strong></p>
+            </div>
+        </div>
+
+        <div class="cliffhanger-box">
+            <p>Wer ist der Wächter, der nicht schläft? Was erwartet Willi im Inneren der Tiefsee?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Das große Finale wartet in Episode 7! ✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wie hat Willi sich wohl gefühlt, als das Portal ihn ansah wie ein Auge?<br>
+                • Warum hat Willi keine Angst, obwohl seine Fühler zittern?<br>
+                • Was könnte der Unterschied zwischen dem schlafenden Wächter und dem sein, der nicht schläft?<br>
+                • Wie stellst du dir das Innere der Tiefsee vor?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht die Geschichte weiter?</h2>
+            <div class="nav-buttons">
+                <a href="willis1e5.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Der Schlüssel aus Licht</div>
+                </a>
+                
+                <a href="willis1e7.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Der Wächter der Schattenströmung</div>
+                </a>
+
+                <a href="abenteuer-willi.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

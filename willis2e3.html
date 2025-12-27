@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die Kokosnuss-Überraschung - Willi, der Wurm, Staffel 2 Episode 3">
+    <title>Episode 3: Die Kokosnuss-Überraschung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fdcb6e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #f39c12;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #fab1a0 0%, #ff7675 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .season-badge {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(225, 112, 85, 0.3);
+        }
+
+        .episode-meta {
+            color: #fdcb6e;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #d35400;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            margin-top: 30px;
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            padding: 40px;
+        }
+
+        .hero-placeholder {
+            background: rgba(255,255,255,0.2);
+            border: 3px dashed rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 60px 20px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .hero-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #d35400;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #fdcb6e;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fdcb6e;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+            border-left: 6px solid #5f27cd;
+        }
+
+        .info-box-title {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: white;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #fdcb6e;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(253, 203, 110, 0.4);
+            border-color: #fdcb6e;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #d35400;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #fdcb6e 0%, #e17055 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #fdcb6e;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #fdcb6e;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e17055;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #e17055;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+                       <a href="abenteuer-willi.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>  
+		<a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Hauptseite</span>
+            </a>
+            <span class="episode-badge">Staffel 2 • Episode 3</span>
+        </nav>
+        </a> 
+
+        <header>
+            <div class="season-badge">🥥 DAS KOKOSNUSS-FEST 🥥</div>
+            <div class="episode-meta">Staffel 2 • Episode 3 von 5</div>
+            <h1>Die Kokosnuss-Überraschung</h1>
+            <p class="episode-intro">
+                Ein kleines wuscheliges Kokosnusstier namens Koko lädt Willi zum großen Kokosnuss-Sammelfest ein! Zusammen sammeln sie Kokosnüsse, basteln wunderbare Dinge und erleben beim Kokosnuss-Rollenrennen eine herzerwärmende Überraschung.
+            </p>
+            <div class="hero-image-container">
+                <div class="hero-placeholder">
+                    <img src="bilder/abenteuer/willi/S2E3.png" alt="Die Kokosnuss-Überraschung">
+                </div>
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Am nächsten Morgen wurde Willi durch ein leises tock… tock… tock geweckt. Erst dachte er, jemand klopfe an seine Hütte, aber als er die Tür öffnete, traf ihn eine kleine braune Kugel direkt auf die Nase.</p>
+
+                <p><strong>"Autsch!"</strong></p>
+
+                <p><strong>"Oh nein, oh nein, oh neeeeein!"</strong> rief eine Stimme. <strong>"Das war keine Absicht!"</strong></p>
+
+                <p>Willi blinzelte und entdeckte ein winziges, wuscheliges Kokosnusstier. Es hatte Beine aus zartem Pflanzenfaserhaar und zwei dunkle Knopfaugen. Neben ihm rollte eine kleine Kokosnuss im Sand.</p>
+
+                <p><strong>"Entschuldigung! Ich übe werfen! Aber… ich bin nicht so gut."</strong></p>
+
+                <p>Willi rieb seine Nase und lächelte. <strong>"Keine Sorge. Ich bin Willi."</strong></p>
+
+                <p><strong>"Ich bin Koko!"</strong>, piepste das kleine Wesen fröhlich. <strong>"Ich wohne bei den Kokospalmen hinter dem großen Felsen. Und heute haben wir etwas ganz Besonderes vor: das große Kokosnuss-Sammelfest! Willst du mitmachen?"</strong></p>
+
+                <p>Willi musste nicht lange nachdenken. <strong>"Klar!"</strong></p>
+
+                <p>Koko hüpfte begeistert auf und ab. <strong>"Super! Ich hole Fizzi! Der hilft uns immer beim Sammeln!"</strong></p>
+
+                <p>Während Koko lossprang, nutzte Willi die Zeit, um sich ein bisschen umzuschauen. Die Insel war früh am Morgen besonders schön. Der Sand war noch kühl, kleine Lichtstrahlen tanzten über die Wasserkuppel, und weiter hinten hörte man schon das Kichern der Seestern-Kinder.</p>
+
+                <p>Kurz darauf kam Fizzi herangesaust – diesmal ohne Sonnenbrille, dafür mit einer winzigen Kokosnuss-Schubkarre.</p>
+
+                <p><strong>"Moooorgen, Willi! Bereit für das beste Fest der ganzen Insel?"</strong></p>
+
+                <p><strong>"Was passiert denn da?"</strong>, fragte Willi neugierig.</p>
+
+                <p><strong>"Oh, was nicht!"</strong>, lachte Fizzi. <strong>"Wir sammeln Kokosnüsse, basteln daraus leckere Getränke, machen Spiele und am Ende gibt's ein super lustiges Rennen!"</strong></p>
+
+                <p>Willi konnte kaum glauben, dass Urlaub so aufregend sein konnte. Und doch fühlte es sich leicht an – ganz anders als seine Abenteuer in der Tiefe.</p>
+
+                <p><strong>"Na dann"</strong>, sagte Willi strahlend, <strong>"lasst uns sammeln gehen!"</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🌴 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Die drei gingen den schmalen Sandweg entlang zu den Palmen. Dort ragten riesige Kokosbäume in den Himmel – so hoch, dass ihre Spitzen fast die Wasserkuppel berührten. Unter ihnen schwirrten kleine Tiere herum, manche mit Körbchen, manche mit winzigen Leitern, manche mit elastischen Netzen.</p>
+
+                <p><strong>"Das ist ja ein richtiges Team!"</strong>, staunte Willi.</p>
+
+                <p>Koko nickte stolz. <strong>"Jedes Jahr sammeln wir nur so viele Kokosnüsse, wie wir wirklich brauchen. Die restlichen lassen wir hängen. Die Insel gibt uns viel – also geben wir auch etwas zurück."</strong></p>
+
+                <p>Willi fand das wunderschön.</p>
+
+                <p>Fizzi zeigte auf einen kleineren Baum. <strong>"Das ist ein guter Anfang. Der hier ist perfekt für Anfänger!"</strong></p>
+
+                <p><strong>"Für Anfänger wie mich, oder?"</strong> Willi grinste.</p>
+
+                <p>Fizzi nickte. <strong>"Genau! Du musst einfach nur die Nuss antippen und… warten."</strong></p>
+
+                <p>Willi kroch vorsichtig zum Baum, stupste die erste Kokosnuss mit einem seiner Fühler an – und plopp! fiel sie ihm direkt vor die Nase.</p>
+
+                <p>Koko juchzte. <strong>"Perfekt! Noch eine!"</strong></p>
+
+                <p>Bald hatten sie einen kleinen Haufen gesammelt. Die Kokosnüsse dufteten süß und angenehm nach Sommer.</p>
+
+                <p><strong>"Jetzt kommt der beste Teil!"</strong>, rief Fizzi und führte sie zu einer langen Palme, die einen natürlichen Schattenplatz bildete. Dort standen Muschelschalen, bunte Tücher und kleine Werkzeuge bereit.</p>
+
+                <p><strong>"Wir machen daraus Trinkschalen, Becher, Nachtlichter, Spielkugeln… was immer du willst!"</strong></p>
+
+                <p>Koko sprang schon auf und ab. <strong>"Und ich zeig dir, wie man die Kokosmilch gewinnt! Die ist soooo lecker!"</strong></p>
+
+                <p>Willi fühlte sich wie ein Handwerker. Er durfte bohren, schalen, polieren – natürlich alles mit kinderfreundlichen Werkzeugen, die nicht scharf waren, sondern abgerundet und weich wie Seeglas.</p>
+
+                <p>Am Ende hielt er stolz seine eigene Kokosnuss-Schale in der Hand. Darauf hatte Koko mit farbigem Sand ein kleines Bild gestreut: ein U-Boot und ein Wurm.</p>
+
+                <p><strong>"Die ist für dich"</strong>, sagte Koko leise.</p>
+
+                <p>Willi wurde ganz warm ums Herz.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🥥 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Nach der Bastelei versammelten sich alle Inselbewohner auf der großen Sandfläche am Rand des Palmenhains. Koko stellte sich in die Mitte und rief mit seiner quiekenden Stimme:</p>
+
+                <p><strong>"Es ist Zeit für das Kokosnuss-Rollenrennen!"</strong></p>
+
+                <p>Willi sah zu Fizzi. <strong>"Ähm… und wie funktioniert das genau?"</strong></p>
+
+                <p><strong>"Ganz einfach!"</strong>, erklärte Fizzi. <strong>"Jeder bekommt eine Kokosnuss – und dann rollen wir sie den Strand hinunter bis zur Ziellinie. Wer zuerst ankommt, gewinnt!"</strong></p>
+
+                <p>Willi schaute auf seine Kokosnuss. Sie war rund, glatt und sah recht schnell aus.</p>
+
+                <p><strong>"Okay… ich versuch's!"</strong></p>
+
+                <p>Alle stellten sich nebeneinander auf. Neben Willi standen das Delfinmädchen, das eine winzige Kokosnuss im Flipper balancierte, der Krabben-Opa, der seine Nuss mit ernster Mine fixierte, und zwei Seestern-Kinder, die sich gegenseitig anlachten.</p>
+
+                <p><strong>"Auf die Plätze… fertig… roooollen!"</strong>, rief Koko.</p>
+
+                <p>Die Kokosnüsse sausten los. Manche langsam, manche schnell. Willis rollte fröhlich im Zickzack den Strand hinunter. Er rief: <strong>"Nein, nicht die Richtung! Da lang!"</strong> und rannte hinterher.</p>
+
+                <p>Fizzi prustete los. <strong>"Willi! Deine Kokosnuss hat Humor!"</strong></p>
+
+                <p>Der Krabben-Opa überholte mit einem erstaunlich sportlichen Seitwärtsschritt. Die Seestern-Kinder purzelten lachend hinter ihren Kugeln her. Das Delfinmädchen rollte ihre Nuss ganz geschickt mit kleinen Wasserstößen.</p>
+
+                <p>Willi gab sein Bestes – und tatsächlich! Seine Kokosnuss fand plötzlich den richtigen Weg, wurde schneller und schneller…</p>
+
+                <p>Und stoppte kurz vor der Zielmarke.</p>
+
+                <p>Einfach so. Mitten im Sand.</p>
+
+                <p>Willi kroch keuchend hinterher. <strong>"Warum bist du stehengeblieben?"</strong></p>
+
+                <p>Koko lachte. <strong>"Das war keine Pause – schau mal!"</strong></p>
+
+                <p>Willis Kokosnuss hatte eine winzige Muschel entdeckt, die halb eingegraben im Sand lag. Sie war rosa, glatt und wunderschön. Willi hob sie vorsichtig auf.</p>
+
+                <p><strong>"Dann… bin ich halt nicht Erster"</strong>, sagte Willi und lächelte. <strong>"Aber ich hab etwas viel Schöneres gefunden."</strong></p>
+
+                <p>Und die Inselbewohner klatschten begeistert.</p>
+
+                <p>Fizzi klopfte ihm auf den Rücken. <strong>"Du hast Urlaub verstanden, Willi. Es geht nicht ums Gewinnen, sondern ums Entdecken."</strong></p>
+
+                <p>Willi sah auf die Muschel in seiner Hand und spürte Glück in jeder Fühler-Spitze.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was hat Willi beim Rennen gelernt?<br>
+                • Warum war es schöner, die Muschel zu finden, als das Rennen zu gewinnen?<br>
+                • Hast du auch schon mal etwas Unerwartetes entdeckt, das dich glücklich gemacht hat?<br>
+                • Was bedeutet es, dass die Inselbewohner nur so viele Kokosnüsse nehmen, wie sie brauchen?<br>
+                • Was würdest du aus einer Kokosnuss basteln wollen?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht Willis Urlaub weiter?</h2>
+            <div class="nav-buttons">
+                <a href="willis2e2.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Der Strandtag mit Fizzi</div>
+                </a>
+                
+                <a href="willis2e4.html" class="nav-button">
+                    <div class="nav-button-label">Episode 4 →</div>
+                    <div class="nav-button-title">Der Tag im Muschel Spa</div>
+                </a>
+
+                <a href="abenteuer-willi.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

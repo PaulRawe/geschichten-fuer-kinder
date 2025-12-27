@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die kleine Wolkenkatze und der Schlafwind - Eine sanfte Gute-Nacht-Geschichte über Ruhe und Einschlafen">
+    <title>Die kleine Wolkenkatze und der Schlafwind - Gute-Nacht-Geschichte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #2a5298;
+            transform: translateX(-5px);
+        }
+
+        .story-badge {
+            background: linear-gradient(135deg, #1e3c72 0%, #7e22ce 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #7e22ce;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #2a5298;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(126, 34, 206, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            color: #7e22ce;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #7e22ce;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #2a5298;
+            font-style: italic;
+        }
+
+        .poem-verse {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            border-left: 4px solid #2a5298;
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #1e3a8a;
+            line-height: 1.9;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #fbbf24;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .sleepy-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            border-left: 6px solid #2a5298;
+        }
+
+        .sleepy-box p {
+            color: #1e3a8a;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border-left: 6px solid #f59e0b;
+        }
+
+        .info-box-title {
+            color: #92400e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #78350f;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .navigation-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #2a5298;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.3);
+            border-color: #2a5298;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2a5298;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72 0%, #7e22ce 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-brand {
+            color: #7e22ce;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #7e22ce;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2a5298;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #2a5298;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .navigation-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .sleepy-box p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="gute-nacht-geschichten.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Übersicht</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="story-badge">Gute-Nacht-Geschichte</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gute-Nacht-Geschichte</div>
+            <h1>Die kleine Wolkenkatze und der Schlafwind</h1>
+            <p class="story-intro">
+                Katze Miri hilft dem müden Schlafwind, den Weg zu den Träumen zu finden
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gutenacht/gn5.png" alt="Die kleine Wolkenkatze und der Schlafwind">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="page-title">Seite 1</div>
+            <div class="story-content">
+                <div class="poem-verse">
+                    Hoch oben, wo der Himmel wohnt,<br>
+                    wo leis der Abendhimmel thront,<br>
+                    da lebte Miri, Katze klein,<br>
+                    aus Wolkenflaum und Sternenschein.
+                </div>
+
+                <p>Sie sprang von Wolke eins zu zwei, so leicht wie ein Gedanke frei. Ihr Schwanz war weich wie Zuckerwatte, ihr Schnurren klang wie Schlafmusik, ganz satte.</p>
+
+                <p>Doch wenn die Nacht den Himmel füllt, und alles leiser, ruhiger wird, dann war es oft, dass Miri dacht': <em>„Warum bin ich schon wieder wach?"</em></p>
+
+                <p>Die Sterne funkelten ringsherum, der Mond war still, der Himmel stumm. Miri drehte sich hin und her, die Augen müd, der Kopf noch schwer.</p>
+
+                <p>Da zog ein Windhauch sanft vorbei, so weich, so kühl, ganz einerlei. <em>„Wer bist du?"</em>, fragte Miri leis, <em>„du klingst wie Schlaf und Nacht zugleich."</em></p>
+
+                <p><em>„Ich bin der Schlafwind"</em>, klang es sacht, <em>„ich zieh durch jede Kinder-Nacht. Doch heute bin ich etwas müd, weil niemand mir den Weg heut zeigt."</em></p>
+
+                <p><em>„Den Weg?"</em>, fragte Miri klein, <em>„wohin muss denn der Schlafwind sein?"</em> <strong>„Zu allen Träumen"</strong>, sprach der Wind, <strong>„zu jedem großen, kleinen Kind."</strong></p>
+
+                <p>Miri nickte ohne Hast, sie wusste, dass sie helfen mag. Sie sprang hinab von Wolke drei und rief: <em>„Ich bin gern mit dabei!"</em></p>
+
+                <p>Gemeinsam zogen sie durchs Blau, vorbei am Stern, vorbei am Tau. Sie trafen eine Eule sacht, die leise ihre Runde macht.</p>
+
+                <p><em>„Der Schlafwind sucht die Träume heut"</em>, sprach Miri klar, doch sanft erfreut. Die Eule nickte, ernst und klug: <em>„Dann folgt dem Glanz, der sanft euch trug."</em></p>
+
+                <p>Ein Schimmer tauchte fern nun auf, wie Schlaflicht auf leisem Lauf. Doch kaum war Miri näher dran, verblasste er – so schnell er kam.</p>
+
+                <p>Der Wind wurde still, ganz leis und schwer. <em>„Oh nein"</em>, sprach er, <em>„nun find ich's nicht mehr."</em> Miri blickte ins dunkle Blau und fragte sich nun ganz genau …</p>
+
+                <p>Wie findet man Träume, die man nicht sieht, und weckt den Schlaf, wenn er leise flieht?</p>
+            </div>
+        </div>
+
+        <div class="section-divider">⭐ 🌙 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="page-title">Seite 2</div>
+            <div class="story-content">
+                <p>Miri setzte sich auf eine Wolke weich, so rund, so warm, wie Watte zugleich. Sie schloss die Augen, atmete ein, ließ alle Eile einfach sein.</p>
+
+                <p>Der Schlafwind ruhte neben ihr, ganz still, ganz nah, fast ohne Zier. Der Himmel hielt den Atem an, als ob die Zeit kurz warten kann.</p>
+
+                <p>Da tauchten Bilder langsam auf, wie Träume auf ganz leisem Lauf: Ein Teddy, der im Bettchen liegt, ein Licht, das sanft im Zimmer wiegt.</p>
+
+                <p>Ein Hase, der im Mondlicht lacht, ein Kind, das leise „Gute Nacht" sagt. Der Schlafwind lächelte, ganz sacht: <strong>„Jetzt weiß ich wieder, was mich macht."</strong></p>
+
+                <p>Er zog nun weiter, ruhig, rund, von Traum zu Traum, von Stund' zu Stund'. Miri spürte plötzlich schwer die Augen — Schlaf kam sanft daher.</p>
+
+                <p>Sie rollte sich ins Wolkennest, das sie ganz warm umfangen lässt. Der Mond deckte sie freundlich zu, die Sterne sangen Schlaf dazu.</p>
+
+                <p><em>„Danke"</em>, flüsterte Miri leis, <em>„nun kenn ich Schlaf auf sanfte Weis."</em> Der Wind zog weiter, weit und still, dorthin, wo jedes Kind ihn will.</p>
+
+                <div class="poem-verse">
+                    Und wenn du heut im Bettchen liegst<br>
+                    und Schlaf nicht gleich zu dir hinfliegt,<br>
+                    dann denk an Miri, weich und klein,<br>
+                    und lass den Schlaf ganz ruhig sein.<br>
+                    <br>
+                    Denn er kommt wie der Wind bei Nacht:<br>
+                    Ganz leise, wenn man nichts mehr macht.
+                </div>
+
+                <p style="text-align: center; font-size: 1.3em; color: #2a5298; font-weight: 700; margin-top: 40px;">Gute Nacht.</p>
+            </div>
+        </div>
+
+        <div class="sleepy-box">
+            <p>🌟 Gute Nacht 🌟</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Und so schläft Miri sanft in ihrem Wolkennest ein ✨</p>
+        </div>
+
+        <div class="section-divider">✨ ✨ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wie hat Miri dem Schlafwind geholfen?<br>
+                • Welche Träume sind aufgetaucht, als Miri ruhig wurde?<br>
+                • Wie fühlt sich eine Wolke wohl an?<br>
+                • Was macht der Schlafwind in der Nacht?<br>
+                • Möchtest du auch mal ruhig atmen wie Miri auf ihrer Wolke?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="navigation-section">
+            <h2 class="nav-title">Mehr Gute-Nacht-Geschichten</h2>
+            <div class="nav-buttons">
+                <a href="gute-nacht-geschichten.html" class="nav-button">
+                    <div class="nav-button-label">📚 Alle Geschichten</div>
+                    <div class="nav-button-title">Zurück zur Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

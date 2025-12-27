@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Wächter der Schattenströmung - Willi, der Wurm, Staffel 1 Episode 7">
+    <title>Episode 7: Der Wächter der Schattenströmung - Willi, der Wurm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .episode-meta {
+            color: #f5576c;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .finale-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #d35400;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #667eea;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .finale-box {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            border-left: 6px solid #f39c12;
+        }
+
+        .finale-box p {
+            color: #d35400;
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+
+            .finale-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="abenteuer-willi.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="episode-badge">Episode 7 von 9 </span>
+        </nav>
+
+        <header>
+            <div class="episode-meta">Staffel 1 • Episode 7</div>
+            <h1>Der Wächter der Schattenströmung</h1>
+            <p class="episode-intro">
+                Willi ist tief im Inneren der Tiefsee angekommen. Vor ihm liegt eine Entscheidung: der Lichtpfad oder der Schattenpfad? Der Wächter der Schattenströmung wartet – und er schläft nicht. Was wird Willi entdecken? Und wird er den Weg zu Ende gehen?
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/abenteuer/willi/S1E7.png" alt="Der Wächter der Schattenströmung">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Willi fuhr tiefer in den leuchtenden Raum hinein, der wie ein Himmel unter Wasser wirkte. Die goldenen Punkte schwebten ruhig um ihn herum, manche zogen sanfte Bahnen, andere flackerten, als würden sie miteinander sprechen. Die Muschel und der Lichtschlüssel schwebten im Inneren des U-Boots und warfen ein warmes Muster an die Wände, das beruhigend wirkte. Doch Willi spürte, dass sich etwas verändert hatte.</p>
+
+                <p><em>Die Stimme hatte gesagt, der nächste Wächter würde ihn suchen.</em></p>
+
+                <p>Und Wächter waren … groß.</p>
+
+                <p>Er schluckte.</p>
+
+                <p>Ein leiser Ruck ging durch das U-Boot. Nur ein winziger, fast unmerklicher Stoß – aber Willi spürte ihn. <strong>„Was war das?"</strong>, flüsterte er und drückte seine Fühler an die Scheibe. Vor ihm bewegte sich die Lichtlandschaft langsam auseinander. Die goldenen Punkte schwebten beiseite wie Nebel, der eine Tür frei gibt.</p>
+
+                <p>Ein dunkler Spalt wurde sichtbar.</p>
+
+                <p>Kein Licht trat daraus hervor. Keine Muster. Keine Farben. Der Spalt war wie ein langer, schmaler Riss in der sonst so hellen Landschaft.</p>
+
+                <p>Die Muschel vibrierte ungewöhnlich tief.</p>
+
+                <p><em>Bumm…</em></p>
+
+                <p>Der Schlüssel flackerte nervös.</p>
+
+                <p>Willi zögerte – doch dann öffnete sich der Riss von selbst. Ganz leise, fließend, als würde er atmen. Und aus der Dunkelheit strömte etwas hervor. Kein Geräusch. Kein Ton.</p>
+
+                <p><strong>Eine Strömung.</strong></p>
+
+                <p>Sie war unheimlich und wunderschön zugleich: ein silbergrauer Fluss, der sich wie eine Hand aus Nebel durch den Raum wand. Sie umkreiste das U-Boot, berührte es aber nicht. Willi spürte nur einen Hauch – kalt, kribbelnd.</p>
+
+                <p><strong>„Du bist Willi…"</strong>, sagte eine Stimme.</p>
+
+                <p>Nicht laut.</p>
+
+                <p>Sondern direkt in seinem Kopf.</p>
+
+                <p>Willi fuhr erschrocken zurück, obwohl er wusste, dass das in einem U-Boot nichts brachte. Die Strömung ballte sich zusammen und formte langsam die Umrisse eines riesigen Wesens: fließend, schimmernd, wie ein Wal aus Schatten und Licht.</p>
+
+                <p><strong>„Ich… bin der Wächter der Schattenströmung."</strong></p>
+
+                <p>Die Stimme vibrierte sanft, aber gewaltig.</p>
+
+                <p>Willi atmete flach.</p>
+
+                <p>Das war kein Traum.</p>
+
+                <p><em>Der Wächter hatte ihn gefunden.</em></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🌊 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Der Wächter bewegte sich lautlos – sein Körper bestand aus Strömungen, die sich ständig veränderten. Einmal sah er aus wie ein großer Wal, dann wie ein Mantarochen und schließlich wie ein geschlängelter Drache aus Nebel. Doch seine Augen blieben immer gleich: zwei tief leuchtende Punkte, warm und alt.</p>
+
+                <p><strong>„Du hast die weiße Tür geöffnet"</strong>, sagte der Wächter. <strong>„Keiner hat das seit vielen Strömungen geschafft."</strong></p>
+
+                <p>Willi räusperte sich. <strong>„Äh… ich… danke? Ich wollte eigentlich nur den Weg verstehen."</strong></p>
+
+                <p>Der Wächter bewegte sich näher. Eine silberne Wellenfront strich über das U-Boot und erzeugte ein leises Knistern, das Willis Herz schneller schlagen ließ. <strong>„Verstehen wirst du später, kleiner Reisender. Jetzt musst du entscheiden."</strong></p>
+
+                <p><strong>„Entscheiden? Was denn?"</strong></p>
+
+                <p>Die Strömung ballte sich und formte aus Licht und Schatten ein neues Bild: ein Pfad, der tief unter die weiße Pyramide führte – noch tiefer als alles bisher Gesehene. Dann zeigte der Wächter ein zweites Bild: ein Wirbel, der aussah wie eine schwarze Sonne, die Licht verschluckte.</p>
+
+                <p><strong>„Zwei Wege warten"</strong>, sagte der Wächter.</p>
+
+                <p>Willi spürte, wie seine Fühler sich nervös anlegten. <strong>„Welcher ist der richtige?"</strong></p>
+
+                <p>Der Wächter lachte tief, und die Strömung bebte. <strong>„Das entscheiden nicht wir Wächter. Das entscheidet der, der die Muschel trägt."</strong></p>
+
+                <p>Die Muschel glühte plötzlich warm auf – als hätte sie sich ertappt gefühlt.</p>
+
+                <p>Willi sah auf sie hinunter.</p>
+
+                <p><strong>„Ich? Ich soll das entscheiden? Aber ich weiß doch nicht—"</strong></p>
+
+                <p><strong>„Du weißt genug"</strong>, unterbrach ihn der Wächter. <strong>„Du hast das Lied des Riffs gehört. Du hast den goldenen Schlüssel angenommen. Und du hast die erste Tür geöffnet."</strong></p>
+
+                <p>Er neigte seinen strömenden Kopf.</p>
+
+                <p><strong>„Jetzt musst du wählen, Willi: Lichtpfad oder Schattenpfad."</strong></p>
+
+                <p>Willi sah beide Bilder – und sein Herz pochte.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🔱 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Willi schloss für einen Moment die Augen. Das U-Boot war still. Nur das leise, regelmäßige Pulsieren der Muschel erfüllte den Raum. Er wusste, dass dies ein wichtiger Moment war – vielleicht der wichtigste seiner bisherigen Reise. Doch tief in ihm gab es eine Stimme, die flüsterte:</p>
+
+                <p><em>Du hast den ersten Weg gefunden. Du wirst auch den nächsten finden.</em></p>
+
+                <p>Als er die Augen wieder öffnete, zuckte der goldene Schlüssel leicht. Dann drehte er sich in Richtung des hellen Pfades. Die Muschel folgte ihm mit einem sanften Leuchten.</p>
+
+                <p>Der Wächter beobachtete ihn schweigend.</p>
+
+                <p>Willi atmete tief ein. <strong>„Ich nehme… den Lichtpfad."</strong></p>
+
+                <p>Die Schattenströmung blieb einen Moment reglos. Dann verneigte sich der Wächter – eine mächtige, fließende Bewegung, wie eine Welle, die sich bricht. <strong>„Ein mutiger Weg. Und ein guter."</strong></p>
+
+                <p>Mit einer einzigen, weiten Bewegung glitt er zur Seite. Die Lichtpunkte im Raum schwebten auseinander und bildeten einen breiten, hellen Durchgang. Das Portal selbst war weich wie Nebel, aber stabil wie Stein.</p>
+
+                <p><strong>„Der Lichtpfad führt dich zum zweiten Herz der Tiefsee"</strong>, sagte der Wächter. <strong>„Dort wartet eine Kraft, die älter ist als wir Wächter."</strong></p>
+
+                <p>Willi schluckte.</p>
+
+                <p><strong>„Ist sie… gefährlich?"</strong></p>
+
+                <p>Der Wächter lächelte, oder zumindest sah es so aus, als würde die Strömung lächeln. <strong>„Was alt ist, ist nicht immer gefährlich. Aber es vergisst nie."</strong></p>
+
+                <p>Willi verstand nicht alles, aber er nickte tapfer.</p>
+
+                <p>Die Muschel vibrierte warm.</p>
+
+                <p>Der Schlüssel glühte hell.</p>
+
+                <p>Er setzte den Kurs.</p>
+
+                <p>Das U-Boot schwebte langsam in den Lichtpfad hinein.</p>
+
+                <p>Das Portal schloss sich hinter ihm.</p>
+
+                <p>Bevor der Wächter verschwand, flüsterte er:</p>
+
+                <p><strong>„Willi der Wurm… du bist nicht der Erste, der diesen Weg geht. Aber vielleicht der Erste, der ihn zu Ende geht."</strong></p>
+
+                <p>Ein Schauer lief Willi über den Rücken.</p>
+
+                <p>Doch er fuhr weiter.</p>
+
+                <p><em>Immer tiefer ins Licht.</em></p>
+            </div>
+        </div>
+
+        <div class="finale-box">
+            <p>Willis Reise ist noch nicht zu Ende. Was erwartet ihn im zweiten Herz der Tiefsee?</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Das Abenteuer geht weiter... 🌊✨</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Warum hat Willi den Lichtpfad gewählt? Was hätte der Schattenpfad bedeuten können?<br>
+                • Wie hat sich Willi wohl gefühlt, als er diese wichtige Entscheidung treffen musste?<br>
+                • Was glaubst du, wartet im zweiten Herz der Tiefsee?<br>
+                • Der Wächter sagt, Willi sei vielleicht der Erste, der den Weg zu Ende geht. Was macht Willi so besonders?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Das war Staffel 1!</h2>
+            <div class="nav-buttons">
+                <a href="willis1e6.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Die erste Tiefseetür</div>
+                </a>
+                
+                <a href=""willis1e8.html" class="nav-button">
+                    <div class="nav-button-label">Nächste Episode →</div>
+                    <div class="nav-button-title">Der Strom der Erinnerungen</div>
+                </a>
+
+                <a href="abenteuer-willi.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

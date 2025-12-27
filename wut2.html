@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maja Maus und der große Knall - Eine Geschichte über Wut">
+    <title>Maja Maus und der große Knall - Gefühlsgeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #ffa500;
+            transform: translateX(-5px);
+        }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: #ff6b6b;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            margin-top: 30px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #ffa500;
+            font-style: italic;
+        }
+
+        .page-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #ff6b6b;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #ff6b6b;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b 0%, #ffa500 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .info-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #ffcccb 0%, #ffb3ba 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 204, 203, 0.3);
+            border-left: 6px solid #ff6b6b;
+        }
+
+        .technique-box-title {
+            color: #c0392b;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .technique-box-text p {
+            margin-bottom: 15px;
+        }
+
+        .technique-box-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .technique-box-text li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #ff6b6b;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffa500;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #ffa500;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="geschichten-ueber-gefuehle.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zu den Gefühlen</span>
+            </a>
+
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+            <span class="feeling-badge">Wut</span>
+        </nav>
+
+        <header>
+            <div class="story-meta">Gefühlsgeschichte • Wut</div>
+            <h1>Maja Maus und der große Knall</h1>
+            <p class="story-intro">
+                Maja ist eine kleine Maus, die Pläne liebt. Als ihr Bruder Paul versehentlich ihre vorbereitete Malerei ruiniert, macht es in Majas Kopf einen lauten KNALL. Die Wut schießt in ihr hoch wie ein Blitz. Mama Maus zeigt ihr, dass Wut einen sicheren Platz braucht – und dass manchmal aus einem Missgeschick etwas ganz Neues entstehen kann.
+            </p>
+            <div class="hero-image-container">
+                <img src="bilder/gefühle/wut2.png" alt="Maja Maus und der große Knall">
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 1 —</div>
+                
+                <p>Maja war eine kleine Maus mit glänzenden Augen und einem sehr ordentlichen Kopf. Sie lebte mit ihrer Familie in einem gemütlichen Bau unter einer alten Eiche. Maja liebte Pläne. Sie liebte es, Dinge Schritt für Schritt zu machen, genau so, wie sie es sich vorgestellt hatte. Wenn etwas nach Plan lief, fühlte sich Maja ruhig und zufrieden.</p>
+
+                <p>An diesem Nachmittag hatte Maja etwas ganz Besonderes vor. Sie wollte ein großes Bild malen. Schon am Morgen hatte sie darüber nachgedacht, welche Farben sie benutzen wollte. Das Papier lag bereit, die Pinsel waren sauber, und die Farbtöpfe standen ordentlich nebeneinander. In Majas Bauch fühlte sich alles ruhig an.</p>
+
+                <p>Gerade als sie den ersten Pinselstrich machen wollte, hörte sie schnelle Schritte. Ihr kleiner Bruder Paul lief in den Raum. Er schaute sich neugierig um, blieb hängen – und stolperte. Das Glas mit der roten Farbe fiel um und ergoss sich über das Papier.</p>
+
+                <p>In Majas Kopf machte es plötzlich einen lauten <strong>KNALL</strong>. Ihr Herz schlug schnell, ihre Ohren wurden heiß, und ihre Pfoten ballten sich fest zusammen. <strong>„Nein!"</strong>, schrie sie laut. <strong>„Jetzt ist alles kaputt!"</strong></p>
+
+                <p>Maja spürte, wie die Wut in ihr hochschoss wie ein Blitz. Sie wollte schreien, alles wegschieben und davonlaufen. Gleichzeitig sah sie, wie ihr Bruder erschrak und zu weinen begann. Das machte Maja noch wütender – und gleichzeitig fühlte sie sich plötzlich ganz schwer.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 💥 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <div class="page-divider">— Seite 2 —</div>
+                
+                <p>Mama Maus kam sofort dazu. Sie kniete sich zu Maja und sprach ruhig, obwohl Majas Wut noch sehr groß war. <strong>„Ich sehe, wie stark deine Wut gerade ist"</strong>, sagte sie. <strong>„Das war ein großer Schreck."</strong></p>
+
+                <p>Mama holte ein dickes Kissen aus der Ecke. <strong>„Wenn die Wut so laut ist, braucht sie einen sicheren Platz"</strong>, erklärte sie. Maja durfte mit beiden Pfoten fest in das Kissen boxen. Einmal. Zweimal. So lange, bis ihre Arme müde wurden.</p>
+
+                <p>Danach setzte Mama sich neben sie. <em>„Jetzt atmen wir"</em>, sagte sie leise. Gemeinsam atmeten sie tief ein und langsam wieder aus. Fünf Atemzüge lang.</p>
+
+                <p>Majas Herz wurde ruhiger. Der Knall in ihrem Kopf war nur noch ein leises Pochen.</p>
+
+                <p><em>„Was war dir wichtig?"</em>, fragte Mama.</p>
+
+                <p><em>„Mein Bild"</em>, sagte Maja leise. <em>„Ich wollte, dass es schön wird."</em></p>
+
+                <p>Mama nickte. Gemeinsam überlegten sie, was sie aus dem roten Fleck machen könnten. Bald entstand eine große, leuchtende Blume. Paul durfte beim Malen helfen.</p>
+
+                <p>Maja lächelte vorsichtig. Sie hatte gelernt: <strong>Wut darf laut sein – aber sie darf niemanden verletzen. Und manchmal entsteht aus ihr sogar etwas Neues.</strong></p>
+            </div>
+        </div>
+
+        <div class="technique-box">
+            <div class="technique-box-title">
+                <span>🥊</span>
+                <span>Die Kissen-Technik – Wut sicher rauslassen</span>
+            </div>
+            <div class="technique-box-text">
+                <p><strong>Diese Übung hilft Kindern, ihre körperliche Wut-Energie sicher abzubauen:</strong></p>
+                <ul>
+                    <li><strong>Einen sicheren Ort wählen:</strong> Ein Kissen, eine Matratze oder ein weiches Sofa</li>
+                    <li><strong>Wut körperlich ausdrücken:</strong> In das Kissen boxen, stampfen oder schreien</li>
+                    <li><strong>Danach zur Ruhe kommen:</strong> 5 tiefe Atemzüge nehmen</li>
+                    <li><strong>Über die Wut sprechen:</strong> „Was hat mich so wütend gemacht?"</li>
+                </ul>
+                <p>Wichtig: Die Wut darf raus – aber nicht an Menschen, Tieren oder wertvollen Dingen. Ein Kissen ist perfekt, weil es niemanden verletzt und die Energie trotzdem einen Ausweg findet.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was ist mit Majas Bild passiert?<br>
+                • Wie hat sich Maja gefühlt, als die Farbe umgekippt ist?<br>
+                • Was war der „große Knall" in Majas Kopf?<br>
+                • Was hat Mama Maus gemacht, um Maja zu helfen?<br>
+                • Was ist am Ende aus dem roten Fleck geworden?<br>
+                • Kennst du das Gefühl, wenn etwas nicht nach Plan läuft?<br>
+                • Was hilft dir, wenn du sehr wütend bist?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

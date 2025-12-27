@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Tag im Muschel-Spa - Willi, der Wurm, Staffel 2 Episode 4">
+    <title>Episode 4: Der Tag im Muschel-Spa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #6c5ce7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #5f27cd;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #fab1a0 0%, #ff7675 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .season-badge {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .episode-meta {
+            color: #6c5ce7;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #5f27cd;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(162, 155, 254, 0.3);
+            margin-top: 30px;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            padding: 40px;
+        }
+
+        .hero-placeholder {
+            background: rgba(255,255,255,0.2);
+            border: 3px dashed rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 60px 20px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .hero-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #5f27cd;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #6c5ce7;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #a29bfe;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #d35400;
+        }
+
+        .info-box-title {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: white;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #6c5ce7;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(162, 155, 254, 0.4);
+            border-color: #a29bfe;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5f27cd;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #a29bfe 0%, #6c5ce7 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #6c5ce7;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #6c5ce7;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #5f27cd;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #5f27cd;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+                <a href="abenteuer-willi.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>  
+		<a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Hauptseite</span>
+            </a>
+            <span class="episode-badge">Staffel 2 • Episode 4</span>
+        </nav>
+	</a>
+
+        <header>
+            <div class="season-badge">🐚 DAS MUSCHEL-SPA 🐚</div>
+            <div class="episode-meta">Staffel 2 • Episode 4 von 5</div>
+            <h1>Der Tag im Muschel-Spa</h1>
+            <p class="episode-intro">
+                Fizzi bringt Willi zum entspanntesten Ort der ganzen Insel: dem Aqualuna-Muschel-Spa! Dort erlebt Willi Warmblasen-Wellness, Seegras-Schweben und eine himmlische Kokoscreme-Massage. Ein Tag voller Ruhe, Wärme und purer Glückseligkeit.
+            </p>
+            <div class="hero-image-container">
+                <div class="hero-placeholder">
+                    <img src="bilder/abenteuer/willi/S2E4.png" alt="Der Tag im Muschel-Spa">
+                </div>
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Der nächste Morgen begann mit einem Duft, den Willi sofort mochte: warm, süßlich und irgendwie… entspannend. Er öffnete die Tür seiner Hütte und sah Fizzi vor sich. Der kleine Fisch trug heute ein Stirnband aus Blüten und wedelte aufgeregt mit seiner Flosse.</p>
+
+                <p><strong>"Guuuten Morgen, Willi! Bist du bereit für den entspanntesten Tag deines Lebens?"</strong></p>
+
+                <p>Willi streckte sich. <strong>"Ähm… vielleicht?"</strong></p>
+
+                <p>Fizzi lachte. <strong>"Heute gehen wir ins Aqualuna-Muschel-Spa! Das ist der gemütlichste Ort der ganzen Insel. Da wirst du so weich wie Seegras nach einem Sommertag!"</strong></p>
+
+                <p>Willi war neugierig. <strong>"Spa? Was macht man da?"</strong></p>
+
+                <p><strong>"Entspannen! Baden! Massieren! Und ganz viel Ruhe genießen!"</strong> Fizzi zwirbelte stolz seine Blüte. <strong>"Und das Beste: Die Muscheln dort machen alles selbst. Du musst einfach nur da sein."</strong></p>
+
+                <p><em>Klingt nach Urlaub</em>, dachte Willi.</p>
+
+                <p>Sie machten sich auf den Weg. Der Pfad führte durch ein ruhiges Stück der Insel, umgeben von sanft leuchtenden Wasserpflanzen. Das Licht der Kuppel glitzerte auf dem Boden und malte bewegte Muster aus Blau und Gold.</p>
+
+                <p>Nach einer Weile erreichten sie einen runden Platz mit großen, offenen Muscheln, die wie Sessel aussahen. In der Mitte plätscherte ein kleiner Wasserfall aus glasklarem Wasser, das angenehm warm roch.</p>
+
+                <p><strong>"Willkommen!"</strong>, trällerte eine weiche Stimme.</p>
+
+                <p>Willi erschrak leicht. Vor ihnen stand eine große, rosa Muschel mit zwei freundlichen Augen und einem breiten, sanften Lächeln. Ihre Stimme klang wie eine Melodie.</p>
+
+                <p><strong>"Ich bin Mira, die Spamuschel. Heute kümmern wir uns um dein Wohlbefinden."</strong></p>
+
+                <p>Willi errötete leicht. <strong>"Oh… vielen Dank."</strong></p>
+
+                <p>Fizzi stupste ihn an. <strong>"Glaub mir, du wirst es lieben. Komm! Die erste Behandlung ist die Warmblasen-Wellness!"</strong></p>
+
+                <p>Willi setzte sich in eine Muschel, die sich automatisch leicht schloss wie eine weiche Umarmung. Ein warmes, sanftes Blubbern begann – kleine Luftblasen stiegen auf und kitzelten ihn an den Seiten.</p>
+
+                <p>Er schloss die Augen und seufzte tief.</p>
+
+                <p><em>Ja. Das war Urlaub.</em></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🫧 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Nachdem die Warmblasen-Behandlung vorbei war, fühlte sich Willi so leicht an, als würde er gleich wegschweben. Fizzi hatte sich ebenfalls in einer Muschel behandeln lassen und schwebte nun träumerisch durch die Luft.</p>
+
+                <p><strong>"Und?"</strong>, fragte Fizzi mit halboffenen Augen. <strong>"Gut, oder?"</strong></p>
+
+                <p><strong>"Gut?"</strong> Willi grinste. <strong>"Das war fantastisch! Ich fühl mich wie ein warmes Gummibärchen!"</strong></p>
+
+                <p>Mira, die Spamuschel, lachte leise. <strong>"Dann wirst du die nächste Station lieben: Das Seegras-Schweben!"</strong></p>
+
+                <p>Sie führte die beiden zu einem großen, runden Becken. Darin schwebten feine Streifen aus weichem Seegras, die sich sacht hin- und herbewegten. Das Wasser war klar und warm und duftete nach frischer Meeresbrise.</p>
+
+                <p><strong>"Leg dich einfach hinein"</strong>, erklärte Mira. <strong>"Das Seegras trägt dich, massiert dich und beruhigt deinen ganzen Körper."</strong></p>
+
+                <p>Willi kroch vorsichtig ins Wasser. Sofort fühlte er, wie die Seegrasstreifen ihn ganz sanft stützten. Es war wie auf einer weichen Hängematte zu liegen, nur dass sie sich wie von selbst bewegte.</p>
+
+                <p>Fizzi glitt ebenfalls hinein – allerdings mit einem kleinen Platsch.</p>
+
+                <p><strong>"Ups!"</strong>, lachte er.</p>
+
+                <p>Willi schloss die Augen. Die Wärme, das leichte Schaukeln, das ruhige Gluckern des Wassers… es war, als würde er zu einem Stück Wolke werden. Keine Sorgen, keine Eile, nur sanfte Glückseligkeit.</p>
+
+                <p>Nach einer Weile glitt die Seegras-Hängematte langsam an den Rand des Beckens – und Willi fühlte sich, als hätte er ein kleines Nickerchen gemacht, obwohl er die ganze Zeit wach gewesen war.</p>
+
+                <p><strong>"Ihr seht aus wie frisch geschliffene Perlen!"</strong>, sagte Mira fröhlich.</p>
+
+                <p>Willi fühlte sich tatsächlich so glatt und weich wie kaum zuvor.</p>
+
+                <p><strong>"Das ist der beste Urlaubstag überhaupt…"</strong></p>
+
+                <p><strong>"Warte"</strong>, sagte Fizzi grinsend. <strong>"Der Tag ist noch nicht vorbei! Eine Sache fehlt noch…"</strong></p>
+
+                <p>Willi blickte ihn neugierig an.</p>
+
+                <p><strong>"Was denn?"</strong></p>
+
+                <p><strong>"Die Kokoscreme-Massage!"</strong></p>
+
+                <p>Willi machte große Augen.</p>
+
+                <p><strong>"Äh… Kokos… was?"</strong></p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🥥 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Mira führte sie in einen kleinen Bereich des Spas, der von Muschellampen sanft beleuchtet wurde. Der Boden war mit glattem Sand bedeckt, und überall standen kleine Schälchen mit duftender Kokoscreme herum.</p>
+
+                <p><strong>"Leg dich einfach hierher"</strong>, sagte Mira sanft und zeigte auf eine lange, flache Muschel.</p>
+
+                <p>Willi tat es. Die Muschel war überraschend warm und schmiegsam. Fizzi legte sich auf die Muschel daneben und summte zufrieden.</p>
+
+                <p><strong>"Kokoscreme ist etwas ganz Besonderes"</strong>, erklärte Mira. <strong>"Sie pflegt, wärmt und macht glücklich."</strong></p>
+
+                <p>Sie nahm ein kleines Schälchen und begann, die Creme vorsichtig auf Willis Rücken zu streichen. Die Creme war warm – nicht heiß, nicht klebrig – sondern weich wie warmer Sand. Und sie duftete so süß, dass Willi fast seufzen musste.</p>
+
+                <p><strong>"Ohhh… das ist herrlich…"</strong></p>
+
+                <p>Fizzi rief von nebenan: <strong>"Ich sag ja, der Spa-Tag ist hier legendär!"</strong></p>
+
+                <p>Mira fuhr fort, ganz langsam und gleichmäßig. Für einen Moment hatte Willi das Gefühl, als würde alles um ihn herum verschwimmen: die Sorgen, die Abenteuer, die anstrengenden Reisen.</p>
+
+                <p>Dann bekam er eine Idee.</p>
+
+                <p><strong>"Mira?"</strong>, murmelte Willi verträumt.</p>
+
+                <p><strong>"Ja, mein Kleiner?"</strong></p>
+
+                <p><strong>"Kommen eigentlich viele hierher?"</strong></p>
+
+                <p><strong>"Oh ja"</strong>, lächelte Mira. <strong>"Reisende, Inselbewohner, sogar Tiere aus der Umgebung. Jeder braucht manchmal Ruhe. Und wir geben sie gerne."</strong></p>
+
+                <p>Willi lächelte.</p>
+
+                <p><strong>"Ich glaube… ich möchte morgen schon wiederkommen."</strong></p>
+
+                <p>Fizzi stemmte stolz die Flossen in die Hüften. <strong>"Na also! Ich hab's doch gesagt – Aqualuna ist der beste Urlaubsort aller Zeiten!"</strong></p>
+
+                <p>Als die Massage vorbei war, fühlte sich Willi so entspannt, dass seine Fühler fast schliefen. Mira brachte ihnen beide zum Ausgang und verbeugte sich leicht.</p>
+
+                <p><strong>"Kommt jederzeit wieder. Ihr seid hier immer willkommen."</strong></p>
+
+                <p>Draußen schimmerte die Kuppel warm im Abendlicht. Willi und Fizzi gingen langsam zurück zur Hütte, und alles fühlte sich weich, friedlich und vollkommen an.</p>
+
+                <p>Willi seufzte glücklich.</p>
+
+                <p><strong>"Fizzi… wenn der Urlaub so weitergeht… will ich nie wieder nach Hause."</strong></p>
+
+                <p>Fizzi grinste.</p>
+
+                <p><strong>"Dann bleiben wir eben ein bisschen länger."</strong></p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Was hat Willi beim Spa-Besuch am besten gefallen?<br>
+                • Warum ist es wichtig, sich manchmal auszuruhen und zu entspannen?<br>
+                • Was machst du, wenn du dich entspannen möchtest?<br>
+                • Wie fühlte sich Willi nach den Behandlungen?<br>
+                • Was bedeutet es, dass "jeder manchmal Ruhe braucht"?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht Willis Urlaub weiter?</h2>
+            <div class="nav-buttons">
+                <a href="willis2e3.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Die Kokosnuss-Überraschung</div>
+                </a>
+                
+                <a href="willis2e5.html" class="nav-button">
+                    <div class="nav-button-label">Episode 5 →</div>
+                    <div class="nav-button-title">Die Überraschung unter der Palme</div>
+                </a>
+
+                <a href="abenteuer-willi.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>

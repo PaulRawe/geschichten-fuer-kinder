@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die Insel unter der Wasserkuppel - Willi, der Wurm, Staffel 2 Episode 1">
+    <title>Episode 1: Die Insel unter der Wasserkuppel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #00f2fe;
+            transform: translateX(-5px);
+        }
+
+        .episode-badge {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .season-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .episode-meta {
+            color: #4facfe;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #19547b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .episode-intro {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            margin-top: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+        }
+
+        .hero-placeholder {
+            background: rgba(255,255,255,0.2);
+            border: 3px dashed rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 60px 20px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content strong {
+            color: #19547b;
+            font-weight: 700;
+        }
+
+        .story-content em {
+            color: #4facfe;
+            font-style: italic;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #4facfe;
+            font-size: 2em;
+        }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #aaa;
+            font-size: 0.7em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            color: #bbb;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.3);
+            border-left: 6px solid #f39c12;
+        }
+
+        .info-box-title {
+            color: #d35400;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text {
+            color: #2c3e50;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .episode-navigation {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: #4facfe;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            text-align: center;
+            border: 3px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 197, 252, 0.4);
+            border-color: #8ec5fc;
+        }
+
+        .nav-button.disabled {
+            background: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .nav-button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .nav-button-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #5a67d8;
+        }
+
+        .nav-button.disabled .nav-button-title {
+            color: #ccc;
+        }
+
+        .nav-button-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .nav-button-overview:hover {
+            border-color: white;
+        }
+
+        .nav-button-overview .nav-button-title {
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #4facfe;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00f2fe;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #00f2fe;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .sticky-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header,
+            .story-section,
+            .episode-navigation {
+                padding: 35px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05em;
+            }
+
+            .nav-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .story-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="consent.css">
+</head>
+<body>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>🍪 Wir verwenden Cookies</strong><br>
+      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <nav class="sticky-nav">
+                       <a href="abenteuer-willi.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Episoden-Übersicht</span>
+            </a>  
+		<a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Hauptseite</span>
+            </a>
+            <span class="episode-badge">Staffel 2 • Episode 1</span>
+        </nav>
+	</a>
+        <header>
+            <div class="season-badge">🌟 STAFFEL 2 STARTET! 🌟</div>
+            <div class="episode-meta">Staffel 2 • Episode 1 von 5</div>
+            <h1>Ankunft in Aqualuna</h1>
+            <p class="episode-intro">
+                Nach seinem großen Tiefsee-Abenteuer hat sich Willi eigentlich Urlaub verdient. Doch die Muschel leuchtet wieder auf – diesmal mit einer ganz besonderen Einladung zu einem magischen Ort unter dem Meer!
+            </p>
+            <div class="hero-image-container">
+                <div class="hero-placeholder">
+                  <img src="bilder/abenteuer/willi/S2E1.png" alt="Ankunft in Aqualuna">
+                </div>
+            </div>
+        </header>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Willi hatte nach seinem großen Tiefsee-Abenteuer eigentlich vorgehabt, einfach ein paar Tage auszuruhen. Mama hatte ihm sogar frische Algenkekse gebacken, und Onkel Hans hatte gesagt:</p>
+
+                <p><strong>„Junge, jetzt mach erst mal Urlaub. Abenteuer laufen nicht weg."</strong></p>
+
+                <p>Doch genau in der Nacht, in der Willi sich schlafen legen wollte, geschah etwas Seltsames: Die Muschel, die seit dem Ende seiner Reise nur noch ein schwaches Licht von sich gab, leuchtete plötzlich hell auf. Nicht hektisch. Nicht warnend. Sondern warm und freundlich – wie eine Einladung.</p>
+
+                <p>Willi setzte sich auf. <strong>„Na schön… Urlaub klingt gut. Aber wo?"</strong></p>
+
+                <p>Am Morgen kroch er mit der Muschel hinunter zum Strand. Das Meer lag still da, wie ein großes, schläfriges Tier. Die Wellen plätscherten leise, und die Sonne war warm wie eine weiche Decke. Willi hielt die Muschel ans Ohr, so wie er es früher bei normalen Muscheln getan hatte – und zu seinem Erstaunen hörte er diesmal nicht nur Rauschen.</p>
+
+                <p>Er hörte ein leises Flüstern.</p>
+
+                <p><em>„Willi… Insel… komm…"</em></p>
+
+                <p>Willi schaute ungläubig auf die Muschel. <strong>„Eine Urlaubsinsel? Für mich?"</strong></p>
+
+                <p>Die Muschel glühte wieder kurz.</p>
+
+                <p>Damit war die Entscheidung gefallen.</p>
+
+                <p>Er stieg in sein U-Boot, das geduldig am Ufer wartete, und strich zärtlich über die runde Scheibe. <strong>„Na gut, mein Freund. Doch ein kleines Abenteuer noch… aber ein ruhiges, klar? Urlaub eben."</strong></p>
+
+                <p>Plopp – das U-Boot glitt ins Wasser.</p>
+
+                <p>Die Strömung fühlte sich heute anders an. Nicht ziehend, nicht drängend – eher wie eine sanfte Hand, die ihn in eine bestimmte Richtung schob. Nach einiger Zeit sah Willi etwas, das er noch nie zuvor gesehen hatte: Eine riesige, glasklare Kuppel tief unter der Oberfläche. Dahinter… lag eine Insel.</p>
+
+                <p>Mit Strand.</p>
+
+                <p>Mit Palmen.</p>
+
+                <p>Mit kleinen bunten Häusern.</p>
+
+                <p>Eine ganze Welt unter Wasser – geschützt und leuchtend.</p>
+
+                <p>Willi riss die Augen auf. <strong>„Das… ist mein Urlaubsort?"</strong></p>
+
+                <p>Die Kuppel schimmerte freundlich, als würde sie nicken.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🌊 ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Je näher Willi kam, desto deutlicher konnte er die Insel hinter der Kuppel sehen. Kleine bunte Hütten standen zwischen hohen Palmen, die sich leicht wiegten, obwohl es hier unten gar keinen Wind gab. Zwischen den Häusern liefen kleine Tiere umher – manche sahen aus wie Meeresbewohner, andere mehr wie Inseltiere, aber alle wirkten fröhlich und entspannt.</p>
+
+                <p>Willi entdeckte sogar so etwas wie eine Strandpromenade, nur dass der „Himmel" über der Insel die Oberfläche des Ozeans war. Sonnenlicht drang durch die Kuppel und verwandelte alles in ein sanftes, warmes Licht. Es fühlte sich an, als hätte jemand die schönste Sommerinsel der Welt genommen und mitten im Meer versteckt.</p>
+
+                <p>Plötzlich erschien vor seinem U-Boot eine runde Öffnung in der Kuppel – wie ein Tor. Es glitt langsam auf, leise wie ein Gähnen.</p>
+
+                <p><strong>„Oh… das ist für mich!"</strong>, rief Willi überrascht.</p>
+
+                <p>Er fuhr hindurch und spürte sofort, wie das U-Boot wieder auftauchte. Das Wasser unter ihm blieb, aber der obere Teil ragte in warme, tropische Luft hinein. Willi kletterte aus der Luke und warf einen Blick auf die Insel.</p>
+
+                <p><strong>„Willkommen!"</strong>, rief plötzlich eine fröhliche Stimme.</p>
+
+                <p>Willi erschrak und drehte sich um. Vor ihm stand ein kleiner, runder Fisch – aber er trug ein buntes Tuch um den Kopf und hatte eine winzige Sonnenbrille auf.</p>
+
+                <p><strong>„Ich bin Fizzi"</strong>, sagte der Fisch stolz. <strong>„Urlaubsbetreuer der Insel Aqualuna!"</strong></p>
+
+                <p>Willi blinzelte. <strong>„Urlaubs… was?"</strong></p>
+
+                <p><strong>„Urlaubsbetreuer! Ich werde dir alles zeigen. Und das Beste: Hier hat jeder Gast seine eigene kleine Strandhütte!"</strong></p>
+
+                <p>Willi sah zu einer Reihe kleiner Häuser hinüber. Jedes war anders: eins groß und blau, eins klein und orange, eins mit einer winzigen Hängematte davor.</p>
+
+                <p><strong>„Und deine… ist die da vorne!"</strong>, rief Fizzi und zeigte auf eine Hütte mit einem übergroßen Muschel-Schild über der Tür.</p>
+
+                <p>Willi wurde ganz warm vor Freude.</p>
+
+                <p>Ein richtiger Urlaub.</p>
+
+                <p>Zum ersten Mal in seinem Leben.</p>
+
+                <p>Er konnte es kaum erwarten, hineinzukrabbeln.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ 🏝️ ✨</div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (responsive)
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-content">
+                <p>Willi folgte Fizzi den sandigen Weg entlang, der sich warm und weich unter seinem Körper anfühlte. Der Strand glitzerte wie goldener Staub, und über ihm schwammen bunte Fische langsam über die Kuppel – als wäre der Himmel lebendig.</p>
+
+                <p><strong>„Wow"</strong>, murmelte Willi. <strong>„So schön ist's nicht mal auf meiner Insel…"</strong></p>
+
+                <p><strong>„Oh, das hier ist eine ganz besondere Oase!"</strong>, sagte Fizzi stolz. <strong>„Aqualuna wurde früher von Reisenden wie dir gefunden. Sie wollten einen Ort zum Ausruhen. Und so entstand die Kuppel – als Schutz, als Zuhause, als magischer Urlaubsort."</strong></p>
+
+                <p>Willi nickte. Irgendwie fühlte es sich hier wirklich sicher an. Keine Strömungen, keine Rätsel, keine dunklen Tiefen. Nur Wärme, Licht und ein Gefühl von „Hier darfst du einfach du sein."</p>
+
+                <p>Als sie die kleine Hütte mit dem Muschel-Schild erreichten, blieb Willi stehen. Die Tür war rund wie ein Bullauge und mit kleinen Farbsteinen verziert. Über dem Eingang hing ein kleines Holzschild:</p>
+
+                <p><em>„Willi – Ehrengast"</em></p>
+
+                <p>Willi bekam große Augen.</p>
+
+                <p><strong>„Das ist… für mich?"</strong></p>
+
+                <p>Fizzi grinste. <strong>„Natürlich! Wir haben dich erwartet."</strong></p>
+
+                <p><strong>„Ihr wusstet, dass ich komme?"</strong></p>
+
+                <p>Der kleine Fisch zwinkerte. <strong>„Aqualuna weiß immer, wann jemand einen Urlaub nötig hat."</strong></p>
+
+                <p>Willi lachte leise. Das klang logisch – irgendwie.</p>
+
+                <p>Er öffnete die Tür und sah hinein.</p>
+
+                <p>Die Hütte war gemütlich und freundlich eingerichtet:</p>
+
+                <p>– Ein kleiner Muschel-Sessel<br>
+                – Ein weiches Algenbett<br>
+                – Ein Fenster, das direkt auf den Strand blickte<br>
+                – Und ein Tischchen mit einem Getränk darauf, das aussah wie ein tropischer Saft</p>
+
+                <p><strong>„Willi"</strong>, sagte Fizzi, <strong>„dein Urlaub hat jetzt offiziell begonnen! Heute kannst du ankommen, ausruhen und dir alles anschauen. Ab morgen zeige ich dir die ganze Insel."</strong></p>
+
+                <p>Willi fühlte sich plötzlich ganz leicht.</p>
+
+                <p>Er kroch in den Muschelsessel, nippte am Saft und sah hinaus auf die glitzernde Kuppel.</p>
+
+                <p>Endlich Urlaub.</p>
+
+                <p>Endlich Ruhe.</p>
+
+                <p>Endlich ein neues Abenteuer – aber eins, das nach Sonne roch, nicht nach Geheimnissen.</p>
+
+                <p>Willi lächelte.</p>
+
+                <p><strong>„Ich glaube… ich bleibe eine Weile."</strong></p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>Gesprächsanregung für Eltern</span>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+                <p>• Wie fühlst du dich, wenn du nach einem Abenteuer endlich Urlaub machen kannst?<br>
+                • Was würdest du gerne auf einer magischen Urlaubsinsel machen?<br>
+                • Warum ist es wichtig, dass Willi nach seinem großen Abenteuer eine Pause macht?<br>
+                • Was denkst du, wird Willi auf Aqualuna alles erleben?<br>
+                • Wie stellst du dir deine perfekte Strandhütte vor?</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">
+                Google AdSense Anzeigenblock (728x90 oder responsive)
+            </div>
+        </div>
+
+        <div class="episode-navigation">
+            <h2 class="nav-title">Wie geht Willis Urlaub weiter?</h2>
+            <div class="nav-buttons">
+                <a href="willis1e9.html" class="nav-button">
+                    <div class="nav-button-label">← Vorherige Episode</div>
+                    <div class="nav-button-title">Das Herz der Tiefsee (S1 Finale)</div>
+                </a>
+                
+                <a href="willis2e2.html" class="nav-button">
+                    <div class="nav-button-label">Episode 2 →</div>
+                    <div class="nav-button-title">Der Strandtag mit Fizzi</div>
+                </a>
+
+                <a href="abenteuer-willi.html" class="nav-button nav-button-overview">
+                    <div class="nav-button-label">📚 Alle Episoden</div>
+                    <div class="nav-button-title">Zurück zur Episoden-Übersicht</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+<script src="cookies.js"></script>
+</body>
+</html>
