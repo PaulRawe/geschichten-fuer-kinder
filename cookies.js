@@ -39,13 +39,12 @@ function declineCookies() {
 }
 
 function applyConsent(level) {
+    // GoatCounter lädt immer (anonym, technisch notwendig)
+    loadGoatCounter();
+    
+    // AdSense NUR bei ausdrücklicher Zustimmung
     if (level === 'all') {
-        loadGoatCounter();
         loadAdSense();
-    }
-
-    if (level === 'essential') {
-        loadGoatCounter();
     }
 }
 
@@ -59,10 +58,11 @@ function loadGoatCounter() {
     const s = document.createElement('script');
     s.async = true;
     s.src = "https://gc.zgo.at/count.js";
-      s.setAttribute("data-goatcounter", "https://pauleheissta.goatcounter.com/count");
+    s.setAttribute("data-goatcounter", "https://pauleheissta.goatcounter.com/count");
     document.head.appendChild(s);
 
     window.goatcounterLoaded = true;
+    console.log('✓ GoatCounter geladen (anonym)');
 }
 
 function loadAdSense() {
@@ -71,8 +71,19 @@ function loadAdSense() {
     const s = document.createElement('script');
     s.async = true;
     s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    s.setAttribute("data-ad-client", "ca-pub-XXXXXXXXXXXXXXX");
+    s.setAttribute("data-ad-client", "ca-pub-XXXXXXXXXXXXXXX"); // ← IHRE AdSense ID HIER EINTRAGEN!
+    s.setAttribute("crossorigin", "anonymous");
     document.head.appendChild(s);
 
     window.adsbygoogleLoaded = true;
+    console.log('✓ Google AdSense geladen (mit Einwilligung)');
+}
+
+/* =====================
+   Optional: Consent zurücksetzen für Tests
+   ===================== */
+// Im Browser-Console aufrufen: resetConsent()
+function resetConsent() {
+    localStorage.removeItem('cookieConsent');
+    location.reload();
 }
