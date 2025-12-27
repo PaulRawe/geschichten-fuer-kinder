@@ -1,35 +1,406 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Über uns</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Über uns - Zauberhafte Kindergeschichten von Paul und Katharina Rawe">
+    <title>Über uns - Zauberhafte Kindergeschichten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .intro-image {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 4em;
+        }
+
+        .text-content {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.9;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .text-content p {
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #f39c12;
+        }
+
+        .highlight-box h3 {
+            color: #d35400;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .highlight-box p {
+            color: #2c3e50;
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .values-section {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .values-section h3 {
+            color: #006266;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .value-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .value-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .value-text {
+            flex: 1;
+        }
+
+        .value-text strong {
+            color: #006266;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .signature {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .footer-brand {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .footer-info {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 35px 25px;
+            }
+
+            .text-content {
+                font-size: 1.05em;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .text-content {
+                font-size: 1em;
+                line-height: 1.8;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="consent.css">
 </head>
 <body>
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>🍪 Wir verwenden Cookies</strong><br>
+                Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+            </div>
+        </div>
+    </div>
 
-<h1>Über uns</h1>
+    <div class="container">
+        <nav class="sticky-nav">
+            <a href="index.html" class="back-link">
+                <span>←</span>
+                <span>Zurück zur Startseite</span>
+            </a>
+        </nav>
 
-<p>
-Diese Website bietet liebevoll gestaltete Vorlesegeschichten für Kinder.
-</p>
+        <div class="content-section">
+            <h1>Über uns</h1>
+            
+            <div class="intro-image">
+                📚 💙 ✨
+            </div>
 
-<p>
-Die Inhalte richten sich an Eltern, Großeltern, Freunde und Erziehungsberechtigte,
-die Kindern Geschichten vorlesen oder gemeinsam entdecken möchten.
-</p>
+            <div class="text-content">
+                <p>
+                    Hallo! Wir sind Paul und Katharina – ein Elternpaar mit zwei wundervollen Kindern und einer großen Leidenschaft für Geschichten.
+                </p>
 
-<p>
-Alle Geschichten sind fiktional und dienen ausschließlich der Unterhaltung.
-</p>
+                <div class="highlight-box">
+                    <h3>Wie alles begann</h3>
+                    <p>
+                        Unsere Kinder lieben es, Geschichten vorgelesen zu bekommen – oder sie mittlerweile auch selbst zu lesen. Jeder Abend, jede ruhige Minute ist eine Gelegenheit, in eine neue Welt einzutauchen.
+                    </p>
+                    <p>
+                        Eines unserer Kinder hat ADHS und Autismus. Das macht vieles im Alltag besonders – auch das Vorlesen. Wir haben schnell gemerkt: Nicht jede Geschichte passt. Manche sind zu schnell, zu laut, zu unruhig. Andere zu abstrakt oder emotional überfordernd.
+                    </p>
+                    <p>
+                        <strong>Wir brauchten Geschichten, die anders sind.</strong> Geschichten, die klar strukturiert sind. Die Gefühle benennen, ohne zu überwältigen. Die Halt geben, Sicherheit vermitteln – und gleichzeitig schön und lebendig bleiben.
+                    </p>
+                </div>
 
-<p>
-Die auf dieser Website bereitgestellten Inhalte stellen keine pädagogische,
-therapeutische oder medizinische Beratung dar.
-</p>
+                <p>
+                    Katharina ist Grundschullehrerin und bringt jahrelange pädagogische Erfahrung mit. Sie weiß, wie Kinder lernen, wie sie Geschichten verstehen – und was sie wirklich brauchen, um sich gesehen zu fühlen.
+                </p>
 
-<h2>Urheberrecht</h2>
-<p>
-Alle Texte und Inhalte auf dieser Website unterliegen dem Urheberrecht.
-</p>
+                <p>
+                    Ich, Paul, liebe das Schreiben und das Gestalten von Welten, die Kindern Raum geben: Raum zum Nachdenken, zum Fühlen, zum Verstehen.
+                </p>
 
+                <p>
+                    Gemeinsam haben wir angefangen, <strong>Geschichten zu schreiben, die pädagogisch durchdacht und gleichzeitig herzenswarm sind</strong>. Geschichten, die wir selbst gerne für unsere Kinder gefunden hätten.
+                </p>
+
+                <div class="values-section">
+                    <h3>Das ist uns wichtig</h3>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon">💙</div>
+                            <div class="value-text">
+                                <strong>Inklusion und Vielfalt</strong>
+                                Jedes Kind ist anders. Unsere Geschichten sollen für alle Kinder da sein – mit ihren unterschiedlichen Bedürfnissen, Gefühlen und Herausforderungen.
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🧠</div>
+                            <div class="value-text">
+                                <strong>Pädagogisch wertvoll</strong>
+                                Jede Geschichte hat einen Zweck: Gefühle verstehen, Empathie entwickeln, Selbstvertrauen stärken. Aber nie mit erhobenem Zeigefinger – sondern durch Erleben.
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🌟</div>
+                            <div class="value-text">
+                                <strong>Klar und ruhig</strong>
+                                Unsere Geschichten sind bewusst strukturiert. Sie sind nicht hektisch, nicht überladen. Sie geben Orientierung – besonders für Kinder, die das brauchen.
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">❤️</div>
+                            <div class="value-text">
+                                <strong>Aus dem Herzen</strong>
+                                Wir schreiben nicht für einen Markt. Wir schreiben für Kinder. Für Eltern. Für Momente, die verbinden.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    Diese Website ist das Ergebnis vieler Abende am Küchentisch, vieler Gespräche darüber, was Kinder brauchen – und was wir als Eltern gebraucht hätten.
+                </p>
+
+                <p>
+                    <strong>Unsere Mission ist einfach:</strong> Wir möchten Geschichten zugänglich machen, die nicht nur schön sind, sondern auch gut tun. Geschichten, die Kinder stark machen. Die ihnen zeigen: Du bist richtig, genau so wie du bist.
+                </p>
+
+                <div class="signature">
+                    <p><strong>Mit herzlichen Grüßen,</strong></p>
+                    <p>Paul und Katharina</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
+            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+            </div>
+
+            <div class="footer-info">
+                <p style="margin-top: 15px; font-size: 0.85em;">
+                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="cookies.js"></script>
 </body>
 </html>
