@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap-Verweis für Suchmaschinen
+Sitemap: https://paulrawe.github.io/geschichten-fuer-kinder/sitemap.xml
