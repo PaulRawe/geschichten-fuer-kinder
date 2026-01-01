@@ -50,7 +50,7 @@
             font-weight: 400;
         }
 
-        /* Hero Image - größer und einladender */
+        /* Hero Image */
         .hero-image {
             margin-top: 30px;
             border-radius: 20px;
@@ -69,7 +69,7 @@
             display: block;
         }
 
-        /* Kategorien - luftiger und größer */
+        /* Kategorien */
         .categories-section {
             background: white;
             border-radius: 25px;
@@ -214,34 +214,144 @@
             line-height: 1.8;
         }
 
-        /* Dezente Werbung */
-        .ad-container {
+        /* Amazon Affiliate Block - Dezent */
+        .affiliate-container {
             background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .affiliate-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .affiliate-title {
+            color: #667eea;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .affiliate-subtitle {
+            color: #777;
+            font-size: 0.95em;
+            margin-bottom: 25px;
+        }
+
+        .affiliate-disclaimer {
+            background: #f8f9fa;
+            border-left: 3px solid #667eea;
+            padding: 12px 18px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .affiliate-disclaimer-text {
+            color: #666;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        .affiliate-disclaimer-text a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .affiliate-disclaimer-text a:hover {
+            text-decoration: underline;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .affiliate-item {
+            background: #fafafa;
             border-radius: 15px;
             padding: 25px;
-            margin: 40px 0;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
         }
 
-        .ad-label {
-            color: #aaa;
-            font-size: 0.7em;
-            margin-bottom: 12px;
+        .affiliate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+
+        .affiliate-item.premium {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe5cc 100%);
+            border: 2px solid #ffa500;
+        }
+
+        .affiliate-item.premium .premium-badge {
+            background: #ffa500;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 0.5px;
         }
 
-        .ad-placeholder {
-            background: #fafafa;
-            border: 2px dashed #ddd;
+        .affiliate-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
             border-radius: 10px;
-            padding: 30px;
-            color: #bbb;
-            font-size: 0.9em;
         }
 
-        /* Footer - übersichtlicher */
+        .affiliate-product-title {
+            color: #333;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            min-height: 42px;
+        }
+
+        .affiliate-product-description {
+            color: #666;
+            font-size: 0.85em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .affiliate-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .affiliate-button:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Footer */
         footer {
             background: white;
             border-radius: 25px;
@@ -308,7 +418,7 @@
             line-height: 1.6;
         }
 
-        /* Cookie Banner - moderner */
+        /* Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 0;
@@ -437,6 +547,14 @@
                 padding: 25px;
             }
 
+            .affiliate-container {
+                padding: 25px;
+            }
+
+            .affiliate-grid {
+                grid-template-columns: 1fr;
+            }
+
             .cookie-content {
                 flex-direction: column;
                 text-align: center;
@@ -474,23 +592,14 @@
             .category-name {
                 font-size: 1.1em;
             }
+
+            .affiliate-title {
+                font-size: 1.4em;
+            }
         }
     </style>
-<link rel="stylesheet" href="consent.css">
 </head>
 <body>
-<div id="cookieBanner" class="cookie-banner">
-  <div class="cookie-content">
-    <div class="cookie-text">
-      <strong>🍪 Wir verwenden Cookies</strong><br>
-      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
-    </div>
-    <div class="cookie-buttons">
-      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
-      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
-    </div>
-  </div>
-</div>
     <div class="container">
         <header>
             <h1>🌟 Zauberhafte Kindergeschichten 🌟</h1>
@@ -558,12 +667,52 @@
             </div>
         </div>
 
-        <!-- Dezente Werbung -->
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                <!-- Hier Google AdSense Code einfügen -->
-                Google AdSense Anzeigenblock (728x90 oder responsive)
+        <!-- Amazon Affiliate Block -->
+        <div class="affiliate-container">
+            <div class="affiliate-header">
+                <h2 class="affiliate-title">📚 Beliebte Kinderbücher</h2>
+                <p class="affiliate-subtitle">Unsere Empfehlungen für zauberhafte Vorlesestunden</p>
+            </div>
+
+            <div class="affiliate-disclaimer">
+                <p class="affiliate-disclaimer-text">
+                    <strong>Transparenzhinweis:</strong> Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Wenn Sie über unsere Links einkaufen, erhalten wir eine kleine Provision, ohne dass Ihnen dadurch zusätzliche Kosten entstehen. Dies hilft uns, diese Website kostenlos zu betreiben. Mehr Informationen in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+                </p>
+            </div>
+
+            <div class="affiliate-grid">
+                <!-- Premium Artikel -->
+                <div class="affiliate-item premium">
+                    <span class="premium-badge">Bestseller</span>
+                    <img src="https://m.media-amazon.com/images/I/91VZZ-SQeJL._SL1500_.jpg" alt="Mein großes Buch der Tiergeräusche" class="affiliate-image">
+                    <h3 class="affiliate-product-title">Mein großes Buch der Tiergeräusche</h3>
+                    <p class="affiliate-product-description">Interaktives Soundbuch mit 50 realistischen Tiergeräuschen. Perfekt für Kinder ab 2 Jahren.</p>
+                    <a href="https://www.amazon.de/dp/3789109029?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
+                </div>
+
+                <!-- Günstiger Artikel 1 -->
+                <div class="affiliate-item">
+                    <img src="https://m.media-amazon.com/images/I/91u3HzGW6pL._SL1500_.jpg" alt="Schüttel den Apfelbaum" class="affiliate-image">
+                    <h3 class="affiliate-product-title">Schüttel den Apfelbaum</h3>
+                    <p class="affiliate-product-description">Mitmachbuch für Kinder ab 2 Jahren. Schaukeln, schütteln, pusten – ein interaktives Erlebnis!</p>
+                    <a href="https://www.amazon.de/dp/3845837365?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
+                </div>
+
+                <!-- Günstiger Artikel 2 -->
+                <div class="affiliate-item">
+                    <img src="https://m.media-amazon.com/images/I/91TJclD0pIL._SL1500_.jpg" alt="Der Grüffelo" class="affiliate-image">
+                    <h3 class="affiliate-product-title">Der Grüffelo</h3>
+                    <p class="affiliate-product-description">Der beliebte Kinderbuch-Klassiker über die kleine Maus und das furchteinflößende Monster.</p>
+                    <a href="https://www.amazon.de/dp/3407792913?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
+                </div>
+
+                <!-- Günstiger Artikel 3 -->
+                <div class="affiliate-item">
+                    <img src="https://m.media-amazon.com/images/I/91yp5yhq8QL._SL1500_.jpg" alt="Weißt du eigentlich, wie lieb ich dich hab?" class="affiliate-image">
+                    <h3 class="affiliate-product-title">Weißt du eigentlich, wie lieb ich dich hab?</h3>
+                    <p class="affiliate-product-description">Eine zärtliche Geschichte über die grenzenlose Liebe zwischen Eltern und Kindern.</p>
+                    <a href="https://www.amazon.de/dp/3737373094?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
+                </div>
             </div>
         </div>
 
@@ -581,7 +730,7 @@
 
             <div class="footer-info">
                 <p style="margin-top: 15px; font-size: 0.85em;">
-                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
+                    © 2025 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
                 </p>
             </div>
         </footer>
@@ -613,7 +762,6 @@
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieBanner').classList.remove('show');
-            // Hier Google AdSense und andere Tracking-Skripte laden
             console.log('Cookies akzeptiert - Tracking aktiviert');
         }
 
@@ -626,6 +774,5 @@
         // Cookie Banner beim Laden anzeigen
         window.addEventListener('load', showCookieBanner);
     </script>
-<script src="cookies.js"></script>
 </body>
 </html>
