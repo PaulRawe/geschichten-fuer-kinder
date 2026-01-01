@@ -107,3 +107,34 @@
         width: 100%;
     }
 }
+
+/* ============================
+   AdSense komplett ausblenden
+   ============================ */
+
+/* Standard AdSense Container */
+ins.adsbygoogle,
+.adsbygoogle {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* AdSense iFrames */
+iframe[src*="googlesyndication"],
+iframe[src*="doubleclick"],
+iframe[src*="ads"] {
+    display: none !important;
+}
+
+/* Falls Ads in Wrappern liegen */
+.ad,
+.ads,
+.ad-container,
+.ad-wrapper {
+    display: none !important;
+}
