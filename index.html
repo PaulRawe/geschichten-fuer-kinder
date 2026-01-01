@@ -3,8 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kostenlose Kindergeschichten zum Vorlesen für Kinder von 2-8 Jahren. Märchen, Abenteuer, Gute-Nacht-Geschichten und mehr.">
-    <title>Zauberhafte Kindergeschichten - Kostenlose Geschichten zum Vorlesen</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kostenlose Kindergeschichten zum Vorlesen für Kinder von 2-8 Jahren. Entdecken Sie Märchen, Abenteuergeschichten, Gute-Nacht-Geschichten und mehr. Stärken Sie die Bindung zu Ihrem Kind durch gemeinsames Vorlesen.">
+    <meta name="keywords" content="Kindergeschichten, Vorlesen, Märchen, Gute-Nacht-Geschichten, Abenteuergeschichten, Tiergeschichten, kostenlos, Kinder 2-8 Jahre">
+    <meta name="author" content="Zauberhafte Kindergeschichten">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://paulrawe.github.io/geschichten-fuer-kinder/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paulrawe.github.io/geschichten-fuer-kinder/">
+    <meta property="og:title" content="🌟 Zauberhafte Kindergeschichten - Kostenlose Geschichten zum Vorlesen">
+    <meta property="og:description" content="Kostenlose Kindergeschichten zum Vorlesen für Kinder von 2-8 Jahren. Märchen, Abenteuer, Gute-Nacht-Geschichten und mehr.">
+    <meta property="og:image" content="https://paulrawe.github.io/geschichten-fuer-kinder/bilder/index/vorwort.png">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://paulrawe.github.io/geschichten-fuer-kinder/">
+    <meta property="twitter:title" content="🌟 Zauberhafte Kindergeschichten - Kostenlose Geschichten zum Vorlesen">
+    <meta property="twitter:description" content="Kostenlose Kindergeschichten zum Vorlesen für Kinder von 2-8 Jahren. Märchen, Abenteuer, Gute-Nacht-Geschichten und mehr.">
+    <meta property="twitter:image" content="https://paulrawe.github.io/geschichten-fuer-kinder/bilder/index/vorwort.png">
+    
+    <title>🌟 Zauberhafte Kindergeschichten - Kostenlose Geschichten zum Vorlesen</title>
+    
+    <!-- Strukturierte Daten (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Zauberhafte Kindergeschichten",
+      "url": "https://paulrawe.github.io/geschichten-fuer-kinder/",
+      "description": "Kostenlose Kindergeschichten zum Vorlesen für Kinder von 2-8 Jahren",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Zauberhafte Kindergeschichten"
+      }
+    }
+    </script>
+    
+    <!-- Strukturierte Daten für Kategorien -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Geschichtenkategorien",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Märchen",
+          "url": "https://paulrawe.github.io/geschichten-fuer-kinder/maerchen.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Abenteuergeschichten",
+          "url": "https://paulrawe.github.io/geschichten-fuer-kinder/abenteuergeschichten.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gute-Nacht-Geschichten",
+          "url": "https://paulrawe.github.io/geschichten-fuer-kinder/gute-nacht-geschichten.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tiergeschichten",
+          "url": "https://paulrawe.github.io/geschichten-fuer-kinder/tiergeschichten.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Geschichten über Gefühle",
+          "url": "https://paulrawe.github.io/geschichten-fuer-kinder/geschichten-ueber-gefuehle.html"
+        }
+      ]
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -607,7 +687,7 @@
 
             <!-- Hero Image -->
             <div class="hero-image">
-                <img src="bilder/index/vorwort.png" alt="Zauberhafte Kindergeschichten - Willkommen in unserer Welt der Geschichten">
+                <img src="bilder/index/vorwort.png" alt="Zauberhafte Kindergeschichten - Willkommen in unserer Welt der Geschichten" loading="eager">
             </div>
         </header>
 
@@ -623,52 +703,52 @@
         </div>
 
         <!-- Kategorien -->
-        <div class="categories-section">
+        <section class="categories-section">
             <h2 class="section-title">Entdecke unsere Geschichtenwelten</h2>
             <p class="section-description">
                 Wähle eine Kategorie und tauche ein in wundervolle Abenteuer, lehrreiche Geschichten und zauberhafte Momente
             </p>
             <div class="categories-grid">
-                <a href="maerchen.html" class="category-card">
+                <a href="maerchen.html" class="category-card" aria-label="Märchen - Klassische und moderne Märchen voller Zauber">
                     <div class="category-icon">
-                        <img src="bilder/maerchen/3.png" alt="Märchen">
+                        <img src="bilder/maerchen/3.png" alt="Märchen" loading="lazy">
                     </div>
                     <div class="category-name">Märchen</div>
                     <div class="category-description">Klassische und moderne Märchen voller Zauber</div>
                 </a>
-                <a href="abenteuergeschichten.html" class="category-card">
+                <a href="abenteuergeschichten.html" class="category-card" aria-label="Abenteuergeschichten - Spannende Reisen und mutige Helden">
                     <div class="category-icon">
-                        <img src="bilder/abenteuer/5.png" alt="Abenteuergeschichten">
+                        <img src="bilder/abenteuer/5.png" alt="Abenteuergeschichten" loading="lazy">
                     </div>
                     <div class="category-name">Abenteuer&shy;geschichten</div>
                     <div class="category-description">Spannende Reisen und mutige Helden</div>
                 </a>
-                <a href="gute-nacht-geschichten.html" class="category-card">
+                <a href="gute-nacht-geschichten.html" class="category-card" aria-label="Gute-Nacht-Geschichten - Sanfte Geschichten zum Einschlafen">
                     <div class="category-icon">
-                        <img src="bilder/gutenacht/2.png" alt="Gute-Nacht-Geschichten">
+                        <img src="bilder/gutenacht/2.png" alt="Gute-Nacht-Geschichten" loading="lazy">
                     </div>
                     <div class="category-name">Gute-Nacht-Geschichten</div>
                     <div class="category-description">Sanfte Geschichten zum Einschlafen</div>
                 </a>
-                <a href="tiergeschichten.html" class="category-card">
+                <a href="tiergeschichten.html" class="category-card" aria-label="Tiergeschichten - Lustige und lehrreiche Tierabenteuer">
                     <div class="category-icon">
-                        <img src="bilder/tiergeschichten/1.png" alt="Tiergeschichten">
+                        <img src="bilder/tiergeschichten/1.png" alt="Tiergeschichten" loading="lazy">
                     </div>
                     <div class="category-name">Tier&shy;geschichten</div>
                     <div class="category-description">Lustige und lehrreiche Tierabenteuer</div>
                 </a>
-                <a href="geschichten-ueber-gefuehle.html" class="category-card">
+                <a href="geschichten-ueber-gefuehle.html" class="category-card" aria-label="Geschichten über Gefühle - Emotionen verstehen und verarbeiten">
                     <div class="category-icon">
-                        <img src="bilder/gefühle/4.png" alt="Geschichten über Gefühle">
+                        <img src="bilder/gefühle/4.png" alt="Geschichten über Gefühle" loading="lazy">
                     </div>
                     <div class="category-name">Geschichten über Gefühle</div>
                     <div class="category-description">Emotionen verstehen und verarbeiten</div>
                 </a>
             </div>
-        </div>
+        </section>
 
         <!-- Amazon Affiliate Block -->
-        <div class="affiliate-container">
+        <section class="affiliate-container">
             <div class="affiliate-header">
                 <h2 class="affiliate-title">📚 Beliebte Kinderbücher</h2>
                 <p class="affiliate-subtitle">Unsere Affiliate-Link Empfehlungen für Eltern für zauberhafte Vorlesestunden</p>
@@ -682,39 +762,39 @@
 
             <div class="affiliate-grid">
                 <!-- Premium Artikel -->
-                <div class="affiliate-item premium">
+                <article class="affiliate-item premium">
                     <span class="premium-badge">Bestseller</span>
-                    <img src="https://m.media-amazon.com/images/I/91VZZ-SQeJL._SL1500_.jpg" alt="Mein großes Buch der Tiergeräusche" class="affiliate-image">
+                    <img src="https://m.media-amazon.com/images/I/91VZZ-SQeJL._SL1500_.jpg" alt="Mein großes Buch der Tiergeräusche" class="affiliate-image" loading="lazy">
                     <h3 class="affiliate-product-title">Mein großes Buch der Tiergeräusche</h3>
                     <p class="affiliate-product-description">Interaktives Soundbuch mit 50 realistischen Tiergeräuschen. Perfekt für Kinder ab 2 Jahren.</p>
                     <a href="https://www.amazon.de/dp/3789109029?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
-                </div>
+                </article>
 
                 <!-- Günstiger Artikel 1 -->
-                <div class="affiliate-item">
-                    <img src="https://m.media-amazon.com/images/I/91u3HzGW6pL._SL1500_.jpg" alt="Schüttel den Apfelbaum" class="affiliate-image">
+                <article class="affiliate-item">
+                    <img src="https://m.media-amazon.com/images/I/91u3HzGW6pL._SL1500_.jpg" alt="Schüttel den Apfelbaum" class="affiliate-image" loading="lazy">
                     <h3 class="affiliate-product-title">Schüttel den Apfelbaum</h3>
                     <p class="affiliate-product-description">Mitmachbuch für Kinder ab 2 Jahren. Schaukeln, schütteln, pusten – ein interaktives Erlebnis!</p>
                     <a href="https://www.amazon.de/dp/3845837365?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
-                </div>
+                </article>
 
                 <!-- Günstiger Artikel 2 -->
-                <div class="affiliate-item">
-                    <img src="https://m.media-amazon.com/images/I/91TJclD0pIL._SL1500_.jpg" alt="Der Grüffelo" class="affiliate-image">
+                <article class="affiliate-item">
+                    <img src="https://m.media-amazon.com/images/I/91TJclD0pIL._SL1500_.jpg" alt="Der Grüffelo" class="affiliate-image" loading="lazy">
                     <h3 class="affiliate-product-title">Der Grüffelo</h3>
                     <p class="affiliate-product-description">Der beliebte Kinderbuch-Klassiker über die kleine Maus und das furchteinflößende Monster.</p>
                     <a href="https://www.amazon.de/dp/3407792913?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
-                </div>
+                </article>
 
                 <!-- Günstiger Artikel 3 -->
-                <div class="affiliate-item">
-                    <img src="https://m.media-amazon.com/images/I/91yp5yhq8QL._SL1500_.jpg" alt="Weißt du eigentlich, wie lieb ich dich hab?" class="affiliate-image">
+                <article class="affiliate-item">
+                    <img src="https://m.media-amazon.com/images/I/91yp5yhq8QL._SL1500_.jpg" alt="Weißt du eigentlich, wie lieb ich dich hab?" class="affiliate-image" loading="lazy">
                     <h3 class="affiliate-product-title">Weißt du eigentlich, wie lieb ich dich hab?</h3>
                     <p class="affiliate-product-description">Eine zärtliche Geschichte über die grenzenlose Liebe zwischen Eltern und Kindern.</p>
-                    <a href="https://www.amazon.de/dp/3737373094?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
-                </div>
+  <a href="https://www.amazon.de/dp/3737373094?tag=prawe-21&linkCode=ogi&th=1&psc=1" class="affiliate-button" target="_blank" rel="nofollow noopener">Bei Amazon ansehen</a>
+                </article>
             </div>
-        </div>
+        </section>
 
         <footer>
             <p class="footer-brand">Zauberhafte Kindergeschichten</p>
@@ -776,4 +856,3 @@
     </script>
 </body>
 </html>
-
