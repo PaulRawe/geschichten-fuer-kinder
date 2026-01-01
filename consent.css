@@ -138,3 +138,190 @@ iframe[src*="ads"] {
 .ad-wrapper {
     display: none !important;
 }
+
+/* PayPal Spenden-Button Styling - Passend zu deiner Seite */
+
+.paypal-spenden-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.spenden-box {
+    background: white;
+    border-radius: 25px;
+    padding: 45px 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.spenden-header {
+    margin-bottom: 35px;
+}
+
+.spenden-emoji {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+}
+
+.spenden-titel {
+    color: #667eea;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.spenden-text {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.spenden-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.paypal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.paypal-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.paypal-btn:active {
+    transform: translateY(-2px);
+}
+
+.paypal-btn-small {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    color: #d35400;
+}
+
+.paypal-btn-small:hover {
+    background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%);
+}
+
+.paypal-btn-medium {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    color: white;
+}
+
+.paypal-btn-medium:hover {
+    background: linear-gradient(135deg, #0984e3 0%, #0652DD 100%);
+}
+
+.paypal-btn-custom {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.paypal-btn-custom:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-icon {
+    font-size: 1.3em;
+}
+
+.btn-text {
+    font-size: 1em;
+}
+
+.spenden-hinweis {
+    margin: 25px 0 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+}
+
+.spenden-hinweis p {
+    color: #28a745;
+    font-weight: 600;
+    margin: 0;
+}
+
+.spenden-datenschutz {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+.spenden-datenschutz p {
+    color: #666;
+    margin: 0;
+}
+
+.spenden-datenschutz a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.spenden-datenschutz a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .spenden-box {
+        padding: 35px 25px;
+    }
+    
+    .spenden-titel {
+        font-size: 1.6em;
+    }
+    
+    .spenden-text {
+        font-size: 1em;
+    }
+    
+    .spenden-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .paypal-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .spenden-emoji {
+        font-size: 2.5em;
+    }
+    
+    .spenden-titel {
+        font-size: 1.4em;
+    }
+    
+    .paypal-btn {
+        font-size: 0.95em;
+        padding: 14px 24px;
+    }
+   }
