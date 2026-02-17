@@ -106,6 +106,25 @@
             margin-bottom: 30px;
         }
 
+        /* Hero Image Container */
+        .hero-image-container {
+            margin-top: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(123, 158, 181, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* Lernolotl Story Box - Conversion optimiert */
         .lernolotl-story-box {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
@@ -452,6 +471,11 @@
             <h1>Der Lernolotl</h1>
             <p class="subtitle">Pädagogisch aufgewertete Vorlesegeschichten</p>
             <p class="tagline">Kostenlose Geschichten für Kinder von 3–10 Jahren</p>
+            
+            <!-- Hero Image -->
+            <div class="hero-image-container">
+                <img src="1000112864.png" alt="Der Lernolotl liest mit zwei Kindern zusammen in einer gemütlichen Bibliothek" loading="eager">
+            </div>
         </header>
 
         <!-- Lernolotl Story Box - Conversion optimiert -->
