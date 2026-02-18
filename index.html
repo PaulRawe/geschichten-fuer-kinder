@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Der Lernolotl – Pädagogisch aufgewertete Vorlesegeschichten für Kinder von 3-10 Jahren. Kostenlose Geschichten von einer Grundschullehrerin. Optional: Arbeitsblätter zum Download.">
     <meta name="keywords" content="Lernolotl, pädagogische Kindergeschichten, Vorlesegeschichten, Arbeitsblätter Grundschule, Gefühlsgeschichten, kostenlos, Kinder 3-10 Jahre">
     <meta name="author" content="Katharina R., Grundschullehrerin">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.lernolotl.de/">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lernolotl.de/">
     <meta property="og:title" content="🦎 Der Lernolotl – Pädagogisch aufgewertete Vorlesegeschichten">
     <meta property="og:description" content="Kostenlose Geschichten von einer Grundschullehrerin. Optional: Arbeitsblätter zum Download.">
     <meta property="og:locale" content="de_DE">
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lernolotl.de/">
     <meta property="twitter:title" content="🦎 Der Lernolotl – Pädagogisch aufgewertete Vorlesegeschichten">
     <meta property="twitter:description" content="Kostenlose Geschichten von einer Grundschullehrerin. Optional: Arbeitsblätter zum Download.">
     
-    <title> Der Lernolotl – Pädagogisch aufgewertete Vorlesegeschichten</title>
+    <title>Der Lernolotl – Pädagogisch aufgewertete Vorlesegeschichten</title>
     
-    <!-- Strukturierte Daten (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,7 +59,7 @@
             margin: 0 auto;
         }
 
-        /* Header mit Lernolotl */
+        /* ===== HEADER ===== */
         header {
             background: white;
             border-radius: 25px;
@@ -91,7 +87,7 @@
         .subtitle {
             color: #666;
             font-size: 1.15em;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             font-weight: 400;
         }
 
@@ -102,7 +98,6 @@
             margin-bottom: 30px;
         }
 
-        /* Hero Image Container */
         .hero-image-container {
             margin-top: 30px;
             border-radius: 20px;
@@ -121,7 +116,7 @@
             display: block;
         }
 
-        /* Lernolotl Story Box - Conversion optimiert */
+        /* ===== STORY BOX ===== */
         .lernolotl-story-box {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-left: 6px solid #66bb6a;
@@ -167,7 +162,7 @@
             margin-top: 20px;
         }
 
-        /* Info-Box */
+        /* ===== INFO BOX ===== */
         .info-box {
             background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
             border-radius: 20px;
@@ -193,7 +188,29 @@
             line-height: 1.8;
         }
 
-        /* Kategorien */
+        /* Badge-Erklärung in der Info-Box */
+        .badge-erklaerung {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-top: 18px;
+            border: 1.5px solid #7b9eb5;
+            font-size: 0.95em;
+            color: #3d5a6d;
+        }
+        .badge-erklaerung img {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+        }
+        .badge-erklaerung strong {
+            color: #5a7d95;
+        }
+
+        /* ===== KATEGORIEN ===== */
         .categories-section {
             background: white;
             border-radius: 25px;
@@ -227,6 +244,7 @@
             margin-top: 30px;
         }
 
+        /* ===== KATEGORIE-KARTE ===== */
         .category-card {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             border-radius: 20px;
@@ -235,26 +253,13 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
-            opacity: 0.3;
+            position: relative; /* wichtig für Badge-Positionierung */
+            overflow: visible;  /* wichtig damit Badge nicht abgeschnitten wird */
         }
 
         .category-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .category-card:hover::before {
-            opacity: 1;
         }
 
         .category-icon img {
@@ -278,7 +283,74 @@
             line-height: 1.5;
         }
 
-        /* Footer */
+        /* ===== LERNOLOTL BADGE ===== */
+        .lernolotl-badge {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            background: white;
+            border-radius: 50%;
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(90,125,149,0.4);
+            border: 2.5px solid #7b9eb5;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            z-index: 10;
+            text-decoration: none;
+        }
+
+        .lernolotl-badge:hover {
+            transform: scale(1.18) rotate(-6deg);
+            box-shadow: 0 6px 22px rgba(90,125,149,0.5);
+        }
+
+        .lernolotl-badge img {
+            width: 36px;
+            height: 36px;
+        }
+
+        /* Tooltip */
+        .lernolotl-badge::after {
+            content: '📚 Lernmaterialien verfügbar!';
+            position: absolute;
+            top: 62px;
+            right: -8px;
+            background: #5a7d95;
+            color: white;
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 7px 13px;
+            border-radius: 9px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            font-family: 'Segoe UI', sans-serif;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        .lernolotl-badge::before {
+            content: '';
+            position: absolute;
+            top: 57px;
+            right: 18px;
+            border: 6px solid transparent;
+            border-bottom-color: #5a7d95;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 11;
+        }
+
+        .lernolotl-badge:hover::after,
+        .lernolotl-badge:hover::before {
+            opacity: 1;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
             background: white;
             border-radius: 25px;
@@ -293,10 +365,6 @@
             font-weight: 700;
             font-size: 1.5em;
             margin-bottom: 15px;
-        }
-
-        .footer-brand::before {
-            content: ' ';
         }
 
         .footer-tagline {
@@ -344,9 +412,8 @@
             transition: width 0.3s;
         }
 
-        .footer-links a:hover::after {
-            width: 100%;
-        }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-links a:hover { color: #7b9eb5; }
 
         .footer-info {
             color: #999;
@@ -354,7 +421,7 @@
             margin-top: 25px;
         }
 
-        /* Cookie Banner */
+        /* ===== COOKIE BANNER ===== */
         .cookie-banner {
             position: fixed;
             bottom: -200px;
@@ -367,9 +434,7 @@
             transition: bottom 0.4s ease;
         }
 
-        .cookie-banner.show {
-            bottom: 0;
-        }
+        .cookie-banner.show { bottom: 0; }
 
         .cookie-content {
             max-width: 1100px;
@@ -386,15 +451,9 @@
             line-height: 1.6;
         }
 
-        .cookie-text a {
-            color: #5a7d95;
-            text-decoration: underline;
-        }
+        .cookie-text a { color: #5a7d95; text-decoration: underline; }
 
-        .cookie-buttons {
-            display: flex;
-            gap: 15px;
-        }
+        .cookie-buttons { display: flex; gap: 15px; }
 
         .cookie-btn {
             padding: 12px 25px;
@@ -406,76 +465,39 @@
             transition: all 0.3s;
         }
 
-        .cookie-accept {
-            background: #66bb6a;
-            color: white;
-        }
+        .cookie-accept { background: #66bb6a; color: white; }
+        .cookie-accept:hover { background: #4caf50; }
+        .cookie-decline { background: #e0e0e0; color: #333; }
+        .cookie-decline:hover { background: #bdbdbd; }
 
-        .cookie-accept:hover {
-            background: #4caf50;
-        }
-
-        .cookie-decline {
-            background: #e0e0e0;
-            color: #333;
-        }
-
-        .cookie-decline:hover {
-            background: #bdbdbd;
-        }
-
-        /* Responsive */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .lernolotl-mascot-header {
-                font-size: 60px;
-            }
-
-            header,
-            .categories-section {
-                padding: 35px 25px;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cookie-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
+            body { padding: 15px; }
+            h1 { font-size: 2em; }
+            header, .categories-section { padding: 35px 25px; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .cookie-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-direction: column; gap: 15px; }
+            .badge-erklaerung { flex-direction: column; text-align: center; }
         }
     </style>
     <link rel="stylesheet" href="consent.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+
+        <!-- ===== HEADER ===== -->
         <header>
             <img src="lernolotl-icon.png" alt="Der Lernolotl" class="lernolotl-mascot-header">
             <h1>Der Lernolotl</h1>
             <p class="subtitle">Pädagogisch aufgewertete Vorlesegeschichten</p>
             <p class="tagline">Kostenlose Geschichten für Kinder von 3–10 Jahren</p>
-            
-            <!-- Hero Image -->
             <div class="hero-image-container">
                 <img src="1000112864.png" alt="Der Lernolotl liest mit zwei Kindern zusammen in einer gemütlichen Bibliothek" loading="eager">
             </div>
         </header>
 
-        <!-- Lernolotl Story Box - Conversion optimiert -->
+        <!-- ===== STORY BOX ===== -->
         <div class="lernolotl-story-box">
             <img src="lernolotl-icon.png" alt="Der Lernolotl" class="mascot-small">
             <h3>Warum der Lernolotl?</h3>
@@ -506,7 +528,7 @@
             </p>
         </div>
 
-        <!-- Info-Box -->
+        <!-- ===== INFO BOX ===== -->
         <div class="info-box">
             <div class="info-box-title">
                 <span>💡</span>
@@ -517,20 +539,33 @@
                 (Grundschullehrerin mit 15+ Jahren Erfahrung) geschrieben.<br><br>
                 
                 Zu vielen Geschichten gibt es <strong>optional kostenpflichtige Arbeitsmaterialien</strong> 
-                (Arbeitsblätter, Ausmalbilder, Aufgaben für Kita & Grundschule) – 
+                (Arbeitsblätter, Ausmalbilder, Aufgaben für Kita &amp; Grundschule) – 
                 perfekt für Eltern und Lehrkräfte, die tiefer einsteigen möchten.<br><br>
                 
-                <strong>Geschichten lesen = gratis • Lernmaterialien = optional zum Download</strong>
+                <strong>Geschichten lesen = gratis &nbsp;•&nbsp; Lernmaterialien = optional zum Download</strong>
             </p>
+
+            <!-- Badge-Erklärung -->
+            <div class="badge-erklaerung">
+                <img src="lernolotl-icon.png" alt="Lernolotl-Badge">
+                <span>
+                    <strong>Dieses Symbol</strong> auf einer Kategorie bedeutet: 
+                    Zu den Geschichten dort gibt es passende Lernmaterialien zum Download — 
+                    direkt bei der Geschichte verlinkt.
+                </span>
+            </div>
         </div>
 
-        <!-- Kategorien -->
+        <!-- ===== KATEGORIEN ===== -->
         <section class="categories-section">
             <h2 class="section-title">Entdecke unsere Geschichtenwelten</h2>
             <p class="section-description">
                 Wähle eine Kategorie und tauche ein in pädagogisch wertvolle Geschichten
             </p>
+
             <div class="categories-grid">
+
+                <!-- Märchen – noch keine Materialien -->
                 <a href="maerchen.html" class="category-card" aria-label="Märchen">
                     <div class="category-icon">
                         <img src="bilder/maerchen/3.png" alt="Märchen" loading="lazy">
@@ -538,6 +573,8 @@
                     <div class="category-name">Märchen</div>
                     <div class="category-description">Klassische und moderne Märchen voller Zauber</div>
                 </a>
+
+                <!-- Abenteuer – noch keine Materialien -->
                 <a href="abenteuergeschichten.html" class="category-card" aria-label="Abenteuergeschichten">
                     <div class="category-icon">
                         <img src="bilder/abenteuer/5.png" alt="Abenteuergeschichten" loading="lazy">
@@ -545,6 +582,8 @@
                     <div class="category-name">Abenteuer&shy;geschichten</div>
                     <div class="category-description">Spannende Reisen und mutige Helden</div>
                 </a>
+
+                <!-- Gute Nacht – noch keine Materialien -->
                 <a href="gute-nacht-geschichten.html" class="category-card" aria-label="Gute-Nacht-Geschichten">
                     <div class="category-icon">
                         <img src="bilder/gutenacht/2.png" alt="Gute-Nacht-Geschichten" loading="lazy">
@@ -552,6 +591,8 @@
                     <div class="category-name">Gute-Nacht-Geschichten</div>
                     <div class="category-description">Sanfte Geschichten zum Einschlafen</div>
                 </a>
+
+                <!-- Tiergeschichten – noch keine Materialien -->
                 <a href="tiergeschichten.html" class="category-card" aria-label="Tiergeschichten">
                     <div class="category-icon">
                         <img src="bilder/tiergeschichten/1.png" alt="Tiergeschichten" loading="lazy">
@@ -559,24 +600,33 @@
                     <div class="category-name">Tier&shy;geschichten</div>
                     <div class="category-description">Lustige und lehrreiche Tierabenteuer</div>
                 </a>
+
+                <!-- Gefühle – HAT Lernmaterialien → BADGE -->
                 <a href="geschichten-ueber-gefuehle.html" class="category-card" aria-label="Geschichten über Gefühle">
+
+                    <!-- LERNOLOTL BADGE -->
+                    <div class="lernolotl-badge" title="Lernmaterialien verfügbar">
+                        <img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar">
+                    </div>
+
                     <div class="category-icon">
                         <img src="bilder/gefühle/4.png" alt="Geschichten über Gefühle" loading="lazy">
                     </div>
                     <div class="category-name">Geschichten über Gefühle</div>
                     <div class="category-description">Emotionen verstehen und verarbeiten</div>
                 </a>
+
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- ===== FOOTER ===== -->
         <footer>
             <p class="footer-brand">Der Lernolotl</p>
             <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
             
             <div class="footer-credits">
                 <strong>Geschichten:</strong> Katharina R., Grundschullehrerin<br>
-                <strong>Lernmaterialien & Vertrieb:</strong> Paul R.<br><br>
+                <strong>Lernmaterialien &amp; Vertrieb:</strong> Paul R.<br><br>
                 Die Geschichten sind ein kostenloses Angebot. 
                 Optionale Arbeitsmaterialien werden separat angeboten.
             </div>
@@ -590,12 +640,13 @@
             </div>
 
             <div class="footer-info">
-                <p>© 2026 Der Lernolotl - Alle Rechte vorbehalten</p>
+                <p>© 2026 Der Lernolotl – Alle Rechte vorbehalten</p>
             </div>
         </footer>
+
     </div>
 
-    <!-- Cookie Banner -->
+    <!-- ===== COOKIE BANNER ===== -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
@@ -610,29 +661,24 @@
     </div>
 
     <script>
-        // Cookie Banner Management
         function showCookieBanner() {
             const consent = localStorage.getItem('cookieConsent');
             if (!consent) {
                 document.getElementById('cookieBanner').classList.add('show');
             }
         }
-
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieBanner').classList.remove('show');
-            console.log('Cookies akzeptiert - Tracking aktiviert');
         }
-
         function declineCookies() {
             localStorage.setItem('cookieConsent', 'declined');
             document.getElementById('cookieBanner').classList.remove('show');
-            console.log('Nur notwendige Cookies - Kein Tracking');
         }
-
-        // Cookie Banner beim Laden anzeigen
         window.addEventListener('load', showCookieBanner);
     </script>
+
+    <script src="cookies.js"></script>
+    <script src="paypal-spende.js"></script>
 </body>
 </html>
-
