@@ -1,0 +1,65 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate sitemap.xml
+        run: |
+          BASE_URL="https://www.lernolotl.de"
+          OUTPUT="sitemap.xml"
+          
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > $OUTPUT
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $OUTPUT
+          
+          # Seiten die NICHT in die Sitemap sollen
+          EXCLUDE="googlebe|datenschutz|impressum|cookie-richtlinie|kontakt"
+          
+          find . -name "*.html" | grep -vE "$EXCLUDE" | sort | while IFS= read -r file; do
+            RELATIVE="${file#./}"
+            
+            # URL-Encoding
+            ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
+            
+            # Priorität und changefreq je nach Seitentyp
+            if [[ "$RELATIVE" == "index.html" ]]; then
+              URL="${BASE_URL}/"
+              PRIORITY="1.0"
+              FREQ="weekly"
+            elif [[ "$RELATIVE" == *geschichten*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
+              URL="${BASE_URL}/${ENCODED}"
+              PRIORITY="0.8"
+              FREQ="weekly"
+            else
+              URL="${BASE_URL}/${ENCODED}"
+              PRIORITY="0.7"
+              FREQ="weekly"
+            fi
+            
+            TODAY=$(date +%Y-%m-%d)
+            
+            echo "  <url>" >> $OUTPUT
+            echo "    <loc>${URL}</loc>" >> $OUTPUT
+            echo "    <lastmod>${TODAY}</lastmod>" >> $OUTPUT
+            echo "    <changefreq>${FREQ}</changefreq>" >> $OUTPUT
+            echo "    <priority>${PRIORITY}</priority>" >> $OUTPUT
+            echo "  </url>" >> $OUTPUT
+          done
+          
+          echo '</urlset>' >> $OUTPUT
+          echo "✅ Sitemap generiert!"
+          cat $OUTPUT | grep -c "<url>" | xargs echo "Anzahl URLs:"
+
+      - name: Commit & Push
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add sitemap.xml
+          git diff --staged --quiet && echo "Keine Änderungen." || (git commit -m "SEO: sitemap.xml automatisch generiert" && git push)
