@@ -66,15 +66,20 @@
             font-weight: 400;
         }
 
-        .hero-image {
-            margin-top: 30px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            padding: 60px 40px;
-            text-align: center;
-        }
+    .hero-image {
+    margin-top: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    padding: 0;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
         .intro-section {
             background: white;
@@ -425,6 +430,35 @@
                 font-size: 0.95em;
             }
         }
+        .story-link {
+    position: relative;
+}
+
+.lernolotl-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(90,125,149,0.4);
+    border: 2px solid #7b9eb5;
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+.lernolotl-badge:hover {
+    transform: scale(1.18) rotate(-6deg);
+}
+
+.lernolotl-badge img {
+    width: 26px;
+    height: 26px;
+}
     </style>
 <link rel="stylesheet" href="consent.css">
   <link rel="canonical" href="https://www.lernolotl.de/geschichten-ueber-gefuehle.html">
@@ -498,10 +532,13 @@
                         <div class="feeling-description">Wenn das Herz schneller schlägt und alles unsicher wird</div>
                     </div>
                     <div class="stories-list">
-                        <a href="angst1.html" class="story-link">
-                            <div class="story-number">1</div>
-                            <div class="story-title">Milo und der Schatten hinter der Tür</div>
-                        </a>
+                    <a href="angst1.html" class="story-link">
+    <div class="story-number">1</div>
+    <div class="story-title">Milo und der Schatten hinter der Tür</div>
+    <div class="lernolotl-badge" title="Lernmaterialien verfügbar">
+        <img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar">
+    </div>
+</a>
                         <a href="angst2.html" class="story-link">
                             <div class="story-number">2</div>
                             <div class="story-title">Lina und der Mut in der Muschel</div>
@@ -830,4 +867,5 @@
 </body>
 
 </html>
+
 
