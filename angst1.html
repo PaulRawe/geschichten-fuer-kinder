@@ -103,17 +103,12 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
             margin-top: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .hero-placeholder {
-            color: white;
-            font-size: 3em;
-            opacity: 0.3;
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .story-section {
@@ -231,6 +226,120 @@
             margin-bottom: 0;
         }
 
+        /* ===== LERNMATERIAL SECTION ===== */
+        .lernmaterial-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin: 40px 0;
+        }
+
+        .lernmaterial-mascot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .lernmaterial-mascot img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .lernmaterial-mascot-label {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .lernmaterial-title {
+            color: #667eea;
+            font-size: 1.6em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .lernmaterial-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.97em;
+            margin-bottom: 30px;
+        }
+
+        .lernmaterial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .lernmaterial-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf5 100%);
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lernmaterial-card:hover {
+            transform: translateY(-6px);
+            border-color: #667eea;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .lernmaterial-card .card-icon {
+            font-size: 2.2em;
+        }
+
+        .lernmaterial-card .card-age {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 0.8em;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .lernmaterial-card .card-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #5a7d95;
+            line-height: 1.4;
+        }
+
+        .lernmaterial-card .card-desc {
+            font-size: 0.88em;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .lernmaterial-card .card-cta {
+            margin-top: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9em;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .lernmaterial-card:hover .card-cta {
+            opacity: 0.85;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
             background: white;
             border-radius: 25px;
@@ -298,9 +407,7 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
+            body { padding: 15px; }
 
             .sticky-nav {
                 flex-direction: column;
@@ -308,198 +415,217 @@
                 padding: 15px 20px;
             }
 
-            h1 {
-                font-size: 2em;
-            }
+            h1 { font-size: 2em; }
 
             header,
-            .story-section {
+            .story-section,
+            .lernmaterial-section {
                 padding: 35px 25px;
             }
 
-            .story-content {
-                font-size: 1.05em;
-            }
-
-            footer {
-                padding: 30px 20px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero-placeholder {
-                font-size: 2em;
-            }
+            .story-content { font-size: 1.05em; }
+            .lernmaterial-grid { grid-template-columns: 1fr; }
+            footer { padding: 30px 20px; }
+            .footer-links { flex-direction: column; gap: 15px; }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.7em;
-            }
-
-            .story-content {
-                font-size: 1em;
-                line-height: 1.8;
-            }
-
-            .hero-placeholder {
-                font-size: 1.5em;
-            }
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.8; }
+            .lernmaterial-title { font-size: 1.3em; }
         }
     </style>
-<link rel="stylesheet" href="consent.css">
-  <link rel="canonical" href="https://www.lernolotl.de/angst1.html">
+    <link rel="stylesheet" href="consent.css">
+    <link rel="canonical" href="https://www.lernolotl.de/angst1.html">
 </head>
 <body>
+
 <div id="cookieBanner" class="cookie-banner">
-  <div class="cookie-content">
-    <div class="cookie-text">
-      <strong>🍪 Wir verwenden Cookies</strong><br>
-      Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies und ähnliche Technologien, um Ihr Browsing-Erlebnis zu verbessern und personalisierte Werbung anzuzeigen. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
     </div>
-    <div class="cookie-buttons">
-      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
-      <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
-    </div>
-  </div>
 </div>
-    <div class="progress-bar" id="progressBar"></div>
 
-    <div class="container">
-        <nav class="sticky-nav">
-            <a href="geschichten-ueber-gefuehle.html" class="back-link">
-                <span>←</span>
-                <span>Zurück zu den Gefühlen</span>
-            </a>
+<div class="progress-bar" id="progressBar"></div>
 
-            <a href="index.html" class="back-link">
-                <span>←</span>
-                <span>Zurück zur Startseite</span>
-            </a>
-            <span class="feeling-badge">Angst</span>
-        </nav>
+<div class="container">
 
-        <header>
-            <div class="story-meta">Gefühlsgeschichte • Angst</div>
-            <h1>Milo und der Schatten hinter der Tür</h1>
-            <p class="story-intro">
-                Milo ist ein kleiner Waschbär, der tagsüber mutig Abenteuer erlebt. Doch wenn der Abend kommt und ein mysteriöser Schatten an seiner Zimmerwand erscheint, spürt er ein mulmiges Gefühl im Bauch. Was wird Milo tun? Eine Geschichte über Angst und wie man lernt, mit ihr umzugehen.
-            </p>
-            <div class="hero-image-container">
-                <div class="hero-image-container">
-                <img src="bilder/gefühle/angst1.png">
-            </div>
-            </div>
-        </header>
+    <!-- NAV -->
+    <nav class="sticky-nav">
+        <a href="geschichten-ueber-gefuehle.html" class="back-link">
+            <span>←</span>
+            <span>Zurück zu den Gefühlen</span>
+        </a>
+        <a href="index.html" class="back-link">
+            <span>←</span>
+            <span>Zurück zur Startseite</span>
+        </a>
+        <span class="feeling-badge">Angst</span>
+    </nav>
 
-        <div class="story-section">
-            <div class="story-content">
-                <div class="page-divider">— Seite 1 —</div>
-                
-                <p>Milo war ein kleiner Waschbär mit besonders weichem Fell und sehr aufmerksamen Augen. Er lebte mit seiner Mama, seinem Papa und seiner kleinen Schwester in einem alten, hohlen Baum am Rand des Waldes. Tagsüber liebte Milo Abenteuer. Er kletterte auf Bäume, rannte über Wurzeln und sammelte glänzende Dinge, die andere Tiere verloren hatten.</p>
-
-                <p>Doch wenn der Abend kam, veränderte sich etwas in Milo. Sobald die Sonne langsam hinter den Bäumen verschwand und die ersten Nachtgeräusche den Wald füllten, spürte Milo ein Ziehen in seinem Bauch. Besonders schlimm war es, wenn er allein in seinem Bett lag.</p>
-
-                <p>In seinem Zimmer stand eine kleine Holztür. Dahinter war nichts Besonderes – eigentlich. Aber abends, wenn Mama das Licht löschte, erschien ein dunkler Schatten an der Wand. Manchmal sah er aus wie ein Monster, manchmal wie ein riesiger Arm.</p>
-
-                <p>Milo zog sich die Decke bis zur Nase. Sein Herz klopfte schnell. <em>„Was, wenn der Schatten echt ist?"</em>, dachte er.</p>
-
-                <p>Leise rief er: <strong>„Mama?"</strong></p>
-
-                <p>Mama Waschbär kam sofort, setzte sich zu ihm und strich ihm über den Kopf. <strong>„Du wirkst angespannt"</strong>, sagte sie ruhig.</p>
-
-                <p><strong>„Der Schatten macht mir Angst"</strong>, flüsterte Milo.</p>
-
-                <p>Mama nickte. <strong>„Angst fühlt sich oft groß an, besonders im Dunkeln."</strong></p>
-            </div>
+    <!-- HEADER -->
+    <header>
+        <div class="story-meta">Gefühlsgeschichte • Angst</div>
+        <h1>Milo und der Schatten hinter der Tür</h1>
+        <p class="story-intro">
+            Milo ist ein kleiner Waschbär, der tagsüber mutig Abenteuer erlebt. Doch wenn der Abend kommt und ein mysteriöser Schatten an seiner Zimmerwand erscheint, spürt er ein mulmiges Gefühl im Bauch. Was wird Milo tun? Eine Geschichte über Angst und wie man lernt, mit ihr umzugehen.
+        </p>
+        <div class="hero-image-container">
+            <img src="bilder/gefühle/angst1.png" alt="Milo und der Schatten hinter der Tür">
         </div>
+    </header>
 
-        <div class="section-divider">✨ 🌙 ✨</div>
+    <!-- SEITE 1 -->
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 1 —</div>
 
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                Google AdSense Anzeigenblock (responsive)
-            </div>
+            <p>Milo war ein kleiner Waschbär mit besonders weichem Fell und sehr aufmerksamen Augen. Er lebte mit seiner Mama, seinem Papa und seiner kleinen Schwester in einem alten, hohlen Baum am Rand des Waldes. Tagsüber liebte Milo Abenteuer. Er kletterte auf Bäume, rannte über Wurzeln und sammelte glänzende Dinge, die andere Tiere verloren hatten.</p>
+
+            <p>Doch wenn der Abend kam, veränderte sich etwas in Milo. Sobald die Sonne langsam hinter den Bäumen verschwand und die ersten Nachtgeräusche den Wald füllten, spürte Milo ein Ziehen in seinem Bauch. Besonders schlimm war es, wenn er allein in seinem Bett lag.</p>
+
+            <p>In seinem Zimmer stand eine kleine Holztür. Dahinter war nichts Besonderes – eigentlich. Aber abends, wenn Mama das Licht löschte, erschien ein dunkler Schatten an der Wand. Manchmal sah er aus wie ein Monster, manchmal wie ein riesiger Arm.</p>
+
+            <p>Milo zog sich die Decke bis zur Nase. Sein Herz klopfte schnell. <em>„Was, wenn der Schatten echt ist?"</em>, dachte er.</p>
+
+            <p>Leise rief er: <strong>„Mama?"</strong></p>
+
+            <p>Mama Waschbär kam sofort, setzte sich zu ihm und strich ihm über den Kopf. <strong>„Du wirkst angespannt"</strong>, sagte sie ruhig.</p>
+
+            <p><strong>„Der Schatten macht mir Angst"</strong>, flüsterte Milo.</p>
+
+            <p>Mama nickte. <strong>„Angst fühlt sich oft groß an, besonders im Dunkeln."</strong></p>
         </div>
-
-        <div class="story-section">
-            <div class="story-content">
-                <div class="page-divider">— Seite 2 —</div>
-                
-                <p>Mama nahm Milos Pfote und legte sie sanft auf seinen Bauch. <strong>„Wir atmen zusammen"</strong>, sagte sie. <strong>„Tief ein … und langsam aus."</strong></p>
-
-                <p>Sie atmeten gemeinsam. Einmal. Zweimal. Dreimal. Milos Herz wurde ruhiger.</p>
-
-                <p>Dann holte Mama eine kleine Taschenlampe. <strong>„Angst mag es nicht, wenn man hinschaut"</strong>, erklärte sie.</p>
-
-                <p>Langsam öffnete sie die Tür. Das Licht zeigte: Dort hing nur Milos Jacke. Kein Monster. Kein Arm.</p>
-
-                <p>Milo spürte Erleichterung. Er lächelte vorsichtig.</p>
-
-                <p><strong>„Angst will dich beschützen"</strong>, sagte Mama. <strong>„Aber manchmal irrt sie sich."</strong></p>
-
-                <p>In dieser Nacht schlief Milo ein mit dem Gedanken: <em>Ich darf Angst haben. Und ich darf Hilfe holen.</em></p>
-
-                <p>Am nächsten Abend war der Schatten noch da – aber kleiner. Und Milo wusste, was zu tun war.</p>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <div class="info-box-title">
-                <span>💡</span>
-                <span>Gesprächsanregung für Eltern</span>
-            </div>
-            <div class="info-box-text">
-                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
-                <p>• Hattest du auch schon einmal Angst im Dunkeln? Was hat dir geholfen?<br>
-                • Wie hat sich Milo wohl gefühlt, als er den Schatten gesehen hat?<br>
-                • Was hat Mama gemacht, damit Milo sich besser fühlte?<br>
-                • Warum sagt Mama, dass Angst uns beschützen will?<br>
-                • Was könntest du tun, wenn du Angst hast?</p>
-            </div>
-        </div>
-
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                Google AdSense Anzeigenblock (728x90 oder responsive)
-            </div>
-        </div>
-
-        <footer>
-            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
-            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
-            
-            <div class="footer-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
-                <a href="kontakt.html">Kontakt</a>
-                <a href="ueber-uns.html">Über uns</a>
-            </div>
-
-            <div class="footer-info">
-                <p style="margin-top: 15px; font-size: 0.85em;">
-                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
-                </p>
-            </div>
-        </footer>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-        });
-    </script>
+    <div class="section-divider">✨ 🌙 ✨</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense Anzeigenblock (responsive)</div>
+    </div>
+
+    <!-- SEITE 2 -->
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Mama nahm Milos Pfote und legte sie sanft auf seinen Bauch. <strong>„Wir atmen zusammen"</strong>, sagte sie. <strong>„Tief ein … und langsam aus."</strong></p>
+
+            <p>Sie atmeten gemeinsam. Einmal. Zweimal. Dreimal. Milos Herz wurde ruhiger.</p>
+
+            <p>Dann holte Mama eine kleine Taschenlampe. <strong>„Angst mag es nicht, wenn man hinschaut"</strong>, erklärte sie.</p>
+
+            <p>Langsam öffnete sie die Tür. Das Licht zeigte: Dort hing nur Milos Jacke. Kein Monster. Kein Arm.</p>
+
+            <p>Milo spürte Erleichterung. Er lächelte vorsichtig.</p>
+
+            <p><strong>„Angst will dich beschützen"</strong>, sagte Mama. <strong>„Aber manchmal irrt sie sich."</strong></p>
+
+            <p>In dieser Nacht schlief Milo ein mit dem Gedanken: <em>Ich darf Angst haben. Und ich darf Hilfe holen.</em></p>
+
+            <p>Am nächsten Abend war der Schatten noch da – aber kleiner. Und Milo wusste, was zu tun war.</p>
+        </div>
+    </div>
+
+    <!-- GESPRÄCHSANREGUNG -->
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Gesprächsanregung für Eltern</span>
+        </div>
+        <div class="info-box-text">
+            <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+            <p>• Hattest du auch schon einmal Angst im Dunkeln? Was hat dir geholfen?<br>
+            • Wie hat sich Milo wohl gefühlt, als er den Schatten gesehen hat?<br>
+            • Was hat Mama gemacht, damit Milo sich besser fühlte?<br>
+            • Warum sagt Mama, dass Angst uns beschützen will?<br>
+            • Was könntest du tun, wenn du Angst hast?</p>
+        </div>
+    </div>
+
+    <!-- LERNMATERIALIEN -->
+    <div class="lernmaterial-section">
+        <div class="lernmaterial-mascot">
+            <img src="lernolotl-icon.png" alt="Lernolotl">
+            <span class="lernmaterial-mascot-label">Lernolotl-Materialien</span>
+        </div>
+        <div class="lernmaterial-title">📚 Passende Lernmaterialien zur Geschichte</div>
+        <p class="lernmaterial-subtitle">Von Katharina R. (Grundschullehrerin) — direkt zum Download auf Etsy</p>
+
+        <div class="lernmaterial-grid">
+
+            <a href="https://www.etsy.com/de/listing/4460124029/gefuhlsgeschichte-angst-kita-paket-36"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">🧸</div>
+                <div class="card-age">Kita · 3–6 Jahre</div>
+                <div class="card-title">Angst – Kita-Paket</div>
+                <div class="card-desc">Ausmalbilder, einfache Aufgaben & Gesprächskarten für die Kleinsten</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460126511/gefuhlsgeschichte-angst-grundschule"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">✏️</div>
+                <div class="card-age">Klasse 1 & 2</div>
+                <div class="card-title">Angst – Grundschule 1/2</div>
+                <div class="card-desc">Arbeitsblätter & Aufgaben passend zur Geschichte für Erstklässler</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460128389/gefuhlsgeschichte-angst-grundschule"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">📖</div>
+                <div class="card-age">Klasse 3 & 4</div>
+                <div class="card-title">Angst – Grundschule 3/4</div>
+                <div class="card-desc">Vertiefende Arbeitsblätter & Reflexionsaufgaben für ältere Kinder</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense Anzeigenblock (728x90 oder responsive)</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
+
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="ueber-uns.html">Über uns</a>
+        </div>
+
+        <div class="footer-info">
+            <p style="margin-top: 15px; font-size: 0.85em;">© 2026 Der Lernolotl – Alle Rechte vorbehalten</p>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+</script>
 <script src="cookies.js"></script>
 <script src="paypal-spende.js"></script>
 </body>
-
 </html>
