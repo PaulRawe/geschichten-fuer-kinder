@@ -17,6 +17,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            padding-bottom: 90px; /* space for sticky bar */
             color: #333;
         }
 
@@ -25,6 +26,7 @@
             margin: 0 auto;
         }
 
+        /* ===== STICKY NAV ===== */
         .sticky-nav {
             position: sticky;
             top: 20px;
@@ -64,13 +66,14 @@
             font-size: 0.9em;
         }
 
+        /* ===== HEADER ===== */
         header {
             background: white;
             border-radius: 25px;
             padding: 50px 40px 40px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-            margin-bottom: 40px;
+            margin-bottom: 0;
         }
 
         .story-meta {
@@ -111,6 +114,50 @@
             display: block;
         }
 
+        /* ===== INLINE BUNDLE TEASER (directly under header) ===== */
+        .bundle-teaser {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0 0 20px 20px;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(102,126,234,0.35);
+        }
+
+        .bundle-teaser-text {
+            color: rgba(255,255,255,0.92);
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .bundle-teaser-text strong {
+            color: white;
+            font-size: 1.05em;
+        }
+
+        .bundle-teaser-cta {
+            background: white;
+            color: #667eea;
+            font-weight: 800;
+            font-size: 0.88em;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .bundle-teaser-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+
+        /* ===== STORY SECTIONS ===== */
         .story-section {
             background: white;
             border-radius: 25px;
@@ -156,6 +203,7 @@
             font-size: 2em;
         }
 
+        /* ===== ADS ===== */
         .ad-container {
             background: white;
             border-radius: 15px;
@@ -182,6 +230,7 @@
             font-size: 0.9em;
         }
 
+        /* ===== PROGRESS BAR ===== */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -193,6 +242,7 @@
             transition: width 0.1s;
         }
 
+        /* ===== INFO BOX ===== */
         .info-box {
             background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
             border-radius: 20px;
@@ -229,10 +279,10 @@
         /* ===== LERNMATERIAL SECTION ===== */
         .lernmaterial-section {
             background: white;
-            border-radius: 25px;
-            padding: 40px;
+            border-radius: 25px 25px 0 0;
+            padding: 40px 40px 30px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-            margin: 40px 0;
+            margin-bottom: 0;
         }
 
         .lernmaterial-mascot {
@@ -339,6 +389,260 @@
             opacity: 0.85;
         }
 
+        /* ===== BUNDLE UPSELL (seamlessly connected below single products) ===== */
+        .bundle-upsell {
+            background: linear-gradient(160deg, #1a1a2e 0%, #0f3460 100%);
+            border-radius: 0 0 25px 25px;
+            padding: 0 40px 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bundle-upsell::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(102,126,234,0.4), transparent);
+        }
+
+        .bundle-upsell::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -60px;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(102,126,234,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .bundle-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 30px 0 25px;
+        }
+
+        .bundle-divider::before,
+        .bundle-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .bundle-divider-label {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .bundle-hook {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bundle-hook-eyebrow {
+            display: inline-block;
+            background: rgba(240, 147, 251, 0.15);
+            border: 1px solid rgba(240, 147, 251, 0.3);
+            color: #f093fb;
+            font-size: 0.78em;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .bundle-hook-headline {
+            color: white;
+            font-size: 1.55em;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .bundle-hook-headline .highlight {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bundle-hook-sub {
+            color: #94a3b8;
+            font-size: 0.92em;
+            line-height: 1.6;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .bundle-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 18px;
+        }
+
+        .bundle-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 22px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bundle-card:hover {
+            background: rgba(255,255,255,0.11);
+            border-color: rgba(102,126,234,0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+
+        .bundle-card-icon { font-size: 2.2em; }
+
+        .bundle-card-age {
+            font-size: 0.75em;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bundle-card-title {
+            font-weight: 700;
+            font-size: 0.95em;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .bundle-card-pill {
+            background: rgba(102,126,234,0.22);
+            border: 1px solid rgba(102,126,234,0.35);
+            color: #c3cfff;
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 10px;
+        }
+
+        .bundle-card-cta {
+            margin-top: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 11px 16px;
+            border-radius: 11px;
+            font-weight: 700;
+            font-size: 0.87em;
+            width: 100%;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.35);
+        }
+
+        .bundle-card:hover .bundle-card-cta {
+            box-shadow: 0 6px 18px rgba(102,126,234,0.55);
+        }
+
+        .bundle-reassurance {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.82em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bundle-reassurance span {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        /* ===== STICKY MOBILE BOTTOM BAR ===== */
+        .sticky-bundle-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 500;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            border-top: 1px solid rgba(102,126,234,0.3);
+            padding: 12px 20px;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.35);
+        }
+
+        .sticky-bundle-bar-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .sticky-bundle-bar-text {
+            color: white;
+            font-size: 0.85em;
+            line-height: 1.3;
+        }
+
+        .sticky-bundle-bar-text strong {
+            display: block;
+            font-size: 1em;
+        }
+
+        .sticky-bundle-bar-text span {
+            color: #94a3b8;
+            font-size: 0.88em;
+        }
+
+        .sticky-bundle-bar-btns {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .sticky-bundle-bar-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 0.78em;
+            padding: 9px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.3;
+            transition: opacity 0.2s;
+        }
+
+        .sticky-bundle-bar-btn:hover { opacity: 0.85; }
+
+        .sticky-bundle-bar-close {
+            background: none;
+            border: none;
+            color: #64748b;
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 4px;
+            flex-shrink: 0;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: white;
@@ -383,21 +687,14 @@
         .footer-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
             background: #764ba2;
             transition: width 0.3s;
         }
 
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-
-        .footer-links a:hover {
-            color: #764ba2;
-        }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-links a:hover { color: #764ba2; }
 
         .footer-info {
             color: #999;
@@ -406,8 +703,9 @@
             line-height: 1.6;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            body { padding: 15px; }
+            body { padding: 15px; padding-bottom: 90px; }
 
             .sticky-nav {
                 flex-direction: column;
@@ -417,14 +715,31 @@
 
             h1 { font-size: 2em; }
 
-            header,
-            .story-section,
-            .lernmaterial-section {
-                padding: 35px 25px;
+            header { padding: 35px 25px 35px; }
+
+            .bundle-teaser {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+                padding: 16px 20px;
             }
 
+            .bundle-teaser-cta { width: 100%; text-align: center; }
+
+            .story-section { padding: 35px 25px; }
+
             .story-content { font-size: 1.05em; }
+
+            .lernmaterial-section { padding: 35px 25px 25px; }
             .lernmaterial-grid { grid-template-columns: 1fr; }
+
+            .bundle-upsell { padding: 0 25px 40px; }
+            .bundle-hook-headline { font-size: 1.3em; }
+            .bundle-cards { grid-template-columns: 1fr; }
+
+            /* Show sticky bar on mobile */
+            .sticky-bundle-bar { display: block; }
+
             footer { padding: 30px 20px; }
             .footer-links { flex-direction: column; gap: 15px; }
         }
@@ -455,6 +770,22 @@
 
 <div class="progress-bar" id="progressBar"></div>
 
+<!-- STICKY MOBILE BOTTOM BAR -->
+<div class="sticky-bundle-bar" id="stickyBundleBar">
+    <div class="sticky-bundle-bar-inner">
+        <div class="sticky-bundle-bar-text">
+            <strong>🌟 Alle 11 Gefühle als Bundle</strong>
+            <span>Kita · Klasse 1/2 · Klasse 3/4</span>
+        </div>
+        <div class="sticky-bundle-bar-btns">
+            <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kita<br>Bundle</a>
+            <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kl. 1/2<br>Bundle</a>
+            <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kl. 3/4<br>Bundle</a>
+        </div>
+        <button class="sticky-bundle-bar-close" onclick="document.getElementById('stickyBundleBar').style.display='none'" aria-label="Schließen">✕</button>
+    </div>
+</div>
+
 <div class="container">
 
     <!-- NAV -->
@@ -481,6 +812,15 @@
             <img src="bilder/gefühle/angst1.png" alt="Milo und der Schatten hinter der Tür">
         </div>
     </header>
+
+    <!-- INLINE BUNDLE TEASER – direkt unter dem Header, noch vor der Geschichte -->
+    <div class="bundle-teaser">
+        <div class="bundle-teaser-text">
+            <strong>📚 Diese Geschichte gefällt dir?</strong><br>
+            Alle 11 Gefühle gibt es auch als Komplett-Bundle – für Kita, Klasse 1/2 und Klasse 3/4.
+        </div>
+        <a href="#bundle-auswahl" class="bundle-teaser-cta">→ Zum Bundle</a>
+    </div>
 
     <!-- SEITE 1 -->
     <div class="story-section">
@@ -551,7 +891,7 @@
         </div>
     </div>
 
-    <!-- LERNMATERIALIEN -->
+    <!-- EINZELPRODUKTE + BUNDLE (visuell verbunden) -->
     <div class="lernmaterial-section">
         <div class="lernmaterial-mascot">
             <img src="lernolotl-icon.png" alt="Lernolotl">
@@ -592,6 +932,61 @@
         </div>
     </div>
 
+    <!-- BUNDLE UPSELL – nahtlos angehängt unter den Einzelprodukten -->
+    <div class="bundle-upsell" id="bundle-auswahl">
+
+        <div class="bundle-divider">
+            <span class="bundle-divider-label">oder noch besser</span>
+        </div>
+
+        <div class="bundle-hook">
+            <div class="bundle-hook-eyebrow">🌟 Komplettpaket · Alle 11 Gefühle</div>
+            <div class="bundle-hook-headline">
+                Warum nur Angst, wenn du<br>
+                <span class="highlight">alle 11 Gefühle auf einmal</span> haben kannst?
+            </div>
+            <p class="bundle-hook-sub">
+                Angst · Freude · Wut · Traurigkeit · Mut · Geduld · Eifersucht · Dankbarkeit · Einsamkeit · Frustration · Unsicherheit — alle pädagogisch aufgearbeitet, inkl. Ausmalbildern & Arbeitsblättern. Einmal kaufen, alles drin.
+            </p>
+        </div>
+
+        <div class="bundle-cards">
+
+            <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">🧸</div>
+                <div class="bundle-card-age">Kita · 3–6 Jahre</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Kita-Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">✏️</div>
+                <div class="bundle-card-age">Klasse 1 & 2</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Klasse 1/2 Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">📖</div>
+                <div class="bundle-card-age">Klasse 3 & 4</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Klasse 3/4 Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+        </div>
+
+        <p class="bundle-reassurance">
+            <span>✅ Sofort-Download als PDF</span> &nbsp;·&nbsp; Einmal kaufen, dauerhaft nutzen
+        </p>
+
+    </div>
+
     <div class="ad-container">
         <div class="ad-label">Werbung</div>
         <div class="ad-placeholder">Google AdSense Anzeigenblock (728x90 oder responsive)</div>
@@ -618,6 +1013,7 @@
 </div>
 
 <script>
+    // Progress bar
     window.addEventListener('scroll', function() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
