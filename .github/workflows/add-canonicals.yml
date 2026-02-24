@@ -8,19 +8,19 @@ on:
 jobs:
   canonicals:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'canonical tags automatisch gesetzt')"
+    
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Inject canonical tags into all HTML files
         run: |
           BASE_URL="https://www.lernolotl.de"
-          
           find . -name "*.html" | while IFS= read -r file; do
             RELATIVE="${file#./}"
-            
-            # URL-Encoding für Sonderzeichen (ä, ö, ü, Leerzeichen etc.)
             ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
-            
             if [[ "$RELATIVE" == "index.html" ]]; then
               URL="${BASE_URL}/"
             elif [[ "$RELATIVE" == */index.html ]]; then
@@ -29,10 +29,9 @@ jobs:
             else
               URL="${BASE_URL}/${ENCODED}"
             fi
-            
             if grep -q 'rel="canonical"' "$file"; then
               sed -i "s|<link rel=\"canonical\"[^>]*>|<link rel=\"canonical\" href=\"${URL}\">|g" "$file"
-              echo "✏️  Updated: $RELATIVE"
+              echo "✏️ Updated: $RELATIVE"
             else
               sed -i "s|</head>|  <link rel=\"canonical\" href=\"${URL}\">\n</head>|g" "$file"
               echo "✅ Added: $RELATIVE"
@@ -44,4 +43,8 @@ jobs:
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           git add -A
-          git diff --staged --quiet && echo "Keine Änderungen." || (git commit -m "SEO: canonical tags automatisch gesetzt" && git push)
+          git diff --staged --quiet && echo "Keine Änderungen." || (
+            git pull --rebase origin main &&
+            git commit -m "SEO: canonical tags automatisch gesetzt" &&
+            git push
+          )
