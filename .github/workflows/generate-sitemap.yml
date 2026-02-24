@@ -1,4 +1,4 @@
-name: Add/Update Canonical Tags
+name: Generate Sitemap
 
 on:
   push:
@@ -6,47 +6,64 @@ on:
   workflow_dispatch:
 
 jobs:
-  canonicals:
+  sitemap:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'canonical tags automatisch gesetzt')"
-    
+    if: "!contains(github.event.head_commit.message, 'sitemap.xml automatisch generiert')"
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Inject canonical tags into all HTML files
+      - name: Generate sitemap.xml
         run: |
           BASE_URL="https://www.lernolotl.de"
-          find . -name "*.html" | while IFS= read -r file; do
+          OUTPUT="sitemap.xml"
+          
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > $OUTPUT
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $OUTPUT
+          
+          EXCLUDE="googlebe|datenschutz|impressum|cookie-richtlinie|kontakt"
+          
+          find . -name "*.html" | grep -vE "$EXCLUDE" | sort | while IFS= read -r file; do
             RELATIVE="${file#./}"
             ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
+            
             if [[ "$RELATIVE" == "index.html" ]]; then
               URL="${BASE_URL}/"
-            elif [[ "$RELATIVE" == */index.html ]]; then
-              DIR=$(dirname "$ENCODED")
-              URL="${BASE_URL}/${DIR}/"
+              PRIORITY="1.0"
+              FREQ="weekly"
+            elif [[ "$RELATIVE" == *geschichten*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
+              URL="${BASE_URL}/${ENCODED}"
+              PRIORITY="0.8"
+              FREQ="weekly"
             else
               URL="${BASE_URL}/${ENCODED}"
+              PRIORITY="0.7"
+              FREQ="weekly"
             fi
-            if grep -q 'rel="canonical"' "$file"; then
-              sed -i "s|<link rel=\"canonical\"[^>]*>|<link rel=\"canonical\" href=\"${URL}\">|g" "$file"
-              echo "✏️ Updated: $RELATIVE"
-            else
-              sed -i "s|</head>|  <link rel=\"canonical\" href=\"${URL}\">\n</head>|g" "$file"
-              echo "✅ Added: $RELATIVE"
-            fi
+            
+            TODAY=$(date +%Y-%m-%d)
+            
+            echo "  <url>" >> $OUTPUT
+            echo "    <loc>${URL}</loc>" >> $OUTPUT
+            echo "    <lastmod>${TODAY}</lastmod>" >> $OUTPUT
+            echo "    <changefreq>${FREQ}</changefreq>" >> $OUTPUT
+            echo "    <priority>${PRIORITY}</priority>" >> $OUTPUT
+            echo "  </url>" >> $OUTPUT
           done
+          
+          echo '</urlset>' >> $OUTPUT
+          echo "✅ Sitemap generiert!"
+          cat $OUTPUT | grep -c "<url>" | xargs echo "Anzahl URLs:"
 
       - name: Commit & Push
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          git stash
           git pull --rebase origin main
-          git stash pop
-          git add -A
+          git add sitemap.xml
           git diff --staged --quiet && echo "Keine Änderungen." || (
-            git commit -m "SEO: canonical tags automatisch gesetzt" &&
+            git commit -m "SEO: sitemap.xml automatisch generiert" &&
             git push
           )
