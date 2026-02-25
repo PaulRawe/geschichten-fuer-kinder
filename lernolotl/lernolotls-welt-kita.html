@@ -377,9 +377,15 @@
             border-radius: 50%;
             margin: 0 auto 14px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 2.5em;
             border: 3px solid white;
             box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            overflow: hidden;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .char-avatar img {
+            width: 58px; height: 58px;
+            object-fit: contain;
         }
 
         .av-erzieherin { background: linear-gradient(135deg, #d8a8f8, #c77dff); }
@@ -433,15 +439,8 @@
             overflow: hidden;
             border: 2px solid transparent;
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
             display: block;
-        }
-
-        .geschichte-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            color: inherit;
         }
 
         .gc-1 { border-color: #ffd166; }
@@ -854,7 +853,6 @@
 
             <div class="warum-grid">
                 <div class="warum-card wk1">
-                    <div class="warum-emoji">🔊</div>
                     <div class="warum-title">Wenn es zu laut wird</div>
                     <p class="warum-text">
                         Im Morgenkreis, beim Frühstück, auf dem Spielplatz — 
@@ -863,7 +861,6 @@
                     </p>
                 </div>
                 <div class="warum-card wk2">
-                    <div class="warum-emoji">🤝</div>
                     <div class="warum-title">Freundschaft verstehen</div>
                     <p class="warum-text">
                         Was macht einen Freund aus? Warum spielen manche Kinder nicht mit? 
@@ -872,7 +869,6 @@
                     </p>
                 </div>
                 <div class="warum-card wk3">
-                    <div class="warum-emoji">📅</div>
                     <div class="warum-title">Wenn der Plan sich ändert</div>
                     <p class="warum-text">
                         Heute kein Außenspielen, weil es regnet. 
@@ -881,7 +877,6 @@
                     </p>
                 </div>
                 <div class="warum-card wk4">
-                    <div class="warum-emoji">⭐</div>
                     <div class="warum-title">Seine Stärken entdecken</div>
                     <p class="warum-text">
                         Puzzles lösen, Bücher kennen, Muster finden — 
@@ -913,41 +908,47 @@
 
                 <!-- Frau Brandt -->
                 <div class="char-card cc-erzieherin">
-                    <div class="char-avatar av-erzieherin">👩‍🏫</div>
+                    <div class="char-avatar av-erzieherin">
+                        <img src="../lernolotl-waving.png" alt="Frau Brandt" onerror="this.src='../lernolotl-icon.png'">
+                    </div>
                     <div class="char-name">Frau Brandt</div>
-                    <div class="char-role">✨ Die Erzieherin</div>
+                    <div class="char-role">Die Erzieherin</div>
                     <p class="char-desc">
-                        Frau Brandt riecht nach Lavendel und hat immer Zeit zum Zuhören. 
+                        Frau Brandt hat immer Zeit zum Zuhören. 
                         Sie erklärt Regeln so, dass der Lernolotl sie wirklich versteht — 
                         nicht nur hört. Und sie findet heraus, was jedes Kind besonders gut kann.
                     </p>
-                    <span class="char-fact">💜 Liebt Origami & Puzzle-Wettbewerbe</span>
+                    <span class="char-fact">Liebt Origami & Puzzle-Wettbewerbe</span>
                 </div>
 
                 <!-- Mia -->
                 <div class="char-card cc-mia">
-                    <div class="char-avatar av-mia">👧</div>
+                    <div class="char-avatar av-mia">
+                        <img src="../lernolotl-happy.png" alt="Mia" onerror="this.src='../lernolotl-icon.png'">
+                    </div>
                     <div class="char-name">Mia</div>
-                    <div class="char-role">💛 Beste Kitafreundin</div>
+                    <div class="char-role">Beste Kitafreundin</div>
                     <p class="char-desc">
                         Mia redet viel und lacht noch mehr. Sie hat den Lernolotl als Erstes 
                         gefragt, ob er mitspielen möchte — einfach so. 
                         Sie mag keine Ungerechtigkeit und sagt das auch sehr laut.
                     </p>
-                    <span class="char-fact">💕 Liebt Pferde & selbst gemalte Bilder</span>
+                    <span class="char-fact">Liebt Pferde & selbst gemalte Bilder</span>
                 </div>
 
                 <!-- Ben -->
                 <div class="char-card cc-ben">
-                    <div class="char-avatar av-ben">👦</div>
+                    <div class="char-avatar av-ben">
+                        <img src="../lernolotl-thinking.png" alt="Ben" onerror="this.src='../lernolotl-icon.png'">
+                    </div>
                     <div class="char-name">Ben</div>
-                    <div class="char-role">🔵 Kita-Kumpel</div>
+                    <div class="char-role">Kita-Kumpel</div>
                     <p class="char-desc">
                         Ben ist ruhig wie der Lernolotl, aber aus anderen Gründen: 
                         Er denkt einfach sehr gern nach. Zusammen bauen sie die 
                         kompliziertesten Turm-Konstruktionen der ganzen Kita.
                     </p>
-                    <span class="char-fact">💙 Liebt Dinosaurier & große Bausteine</span>
+                    <span class="char-fact">Liebt Dinosaurier & große Bausteine</span>
                 </div>
 
             </div>
@@ -970,11 +971,11 @@
             <div class="geschichten-grid">
 
                 <!-- Geschichte 1 -->
-                <a href="kita-geschichte-1-morgenkreis.html" class="geschichte-card gc-1">
+                <div class="geschichte-card gc-1">
                     <div class="gc-header">
                         <div class="gc-number">1</div>
                         <div class="gc-meta">
-                            <div class="gc-tag">🌅 Ankommen • Gemeinschaft</div>
+                            <div class="gc-tag">Ankommen · Gemeinschaft</div>
                             <div class="gc-title">Lernolotl und der laute Morgenkreis</div>
                         </div>
                     </div>
@@ -985,27 +986,25 @@
                             sehr, sehr laut. Bis Frau Brandt eine Idee hat, die alles verändert.
                         </p>
                         <div class="gc-chars">
-                            <span class="gc-char-badge">🦎 Lernolotl</span>
-                            <span class="gc-char-badge">👩‍🏫 Frau Brandt</span>
-                            <span class="gc-char-badge">👧 Mia</span>
+                            <span class="gc-char-badge">Lernolotl</span>
+                            <span class="gc-char-badge">Frau Brandt</span>
+                            <span class="gc-char-badge">Mia</span>
                         </div>
                         <div class="gc-footer">
-                            <span class="gc-reading-time">📖 ca. 5 Min. Lesezeit</span>
+                            <span class="gc-reading-time">ca. 5 Min. Lesezeit</span>
                             <div class="gc-badges">
-                                <span class="badge-free">✅ Kostenlos</span>
-                                <span class="badge-material">📋 Lernmaterial</span>
+                                <span class="badge-free">Kostenlos</span>
                             </div>
-                            <span class="gc-arrow">→</span>
                         </div>
                     </div>
-                </a>
+                </div>
 
                 <!-- Geschichte 2 -->
-                <a href="kita-geschichte-2-spielplatz.html" class="geschichte-card gc-2">
+                <div class="geschichte-card gc-2">
                     <div class="gc-header">
                         <div class="gc-number">2</div>
                         <div class="gc-meta">
-                            <div class="gc-tag">🛝 Spielen • Freundschaft</div>
+                            <div class="gc-tag">Spielen · Freundschaft</div>
                             <div class="gc-title">Darf ich mitspielen? — Lernolotl auf dem Spielplatz</div>
                         </div>
                     </div>
@@ -1017,27 +1016,25 @@
                             überrascht ihn sehr.
                         </p>
                         <div class="gc-chars">
-                            <span class="gc-char-badge">🦎 Lernolotl</span>
-                            <span class="gc-char-badge">👧 Mia</span>
-                            <span class="gc-char-badge">👦 Ben</span>
+                            <span class="gc-char-badge">Lernolotl</span>
+                            <span class="gc-char-badge">Mia</span>
+                            <span class="gc-char-badge">Ben</span>
                         </div>
                         <div class="gc-footer">
-                            <span class="gc-reading-time">📖 ca. 5 Min. Lesezeit</span>
+                            <span class="gc-reading-time">ca. 5 Min. Lesezeit</span>
                             <div class="gc-badges">
-                                <span class="badge-free">✅ Kostenlos</span>
-                                <span class="badge-material">📋 Lernmaterial</span>
+                                <span class="badge-free">Kostenlos</span>
                             </div>
-                            <span class="gc-arrow">→</span>
                         </div>
                     </div>
-                </a>
+                </div>
 
                 <!-- Geschichte 3 -->
-                <a href="kita-geschichte-3-verabschiedung.html" class="geschichte-card gc-3">
+                <div class="geschichte-card gc-3">
                     <div class="gc-header">
                         <div class="gc-number">3</div>
                         <div class="gc-meta">
-                            <div class="gc-tag">🌙 Abschied • Gefühle</div>
+                            <div class="gc-tag">Abschied · Gefühle</div>
                             <div class="gc-title">Wenn Mama geht — Lernolotl lernt Abschied nehmen</div>
                         </div>
                     </div>
@@ -1048,20 +1045,18 @@
                             über Abschiede, Rituale und die kleine Zeichnung in der Kitteltasche.
                         </p>
                         <div class="gc-chars">
-                            <span class="gc-char-badge">🦎 Lernolotl</span>
-                            <span class="gc-char-badge">👩‍🏫 Frau Brandt</span>
-                            <span class="gc-char-badge">👩 Mama</span>
+                            <span class="gc-char-badge">Lernolotl</span>
+                            <span class="gc-char-badge">Frau Brandt</span>
+                            <span class="gc-char-badge">Mama</span>
                         </div>
                         <div class="gc-footer">
-                            <span class="gc-reading-time">📖 ca. 6 Min. Lesezeit</span>
+                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
                             <div class="gc-badges">
-                                <span class="badge-free">✅ Kostenlos</span>
-                                <span class="badge-soon">✨ Lernmaterial bald</span>
+                                <span class="badge-free">Kostenlos</span>
                             </div>
-                            <span class="gc-arrow">→</span>
                         </div>
                     </div>
-                </a>
+                </div>
 
             </div>
         </section>
@@ -1099,8 +1094,7 @@
                 ohne Anmeldung. Einfach vorlesen und gemeinsam entdecken.
             </p>
             <div class="cta-buttons">
-                <a href="kita-geschichte-1-morgenkreis.html" class="btn-white">📖 Erste Geschichte lesen</a>
-                <a href="lernolotls-welt.html" class="btn-outline-white">🦎 Zurück zu Lernolotls Welt</a>
+                <a href="lernolotls-welt.html" class="btn-white">🦎 Zurück zu Lernolotls Welt</a>
             </div>
         </div>
 
