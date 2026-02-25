@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lernolotls Welt – Lerne den Lernolotl kennen! Sein Steckbrief, seine Lieblinge und seine Geschichten aus Kita, Schule, Sport und bei Freunden.">
+    <meta name="keywords" content="Lernolotl, Steckbrief, Kindergeschichten, Kita, Schule, Sport, Freunde, neurodivers, Vorlesegeschichten">
+    <meta name="author" content="Paul R.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotls-welt.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotls-welt.html">
+    <meta property="og:title" content="🦎 Lernolotls Welt – Lerne ihn kennen!">
+    <meta property="og:description" content="Wer ist der Lernolotl wirklich? Sein Steckbrief, seine Welt – und jede Menge Geschichten aus seinem Alltag.">
+    <meta property="og:locale" content="de_DE">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="🦎 Lernolotls Welt – Lerne ihn kennen!">
+    <meta property="twitter:description" content="Wer ist der Lernolotl wirklich? Sein Steckbrief und seine Alltagsgeschichten.">
+
+    <title>Lernolotls Welt – Sein Steckbrief & seine Geschichten | Der Lernolotl</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Lernolotls Welt",
+      "url": "https://www.lernolotl.de/lernolotls-welt.html",
+      "description": "Der Steckbrief des Lernolotl und seine Geschichten aus Kita, Schule, Sport und Freundschaft",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Der Lernolotl",
+        "url": "https://www.lernolotl.de/"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary:      #5a7d95;
+            --primary-dark: #3d5f75;
+            --primary-mid:  #7b9eb5;
+            --primary-light:#a8c5d9;
+            --primary-pale: #e8f4f8;
+            --accent-mint:  #7ecac3;
+            --accent-sun:   #fbbf24;
+            --accent-green: #66bb6a;
+            --accent-coral: #f28b5f;
+            --bg-body:      #ddeef6;
+            --text:         #2a2a2a;
+            --text-soft:    #555;
+            --white:        #ffffff;
+            --radius-lg:    24px;
+            --radius-xl:    32px;
+            --shadow:       0 12px 40px rgba(61,95,117,0.15);
+            --shadow-hover: 0 20px 50px rgba(61,95,117,0.25);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(160deg, #b8d8ea 0%, #cce6f4 40%, #ddeef6 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text);
+        }
+
+        .container { max-width: 960px; margin: 0 auto; }
+
+        /* ===== PROGRESS BAR ===== */
+        .progress-bar {
+            position: fixed; top: 0; left: 0;
+            width: 0%; height: 4px;
+            background: linear-gradient(90deg, var(--accent-mint), var(--primary));
+            z-index: 1001; transition: width 0.1s;
+        }
+
+        /* ===== STICKY NAV ===== */
+        .sticky-nav {
+            position: sticky; top: 16px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 14px 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 30px rgba(61,95,117,0.18);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--primary); text-decoration: none;
+            font-weight: 700; font-size: 0.92em;
+            transition: all 0.25s;
+        }
+        .back-link:hover { color: var(--primary-dark); transform: translateX(-4px); }
+
+        .nav-badge {
+            background: linear-gradient(135deg, var(--primary), var(--accent-mint));
+            color: white; padding: 7px 18px;
+            border-radius: 20px; font-weight: 800; font-size: 0.88em;
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 0;
+            box-shadow: var(--shadow);
+            margin-bottom: 36px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-top {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--accent-mint) 100%);
+            padding: 50px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Bubbles decoration */
+        .hero-top::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(126,202,195,0.2) 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(255,255,255,0.05) 0%, transparent 35%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.95);
+            font-size: 0.82em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .hero-title {
+            font-family: 'Fredoka One', cursive;
+            color: white;
+            font-size: 3.2em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-shadow: 0 3px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            color: rgba(255,255,255,0.88);
+            font-size: 1.1em;
+            font-weight: 600;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Floating mascot overlap */
+        .hero-mascot-wrap {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .hero-mascot {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 12px 40px rgba(61,95,117,0.35);
+            background: linear-gradient(135deg, #c8e8ea, #e0f4f8);
+            object-fit: cover;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-bottom {
+            padding: 80px 40px 40px;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-size: 1.15em;
+            color: var(--text-soft);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+
+        .hero-tagline strong { color: var(--primary-dark); }
+
+        /* Trust badges */
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .trust-badge {
+            background: var(--primary-pale);
+            color: var(--primary-dark);
+            font-size: 0.85em;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--primary-light);
+        }
+
+        /* ===== STECKBRIEF ===== */
+        .steckbrief-section {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steckbrief-section::after {
+            content: '🦎';
+            position: absolute;
+            font-size: 9em;
+            right: -20px;
+            top: -20px;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-mint));
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.9em;
+            letter-spacing: 0.04em;
+            padding: 7px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary-dark);
+            font-size: 2.2em;
+            margin-bottom: 8px;
+        }
+
+        .section-intro {
+            color: var(--text-soft);
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 640px;
+        }
+
+        /* Steckbrief Grid */
+        .steckbrief-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .steckbrief-card {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #f0f8fc 100%);
+            border-radius: 18px;
+            padding: 22px 24px;
+            border: 1.5px solid var(--primary-light);
+            transition: transform 0.25s, box-shadow 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steckbrief-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(90,125,149,0.18);
+        }
+
+        .steckbrief-card.wide { grid-column: 1 / -1; }
+
+        .card-emoji {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-label {
+            font-size: 0.78em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary-mid);
+            margin-bottom: 6px;
+        }
+
+        .card-value {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.5;
+        }
+
+        .card-value.large {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5em;
+        }
+
+        /* Superkraft Highlight */
+        .superkraft-box {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d0f0ea 100%);
+            border-radius: 20px;
+            padding: 28px 30px;
+            border: 2px solid var(--accent-mint);
+            margin-bottom: 36px;
+            position: relative;
+        }
+
+        .superkraft-box::before {
+            content: '⚡';
+            position: absolute;
+            top: -16px; left: 24px;
+            font-size: 1.8em;
+            background: white;
+            padding: 0 6px;
+            border-radius: 8px;
+        }
+
+        .superkraft-title {
+            font-family: 'Fredoka One', cursive;
+            color: #1a7a6e;
+            font-size: 1.4em;
+            margin-bottom: 14px;
+        }
+
+        .superkraft-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .superkraft-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #1a5c55;
+            font-weight: 600;
+            font-size: 0.98em;
+            line-height: 1.4;
+        }
+
+        .superkraft-list li::before {
+            content: '✓';
+            color: var(--accent-mint);
+            font-weight: 900;
+            font-size: 1.1em;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Schwierige Momente */
+        .ehrlich-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffefc7 100%);
+            border-radius: 20px;
+            padding: 28px 30px;
+            border: 2px solid var(--accent-sun);
+            margin-bottom: 36px;
+            position: relative;
+        }
+
+        .ehrlich-box::before {
+            content: '💛';
+            position: absolute;
+            top: -16px; left: 24px;
+            font-size: 1.6em;
+            background: white;
+            padding: 0 6px;
+            border-radius: 8px;
+        }
+
+        .ehrlich-title {
+            font-family: 'Fredoka One', cursive;
+            color: #b45309;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+
+        .ehrlich-text {
+            color: #78350f;
+            font-size: 0.98em;
+            line-height: 1.75;
+        }
+
+        .ehrlich-text strong { color: #92400e; }
+
+        /* Direkte Kinder-Quote */
+        .kinder-quote {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            border-radius: 20px;
+            padding: 30px 35px;
+            text-align: center;
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kinder-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px; left: 20px;
+            font-size: 10em;
+            color: rgba(255,255,255,0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .quote-text {
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6em;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .quote-sub {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        /* ===== KATEGORIEN-SEKTION ===== */
+        .kategorien-section {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 36px;
+        }
+
+        .kategorien-intro {
+            color: var(--text-soft);
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 640px;
+        }
+
+        /* Tages-Timeline */
+        .tagesplan {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .tagesplan::before {
+            content: '';
+            position: absolute;
+            left: 38px;
+            top: 60px;
+            bottom: 20px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-light), var(--accent-mint));
+            border-radius: 3px;
+        }
+
+        .tages-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tages-dot {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            flex-shrink: 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            transition: transform 0.25s;
+            border: 3px solid white;
+        }
+
+        .tages-entry:hover .tages-dot { transform: scale(1.1) rotate(-5deg); }
+
+        .dot-kita    { background: linear-gradient(135deg, #fde68a, #fbbf24); }
+        .dot-schule  { background: linear-gradient(135deg, #bfdbfe, #60a5fa); }
+        .dot-sport   { background: linear-gradient(135deg, #bbf7d0, #34d399); }
+        .dot-freunde { background: linear-gradient(135deg, #fecdd3, #f87171); }
+        .dot-zuhause { background: linear-gradient(135deg, #ddd6fe, #a78bfa); }
+
+        .tages-content {
+            flex: 1;
+            background: var(--primary-pale);
+            border-radius: 18px;
+            padding: 20px 24px;
+            border: 1.5px solid var(--primary-light);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.25s;
+        }
+
+        .tages-content:hover {
+            background: white;
+            box-shadow: 0 8px 28px rgba(90,125,149,0.2);
+            transform: translateX(6px);
+            border-color: var(--primary);
+        }
+
+        .tages-time {
+            font-size: 0.78em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary-mid);
+            margin-bottom: 4px;
+        }
+
+        .tages-title {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary-dark);
+            font-size: 1.3em;
+            margin-bottom: 6px;
+        }
+
+        .tages-desc {
+            color: var(--text-soft);
+            font-size: 0.92em;
+            line-height: 1.55;
+        }
+
+        .tages-geschichten {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .story-count {
+            background: white;
+            border: 1.5px solid var(--primary-light);
+            color: var(--primary);
+            font-size: 0.8em;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .bald-badge {
+            background: linear-gradient(135deg, var(--accent-sun), #f97316);
+            color: white;
+            font-size: 0.75em;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* ===== CTA BOX ===== */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--accent-mint) 100%);
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+        }
+
+        .cta-mascot {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.4);
+            margin: 0 auto 20px;
+            display: block;
+            background: rgba(255,255,255,0.15);
+            object-fit: cover;
+        }
+
+        .cta-title {
+            font-family: 'Fredoka One', cursive;
+            color: white;
+            font-size: 2em;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .cta-text {
+            color: rgba(255,255,255,0.88);
+            font-size: 1.05em;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto 28px;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-dark);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.05em;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.4);
+            transition: all 0.25s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+
+        /* ===== ELTERN VERTRAUEN BOX ===== */
+        .eltern-box {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 36px;
+        }
+
+        .eltern-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .eltern-card {
+            background: var(--primary-pale);
+            border-radius: 18px;
+            padding: 24px 20px;
+            text-align: center;
+            border: 1.5px solid var(--primary-light);
+        }
+
+        .eltern-icon {
+            font-size: 2.2em;
+            margin-bottom: 12px;
+        }
+
+        .eltern-title {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary-dark);
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .eltern-text {
+            color: var(--text-soft);
+            font-size: 0.88em;
+            line-height: 1.6;
+        }
+
+        /* Eltern-Quote */
+        .eltern-testimonial {
+            background: linear-gradient(135deg, #f0faf8 0%, #e0f5f0 100%);
+            border-radius: 18px;
+            padding: 28px 30px;
+            border-left: 5px solid var(--accent-mint);
+            margin-top: 28px;
+            position: relative;
+        }
+
+        .eltern-testimonial::before {
+            content: '💬';
+            position: absolute;
+            top: -16px; right: 24px;
+            font-size: 1.8em;
+            background: white;
+            padding: 0 6px;
+            border-radius: 8px;
+        }
+
+        .testimonial-text {
+            color: #1a6b60;
+            font-size: 1.02em;
+            line-height: 1.75;
+            font-style: italic;
+            margin-bottom: 14px;
+        }
+
+        .testimonial-text strong { color: #0f4a42; font-style: normal; }
+
+        .testimonial-author {
+            color: #1a7a6e;
+            font-weight: 800;
+            font-size: 0.88em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ===== AD CONTAINER ===== */
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .ad-label {
+            color: #bbb;
+            font-size: 0.68em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .ad-placeholder {
+            background: #fafafa;
+            border: 2px dashed #e0e0e0;
+            border-radius: 10px;
+            padding: 28px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .footer-brand {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 1.6em;
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            color: #aaa;
+            margin-bottom: 28px;
+            font-size: 0.95em;
+        }
+
+        .footer-credits {
+            background: var(--primary-pale);
+            border-radius: 14px;
+            padding: 18px;
+            margin: 20px 0;
+            font-size: 0.88em;
+            color: var(--text-soft);
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            margin: 22px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--primary-dark); }
+
+        .footer-info {
+            color: #bbb;
+            font-size: 0.82em;
+            margin-top: 20px;
+        }
+
+        /* ===== COOKIE BANNER ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: -250px;
+            left: 0; right: 0;
+            background: white;
+            box-shadow: 0 -5px 30px rgba(0,0,0,0.15);
+            padding: 22px 28px;
+            z-index: 1000;
+            transition: bottom 0.4s ease;
+        }
+
+        .cookie-banner.show { bottom: 0; }
+
+        .cookie-content {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .cookie-text { flex: 1; font-size: 0.93em; line-height: 1.6; }
+        .cookie-text a { color: var(--primary); text-decoration: underline; }
+        .cookie-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+
+        .cookie-btn {
+            padding: 11px 22px; border: none;
+            border-radius: 8px; font-size: 0.93em;
+            font-weight: 700; cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .cookie-accept { background: var(--accent-green); color: white; }
+        .cookie-accept:hover { background: #4caf50; }
+        .cookie-decline { background: #e8e8e8; color: #555; }
+        .cookie-decline:hover { background: #d0d0d0; }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in { animation: fadeInUp 0.6s ease forwards; }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.35s; opacity: 0; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            .hero-title { font-size: 2.3em; }
+            .hero-top { padding: 40px 24px 70px; }
+            .hero-bottom { padding: 70px 24px 30px; }
+            .steckbrief-section, .kategorien-section, .eltern-box { padding: 36px 24px; }
+            .steckbrief-grid { grid-template-columns: 1fr; }
+            .steckbrief-card.wide { grid-column: 1; }
+            .superkraft-list { grid-template-columns: 1fr; }
+            .eltern-grid { grid-template-columns: 1fr; }
+            .tagesplan::before { left: 30px; }
+            .tages-dot { width: 64px; height: 64px; font-size: 1.6em; }
+            .cta-box { padding: 36px 24px; }
+            .cta-title { font-size: 1.6em; }
+            .sticky-nav { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+            .cookie-content { flex-direction: column; }
+            .cookie-buttons { flex-wrap: wrap; justify-content: center; }
+            .footer-links { flex-direction: column; gap: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.9em; }
+            .trust-strip { flex-direction: column; align-items: center; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+    <link rel="stylesheet" href="consent.css">
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>🍪 Wir verwenden Cookies</strong><br>
+                Diese Website verwendet Cookies, um dein Erlebnis zu verbessern und relevante Anzeigen zu zeigen. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== NAV ===== -->
+        <nav class="sticky-nav">
+            <a href="index.html" class="back-link">← Startseite</a>
+            <span class="nav-badge">🦎 Lernolotls Welt</span>
+        </nav>
+
+        <!-- ===== HERO ===== -->
+        <header class="hero fade-in">
+            <div class="hero-top">
+                <div class="hero-eyebrow">✨ Lernolotls Welt</div>
+                <h1 class="hero-title">Hallo, ich bin<br>der Lernolotl! 🦎</h1>
+                <p class="hero-subtitle">Ein mintgrüner Axolotl mit Brille, großem Herz<br>und einer ganz eigenen Art, die Welt zu sehen.</p>
+                <!-- Floating mascot -->
+                <div class="hero-mascot-wrap">
+                    <img src="lernolotl-icon.png" alt="Der Lernolotl" class="hero-mascot">
+                </div>
+            </div>
+            <div class="hero-bottom">
+                <p class="hero-tagline">
+                    Begleite mich bei meinen Abenteuern — in der <strong>Kita</strong>, 
+                    der <strong>Schule</strong>, beim <strong>Sport</strong> und bei <strong>Freunden</strong>. 
+                    Manchmal ist vieles ganz einfach für mich — und manchmal auch 
+                    gar nicht. Genau davon erzähle ich euch.
+                </p>
+                <div class="trust-strip">
+                    <span class="trust-badge">🆓 Alle Geschichten kostenlos</span>
+                    <span class="trust-badge">📚 Lernmaterialien verfügbar</span>
+                    <span class="trust-badge">💚 Pädagogisch begleitet</span>
+                    <span class="trust-badge">🌈 Für alle Kinder</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== STECKBRIEF ===== -->
+        <section class="steckbrief-section fade-in delay-1">
+
+            <span class="section-label">📋 Mein Steckbrief</span>
+            <h2 class="section-title">Wer bin ich eigentlich?</h2>
+            <p class="section-intro">
+                Ich bin ein Axolotl — das sind besondere Wassertiere aus Mexiko, 
+                die ihr ganzes Leben lang ein bisschen wie Kinder bleiben. 
+                Ich finde das eigentlich ganz schön.
+            </p>
+
+            <!-- Grid der Steckbrief-Infos -->
+            <div class="steckbrief-grid">
+
+                <div class="steckbrief-card">
+                    <span class="card-emoji">🎂</span>
+                    <div class="card-label">Wie alt bin ich?</div>
+                    <div class="card-value large">7 Jahre</div>
+                    <div class="card-value" style="font-size:0.85em; color:var(--text-soft); font-weight:600;">Gehe in die 2. Klasse</div>
+                </div>
+
+                <div class="steckbrief-card">
+                    <span class="card-emoji">🎨</span>
+                    <div class="card-label">Meine Lieblingsfarbe</div>
+                    <div class="card-value large">Mintgrün!</div>
+                    <div class="card-value" style="font-size:0.85em; color:var(--text-soft); font-weight:600;">Zum Glück bin ich ja selbst mintgrün 😄</div>
+                </div>
+
+                <div class="steckbrief-card">
+                    <span class="card-emoji">🍕</span>
+                    <div class="card-label">Lieblingsessen</div>
+                    <div class="card-value">Pizza mit Mais — aber bitte ohne Zwiebeln! Zwiebeln riechen so komisch stark.</div>
+                </div>
+
+                <div class="steckbrief-card">
+                    <span class="card-emoji">📚</span>
+                    <div class="card-label">Lieblingsbeschäftigung</div>
+                    <div class="card-value">Lesen & Zahlen sortieren. Ich kenne fast alle Hauptstädte der Welt!</div>
+                </div>
+
+                <div class="steckbrief-card wide">
+                    <span class="card-emoji">🌊</span>
+                    <div class="card-label">Etwas Besonderes über mich</div>
+                    <div class="card-value">
+                        Mein Gehirn funktioniert ein bisschen anders als bei vielen anderen. 
+                        Manchmal nehme ich Dinge ganz besonders stark wahr — Geräusche, Gerüche, Licht. 
+                        Manchmal brauche ich etwas mehr Zeit, um Neues auszuprobieren. 
+                        Und manchmal bin ich einfach der Beste darin, Muster zu erkennen, 
+                        die andere gar nicht sehen. <strong>Das macht mich aus — und das ist okay.</strong>
+                    </div>
+                </div>
+
+                <div class="steckbrief-card">
+                    <span class="card-emoji">🏠</span>
+                    <div class="card-label">Wo ich wohne</div>
+                    <div class="card-value">In einem gemütlichen Haus mit kleinem Garten, nicht weit von meiner Schule</div>
+                </div>
+
+                <div class="steckbrief-card">
+                    <span class="card-emoji">👫</span>
+                    <div class="card-label">Mein bester Freund</div>
+                    <div class="card-value">Finn! Er ist manchmal wild und laut — aber er hört mir immer zu.</div>
+                </div>
+
+            </div>
+
+            <!-- Superkräfte -->
+            <div class="superkraft-box">
+                <h3 class="superkraft-title">Meine Superkräfte</h3>
+                <ul class="superkraft-list">
+                    <li>Muster erkennen wie ein Computer</li>
+                    <li>Mich an ganz viele Details erinnern</li>
+                    <li>Immer ehrlich sein</li>
+                    <li>Bücher stundenlang lesen</li>
+                    <li>Freunden aufmerksam zuhören</li>
+                    <li>Zahlen & Fakten lieben</li>
+                </ul>
+            </div>
+
+            <!-- Ehrlich-Box -->
+            <div class="ehrlich-box">
+                <h3 class="ehrlich-title">Was mir manchmal schwerfällt</h3>
+                <p class="ehrlich-text">
+                    Wenn es in der Pause zu laut ist, dann brauche ich manchmal eine kurze Auszeit. 
+                    Und wenn Pläne plötzlich geändert werden — das mag ich wirklich gar nicht. 
+                    <strong>Aber ich lerne gerade, damit umzugehen.</strong> 
+                    Manchmal fällt es mir schwer zu verstehen, was andere fühlen — 
+                    dabei möchte ich eigentlich immer nett sein. 
+                    Ich übe das gerade jeden Tag. Und ich werde besser darin, versprochen! 🤝
+                </p>
+            </div>
+
+            <!-- Kinder-Quote -->
+            <div class="kinder-quote">
+                <div class="quote-text">
+                    „Ich bin nicht falsch.<br>Ich bin einfach anders — und das ist wunderbar."
+                </div>
+                <div class="quote-sub">— Der Lernolotl, wenn er abends über seinen Tag nachdenkt 🦎</div>
+            </div>
+
+        </section>
+
+        <!-- AD -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">Google AdSense — responsiv</div>
+        </div>
+
+        <!-- ===== KATEGORIEN ALS TAGESPLAN ===== -->
+        <section class="kategorien-section fade-in delay-2">
+
+            <span class="section-label">🌟 Meine Geschichten</span>
+            <h2 class="section-title">Ein Tag mit dem Lernolotl</h2>
+            <p class="kategorien-intro">
+                Jeder Tag bringt neue Abenteuer! Begleite mich durch meinen Alltag — 
+                von morgens in der Kita bis abends zu Hause. 
+                In jeder Situation erlebst du, wie ich Dinge erlebe, 
+                was mir Mut macht und was ich gelernt habe.
+            </p>
+
+            <div class="tagesplan">
+
+                <!-- Kita -->
+                <div class="tages-entry">
+                    <div class="tages-dot dot-kita">🌈</div>
+                    <a href="lernolotls-welt-kita.html" class="tages-content">
+                        <div class="tages-time">🕗 Morgens • Für Kinder von 3–6 Jahren</div>
+                        <div class="tages-title">Lernolotl in der Kita</div>
+                        <div class="tages-desc">
+                            Neue Kinder, neue Regeln — und manchmal zu viel Lärm auf einmal. 
+                            Wie der Lernolotl Freundschaften schließt und seinen eigenen Weg findet.
+                        </div>
+                        <div class="tages-geschichten">
+                            <span class="story-count">📖 3 Geschichten</span>
+                            <span class="bald-badge">🚀 Bald mehr</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Schule -->
+                <div class="tages-entry">
+                    <div class="tages-dot dot-schule">🎒</div>
+                    <a href="lernolotls-welt-schule.html" class="tages-content">
+                        <div class="tages-time">🕗 Vormittags • Für Kinder von 6–10 Jahren</div>
+                        <div class="tages-title">Lernolotl in der Schule</div>
+                        <div class="tages-desc">
+                            Mathe liebt er, große Pausen manchmal nicht. Aber mit den richtigen Strategien 
+                            gelingt auch das. Ehrliche Geschichten über Lernen, Regeln und manche 
+                            Überraschungen im Unterricht.
+                        </div>
+                        <div class="tages-geschichten">
+                            <span class="story-count">📖 3 Geschichten</span>
+                            <span class="bald-badge">🚀 Bald mehr</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sport -->
+                <div class="tages-entry">
+                    <div class="tages-dot dot-sport">⚽</div>
+                    <a href="lernolotls-welt-sport.html" class="tages-content">
+                        <div class="tages-time">🕑 Nachmittags • Für alle Kinder</div>
+                        <div class="tages-title">Lernolotl beim Sport</div>
+                        <div class="tages-desc">
+                            Fußball in einer Gruppe? Das hat eigene Regeln — geschriebene und ungeschriebene. 
+                            Wie der Lernolotl lernt, ein Teamplayer zu sein, 
+                            obwohl er am liebsten alles genau erklären möchte.
+                        </div>
+                        <div class="tages-geschichten">
+                            <span class="bald-badge">✨ Kommt bald</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Freunde -->
+                <div class="tages-entry">
+                    <div class="tages-dot dot-freunde">💛</div>
+                    <a href="lernolotls-welt-freunde.html" class="tages-content">
+                        <div class="tages-time">🕓 Nachmittags • Für alle Kinder</div>
+                        <div class="tages-title">Lernolotl bei Freunden</div>
+                        <div class="tages-desc">
+                            Was macht einen guten Freund aus? Und was tun, wenn Freundschaft 
+                            sich komisch anfühlt? Warme Geschichten über Verbindung, 
+                            Missverständnisse und echtes Zuhören.
+                        </div>
+                        <div class="tages-geschichten">
+                            <span class="bald-badge">✨ Kommt bald</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Zuhause -->
+                <div class="tages-entry">
+                    <div class="tages-dot dot-zuhause">🏠</div>
+                    <a href="lernolotls-welt-zuhause.html" class="tages-content">
+                        <div class="tages-time">🌙 Abends • Für alle Kinder</div>
+                        <div class="tages-title">Lernolotl zu Hause</div>
+                        <div class="tages-desc">
+                            Am Ende des Tages zieht sich der Lernolotl gern in sein Zimmer zurück — 
+                            mit einem Buch, einem Glas Wasser und ganz vielen Gedanken. 
+                            Ruhige Abendgeschichten zum Einatmen und Loslassen.
+                        </div>
+                        <div class="tages-geschichten">
+                            <span class="bald-badge">✨ Kommt bald</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- AD -->
+        <div class="ad-container">
+            <div class="ad-label">Werbung</div>
+            <div class="ad-placeholder">Google AdSense — responsiv</div>
+        </div>
+
+        <!-- ===== ELTERN VERTRAUEN ===== -->
+        <section class="eltern-box fade-in delay-3">
+
+            <span class="section-label">👨‍👩‍👧 Für Eltern & Lehrkräfte</span>
+            <h2 class="section-title">Warum diese Geschichten wirken</h2>
+
+            <div class="eltern-grid">
+                <div class="eltern-card">
+                    <div class="eltern-icon">🧠</div>
+                    <div class="eltern-title">Erprobt & echt</div>
+                    <div class="eltern-text">
+                        Entstanden aus dem Familienalltag mit Sam, der Autismus & ADHS hat. 
+                        Kein theoretisches Konzept — gelebte Erfahrung.
+                    </div>
+                </div>
+
+                <div class="eltern-card">
+                    <div class="eltern-icon">🎯</div>
+                    <div class="eltern-title">Für alle Kinder</div>
+                    <div class="eltern-text">
+                        Der Lernolotl spricht Kinder mit und ohne Diagnose an. 
+                        Seine Erfahrungen sind universell — Lautstärke, Regeln, Freundschaft.
+                    </div>
+                </div>
+
+                <div class="eltern-card">
+                    <div class="eltern-icon">💬</div>
+                    <div class="eltern-title">Gesprächsöffner</div>
+                    <div class="eltern-text">
+                        Jede Geschichte bietet Fragen zum Nachdenken und Reden — 
+                        damit Kinder lernen, ihre eigenen Gefühle zu benennen.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="eltern-testimonial">
+                <p class="testimonial-text">
+                    „Meine Tochter hat nach der ersten Lernolotl-Geschichte gefragt: 
+                    <strong>Mama, ist der Lernolotl auch manchmal so wie ich?</strong> 
+                    Sie ist 6 Jahre alt, neurotypisch — und hat trotzdem sofort 
+                    eine Verbindung gespürt. Das ist der Moment, auf den wir gehofft haben."
+                </p>
+                <div class="testimonial-author">— Paul R., Vater von Sam & Johanna, Intensivpfleger</div>
+            </div>
+
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <div class="cta-box">
+            <img src="lernolotl-happy.png" alt="Der Lernolotl freut sich" class="cta-mascot" onerror="this.src='lernolotl-icon.png'">
+            <h2 class="cta-title">Bereit für das erste Abenteuer? 🦎</h2>
+            <p class="cta-text">
+                Alle Geschichten sind kostenlos. 
+                Für Eltern und Lehrkräfte, die noch tiefer einsteigen möchten, 
+                gibt es passende Arbeitsmaterialien zum Download.
+            </p>
+            <div class="cta-buttons">
+                <a href="lernolotls-welt-kita.html" class="btn-primary">🌈 Jetzt lesen — Kita-Geschichten</a>
+                <a href="lernolotls-welt-schule.html" class="btn-secondary">🎒 Schulgeschichten</a>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p class="footer-brand">🦎 Der Lernolotl</p>
+            <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
+
+            <div class="footer-credits">
+                <strong>Geschichten & Lernmaterialien:</strong> Paul R.<br>
+                Alle Geschichten sind kostenlos. Optionale Arbeitsmaterialien separat erhältlich.<br>
+                <em>Erprobt mit Sam & Johanna. Geteilt mit euch.</em>
+            </div>
+
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-uns.html">Über uns</a>
+                <a href="index.html">Startseite</a>
+            </div>
+
+            <div class="footer-info">
+                <p>© 2026 Der Lernolotl – Alle Rechte vorbehalten</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progressBar').style.width = ((winScroll / height) * 100) + '%';
+        });
+
+        // Cookie banner
+        function showCookieBanner() {
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookieBanner').classList.add('show');
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        window.addEventListener('load', showCookieBanner);
+    </script>
+    <script src="cookies.js"></script>
+    <script src="paypal-spende.js"></script>
+
+</body>
+</html>
