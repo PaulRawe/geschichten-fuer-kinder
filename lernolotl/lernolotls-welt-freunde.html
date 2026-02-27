@@ -97,6 +97,8 @@
         .gc-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
         .gc-reading-time{color:#aaa;font-size:.82em;font-weight:600}
         .badge-free{background:#dcfce7;color:#166534;font-size:.78em;font-weight:800;padding:5px 12px;border-radius:20px;border:1px solid #bbf7d0}
+        .badge-soon{background:#f3f4f6;color:#6b7280;font-size:.78em;font-weight:700;padding:5px 12px;border-radius:20px;border:1px solid #e5e7eb}
+        .gc-soon{opacity:.6;pointer-events:none;cursor:default}
         .eltern-box{background:var(--c-pale);border-radius:20px;padding:30px 32px;border:2px solid var(--c-soft)}
         .eltern-title{font-family:'Fredoka One',cursive;color:var(--c);font-size:1.4em;margin-bottom:12px}
         .eltern-text{color:var(--text-soft);font-size:.97em;line-height:1.75;margin-bottom:16px}
@@ -158,6 +160,7 @@
             </div>
             <span class="nav-badge">Freundschafts-Geschichten</span>
         </nav>
+
         <header class="hero fade-in d1">
             <div class="hero-top">
                 <div class="hero-eyebrow">Lernolotl bei Freunden</div>
@@ -176,6 +179,7 @@
                 </div>
             </div>
         </header>
+
         <section class="section-card fade-in d2">
             <span class="section-label">Warum Freundschaft?</span>
             <h2 class="section-title">Freundschaft ist für den Lernolotl kein leichtes Thema</h2>
@@ -203,27 +207,28 @@
                 <div class="says-sub">— Der Lernolotl, über echte Freundschaft</div>
             </div>
         </section>
+
         <section class="section-card fade-in d2">
             <span class="section-label">Wer ist dabei?</span>
             <h2 class="section-title">Die Freunde-Crew</h2>
             <p class="section-text">In den Freundschafts-Geschichten begegnet der Lernolotl diesen besonderen Personen:</p>
             <div class="char-grid">
                 <div class="char-card cc1">
-                    <div class="char-avatar av1"><img src="../char-freunde-jonas.png" alt="Jonas" onerror="this.src='../lernolotl-icon.png'"></div>
-                    <div class="char-name">Jonas</div>
-                    <div class="char-role">Der Nachbar</div>
-                    <p class="char-desc">Jonas wohnt zwei Häuser weiter und ist seit dem Kindergarten dabei. Er ist geduldig, fragt nicht zu viel und akzeptiert, dass der Lernolotl manchmal einfach neben ihm sitzen möchte.</p>
-                    <span class="char-fact">Liebt Lego & Naturdokus</span>
+                    <div class="char-avatar av1"><img src="../char-freunde-finn.png" alt="Finn" onerror="this.src='../lernolotl-icon.png'"></div>
+                    <div class="char-name">Finn</div>
+                    <div class="char-role">Der Schulfreund</div>
+                    <p class="char-desc">Finn ist seit der ersten Klasse dabei. Er redet viel, denkt weniger — aber er merkt immer, wenn dem Lernolotl etwas nicht stimmt. Und er bleibt einfach dabei.</p>
+                    <span class="char-fact">Liebt Fußball & Witze</span>
                 </div>
                 <div class="char-card cc2">
-                    <div class="char-avatar av2"><img src="../char-freunde-sofia.png" alt="Sofia" onerror="this.src='../lernolotl-icon.png'"></div>
-                    <div class="char-name">Sofia</div>
+                    <div class="char-avatar av2"><img src="../char-schule-lena.png" alt="Lena" onerror="this.src='../lernolotl-icon.png'"></div>
+                    <div class="char-name">Lena</div>
                     <div class="char-role">Schulfreundin</div>
-                    <p class="char-desc">Sofia ist in derselben Klasse und hat irgendwann aufgehört, den Lernolotl zu fragen, warum er so ist. Stattdessen hat sie angefangen, ihn einfach zu mögen. Das ist der Unterschied.</p>
-                    <span class="char-fact">Liebt Tanzen & Bücher</span>
+                    <p class="char-desc">Lena ist klug und beobachtend. Sie hat irgendwann aufgehört zu fragen, warum der Lernolotl so ist — und hat einfach angefangen, ihn zu mögen. Das ist der Unterschied.</p>
+                    <span class="char-fact">Liebt Lesen & Pflanzen</span>
                 </div>
                 <div class="char-card cc3">
-                    <div class="char-avatar av3"><img src="../char-freunde-oma-hilde.png" alt="Oma Hilde" onerror="this.src='../lernolotl-icon.png'"></div>
+                    <div class="char-avatar av3"><img src="../char-familie-oma-hilde.png" alt="Oma Hilde" onerror="this.src='../lernolotl-icon.png'"></div>
                     <div class="char-name">Oma Hilde</div>
                     <div class="char-role">Die Oma</div>
                     <p class="char-desc">Oma Hilde kommt jeden zweiten Sonntag. Bei ihr riecht es immer nach Kardamom und alten Büchern. Sie stellt keine Fragen — sie erzählt einfach, und das ist schön.</p>
@@ -231,47 +236,88 @@
                 </div>
             </div>
         </section>
+
         <div class="ad-container"><div class="ad-label">Werbung</div><div class="ad-placeholder">Google AdSense — responsiv</div></div>
+
         <section class="section-card fade-in d3">
-            <span class="section-label">Alle Geschichten</span>
+            <span class="section-label">📖 Alle Geschichten</span>
             <h2 class="section-title">Lernolotl bei Freunden — die Geschichten</h2>
-            <p class="section-text">Drei Geschichten über Freundschaft und Verbindung. Kostenlos — mit optionalen Lernmaterialien.</p>
+            <p class="section-text">Drei Geschichten über Freundschaft, Mut und Verbindung. Kostenlos lesen — mit Nachbesprechung und Gesprächsleitfaden für Eltern.</p>
+
             <div class="geschichten-grid">
-                <a href="freunde-geschichte-1-besuch.html" class="geschichte-card gc-1">
+
+                <!-- Geschichte 1: Mobbing -->
+                <a href="freunde-geschichte-mobbing.html" class="geschichte-card gc-1">
                     <div class="gc-header">
                         <div class="gc-number">1</div>
-                        <div class="gc-meta"><div class="gc-tag">Besuch · Neues Zuhause</div><div class="gc-title">Zum ersten Mal bei Jonas</div></div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Mut · Solidarität · Hilfe holen</div>
+                            <div class="gc-title">Mobbing — wenn andere gemein sind</div>
+                        </div>
                     </div>
                     <div class="gc-body">
-                        <p class="gc-desc">Jonas hat den Lernolotl zu sich eingeladen. Ein fremdes Zimmer, fremde Regeln, fremde Gerüche. Der Lernolotl weiß nicht, ob er bleiben will — bis Jonas einfach anfängt, Lego zu bauen.</p>
-                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Jonas</span></div>
-                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                        <p class="gc-desc">Zwei Kinder rufen dem Lernolotl hinterher. Einmal wäre nichts — aber es passiert wieder und wieder. Finn und Lena merken es. Gemeinsam lernen sie, was der Unterschied zwischen Petzen und Hilfe holen ist.</p>
+                        <div class="gc-chars">
+                            <span class="gc-char-badge">Lernolotl</span>
+                            <span class="gc-char-badge">Finn</span>
+                            <span class="gc-char-badge">Lena</span>
+                            <span class="gc-char-badge">Herr Mayer</span>
+                        </div>
+                        <div class="gc-footer">
+                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
+                            <span class="badge-free">Kostenlos</span>
+                        </div>
                     </div>
                 </a>
-                <a href="freunde-geschichte-2-streit.html" class="geschichte-card gc-2">
+
+                <!-- Geschichte 2: Platzhalter -->
+                <div class="geschichte-card gc-2 gc-soon">
                     <div class="gc-header">
                         <div class="gc-number">2</div>
-                        <div class="gc-meta"><div class="gc-tag">Streit · Versöhnung</div><div class="gc-title">Der Tag, an dem Sofia wütend war</div></div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Neue Freunde · Mut</div>
+                            <div class="gc-title">Neue Freunde finden — aber wie?</div>
+                        </div>
                     </div>
                     <div class="gc-body">
-                        <p class="gc-desc">Sofia ist plötzlich wütend — und der Lernolotl versteht nicht warum. Er hat nichts falsch gemacht. Oder doch? Eine Geschichte darüber, wie man einen Streit versteht, den man nicht kommen sah.</p>
-                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Sofia</span></div>
-                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                        <p class="gc-desc">Der Lernolotl möchte mit dem neuen Kind in der Klasse reden — aber wie fängt man das an? Er übt den ersten Satz dreimal im Kopf. Eine Geschichte über Mut, Anfangen und den Unterschied zwischen „Hallo" und Freundschaft.</p>
+                        <div class="gc-chars">
+                            <span class="gc-char-badge">Lernolotl</span>
+                            <span class="gc-char-badge">Finn</span>
+                        </div>
+                        <div class="gc-footer">
+                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
+                            <span class="badge-soon">Demnächst</span>
+                        </div>
                     </div>
-                </a>
-                <a href="freunde-geschichte-3-oma.html" class="geschichte-card gc-3">
+                </div>
+
+                <!-- Geschichte 3: Platzhalter -->
+                <div class="geschichte-card gc-3 gc-soon">
                     <div class="gc-header">
                         <div class="gc-number">3</div>
-                        <div class="gc-meta"><div class="gc-tag">Oma · Verbindung</div><div class="gc-title">Wenn Oma Hilde kommt</div></div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Streit · Versöhnung</div>
+                            <div class="gc-title">Der Tag, an dem Finn wütend war</div>
+                        </div>
                     </div>
                     <div class="gc-body">
-                        <p class="gc-desc">Oma Hilde kommt jeden zweiten Sonntag. Der Lernolotl freut sich immer — aber nicht laut. Sie reden wenig, hören viel, und das ist genau richtig. Eine Geschichte über stille Verbindung.</p>
-                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Oma Hilde</span><span class="gc-char-badge">Mama</span></div>
-                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                        <p class="gc-desc">Finn ist plötzlich wütend — und der Lernolotl versteht nicht warum. Er hat doch nichts falsch gemacht. Oder doch? Eine Geschichte darüber, wie man einen Streit versteht, den man nicht kommen sah.</p>
+                        <div class="gc-chars">
+                            <span class="gc-char-badge">Lernolotl</span>
+                            <span class="gc-char-badge">Finn</span>
+                            <span class="gc-char-badge">Lena</span>
+                        </div>
+                        <div class="gc-footer">
+                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
+                            <span class="badge-soon">Demnächst</span>
+                        </div>
                     </div>
-                </a>
+                </div>
+
             </div>
         </section>
+
         <section class="section-card fade-in d3">
             <div class="eltern-box">
                 <h3 class="eltern-title">Für Eltern & Pädagogen</h3>
@@ -286,27 +332,32 @@
                 </ul>
             </div>
         </section>
+
         <div class="ad-container"><div class="ad-label">Werbung</div><div class="ad-placeholder">Google AdSense — responsiv</div></div>
+
         <div class="cta-box fade-in d3">
             <h2 class="cta-title">Mehr Welten entdecken</h2>
             <p class="cta-text">Begleite den Lernolotl auch in der Schule, beim Sport und Zuhause.</p>
             <div class="cta-buttons"><a href="lernolotls-welt.html" class="btn-white">Zurück zu Lernolotls Welt</a></div>
         </div>
+
         <footer>
             <p class="footer-brand">Der Lernolotl</p>
             <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
             <div class="footer-credits"><strong>Geschichten & Lernmaterialien:</strong> Paul R.<br>Alle Geschichten kostenlos. Optionale Arbeitsmaterialien separat erhältlich.<br><em>© Der Lernolotl • lernolotl.de</em></div>
             <div class="footer-links">
-                <a href="../index.html">Startseite</a><a href="lernolotls-welt.html">Lernolotls Welt</a>
-<a href="../impressum.html">Impressum</a>
-<a href="../datenschutz.html">Datenschutz</a>
-<a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
-<a href="../kontakt.html">Kontakt</a>
-<a href="../ueber-uns.html">Über uns</a>
+                <a href="../index.html">Startseite</a>
+                <a href="lernolotls-welt.html">Lernolotls Welt</a>
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="../kontakt.html">Kontakt</a>
+                <a href="../ueber-uns.html">Über uns</a>
             </div>
             <div class="footer-info">© 2026 Der Lernolotl – Alle Rechte vorbehalten</div>
         </footer>
     </div>
+
     <script>
         window.addEventListener('scroll',function(){const s=document.body.scrollTop||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=((s/h)*100)+'%'});
         function showCookieBanner(){if(!localStorage.getItem('cookieConsent'))document.getElementById('cookieBanner').classList.add('show')}
@@ -314,6 +365,7 @@
         function declineCookies(){localStorage.setItem('cookieConsent','declined');document.getElementById('cookieBanner').classList.remove('show')}
         window.addEventListener('load',showCookieBanner);
     </script>
-    <script src="../cookies.js"></script><script src="../paypal-spende.js"></script>
+    <script src="../cookies.js"></script>
+    <script src="../paypal-spende.js"></script>
 </body>
 </html>
