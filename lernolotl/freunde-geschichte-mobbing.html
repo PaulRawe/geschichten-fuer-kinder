@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mobbing — wenn andere gemein sind. Eine Vorlesegeschichte für Kinder über Hänseln, Ausgrenzung und was man tun kann. Mit Gesprächsleitfaden für Eltern.">
+    <title>Mobbing — wenn andere gemein sind. Der Lernolotl und die Brille – Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/freunde-geschichte-mobbing.html">
+
+    <meta property="og:title" content="Mobbing — wenn andere gemein sind. Der Lernolotl und die Brille">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl wird wegen seiner Brille gehänselt — und lernt, was der Unterschied zwischen Streit und Mobbing ist, und wem man vertrauen kann. Für Kinder 6–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/freunde-geschichte-mobbing.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #f87171;
+            --primary-dark: #dc2626;
+            --primary-light: #fecdd3;
+            --primary-pale: #fff1f2;
+            --accent: #7ecac3;
+            --bg-gradient-from: #f87171;
+            --bg-gradient-to: #9f1239;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #9f1239 0%, #be123c 50%, #9f1239 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-gradient-to) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: var(--primary-dark);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary-dark);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(248,113,113,0.3)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(248,113,113,0.2)); }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary-dark); font-weight: 700; }
+        .story-content em { color: #9f1239; font-style: italic; }
+
+        .page-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--primary-dark);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+
+        .char-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-pale);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary-dark); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+
+        .story-quote {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2em;
+            color: var(--bg-gradient-to);
+            line-height: 1.5;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+        }
+        .info-box-title { color: #b45309; font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .technique-box {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary);
+            box-shadow: 0 8px 24px rgba(248,113,113,0.15);
+        }
+        .technique-box-title { color: var(--bg-gradient-to); font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .technique-box-text { color: #1c1917; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+
+        .nachbesprechung {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 6px solid #22c55e;
+            box-shadow: 0 8px 24px rgba(34,197,94,0.15);
+        }
+        .nachbesprechung-title { font-family: 'Fredoka One', cursive; color: #15803d; font-size: 1.3em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li { padding: 10px 0 10px 30px; border-bottom: 1px solid rgba(34,197,94,0.2); color: #14532d; font-size: 1em; line-height: 1.6; position: relative; }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before { content: "→"; position: absolute; left: 8px; color: #22c55e; font-weight: 700; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn { background: white; color: var(--primary-dark); border: 2px solid var(--primary-dark); font-family: 'Fredoka One', cursive; font-size: 1em; padding: 10px 28px; border-radius: 50px; cursor: pointer; transition: all 0.2s; }
+        .print-btn:hover { background: var(--primary-dark); color: white; }
+
+        .ad-container { background: white; border-radius: 15px; padding: 20px; margin: 35px 0; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%); z-index: 1000; transition: width 0.1s; }
+
+        .print-header { display: none; }
+        .print-footer { display: none; }
+
+        footer { background: white; border-radius: 25px; padding: 40px; margin-top: 50px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary-dark); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: var(--primary-dark); text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.2s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .sticky-nav { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2em; }
+            header, .story-section { padding: 30px 20px; }
+            .story-content { font-size: 1.05em; }
+            .hero-icon { width: 90px; height: 90px; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.85; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav, .cookie-banner { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; margin-bottom: 20px; }
+            header .hero-image-container { display: none; }
+            .story-intro { font-size: 10pt; }
+            h1 { font-size: 18pt; color: #000; }
+            .story-meta { color: #555; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; }
+            .story-content strong, .story-content em { color: #000; }
+            .story-quote { background: #f5f5f5; border-left: 4px solid #888; color: #000; font-size: 1em; }
+            .page-divider { color: #555; }
+            .section-divider { display: none; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .info-box-title, .technique-box-title, .nachbesprechung-title { color: #000; }
+            .info-box-text, .technique-box-text, .nachbesprechung-fragen li { color: #000; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+            .story-content { orphans: 3; widows: 3; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt-freunde.html" class="back-link">← Lernolotls Freunde</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Freunde</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Mobbing-Geschichte</div>
+        <div class="story-meta">Vorlesegeschichte · Freunde · 6–10 Jahre</div>
+        <h1>Mobbing — wenn andere gemein sind</h1>
+        <p class="story-intro">
+            Zwei Kinder rufen dem Lernolotl hinterher, dass seine Brille komisch aussieht.
+            Einmal wäre das nichts. Aber es passiert wieder. Und wieder.
+            Finn und Lena merken es — und gemeinsam finden sie heraus,
+            was der Unterschied zwischen Streit und Mobbing ist, und wem man vertrauen kann.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-sad.png" alt="Der Lernolotl" class="hero-icon">
+            <img src="../char-schule-finn.png" alt="Finn" class="hero-char-icon">
+            <img src="../char-schule-lena.png" alt="Lena" class="hero-char-icon">
+            <img src="../char-schule-herr-mayer.png" alt="Herr Mayer" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Es hatte an einem Dienstag angefangen.</p>
+
+            <p>Zwei Kinder aus der Parallelklasse standen am Schulhofrand,
+            als der Lernolotl vorbeikam. Der eine rief: <strong>„Hey, Brillenschlange!"</strong>
+            Der andere lachte.</p>
+
+            <p>Der Lernolotl blieb kurz stehen. Er sah die beiden an.
+            Dann ging er weiter. Er sagte nichts, weil ihm nichts einfiel,
+            und weil er nicht wusste, ob etwas Sagen es besser oder schlechter machen würde.</p>
+
+            <p>Er erzählte es niemandem. Einmal ist kein Muster, dachte er.
+            Einmal kann einfach ein schlechter Moment von jemandem sein.</p>
+
+            <p>Aber am Donnerstag war es wieder so. Diesmal mit mehr Wörtern.
+            Die Brille sei altmodisch. Er sei altmodisch. Er solle woanders hingehen.</p>
+
+            <p>Und am Montag darauf: Jemand hatte seinen Rucksack vom Haken genommen
+            und auf den Boden geworfen. Er hatte es nicht gesehen, aber Lena hatte es gesehen.</p>
+
+            <p><em>Einmal ist kein Muster</em>, hatte er gedacht.
+            Aber das jetzt war kein Einmal mehr.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">🛡️ 💛 🛡️</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Lena fragte ihn in der Pause: „Weiß du, dass die das öfter machen?"</p>
+
+            <p>„Ja", sagte der Lernolotl.</p>
+
+            <p>„Hast du jemanden erzählt?"</p>
+
+            <p>„Nein."</p>
+
+            <p>Lena dachte nach. Sie sagte nicht „Du musst" und nicht „Warum nicht?".
+            Sie sagte: <strong>„Ich glaube, das ist schon Mobbing."</strong></p>
+
+            <p>Das war ein großes Wort. Der Lernolotl hatte gedacht,
+            Mobbing sei etwas, das täglich passierte, mit vielen Leuten,
+            sehr dramatisch. Nicht dreimal auf dem Schulhof.</p>
+
+            <p>„Was ist der Unterschied?", fragte er.</p>
+
+            <p>Lena hatte das mal in einem Buch gelesen.
+            „Streit passiert einmal. Oder man streitet, und dann ist es vorbei.
+            Mobbing passiert immer wieder — von denselben Personen —
+            und die Person, die es trifft, kann sich nicht einfach dagegen wehren."</p>
+
+            <div class="char-row">
+                <img src="../char-schule-lena.png" alt="Lena">
+                <div>
+                    <div class="char-row-name">Lena</div>
+                    <div class="char-row-text">„Streit passiert einmal, und man macht es zusammen durch. Mobbing passiert immer wieder — und das ist etwas anderes."</div>
+                </div>
+            </div>
+
+            <p>Finn kam dazu. Er hatte die letzten zwei Sätze gehört.
+            „Wer macht das?", fragte er.</p>
+
+            <p>Der Lernolotl beschrieb die beiden.</p>
+
+            <p>Finn nickte langsam. Er sagte nicht viel.
+            Aber er blieb neben dem Lernolotl stehen — einfach so.
+            Das fühlte sich gut an.</p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Am Nachmittag sagte Lena: „Wir sollten Herrn Mayer erzählen."</p>
+
+            <p>Der Lernolotl zögerte. Er hatte Angst, dass es dann schlimmer würde.
+            Dass die beiden denken würden, er hätte gepetzt.
+            Dass er als der dastand, der sich nicht selbst wehren konnte.</p>
+
+            <p>Lena sagte: „Petzen bedeutet, jemanden in Schwierigkeiten bringen,
+            der nichts Schlimmes getan hat. Das hier ist anders.
+            Das hier ist Hilfe holen, weil etwas Falsches passiert."</p>
+
+            <p>Der Lernolotl dachte darüber nach.
+            Das war ein wichtiger Unterschied. Und es stimmte.</p>
+
+            <p>Sie gingen zu Herrn Mayer — alle drei.
+            Der Lernolotl erzählte. Lena ergänzte, was sie gesehen hatte.
+            Finn sagte nichts, stand aber dabei.</p>
+
+            <p>Herr Mayer hörte zu. Er schrieb sich etwas auf.
+            Er fragte nach den Namen. Er sagte nicht,
+            dass es nur Spaß gewesen sei oder dass man drüber hinwegkommen solle.</p>
+
+            <p>Er sagte: <strong>„Gut, dass ihr es mir gesagt habt.
+            Das war richtig."</strong></p>
+
+            <div class="story-quote">
+                „Hilfe holen ist kein Schwächezeichen. Es ist das Klügste, was man tun kann — wenn man alleine nicht weiterkommt."
+            </div>
+
+            <p>Es dauerte noch ein paar Tage, bis es aufhörte.
+            Herr Mayer hatte mit den beiden gesprochen — und mit deren Klassenlehrerin.
+            Der Lernolotl wusste nicht genau, was gesagt worden war.
+            Aber die Rufe blieben aus. Der Rucksack blieb auf dem Haken.</p>
+
+            <p>Er dachte manchmal noch daran. Es hatte sich nicht wie nichts angefühlt.
+            Es hatte sich schlecht angefühlt — und das war richtig so.
+            Schlimme Dinge sollten sich schlimm anfühlen.</p>
+
+            <p>Aber er hatte auch gelernt: <em>Er musste es nicht alleine tragen.
+            Finn und Lena hatten dagestanden. Herr Mayer hatte zugehört.
+            Das war kein Zufall — das waren Menschen, denen er vertrauen konnte.</em></p>
+
+            <p>Diese Liste war wichtiger als er gedacht hatte.</p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🛡️</span>
+            <span>Streit oder Mobbing? — und was man tun kann</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Kinder (und Eltern) verwechseln Streit und Mobbing häufig. Dieser Unterschied ist wichtig:</strong></p>
+            <ul>
+                <li><strong>Streit:</strong> Passiert einmal oder situativ. Beide Seiten sind beteiligt. Es gibt einen Auslöser. Es kann von alleine enden.</li>
+                <li><strong>Mobbing:</strong> Wiederholt, von denselben Personen, gegenüber einer Person, die sich alleine nicht wehren kann. Kein klarer Auslöser — oft zufällig ausgewählt.</li>
+            </ul>
+            <p><strong>Was Kinder tun können:</strong></p>
+            <ul>
+                <li>Jemandem erzählen — Eltern, Lehrkraft, Schulpsycholog:in. Das ist kein Petzen, das ist Hilfe holen.</li>
+                <li>Nicht alleine reagieren. Verbündete suchen: Wer hat es gesehen? Wer steht für mich?</li>
+                <li>Alles aufschreiben: Wann? Wo? Wer? Was wurde gesagt oder getan? Das hilft Erwachsenen zu handeln.</li>
+            </ul>
+            <p>Kinder, die Mobbing bei anderen sehen und dabeistehen, sind ein wichtiger Teil der Lösung — nicht als Helden, sondern einfach als Anwesenheit. Mobbing braucht ein Publikum. Wer wegbleibt oder daneben steht, nimmt ihm genau das.</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Was ist der Unterschied zwischen Streit und Mobbing — wie erklärt Lena das?</li>
+            <li>Warum hat der Lernolotl zuerst niemandem erzählt? Kannst du das verstehen?</li>
+            <li>Was ist der Unterschied zwischen Petzen und Hilfe holen?</li>
+            <li>Wem würdest du vertrauen, wenn dir etwas Schlechtes passiert — in der Schule oder woanders?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Wenn Kinder schweigen</span>
+        </div>
+        <div class="info-box-text">
+            <p>Viele Kinder erzählen von Mobbing erst sehr spät — oder gar nicht. Die Gründe sind: Angst, dass es schlimmer wird. Scham. Das Gefühl, sich nicht selbst wehren zu können. Die Hoffnung, dass es aufhört.</p>
+            <p>Kinder mit Autismus oder ADHS sind statistisch häufiger von Mobbing betroffen — teilweise weil sie soziale Codes anders lesen und Reaktionen zeigen, die als ungewöhnlich wahrgenommen werden. Das macht es nicht leichter, darüber zu reden.</p>
+            <p>Eine offene Frage, die regelmäßig gestellt wird — nicht als Verhör, sondern als normaler Teil des Gesprächs — hilft mehr als einmalige Aufklärungsgespräche: „Gibt es jemanden in der Schule, der nicht nett zu dir ist?"</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>

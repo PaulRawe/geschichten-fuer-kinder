@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prüfungsangst — wenn der Kopf leer wird. Eine Vorlesegeschichte für Kinder über Angst vor Tests, Blackout und was wirklich hilft, wenn man vor einer Klassenarbeit steht.">
+    <title>Prüfungsangst — wenn der Kopf leer wird. Der Lernolotl vor der Klassenarbeit – Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/schule-geschichte-pruefungsangst.html">
+
+    <meta property="og:title" content="Prüfungsangst — wenn der Kopf leer wird. Der Lernolotl vor der Klassenarbeit">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl hat alles gelernt — aber vor der Klassenarbeit wird der Kopf plötzlich leer. Eine Geschichte über Prüfungsangst und was wirklich hilft. Für Kinder 6–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/schule-geschichte-pruefungsangst.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-mid: #60a5fa;
+            --primary-light: #bfdbfe;
+            --primary-pale: #eff6ff;
+            --accent: #7ecac3;
+            --bg-gradient-from: #3b82f6;
+            --bg-gradient-to: #1e40af;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: var(--primary);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(59,130,246,0.25)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(59,130,246,0.2)); }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #1e40af; font-style: italic; }
+
+        .page-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+
+        .char-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-pale);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+
+        .story-quote {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2em;
+            color: var(--bg-gradient-to);
+            line-height: 1.5;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+        }
+        .info-box-title { color: #b45309; font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .technique-box {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #e0f2fe 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary-mid);
+            box-shadow: 0 8px 24px rgba(59,130,246,0.15);
+        }
+        .technique-box-title { color: #1d4ed8; font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .technique-box-text { color: #1e293b; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+
+        .nachbesprechung {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 6px solid #22c55e;
+            box-shadow: 0 8px 24px rgba(34,197,94,0.15);
+        }
+        .nachbesprechung-title { font-family: 'Fredoka One', cursive; color: #15803d; font-size: 1.3em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li { padding: 10px 0 10px 30px; border-bottom: 1px solid rgba(34,197,94,0.2); color: #14532d; font-size: 1em; line-height: 1.6; position: relative; }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before { content: "→"; position: absolute; left: 8px; color: #22c55e; font-weight: 700; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn { background: white; color: var(--primary); border: 2px solid var(--primary); font-family: 'Fredoka One', cursive; font-size: 1em; padding: 10px 28px; border-radius: 50px; cursor: pointer; transition: all 0.2s; }
+        .print-btn:hover { background: var(--primary); color: white; }
+
+        .ad-container { background: white; border-radius: 15px; padding: 20px; margin: 35px 0; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%); z-index: 1000; transition: width 0.1s; }
+
+        .print-header { display: none; }
+        .print-footer { display: none; }
+
+        footer { background: white; border-radius: 25px; padding: 40px; margin-top: 50px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.2s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .sticky-nav { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2em; }
+            header, .story-section { padding: 30px 20px; }
+            .story-content { font-size: 1.05em; }
+            .hero-icon { width: 90px; height: 90px; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.85; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav, .cookie-banner { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; margin-bottom: 20px; }
+            header .hero-image-container { display: none; }
+            h1 { font-size: 18pt; color: #000; }
+            .story-meta { color: #555; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; }
+            .story-content strong, .story-content em { color: #000; }
+            .story-quote { background: #f5f5f5; border-left: 4px solid #888; color: #000; font-size: 1em; }
+            .page-divider { color: #555; }
+            .section-divider { display: none; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .info-box-title, .technique-box-title, .nachbesprechung-title { color: #000; }
+            .info-box-text, .technique-box-text, .nachbesprechung-fragen li { color: #000; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+            .story-content { orphans: 3; widows: 3; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt-schule.html" class="back-link">← Lernolotls Schulwelt</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Schule</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Prüfungsangst-Geschichte</div>
+        <div class="story-meta">Vorlesegeschichte · Schule · 6–10 Jahre</div>
+        <h1>Prüfungsangst — wenn der Kopf leer wird</h1>
+        <p class="story-intro">
+            Der Lernolotl hat alles gelernt. Wirklich alles.
+            Aber als das Blatt vor ihm liegt, ist der Kopf plötzlich leer —
+            wie eine Tafel, die jemand weggewischt hat.
+            Herr Mayer zeigt ihm etwas, das schon vor der ersten Aufgabe hilft.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-thinking.png" alt="Der Lernolotl" class="hero-icon">
+            <img src="../char-schule-herr-mayer.png" alt="Herr Mayer" class="hero-char-icon">
+            <img src="../char-schule-lena.png" alt="Lena" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Der Lernolotl hatte drei Tage lang gelernt.</p>
+
+            <p>Er hatte die Lernkarten zweimal durchgegangen.
+            Er hatte Mama die Hauptstädte abgefragt — alle achtzehn, die drankamen.
+            Er hatte sich Notizen gemacht, die er nochmal gelesen hatte,
+            und Notizen über die Notizen.</p>
+
+            <p>Er wusste es. Das war das Erstaunliche und auch das Seltsame:
+            Er <em>wusste</em> es wirklich. Wenn Mama fragte, kam die Antwort sofort.
+            Wenn er die Augen schloss und sich die Karte vorstellte, sah er sie.</p>
+
+            <p>Und dann kam der Morgen der Klassenarbeit.</p>
+
+            <p>Der Bus hatte nach nassen Schuhen gerochen.
+            Im Klassenzimmer war es wärmer als sonst.
+            Herr Mayer teilte die Blätter aus.
+            Das Blatt landete vor dem Lernolotl.</p>
+
+            <p>Er sah die erste Frage. Er kannte die Antwort.
+            Er wusste, dass er sie kannte.</p>
+
+            <p>Aber der Kopf war <strong>leer</strong>.</p>
+
+            <p>Nicht ein bisschen leer. Vollständig leer.
+            Wie eine Tafel, die jemand mit einem nassen Schwamm weggewischt hatte.
+            Die Antwort war eben noch da gewesen — und jetzt war da nur noch
+            weißes Rauschen und das Geräusch von Stühlen und sein eigenes Herzschlagen.</p>
+
+            <p><em>Ich weiß es</em>, dachte er. <em>Ich weiß es. Warum kann ich es nicht sagen?</em></p>
+        </div>
+    </div>
+
+    <div class="section-divider">📝 💨 📝</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Herr Mayer hatte das schon einmal erklärt — vor der Arbeit,
+            in der Stunde davor. Der Lernolotl hatte damals nicht so genau zugehört,
+            weil er dachte, das würde ihn nicht betreffen.
+            Er lernte doch. Er war doch vorbereitet.</p>
+
+            <p>Aber jetzt erinnerte er sich an einen Satz:
+            <strong>„Wenn der Körper Alarm schlägt, schließt das Gehirn den Zugang zum Wissen."</strong></p>
+
+            <p>Nicht aus Bosheit. Als Schutz.
+            Das Gehirn dachte: Gefahr! Und schickte alle Energie dorthin,
+            wo man bei Gefahr Energie braucht — in die Muskeln, ins Herz, in die Beine.
+            Nicht ins Gedächtnis.</p>
+
+            <p>Der Trick war deshalb: <em>Dem Gehirn sagen, dass keine Gefahr ist.</em></p>
+
+            <p>Der Lernolotl legte den Stift hin. Er schaute kurz aus dem Fenster.
+            Dann atmete er: vier Sekunden ein, vier halten, vier aus.
+            Einmal. Zweimal. Dreimal.</p>
+
+            <div class="char-row">
+                <img src="../char-schule-herr-mayer.png" alt="Herr Mayer">
+                <div>
+                    <div class="char-row-name">Herr Mayer</div>
+                    <div class="char-row-text">„Wenn der Kopf leer wird, liegt das nicht am Wissen. Es liegt an der Angst. Und Angst kann man atmen."</div>
+                </div>
+            </div>
+
+            <p>Nach der dritten Runde spürte er, wie seine Schultern sich senkten.
+            Sein Herzschlagen wurde ruhiger.
+            Das Rauschen wurde leiser.</p>
+
+            <p>Er nahm den Stift wieder.
+            Sah die erste Frage an.</p>
+
+            <p>Und dann — langsam, wie durch einen Nebel, der sich lichtete —
+            kam die Antwort zurück.</p>
+
+            <p>Er schrieb sie auf. Sie war richtig. Er wusste es.</p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Er arbeitete sich durch das Blatt.
+            Nicht immer einfach. Bei Aufgabe vier stockte er wieder —
+            aber diesmal kürzer. Er atmete zweimal, und dann war es wieder da.</p>
+
+            <p>Lena saß neben ihm. Er sah, dass sie auch kurz pausierte,
+            die Augen schloss, den Kopf leicht senkte.
+            Dann schrieb sie weiter.</p>
+
+            <p>Sie hatten dasselbe gelernt. Nicht das gleiche Wissen —
+            sondern den gleichen Trick.</p>
+
+            <p>Als die Zeit um war und Herr Mayer die Blätter einsammelte,
+            fragte er die Klasse: „Wie war das für euch?"</p>
+
+            <p>Finn sagte: „Hab alles vergessen und dann wiedergekriegt."</p>
+
+            <p>Lena sagte: „Das Atmen hat geholfen."</p>
+
+            <p>Der Lernolotl sagte: „Ich dachte, es liegt an mir,
+            wenn der Kopf leer wird. Aber es liegt am Körper."</p>
+
+            <p>Herr Mayer nickte. <strong>„Genau das."</strong></p>
+
+            <div class="story-quote">
+                „Prüfungsangst bedeutet nicht, dass du es nicht weißt. Es bedeutet, dass dein Körper kurz gedacht hat, du bist in Gefahr. Dem Körper muss man manchmal sagen: Alles gut. Wir schreiben nur eine Arbeit."
+            </div>
+
+            <p>Die Note war nicht perfekt. Eine Aufgabe hatte er halb falsch.
+            Aber der Lernolotl war nicht traurig darüber.</p>
+
+            <p>Er hatte gelernt, was wichtiger war als die Note:
+            <em>Was tun, wenn der Kopf leer wird.</em>
+            Das würde er brauchen — nicht nur heute, sondern ein Leben lang.</p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🧘</span>
+            <span>Was bei Blackout wirklich hilft — vor und während der Prüfung</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Ein Blackout ist kein Wissensdefizit — es ist eine Stressreaktion. Das Gehirn hat den Zugang zum Gedächtnis kurzfristig geschlossen. Drei Strategien helfen:</strong></p>
+            <ul>
+                <li><strong>Vor der Prüfung — am Abend:</strong> Nicht mehr lernen nach 20 Uhr. Stattdessen: kurze Bewegung, normales Abendessen, früh schlafen. Das Gehirn konsolidiert Wissen im Schlaf — schlafen ist aktives Lernen.</li>
+                <li><strong>Direkt davor — die 4-4-4-Atemübung:</strong> 4 Sekunden einatmen, 4 halten, 4 ausatmen. Drei Durchgänge. Das aktiviert den Parasympathikus und senkt Cortisol — der Körper bekommt das Signal: keine Gefahr.</li>
+                <li><strong>Mitten im Blackout — Stift hinlegen, Fenster anschauen, zweimal atmen:</strong> Nicht kämpfen, nicht drücken. Kurz pausieren. Das Wissen ist noch da — der Körper muss nur loslassen.</li>
+            </ul>
+            <p>Wichtig: Kinder, die wissen, dass Blackouts normal sind und was dagegen hilft, erleben sie seltener — weil die Angst vor dem Blackout selbst wegfällt.</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Der Lernolotl hat alles gelernt — warum weiß er es trotzdem plötzlich nicht mehr?</li>
+            <li>Was erklärt Herr Mayer über Angst und das Gehirn?</li>
+            <li>Was macht der Lernolotl, um den Kopf wieder „aufzumachen"?</li>
+            <li>Kennst du das Gefühl vor einer Prüfung oder einem schwierigen Moment? Was hilft dir?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Was hinter Prüfungsangst steckt</span>
+        </div>
+        <div class="info-box-text">
+            <p>Prüfungsangst ist eine echte physiologische Reaktion: Stress aktiviert die Amygdala, die Kampf-oder-Flucht-Reaktion setzt ein, und der präfrontale Kortex — der für Gedächtniszugriff und Planungsdenken zuständig ist — wird vorübergehend gedrosselt. Das Kind weiß es wirklich — es kann nur gerade nicht drankommen.</p>
+            <p>Bei Kindern mit ADHS ist dieser Mechanismus oft empfindlicher: Die Reizverarbeitung ist bereits erhöht, und die zusätzliche Stressbelastung einer Prüfungssituation übersteigt schneller die Schwelle.</p>
+            <p>Der wirksamste Hebel für Eltern ist nicht mehr Lernen — sondern Prüfungsangst normalisieren und konkrete Strategien einüben, <em>bevor</em> sie gebraucht werden. Das 4-4-4-Atmen abends vor dem Schlafen zu üben bedeutet, es in der Prüfung abrufen zu können.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>

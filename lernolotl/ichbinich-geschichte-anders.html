@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ich bin anders — und das ist okay. Eine Vorlesegeschichte über Neurodiversität, Selbstbild und Selbstwert für Kinder. Der Lernolotl erklärt, warum anders kein Fehler ist.">
+    <title>Ich bin anders — und das ist okay. Der Lernolotl und sein besonderes Gehirn – Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/ichbinich-geschichte-anders.html">
+
+    <meta property="og:title" content="Ich bin anders — und das ist okay. Der Lernolotl und sein besonderes Gehirn">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte über Neurodiversität und Selbstwert: Der Lernolotl erklärt, warum anders kein Fehler ist — sondern einfach eine andere Art, die Welt zu sehen. Für Kinder 5–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/ichbinich-geschichte-anders.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0d9488;
+            --primary-mid: #2dd4bf;
+            --primary-light: #99f6e4;
+            --primary-pale: #f0fdfa;
+            --accent: #7ecac3;
+            --bg-gradient-from: #0d9488;
+            --bg-gradient-to: #134e4a;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #134e4a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: var(--primary);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 20px rgba(13,148,136,0.3));
+        }
+
+        .hero-char-icon {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(13,148,136,0.2));
+        }
+
+        .motto-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            border-radius: 20px;
+            padding: 25px 35px;
+            margin: 30px auto 0;
+            max-width: 520px;
+            text-align: center;
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3em;
+            line-height: 1.5;
+            box-shadow: 0 8px 24px rgba(13,148,136,0.35);
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #0f766e; font-style: italic; }
+
+        .page-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.8em;
+        }
+
+        .char-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-pale);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+
+        /* Highlight-Zitat mitten in der Geschichte */
+        .story-quote {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2em;
+            color: var(--bg-gradient-to);
+            line-height: 1.5;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+        }
+
+        .info-box-title {
+            color: #b45309;
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .technique-box {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary-mid);
+            box-shadow: 0 8px 24px rgba(13,148,136,0.15);
+        }
+
+        .technique-box-title {
+            color: var(--bg-gradient-to);
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text { color: #134e4a; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+
+        .nachbesprechung {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 6px solid #22c55e;
+            box-shadow: 0 8px 24px rgba(34,197,94,0.15);
+        }
+
+        .nachbesprechung-title {
+            font-family: 'Fredoka One', cursive;
+            color: #15803d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li {
+            padding: 10px 0 10px 30px;
+            border-bottom: 1px solid rgba(34,197,94,0.2);
+            color: #14532d;
+            font-size: 1em;
+            line-height: 1.6;
+            position: relative;
+        }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before { content: "→"; position: absolute; left: 8px; color: #22c55e; font-weight: 700; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1em;
+            padding: 10px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .print-btn:hover { background: var(--primary); color: white; }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-mid) 0%, #f0abfc 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .print-header { display: none; }
+        .print-footer { display: none; }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.2s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .sticky-nav { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2em; }
+            header, .story-section { padding: 30px 20px; }
+            .story-content { font-size: 1.05em; }
+            .hero-icon { width: 100px; height: 100px; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.85; }
+            .motto-box { font-size: 1.1em; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav, .cookie-banner { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; margin-bottom: 20px; }
+            header .hero-image-container, .motto-box { display: none; }
+            .story-intro { font-size: 10pt; }
+            h1 { font-size: 18pt; color: #000; }
+            .story-meta { color: #555; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; }
+            .story-content strong, .story-content em { color: #000; }
+            .story-quote { background: #f5f5f5; border-left: 4px solid #888; color: #000; font-size: 1em; }
+            .page-divider { color: #555; }
+            .section-divider { display: none; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .info-box-title, .technique-box-title, .nachbesprechung-title { color: #000; }
+            .info-box-text, .technique-box-text, .nachbesprechung-fragen li { color: #000; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+            .story-content { orphans: 3; widows: 3; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt.html" class="back-link">← Lernolotls Welt</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Ich bin Ich</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Ich bin anders-Geschichte</div>
+        <div class="story-meta">Vorlesegeschichte · Ich bin Ich · 5–10 Jahre</div>
+        <h1>Ich bin anders — und das ist okay</h1>
+        <p class="story-intro">
+            Manchmal fühlt es sich seltsam an, anders zu sein als die anderen.
+            Der Lernolotl kennt dieses Gefühl gut. Aber er hat etwas herausgefunden:
+            Anders ist nicht falsch. Anders bedeutet nur — eine andere Art, die Welt zu sehen.
+            Und das kann etwas sein, das man braucht.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-icon.png" alt="Der Lernolotl" class="hero-icon">
+            <img src="../char-freunde-oma-hilde.png" alt="Oma Hilde" class="hero-char-icon">
+            <img src="../char-familie-mama.png" alt="Mama" class="hero-char-icon">
+        </div>
+        <div class="motto-box">
+            „Ich bin nicht falsch.<br>Ich bin einfach anders —<br>und das ist wunderbar."
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>In der zweiten Klasse fragte Herr Mayer einmal:
+            „Was macht euch besonders?"</p>
+
+            <p>Finn sagte: „Ich kann sehr schnell rennen."
+            Lena sagte: „Ich kenne alle Vogelarten in unserem Park."
+            Jemand sagte: „Ich habe eine Katze."
+            Das war vielleicht nicht ganz das, was Herr Mayer gemeint hatte,
+            aber er nickte trotzdem freundlich.</p>
+
+            <p>Der Lernolotl sagte nichts. Er dachte nach.</p>
+
+            <p>Was machte ihn besonders? Er konnte sehr viele Fakten über Axolotl.
+            Er konnte Muster in Zahlenreihen erkennen, die andere übersahen.
+            Er vergaß nie, was jemand wirklich gesagt hatte —
+            auch nicht drei Wochen später.</p>
+
+            <p>Aber er wusste auch, was ihn anders machte, und das war nicht immer
+            das Gleiche wie besonders. Er mochte keine unerwarteten Planänderungen.
+            Er hörte Dinge, die andere scheinbar gar nicht wahrnahmen —
+            das Summen der Heizung, das Kratzen von Stühlen auf dem Boden.
+            Er verstand manchmal nicht, warum alle lachten, wenn jemand einen Witz machte,
+            der ihm nicht witzig vorkam.</p>
+
+            <p><em>Bin ich falsch eingestellt?</em>, fragte er sich manchmal.
+            Wie ein Radio, das nicht ganz auf dem richtigen Sender ist.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">🌿 ✨ 🌿</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>An einem Sonntag kam Oma Hilde zu Besuch.
+            Sie roch nach Kardamom und alten Büchern, wie immer.
+            Sie stellte keine Fragen — sie erzählte einfach.
+            Das mochte der Lernolotl sehr.</p>
+
+            <p>Sie saßen zusammen auf dem Sofa, und Oma Hilde zeigte ihm ein altes Foto.
+            Ein kleines Mädchen mit ernstem Gesicht, das nicht in die Kamera schaute,
+            sondern auf etwas neben der Kamera.</p>
+
+            <p>„Weißt du, wer das ist?", fragte Oma Hilde.</p>
+
+            <p>Der Lernolotl schüttelte den Kopf.</p>
+
+            <p>„Das bin ich", sagte Oma Hilde.
+            „Ich mochte auch keine Kameras. Ich wusste nie, wohin ich schauen sollte.
+            Die anderen Kinder haben immer einfach gelächelt.
+            Ich habe nachgedacht: Was bedeutet Lächeln eigentlich? Ist es für die Kamera?
+            Für den Menschen dahinter? Für mich? Das schien mir eine wichtige Frage."</p>
+
+            <div class="char-row">
+                <img src="../char-freunde-oma-hilde.png" alt="Oma Hilde">
+                <div>
+                    <div class="char-row-name">Oma Hilde</div>
+                    <div class="char-row-text">„Ein anderes Gehirn ist wie ein anderes Werkzeug. Es kann Dinge, die andere nicht können — und manchmal braucht man genau das."</div>
+                </div>
+            </div>
+
+            <p>Der Lernolotl sah sie an. „Hast du dich auch manchmal falsch gefühlt?"</p>
+
+            <p>Oma Hilde überlegte. <strong>„Früher ja"</strong>, sagte sie dann.
+            „Aber irgendwann habe ich aufgehört, mein Gehirn mit anderen Gehirnen zu vergleichen.
+            Weil das ungefähr so sinnvoll ist wie zu fragen, warum ein Hammer keine gute Säge ist."</p>
+
+            <p>Der Lernolotl dachte darüber nach. Das war ein guter Vergleich.</p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Abends fragte der Lernolotl Mama, ob sein Gehirn kaputt sei.</p>
+
+            <p>Mama setzte sich neben ihn. Sie antwortete nicht sofort —
+            das war ein gutes Zeichen. Schnelle Antworten bedeuteten meistens,
+            dass jemand nicht wirklich nachgedacht hatte.</p>
+
+            <p>„Nein", sagte sie dann. „Dein Gehirn ist nicht kaputt.
+            Es ist anders verdrahtet. Das bedeutet: Manche Dinge kosten dich mehr Energie
+            als andere Menschen. Und manche Dinge kannst du besser als die meisten —
+            auch wenn man das nicht sofort sieht."</p>
+
+            <p>„Was zum Beispiel?", fragte der Lernolotl.</p>
+
+            <p>Mama zählte auf: „Du erinnerst dich an Details, die andere vergessen.
+            Du erkennst Muster sehr schnell. Du bist immer ehrlich —
+            auch wenn es manchmal unbequem ist. Du denkst wirklich nach,
+            bevor du redest. Und du interessierst dich tief für Dinge,
+            nicht nur ein bisschen."</p>
+
+            <p>Der Lernolotl hörte zu.</p>
+
+            <p><em>Details erinnern. Muster erkennen. Ehrlich sein. Tief interessiert sein.</em></p>
+
+            <p>Das stimmte. Das war er.</p>
+
+            <div class="story-quote">
+                „Ich bin nicht falsch eingestellt. Ich empfange auf einem anderen Sender — und dieser Sender hat Sachen, die andere verpassen."
+            </div>
+
+            <p>Am nächsten Tag fragte Herr Mayer nochmal: „Hat noch jemand eine Antwort
+            auf die Frage von gestern? Was macht euch besonders?"</p>
+
+            <p>Der Lernolotl hob die Hand.</p>
+
+            <p>„Ich merke Dinge, die andere übersehen", sagte er.
+            „Und ich vergesse sie nicht."</p>
+
+            <p>Herr Mayer nickte. Diesmal nicht nur höflich.
+            <strong>Er schrieb es an die Tafel.</strong></p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🌿</span>
+            <span>Stärken sehen — das Superkräfte-Gespräch</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Neurodiversen Kindern fehlt oft ein klares Bild ihrer eigenen Stärken — weil Schule und Alltag häufig das betonen, was schwer fällt. Dieses Gespräch kann helfen:</strong></p>
+            <ul>
+                <li><strong>Frag nach konkreten Momenten:</strong> „Wann hast du heute etwas bemerkt, das andere übersehen haben?" statt „Was kannst du gut?"</li>
+                <li><strong>Benenne die Stärke hinter der Herausforderung:</strong> Hohe Reizwahrnehmung = außergewöhnliche Detailgenauigkeit. Tiefes Interesse = echte Expertise. Direkte Kommunikation = Verlässlichkeit.</li>
+                <li><strong>Schreib es auf:</strong> Eine gemeinsam erstellte „Superkräfte-Liste" — nicht einmal, sondern regelmäßig aktualisiert — gibt Kindern etwas zum Festhalten an schwierigen Tagen.</li>
+            </ul>
+            <p>Das Ziel ist nicht falscher Optimismus, sondern ein ehrliches, vollständiges Selbstbild — mit Stärken und Herausforderungen.</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Was meint Oma Hilde, wenn sie sagt: „Ein Hammer ist keine schlechte Säge — er ist ein Hammer"?</li>
+            <li>Was zählt Mama als Stärken des Lernolotl auf? Welche davon erkennst du bei dir selbst?</li>
+            <li>Was macht dich besonders — auch wenn es sich manchmal schwierig anfühlt?</li>
+            <li>Gibt es jemanden in deiner Familie oder Schule, der auch auf einem „anderen Sender" empfängt?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Selbstbild und Neurodiversität</span>
+        </div>
+        <div class="info-box-text">
+            <p>Kinder, die merken, dass sie anders sind als die meisten, entwickeln oft ein negatives Selbstbild — nicht weil sie weniger können, sondern weil der Vergleichsmaßstab nicht zu ihnen passt. Geschichten wie diese können helfen, einen anderen Blickwinkel einzuführen: nicht „Was kann ich nicht?" sondern „Was kann mein Gehirn, das andere Gehirne nicht können?"</p>
+            <p>Das bedeutet nicht, Herausforderungen kleinzureden. Es bedeutet, ein vollständiges Bild zu schaffen — mit Stärken, die real sind, aber im Schulalltag oft unsichtbar bleiben: Detailwahrnehmung, Ehrlichkeit, tiefes Interesse, Mustererkennung, Verlässlichkeit.</p>
+            <p>Die Frage „Was macht dich besonders?" ist eine, die Kinder regelmäßig hören sollten — nicht einmal zu Weihnachten, sondern als echtes, immer wieder geführtes Gespräch.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>
