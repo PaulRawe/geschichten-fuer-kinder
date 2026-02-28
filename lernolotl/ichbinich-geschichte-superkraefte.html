@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Was bin ich gut in? Der Lernolotl entdeckt seine Superkräfte — eine Vorlesegeschichte über Stärken, Selbstwert und positive Selbstwahrnehmung für Kinder.">
+    <title>Was bin ich gut in? Der Lernolotl entdeckt seine Superkräfte – Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/ichbinich-geschichte-superkraefte.html">
+
+    <meta property="og:title" content="Was bin ich gut in? Der Lernolotl entdeckt seine Superkräfte">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl erstellt mit Mama und Finn eine Superkräfte-Karte — und entdeckt, was er wirklich kann. Für Kinder 5–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/ichbinich-geschichte-superkraefte.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0d9488;
+            --primary-mid: #2dd4bf;
+            --primary-light: #99f6e4;
+            --primary-pale: #f0fdfa;
+            --accent: #f59e0b;
+            --bg-gradient-from: #0d9488;
+            --bg-gradient-to: #134e4a;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #134e4a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: var(--primary);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 16px rgba(13,148,136,0.3)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(13,148,136,0.2)); }
+
+        /* Superkräfte-Karte visuell */
+        .superkraft-karte {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            border-radius: 20px;
+            padding: 30px 35px;
+            margin: 35px 0;
+            color: white;
+            box-shadow: 0 10px 30px rgba(13,148,136,0.35);
+        }
+
+        .superkraft-karte-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3em;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .superkraft-liste {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .superkraft-liste li {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 10px 15px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .superkraft-liste li::before {
+            content: "⚡";
+            font-size: 1em;
+        }
+
+        @media (max-width: 600px) {
+            .superkraft-liste { grid-template-columns: 1fr; }
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #0f766e; font-style: italic; }
+
+        .page-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+
+        .char-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-pale);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+
+        .story-quote {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2em;
+            color: var(--bg-gradient-to);
+            line-height: 1.5;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+        }
+        .info-box-title { color: #b45309; font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .technique-box {
+            background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary-mid);
+            box-shadow: 0 8px 24px rgba(13,148,136,0.15);
+        }
+        .technique-box-title { color: var(--bg-gradient-to); font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .technique-box-text { color: #134e4a; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+
+        .nachbesprechung {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 6px solid #22c55e;
+            box-shadow: 0 8px 24px rgba(34,197,94,0.15);
+        }
+        .nachbesprechung-title { font-family: 'Fredoka One', cursive; color: #15803d; font-size: 1.3em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li { padding: 10px 0 10px 30px; border-bottom: 1px solid rgba(34,197,94,0.2); color: #14532d; font-size: 1em; line-height: 1.6; position: relative; }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before { content: "→"; position: absolute; left: 8px; color: #22c55e; font-weight: 700; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn { background: white; color: var(--primary); border: 2px solid var(--primary); font-family: 'Fredoka One', cursive; font-size: 1em; padding: 10px 28px; border-radius: 50px; cursor: pointer; transition: all 0.2s; }
+        .print-btn:hover { background: var(--primary); color: white; }
+
+        .ad-container { background: white; border-radius: 15px; padding: 20px; margin: 35px 0; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary-mid) 0%, var(--accent) 100%); z-index: 1000; transition: width 0.1s; }
+
+        .print-header { display: none; }
+        .print-footer { display: none; }
+
+        footer { background: white; border-radius: 25px; padding: 40px; margin-top: 50px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.2s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .sticky-nav { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2em; }
+            header, .story-section { padding: 30px 20px; }
+            .story-content { font-size: 1.05em; }
+            .hero-icon { width: 90px; height: 90px; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.85; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav, .cookie-banner { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; margin-bottom: 20px; }
+            header .hero-image-container { display: none; }
+            .story-intro { font-size: 10pt; }
+            h1 { font-size: 18pt; color: #000; }
+            .story-meta { color: #555; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; }
+            .story-content strong, .story-content em { color: #000; }
+            .story-quote { background: #f5f5f5; border-left: 4px solid #888; color: #000; font-size: 1em; }
+            .superkraft-karte { background: #f0f0f0; color: #000; box-shadow: none; }
+            .superkraft-liste li { background: #e8e8e8; }
+            .page-divider { color: #555; }
+            .section-divider { display: none; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .info-box-title, .technique-box-title, .nachbesprechung-title { color: #000; }
+            .info-box-text, .technique-box-text, .nachbesprechung-fragen li { color: #000; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+            .story-content { orphans: 3; widows: 3; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt.html" class="back-link">← Lernolotls Welt</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Ich bin Ich</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Superkräfte-Geschichte</div>
+        <div class="story-meta">Vorlesegeschichte · Ich bin Ich · 5–10 Jahre</div>
+        <h1>Was bin ich gut in? Meine Superkräfte entdecken</h1>
+        <p class="story-intro">
+            In der Schule fragt Herr Mayer: Was kannst du besonders gut?
+            Der Lernolotl weiß es nicht sofort. Aber dann machen er, Mama und Finn
+            etwas zusammen, das er nie vergessen wird —
+            eine Karte mit allem, was er wirklich kann.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-happy.png" alt="Der Lernolotl" class="hero-icon">
+            <img src="../char-familie-mama.png" alt="Mama" class="hero-char-icon">
+            <img src="../char-schule-finn.png" alt="Finn" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Herr Mayer hatte eine neue Aufgabe für die Klasse:
+            Jedes Kind sollte aufschreiben, was es besonders gut konnte.
+            Drei Dinge. Auf ein Blatt Papier. Bis morgen.</p>
+
+            <p>Finn hatte sofort angefangen zu schreiben.
+            Fußball. Witze. Schnell rennen. Fertig.</p>
+
+            <p>Lena dachte kurz nach und schrieb:
+            Lesen. Pflanzen bestimmen. Zuhören.</p>
+
+            <p>Der Lernolotl saß da und starrte auf das leere Blatt.</p>
+
+            <p>Nicht weil ihm nichts einfiel. Sondern weil ihm zu viel einfiel —
+            und nichts davon sich richtig anfühlte.
+            Er konnte viele Fakten über Axolotl.
+            War das eine Stärke? Oder einfach nur Wissen, das niemanden interessierte?
+            Er konnte Muster in Zahlen erkennen.
+            Aber war das wirklich etwas Besonderes, oder machten das alle?</p>
+
+            <p><em>Was, wenn ich gar keine richtigen Stärken habe?</em>,
+            dachte er. <em>Was, wenn ich nur Dinge kann, die zu nichts nütze sind?</em></p>
+
+            <p>Er faltete das leere Blatt und steckte es in die Tasche.
+            Er würde es zu Hause versuchen.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">⚡ 🌟 ⚡</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Zu Hause erzählte er Mama von der Aufgabe.
+            Er legte das leere Blatt auf den Tisch.</p>
+
+            <p>Mama sah das Blatt an. Dann ihn. „Gar nichts?", fragte sie.</p>
+
+            <p>„Mir fällt nichts ein, das zählt", sagte er.</p>
+
+            <p>Mama holte einen zweiten Stift. „Dann machen wir das zusammen.
+            Aber ich fange an — du sagst mir, ob es stimmt."</p>
+
+            <p>Sie schrieb: <strong>Details erinnern.</strong>
+            „Stimmt das?"</p>
+
+            <p>Der Lernolotl dachte nach. Er erinnerte sich an das Gespräch
+            vom Dienstag vor drei Wochen, Wort für Wort.
+            Er erinnerte sich, welche Farbe Finn beim letzten Ausflug
+            an den Schuhen gehabt hatte. Er erinnerte sich an Zahlen,
+            die er einmal kurz gesehen hatte.</p>
+
+            <p>„Ja", sagte er. „Das stimmt."</p>
+
+            <p>Mama schrieb weiter: <strong>Ehrlich sein.</strong>
+            „Stimmt das?"</p>
+
+            <p>„Manchmal zu ehrlich", sagte der Lernolotl.</p>
+
+            <p>„Ehrlichkeit ist eine Stärke", sagte Mama.
+            „Die meisten Menschen wünschen sich mehr davon."</p>
+
+            <div class="char-row">
+                <img src="../char-familie-mama.png" alt="Mama">
+                <div>
+                    <div class="char-row-name">Mama</div>
+                    <div class="char-row-text">„Stärken sehen sich von innen oft nicht wie Stärken an. Deshalb braucht man manchmal jemanden, der von außen draufschaut."</div>
+                </div>
+            </div>
+
+            <p>Sie schrieben noch mehr auf: Muster erkennen.
+            Tief nachdenken, bevor er redet.
+            Sich wirklich für Dinge interessieren — nicht nur ein bisschen.
+            Versprechen halten.</p>
+
+            <p>Das Blatt war jetzt fast voll.
+            Der Lernolotl sah es an.
+            <em>Das war er. Alles davon.</em></p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Am nächsten Tag kam Finn nach der Schule mit.
+            Er sah das Blatt auf dem Küchentisch liegen.</p>
+
+            <p>„Was ist das?"</p>
+
+            <p>„Meine Superkräfte", sagte der Lernolotl.</p>
+
+            <p>Finn las. Er war ungewöhnlich still dabei.
+            Dann sagte er: „Das mit dem Versprechen halten stimmt.
+            Du hast mir letzten Sommer versprochen,
+            dass du mir erklärst wie Tintenfische schwimmen.
+            Und du hast es erklärt."</p>
+
+            <p>Der Lernolotl erinnerte sich.
+            Finn hatte das längst vergessen gehabt.
+            Er nicht.</p>
+
+            <p>„Kann ich auch eine machen?", fragte Finn.</p>
+
+            <p>Also machten sie zu zweit weiter.
+            Finn brauchte keine Hilfe beim Anfangen —
+            aber beim dritten Punkt stocfte er.</p>
+
+            <p>„Ich weiß nicht", sagte er. „Ich bin eigentlich bei nichts wirklich gut."</p>
+
+            <p>Der Lernolotl sah ihn an.
+            <strong>„Du merkst sofort, wenn jemand traurig ist"</strong>,
+            sagte er. „Das habe ich beobachtet.
+            Du fragst dann immer was los ist.
+            Das machen nicht viele."</p>
+
+            <p>Finn sah ihn komisch an. Dann schrieb er es auf.</p>
+
+            <div class="story-quote">
+                „Stärken sieht man am besten von außen. Deshalb braucht jeder manchmal jemanden, der sagt: Hey — das da. Das kannst du wirklich gut."
+            </div>
+
+            <p>Am nächsten Morgen gab der Lernolotl Herrn Mayer das Blatt.
+            Herr Mayer las es durch — langsam, nicht schnell.
+            Dann sah er den Lernolotl an.</p>
+
+            <p>„Das ist eine sehr gute Liste", sagte er.
+            „Und ich würde noch etwas ergänzen, wenn du erlaubst."</p>
+
+            <p>Der Lernolotl nickte.</p>
+
+            <p>Herr Mayer schrieb unten ans Blatt:
+            <em>Weiß, was er kann — und fragt, wenn er es nicht weiß.</em></p>
+
+            <p>Das war vielleicht die wichtigste Stärke von allen.</p>
+        </div>
+    </div>
+
+    <div class="superkraft-karte">
+        <div class="superkraft-karte-title">⚡ Die Superkräfte des Lernolotl</div>
+        <ul class="superkraft-liste">
+            <li>Details erinnern</li>
+            <li>Ehrlich sein</li>
+            <li>Muster erkennen</li>
+            <li>Tief nachdenken</li>
+            <li>Wirklich zuhören</li>
+            <li>Versprechen halten</li>
+            <li>Sich tief für Dinge interessieren</li>
+            <li>Fragen, wenn er etwas nicht weiß</li>
+        </ul>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🗺️</span>
+            <span>Die Superkräfte-Karte — so geht's</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Eine Superkräfte-Karte ist kein Selbstlob-Blatt — sie ist ein ehrliches, gemeinsam erarbeitetes Bild davon, was ein Kind wirklich kann. So erstellt ihr sie:</strong></p>
+            <ul>
+                <li><strong>Eltern fangen an:</strong> Schreibt konkrete Beobachtungen auf — nicht „du bist nett", sondern „du erinnerst dich an Dinge, die andere vergessen haben". Konkret ist überzeugender als allgemein.</li>
+                <li><strong>Kind ergänzt oder streicht:</strong> Was stimmt? Was fühlt sich falsch an? Das Gespräch ist wichtiger als das Ergebnis.</li>
+                <li><strong>Freunde fragen:</strong> Was würden Finn und Lena sagen? Eine Stärke, die andere sehen, fühlt sich echter an als eine, die man selbst aufschreibt.</li>
+                <li><strong>Regelmäßig aktualisieren:</strong> Stärken wachsen. Was mit 6 noch klein ist, kann mit 8 groß sein.</li>
+            </ul>
+            <p>Die Karte gehört sichtbar aufgehängt — nicht in einer Schublade. An schlechten Tagen ist sie das Erste, was man lesen sollte.</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Warum konnte der Lernolotl das Blatt am Anfang nicht ausfüllen — obwohl er viele Stärken hat?</li>
+            <li>Was schreibt Mama auf — und was hätte der Lernolotl selbst nie aufgeschrieben?</li>
+            <li>Was sagt der Lernolotl über Finn, das Finn selbst nicht gesehen hatte?</li>
+            <li>Was sind deine drei größten Stärken — sollen wir sie zusammen herausfinden?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Warum Kinder ihre Stärken nicht sehen</span>
+        </div>
+        <div class="info-box-text">
+            <p>Kinder, die sich regelmäßig mit anderen vergleichen und dabei das Gefühl haben, langsamer, lauter, unruhiger oder anders zu sein, entwickeln häufig ein Bild von sich, das hauptsächlich aus dem besteht, was schwer fällt — nicht aus dem, was leichtfällt.</p>
+            <p>Was leichtfällt, wird selten benannt. Es wird einfach gemacht. Und genau deshalb ist das Aufschreiben so wichtig: Stärken werden sichtbar, wenn man aufhört sie als selbstverständlich zu behandeln.</p>
+            <p>Die wirksamsten Stärkenformulierungen sind konkret und beobachtbar: „Du hast gemerkt, dass ich traurig war, bevor ich etwas gesagt habe" trifft ein Kind tiefer als „Du bist einfühlsam".</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>
