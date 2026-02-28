@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Lernolotl und der Streit mit Finn – Eine Vorlesegeschichte über Freundschaft, Entschuldigen und Versöhnung für Grundschulkinder.">
+    <title>Nach dem Streit — Wie Freundschaft wieder wächst | Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/schule-geschichte-streit.html">
+
+    <meta property="og:title" content="Nach dem Streit — Wie Freundschaft wieder wächst">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl und Finn streiten. Aber Freundschaft bedeutet, danach wieder zueinanderzufinden. Für Kinder 6–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/schule-geschichte-streit.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-mid: #60a5fa;
+            --primary-light: #bfdbfe;
+            --primary-pale: #eff6ff;
+            --accent: #7ecac3;
+            --bg-gradient-from: #3b82f6;
+            --bg-gradient-to: #1e40af;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
+            min-height: 100vh; padding: 20px; color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky; top: 20px; background: white;
+            border-radius: 20px; padding: 15px 25px; margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 100;
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); text-decoration: none;
+            font-weight: 700; transition: all 0.3s; font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white; padding: 8px 20px; border-radius: 20px;
+            font-weight: 700; font-family: 'Fredoka One', cursive; font-size: 0.95em;
+        }
+
+        header {
+            background: white; border-radius: 25px;
+            padding: 50px 40px 40px; text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin-bottom: 40px;
+        }
+        .story-meta { color: var(--primary); font-size: 0.9em; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        h1 { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 2.5em; margin-bottom: 20px; line-height: 1.2; }
+        .story-intro { color: #555; font-size: 1.1em; line-height: 1.8; max-width: 680px; margin: 0 auto 30px; }
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            padding: 40px; display: flex; align-items: center;
+            justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap;
+        }
+        .hero-icon { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(59,130,246,0.25)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(59,130,246,0.2)); }
+
+        .story-section {
+            background: white; border-radius: 25px; padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 40px;
+        }
+        .story-content { color: #333; font-size: 1.15em; line-height: 2; max-width: 700px; margin: 0 auto; }
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #1e40af; font-style: italic; }
+
+        .page-divider { text-align: center; margin: 40px 0; color: var(--primary); font-family: 'Fredoka One', cursive; font-size: 1.1em; letter-spacing: 2px; opacity: 0.6; }
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+
+        .char-row {
+            display: flex; align-items: center; gap: 20px;
+            background: var(--primary-pale); border-radius: 18px;
+            padding: 20px 24px; margin: 30px 0;
+        }
+        .char-row img { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+        .char-row-name { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1em; margin-bottom: 4px; }
+        .char-row-text { color: #1e40af; font-size: 0.95em; line-height: 1.6; font-style: italic; }
+
+        .technique-box {
+            background: #f0fdf4; border-radius: 20px; padding: 30px;
+            border: 2px solid #86efac; margin-bottom: 30px;
+        }
+        .technique-box-title { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; color: #166534; font-size: 1.25em; margin-bottom: 16px; }
+        .technique-box-text { color: #14532d; font-size: 0.97em; line-height: 1.75; }
+        .technique-box-text ul { margin: 12px 0 12px 20px; }
+        .technique-box-text li { margin-bottom: 8px; }
+        .technique-box-text p { margin-bottom: 12px; }
+
+        .nachbesprechung { background: #eff6ff; border-radius: 20px; padding: 30px; border: 2px solid #bfdbfe; margin-bottom: 30px; }
+        .nachbesprechung-title { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; color: #1e40af; font-size: 1.2em; margin-bottom: 16px; }
+        .nachbesprechung-fragen { list-style: none; }
+        .nachbesprechung-fragen li { padding: 12px 0; border-bottom: 1px solid #dbeafe; color: #1e3a8a; font-size: 0.97em; line-height: 1.6; padding-left: 24px; position: relative; }
+        .nachbesprechung-fragen li::before { content: '?'; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+
+        .info-box { background: #fefce8; border-radius: 20px; padding: 30px; border: 2px solid #fde047; margin-bottom: 30px; }
+        .info-box-title { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; color: #713f12; font-size: 1.2em; margin-bottom: 14px; }
+        .info-box-text { color: #713f12; font-size: 0.95em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn { background: linear-gradient(135deg, var(--primary), var(--bg-gradient-to)); color: white; border: none; padding: 14px 36px; border-radius: 30px; font-family: 'Fredoka One', cursive; font-size: 1.1em; cursor: pointer; box-shadow: 0 6px 20px rgba(59,130,246,0.35); transition: transform 0.2s; }
+        .print-btn:hover { transform: translateY(-2px); }
+
+        .ad-container { background: white; border-radius: 15px; padding: 18px; margin: 20px 0; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .ad-label { color: #bbb; font-size: 0.68em; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #eee; border-radius: 10px; padding: 24px; color: #ccc; font-size: 0.85em; }
+
+        #progressBar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary), var(--primary-mid)); z-index: 1001; }
+
+        footer { background: white; border-radius: 20px; padding: 30px 40px; text-align: center; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 6px; }
+        .footer-tagline { color: #aaa; font-size: 0.85em; margin-bottom: 16px; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-size: 0.85em; font-weight: 600; }
+        .footer-info { color: #ccc; font-size: 0.78em; }
+        .print-footer { display: none; }
+
+        @media print {
+            nav, .sticky-nav, .ad-container, .print-btn-wrap, footer .footer-links, #progressBar { display: none !important; }
+            body { background: white; padding: 0; font-size: 12pt; line-height: 1.6; color: #000; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 20px 0; }
+            h1 { font-size: 18pt; }
+            .nachbesprechung { display: block !important; }
+            .story-content { orphans: 3; widows: 3; }
+            .print-footer { display: block; text-align: center; color: #666; font-size: 9pt; margin-top: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            header { padding: 30px 20px; }
+            .story-section { padding: 30px 20px; }
+            .char-row { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<div id="progressBar"></div>
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="lernolotls-welt-schule.html" class="back-link">← Schule</a>
+        <span class="feeling-badge">Streit · Freundschaft · Versöhnung</span>
+    </nav>
+
+    <header>
+        <div class="story-meta">Geschichte 8 · Schule · ca. 6 Min. Lesezeit</div>
+        <h1>Nach dem Streit</h1>
+        <p class="story-intro">
+            Der Lernolotl und Finn haben sich noch nie richtig gestritten. 
+            Bis zu diesem Dienstag. Und danach weiß der Lernolotl nicht mehr, 
+            wie Freundschaft eigentlich weitergeht — wenn man das Falsche gesagt hat.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-sad.png" alt="Lernolotl" class="hero-icon">
+            <img src="../char-schule-finn.png" alt="Finn" class="hero-char-icon">
+            <img src="../char-schule-lena.png" alt="Lena" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Es fing beim Fußball an.</p>
+
+            <p>Finn hatte in der Pause gesagt, der Lernolotl könne mitspielen.
+            Der Lernolotl hatte mitgespielt, obwohl er Fußball eher kompliziert fand —
+            zu viele unausgesprochene Regeln, zu viel Gerenne ohne Erklärung.</p>
+
+            <p>Er hatte den Ball falsch getreten. Die andere Mannschaft hatte gewonnen.
+            Finn hatte nichts gesagt. Aber sein Gesicht hatte etwas gesagt.
+            Der Lernolotl kannte das Gesicht nicht genau — aber er wusste, 
+            dass es kein gutes Gesicht war.</p>
+
+            <p>Danach, beim Aufstellen für den Unterricht, hatte der Lernolotl gesagt:
+            <em>„Du hast auch nicht alle Tore gemacht. Timo hat drei von fünf geschossen."</em></p>
+
+            <p>Er meinte es als Tatsache. Es war eine Tatsache. Er hatte gezählt.
+            Aber Finn hatte ihn angesehen — und war einfach reingegangen.
+            Ohne etwas zu sagen.</p>
+
+            <p>Der Lernolotl saß danach neben einem leeren Platz. 
+            Finn saß normalerweise nicht neben ihm, aber er war immer irgendwie in der Nähe.
+            Heute war er weit hinten.</p>
+
+            <div class="char-row">
+                <img src="../lernolotl-sad.png" alt="Lernolotl traurig">
+                <div>
+                    <div class="char-row-name">Der Lernolotl (in Gedanken)</div>
+                    <div class="char-row-text">„Ich weiß, was ich gesagt habe. Ich weiß nicht, warum es falsch war. Das macht es schwerer."</div>
+                </div>
+            </div>
+
+            <p>Das war das Problem mit Streiten. 
+            Manchmal wusste man genau, was man falsch gemacht hatte.
+            Und manchmal wusste man es nicht — und das war noch schlimmer.
+            Weil man dann nicht wusste, womit man anfangen sollte.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">🤝 💬 🤝</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>In der zweiten Pause fragte Lena: „Hast du und Finn euch gestritten?"</p>
+
+            <p>Der Lernolotl überlegte. „Ich weiß nicht. Ich glaube schon.
+            Aber ich weiß nicht genau, warum."</p>
+
+            <p>„Was hast du gesagt?", fragte Lena.</p>
+
+            <p>Er erzählte es ihr. Die Tore. Timo. Die Zahlen.
+            Lena hörte zu und nickte langsam.</p>
+
+            <p>„Das war zwar richtig", sagte sie, „aber Finn war schon traurig wegen des Spiels.
+            Und wenn jemand traurig ist und man zählt die Fehler auf — 
+            dann fühlt es sich an wie: Du bist schuld."</p>
+
+            <p>Der Lernolotl dachte darüber nach. Er hatte das nicht gemeint.
+            Er hatte wirklich nur eine Tatsache gesagt.
+            Aber er verstand jetzt, was Lena meinte: 
+            <strong>Eine Tatsache kann sich trotzdem falsch anfühlen, wenn der Zeitpunkt falsch ist.</strong></p>
+
+            <p>„Was mache ich jetzt?", fragte er.</p>
+
+            <p>„Du gehst zu ihm hin", sagte Lena. „Und du sagst etwas."</p>
+
+            <p>„Was?"</p>
+
+            <p>„Das weißt du selbst besser als ich", sagte Lena. „Aber fang damit an, 
+            dass du es verstanden hast."</p>
+
+            <div class="char-row">
+                <img src="../char-schule-lena.png" alt="Lena">
+                <div>
+                    <div class="char-row-name">Lena</div>
+                    <div class="char-row-text">„Man muss nicht gewusst haben, dass man etwas Falsches tut, um sich trotzdem zu entschuldigen."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Der Lernolotl ging nach dem Unterricht zu Finn.
+            Das war schwer. Nicht wegen Finn — sondern weil er nicht wusste, was er sagen sollte.</p>
+
+            <p>Er hatte die Worte dreimal im Kopf sortiert.
+            Dann nochmal anders sortiert.
+            Dann stand er vor Finn und sagte:</p>
+
+            <p><strong>„Ich glaube, was ich gesagt habe, hat sich falsch angefühlt. 
+            Das wollte ich nicht. Tut mir leid."</strong></p>
+
+            <p>Finn sah ihn an. Kurze Pause.</p>
+
+            <p>Dann sagte Finn: „Ich war auch sauer, weil wir verloren haben. 
+            Das war eigentlich nicht so dein Fehler."</p>
+
+            <p>Wieder eine Pause. Aber eine andere Pause.
+            Eine Pause, in der beide wussten, dass das jetzt in Ordnung geht.</p>
+
+            <p>„Magst du morgen wieder mitspielen?", fragte Finn.</p>
+
+            <p>Der Lernolotl überlegte. Ehrlich überlegte.
+            „Ich mag mehr zuschauen als spielen. Aber ich kann mal mitzählen, wie viele Tore."</p>
+
+            <p>Finn lachte. Nicht über ihn — mit ihm.
+            Der Lernolotl kannte den Unterschied, auch wenn er ihn manchmal erst eine Sekunde später hörte.</p>
+
+            <p>Auf dem Heimweg dachte der Lernolotl: Entschuldigen war schwer.
+            Aber das Danach war eigentlich ganz in Ordnung.
+            Vielleicht sogar besser als Vorher — weil er jetzt wusste: 
+            <em>Freundschaft geht weiter, auch nach einem Fehler.</em></p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🤝</span>
+            <span>Drei Schritte nach einem Streit</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Der Lernolotl lernt in dieser Geschichte, wie Versöhnung funktioniert — in drei einfachen Schritten:</strong></p>
+            <ul>
+                <li><strong>Verstehen, was passiert ist:</strong> Nicht sofort entschuldigen, sondern erst wirklich nachdenken — was hat sich falsch angefühlt, und warum? (Lena hilft dabei.)</li>
+                <li><strong>Etwas sagen — auch wenn es schwer ist:</strong> „Ich glaube, was ich gesagt habe, hat sich falsch angefühlt." Das ist keine perfekte Entschuldigung. Aber eine echte.</li>
+                <li><strong>Zuhören, was der andere sagt:</strong> Finn hat auch etwas zugegeben. Echte Versöhnung geht in beide Richtungen.</li>
+            </ul>
+            <p>Tipp: Kinder mit Autismus oder ADHS verstehen soziale Signale oft anders — nicht weil ihnen Empathie fehlt, sondern weil sie Dinge wörtlich nehmen. Es kann helfen, konkret zu benennen: „Das war verletzend, weil..." statt nur „Das war gemein."</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Warum war Finn traurig — und was hat der Lernolotl gesagt, das es schlimmer gemacht hat?</li>
+            <li>Hat der Lernolotl etwas Böses gemeint? Was hat er gelernt?</li>
+            <li>Hast du dich schon mal entschuldigt, obwohl du nicht genau wusstest, was du falsch gemacht hast?</li>
+            <li>Was ist der Unterschied zwischen „über jemanden lachen" und „mit jemandem lachen"?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Wenn Kinder nicht wissen, was sie falsch gemacht haben</span>
+        </div>
+        <div class="info-box-text">
+            <p>Viele Kinder — besonders solche mit Autismus oder ADHS — nehmen Sprache wörtlich und verstehen nicht immer, warum eine sachlich richtige Aussage jemanden verletzen kann. Das ist kein Mangel an Mitgefühl, sondern eine andere Art der sozialen Wahrnehmung.</p>
+            <p>Hilfreich ist es, konkret zu benennen: „Du hast die Fehler aufgezählt, als Finn schon traurig war — das hat sich für ihn so angefühlt wie: Du bist schuld." Das verbindet die Ursache mit der Wirkung auf eine verständliche Art.</p>
+            <p>Wichtig: Entschuldigen lernen bedeutet nicht, immer schuldig zu sein. Es bedeutet, zu verstehen, dass die eigene Wirkung auf andere zählt — auch wenn die Absicht gut war.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="lernolotls-welt-schule.html">← Alle Schulgeschichten</a>
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>

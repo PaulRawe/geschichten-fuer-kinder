@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Lernolotl und der Klassenzimmer-Lärm – Eine Vorlesegeschichte über Reizüberflutung, Geräuschempfindlichkeit und kleine Tricks für Kinder mit Hochsensibilität und Autismus.">
+    <title>Wenn es zu laut wird — Der Lernolotl im lauten Klassenzimmer | Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/schule-geschichte-laerm.html">
+
+    <meta property="og:title" content="Wenn es zu laut wird — Der Lernolotl im lauten Klassenzimmer">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl kann sich nicht konzentrieren, weil es zu laut ist. Für Kinder 6–10 Jahre. Mit Nachbesprechung für Eltern.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/schule-geschichte-laerm.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-mid: #60a5fa;
+            --primary-light: #bfdbfe;
+            --primary-pale: #eff6ff;
+            --accent: #7ecac3;
+            --bg-gradient-from: #3b82f6;
+            --bg-gradient-to: #1e40af;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky; top: 20px; background: white;
+            border-radius: 20px; padding: 15px 25px; margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 100;
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); text-decoration: none;
+            font-weight: 700; transition: all 0.3s; font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white; padding: 8px 20px; border-radius: 20px;
+            font-weight: 700; font-family: 'Fredoka One', cursive; font-size: 0.95em;
+        }
+
+        header {
+            background: white; border-radius: 25px;
+            padding: 50px 40px 40px; text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin-bottom: 40px;
+        }
+        .story-meta {
+            color: var(--primary); font-size: 0.9em; font-weight: 700;
+            margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px;
+        }
+        h1 {
+            font-family: 'Fredoka One', cursive; color: var(--primary);
+            font-size: 2.5em; margin-bottom: 20px; line-height: 1.2;
+        }
+        .story-intro {
+            color: #555; font-size: 1.1em; line-height: 1.8;
+            max-width: 680px; margin: 0 auto 30px;
+        }
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%);
+            padding: 40px; display: flex; align-items: center;
+            justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap;
+        }
+        .hero-icon { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(59,130,246,0.25)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(59,130,246,0.2)); }
+
+        .story-section {
+            background: white; border-radius: 25px; padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 40px;
+        }
+        .story-content {
+            color: #333; font-size: 1.15em; line-height: 2;
+            max-width: 700px; margin: 0 auto;
+        }
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #1e40af; font-style: italic; }
+
+        .page-divider {
+            text-align: center; margin: 40px 0; color: var(--primary);
+            font-family: 'Fredoka One', cursive; font-size: 1.1em;
+            letter-spacing: 2px; opacity: 0.6;
+        }
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+
+        .char-row {
+            display: flex; align-items: center; gap: 20px;
+            background: var(--primary-pale); border-radius: 18px;
+            padding: 20px 24px; margin: 30px 0;
+        }
+        .char-row img { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+        .char-row-name { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1em; margin-bottom: 4px; }
+        .char-row-text { color: #1e40af; font-size: 0.95em; line-height: 1.6; font-style: italic; }
+
+        .technique-box {
+            background: #f0fdf4; border-radius: 20px; padding: 30px;
+            border: 2px solid #86efac; margin-bottom: 30px;
+        }
+        .technique-box-title {
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Fredoka One', cursive; color: #166534;
+            font-size: 1.25em; margin-bottom: 16px;
+        }
+        .technique-box-text { color: #14532d; font-size: 0.97em; line-height: 1.75; }
+        .technique-box-text ul { margin: 12px 0 12px 20px; }
+        .technique-box-text li { margin-bottom: 8px; }
+        .technique-box-text p { margin-bottom: 12px; }
+
+        .nachbesprechung {
+            background: #eff6ff; border-radius: 20px; padding: 30px;
+            border: 2px solid #bfdbfe; margin-bottom: 30px;
+        }
+        .nachbesprechung-title {
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Fredoka One', cursive; color: #1e40af;
+            font-size: 1.2em; margin-bottom: 16px;
+        }
+        .nachbesprechung-fragen { list-style: none; }
+        .nachbesprechung-fragen li {
+            padding: 12px 0; border-bottom: 1px solid #dbeafe;
+            color: #1e3a8a; font-size: 0.97em; line-height: 1.6;
+            padding-left: 24px; position: relative;
+        }
+        .nachbesprechung-fragen li::before {
+            content: '?'; position: absolute; left: 0;
+            color: var(--primary); font-weight: 900;
+        }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+
+        .info-box {
+            background: #fefce8; border-radius: 20px; padding: 30px;
+            border: 2px solid #fde047; margin-bottom: 30px;
+        }
+        .info-box-title {
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Fredoka One', cursive; color: #713f12;
+            font-size: 1.2em; margin-bottom: 14px;
+        }
+        .info-box-text { color: #713f12; font-size: 0.95em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn {
+            background: linear-gradient(135deg, var(--primary), var(--bg-gradient-to));
+            color: white; border: none; padding: 14px 36px;
+            border-radius: 30px; font-family: 'Fredoka One', cursive;
+            font-size: 1.1em; cursor: pointer; box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+            transition: transform 0.2s;
+        }
+        .print-btn:hover { transform: translateY(-2px); }
+
+        .ad-container {
+            background: white; border-radius: 15px; padding: 18px;
+            margin: 20px 0; text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .ad-label { color: #bbb; font-size: 0.68em; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #eee; border-radius: 10px; padding: 24px; color: #ccc; font-size: 0.85em; }
+
+        #progressBar {
+            position: fixed; top: 0; left: 0; width: 0%; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-mid));
+            z-index: 1001;
+        }
+
+        footer {
+            background: white; border-radius: 20px; padding: 30px 40px;
+            text-align: center; margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 6px; }
+        .footer-tagline { color: #aaa; font-size: 0.85em; margin-bottom: 16px; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-size: 0.85em; font-weight: 600; }
+        .footer-info { color: #ccc; font-size: 0.78em; }
+        .print-footer { display: none; }
+
+        @media print {
+            nav, .sticky-nav, .ad-container, .print-btn-wrap, footer .footer-links, #progressBar { display: none !important; }
+            body { background: white; padding: 0; font-size: 12pt; line-height: 1.6; color: #000; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 20px 0; }
+            h1 { font-size: 18pt; }
+            .nachbesprechung { display: block !important; }
+            .story-content { orphans: 3; widows: 3; }
+            .print-footer { display: block; text-align: center; color: #666; font-size: 9pt; margin-top: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            header { padding: 30px 20px; }
+            .story-section { padding: 30px 20px; }
+            .char-row { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<div id="progressBar"></div>
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="lernolotls-welt-schule.html" class="back-link">← Schule</a>
+        <span class="feeling-badge">Lärm · Sinne · Strategien</span>
+    </nav>
+
+    <header>
+        <div class="story-meta">Geschichte 7 · Schule · ca. 6 Min. Lesezeit</div>
+        <h1>Wenn es zu laut wird</h1>
+        <p class="story-intro">
+            Manchmal fängt es mit einem Stuhl an. Dann kommt das Schaben eines Bleistifts. 
+            Dann Flüstern. Dann Lachen. Und dann kann der Lernolotl keinen einzigen Gedanken 
+            mehr festhalten — weil alle Geräusche zusammen zu groß werden.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-sad.png" alt="Lernolotl" class="hero-icon">
+            <img src="../char-schule-herr-mayer.png" alt="Herr Mayer" class="hero-char-icon">
+            <img src="../char-schule-lena.png" alt="Lena" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Es begann mit Tim.</p>
+
+            <p>Tim saß zwei Reihen hinter dem Lernolotl und hatte die Angewohnheit, 
+            mit seinem Stuhl zu wippen. Vorne — hinten. Vorne — hinten. 
+            Das Quietschen kam immer dann, wenn Herr Mayer gerade etwas Wichtiges sagte.</p>
+
+            <p>Der Lernolotl versuchte, es zu ignorieren.</p>
+
+            <p><em>Ignorieren</em> klang so einfach. Man denkt: Ich höre das nicht. 
+            Man denkt das fest genug, und dann hört man es nicht mehr.
+            Das war zumindest die Theorie.</p>
+
+            <p>In der Praxis hörte der Lernolotl den Stuhl noch lauter als vorher.</p>
+
+            <p>Dann fing Mia — die hinter Lena saß — an zu flüstern. Kein richtiges Flüstern, 
+            eher ein Halbflüstern, das irgendwo zwischen Sprechen und Rauschen lag. 
+            Und Paul neben ihr kaute auf seinem Radiergummi.
+            Nicht laut. Aber regelmäßig.</p>
+
+            <p>Geräusch eins. Geräusch zwei. Geräusch drei.</p>
+
+            <p>Der Lernolotl versuchte, sich auf Herr Mayers Erklärung zu konzentrieren. 
+            Etwas über Flüsse und ihre Quellen. Das interessierte ihn eigentlich wirklich. 
+            Er mochte Geografie. Er mochte Flüsse.
+            Aber zwischen ihm und Herr Mayers Stimme lagen jetzt Tim, Mia und Paul — 
+            und das Summen der Heizung, das er vorher gar nicht bemerkt hatte 
+            und das jetzt plötzlich <strong>überall</strong> war.</p>
+
+            <p>Sein Bleistift lag in der Hand. Er schrieb nichts.</p>
+
+            <div class="char-row">
+                <img src="../lernolotl-sad.png" alt="Lernolotl traurig">
+                <div>
+                    <div class="char-row-name">Der Lernolotl (in Gedanken)</div>
+                    <div class="char-row-text">„Die Geräusche sind wie viele Radios gleichzeitig. Ich kann mich nicht entscheiden, welchem ich zuhören soll — und am Ende höre ich keinem richtig zu."</div>
+                </div>
+            </div>
+
+            <p>Nach zehn Minuten hatte er drei Wörter auf dem Blatt. 
+            Herr Mayer hatte wahrscheinlich zwanzig Sätze gesagt.
+            Der Lernolotl wusste: Er hatte nicht aufgepasst. Aber nicht weil er nicht wollte.
+            Er konnte nicht.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">📝 🏫 📝</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>In der Pause fragte Lena: „Hast du mitgeschrieben?"</p>
+
+            <p>„Nicht wirklich", sagte der Lernolotl.</p>
+
+            <p>„War es wieder zu laut?"</p>
+
+            <p>Er nickte. Lena nickte auch, als ob sie das verstand.
+            Das war gut an Lena. Sie fragte nicht nach dem Warum.
+            Sie fragte nur, ob es stimmt.</p>
+
+            <p>Nach der Pause — Mathe, was besser war, weil Herr Mayer an die Tafel schrieb 
+            und es eine Zeit lang ruhiger war — hob der Lernolotl zum ersten Mal seit Wochen die Hand.</p>
+
+            <p>Nicht wegen einer Antwort. Wegen einer Frage.</p>
+
+            <p>„Herr Mayer?", sagte er, als er drangenommen wurde. 
+            „Darf ich fragen — kann ich manchmal am Rand sitzen? 
+            Beim Lesen und beim Hören. Es ist manchmal zu laut in der Mitte."</p>
+
+            <p>Es wurde still. Nicht unangenehm still — einfach still.
+            Der Lernolotl sah, dass Tim aufgehört hatte zu wippen.</p>
+
+            <p>Herr Mayer sah ihn kurz an. Nicht mit einem Ja oder Nein. Erst mit einem Nachdenken.
+            Dann sagte er: <strong>„Ja. Für bestimmte Stunden. Wir schauen, was hilft."</strong></p>
+
+            <div class="char-row">
+                <img src="../char-schule-herr-mayer.png" alt="Herr Mayer">
+                <div>
+                    <div class="char-row-name">Herr Mayer</div>
+                    <div class="char-row-text">„Man muss nicht immer in der Mitte sitzen, um dabei zu sein. Manchmal denkt man vom Rand aus am besten."</div>
+                </div>
+            </div>
+
+            <p>Der Lernolotl schrieb das auf. Nicht für die Schule. Für sich.</p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Am nächsten Tag saß er beim Vorlesen hinten links, 
+            am Fenster, mit etwas Abstand zur Klasse.</p>
+
+            <p>Tim wippte immer noch. Mia flüsterte immer noch.
+            Die Heizung summte.
+            Aber das alles war jetzt <em>dahinter</em> — und nicht mehr <em>überall</em>.</p>
+
+            <p>Herr Mayer las laut vor. Der Lernolotl hörte jeden Satz.</p>
+
+            <p>Er wusste, dass nicht jeder Tag so funktionieren würde.
+            Manche Tage würden die Geräusche trotzdem zu laut sein — auch am Rand.
+            Manche Tage würde er den Kopf auf die Arme legen müssen und kurz warten, 
+            bis es wieder leiser wird.</p>
+
+            <p>Aber er hatte etwas gelernt:
+            <strong>Sagen, was man braucht, ist kein Weglaufen. Es ist ein Werkzeug.</strong></p>
+
+            <p>Lena flüsterte in der Pause: „Ich finde es gut, dass du das gefragt hast."</p>
+
+            <p>Der Lernolotl sagte: „Ich auch."</p>
+
+            <p>Er hatte tatsächlich gezögert. Fast eine Woche. 
+            Weil er dachte, es sei seltsam, so etwas zu fragen.
+            Weil er dachte, alle anderen kämen mit dem Lärm klar — also müsste er das auch.</p>
+
+            <p>Aber dann hatte er an etwas gedacht, das Mama ihm einmal gesagt hatte:
+            <em>Wenn deine Brille hilft, ziehst du sie nicht aus, nur weil die anderen keine tragen.</em></p>
+
+            <p>Einen ruhigeren Platz zu wählen — das war seine Brille.</p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🔇</span>
+            <span>Was hilft, wenn Geräusche zu viel werden</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Manche Kinder hören Geräusche intensiver als andere — das ist keine Schwäche, sondern eine andere Art, die Welt wahrzunehmen. Drei Strategien aus der Geschichte:</strong></p>
+            <ul>
+                <li><strong>Einen ruhigeren Platz wählen:</strong> Am Rand, am Fenster, mit etwas Abstand — das verändert, wie Geräusche ankommen, ohne dass man etwas verpasst.</li>
+                <li><strong>Benennen, was schwer fällt:</strong> Es hilft, wenn Kinder lernen zu sagen: „Es ist gerade zu laut für mich." Das ist keine Schwäche — es ist Selbstwahrnehmung.</li>
+                <li><strong>Kurze Pausen zulassen:</strong> Manchmal genügen zwei Minuten Stille (z. B. Kopf auf die Arme legen), damit das Gehirn sich wieder sortieren kann.</li>
+            </ul>
+            <p>Tipp für Eltern: Ohrstöpsel oder Gehörschutz-Kopfhörer in der Schultasche können in lauten Momenten (Schulhof, Kantine) helfen — am besten mit der Lehrkraft absprechen.</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Warum konnte der Lernolotl sich nicht konzentrieren — obwohl er das Thema interessant fand?</li>
+            <li>Was hat der Lernolotl Herr Mayer gefragt, und warum hat er so lange gewartet?</li>
+            <li>Gibt es Geräusche, die dich stören oder ablenken? Wo ist es für dich am lautesten?</li>
+            <li>Was ist deine „Brille" — etwas, das dir hilft, auch wenn es anderen nicht nötig erscheint?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Geräuschempfindlichkeit verstehen</span>
+        </div>
+        <div class="info-box-text">
+            <p>Viele Kinder — besonders solche mit Autismus, ADHS oder Hochsensibilität — nehmen Geräusche intensiver wahr als andere. Das bedeutet nicht, dass sie empfindlicher „sein wollen". Das Gehirn filtert Reize anders, und das kostet echte Energie.</p>
+            <p>In einem normalen Klassenzimmer kommen bis zu 30 gleichzeitige Geräuschquellen vor. Für Kinder ohne Reizfilterung bedeutet das: Der Kopf versucht, alle zu verarbeiten — und hat dann keine Kapazität mehr für den Unterricht.</p>
+            <p>Unterstützende Maßnahmen müssen keine große Sache sein: ein anderer Sitzplatz, ein stiller Rückzugsort auf dem Schulhof, oder kurze erlaubte Pausen können die Situation erheblich verbessern.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="lernolotls-welt-schule.html">← Alle Schulgeschichten</a>
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>

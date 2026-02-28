@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Lernolotl und die Klassenfahrt – Eine Vorlesegeschichte über Heimweh, Vorfreude und das Mutig-Sein, wenn man weg von Zuhause muss.">
+    <title>Klassenfahrt — ich will nicht weg von Zuhause | Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/schule-geschichte-klassenfahrt.html">
+
+    <meta property="og:title" content="Klassenfahrt — ich will nicht weg von Zuhause">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl soll auf Klassenfahrt. Aber sein Bett, sein Zimmer, seine Routine — alles bleibt Zuhause. Für Kinder 6–10 Jahre. Mit Nachbesprechung.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/schule-geschichte-klassenfahrt.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-mid: #60a5fa;
+            --primary-light: #bfdbfe;
+            --primary-pale: #eff6ff;
+            --accent: #7ecac3;
+            --bg-gradient-from: #3b82f6;
+            --bg-gradient-to: #1e40af;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
+            min-height: 100vh; padding: 20px; color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky; top: 20px; background: white;
+            border-radius: 20px; padding: 15px 25px; margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 100;
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-weight: 700; transition: all 0.3s; font-size: 0.95em; }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+        .feeling-badge { background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-family: 'Fredoka One', cursive; font-size: 0.95em; }
+
+        header { background: white; border-radius: 25px; padding: 50px 40px 40px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin-bottom: 40px; }
+        .story-meta { color: var(--primary); font-size: 0.9em; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        h1 { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 2.5em; margin-bottom: 20px; line-height: 1.2; }
+        .story-intro { color: #555; font-size: 1.1em; line-height: 1.8; max-width: 680px; margin: 0 auto 30px; }
+        .hero-image-container { border-radius: 20px; background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-light) 100%); padding: 40px; display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap; }
+        .hero-icon { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(59,130,246,0.25)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(59,130,246,0.2)); }
+
+        .story-section { background: white; border-radius: 25px; padding: 50px 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 40px; }
+        .story-content { color: #333; font-size: 1.15em; line-height: 2; max-width: 700px; margin: 0 auto; }
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #1e40af; font-style: italic; }
+
+        .page-divider { text-align: center; margin: 40px 0; color: var(--primary); font-family: 'Fredoka One', cursive; font-size: 1.1em; letter-spacing: 2px; opacity: 0.6; }
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+
+        .char-row { display: flex; align-items: center; gap: 20px; background: var(--primary-pale); border-radius: 18px; padding: 20px 24px; margin: 30px 0; }
+        .char-row img { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+        .char-row-name { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1em; margin-bottom: 4px; }
+        .char-row-text { color: #1e40af; font-size: 0.95em; line-height: 1.6; font-style: italic; }
+
+        .technique-box { background: #f0fdf4; border-radius: 20px; padding: 30px; border: 2px solid #86efac; margin-bottom: 30px; }
+        .technique-box-title { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; color: #166534; font-size: 1.25em; margin-bottom: 16px; }
+        .technique-box-text { color: #14532d; font-size: 0.97em; line-height: 1.75; }
+        .technique-box-text ul { margin: 12px 0 12px 20px; }
+        .technique-box-text li { margin-bottom: 8px; }
+        .technique-box-text p { margin-bottom: 12px; }
+
+        .nachbesprechung { background: #eff6ff; border-radius: 20px; padding: 30px; border: 2px solid #bfdbfe; margin-bottom: 30px; }
+        .nachbesprechung-title { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; color: #1e40af; font-size: 1.2em; margin-bottom: 16px; }
+        .nachbesprechung-fragen { list-style: none; }
+        .nachbesprechung-fragen li { padding: 12px 0; border-bottom: 1px solid #dbeafe; color: #1e3a8a; font-size: 0.97em; line-height: 1.6; padding-left: 24px; position: relative; }
+        .nachbesprechung-fragen li::before { content: '?'; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+
+        .info-box { background: #fefce8; border-radius: 20px; padding: 30px; border: 2px solid #fde047; margin-bottom: 30px; }
+        .info-box-title { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; color: #713f12; font-size: 1.2em; margin-bottom: 14px; }
+        .info-box-text { color: #713f12; font-size: 0.95em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn { background: linear-gradient(135deg, var(--primary), var(--bg-gradient-to)); color: white; border: none; padding: 14px 36px; border-radius: 30px; font-family: 'Fredoka One', cursive; font-size: 1.1em; cursor: pointer; box-shadow: 0 6px 20px rgba(59,130,246,0.35); transition: transform 0.2s; }
+        .print-btn:hover { transform: translateY(-2px); }
+
+        .ad-container { background: white; border-radius: 15px; padding: 18px; margin: 20px 0; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .ad-label { color: #bbb; font-size: 0.68em; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #eee; border-radius: 10px; padding: 24px; color: #ccc; font-size: 0.85em; }
+
+        #progressBar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary), var(--primary-mid)); z-index: 1001; }
+
+        footer { background: white; border-radius: 20px; padding: 30px 40px; text-align: center; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 6px; }
+        .footer-tagline { color: #aaa; font-size: 0.85em; margin-bottom: 16px; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-size: 0.85em; font-weight: 600; }
+        .footer-info { color: #ccc; font-size: 0.78em; }
+        .print-footer { display: none; }
+
+        @media print {
+            nav, .sticky-nav, .ad-container, .print-btn-wrap, footer .footer-links, #progressBar { display: none !important; }
+            body { background: white; padding: 0; font-size: 12pt; line-height: 1.6; color: #000; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 20px 0; }
+            h1 { font-size: 18pt; }
+            .nachbesprechung { display: block !important; }
+            .story-content { orphans: 3; widows: 3; }
+            .print-footer { display: block; text-align: center; color: #666; font-size: 9pt; margin-top: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            header { padding: 30px 20px; }
+            .story-section { padding: 30px 20px; }
+            .char-row { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<div id="progressBar"></div>
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="lernolotls-welt-schule.html" class="back-link">← Schule</a>
+        <span class="feeling-badge">Klassenfahrt · Heimweh · Mut</span>
+    </nav>
+
+    <header>
+        <div class="story-meta">Geschichte 10 · Schule · ca. 6 Min. Lesezeit</div>
+        <h1>Klassenfahrt — ich will nicht weg von Zuhause</h1>
+        <p class="story-intro">
+            Drei Tage. Zwei Nächte. Ein fremdes Bett in einem fremden Zimmer 
+            ohne die eigene Decke, ohne den Geruch von Zuhause, 
+            ohne Mama, die abends noch kurz reinschaut. 
+            Der Lernolotl soll auf Klassenfahrt — und er weiß nicht, ob er das kann.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-brave.png" alt="Lernolotl" class="hero-icon">
+            <img src="../char-schule-lena.png" alt="Lena" class="hero-char-icon">
+            <img src="../char-familie-mama.png" alt="Mama" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Der Zettel kam an einem Donnerstag nach Hause.</p>
+
+            <p>Klassenfahrt. Naturfreundehaus Waldhausen. 
+            Drei Tage, zwei Nächte. Alle Kinder der Klasse 2b.
+            Bitte bis Freitag unterschreiben.</p>
+
+            <p>Mama las ihn durch. Papa las ihn durch. 
+            Der Lernolotl las ihn auch durch — zweimal, weil er bei „zwei Nächte" 
+            hängen geblieben war.</p>
+
+            <p><em>Zwei Nächte.</em></p>
+
+            <p>Er hatte noch nie zwei Nächte woanders geschlafen.
+            Einmal bei Oma Hilde — eine Nacht. Das hatte gut funktioniert, 
+            weil Oma Hilde einen Stuhl neben sein Bett gestellt hatte 
+            und ihn nicht komisch angesehen hatte, als er seine Decke mitbrachte.</p>
+
+            <p>Aber das war Oma Hilde. Das war nicht ein Naturfreundehaus mit 22 anderen Kindern
+            und einem fremden Zimmer und einem fremden Bett und — 
+            er wusste noch nicht mal, wie es dort riecht.</p>
+
+            <p>„Willst du fahren?", fragte Mama.</p>
+
+            <p>Der Lernolotl überlegte. Er merkte, dass er beides gleichzeitig wollte:
+            Fahren und nicht fahren. Das war unbequem.
+            Zwei Antworten passten nicht in eine Frage.</p>
+
+            <div class="char-row">
+                <img src="../lernolotl-sad.png" alt="Lernolotl traurig">
+                <div>
+                    <div class="char-row-name">Der Lernolotl (in Gedanken)</div>
+                    <div class="char-row-text">„Ich will dabei sein. Ich will nur nicht, dass dabei so weit weg ist."</div>
+                </div>
+            </div>
+
+            <p>„Was macht dich am meisten nervös?", fragte Papa.</p>
+
+            <p>Der Lernolotl dachte nach. „Das Schlafen", sagte er schließlich. 
+            „Und das Essen. Und ob es laut wird nachts. Und ob ich meinen Platz finde."</p>
+
+            <p>Mama nickte. Sie schrieb all das auf. Nicht um es zu lösen.
+            Nur um es aufzuschreiben. Das half schon ein bisschen.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">🎒 🌲 🎒</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Sie fuhren. Der Zettel wurde unterschrieben.</p>
+
+            <p>In den drei Wochen davor packten sie zusammen.
+            Der Lernolotl durfte seine eigene Decke mitnehmen — die mintgrüne, 
+            die immer nach Zuhause roch. Und seinen kleinen Stein vom Fensterbrett,
+            den er manchmal in der Tasche hatte, wenn es zu viel wurde.</p>
+
+            <p>Mama schrieb ihm einen Brief. Nicht lang — eine halbe Seite.
+            Mit allem, was er schon konnte: neue Situationen aushalten, 
+            Fragen stellen, seinen Platz finden. 
+            <strong>„Den Brief liest du, wenn du ihn brauchst"</strong>, sagte sie.</p>
+
+            <p>Am ersten Abend im Naturfreundehaus — 
+            das nach altem Holz und ein bisschen Kiefer roch, was eigentlich nicht schlimm war — 
+            lag der Lernolotl in seinem Bett und merkte: 
+            Das Herzklopfen war noch da. Aber kleiner als erwartet.</p>
+
+            <p>Lena schlief im Bett daneben. Sie flüsterte: „Schläfst du schon?"</p>
+
+            <p>„Nein."</p>
+
+            <p>„Ich auch nicht. Ich vermisse meine Katze."</p>
+
+            <p>Der Lernolotl dachte nach. Er vermisste keine Katze — er hatte keine.
+            Aber er verstand, was Lena meinte.
+            Man vermisst nicht nur Dinge. Man vermisst das Gefühl, 
+            das diese Dinge machen.</p>
+
+            <p>„Ich vermisse das Geräusch unserer Heizung", sagte er.</p>
+
+            <p>Stille. Dann: Lena lachte leise. „Das ist das Spezifischste, das ich je gehört habe."</p>
+
+            <p>Der Lernolotl lachte auch. Leise, damit die anderen schlafen konnten.
+            Aber es war ein echtes Lachen.</p>
+
+            <div class="char-row">
+                <img src="../char-schule-lena.png" alt="Lena">
+                <div>
+                    <div class="char-row-name">Lena</div>
+                    <div class="char-row-text">„Heimweh ist kein schlechtes Zeichen. Es bedeutet, dass Zuhause schön ist."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Am zweiten Tag gingen sie in den Wald.
+            Herr Mayer erklärte, wie man Baumringe zählt.
+            Der Lernolotl zählte sehr genau — er fand einen Baum mit 73 Ringen
+            und war der Einzige, der nachher wusste, wie alt der Baum war.</p>
+
+            <p>Das war ein gutes Gefühl.</p>
+
+            <p>Am Abend las er Mamas Brief. Nicht weil es schlimm war —
+            sondern weil er wollte. Er faltete ihn danach sorgfältig zusammen 
+            und legte ihn unter sein Kopfkissen.</p>
+
+            <p>Die zweite Nacht schlief er tatsächlich.
+            Nicht sofort. Aber er schlief.
+            Die Heizung hier machte ein anderes Geräusch als Zuhause — 
+            ein gleichmäßigeres, fast wie ein leises Brummen.
+            Nach einer Weile war es nicht mehr fremd. Es war einfach ein Geräusch.</p>
+
+            <p>Als der Bus drei Tage später wieder vor der Schule hielt 
+und Mama am Zaun stand, merkte der Lernolotl etwas Seltsames:</p>
+
+            <p>Er war froh, zurück zu sein. <em>Und</em> er war froh, gefahren zu sein.</p>
+
+            <p>Beides gleichzeitig — aber diesmal passte das.
+            Diesmal waren zwei Antworten in Ordnung.</p>
+
+            <p>Mama fragte: „Wie war es?"</p>
+
+            <p>Er überlegte. „Der Baum war 73 Jahre alt", sagte er.
+            „Und ich habe Lena erzählt, dass ich unsere Heizung vermisse."</p>
+
+            <p>Mama sah ihn an. „Und?"</p>
+
+            <p><strong>„Sie hat gelacht. Ich auch."</strong></p>
+
+            <p>Das war, dachte er, vielleicht genug für eine Klassenfahrt.</p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🎒</span>
+            <span>Klassenfahrt vorbereiten — was wirklich hilft</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Der Lernolotl zeigt in dieser Geschichte drei Dinge, die Heimweh nicht verschwinden lassen — aber leichter machen:</strong></p>
+            <ul>
+                <li><strong>Vertraute Dinge mitnehmen:</strong> Die eigene Decke, ein kleiner Gegenstand von Zuhause, ein Foto. Das sind keine Schwächen — das sind Anker.</li>
+                <li><strong>Die Sorgen benennen und aufschreiben:</strong> Mama schreibt auf, was den Lernolotl besorgt. Das macht Unbekanntes kleiner — weil es dann auf Papier steht und nicht mehr nur im Kopf kreist.</li>
+                <li><strong>Einen Brief mitnehmen:</strong> Eine kurze Nachricht von Eltern kann in schwierigen Momenten helfen — nicht als Ersatz für Zuhause, sondern als Erinnerung daran, dass Zuhause wartet.</li>
+            </ul>
+            <p>Tipp: Sprechen Sie vorher mit der Lehrkraft, wenn Ihr Kind besondere Bedürfnisse hat — ein ruhigerer Schlafplatz, eine klare Abendstruktur oder die Erlaubnis, die eigene Decke mitzubringen, können den Unterschied machen.</p>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Was hat den Lernolotl am meisten besorgt — und was davon war am Ende wirklich schlimm?</li>
+            <li>Warum hat der Lernolotl gelacht, als er Lena von der Heizung erzählt hat?</li>
+            <li>Was würdest du auf eine Klassenfahrt mitnehmen, damit du dich wohler fühlst?</li>
+            <li>Was bedeutet es, „beides gleichzeitig zu wollen" — und kennst du das Gefühl auch?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Heimweh und Trennungsangst verstehen</span>
+        </div>
+        <div class="info-box-text">
+            <p>Heimweh ist normal — für nahezu alle Kinder. Für Kinder mit Autismus oder hoher Sensibilität kann es intensiver sein, weil Routinen und vertraute Reize echte Sicherheitsanker sind. Das Fehlen dieser Anker fühlt sich nicht wie „Kleinigkeit" an, sondern wie echter Stress.</p>
+            <p>Hilfreich ist Vorbereitung: Das Ziel besuchen oder Fotos anschauen, den Tagesablauf vorher erklären, vertraute Gegenstände einpacken. Das Ziel ist nicht, Heimweh zu verhindern — sondern dem Kind genug Werkzeuge zu geben, damit es damit umgehen kann.</p>
+            <p>Wichtig: Kinder, die sagen „Ich will nicht fahren", meinen oft „Ich weiß nicht, ob ich damit klarkomme." Das ist ein Unterschied. Ein ehrliches Gespräch über konkrete Sorgen hilft mehr als pauschale Beruhigung.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="lernolotls-welt-schule.html">← Alle Schulgeschichten</a>
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>
