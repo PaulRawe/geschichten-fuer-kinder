@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Lernolotl ist krank — Eine Vorlesegeschichte darüber, was passiert wenn der Körper Pause braucht, aber der Kopf nicht aufhören kann zu denken.">
+    <title>Krank sein — ich will nicht im Bett bleiben | Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/zuhause-geschichte-krank.html">
+
+    <meta property="og:title" content="Krank sein — ich will nicht im Bett bleiben">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl ist krank und lernt, was Ruhe für seinen Körper und Kopf bedeutet. Für Kinder 5–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/zuhause-geschichte-krank.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0891b2;
+            --primary-mid: #06b6d4;
+            --primary-light: #a5f3fc;
+            --primary-pale: #ecfeff;
+            --accent: #f97316;
+            --bg-gradient-from: #164e63;
+            --bg-gradient-to: #0e7490;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #164e63 0%, #0891b2 50%, #164e63 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: var(--primary);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 16px rgba(8,145,178,0.25));
+        }
+
+        .hero-char-icon {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(8,145,178,0.2));
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #164e63; font-style: italic; }
+
+        .page-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.8em;
+        }
+
+        .char-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-pale);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+        }
+
+        .info-box-title {
+            color: #b45309;
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .technique-box {
+            background: linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary-mid);
+            box-shadow: 0 8px 24px rgba(8,145,178,0.12);
+        }
+
+        .technique-box-title {
+            color: #164e63;
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text { color: #1c1917; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+
+        .nachbesprechung {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 6px solid #22c55e;
+            box-shadow: 0 8px 24px rgba(34,197,94,0.15);
+        }
+
+        .nachbesprechung-title {
+            font-family: 'Fredoka One', cursive;
+            color: #15803d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li {
+            padding: 10px 0 10px 30px;
+            border-bottom: 1px solid rgba(34,197,94,0.2);
+            color: #14532d;
+            font-size: 1em;
+            line-height: 1.6;
+            position: relative;
+        }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before {
+            content: "→";
+            position: absolute;
+            left: 8px;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1em;
+            padding: 10px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .print-btn:hover { background: var(--primary); color: white; }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-mid) 0%, var(--accent) 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .print-header { display: none; }
+        .print-footer { display: none; }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.2s;
+            padding: 5px 0;
+            position: relative;
+        }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .sticky-nav { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2em; }
+            header, .story-section { padding: 30px 20px; }
+            .story-content { font-size: 1.05em; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; }
+            header .hero-image-container { display: none; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; }
+            .story-content strong, .story-content em { color: #000; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt-zuhause.html" class="back-link">← Lernolotls Zuhause</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Zuhause</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Krank-sein-Geschichte</div>
+        <div class="story-meta">Vorlesegeschichte · Zuhause · 5–10 Jahre</div>
+        <h1>Krank sein — ich will nicht im Bett bleiben</h1>
+        <p class="story-intro">
+            Der Lernolotl hat Fieber. Er darf nicht in die Schule — und das ist
+            schlimmer als es klingt. Nicht wegen der Schule. Sondern weil der Kopf
+            weiterläuft, auch wenn der Körper nicht mehr kann.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-thinking.png" alt="Der Lernolotl" class="hero-icon">
+            <img src="../char-familie-mama.png" alt="Mama" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>38,7 Grad. Das war das Ergebnis.</p>
+
+            <p>Mama hatte das Thermometer angeschaut, dann ihn angeschaut,
+            dann das Thermometer nochmal angeschaut.
+            „Du bleibst heute zuhause", hatte sie gesagt.</p>
+
+            <p>Der Lernolotl hatte protestiert. Nicht weil er sich gut fühlte —
+            er fühlte sich wie Watte, die zu schwer geworden war.
+            Sondern weil <strong>heute Herr Mayer das Experiment mit den Magneten zeigte.</strong>
+            Das hatte er seit einer Woche gewusst. Das wollte er nicht verpassen.</p>
+
+            <p>Mama hatte trotzdem Nein gesagt. Das hatte er akzeptiert.
+            Er hatte sich ins Bett gelegt.</p>
+
+            <p>Und dort lag er jetzt. Mit seinem Körper, der heiß und schwer war.
+            Und seinem Kopf, der sehr beschäftigt war.</p>
+
+            <p><em>Was wenn er das Experiment verpasste und es nie wieder gezeigt wurde?
+            Was wenn heute auch noch die Mathe-Besprechung war?
+            Was wenn Lena heute die Antwort auf seine Frage von gestern wusste
+            und er nicht da war, um sie zu hören?</em></p>
+
+            <p>Der Kopf ließ nicht auf.</p>
+
+        </div>
+    </div>
+
+    <div class="section-divider">🤒 💤 🤒</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Mama brachte Tee. Den mochte er nicht besonders —
+            aber der Dampf roch gut. Wie Zuhause, aber ruhiger.</p>
+
+            <p>„Du grübelst", sagte Mama. Sie konnte das immer sehen.</p>
+
+            <p>„Ich verpasse das Magnet-Experiment."</p>
+
+            <p>„Das ist ärgerlich. Wirklich."</p>
+
+            <p>Das überraschte ihn. Erwachsene sagten meistens:
+            Das ist nicht so schlimm, du kannst es nachholen.
+            Mama sagte: Das ist ärgerlich. Das war etwas anderes.</p>
+
+            <p>„Was hilft, wenn der Kopf nicht aufhört?", fragte sie dann.</p>
+
+            <p>Er dachte nach. Sein Körper schmerzte ein bisschen beim Nachdenken —
+            Fieber machte alles ein bisschen lauter und ein bisschen schwerer.</p>
+
+            <div class="char-row">
+                <img src="../char-familie-mama.png" alt="Mama">
+                <div>
+                    <div class="char-row-name">Mama</div>
+                    <div class="char-row-text">„Das ist ärgerlich. Wirklich." — Manchmal hilft es mehr, wenn jemand das einfach anerkennt.</div>
+                </div>
+            </div>
+
+            <p>„Wenn ich etwas mache, das wenig Energie braucht",
+            sagte er langsam. „Aber trotzdem... interessant ist."</p>
+
+            <p>„Was wäre das?"</p>
+
+            <p>Er überlegte. Lesen ging nicht — zu viel Konzentration.
+            Tablet auch nicht — zu hell, zu laut.
+            Aber Hörbuch... Hörbuch vielleicht.</p>
+
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Mama brachte seinen alten Kopfhörer.
+            Er suchte das Hörbuch über die Tiefsee — das hatte er schon zweimal gehört
+            und kannte fast alle Sätze. Genau deshalb war es gut jetzt:
+            Es war vertraut. Es überraschte ihn nicht.
+            <strong>Sein Kopf konnte zuhören, ohne kämpfen zu müssen.</strong></p>
+
+            <p>Er schlief nach zwanzig Minuten ein.</p>
+
+            <p>Als er aufwachte, war es Nachmittag. Mama saß am Schreibtisch
+            und arbeitete leise. Sie merkte, dass er wach war, und schaute ihn an.</p>
+
+            <p>„Besser?"</p>
+
+            <p>„37,8", sagte er, weil er das Thermometer schon genommen hatte.</p>
+
+            <p>Sie lachte ein bisschen. „Du hast drei Stunden geschlafen."</p>
+
+            <p>Das überraschte ihn. Drei Stunden — das war viel für ihn.
+            Er schlief tagsüber nie. Aber der Körper hatte einfach entschieden.</p>
+
+            <p>„War das Experiment schön?", fragte er. Er wollte es trotzdem wissen.</p>
+
+            <p>„Ich frage morgen Lena", sagte Mama. „Oder du fragst selbst."</p>
+
+            <p>Er nickte. Das war ein Plan. Nicht perfekt —
+            er wäre lieber dabeigewesen. Aber machbar.
+            <em>Manchmal, dachte er, ist der Körper klüger als der Plan.
+            Er weiß, wann Pause ist — auch wenn man es selbst nicht weiß.</em></p>
+
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🌡️</span>
+            <span>Kranke Kinder begleiten — wenn Ruhe schwer fällt</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Für Kinder mit ADHS ist Kranksein besonders herausfordernd: der Körper braucht Pause, aber der Kopf läuft weiter. Einige hilfreiche Ansätze:</strong></p>
+            <ul>
+                <li><strong>Ärger anerkennen:</strong> Verpasste Ereignisse sind wirklich ärgerlich. Das zu validieren hilft mehr als zu relativieren.</li>
+                <li><strong>Niedrigschwellige Aktivitäten anbieten:</strong> Hörbücher, bekannte Hörspiele oder sanfte Hörbücher über Lieblingsthemen geben dem Kopf etwas zu tun, ohne Energie zu kosten.</li>
+                <li><strong>Körpersignale benennen:</strong> Kinder lernen durch Krankheit, Körpersignale besser wahrzunehmen — das ist wertvolles Körperwissen für später.</li>
+                <li><strong>Nachholplan anbieten:</strong> „Wir fragen Lena morgen" gibt dem Kontrollbedürfnis eine befriedigende Antwort.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Warum wollte der Lernolotl trotz Fieber in die Schule — was hat ihn beschäftigt?</li>
+            <li>Was hat ihm geholfen, seinen Kopf ein bisschen zur Ruhe zu bringen?</li>
+            <li>Was machst du, wenn du krank bist und trotzdem nicht schlafen kannst?</li>
+            <li>Was sagt dein Körper dir, wenn er Pause braucht — und hörst du meistens darauf?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Kranke Kinder mit ADHS begleiten</span>
+        </div>
+        <div class="info-box-text">
+            <p>Für Kinder mit ADHS ist Kranksein oft emotional aufwühlender als körperlich. Die fehlende Stimulation, die unterbrochene Routine und die verpassten sozialen Momente sind echte Belastungen — nicht Drama. Das zu verstehen verändert, wie man Begleitung gestaltet.</p>
+            <p>Niedrigschwellige, vertraute Aktivitäten (Lieblingsgeschichten, bekannte Hörspiele) helfen besser als neue Angebote, die Aufmerksamkeit kosten. Körpernähe und ruhige Anwesenheit sind oft wirksamer als Ablenkungsversuche.</p>
+            <p>Das Kranksein ist auch eine Chance, Körperwahrnehmung zu üben: Was sagt mir mein Körper? Wann brauche ich Pause? Das ist Wissen, das Kinder ihr ganzes Leben brauchen werden.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>

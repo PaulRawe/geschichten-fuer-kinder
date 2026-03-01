@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Der Lernolotl und das Haustier – Eine Vorlesegeschichte über Verantwortung übernehmen, Vergessen und was ein Tier wirklich braucht.">
+    <title>Haustier — Verantwortung übernehmen | Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/zuhause-geschichte-haustier.html">
+
+    <meta property="og:title" content="Haustier — Verantwortung übernehmen">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl bekommt ein Haustier und lernt, was Verantwortung wirklich bedeutet. Für Kinder 5–10 Jahre.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/zuhause-geschichte-haustier.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #16a34a;
+            --primary-mid: #22c55e;
+            --primary-light: #bbf7d0;
+            --primary-pale: #f0fdf4;
+            --accent: #f97316;
+            --bg-gradient-from: #14532d;
+            --bg-gradient-to: #15803d;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #14532d 0%, #16a34a 50%, #14532d 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+
+        .feeling-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+        }
+
+        header {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .story-meta {
+            color: var(--primary);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-intro {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image-container {
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 16px rgba(22,163,74,0.25));
+        }
+
+        .hero-char-icon {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(22,163,74,0.2));
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-content {
+            color: #333;
+            font-size: 1.15em;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #14532d; font-style: italic; }
+
+        .page-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.8em;
+        }
+
+        .char-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-pale);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+
+        .info-box {
+            background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid #f59e0b;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+        }
+
+        .info-box-title {
+            color: #b45309;
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+
+        .technique-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary-mid);
+            box-shadow: 0 8px 24px rgba(22,163,74,0.12);
+        }
+
+        .technique-box-title {
+            color: #14532d;
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Fredoka One', cursive;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .technique-box-text { color: #1c1917; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+
+        .nachbesprechung {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 6px solid #22c55e;
+            box-shadow: 0 8px 24px rgba(34,197,94,0.15);
+        }
+
+        .nachbesprechung-title {
+            font-family: 'Fredoka One', cursive;
+            color: #15803d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li {
+            padding: 10px 0 10px 30px;
+            border-bottom: 1px solid rgba(34,197,94,0.2);
+            color: #14532d;
+            font-size: 1em;
+            line-height: 1.6;
+            position: relative;
+        }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before {
+            content: "→";
+            position: absolute;
+            left: 8px;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1em;
+            padding: 10px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .print-btn:hover { background: var(--primary); color: white; }
+
+        .ad-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-mid) 0%, var(--accent) 100%);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        .print-header { display: none; }
+        .print-footer { display: none; }
+
+        footer {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.2s;
+            padding: 5px 0;
+            position: relative;
+        }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body { padding: 15px; }
+            .sticky-nav { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2em; }
+            header, .story-section { padding: 30px 20px; }
+            .story-content { font-size: 1.05em; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; }
+            header .hero-image-container { display: none; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; }
+            .story-content strong, .story-content em { color: #000; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt-zuhause.html" class="back-link">← Lernolotls Zuhause</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Zuhause</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Haustier-Geschichte</div>
+        <div class="story-meta">Vorlesegeschichte · Zuhause · 5–10 Jahre</div>
+        <h1>Haustier — Verantwortung übernehmen</h1>
+        <p class="story-intro">
+            Der Lernolotl wünscht sich seit Monaten ein Haustier.
+            Endlich ist es so weit: Kalli, ein kleiner Axolotl, zieht ein.
+            Aber Verantwortung klingt leichter als sie ist — besonders wenn man vergisst.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-happy.png" alt="Der Lernolotl" class="hero-icon">
+            <img src="../char-familie-mama.png" alt="Mama" class="hero-char-icon">
+            <img src="../char-familie-papa.png" alt="Papa" class="hero-char-icon">
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Der Lernolotl hatte ihn Kalli genannt.</p>
+
+            <p>Kalli war ein Axolotl — rosa, mit kleinen Kiemen wie ein Kopfschmuck
+            aus Federchen. Er schwamm langsam durch sein Becken und schaute immer leicht verwundert.
+            <strong>Der Lernolotl liebte ihn vom ersten Tag an.</strong></p>
+
+            <p>Mama und Papa hatten lange überlegt, bevor sie Ja gesagt hatten.
+            Sie hatten Fragen gestellt: Was braucht ein Axolotl?
+            Wer kümmert sich, wenn du in der Schule bist?
+            Kannst du jeden Tag füttern — auch wenn du vergessen hast zu schlafen,
+            auch wenn du müde bist, auch wenn Lea nervt?</p>
+
+            <p>Er hatte Ja gesagt. Zu allem.</p>
+
+            <p>Die ersten zwei Wochen hatte das gestimmt. Kalli bekam jeden Abend
+            seine kleinen Pellets. Das Wasser wurde gewechselt. Der Filter geprüft.
+            Der Lernolotl hatte eine Liste — und er hatte die Liste abgehakt.
+            Das war gut. Das konnte er.</p>
+
+            <p>Dann kam die Woche mit dem Mathe-Test. Und dem Schulfest-Stress.
+            Und dem Abend, an dem er so müde gewesen war, dass er direkt eingeschlafen war.</p>
+
+            <p>Kalli hatte zwei Tage kein Futter bekommen.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">🐾 💚 🐾</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Er hatte es selbst bemerkt. Nicht Mama, nicht Papa — er.</p>
+
+            <p>Er stand morgens vor dem Becken und schaute Kalli an.
+            Kalli schwamm langsam. Kalli schaute verwundert wie immer.
+            Aber das Futter von gestern Abend war nicht weg.
+            Das bedeutete: Kalli hatte seit Dienstag nichts bekommen.
+            Heute war Donnerstag.</p>
+
+            <p>Der Lernolotl fühlte etwas, das schwer zu beschreiben war.
+            Kein Schreien-Wollen. Keine Wut. Eher etwas, das schwer auf der Brust lag
+            und ihn kleiner machte als er war.</p>
+
+            <p>Er füttterte Kalli. Dann saß er lange vor dem Becken.</p>
+
+            <div class="char-row">
+                <img src="../lernolotl-thinking.png" alt="Der Lernolotl">
+                <div>
+                    <div class="char-row-name">Der Lernolotl</div>
+                    <div class="char-row-text">Er hatte vergessen. Kalli war abhängig von ihm. Das war ein sehr schweres Gefühl.</div>
+                </div>
+            </div>
+
+            <p>Beim Frühstück sagte er es. Er sagte es direkt, weil er gelernt hatte,
+            dass Dinge, die man nicht sagt, größer werden als Dinge, die man sagt.</p>
+
+            <p>„Ich habe Kalli zwei Tage nicht gefüttert. Ich hatte vergessen."</p>
+
+            <p>Papa hörte auf zu lesen. Mama sah ihn an.</p>
+
+            <p>„Kalli geht es gut", sagte er schnell. „Ich habe ihn heute gefüttert.
+            Axolotls können ein paar Tage ohne Futter. Ich habe nachgeschaut."</p>
+
+            <p><em>Er hatte tatsächlich nachgeschaut. Direkt nach dem Entdecken, noch vor dem Frühstück.</em></p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Papa sagte: „Danke, dass du es gesagt hast."</p>
+
+            <p>Mama fragte: „Was glaubst du, warum ist es passiert?"</p>
+
+            <p>Der Lernolotl dachte nach. „Ich hatte die Woche keinen Kopf frei.
+            Und abends war ich so müde, dass ich direkt geschlafen habe.
+            Die Liste lag in meinem Zimmer — aber ich war nicht mehr in meinem Zimmer."</p>
+
+            <p>„Was wäre die Lösung?", fragte Mama.</p>
+
+            <p>„Die Liste muss da sein, wo ich sowieso bin.
+            Und es braucht eine Erinnerung — nicht von innen, von außen."</p>
+
+            <p>Sie überlegten gemeinsam. Am Ende gab es eine neue Regel:
+            Kalli-Routine direkt nach dem Schulranzen-Abstellen.
+            Nicht nach dem Abendessen, nicht vor dem Schlafen —
+            genau dann, wenn er nach Hause kam und noch nicht müde war.</p>
+
+            <p>Ein Zettel an der Wohnungstür: <strong>„Kalli sagt Hallo."</strong></p>
+
+            <p>Papa hatte den Zettel gemacht. Mit einem kleinen Axolotl-Gesicht drauf —
+            dem gleichen verwunderten Ausdruck wie Kalli selbst.</p>
+
+            <p>Der Lernolotl lachte, als er ihn sah. Nicht laut — aber echt.</p>
+
+            <p>Seitdem hatte Kalli jeden Tag sein Futter bekommen.
+            Nicht weil es immer einfach war — sondern weil das System besser war.
+            Verantwortung, hatte der Lernolotl verstanden, bedeutete nicht nur wollen.
+            Es bedeutete auch: sich selbst helfen, damit das Wollen auch klappt.</p>
+
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🐟</span>
+            <span>Verantwortung lernen — mit System statt mit Willenskraft</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Für Kinder mit ADHS ist Vergessen kein Charakterfehler — es ist ein Aufmerksamkeitsproblem. Diese Strategien helfen:</strong></p>
+            <ul>
+                <li><strong>Routine an feste Anker binden:</strong> Tierversorgung nach dem Schuhe-Ausziehen, nicht „irgendwann abends". Je spezifischer der Auslöser, desto verlässlicher die Routine.</li>
+                <li><strong>Externe Erinnerungen statt innerer Motivation:</strong> Zettel, Alarm, sichtbare Signale — das Gehirn mit ADHS braucht externe Hinweise, kein schlechtes Gewissen.</li>
+                <li><strong>Fehler als Lernchance:</strong> Vergessen ohne Drama besprechen — „Was hat nicht funktioniert, und was können wir ändern?" ist konstruktiver als Vorwürfe.</li>
+                <li><strong>Mut zum Zugeben belohnen:</strong> Kinder, die Fehler offen benennen, statt sie zu verstecken, entwickeln eine wichtige Fähigkeit. Das verdient Anerkennung.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Warum hatte der Lernolotl vergessen — und was war der Unterschied zwischen nicht wollen und vergessen?</li>
+            <li>Was hat ihm geholfen, es trotzdem beim nächsten Mal zu schaffen?</li>
+            <li>Gibt es etwas in deinem Alltag, das du immer vergisst — obwohl du es eigentlich nicht vergessen willst?</li>
+            <li>Was wäre eine Erinnerung von außen, die dir dabei helfen könnte?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Haustiere und ADHS — Chancen und realistische Erwartungen</span>
+        </div>
+        <div class="info-box-text">
+            <p>Haustiere können für Kinder mit ADHS sehr wertvoll sein: sie geben Struktur, fördern Empathie und bieten eine bedingungslose Verbindung. Aber die Betreuungsverantwortung muss realistisch eingeschätzt werden — ein Kind mit ADHS wird zuverlässiger, wenn das System zuverlässig ist, nicht wenn die Erwartung hoch ist.</p>
+            <p>Das bedeutet: Anforderungen klein halten, Routinen an vorhandene Abläufe andocken, externe Erinnerungen schaffen und Fehler ohne Dramatik besprechen. „Was hat nicht funktioniert?" ist hilfreicher als „Du hast wieder vergessen."</p>
+            <p>Wenn ein Kind einen Fehler von sich aus benennt, ist das ein Zeichen von Reife und Vertrauen. Dieses Verhalten explizit zu würdigen — „Danke, dass du es gesagt hast" — macht es wahrscheinlicher, dass es wieder passiert.</p>
+        </div>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>
