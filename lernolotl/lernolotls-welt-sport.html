@@ -10,13 +10,15 @@
     <link rel="canonical" href="https://www.lernolotl.de/lernolotl/lernolotls-welt-sport.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Lernolotl beim Sport – Geschichten für Kinder von 5–10 Jahren">
-    <meta property="og:description" content="Sport hat Regeln, Abläufe und klare Ziele. Das gefällt dem Lernolotl — aber die anderen Kinder sind manchmal komplizierter als die Regeln.">
+    <meta property="og:description" content="Sport hat Regeln, Abläufe und klare Ziele. Das gefällt dem Lernolotl — aber die anderen Kinder sind manchmal komplizierter als die Regeln selbst.">
     <meta property="og:locale" content="de_DE">
     <title>Lernolotl beim Sport – Geschichten & Lernmaterialien | Der Lernolotl</title>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Lernolotl beim Sport","url":"https://www.lernolotl.de/lernolotl/lernolotls-welt-sport.html","inLanguage":"de-DE","isPartOf":{"@type":"WebSite","name":"Der Lernolotl","url":"https://www.lernolotl.de/"}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
     <style>
         :root { --primary:#5a7d95;--primary-dark:#3d5f75;--c:#0d9488;--c-mid:#14b8a6;--c-light:#2dd4bf;--c-pale:#f0fdfa;--c-soft:#ccfbf1;--accent:#66bb6a;--text:#2a2a2a;--text-soft:#555;--radius-xl:30px;--shadow:0 12px 40px rgba(13,148,136,0.1); }
         *{margin:0;padding:0;box-sizing:border-box}
@@ -73,23 +75,45 @@
         .char-desc{font-size:.88em;color:var(--text-soft);line-height:1.55}
         .char-fact{display:inline-block;margin-top:10px;background:white;border-radius:10px;padding:6px 12px;font-size:.8em;font-weight:700}
         .cc1 .char-fact{color:#134e4a} .cc2 .char-fact{color:#92400e} .cc3 .char-fact{color:#1e40af}
+
+        /* Geschichten Grid — alle 10 */
         .geschichten-grid{display:grid;grid-template-columns:1fr;gap:22px}
         .geschichte-card{border-radius:20px;overflow:hidden;border:2px solid transparent;box-shadow:0 8px 24px rgba(0,0,0,.07);display:block;color:inherit;text-decoration:none;transition:transform .25s,box-shadow .25s}
         .geschichte-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
         .gc-1{border-color:#5eead4} .gc-2{border-color:#fde047} .gc-3{border-color:#fda4af}
+        .gc-4{border-color:#93c5fd} .gc-5{border-color:#c4b5fd} .gc-6{border-color:#86efac}
+        .gc-7{border-color:#fca5a5} .gc-8{border-color:#fdba74} .gc-9{border-color:#a5b4fc} .gc-10{border-color:#6ee7b7}
         .gc-header{padding:20px 26px 16px;display:flex;align-items:center;gap:16px}
         .gc-1 .gc-header{background:linear-gradient(135deg,#f0fdfa,#ccfbf1)}
         .gc-2 .gc-header{background:linear-gradient(135deg,#fefce8,#fef9c3)}
         .gc-3 .gc-header{background:linear-gradient(135deg,#fff1f2,#ffe4e6)}
+        .gc-4 .gc-header{background:linear-gradient(135deg,#eff6ff,#dbeafe)}
+        .gc-5 .gc-header{background:linear-gradient(135deg,#f5f3ff,#ede9fe)}
+        .gc-6 .gc-header{background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
+        .gc-7 .gc-header{background:linear-gradient(135deg,#fff1f2,#ffe4e6)}
+        .gc-8 .gc-header{background:linear-gradient(135deg,#fff7ed,#ffedd5)}
+        .gc-9 .gc-header{background:linear-gradient(135deg,#eef2ff,#e0e7ff)}
+        .gc-10 .gc-header{background:linear-gradient(135deg,#ecfdf5,#d1fae5)}
         .gc-number{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka One',cursive;font-size:1.4em;color:white;flex-shrink:0}
         .gc-1 .gc-number{background:linear-gradient(135deg,#0d9488,#134e4a)}
         .gc-2 .gc-number{background:linear-gradient(135deg,#eab308,#a16207)}
         .gc-3 .gc-number{background:linear-gradient(135deg,#f43f5e,#be123c)}
+        .gc-4 .gc-number{background:linear-gradient(135deg,#3b82f6,#1d4ed8)}
+        .gc-5 .gc-number{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+        .gc-6 .gc-number{background:linear-gradient(135deg,#22c55e,#15803d)}
+        .gc-7 .gc-number{background:linear-gradient(135deg,#ef4444,#b91c1c)}
+        .gc-8 .gc-number{background:linear-gradient(135deg,#f97316,#c2410c)}
+        .gc-9 .gc-number{background:linear-gradient(135deg,#6366f1,#4338ca)}
+        .gc-10 .gc-number{background:linear-gradient(135deg,#10b981,#065f46)}
         .gc-meta{flex:1}
         .gc-tag{font-size:.75em;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
         .gc-1 .gc-tag{color:#134e4a} .gc-2 .gc-tag{color:#a16207} .gc-3 .gc-tag{color:#be123c}
+        .gc-4 .gc-tag{color:#1d4ed8} .gc-5 .gc-tag{color:#6d28d9} .gc-6 .gc-tag{color:#15803d}
+        .gc-7 .gc-tag{color:#b91c1c} .gc-8 .gc-tag{color:#c2410c} .gc-9 .gc-tag{color:#4338ca} .gc-10 .gc-tag{color:#065f46}
         .gc-title{font-family:'Fredoka One',cursive;font-size:1.35em;line-height:1.2}
         .gc-1 .gc-title{color:#042f2e} .gc-2 .gc-title{color:#422006} .gc-3 .gc-title{color:#4c0519}
+        .gc-4 .gc-title{color:#1e3a8a} .gc-5 .gc-title{color:#4c1d95} .gc-6 .gc-title{color:#14532d}
+        .gc-7 .gc-title{color:#7f1d1d} .gc-8 .gc-title{color:#7c2d12} .gc-9 .gc-title{color:#312e81} .gc-10 .gc-title{color:#022c22}
         .gc-body{background:white;padding:20px 26px 24px}
         .gc-desc{color:var(--text-soft);font-size:.97em;line-height:1.7;margin-bottom:16px}
         .gc-chars{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
@@ -97,6 +121,7 @@
         .gc-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
         .gc-reading-time{color:#aaa;font-size:.82em;font-weight:600}
         .badge-free{background:#dcfce7;color:#166534;font-size:.78em;font-weight:800;padding:5px 12px;border-radius:20px;border:1px solid #bbf7d0}
+
         .eltern-box{background:var(--c-pale);border-radius:20px;padding:30px 32px;border:2px solid var(--c-soft)}
         .eltern-title{font-family:'Fredoka One',cursive;color:var(--c);font-size:1.4em;margin-bottom:12px}
         .eltern-text{color:var(--text-soft);font-size:.97em;line-height:1.75;margin-bottom:16px}
@@ -134,7 +159,6 @@
         .d1{animation-delay:.05s;opacity:0} .d2{animation-delay:.15s;opacity:0} .d3{animation-delay:.25s;opacity:0}
         @media(max-width:768px){body{padding:12px}.hero-title{font-size:2.2em}.hero-top{padding:36px 22px 68px}.hero-bottom{padding:66px 22px 30px}.section-card{padding:32px 22px}.warum-grid,.char-grid,.eltern-points{grid-template-columns:1fr}.cta-box{padding:34px 22px}.cookie-content{flex-direction:column}.footer-links{flex-direction:column;gap:13px}}
     </style>
-    <link rel="stylesheet" href="../consent.css">
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
@@ -156,8 +180,9 @@
                 <span class="breadcrumb-sep">›</span>
                 <span class="breadcrumb-current">Beim Sport</span>
             </div>
-            <span class="nav-badge">Sport-Geschichten</span>
+            <span class="nav-badge">10 Sport-Geschichten</span>
         </nav>
+
         <header class="hero fade-in d1">
             <div class="hero-top">
                 <div class="hero-eyebrow">Lernolotl beim Sport</div>
@@ -168,14 +193,15 @@
                 </div>
             </div>
             <div class="hero-bottom">
-                <p class="hero-tagline"><strong>Für Kinder von 5–10 Jahren.</strong> Geschichten über Schwimmen, Teamgeist und den Mut, weiterzumachen wenn etwas nicht geklappt hat.</p>
+                <p class="hero-tagline"><strong>Für Kinder von 5–10 Jahren.</strong> Geschichten über Schwimmen, Teamgeist, ungeschriebene Regeln und den Mut, weiterzumachen wenn etwas nicht geklappt hat.</p>
                 <div class="trust-strip">
-                    <span class="trust-badge">Alle Geschichten kostenlos</span>
+                    <span class="trust-badge">Alle 10 Geschichten kostenlos</span>
                     <span class="trust-badge">Lernmaterialien verfügbar</span>
                     <span class="trust-badge">Von Pädagogen entwickelt</span>
                 </div>
             </div>
         </header>
+
         <section class="section-card fade-in d2">
             <span class="section-label">Warum Sport?</span>
             <h2 class="section-title">Sport ist für den Lernolotl ein besonderer Bereich</h2>
@@ -203,6 +229,7 @@
                 <div class="says-sub">— Der Lernolotl, nach seinem ersten Schwimmtraining</div>
             </div>
         </section>
+
         <section class="section-card fade-in d2">
             <span class="section-label">Wer ist dabei?</span>
             <h2 class="section-title">Die Sport-Crew</h2>
@@ -213,30 +240,33 @@
                     <div class="char-name">Herr Koch</div>
                     <div class="char-role">Der Trainer</div>
                     <p class="char-desc">Herr Koch erklärt Übungen immer zuerst, dann zeigt er sie — und dann macht man sie. Diese Reihenfolge gefällt dem Lernolotl sehr. Herr Koch wartet auch, bis alle bereit sind.</p>
-                    <span class="char-fact">Liebt Schwimmen & Meteorologie</span>
+                    <span class="char-fact">Liebt Schwimmen &amp; Meteorologie</span>
                 </div>
                 <div class="char-card cc2">
                     <div class="char-avatar av2"><img src="../char-sport-timo.png" alt="Timo" onerror="this.src='../lernolotl-icon.png'"></div>
                     <div class="char-name">Timo</div>
                     <div class="char-role">Teamkamerad</div>
                     <p class="char-desc">Timo ist der Schnellste im Team — aber er ist nie stolz darauf auf eine Art, die wehtut. Wenn der Lernolotl zu langsam ist, sagt Timo: „Nächstes Mal." Das reicht.</p>
-                    <span class="char-fact">Liebt Rekorde & Pommes</span>
+                    <span class="char-fact">Liebt Rekorde &amp; Pommes</span>
                 </div>
                 <div class="char-card cc3">
                     <div class="char-avatar av3"><img src="../char-sport-nora.png" alt="Nora" onerror="this.src='../lernolotl-icon.png'"></div>
                     <div class="char-name">Nora</div>
                     <div class="char-role">Teamkameradin</div>
                     <p class="char-desc">Nora macht dieselbe Strecke wie der Lernolotl — und kommt meistens gleichzeitig an. Das macht sie zu einer Art stiller Verbündeten, auch wenn sie kaum reden.</p>
-                    <span class="char-fact">Liebt Musik & Kacheln zählen</span>
+                    <span class="char-fact">Liebt Musik &amp; Kacheln zählen</span>
                 </div>
             </div>
         </section>
+
         <div class="ad-container"><div class="ad-label">Werbung</div><div class="ad-placeholder">Google AdSense — responsiv</div></div>
+
         <section class="section-card fade-in d3">
-            <span class="section-label">Alle Geschichten</span>
-            <h2 class="section-title">Lernolotl beim Sport — die Geschichten</h2>
-            <p class="section-text">Drei Geschichten aus dem Sportleben des Lernolotl. Kostenlos — mit optionalen Lernmaterialien.</p>
+            <span class="section-label">Alle 10 Geschichten</span>
+            <h2 class="section-title">Lernolotl beim Sport — alle Geschichten</h2>
+            <p class="section-text">Zehn Geschichten aus dem Sportleben des Lernolotl. Alle kostenlos — mit optionalen Lernmaterialien.</p>
             <div class="geschichten-grid">
+
                 <a href="sport-geschichte-1-schwimmen.html" class="geschichte-card gc-1">
                     <div class="gc-header">
                         <div class="gc-number">1</div>
@@ -248,6 +278,7 @@
                         <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
+
                 <a href="sport-geschichte-2-verlieren.html" class="geschichte-card gc-2">
                     <div class="gc-header">
                         <div class="gc-number">2</div>
@@ -259,6 +290,7 @@
                         <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
+
                 <a href="sport-geschichte-3-team.html" class="geschichte-card gc-3">
                     <div class="gc-header">
                         <div class="gc-number">3</div>
@@ -270,43 +302,136 @@
                         <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
+
+                <a href="sport-geschichte-3-2-nicht-schnell.html" class="geschichte-card gc-4">
+                    <div class="gc-header">
+                        <div class="gc-number">4</div>
+                        <div class="gc-meta"><div class="gc-tag">Stärken · Selbstbild</div><div class="gc-title">Ich bin nicht so schnell wie die anderen</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Der Lernolotl kommt beim Laufen immer als Letzter an — obwohl er extra trainiert. Herr Koch misst etwas anderes und zeigt ihm, dass Schnelligkeit nur eine von vielen Stärken ist.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Nora</span><span class="gc-char-badge">Herr Koch</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <a href="sport-geschichte-3-3-ungeschriebene-regeln.html" class="geschichte-card gc-5">
+                    <div class="gc-header">
+                        <div class="gc-number">5</div>
+                        <div class="gc-meta"><div class="gc-tag">Soziale Regeln · Fairness</div><div class="gc-title">Die ungeschriebenen Regeln im Fußball</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Der Lernolotl kennt alle 17 offiziellen Fußballregeln — aber niemand hat ihm erklärt, was man tut, wenn ein Tor fällt oder wenn jemand hinfällt. Herr Koch schreibt die ungeschriebenen Regeln auf.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Timo</span><span class="gc-char-badge">Herr Koch</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <a href="sport-geschichte-3-4-zu-viel-trubel.html" class="geschichte-card gc-6">
+                    <div class="gc-header">
+                        <div class="gc-number">6</div>
+                        <div class="gc-meta"><div class="gc-tag">Überforderung · Selbstregulation</div><div class="gc-title">Zu viel Trubel — Sport in der großen Gruppe</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Fünf Mannschaften, eine Halle, sehr viel Lärm. Der Lernolotl bleibt in der Tür stehen. Nora zeigt ihm, wie sie mit dem Trubel umgeht — und dass kurze Pausen kein Versagen sind.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Nora</span><span class="gc-char-badge">Herr Koch</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <a href="sport-geschichte-3-5-aufhoeren.html" class="geschichte-card gc-7">
+                    <div class="gc-header">
+                        <div class="gc-number">7</div>
+                        <div class="gc-meta"><div class="gc-tag">Durchhalten · Entscheidung</div><div class="gc-title">Ich will aufhören!</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Drei Wochen lang will der Lernolotl nicht mehr zum Training. Mama fragt genauer nach — und entdeckt mit ihm, dass das Problem gar nicht der Sport ist, sondern die 105 Minuten davor.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Mama</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <a href="sport-geschichte-3-6-gewonnen.html" class="geschichte-card gc-8">
+                    <div class="gc-header">
+                        <div class="gc-number">8</div>
+                        <div class="gc-meta"><div class="gc-tag">Empathie · Siegen</div><div class="gc-title">Gewonnen! — aber die anderen sind traurig</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Das Team gewinnt — der Lernolotl freut sich sehr. Aber die andere Mannschaft weint. Darf er sich trotzdem freuen? Timo erklärt den Unterschied zwischen Freude und Rücksichtslosigkeit.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Timo</span><span class="gc-char-badge">Nora</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <a href="sport-geschichte-3-9-letzter.html" class="geschichte-card gc-9">
+                    <div class="gc-header">
+                        <div class="gc-number">9</div>
+                        <div class="gc-meta"><div class="gc-tag">Zugehörigkeit · Fairness</div><div class="gc-title">Ich bin beim Aussuchen immer der Letzte</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Sechsmal in Folge als Letzter gewählt. Der Lernolotl hat es gezählt. Herr Koch sieht das Muster — und ändert die Regel für alle, ohne den Lernolotl bloßzustellen.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Herr Koch</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <a href="sport-geschichte-3-10-fahrrad.html" class="geschichte-card gc-10">
+                    <div class="gc-header">
+                        <div class="gc-number">10</div>
+                        <div class="gc-meta"><div class="gc-tag">Ausdauer · Körperlernen</div><div class="gc-title">Fahrrad fahren lernen — immer wieder hinfallen</div></div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Siebenmal hingefallen — der Lernolotl hat es gezählt. Er versteht alles theoretisch, aber der Körper macht nicht mit. Papa zeigt ihm, dass manche Dinge man nicht denken, sondern fühlen muss.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Papa</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 5 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
             </div>
         </section>
+
         <section class="section-card fade-in d3">
             <div class="eltern-box">
                 <h3 class="eltern-title">Für Eltern & Sporttrainer</h3>
-                <p class="eltern-text">Diese Geschichten zeigen Sport aus der Perspektive eines Kindes, dem Struktur und Berechenbarkeit wichtig sind. Sie sind für alle Kinder geeignet — besonders für solche, die mit Wettkampfdruck oder Teamdynamiken zu kämpfen haben.</p>
+                <p class="eltern-text">Diese Geschichten zeigen Sport aus der Perspektive eines Kindes, dem Struktur und Berechenbarkeit wichtig sind. Sie sind für alle Kinder geeignet — besonders für solche, die mit Wettkampfdruck, Teamdynamiken oder sensorischer Überforderung zu kämpfen haben.</p>
                 <ul class="eltern-points">
                     <li>Gesprächsanregungen nach dem Vorlesen</li>
                     <li>Umgang mit Misserfolg besprechen</li>
-                    <li>Teamgeist & Zusammenhalt</li>
+                    <li>Teamgeist &amp; Zusammenhalt</li>
                     <li>Den eigenen Körper kennenlernen</li>
                     <li>Keine Diagnose-Sprache</li>
                     <li>Erprobt in echten Situationen</li>
+                    <li>Ungeschriebene Regeln sichtbar machen</li>
+                    <li>Selbstregulation im Sport stärken</li>
                 </ul>
             </div>
         </section>
+
         <div class="ad-container"><div class="ad-label">Werbung</div><div class="ad-placeholder">Google AdSense — responsiv</div></div>
+
         <div class="cta-box fade-in d3">
             <h2 class="cta-title">Mehr Welten entdecken</h2>
             <p class="cta-text">Begleite den Lernolotl auch in der Schule, bei Freunden und Zuhause.</p>
             <div class="cta-buttons"><a href="lernolotls-welt.html" class="btn-white">Zurück zu Lernolotls Welt</a></div>
         </div>
+
         <footer>
             <p class="footer-brand">Der Lernolotl</p>
             <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
-            <div class="footer-credits"><strong>Geschichten & Lernmaterialien:</strong> Paul R.<br>Alle Geschichten kostenlos. Optionale Arbeitsmaterialien separat erhältlich.<br><em>© Der Lernolotl • lernolotl.de</em></div>
+            <div class="footer-credits"><strong>Geschichten &amp; Lernmaterialien:</strong> Paul R.<br>Alle Geschichten kostenlos. Optionale Arbeitsmaterialien separat erhältlich.<br><em>© Der Lernolotl • lernolotl.de</em></div>
             <div class="footer-links">
-                <a href="../index.html">Startseite</a><a href="lernolotls-welt.html">Lernolotls Welt</a>
-<a href="../impressum.html">Impressum</a>
-<a href="../datenschutz.html">Datenschutz</a>
-<a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
-<a href="../kontakt.html">Kontakt</a>
-<a href="../ueber-uns.html">Über uns</a>
+                <a href="../index.html">Startseite</a>
+                <a href="lernolotls-welt.html">Lernolotls Welt</a>
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+                <a href="../kontakt.html">Kontakt</a>
+                <a href="../ueber-uns.html">Über uns</a>
             </div>
             <div class="footer-info">© 2026 Der Lernolotl – Alle Rechte vorbehalten</div>
         </footer>
     </div>
+
     <script>
         window.addEventListener('scroll',function(){const s=document.body.scrollTop||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=((s/h)*100)+'%'});
         function showCookieBanner(){if(!localStorage.getItem('cookieConsent'))document.getElementById('cookieBanner').classList.add('show')}
@@ -314,6 +439,7 @@
         function declineCookies(){localStorage.setItem('cookieConsent','declined');document.getElementById('cookieBanner').classList.remove('show')}
         window.addEventListener('load',showCookieBanner);
     </script>
-    <script src="../cookies.js"></script><script src="../paypal-spende.js"></script>
+    <script src="../cookies.js"></script>
+    <script src="../paypal-spende.js"></script>
 </body>
 </html>
