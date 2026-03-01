@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wenn ich traurig bin — Traurigkeit ist kein Fehler. Eine Vorlesegeschichte für Kinder über Traurigkeit, Gefühle zulassen und warum Weinen in Ordnung ist. Mit dem Lernolotl und Oma Hilde.">
+    <title>Wenn ich traurig bin — Traurigkeit ist kein Fehler | Lernolotl.de</title>
+    <link rel="canonical" href="https://www.lernolotl.de/lernolotl/ichbinich-geschichte-traurigkeit.html">
+
+    <meta property="og:title" content="Wenn ich traurig bin — Traurigkeit ist kein Fehler | Der Lernolotl">
+    <meta property="og:description" content="Kostenlose Vorlesegeschichte: Der Lernolotl ist traurig — und lernt, dass Traurigkeit kein Fehler ist. Für Kinder 5–10 Jahre, mit Nachbesprechungsfragen für Eltern.">
+    <meta property="og:url" content="https://www.lernolotl.de/lernolotl/ichbinich-geschichte-traurigkeit.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0d9488;
+            --primary-mid: #2dd4bf;
+            --primary-light: #99f6e4;
+            --primary-pale: #f0fdfa;
+            --accent: #7ecac3;
+            --bg-gradient-from: #0d9488;
+            --bg-gradient-to: #134e4a;
+        }
+        body { font-family: 'Nunito', 'Segoe UI', sans-serif; background: linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #134e4a 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .sticky-nav { position: sticky; top: 20px; background: white; border-radius: 20px; padding: 15px 25px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-weight: 700; transition: all 0.3s; font-size: 0.95em; }
+        .back-link:hover { color: var(--bg-gradient-to); transform: translateX(-4px); }
+        .feeling-badge { background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-family: 'Fredoka One', cursive; font-size: 0.95em; }
+        header { background: white; border-radius: 25px; padding: 50px 40px 40px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.15); margin-bottom: 40px; }
+        .story-meta { color: var(--primary); font-size: 0.9em; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        h1 { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 2.5em; margin-bottom: 20px; line-height: 1.2; }
+        .story-intro { color: #555; font-size: 1.1em; line-height: 1.8; max-width: 680px; margin: 0 auto 30px; }
+        .hero-image-container { border-radius: 20px; background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%); padding: 40px; display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap; }
+        .hero-icon { width: 130px; height: 130px; object-fit: contain; filter: drop-shadow(0 8px 20px rgba(13,148,136,0.3)); }
+        .hero-char-icon { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(13,148,136,0.2)); }
+        .motto-box { background: linear-gradient(135deg, var(--primary) 0%, var(--bg-gradient-to) 100%); border-radius: 20px; padding: 25px 35px; margin: 30px auto 0; max-width: 520px; text-align: center; color: white; font-family: 'Fredoka One', cursive; font-size: 1.3em; line-height: 1.5; box-shadow: 0 8px 24px rgba(13,148,136,0.35); }
+        .story-section { background: white; border-radius: 25px; padding: 50px 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 40px; }
+        .story-content { color: #333; font-size: 1.15em; line-height: 2; max-width: 700px; margin: 0 auto; }
+        .story-content p { margin-bottom: 25px; }
+        .story-content p:last-child { margin-bottom: 0; }
+        .story-content strong { color: var(--primary); font-weight: 700; }
+        .story-content em { color: #0f766e; font-style: italic; }
+        .page-divider { text-align: center; margin: 40px 0; color: var(--primary); font-family: 'Fredoka One', cursive; font-size: 1.1em; letter-spacing: 2px; opacity: 0.6; }
+        .section-divider { text-align: center; margin: 40px 0; font-size: 1.8em; }
+        .char-row { display: flex; align-items: center; gap: 12px; background: var(--primary-pale); border-radius: 16px; padding: 15px 20px; margin: 30px 0; }
+        .char-row img { width: 56px; height: 56px; object-fit: contain; }
+        .char-row-text { font-size: 0.95em; color: #444; font-style: italic; line-height: 1.5; }
+        .char-row-name { font-weight: 700; color: var(--primary); font-family: 'Fredoka One', cursive; margin-bottom: 2px; }
+        .story-quote { background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%); border-radius: 16px; padding: 25px 30px; margin: 30px 0; border-left: 5px solid var(--primary); font-family: 'Fredoka One', cursive; font-size: 1.2em; color: var(--bg-gradient-to); line-height: 1.5; }
+        .info-box { background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%); border-radius: 20px; padding: 30px; margin: 40px 0; border-left: 6px solid #f59e0b; box-shadow: 0 8px 24px rgba(245,158,11,0.2); }
+        .info-box-title { color: #b45309; font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-box-text { color: #292524; font-size: 1em; line-height: 1.75; }
+        .info-box-text p { margin-bottom: 12px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
+        .technique-box { background: linear-gradient(135deg, var(--primary-pale) 0%, #ccfbf1 100%); border-radius: 20px; padding: 30px; margin: 40px 0; border-left: 6px solid var(--primary-mid); box-shadow: 0 8px 24px rgba(13,148,136,0.15); }
+        .technique-box-title { color: var(--bg-gradient-to); font-size: 1.2em; font-weight: 700; font-family: 'Fredoka One', cursive; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .technique-box-text { color: #134e4a; font-size: 1em; line-height: 1.75; }
+        .technique-box-text p { margin-bottom: 12px; }
+        .technique-box-text p:last-child { margin-bottom: 0; }
+        .technique-box-text ul { padding-left: 22px; margin: 10px 0; }
+        .technique-box-text li { margin-bottom: 8px; }
+        .nachbesprechung { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 20px; padding: 35px; margin: 40px 0; border-left: 6px solid #22c55e; box-shadow: 0 8px 24px rgba(34,197,94,0.15); }
+        .nachbesprechung-title { font-family: 'Fredoka One', cursive; color: #15803d; font-size: 1.3em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .nachbesprechung-fragen { list-style: none; padding: 0; }
+        .nachbesprechung-fragen li { padding: 10px 0 10px 30px; border-bottom: 1px solid rgba(34,197,94,0.2); color: #14532d; font-size: 1em; line-height: 1.6; position: relative; }
+        .nachbesprechung-fragen li:last-child { border-bottom: none; }
+        .nachbesprechung-fragen li::before { content: "→"; position: absolute; left: 8px; color: #22c55e; font-weight: 700; }
+        .print-btn-wrap { text-align: center; margin: 30px 0; }
+        .print-btn { background: white; color: var(--primary); border: 2px solid var(--primary); font-family: 'Fredoka One', cursive; font-size: 1em; padding: 10px 28px; border-radius: 50px; cursor: pointer; transition: all 0.2s; }
+        .print-btn:hover { background: var(--primary); color: white; }
+        .ad-container { background: white; border-radius: 15px; padding: 20px; margin: 35px 0; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+        .ad-label { color: #bbb; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #e5e7eb; border-radius: 10px; padding: 25px; color: #ccc; font-size: 0.85em; }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary-mid) 0%, #f0abfc 100%); z-index: 1000; transition: width 0.1s; }
+        .print-header { display: none; }
+        .print-footer { display: none; }
+        footer { background: white; border-radius: 25px; padding: 40px; margin-top: 50px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.4em; margin-bottom: 8px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.2s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bg-gradient-to); transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-info { color: #aaa; font-size: 0.85em; margin-top: 20px; line-height: 1.6; }
+        @media (max-width: 768px) { body { padding: 15px; } .sticky-nav { flex-direction: column; align-items: flex-start; } h1 { font-size: 2em; } header, .story-section { padding: 30px 20px; } .story-content { font-size: 1.05em; } .hero-icon { width: 100px; height: 100px; } }
+        @media (max-width: 480px) { h1 { font-size: 1.7em; } .story-content { font-size: 1em; line-height: 1.85; } .motto-box { font-size: 1.1em; } }
+        @media print {
+            body { background: white; padding: 0; font-size: 12pt; color: #000; }
+            .progress-bar, .sticky-nav, .ad-container, .print-btn-wrap, nav, .cookie-banner { display: none !important; }
+            .container { max-width: 100%; }
+            header { box-shadow: none; border-radius: 0; padding: 20px 0; margin-bottom: 20px; }
+            header .hero-image-container, .motto-box { display: none; }
+            h1 { font-size: 18pt; color: #000; }
+            .print-header { display: block !important; font-size: 9pt; color: #666; text-align: right; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 16px; }
+            .story-section { box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 20px; }
+            .story-content { font-size: 12pt; line-height: 1.8; orphans: 3; widows: 3; }
+            .story-content strong, .story-content em { color: #000; }
+            .story-quote { background: #f5f5f5; border-left: 4px solid #888; color: #000; font-size: 1em; }
+            .section-divider { display: none; }
+            .info-box, .technique-box, .nachbesprechung { border-radius: 0; box-shadow: none; border-left: 4px solid #888; background: #f9f9f9 !important; page-break-inside: avoid; }
+            .info-box-title, .technique-box-title, .nachbesprechung-title { color: #000; }
+            .char-row { display: none; }
+            footer { box-shadow: none; border-radius: 0; }
+            .print-footer { display: block !important; font-size: 9pt; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>🍪 Wir verwenden Cookies</strong><br>
+            Diese Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.
+            Weitere Informationen in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+        </div>
+    </div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="container">
+
+    <nav class="sticky-nav">
+        <a href="../lernolotl/lernolotls-welt.html" class="back-link">← Lernolotls Welt</a>
+        <a href="../index.html" class="back-link">← Startseite</a>
+        <span class="feeling-badge">Ich bin Ich</span>
+    </nav>
+
+    <header>
+        <div class="print-header">Der Lernolotl – lernolotl.de | Wenn ich traurig bin — Traurigkeit ist kein Fehler</div>
+        <div class="story-meta">Vorlesegeschichte · Ich bin Ich · 5–10 Jahre</div>
+        <h1>Wenn ich traurig bin — Traurigkeit ist kein Fehler</h1>
+        <p class="story-intro">
+            Manchmal kommt Traurigkeit einfach — ohne Ankündigung, ohne richtigen Grund.
+            Der Lernolotl weiß nicht, was er damit anfangen soll.
+            Bis Oma Hilde erklärt, dass Traurigkeit kein Fehler ist — sondern ein Gefühl,
+            das seinen Platz hat. Genau wie alle anderen.
+        </p>
+        <div class="hero-image-container">
+            <img src="../lernolotl-sad.png" alt="Der Lernolotl — traurig" class="hero-icon">
+            <img src="../char-freunde-oma-hilde.png" alt="Oma Hilde" class="hero-char-icon">
+        </div>
+        <div class="motto-box">
+            „Traurig sein darf ich.<br>Das macht mich nicht schwach —<br>das macht mich ehrlich."
+        </div>
+    </header>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="print-header">Der Lernolotl – lernolotl.de</div>
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Es war ein ganz normaler Mittwoch. Kein schlechter Tag —
+            kein Streit, keine Niederlage, kein kaputtes Spielzeug.
+            Einfach ein Mittwoch.</p>
+
+            <p>Aber der Lernolotl war traurig.</p>
+
+            <p>Nicht ein bisschen traurig. Richtig traurig — so, dass ihm die Schultasche
+            schwerer vorkam als sonst. Dass er beim Mittagessen nur auf seinen Teller schaute.
+            Dass er, als Finn fragte, ob er nach der Schule spielen wollte,
+            einfach den Kopf schüttelte — ohne zu erklären warum.</p>
+
+            <p>Er wusste selbst nicht warum.</p>
+
+            <p><em>Das war das Seltsame. Er suchte nach einem Grund
+            und fand keinen. Kein Ereignis. Keine Verletzung. Keine Ungerechtigkeit.
+            Nur dieses Gefühl — grau und schwer, wie Wolken, die sich nicht entscheiden
+            können, ob sie regnen sollen oder nicht.</em></p>
+
+            <p>Er dachte: <strong>Vielleicht stimmt etwas mit mir nicht.</strong>
+            Vielleicht war Traurigsein ohne Grund ein Fehler.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">🌿 💙 🌿</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – responsiv</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Am Nachmittag kam Oma Hilde zu Besuch. Sie roch nach Kardamom und alten Büchern —
+            das war immer ein gutes Zeichen.</p>
+
+            <p>Sie setzte sich neben ihn auf die Couch. Fragte nichts.
+            Schaute nur ein bisschen aus dem Fenster.</p>
+
+            <p>Nach einer Weile sagte der Lernolotl leise: „Ich bin traurig. Aber ich weiß nicht warum."</p>
+
+            <p>Oma Hilde nickte. Als wäre das die normalste Sache der Welt.</p>
+
+            <p>„Das kenne ich", sagte sie. „Manchmal kommt Traurigkeit einfach zu Besuch.
+            Wie ein Gast, den man nicht eingeladen hat — aber er steht trotzdem vor der Tür."</p>
+
+            <div class="char-row">
+                <img src="../char-freunde-oma-hilde.png" alt="Oma Hilde">
+                <div>
+                    <div class="char-row-name">Oma Hilde</div>
+                    <div class="char-row-text">„Gefühle brauchen keinen Grund. Sie sind einfach da. Und das Klügste, was man tun kann, ist: sie reinlassen, ihnen Platz geben — und wissen, dass sie auch wieder gehen."</div>
+                </div>
+            </div>
+
+            <p>„Muss ich sie dann rauslassen?", fragte der Lernolotl.</p>
+
+            <p>„Nicht sofort", sagte Oma Hilde. „Zuerst darfst du einfach sitzen.
+            Du musst die Traurigkeit nicht wegmachen. Du musst nicht fröhlich sein,
+            wenn du es nicht bist."</p>
+
+            <p>Der Lernolotl dachte darüber nach. Das war ein ungewohnter Gedanke.
+            Er war es gewohnt, Probleme zu lösen. Aber Traurigkeit war kein Problem.
+            Sie war ein Gefühl.</p>
+
+            <p><em>Gefühle löst man nicht. Man lässt sie sein.</em></p>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 3 —</div>
+
+            <p>Oma Hilde holte eine dünne Decke aus dem Schrank — die alte, die immer nach
+            Lavendel roch — und legte sie über ihn.</p>
+
+            <p>Sie erzählte ihm von einem Sommer, als sie jung war und drei Wochen lang
+            einfach traurig gewesen war. Kein Grund. Einfach so.</p>
+
+            <p>„Was hast du gemacht?", fragte der Lernolotl.</p>
+
+            <p>„Ich habe gebastelt. Lange Spaziergänge gemacht. Viel geschlafen.
+            Und ich habe der Traurigkeit erlaubt, da zu sein — ohne ihr zu sagen,
+            sie soll verschwinden."</p>
+
+            <p>„Hat es geholfen?"</p>
+
+            <p>„Ja. Irgendwann war sie einfach weg. Wie Wolken nach dem Regen."</p>
+
+            <div class="story-quote">
+                „Traurig sein darf ich. Ich muss die Traurigkeit nicht reparieren — ich muss ihr nur Platz lassen."
+            </div>
+
+            <p>Der Lernolotl war noch eine Weile traurig an diesem Mittwoch.
+            Aber es fühlte sich anders an — nicht wie ein Fehler mehr.
+            Eher wie ein Gast. Der irgendwann wieder gehen würde.</p>
+
+            <p>Am Donnerstag war er nicht mehr traurig.</p>
+
+            <p><strong>Er erinnerte sich an das, was Oma Hilde gesagt hatte:
+            Gefühle sind wie Gäste. Man muss sie nicht für immer einladen.
+            Aber man darf ihnen die Tür aufmachen.</strong></p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>💙</span>
+            <span>Traurigkeit begleiten — nicht wegmachen</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Wenn Kinder traurig sind, ist die erste Reaktion vieler Erwachsener: aufmuntern, ablenken, das Gefühl wegmachen. Das ist verständlich — aber oft kontraproduktiv. Was wirklich hilft:</strong></p>
+            <ul>
+                <li><strong>Validieren statt umlenken:</strong> „Ich sehe, dass du traurig bist. Das ist okay" ist stärker als „Sei nicht traurig."</li>
+                <li><strong>Da sein ohne zu lösen:</strong> Schweigendes Beisammensein — eine Decke, ein ruhiger Raum — gibt Kindern das Gefühl, nicht allein zu sein, ohne sie unter Druck zu setzen.</li>
+                <li><strong>Traurigkeit benennen:</strong> Kinder, die ein Gefühl benennen können, erleben es weniger überwältigend. „Das nennt sich Traurigkeit" ist ein wichtiger Satz.</li>
+                <li><strong>Den Bogen zeigen:</strong> „Gestern warst du traurig — heute weniger. Siehst du? Gefühle verändern sich" — das gibt Kindern Vertrauen in den Prozess.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="nachbesprechung">
+        <div class="nachbesprechung-title">
+            <img src="../lernolotl-whisper.png" alt="" style="width:40px;height:40px;object-fit:contain;">
+            <span>Nachbesprechung — Fragen für Eltern und Kinder</span>
+        </div>
+        <ul class="nachbesprechung-fragen">
+            <li>Warum war der Lernolotl traurig — hatte er einen Grund dafür?</li>
+            <li>Was meinte Oma Hilde mit dem „Gast, den man nicht eingeladen hat"?</li>
+            <li>Was hat dir geholfen, wenn du traurig warst?</li>
+            <li>Was ist der Unterschied zwischen Traurigkeit „wegschieben" und ihr „Platz lassen"?</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Für Eltern: Wenn Kinder ohne Grund traurig sind</span>
+        </div>
+        <div class="info-box-text">
+            <p>Traurigkeit ohne offensichtlichen Auslöser verunsichert Eltern und Kinder gleichermaßen. Bei neurodiversen Kindern kommt das häufiger vor — weil ihr Nervensystem mehr verarbeitet und mehr Erschöpfung speichert, die sich dann als diffuse Traurigkeit zeigt.</p>
+            <p>Wichtig zu wissen: Das ist normal. Gefühle brauchen keinen Grund. Sie können das Ergebnis von angesammelter Reizverarbeitung, Schlafmangel oder einfach biologischer Schwankungen sein.</p>
+            <p>Das Ziel ist nicht, Traurigkeit zu beenden — sondern Kindern zu zeigen, dass sie Traurigkeit ertragen können. Dass sie nicht von ihr überwältigt werden. Und dass jemand bei ihnen ist, der nicht fordert, dass sie sofort wieder fröhlich sind.</p>
+        </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-radius:20px;padding:28px 32px;margin:28px 0;border:2px solid #5eead4;text-align:center;">
+        <div style="font-size:1.8em;margin-bottom:10px;">➡️</div>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.3em;color:#0d9488;margin-bottom:8px;">Nächste Geschichte</div>
+        <div style="color:#555;font-size:.97em;line-height:1.65;margin-bottom:18px;">
+            Wer bin ich eigentlich? Der Lernolotl fragt sich, was ihn ausmacht — und merkt, dass die Antwort größer ist als er dachte.
+        </div>
+        <a href="ichbinich-geschichte-identitaet.html" style="display:inline-block;background:linear-gradient(135deg,#0d9488,#134e4a);color:white;font-family:'Fredoka One',cursive;font-size:1.05em;padding:13px 30px;border-radius:50px;text-decoration:none;">
+            Ich weiß nicht, wer ich bin — auf der Suche →
+        </a>
+    </div>
+
+    <div class="print-btn-wrap">
+        <button class="print-btn" onclick="window.print()">Geschichte drucken</button>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense – 728×90 oder responsiv</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Kostenlose Geschichten · Pädagogische Materialien zum Download</p>
+        <div class="footer-links">
+            <a href="../impressum.html">Impressum</a>
+            <a href="../datenschutz.html">Datenschutz</a>
+            <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <a href="../ueber-uns.html">Über uns</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2026 Der Lernolotl · lernolotl.de · Alle Rechte vorbehalten</p>
+            <p style="margin-top:8px;font-size:0.8em;">„Geschrieben mit Herz. Erprobt mit Sam &amp; Johanna. Geteilt mit euch."</p>
+        </div>
+        <div class="print-footer">© Der Lernolotl · lernolotl.de</div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (winScroll / height * 100) + '%';
+    });
+</script>
+<script src="../cookies.js"></script>
+<script src="../paypal-spende.js"></script>
+</body>
+</html>
