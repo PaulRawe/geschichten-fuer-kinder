@@ -8,6 +8,8 @@ on:
 jobs:
   sitemap:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: "!contains(github.event.head_commit.message, 'sitemap.xml automatisch generiert')"
 
     steps:
@@ -33,7 +35,7 @@ jobs:
               URL="${BASE_URL}/"
               PRIORITY="1.0"
               FREQ="weekly"
-            elif [[ "$RELATIVE" == *geschichten*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
+            elif [[ "$RELATIVE" == *geschichte*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
               URL="${BASE_URL}/${ENCODED}"
               PRIORITY="0.8"
               FREQ="weekly"
