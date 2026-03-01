@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <script data-goatcounter="https://lernolotl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <style>
         :root { --primary:#5a7d95;--primary-dark:#3d5f75;--c:#ea580c;--c-mid:#f97316;--c-light:#fb923c;--c-pale:#fff7ed;--c-soft:#fed7aa;--accent:#66bb6a;--text:#2a2a2a;--text-soft:#555;--radius-xl:30px;--shadow:0 12px 40px rgba(234,88,12,0.1); }
         *{margin:0;padding:0;box-sizing:border-box}
@@ -76,20 +77,24 @@
         .geschichten-grid{display:grid;grid-template-columns:1fr;gap:22px}
         .geschichte-card{border-radius:20px;overflow:hidden;border:2px solid transparent;box-shadow:0 8px 24px rgba(0,0,0,.07);display:block;color:inherit;text-decoration:none;transition:transform .25s,box-shadow .25s}
         .geschichte-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
-        .gc-1{border-color:#fed7aa} .gc-2{border-color:#93c5fd} .gc-3{border-color:#86efac}
+        .gc-1{border-color:#fed7aa} .gc-2{border-color:#93c5fd} .gc-3{border-color:#86efac} .gc-4{border-color:#f0abfc} .gc-5{border-color:#fde047}
         .gc-header{padding:20px 26px 16px;display:flex;align-items:center;gap:16px}
         .gc-1 .gc-header{background:linear-gradient(135deg,#fff7ed,#ffedd5)}
         .gc-2 .gc-header{background:linear-gradient(135deg,#eff6ff,#dbeafe)}
         .gc-3 .gc-header{background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
+        .gc-4 .gc-header{background:linear-gradient(135deg,#fdf4ff,#fae8ff)}
+        .gc-5 .gc-header{background:linear-gradient(135deg,#fefce8,#fef9c3)}
         .gc-number{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka One',cursive;font-size:1.4em;color:white;flex-shrink:0}
         .gc-1 .gc-number{background:linear-gradient(135deg,#ea580c,#9a3412)}
         .gc-2 .gc-number{background:linear-gradient(135deg,#3b82f6,#1e40af)}
         .gc-3 .gc-number{background:linear-gradient(135deg,#22c55e,#15803d)}
+        .gc-4 .gc-number{background:linear-gradient(135deg,#d946ef,#86198f)}
+        .gc-5 .gc-number{background:linear-gradient(135deg,#eab308,#a16207)}
         .gc-meta{flex:1}
         .gc-tag{font-size:.75em;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
-        .gc-1 .gc-tag{color:#9a3412} .gc-2 .gc-tag{color:#1e40af} .gc-3 .gc-tag{color:#15803d}
+        .gc-1 .gc-tag{color:#9a3412} .gc-2 .gc-tag{color:#1e40af} .gc-3 .gc-tag{color:#15803d} .gc-4 .gc-tag{color:#86198f} .gc-5 .gc-tag{color:#a16207}
         .gc-title{font-family:'Fredoka One',cursive;font-size:1.35em;line-height:1.2}
-        .gc-1 .gc-title{color:#431407} .gc-2 .gc-title{color:#1e3a8a} .gc-3 .gc-title{color:#14532d}
+        .gc-1 .gc-title{color:#431407} .gc-2 .gc-title{color:#1e3a8a} .gc-3 .gc-title{color:#14532d} .gc-4 .gc-title{color:#4a044e} .gc-5 .gc-title{color:#713f12}
         .gc-body{background:white;padding:20px 26px 24px}
         .gc-desc{color:var(--text-soft);font-size:.97em;line-height:1.7;margin-bottom:16px}
         .gc-chars{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
@@ -97,8 +102,6 @@
         .gc-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
         .gc-reading-time{color:#aaa;font-size:.82em;font-weight:600}
         .badge-free{background:#dcfce7;color:#166534;font-size:.78em;font-weight:800;padding:5px 12px;border-radius:20px;border:1px solid #bbf7d0}
-        .badge-soon{background:#f3f4f6;color:#6b7280;font-size:.78em;font-weight:700;padding:5px 12px;border-radius:20px;border:1px solid #e5e7eb}
-        .gc-soon{opacity:.6;pointer-events:none;cursor:default}
         .eltern-box{background:var(--c-pale);border-radius:20px;padding:30px 32px;border:2px solid var(--c-soft)}
         .eltern-title{font-family:'Fredoka One',cursive;color:var(--c);font-size:1.4em;margin-bottom:12px}
         .eltern-text{color:var(--text-soft);font-size:.97em;line-height:1.75;margin-bottom:16px}
@@ -158,7 +161,7 @@
                 <span class="breadcrumb-sep">›</span>
                 <span class="breadcrumb-current">Bei Freunden</span>
             </div>
-            <span class="nav-badge">Freundschafts-Geschichten</span>
+            <span class="nav-badge">13 Freundschafts-Geschichten</span>
         </nav>
 
         <header class="hero fade-in d1">
@@ -214,7 +217,7 @@
             <p class="section-text">In den Freundschafts-Geschichten begegnet der Lernolotl diesen besonderen Personen:</p>
             <div class="char-grid">
                 <div class="char-card cc1">
-                    <div class="char-avatar av1"><img src="../char-freunde-finn.png" alt="Finn" onerror="this.src='../lernolotl-icon.png'"></div>
+                    <div class="char-avatar av1"><img src="../char-schule-finn.png" alt="Finn" onerror="this.src='../lernolotl-icon.png'"></div>
                     <div class="char-name">Finn</div>
                     <div class="char-role">Der Schulfreund</div>
                     <p class="char-desc">Finn ist seit der ersten Klasse dabei. Er redet viel, denkt weniger — aber er merkt immer, wenn dem Lernolotl etwas nicht stimmt. Und er bleibt einfach dabei.</p>
@@ -241,8 +244,8 @@
 
         <section class="section-card fade-in d3">
             <span class="section-label">📖 Alle Geschichten</span>
-            <h2 class="section-title">Lernolotl bei Freunden — die Geschichten</h2>
-            <p class="section-text">Vier Geschichten über Freundschaft, Mut und Verbindung. Kostenlos lesen — mit Nachbesprechung und Gesprächsleitfaden für Eltern.</p>
+            <h2 class="section-title">Lernolotl bei Freunden — alle 13 Geschichten</h2>
+            <p class="section-text">Dreizehn Geschichten über Freundschaft, Mut, Missverständnisse und Verbindung. Kostenlos lesen — mit Nachbesprechung und Gesprächsleitfaden für Eltern.</p>
 
             <div class="geschichten-grid">
 
@@ -257,14 +260,8 @@
                     </div>
                     <div class="gc-body">
                         <p class="gc-desc">Jonas hat den Lernolotl eingeladen. Ein fremdes Zimmer, fremde Gerüche, unsortierte Lego-Steine — bis Jonas einfach anfängt zu bauen. Eine Geschichte darüber, wie Freundschaft manchmal ganz still beginnt.</p>
-                        <div class="gc-chars">
-                            <span class="gc-char-badge">Lernolotl</span>
-                            <span class="gc-char-badge">Jonas</span>
-                        </div>
-                        <div class="gc-footer">
-                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
-                            <span class="badge-free">Kostenlos</span>
-                        </div>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Jonas</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
 
@@ -278,15 +275,9 @@
                         </div>
                     </div>
                     <div class="gc-body">
-                        <p class="gc-desc">Sofia ist plötzlich wütend — und der Lernolotl versteht nicht warum. Er hat doch nichts mit Absicht getan. Eine Geschichte darüber, dass man jemanden verletzen kann, ohne es zu merken — und wie man trotzdem zueinanderfindet.</p>
-                        <div class="gc-chars">
-                            <span class="gc-char-badge">Lernolotl</span>
-                            <span class="gc-char-badge">Sofia</span>
-                        </div>
-                        <div class="gc-footer">
-                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
-                            <span class="badge-free">Kostenlos</span>
-                        </div>
+                        <p class="gc-desc">Sofia ist plötzlich wütend — und der Lernolotl versteht nicht warum. Er hat doch nichts mit Absicht getan. Eine Geschichte darüber, dass man jemanden verletzen kann, ohne es zu merken.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Sofia</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
 
@@ -301,14 +292,8 @@
                     </div>
                     <div class="gc-body">
                         <p class="gc-desc">Oma Hilde kommt jeden zweiten Sonntag. Sie stellt keine Fragen — sie erzählt einfach. Eine Geschichte über Verbindung ohne Worte, und warum manche Menschen einfach gut tun.</p>
-                        <div class="gc-chars">
-                            <span class="gc-char-badge">Lernolotl</span>
-                            <span class="gc-char-badge">Oma Hilde</span>
-                        </div>
-                        <div class="gc-footer">
-                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
-                            <span class="badge-free">Kostenlos</span>
-                        </div>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Oma Hilde</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
 
@@ -323,16 +308,152 @@
                     </div>
                     <div class="gc-body">
                         <p class="gc-desc">Zwei Kinder rufen dem Lernolotl hinterher. Einmal wäre nichts — aber es passiert wieder und wieder. Finn und Lena merken es. Gemeinsam lernen sie, was der Unterschied zwischen Petzen und Hilfe holen ist.</p>
-                        <div class="gc-chars">
-                            <span class="gc-char-badge">Lernolotl</span>
-                            <span class="gc-char-badge">Finn</span>
-                            <span class="gc-char-badge">Lena</span>
-                            <span class="gc-char-badge">Herr Mayer</span>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Finn</span><span class="gc-char-badge">Lena</span><span class="gc-char-badge">Herr Mayer</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 5: Mein bester Freund mag mich heute nicht -->
+                <a href="freunde-geschichte-4-1-bester-freund.html" class="geschichte-card gc-2">
+                    <div class="gc-header">
+                        <div class="gc-number">5</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Distanz · Missverständnis · Fürsorge</div>
+                            <div class="gc-title">Mein bester Freund mag mich heute nicht</div>
                         </div>
-                        <div class="gc-footer">
-                            <span class="gc-reading-time">ca. 6 Min. Lesezeit</span>
-                            <span class="badge-free">Kostenlos</span>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Finn ist heute anders — kühl, einsilbig, irgendwie weit weg. Der Lernolotl versteht nicht warum. Was macht man, wenn der beste Freund plötzlich so tut, als wäre man Luft?</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Finn</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 6: Gemeinsam spielen, aber ich will meine Regeln -->
+                <a href="freunde-geschichte-4-2-spielregeln.html" class="geschichte-card gc-3">
+                    <div class="gc-header">
+                        <div class="gc-number">6</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Spielregeln · Kontrolle · Kompromiss</div>
+                            <div class="gc-title">Gemeinsam spielen, aber ich will meine Regeln</div>
                         </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Jonas baut Lego ohne Plan — einfach drauflos. Der Lernolotl sortiert zuerst. Wie baut man zusammen, wenn man so verschieden ist? Eine Geschichte über Kontrolle loslassen und Neugier gewinnen.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Jonas</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 7: Ich verstehe nicht, was mein Freund fühlt -->
+                <a href="freunde-geschichte-4-4-empathie.html" class="geschichte-card gc-4">
+                    <div class="gc-header">
+                        <div class="gc-number">7</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Empathie · Körpersprache · Dabeisein</div>
+                            <div class="gc-title">Ich verstehe nicht, was mein Freund fühlt</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Finn sagt „alles okay" — aber sein Gesicht sagt etwas anderes. Der Lernolotl glaubt den Worten. Aber Lena sieht mehr. Eine Geschichte darüber, hinter Worte zu schauen.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Finn</span><span class="gc-char-badge">Lena</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 8: Eingeladen werden — und dann doch nicht gehen wollen -->
+                <a href="freunde-geschichte-4-5-einladung.html" class="geschichte-card gc-5">
+                    <div class="gc-header">
+                        <div class="gc-number">8</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Soziale Angst · Geburtstag · Mut</div>
+                            <div class="gc-title">Eingeladen werden — und dann doch nicht gehen wollen</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Sofia hat den Lernolotl zu ihrem Geburtstag eingeladen. Er hat Ja gesagt — weil man Ja sagt. Aber je näher der Tag kommt, desto größer wird das Kribbeln. Und nicht das gute.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Sofia</span><span class="gc-char-badge">Mama</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 9: Manchmal will ich einfach nur alleine sein -->
+                <a href="freunde-geschichte-4-6-alleine.html" class="geschichte-card gc-1">
+                    <div class="gc-header">
+                        <div class="gc-number">9</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Introversion · Soziale Erschöpfung · Grenzen</div>
+                            <div class="gc-title">Manchmal will ich einfach nur alleine sein</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Jonas fragt, ob er rüberkommen kann. Der Lernolotl mag Jonas — aber heute ist sein Kopf voll. Wie sagt man Nein, ohne dass der Freund denkt, man mag ihn nicht mehr?</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Jonas</span><span class="gc-char-badge">Papa</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 10: Ein neuer Freund, der ganz anders ist -->
+                <a href="freunde-geschichte-4-7-anders.html" class="geschichte-card gc-2">
+                    <div class="gc-header">
+                        <div class="gc-number">10</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Inklusion · Anderssein · Kennenlernen</div>
+                            <div class="gc-title">Ein neuer Freund, der ganz anders ist</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Sofia kommt neu in die Klasse — und ist irgendwie anders. Der Lernolotl beobachtet sie und erkennt etwas Vertrautes. Eine Geschichte darüber, wie man jemanden wirklich kennenlernt.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Sofia</span><span class="gc-char-badge">Mama</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 11: Geheimnis behalten -->
+                <a href="freunde-geschichte-4-8-geheimnis.html" class="geschichte-card gc-3">
+                    <div class="gc-header">
+                        <div class="gc-number">11</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Geheimnisse · Vertrauen · Hilfe holen</div>
+                            <div class="gc-title">Geheimnis behalten — darf ich das sagen?</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Finn hat dem Lernolotl etwas anvertraut — und gesagt: Versprich mir, dass du es niemandem sagst. Der Lernolotl hat versprochen. Aber das Geheimnis macht ihn unruhig.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Finn</span><span class="gc-char-badge">Papa</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 12: Streiten und versöhnen -->
+                <a href="freunde-geschichte-4-9-streit.html" class="geschichte-card gc-4">
+                    <div class="gc-header">
+                        <div class="gc-number">12</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Streit · Entschuldigung · Versöhnung</div>
+                            <div class="gc-title">Streiten und versöhnen — wie geht das?</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Der Lernolotl und Finn haben sich richtig gestritten — mit Worten, die man nicht zurücknehmen kann. Jetzt ist Stille. Und keiner weiß, wer anfangen soll. Eine Geschichte über den ersten Schritt.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Finn</span><span class="gc-char-badge">Mama</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
+                    </div>
+                </a>
+
+                <!-- Geschichte 13: Wenn Freundschaften enden -->
+                <a href="freunde-geschichte-4-10-ende.html" class="geschichte-card gc-5">
+                    <div class="gc-header">
+                        <div class="gc-number">13</div>
+                        <div class="gc-meta">
+                            <div class="gc-tag">Abschied · Trauer · Erinnerung</div>
+                            <div class="gc-title">Wenn Freundschaften enden — das ist so traurig</div>
+                        </div>
+                    </div>
+                    <div class="gc-body">
+                        <p class="gc-desc">Jonas zieht weg. Der Lernolotl versteht den Grund — aber das macht es nicht leichter. Eine Geschichte darüber, was von einer Freundschaft bleibt, wenn der Freund nicht mehr da ist.</p>
+                        <div class="gc-chars"><span class="gc-char-badge">Lernolotl</span><span class="gc-char-badge">Jonas</span><span class="gc-char-badge">Oma Hilde</span></div>
+                        <div class="gc-footer"><span class="gc-reading-time">ca. 6 Min. Lesezeit</span><span class="badge-free">Kostenlos</span></div>
                     </div>
                 </a>
 
