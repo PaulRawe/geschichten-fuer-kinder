@@ -83,6 +83,82 @@ function resetConsent() {
 }
 
 /* =====================================
+   Vorlesezeit-Karten Injection
+   Erscheint AM ENDE der Gesprächsanregung-Box
+   auf ALLEN Geschichtsseiten automatisch
+   ===================================== */
+document.addEventListener('DOMContentLoaded', function () {
+
+    const infoBox = document.querySelector('.info-box');
+
+    // Nur wenn info-box vorhanden und Karten-CTA noch nicht drin
+    if (!infoBox || document.getElementById('vorlesekarten-cta')) return;
+
+    const kartenCTA = `
+        <div id="vorlesekarten-cta" style="
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 2px solid rgba(42, 157, 171, 0.25);
+        ">
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                flex-wrap: wrap;
+            ">
+                <div style="flex: 1; min-width: 200px;">
+                    <div style="
+                        font-size: 0.75em;
+                        font-weight: 800;
+                        color: #2A9DAB;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 5px;
+                    ">🃏 Tipp für noch mehr Gespräche</div>
+                    <div style="
+                        color: #78350f;
+                        font-size: 0.95em;
+                        font-weight: 600;
+                        line-height: 1.5;
+                    ">Diese Fragen zum Ausdrucken & Laminieren gibt es als <strong style="color: #2A9DAB;">40 Vorlesezeit-Karten</strong> — passend zu jeder Geschichte.</div>
+                </div>
+                <a href="https://www.etsy.com/de/listing/4466484225/vorlesezeit-karten-40-gesprachskarten"
+                   target="_blank"
+                   rel="noopener"
+                   style="
+                    display: inline-block;
+                    background: linear-gradient(135deg, #2A9DAB 0%, #1a7a86 100%);
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 0.88em;
+                    padding: 11px 20px;
+                    border-radius: 12px;
+                    white-space: nowrap;
+                    box-shadow: 0 4px 12px rgba(42,157,171,0.35);
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    flex-shrink: 0;
+                "
+                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(42,157,171,0.45)'"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(42,157,171,0.35)'">
+                    3,99 € · Jetzt holen →
+                </a>
+            </div>
+        </div>`;
+
+    // Ans Ende der info-box-text hängen (innerhalb der Box)
+    const infoBoxText = infoBox.querySelector('.info-box-text');
+    if (infoBoxText) {
+        infoBoxText.insertAdjacentHTML('beforeend', kartenCTA);
+    } else {
+        infoBox.insertAdjacentHTML('beforeend', kartenCTA);
+    }
+
+    console.log('✓ Vorlesezeit-Karten CTA eingefügt');
+});
+
+/* =====================================
    Bundle Auto-Injection
    Erscheint nach der Gesprächsanregung-Box
    nur auf Gefühlsgeschichten-Seiten,
