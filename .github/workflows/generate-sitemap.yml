@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: "!contains(github.event.head_commit.message, 'sitemap.xml automatisch generiert')"
 
     steps:
+      # 1. Repository auschecken
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2. Sitemap generieren
       - name: Generate sitemap.xml
         run: |
           BASE_URL="https://www.lernolotl.de"
@@ -26,7 +27,8 @@ jobs:
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $OUTPUT
           
           EXCLUDE="googlebe|datenschutz|impressum|cookie-richtlinie|kontakt"
-          
+
+          # Alle HTML-Dateien rekursiv scannen, inkl. Unterordner
           find . -name "*.html" | grep -vE "$EXCLUDE" | sort | while IFS= read -r file; do
             RELATIVE="${file#./}"
             ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
@@ -59,15 +61,12 @@ jobs:
           echo "✅ Sitemap generiert!"
           cat $OUTPUT | grep -c "<url>" | xargs echo "Anzahl URLs:"
 
-      - name: Commit & Push
+      # 3. Commit & Push der Sitemap
+      - name: Commit & Push sitemap
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
+          
           git add sitemap.xml
-          git stash
-          git pull --rebase origin main
-          git stash pop
-          git diff --staged --quiet && echo "Keine Änderungen." || (
-            git commit -m "SEO: sitemap.xml automatisch generiert" &&
-            git push
-          )
+          git commit -m "SEO: sitemap.xml automatisch generiert" || echo "Keine Änderungen."
+          git push origin main
