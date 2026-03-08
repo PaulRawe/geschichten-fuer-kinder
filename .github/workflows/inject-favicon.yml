@@ -1,0 +1,86 @@
+name: Inject Favicon
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  inject-favicon:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy favicon files to root (if not already there)
+        run: |
+          # Stell sicher, dass die Favicon-Dateien im Root liegen
+          # Passe den Pfad an, falls du sie in einem Unterordner ablegst
+          echo "Favicon files should be committed to repo root"
+          ls favicon* apple-touch-icon* 2>/dev/null || echo "Warning: No favicon files found in root"
+
+      - name: Inject favicon tags into all HTML files
+        run: |
+          python3 << 'PYEOF'
+          import os
+          import re
+
+          FAVICON_TAGS = """
+            <link rel="icon" type="image/x-icon" href="/favicon.ico">
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">"""
+
+          injected = 0
+          skipped = 0
+
+          for root, dirs, files in os.walk("."):
+              # Verzeichnisse überspringen
+              dirs[:] = [d for d in dirs if d not in [".git", "node_modules", ".github"]]
+
+              for filename in files:
+                  if not filename.endswith(".html"):
+                      continue
+
+                  filepath = os.path.join(root, filename)
+
+                  with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
+                      content = f.read()
+
+                  # Bereits vorhanden? Überspringen
+                  if 'rel="icon"' in content or "rel='icon'" in content:
+                      skipped += 1
+                      continue
+
+                  # Favicon-Tags nach <head> einfügen
+                  if "<head>" in content:
+                      new_content = content.replace("<head>", "<head>" + FAVICON_TAGS, 1)
+                  elif "<head " in content:
+                      # <head> mit Attributen
+                      new_content = re.sub(
+                          r"(<head[^>]*>)",
+                          r"\1" + FAVICON_TAGS,
+                          content,
+                          count=1
+                      )
+                  else:
+                      skipped += 1
+                      continue
+
+                  with open(filepath, "w", encoding="utf-8") as f:
+                      f.write(new_content)
+
+                  injected += 1
+                  print(f"  ✓ {filepath}")
+
+          print(f"\nFertig: {injected} Dateien aktualisiert, {skipped} übersprungen.")
+          PYEOF
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: inject favicon tags into HTML files [skip ci]"
+          git push
