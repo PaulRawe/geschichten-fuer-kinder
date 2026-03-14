@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="de">
 <head>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -10,12 +10,7 @@
     <meta name="description" content="Geschichten über Gefühle für Kinder - Angst, Wut, Freude, Traurigkeit und mehr. Alle Gefühle dürfen da sein.">
     <title>Geschichten über Gefühle - Der Lernolotl</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -23,12 +18,7 @@
             padding: 20px;
             color: #333;
         }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
+        .container { max-width: 1100px; margin: 0 auto; }
         header {
             background: white;
             border-radius: 25px;
@@ -37,7 +27,6 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
             margin-bottom: 40px;
         }
-
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -49,27 +38,9 @@
             transition: all 0.3s;
             font-size: 0.95em;
         }
-
-        .back-link:hover {
-            color: #764ba2;
-            transform: translateX(-5px);
-        }
-
-        h1 {
-            color: #667eea;
-            font-size: 2.5em;
-            margin-bottom: 12px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 35px;
-            font-weight: 400;
-        }
-
+        .back-link:hover { color: #764ba2; transform: translateX(-5px); }
+        h1 { color: #667eea; font-size: 2.5em; margin-bottom: 12px; font-weight: 700; line-height: 1.2; }
+        .subtitle { color: #666; font-size: 1.1em; margin-bottom: 35px; font-weight: 400; }
         .hero-image {
             margin-top: 30px;
             border-radius: 20px;
@@ -78,13 +49,7 @@
             padding: 0;
             text-align: center;
         }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
+        .hero-image img { width: 100%; height: auto; display: block; }
         .intro-section {
             background: white;
             border-radius: 25px;
@@ -92,27 +57,9 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
             margin-bottom: 40px;
         }
-
-        .intro-title {
-            color: #667eea;
-            font-size: 2em;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .intro-text {
-            color: #555;
-            font-size: 1.05em;
-            line-height: 1.9;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .intro-text p {
-            margin-bottom: 20px;
-        }
-
+        .intro-title { color: #667eea; font-size: 2em; margin-bottom: 25px; text-align: center; font-weight: 700; }
+        .intro-text { color: #555; font-size: 1.05em; line-height: 1.9; max-width: 850px; margin: 0 auto; }
+        .intro-text p { margin-bottom: 20px; }
         .intro-highlight {
             background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
             padding: 25px;
@@ -124,7 +71,6 @@
             font-size: 1.15em;
             text-align: center;
         }
-
         .ad-container {
             background: white;
             border-radius: 15px;
@@ -133,24 +79,8 @@
             text-align: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
-
-        .ad-label {
-            color: #aaa;
-            font-size: 0.7em;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .ad-placeholder {
-            background: #fafafa;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            color: #bbb;
-            font-size: 0.9em;
-        }
-
+        .ad-label { color: #aaa; font-size: 0.7em; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #ddd; border-radius: 10px; padding: 30px; color: #bbb; font-size: 0.9em; }
         .feelings-section {
             background: white;
             border-radius: 25px;
@@ -158,25 +88,8 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
             margin-bottom: 40px;
         }
-
-        .section-title {
-            color: #667eea;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .section-description {
-            text-align: center;
-            color: #666;
-            font-size: 1.05em;
-            margin-bottom: 45px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        .section-title { color: #667eea; font-size: 2.2em; margin-bottom: 20px; text-align: center; font-weight: 700; }
+        .section-description { text-align: center; color: #666; font-size: 1.05em; margin-bottom: 45px; max-width: 700px; margin-left: auto; margin-right: auto; }
         .feeling-item {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 20px;
@@ -187,53 +100,13 @@
             align-items: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
-
-        .feeling-image {
-            flex-shrink: 0;
-            width: 220px;
-            height: 220px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .feeling-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .feeling-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .feeling-header {
-            margin-bottom: 5px;
-        }
-
-        .feeling-name {
-            color: #667eea;
-            font-size: 1.8em;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .feeling-description {
-            color: #666;
-            font-size: 1em;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .stories-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
+        .feeling-image { flex-shrink: 0; width: 220px; height: 220px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .feeling-image img { width: 100%; height: 100%; object-fit: cover; }
+        .feeling-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .feeling-header { margin-bottom: 5px; }
+        .feeling-name { color: #667eea; font-size: 1.8em; font-weight: 700; margin-bottom: 8px; }
+        .feeling-description { color: #666; font-size: 1em; line-height: 1.6; font-style: italic; }
+        .stories-list { display: flex; flex-direction: column; gap: 12px; }
         .story-link {
             position: relative;
             background: white;
@@ -247,13 +120,7 @@
             align-items: center;
             gap: 12px;
         }
-
-        .story-link:hover {
-            border-color: #667eea;
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-        }
-
+        .story-link:hover { border-color: #667eea; transform: translateX(5px); box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2); }
         .story-number {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -266,13 +133,7 @@
             font-weight: 700;
             flex-shrink: 0;
         }
-
-        .story-title {
-            font-weight: 600;
-            font-size: 1.05em;
-            flex: 1;
-        }
-
+        .story-title { font-weight: 600; font-size: 1.05em; flex: 1; }
         .lernolotl-badge {
             position: absolute;
             top: -10px;
@@ -289,16 +150,8 @@
             transition: transform 0.2s ease;
             z-index: 10;
         }
-
-        .lernolotl-badge:hover {
-            transform: scale(1.18) rotate(-6deg);
-        }
-
-        .lernolotl-badge img {
-            width: 26px;
-            height: 26px;
-        }
-
+        .lernolotl-badge:hover { transform: scale(1.18) rotate(-6deg); }
+        .lernolotl-badge img { width: 26px; height: 26px; }
         .parent-info {
             background: linear-gradient(135deg, #a8e6cf 0%, #7ed6df 100%);
             border-radius: 20px;
@@ -307,27 +160,9 @@
             box-shadow: 0 10px 30px rgba(126, 214, 223, 0.3);
             border-left: 6px solid #38ada9;
         }
-
-        .parent-info-title {
-            color: #006266;
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .parent-info-text {
-            color: #2c3e50;
-            font-size: 1.05em;
-            line-height: 1.8;
-        }
-
-        .parent-info-text strong {
-            color: #006266;
-        }
-
+        .parent-info-title { color: #006266; font-size: 1.6em; margin-bottom: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .parent-info-text { color: #2c3e50; font-size: 1.05em; line-height: 1.8; }
+        .parent-info-text strong { color: #006266; }
         footer {
             background: white;
             border-radius: 25px;
@@ -336,28 +171,9 @@
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
-
-        .footer-brand {
-            color: #667eea;
-            font-weight: 700;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-
-        .footer-tagline {
-            color: #999;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-        }
-
-        .footer-links {
-            margin: 25px 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
+        .footer-brand { color: #667eea; font-weight: 700; font-size: 1.3em; margin-bottom: 10px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
         .footer-links a {
             color: #667eea;
             text-decoration: none;
@@ -367,133 +183,67 @@
             padding: 5px 0;
             position: relative;
         }
-
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #764ba2;
-            transition: width 0.3s;
-        }
-
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-
-        .footer-links a:hover {
-            color: #764ba2;
-        }
-
-        .footer-info {
-            color: #999;
-            font-size: 0.85em;
-            margin-top: 25px;
-            line-height: 1.6;
-        }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #764ba2; transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-links a:hover { color: #764ba2; }
+        .footer-info { color: #999; font-size: 0.85em; margin-top: 25px; line-height: 1.6; }
 
         /* ===== GEFÜHLSKARTEN CTA ===== */
-        .gefuehlskarten-cta {
+        .gk-tipp {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 18px;
-            padding: 20px 28px;
+            background: linear-gradient(135deg, #fdf6e3 0%, #fef9ec 100%);
+            border-left: 5px solid #f39c12;
+            border-radius: 0 18px 18px 0;
+            padding: 18px 24px 18px 18px;
             margin: 0 0 40px 0;
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.18);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .gefuehlskarten-cta:hover {
+        .gk-tipp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.45);
+            box-shadow: 0 10px 28px rgba(243, 156, 18, 0.28);
         }
-        .gefuehlskarten-cta-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .gefuehlskarten-cta-title {
-            color: white;
-            font-weight: 700;
-            font-size: 1.1em;
-            line-height: 1.3;
-        }
-        .gefuehlskarten-cta-sub {
-            color: rgba(255,255,255,0.82);
-            font-size: 0.88em;
-            margin-top: 3px;
-        }
-        .gefuehlskarten-cta-btn {
-            background: white;
-            color: #764ba2;
-            font-weight: 700;
-            font-size: 0.95em;
-            padding: 10px 20px;
-            border-radius: 30px;
-            white-space: nowrap;
+        .gk-tipp-img {
+            width: 110px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
             flex-shrink: 0;
-            transition: background 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .gefuehlskarten-cta:hover .gefuehlskarten-cta-btn {
-            background: #ffeaa7;
-        }
-        @media (max-width: 480px) {
-            .gefuehlskarten-cta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 14px;
-                padding: 20px;
-            }
-            .gefuehlskarten-cta-btn {
-                align-self: stretch;
-                text-align: center;
-            }
-        }
+        .gk-tipp-body { display: flex; flex-direction: column; gap: 4px; }
+        .gk-tipp-label { font-size: 0.72em; font-weight: 700; color: #b7770d; text-transform: uppercase; letter-spacing: 0.08em; }
+        .gk-tipp-title { font-size: 1.05em; font-weight: 700; color: #7d4e00; line-height: 1.2; }
+        .gk-tipp-sub { font-size: 0.88em; color: #9a6a00; line-height: 1.5; }
+        .gk-tipp-link { font-size: 0.88em; font-weight: 700; color: #e67e22; margin-top: 4px; }
+        .gk-tipp:hover .gk-tipp-link { text-decoration: underline; }
         /* ===== END CTA ===== */
 
         @media (max-width: 768px) {
             body { padding: 15px; }
-
             h1 { font-size: 2em; }
-
-            .feeling-item {
-                flex-direction: column;
-                padding: 25px;
-            }
-
-            .feeling-image {
-                width: 100%;
-                height: 200px;
-            }
-
+            .feeling-item { flex-direction: column; padding: 25px; }
+            .feeling-image { width: 100%; height: 200px; }
             .feeling-name { font-size: 1.5em; }
             .section-title { font-size: 1.8em; }
             .intro-title { font-size: 1.6em; }
-
             header { padding: 35px 25px 30px; }
-
-            .intro-section,
-            .feelings-section { padding: 35px 25px; }
-
+            .intro-section, .feelings-section { padding: 35px 25px; }
             .parent-info { padding: 30px 25px; }
-
             footer { padding: 30px 20px; }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
+            .footer-links { flex-direction: column; gap: 15px; }
         }
-
         @media (max-width: 480px) {
             h1 { font-size: 1.7em; }
             .feeling-name { font-size: 1.3em; }
             .story-title { font-size: 0.95em; }
+            .gk-tipp { gap: 14px; padding: 14px 16px 14px 14px; }
+            .gk-tipp-img { width: 80px; height: 58px; }
+            .gk-tipp-title { font-size: 0.95em; }
+            .gk-tipp-sub { display: none; }
         }
     </style>
     <link rel="stylesheet" href="consent.css">
@@ -529,32 +279,23 @@
         <h2 class="intro-title">Vorwort</h2>
         <div class="intro-text">
             <p>Kinder fühlen viel. Oft mehr, als sie sagen können. Manchmal kommen Gefühle leise, manchmal plötzlich und laut. Manche fühlen sich leicht an, andere schwer.</p>
-
-            <div class="intro-highlight">
-                Alle Gefühle dürfen da sein.
-            </div>
-
+            <div class="intro-highlight">Alle Gefühle dürfen da sein.</div>
             <p>Angst, Wut, Traurigkeit, Freude, Einsamkeit, Eifersucht, Unsicherheit, Mut, Geduld, Dankbarkeit, Frustration und Enttäuschung – sie alle gehören zum Menschsein. Sie sind keine Fehler und keine Schwächen. Gefühle sind Signale. Sie erzählen etwas über Bedürfnisse, Grenzen, Wünsche und Hoffnungen.</p>
-
             <p>Die Geschichten in diesem Buch laden Kinder ein, Gefühle zu erkennen, zu benennen und zu erleben – in einem sicheren, ruhigen Rahmen.</p>
-
             <p>Erwachsene spielen dabei eine besondere Rolle: Als Menschen, die zuhören, aushalten, benennen und da bleiben. Oft braucht es keine Lösung. Oft reicht Präsenz.</p>
-
-            <div class="intro-highlight">
-                Du bist richtig – mit all deinen Gefühlen.
-            </div>
+            <div class="intro-highlight">Du bist richtig – mit all deinen Gefühlen.</div>
         </div>
     </div>
 
     <!-- CTA #1: nach Vorwort -->
-    <a href="https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle" target="_blank" rel="noopener" class="gefuehlskarten-cta">
-        <div class="gefuehlskarten-cta-left">
-            <div>
-                <div class="gefuehlskarten-cta-title">Gefühlskarten für Kinder – alle 11 Gefühle zum Ausdrucken</div>
-                <div class="gefuehlskarten-cta-sub">Passend zu den Geschichten · sofort als PDF verfügbar</div>
-            </div>
+    <a href="https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle" target="_blank" rel="noopener" class="gk-tipp">
+        <img src="karten-thumb.jpg" alt="Gefühlskarten für Kinder – 11 Emotionen" class="gk-tipp-img">
+        <div class="gk-tipp-body">
+            <div class="gk-tipp-label">Passend dazu</div>
+            <div class="gk-tipp-title">Gefühlskarten zum Ausdrucken</div>
+            <div class="gk-tipp-sub">Zu allen 11 Gefühlen – sofort als PDF verfügbar</div>
+            <div class="gk-tipp-link">→ Auf Etsy ansehen</div>
         </div>
-        <div class="gefuehlskarten-cta-btn">Jetzt ansehen →</div>
     </a>
 
     <div class="ad-container">
@@ -564,15 +305,11 @@
 
     <div class="feelings-section">
         <h2 class="section-title">Entdecke die Welt der Gefühle</h2>
-        <p class="section-description">
-            Jedes Gefühl hat seine eigene Geschichte. Wähle eine Geschichte aus, die berührt, tröstet und begleitet
-        </p>
+        <p class="section-description">Jedes Gefühl hat seine eigene Geschichte. Wähle eine Geschichte aus, die berührt, tröstet und begleitet</p>
 
         <!-- 1. Angst -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/angst.png" alt="Angst">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/angst.png" alt="Angst"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Angst</div>
@@ -582,9 +319,7 @@
                     <a href="angst1.html" class="story-link">
                         <div class="story-number">1</div>
                         <div class="story-title">Milo und der Schatten hinter der Tür</div>
-                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar">
-                            <img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar">
-                        </div>
+                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar"><img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar"></div>
                     </a>
                     <a href="angst2.html" class="story-link">
                         <div class="story-number">2</div>
@@ -600,83 +335,51 @@
 
         <!-- 2. Wut -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/wut.png" alt="Wut">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/wut.png" alt="Wut"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Wut</div>
                     <div class="feeling-description">Wenn Gefühle heiß werden und alles explodieren möchte</div>
                 </div>
                 <div class="stories-list">
-                    <a href="wut1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Leo Löwe und das Feuer im Bauch</div>
-                    </a>
-                    <a href="wut2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Maja Maus und der große Knall</div>
-                    </a>
-                    <a href="wut3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Tom und der Sturm im Kopf</div>
-                    </a>
+                    <a href="wut1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Leo Löwe und das Feuer im Bauch</div></a>
+                    <a href="wut2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Maja Maus und der große Knall</div></a>
+                    <a href="wut3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Tom und der Sturm im Kopf</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 3. Traurigkeit -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/traurigkeit.png" alt="Traurigkeit">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/traurigkeit.png" alt="Traurigkeit"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Traurigkeit</div>
                     <div class="feeling-description">Wenn Tränen kommen und das Herz schwer ist</div>
                 </div>
                 <div class="stories-list">
-                    <a href="traurigkeit1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Hannah und der schwere Regentag</div>
-                    </a>
-                    <a href="traurigkeit2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Ben Bär vermisst seinen Freund</div>
-                    </a>
-                    <a href="traurigkeit3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Leni und das leise Gefühl</div>
-                    </a>
+                    <a href="traurigkeit1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Hannah und der schwere Regentag</div></a>
+                    <a href="traurigkeit2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Ben Bär vermisst seinen Freund</div></a>
+                    <a href="traurigkeit3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Leni und das leise Gefühl</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 4. Eifersucht / Neid -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/eifersucht.png" alt="Eifersucht">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/eifersucht.png" alt="Eifersucht"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Eifersucht & Neid</div>
                     <div class="feeling-description">Wenn andere etwas haben, das ich auch gerne hätte</div>
                 </div>
                 <div class="stories-list">
-                    <a href="eifersucht1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Emil Elefant und der neue Freund</div>
-                    </a>
-                    <a href="eifersucht2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Sofie Schildkröte und das bunte Band</div>
-                    </a>
+                    <a href="eifersucht1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Emil Elefant und der neue Freund</div></a>
+                    <a href="eifersucht2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Sofie Schildkröte und das bunte Band</div></a>
                     <a href="eifersucht3.html" class="story-link">
                         <div class="story-number">3</div>
                         <div class="story-title">Max und die neue Schaukel</div>
-                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar">
-                            <img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar">
-                        </div>
+                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar"><img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar"></div>
                     </a>
                 </div>
             </div>
@@ -684,219 +387,142 @@
 
         <!-- 5. Unsicherheit / Scham -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/unsicherheit.png" alt="Unsicherheit">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/unsicherheit.png" alt="Unsicherheit"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Unsicherheit & Scham</div>
                     <div class="feeling-description">Wenn ich mich klein fühle und nicht weiß, ob ich richtig bin</div>
                 </div>
                 <div class="stories-list">
-                  <a href="unsicherheit1.html" class="story-link">
-                    <div class="story-number">1</div>
-                    <div class="story-title">Paul und die wackelnden Worte</div>
-                    <div class="lernolotl-badge" title="Lernmaterialien verfügbar">
-                        <img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar">
-                    </div>
-                  </a>
-                    <a href="unsicherheit2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Mila und der rote Fleck</div>
+                    <a href="unsicherheit1.html" class="story-link">
+                        <div class="story-number">1</div>
+                        <div class="story-title">Paul und die wackelnden Worte</div>
+                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar"><img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar"></div>
                     </a>
-                    <a href="unsicherheit3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Jonas und das falsche Lied</div>
-                    </a>
+                    <a href="unsicherheit2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Mila und der rote Fleck</div></a>
+                    <a href="unsicherheit3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Jonas und das falsche Lied</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 6. Mut / Selbstvertrauen -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/mut.png" alt="Mut">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/mut.png" alt="Mut"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Mut & Selbstvertrauen</div>
                     <div class="feeling-description">Wenn ich spüre: Ich kann das schaffen!</div>
                 </div>
                 <div class="stories-list">
-                    <a href="mut1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Lina Löwin und der erste Schritt</div>
-                    </a>
-                    <a href="mut2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Ben und die hohe Kletterwand</div>
-                    </a>
-                    <a href="mut3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Emma und die mutige Frage</div>
-                    </a>
+                    <a href="mut1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Lina Löwin und der erste Schritt</div></a>
+                    <a href="mut2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Ben und die hohe Kletterwand</div></a>
+                    <a href="mut3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Emma und die mutige Frage</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 7. Freude -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/freude.png" alt="Freude">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/freude.png" alt="Freude"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Freude & Zufriedenheit</div>
                     <div class="feeling-description">Wenn alles leicht ist und das Herz lacht</div>
                 </div>
                 <div class="stories-list">
-                    <a href="freude1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Frieda Fuchs und der ganz gewöhnliche Tag</div>
-                    </a>
-                    <a href="freude2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Tom und der langsame Nachmittag</div>
-                    </a>
-                    <a href="freude3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Maja und das warme Ja-Gefühl</div>
-                    </a>
+                    <a href="freude1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Frieda Fuchs und der ganz gewöhnliche Tag</div></a>
+                    <a href="freude2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Tom und der langsame Nachmittag</div></a>
+                    <a href="freude3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Maja und das warme Ja-Gefühl</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 8. Einsamkeit -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/einsamkeit.png" alt="Einsamkeit">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/einsamkeit.png" alt="Einsamkeit"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Einsamkeit & Alleinsein</div>
                     <div class="feeling-description">Wenn ich mir wünsche, dass jemand da ist</div>
                 </div>
                 <div class="stories-list">
-                    <a href="einsamkeit1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Theo und der leise Platz</div>
-                    </a>
-                    <a href="einsamkeit2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Lena und die Pause ohne Plan</div>
-                    </a>
-                    <a href="einsamkeit3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Noah und das lange Wochenende</div>
-                    </a>
+                    <a href="einsamkeit1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Theo und der leise Platz</div></a>
+                    <a href="einsamkeit2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Lena und die Pause ohne Plan</div></a>
+                    <a href="einsamkeit3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Noah und das lange Wochenende</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 9. Dankbarkeit -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/dankbarkeit.png" alt="Dankbarkeit">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/dankbarkeit.png" alt="Dankbarkeit"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Dankbarkeit</div>
                     <div class="feeling-description">Wenn ich spüre, wie schön etwas ist</div>
                 </div>
                 <div class="stories-list">
-                    <a href="dankbarkeit1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Hannes Hase und die vielen kleinen Geschenke</div>
-                    </a>
+                    <a href="dankbarkeit1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Hannes Hase und die vielen kleinen Geschenke</div></a>
                     <a href="dankbarkeit2.html" class="story-link">
                         <div class="story-number">2</div>
                         <div class="story-title">Mila und der geteilte Apfel</div>
-                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar">
-                            <img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar">
-                        </div>
+                        <div class="lernolotl-badge" title="Lernmaterialien verfügbar"><img src="lernolotl-icon.png" alt="Lernmaterialien verfügbar"></div>
                     </a>
-                    <a href="dankbarkeit3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Jonas und das abendliche Danke</div>
-                    </a>
+                    <a href="dankbarkeit3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Jonas und das abendliche Danke</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 10. Geduld -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/gedult.png" alt="Geduld">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/gedult.png" alt="Geduld"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Geduld & Warten</div>
                     <div class="feeling-description">Wenn Warten schwerfällt und die Zeit so langsam geht</div>
                 </div>
                 <div class="stories-list">
-                    <a href="geduld1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Oskar Otter und der lange Weg der Fische</div>
-                    </a>
-                    <a href="geduld2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Lina und die Uhr mit den langsamen Zeigern</div>
-                    </a>
-                    <a href="geduld3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Ben und der Samen unter der Erde</div>
-                    </a>
+                    <a href="geduld1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Oskar Otter und der lange Weg der Fische</div></a>
+                    <a href="geduld2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Lina und die Uhr mit den langsamen Zeigern</div></a>
+                    <a href="geduld3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Ben und der Samen unter der Erde</div></a>
                 </div>
             </div>
         </div>
 
         <!-- 11. Frustration -->
         <div class="feeling-item">
-            <div class="feeling-image">
-                <img src="bilder/gefühle/frustration.png" alt="Frustration">
-            </div>
+            <div class="feeling-image"><img src="bilder/gefühle/frustration.png" alt="Frustration"></div>
             <div class="feeling-content">
                 <div class="feeling-header">
                     <div class="feeling-name">Frustration & Enttäuschung</div>
                     <div class="feeling-description">Wenn etwas nicht klappt und die Hoffnung sinkt</div>
                 </div>
                 <div class="stories-list">
-                    <a href="frustration1.html" class="story-link">
-                        <div class="story-number">1</div>
-                        <div class="story-title">Paul und der Turm, der immer wieder fiel</div>
-                    </a>
-                    <a href="frustration2.html" class="story-link">
-                        <div class="story-number">2</div>
-                        <div class="story-title">Mia und der versprochene Nachmittag</div>
-                    </a>
-                    <a href="frustration3.html" class="story-link">
-                        <div class="story-number">3</div>
-                        <div class="story-title">Luca und der Ball, der nicht ins Tor wollte</div>
-                    </a>
+                    <a href="frustration1.html" class="story-link"><div class="story-number">1</div><div class="story-title">Paul und der Turm, der immer wieder fiel</div></a>
+                    <a href="frustration2.html" class="story-link"><div class="story-number">2</div><div class="story-title">Mia und der versprochene Nachmittag</div></a>
+                    <a href="frustration3.html" class="story-link"><div class="story-number">3</div><div class="story-title">Luca und der Ball, der nicht ins Tor wollte</div></a>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Werbung zwischen Content -->
     <div class="ad-container">
         <div class="ad-label">Werbung</div>
         <div class="ad-placeholder">Google AdSense Anzeigenblock (728x90 oder responsive)</div>
     </div>
 
     <!-- CTA #2: nach den Geschichten, vor Elterninfo -->
-    <a href="https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle" target="_blank" rel="noopener" class="gefuehlskarten-cta">
-        <div class="gefuehlskarten-cta-left">
-            <div>
-                <div class="gefuehlskarten-cta-title">Gefühlskarten für Kinder – alle 11 Gefühle zum Ausdrucken</div>
-                <div class="gefuehlskarten-cta-sub">Passend zu den Geschichten · sofort als PDF verfügbar</div>
-            </div>
+    <a href="https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle" target="_blank" rel="noopener" class="gk-tipp">
+        <img src="karten-thumb.jpg" alt="Gefühlskarten für Kinder – 11 Emotionen" class="gk-tipp-img">
+        <div class="gk-tipp-body">
+            <div class="gk-tipp-label">Passend dazu</div>
+            <div class="gk-tipp-title">Gefühlskarten zum Ausdrucken</div>
+            <div class="gk-tipp-sub">Zu allen 11 Gefühlen – sofort als PDF verfügbar</div>
+            <div class="gk-tipp-link">→ Auf Etsy ansehen</div>
         </div>
-        <div class="gefuehlskarten-cta-btn">Jetzt ansehen →</div>
     </a>
 
-    <!-- Info für Eltern -->
     <div class="parent-info">
         <div class="parent-info-title">
             <span>💚</span>
@@ -912,7 +538,6 @@
     <footer>
         <p class="footer-brand">Der Lernolotl</p>
         <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
-
         <div class="footer-links">
             <a href="impressum.html">Impressum</a>
             <a href="datenschutz.html">Datenschutz</a>
@@ -920,7 +545,6 @@
             <a href="kontakt.html">Kontakt</a>
             <a href="ueber-uns.html">Über uns</a>
         </div>
-
         <div class="footer-info">
             <p style="margin-top: 15px; font-size: 0.85em;">© 2026 Der Lernolotl – Alle Rechte vorbehalten</p>
         </div>
