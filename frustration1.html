@@ -10,24 +10,18 @@
     <meta name="description" content="Paul und der Turm, der immer wieder fiel - Eine Geschichte über Frustration und Enttäuschung">
     <title>Paul und der Turm, der immer wieder fiel - Gefühlsgeschichten</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
             min-height: 100vh;
             padding: 20px;
+            padding-bottom: 90px;
             color: #333;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .container { max-width: 900px; margin: 0 auto; }
 
         .sticky-nav {
             position: sticky;
@@ -43,21 +37,8 @@
             align-items: center;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #a63d4d;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 0.95em;
-        }
-
-        .back-link:hover {
-            color: #d35d6e;
-            transform: translateX(-5px);
-        }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a63d4d; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 0.95em; }
+        .back-link:hover { color: #d35d6e; transform: translateX(-5px); }
 
         .feeling-badge {
             background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
@@ -74,128 +55,62 @@
             padding: 50px 40px 40px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 0;
+        }
+
+        .story-meta { color: #a63d4d; font-size: 0.95em; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { color: #a63d4d; font-size: 2.5em; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
+        .story-intro { color: #666; font-size: 1.1em; line-height: 1.8; max-width: 700px; margin: 0 auto 30px; }
+
+        .hero-image-container { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(166, 61, 77, 0.3); margin-top: 30px; }
+        .hero-image-container img { width: 100%; height: auto; display: block; }
+
+        /* ===== INLINE BUNDLE TEASER ===== */
+        .bundle-teaser {
+            background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
+            border-radius: 0 0 20px 20px;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
             margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(166,61,77,0.35);
         }
 
-        .story-meta {
-            color: #a63d4d;
-            font-size: 0.95em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .bundle-teaser-text { color: rgba(255,255,255,0.92); font-size: 0.95em; line-height: 1.4; }
+        .bundle-teaser-text strong { color: white; font-size: 1.05em; }
 
-        h1 {
-            color: #a63d4d;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .story-intro {
-            color: #666;
-            font-size: 1.1em;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .hero-image-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(166, 61, 77, 0.3);
-            margin-top: 30px;
-        }
-
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .story-section {
+        .bundle-teaser-cta {
             background: white;
-            border-radius: 25px;
-            padding: 50px 40px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-            margin-bottom: 40px;
-        }
-
-        .story-content {
-            color: #333;
-            font-size: 1.15em;
-            line-height: 2;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .story-content p {
-            margin-bottom: 25px;
-        }
-
-        .story-content strong {
             color: #a63d4d;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 0.88em;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        .story-content em {
-            color: #d35d6e;
-            font-style: italic;
-        }
+        .bundle-teaser-cta:hover { transform: scale(1.05); box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
 
-        .page-divider {
-            text-align: center;
-            margin: 50px 0;
-            color: #a63d4d;
-            font-size: 1.5em;
-            font-weight: 600;
-        }
+        .story-section { background: white; border-radius: 25px; padding: 50px 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin-bottom: 40px; }
+        .story-content { color: #333; font-size: 1.15em; line-height: 2; max-width: 700px; margin: 0 auto; }
+        .story-content p { margin-bottom: 25px; }
+        .story-content strong { color: #a63d4d; font-weight: 700; }
+        .story-content em { color: #d35d6e; font-style: italic; }
 
-        .section-divider {
-            text-align: center;
-            margin: 50px 0;
-            color: #a63d4d;
-            font-size: 2em;
-        }
+        .page-divider { text-align: center; margin: 50px 0; color: #a63d4d; font-size: 1.5em; font-weight: 600; }
+        .section-divider { text-align: center; margin: 50px 0; color: #a63d4d; font-size: 2em; }
 
-        .ad-container {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        }
+        .ad-container { background: white; border-radius: 15px; padding: 25px; margin: 40px 0; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .ad-label { color: #aaa; font-size: 0.7em; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #ddd; border-radius: 10px; padding: 30px; color: #bbb; font-size: 0.9em; }
 
-        .ad-label {
-            color: #aaa;
-            font-size: 0.7em;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .ad-placeholder {
-            background: #fafafa;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            color: #bbb;
-            font-size: 0.9em;
-        }
-
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #d35d6e 0%, #e8858f 100%);
-            z-index: 1000;
-            transition: width 0.1s;
-        }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, #d35d6e 0%, #e8858f 100%); z-index: 1000; transition: width 0.1s; }
 
         .info-box {
             background: linear-gradient(135deg, #fce8eb 0%, #e8858f 100%);
@@ -206,29 +121,10 @@
             border-left: 6px solid #a63d4d;
         }
 
-        .info-box-title {
-            color: #8a2f3d;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-box-text {
-            color: #2c3e50;
-            font-size: 1em;
-            line-height: 1.7;
-        }
-
-        .info-box-text p {
-            margin-bottom: 15px;
-        }
-
-        .info-box-text p:last-child {
-            margin-bottom: 0;
-        }
+        .info-box-title { color: #8a2f3d; font-size: 1.3em; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .info-box-text { color: #2c3e50; font-size: 1em; line-height: 1.7; }
+        .info-box-text p { margin-bottom: 15px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
 
         .technique-box {
             background: linear-gradient(135deg, #e8858f 0%, #d35d6e 100%);
@@ -239,150 +135,243 @@
             border-left: 6px solid #a63d4d;
         }
 
-        .technique-box-title {
-            color: #8a2f3d;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .technique-box-title { color: #8a2f3d; font-size: 1.3em; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .technique-box-text { color: #2c3e50; font-size: 1em; line-height: 1.7; }
+        .technique-box-text p { margin-bottom: 15px; }
+        .technique-box-text ul { margin: 15px 0; padding-left: 25px; }
+        .technique-box-text li { margin-bottom: 10px; }
+
+        /* ===== LERNMATERIAL SECTION ===== */
+        .lernmaterial-section {
+            background: white;
+            border-radius: 25px 25px 0 0;
+            padding: 40px 40px 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 0;
+        }
+
+        .lernmaterial-mascot { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; }
+        .lernmaterial-mascot img { width: 40px; height: 40px; }
+        .lernmaterial-mascot-label { color: #a63d4d; font-weight: 700; font-size: 1.1em; }
+        .lernmaterial-title { color: #a63d4d; font-size: 1.6em; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .lernmaterial-subtitle { text-align: center; color: #666; font-size: 0.97em; margin-bottom: 30px; }
+
+        .lernmaterial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+
+        .lernmaterial-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf5 100%);
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lernmaterial-card:hover { transform: translateY(-6px); border-color: #a63d4d; box-shadow: 0 10px 25px rgba(166, 61, 77, 0.2); }
+        .lernmaterial-card .card-icon { font-size: 2.2em; }
+
+        .lernmaterial-card .card-age {
+            background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
+            color: white;
+            font-size: 0.8em;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .lernmaterial-card .card-title { font-weight: 700; font-size: 1em; color: #a63d4d; line-height: 1.4; }
+        .lernmaterial-card .card-desc { font-size: 0.88em; color: #777; line-height: 1.5; }
+
+        .lernmaterial-card .card-cta {
+            margin-top: 5px;
+            background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9em;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .lernmaterial-card:hover .card-cta { opacity: 0.85; }
+
+        /* ===== BUNDLE UPSELL ===== */
+        .bundle-upsell {
+            background: linear-gradient(160deg, #1a1a2e 0%, #0f3460 100%);
+            border-radius: 0 0 25px 25px;
+            padding: 0 40px 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bundle-upsell::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(166,61,77,0.4), transparent); }
+        .bundle-upsell::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(166,61,77,0.12) 0%, transparent 70%); pointer-events: none; }
+
+        .bundle-divider { display: flex; align-items: center; gap: 15px; padding: 30px 0 25px; }
+        .bundle-divider::before, .bundle-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+        .bundle-divider-label { color: rgba(255,255,255,0.5); font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; white-space: nowrap; }
+
+        .bundle-hook { text-align: center; margin-bottom: 25px; position: relative; z-index: 1; }
+
+        .bundle-hook-eyebrow {
+            display: inline-block;
+            background: rgba(211,93,110,0.15);
+            border: 1px solid rgba(211,93,110,0.3);
+            color: #e8858f;
+            font-size: 0.78em;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .bundle-hook-headline { color: white; font-size: 1.55em; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
+
+        .bundle-hook-headline .highlight {
+            background: linear-gradient(135deg, #d35d6e, #e8858f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bundle-hook-sub { color: #94a3b8; font-size: 0.92em; line-height: 1.6; max-width: 540px; margin: 0 auto; }
+
+        .bundle-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; position: relative; z-index: 1; margin-bottom: 18px; }
+
+        .bundle-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 22px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
         }
 
-        .technique-box-text {
-            color: #2c3e50;
-            font-size: 1em;
-            line-height: 1.7;
+        .bundle-card:hover { background: rgba(255,255,255,0.11); border-color: rgba(166,61,77,0.5); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.3); }
+        .bundle-card-icon { font-size: 2.2em; }
+        .bundle-card-age { font-size: 0.75em; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+        .bundle-card-title { font-weight: 700; font-size: 0.95em; color: white; line-height: 1.4; }
+
+        .bundle-card-pill {
+            background: rgba(166,61,77,0.22);
+            border: 1px solid rgba(166,61,77,0.35);
+            color: #e8858f;
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 10px;
         }
 
-        .technique-box-text p {
-            margin-bottom: 15px;
-        }
-
-        .technique-box-text ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-
-        .technique-box-text li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            margin-top: 50px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .footer-brand {
-            color: #a63d4d;
+        .bundle-card-cta {
+            margin-top: 4px;
+            background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
+            color: white;
+            padding: 11px 16px;
+            border-radius: 11px;
             font-weight: 700;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-
-        .footer-tagline {
-            color: #999;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-        }
-
-        .footer-links {
-            margin: 25px 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .footer-links a {
-            color: #a63d4d;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1em;
-            transition: all 0.3s;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #d35d6e;
-            transition: width 0.3s;
-        }
-
-        .footer-links a:hover::after {
+            font-size: 0.87em;
             width: 100%;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(166,61,77,0.35);
         }
 
-        .footer-links a:hover {
-            color: #d35d6e;
+        .bundle-card:hover .bundle-card-cta { box-shadow: 0 6px 18px rgba(166,61,77,0.55); }
+
+        .bundle-reassurance { text-align: center; color: #64748b; font-size: 0.82em; position: relative; z-index: 1; }
+        .bundle-reassurance span { color: #4ade80; font-weight: 600; }
+
+        /* ===== STICKY MOBILE BOTTOM BAR ===== */
+        .sticky-bundle-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 500;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            border-top: 1px solid rgba(166,61,77,0.3);
+            padding: 12px 20px;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.35);
         }
 
-        .footer-info {
-            color: #999;
-            font-size: 0.85em;
-            margin-top: 25px;
-            line-height: 1.6;
+        .sticky-bundle-bar-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .sticky-bundle-bar-text { color: white; font-size: 0.85em; line-height: 1.3; }
+        .sticky-bundle-bar-text strong { display: block; font-size: 1em; }
+        .sticky-bundle-bar-text span { color: #94a3b8; font-size: 0.88em; }
+        .sticky-bundle-bar-btns { display: flex; gap: 8px; flex-shrink: 0; }
+
+        .sticky-bundle-bar-btn {
+            background: linear-gradient(135deg, #d35d6e 0%, #e8858f 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 0.78em;
+            padding: 9px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.3;
+            transition: opacity 0.2s;
         }
+
+        .sticky-bundle-bar-btn:hover { opacity: 0.85; }
+        .sticky-bundle-bar-close { background: none; border: none; color: #64748b; font-size: 1.2em; cursor: pointer; padding: 4px; flex-shrink: 0; }
+
+        footer { background: white; border-radius: 25px; padding: 40px; margin-top: 50px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .footer-brand { color: #a63d4d; font-weight: 700; font-size: 1.3em; margin-bottom: 10px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: #a63d4d; text-decoration: none; font-weight: 500; font-size: 1em; transition: all 0.3s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #d35d6e; transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-links a:hover { color: #d35d6e; }
+        .footer-info { color: #999; font-size: 0.85em; margin-top: 25px; line-height: 1.6; }
 
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            .sticky-nav {
-                flex-direction: column;
-                gap: 10px;
-                padding: 15px 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            header,
-            .story-section {
-                padding: 35px 25px;
-            }
-
-            .story-content {
-                font-size: 1.05em;
-            }
-
-            footer {
-                padding: 30px 20px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
+            body { padding: 15px; padding-bottom: 90px; }
+            .sticky-nav { flex-direction: column; gap: 10px; padding: 15px 20px; }
+            h1 { font-size: 2em; }
+            header { padding: 35px 25px 35px; }
+            .bundle-teaser { flex-direction: column; text-align: center; gap: 12px; padding: 16px 20px; }
+            .bundle-teaser-cta { width: 100%; text-align: center; }
+            .story-section { padding: 35px 25px; }
+            .story-content { font-size: 1.05em; }
+            .lernmaterial-section { padding: 35px 25px 25px; }
+            .lernmaterial-grid { grid-template-columns: 1fr; }
+            .bundle-upsell { padding: 0 25px 40px; }
+            .bundle-hook-headline { font-size: 1.3em; }
+            .bundle-cards { grid-template-columns: 1fr; }
+            .sticky-bundle-bar { display: block; }
+            footer { padding: 30px 20px; }
+            .footer-links { flex-direction: column; gap: 15px; }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.7em;
-            }
-
-            .story-content {
-                font-size: 1em;
-                line-height: 1.8;
-            }
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.8; }
+            .lernmaterial-title { font-size: 1.3em; }
         }
     </style>
-<link rel="stylesheet" href="consent.css">
-  <link rel="canonical" href="https://www.lernolotl.de/frustration1.html">
+    <link rel="stylesheet" href="consent.css">
+    <link rel="canonical" href="https://www.lernolotl.de/frustration1.html">
 </head>
 <body>
+
 <div id="cookieBanner" class="cookie-banner">
   <div class="cookie-content">
     <div class="cookie-text">
@@ -395,172 +384,288 @@
     </div>
   </div>
 </div>
-    <div class="progress-bar" id="progressBar"></div>
 
-    <div class="container">
-        <nav class="sticky-nav">
-            <a href="geschichten-ueber-gefuehle.html" class="back-link">
-                <span>←</span>
-                <span>Zurück zu den Gefühlen</span>
-            </a>
+<div class="progress-bar" id="progressBar"></div>
 
-            <a href="index.html" class="back-link">
-                <span>←</span>
-                <span>Zurück zur Startseite</span>
-            </a>
-            <span class="feeling-badge">Frustration und Enttäuschung</span>
-        </nav>
-
-        <header>
-            <div class="story-meta">Gefühlsgeschichte • Frustration und Enttäuschung</div>
-            <h1>Paul und der Turm, der immer wieder fiel</h1>
-            <p class="story-intro">
-                Paul liebt es zu bauen und hat ganz genaue Bilder im Kopf, wie etwas aussehen soll. Doch manchmal klappt es einfach nicht – und das macht wütend, traurig und frustriert. Eine einfühlsame Geschichte darüber, dass Frustration und Enttäuschung zeigen, wie wichtig uns etwas ist, und dass Scheitern Teil des Lernens ist.
-            </p>
-            <div class="hero-image-container">
-                <img src="bilder/gefühle/frustration1.png" alt="Paul und der Turm, der immer wieder fiel">
-            </div>
-        </header>
-
-        <div class="story-section">
-            <div class="story-content">
-                <div class="page-divider">— Seite 1 —</div>
-                
-                <p>Paul liebte es zu bauen. Mit Bauklötzen, Kartons oder allem, was sich stapeln ließ. In seinem Kopf hatte er oft ganz genaue Bilder davon, wie etwas aussehen sollte. Wenn es dann genauso wurde, fühlte sich Paul stark und zufrieden.</p>
-
-                <p>An diesem Nachmittag wollte Paul einen besonders hohen Turm bauen. Einen, der höher war als der Tisch, höher als der Stuhl, fast bis zum Fenster. Er setzte Klotz auf Klotz, ganz vorsichtig. Seine Zunge lugte ein wenig aus dem Mund, so sehr konzentrierte er sich.</p>
-
-                <p>Doch kurz bevor der Turm fertig war, wackelte er. Ein leises Klacken, dann fiel alles zusammen. Die Klötze rollten über den Boden.</p>
-
-                <p>Pauls Brust wurde heiß. Sein Herz schlug schneller. <em>Schon wieder</em>, dachte er. Er begann sofort von vorn. Schneller diesmal. Fester.</p>
-
-                <p>Der Turm fiel wieder.</p>
-
-                <p>Paul spürte, wie sich etwas Hartes in ihm zusammenzog. Seine Augen brannten. Er wollte schreien, die Klötze wegwerfen, aufgeben – und gleichzeitig weitermachen.</p>
-
-                <p><em>„Das ist doof!"</em>, rief er laut.</p>
-
-                <p>Sein Papa, der im Raum daneben war, kam dazu. Er sagte nichts, setzte sich nur neben Paul.</p>
-            </div>
+<!-- STICKY MOBILE BOTTOM BAR -->
+<div class="sticky-bundle-bar" id="stickyBundleBar">
+    <div class="sticky-bundle-bar-inner">
+        <div class="sticky-bundle-bar-text">
+            <strong>🌟 Alle 11 Gefühle als Bundle</strong>
+            <span>Kita · Klasse 1/2 · Klasse 3/4</span>
         </div>
-
-        <div class="section-divider">✨ 🧱 ✨</div>
-
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                Google AdSense Anzeigenblock (responsive)
-            </div>
+        <div class="sticky-bundle-bar-btns">
+            <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kita<br>Bundle</a>
+            <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kl. 1/2<br>Bundle</a>
+            <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kl. 3/4<br>Bundle</a>
         </div>
+        <button class="sticky-bundle-bar-close" onclick="document.getElementById('stickyBundleBar').style.display='none'" aria-label="Schließen">✕</button>
+    </div>
+</div>
 
-        <div class="story-section">
-            <div class="story-content">
-                <div class="page-divider">— Seite 2 —</div>
-                
-                <p><em>„Ich wollte, dass es klappt"</em>, sagte Paul leise. <em>„Aber es klappt nie."</em></p>
+<div class="container">
 
-                <p>Der Papa nickte. <em>„Das fühlt sich frustrierend an"</em>, sagte er ruhig. <em>„Und auch enttäuschend."</em></p>
+    <nav class="sticky-nav">
+        <a href="geschichten-ueber-gefuehle.html" class="back-link">
+            <span>←</span>
+            <span>Zurück zu den Gefühlen</span>
+        </a>
+        <a href="index.html" class="back-link">
+            <span>←</span>
+            <span>Zurück zur Startseite</span>
+        </a>
+        <span class="feeling-badge">Frustration und Enttäuschung</span>
+    </nav>
 
-                <p>Paul atmete schwer. Er fühlte sich gesehen. Das harte Gefühl wurde ein kleines bisschen weicher.</p>
-
-                <p><em>„Wollen wir kurz anhalten?"</em>, fragte der Papa. <em>„Nicht aufhören – nur anhalten."</em></p>
-
-                <p>Paul nickte zögerlich. Sie sammelten die Klötze langsam ein. Paul merkte, wie sein Atem ruhiger wurde.</p>
-
-                <p>Dann sagte der Papa: <em>„Manchmal zeigt uns Frustration, dass uns etwas wichtig ist. Und Enttäuschung heißt, dass wir gehofft haben."</em></p>
-
-                <p>Paul dachte darüber nach. Er baute weiter, diesmal langsamer. Der Turm wurde niedriger – aber stabiler.</p>
-
-                <p>Als er fertig war, war der Turm nicht so hoch wie geplant. Aber er stand.</p>
-
-                <p>Paul lächelte müde.</p>
-
-                <p><strong>Paul lernte: Frustration und Enttäuschung sind keine Feinde. Sie sind Zeichen dafür, dass wir etwas versuchen – und dabei wachsen.</strong></p>
-            </div>
+    <header>
+        <div class="story-meta">Gefühlsgeschichte • Frustration und Enttäuschung</div>
+        <h1>Paul und der Turm, der immer wieder fiel</h1>
+        <p class="story-intro">
+            Paul liebt es zu bauen und hat ganz genaue Bilder im Kopf, wie etwas aussehen soll. Doch manchmal klappt es einfach nicht – und das macht wütend, traurig und frustriert. Eine einfühlsame Geschichte darüber, dass Frustration und Enttäuschung zeigen, wie wichtig uns etwas ist, und dass Scheitern Teil des Lernens ist.
+        </p>
+        <div class="hero-image-container">
+            <img src="bilder/gefühle/frustration1.png" alt="Paul und der Turm, der immer wieder fiel">
         </div>
+    </header>
 
-        <div class="technique-box">
-            <div class="technique-box-title">
-                <span>🧱</span>
-                <span>Die Paul-Technik – Anhalten statt aufgeben</span>
-            </div>
-            <div class="technique-box-text">
-                <p><strong>Diese Übung hilft Kindern, mit Frustration und Enttäuschung umzugehen:</strong></p>
-                <ul>
-                    <li><strong>Das Gefühl benennen:</strong> „Das fühlt sich frustrierend an" oder „Ich bin enttäuscht"</li>
-                    <li><strong>Kurz anhalten, nicht aufgeben:</strong> Eine Pause machen, um Abstand zu gewinnen</li>
-                    <li><strong>Langsam weitermachen:</strong> Mit ruhigerem Atem und weniger Druck</li>
-                    <li><strong>Die Erwartung anpassen:</strong> Vielleicht wird es anders als geplant – und das ist okay</li>
-                    <li><strong>Kleine Erfolge sehen:</strong> Auch ein niedrigerer, aber stabiler Turm ist ein Erfolg</li>
-                    <li><strong>Die Bedeutung verstehen:</strong> Frustration zeigt, dass uns etwas wichtig ist</li>
-                    <li><strong>Wachstum erkennen:</strong> Jeder Versuch lehrt uns etwas, auch wenn er nicht perfekt ist</li>
-                    <li><strong>Begleitung zulassen:</strong> Jemand, der da ist und versteht, hilft beim Verarbeiten</li>
-                </ul>
-                <p>Diese Technik vermittelt, dass Frustration und Enttäuschung natürliche Reaktionen sind, wenn uns etwas wichtig ist. Sie zeigt, dass Scheitern nicht das Ende ist, sondern Teil des Lernprozesses – und dass manchmal eine Pause und eine neue Perspektive helfen, weiterzukommen.</p>
-            </div>
+    <!-- INLINE BUNDLE TEASER -->
+    <div class="bundle-teaser">
+        <div class="bundle-teaser-text">
+            <strong>📚 Diese Geschichte gefällt dir?</strong><br>
+            Alle 11 Gefühle gibt es auch als Komplett-Bundle – für Kita, Klasse 1/2 und Klasse 3/4.
         </div>
-
-        <div class="info-box">
-            <div class="info-box-title">
-                <span>💡</span>
-                <span>Gesprächsanregung für Eltern</span>
-            </div>
-            <div class="info-box-text">
-                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
-                <p>• Was liebte Paul zu tun?<br>
-                • Was wollte Paul an diesem Nachmittag bauen?<br>
-                • Was passierte mit dem Turm?<br>
-                • Wie fühlte sich Paul, als der Turm fiel?<br>
-                • Was rief Paul laut?<br>
-                • Wer kam zu Paul?<br>
-                • Was sagte der Papa über das Gefühl?<br>
-                • Was schlug der Papa vor?<br>
-                • Was machten Paul und sein Papa zusammen?<br>
-                • Wie baute Paul den nächsten Turm?<br>
-                • War der Turm am Ende so wie Paul ihn sich vorgestellt hatte?<br>
-                • Was hat Paul über Frustration und Enttäuschung gelernt?<br>
-                • Hast du dich auch schon mal frustriert gefühlt, weil etwas nicht klappte?<br>
-                • Was hilft dir, wenn du enttäuscht bist?</p>
-            </div>
-        </div>
-
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                Google AdSense Anzeigenblock (728x90 oder responsive)
-            </div>
-        </div>
-
-        <footer>
-            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
-            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
-            
-            <div class="footer-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
-                <a href="kontakt.html">Kontakt</a>
-                <a href="ueber-uns.html">Über uns</a>
-            </div>
-
-            <div class="footer-info">
-                <p style="margin-top: 15px; font-size: 0.85em;">
-                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
-                </p>
-            </div>
-        </footer>
+        <a href="#bundle-auswahl" class="bundle-teaser-cta">→ Zum Bundle</a>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-        });
-    </script>
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Paul liebte es zu bauen. Mit Bauklötzen, Kartons oder allem, was sich stapeln ließ. In seinem Kopf hatte er oft ganz genaue Bilder davon, wie etwas aussehen sollte. Wenn es dann genauso wurde, fühlte sich Paul stark und zufrieden.</p>
+
+            <p>An diesem Nachmittag wollte Paul einen besonders hohen Turm bauen. Einen, der höher war als der Tisch, höher als der Stuhl, fast bis zum Fenster. Er setzte Klotz auf Klotz, ganz vorsichtig. Seine Zunge lugte ein wenig aus dem Mund, so sehr konzentrierte er sich.</p>
+
+            <p>Doch kurz bevor der Turm fertig war, wackelte er. Ein leises Klacken, dann fiel alles zusammen. Die Klötze rollten über den Boden.</p>
+
+            <p>Pauls Brust wurde heiß. Sein Herz schlug schneller. <em>Schon wieder</em>, dachte er. Er begann sofort von vorn. Schneller diesmal. Fester.</p>
+
+            <p>Der Turm fiel wieder.</p>
+
+            <p>Paul spürte, wie sich etwas Hartes in ihm zusammenzog. Seine Augen brannten. Er wollte schreien, die Klötze wegwerfen, aufgeben – und gleichzeitig weitermachen.</p>
+
+            <p><em>„Das ist doof!"</em>, rief er laut.</p>
+
+            <p>Sein Papa, der im Raum daneben war, kam dazu. Er sagte nichts, setzte sich nur neben Paul.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">✨ 🧱 ✨</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense Anzeigenblock (responsive)</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p><em>„Ich wollte, dass es klappt"</em>, sagte Paul leise. <em>„Aber es klappt nie."</em></p>
+
+            <p>Der Papa nickte. <em>„Das fühlt sich frustrierend an"</em>, sagte er ruhig. <em>„Und auch enttäuschend."</em></p>
+
+            <p>Paul atmete schwer. Er fühlte sich gesehen. Das harte Gefühl wurde ein kleines bisschen weicher.</p>
+
+            <p><em>„Wollen wir kurz anhalten?"</em>, fragte der Papa. <em>„Nicht aufhören – nur anhalten."</em></p>
+
+            <p>Paul nickte zögerlich. Sie sammelten die Klötze langsam ein. Paul merkte, wie sein Atem ruhiger wurde.</p>
+
+            <p>Dann sagte der Papa: <em>„Manchmal zeigt uns Frustration, dass uns etwas wichtig ist. Und Enttäuschung heißt, dass wir gehofft haben."</em></p>
+
+            <p>Paul dachte darüber nach. Er baute weiter, diesmal langsamer. Der Turm wurde niedriger – aber stabiler.</p>
+
+            <p>Als er fertig war, war der Turm nicht so hoch wie geplant. Aber er stand.</p>
+
+            <p>Paul lächelte müde.</p>
+
+            <p><strong>Paul lernte: Frustration und Enttäuschung sind keine Feinde. Sie sind Zeichen dafür, dass wir etwas versuchen – und dabei wachsen.</strong></p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🧱</span>
+            <span>Die Paul-Technik – Anhalten statt aufgeben</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Diese Übung hilft Kindern, mit Frustration und Enttäuschung umzugehen:</strong></p>
+            <ul>
+                <li><strong>Das Gefühl benennen:</strong> „Das fühlt sich frustrierend an" oder „Ich bin enttäuscht"</li>
+                <li><strong>Kurz anhalten, nicht aufgeben:</strong> Eine Pause machen, um Abstand zu gewinnen</li>
+                <li><strong>Langsam weitermachen:</strong> Mit ruhigerem Atem und weniger Druck</li>
+                <li><strong>Die Erwartung anpassen:</strong> Vielleicht wird es anders als geplant – und das ist okay</li>
+                <li><strong>Kleine Erfolge sehen:</strong> Auch ein niedrigerer, aber stabiler Turm ist ein Erfolg</li>
+                <li><strong>Die Bedeutung verstehen:</strong> Frustration zeigt, dass uns etwas wichtig ist</li>
+                <li><strong>Wachstum erkennen:</strong> Jeder Versuch lehrt uns etwas, auch wenn er nicht perfekt ist</li>
+                <li><strong>Begleitung zulassen:</strong> Jemand, der da ist und versteht, hilft beim Verarbeiten</li>
+            </ul>
+            <p>Diese Technik vermittelt, dass Frustration und Enttäuschung natürliche Reaktionen sind, wenn uns etwas wichtig ist. Sie zeigt, dass Scheitern nicht das Ende ist, sondern Teil des Lernprozesses – und dass manchmal eine Pause und eine neue Perspektive helfen, weiterzukommen.</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Gesprächsanregung für Eltern</span>
+        </div>
+        <div class="info-box-text">
+            <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+            <p>• Was liebte Paul zu tun?<br>
+            • Was wollte Paul an diesem Nachmittag bauen?<br>
+            • Was passierte mit dem Turm?<br>
+            • Wie fühlte sich Paul, als der Turm fiel?<br>
+            • Was rief Paul laut?<br>
+            • Wer kam zu Paul?<br>
+            • Was sagte der Papa über das Gefühl?<br>
+            • Was schlug der Papa vor?<br>
+            • Was machten Paul und sein Papa zusammen?<br>
+            • Wie baute Paul den nächsten Turm?<br>
+            • War der Turm am Ende so wie Paul ihn sich vorgestellt hatte?<br>
+            • Was hat Paul über Frustration und Enttäuschung gelernt?<br>
+            • Hast du dich auch schon mal frustriert gefühlt, weil etwas nicht klappte?<br>
+            • Was hilft dir, wenn du enttäuscht bist?</p>
+        </div>
+    </div>
+
+    <!-- EINZELPRODUKTE + BUNDLE -->
+    <div class="lernmaterial-section">
+        <div class="lernmaterial-mascot">
+            <img src="lernolotl-icon.png" alt="Lernolotl">
+            <span class="lernmaterial-mascot-label">Lernolotl-Materialien</span>
+        </div>
+        <div class="lernmaterial-title">📚 Passende Lernmaterialien zur Geschichte</div>
+        <p class="lernmaterial-subtitle">Von Katharina R. (Grundschullehrerin) — direkt zum Download auf Etsy</p>
+
+        <div class="lernmaterial-grid">
+
+            <a href="https://www.etsy.com/de/listing/4471218261/gefuhlsgeschichte-frustration-kita-paket"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">🧸</div>
+                <div class="card-age">Kita · 3–6 Jahre</div>
+                <div class="card-title">Frustration – Kita-Paket</div>
+                <div class="card-desc">Ausmalbilder, einfache Aufgaben & Gesprächskarten für die Kleinsten</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4471226748/gefuhlsgeschichte-frustration"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">✏️</div>
+                <div class="card-age">Klasse 1 & 2</div>
+                <div class="card-title">Frustration – Grundschule 1/2</div>
+                <div class="card-desc">Arbeitsblätter & Aufgaben passend zur Geschichte für Erstklässler</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4471227722/gefuhlsgeschichte-frustration"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">📖</div>
+                <div class="card-age">Klasse 3 & 4</div>
+                <div class="card-title">Frustration – Grundschule 3/4</div>
+                <div class="card-desc">Vertiefende Arbeitsblätter & Reflexionsaufgaben für ältere Kinder</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- BUNDLE UPSELL -->
+    <div class="bundle-upsell" id="bundle-auswahl">
+
+        <div class="bundle-divider">
+            <span class="bundle-divider-label">oder noch besser</span>
+        </div>
+
+        <div class="bundle-hook">
+            <div class="bundle-hook-eyebrow">🌟 Komplettpaket · Alle 11 Gefühle</div>
+            <div class="bundle-hook-headline">
+                Warum nur Frustration, wenn du<br>
+                <span class="highlight">alle 11 Gefühle auf einmal</span> haben kannst?
+            </div>
+            <p class="bundle-hook-sub">
+                Angst · Freude · Wut · Traurigkeit · Mut · Geduld · Eifersucht · Dankbarkeit · Einsamkeit · Frustration · Unsicherheit — alle pädagogisch aufgearbeitet, inkl. Ausmalbildern & Arbeitsblättern. Einmal kaufen, alles drin.
+            </p>
+        </div>
+
+        <div class="bundle-cards">
+
+            <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">🧸</div>
+                <div class="bundle-card-age">Kita · 3–6 Jahre</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Kita-Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">✏️</div>
+                <div class="bundle-card-age">Klasse 1 & 2</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Klasse 1/2 Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">📖</div>
+                <div class="bundle-card-age">Klasse 3 & 4</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Klasse 3/4 Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+        </div>
+
+        <p class="bundle-reassurance">
+            <span>✅ Sofort-Download als PDF</span> &nbsp;·&nbsp; Einmal kaufen, dauerhaft nutzen
+        </p>
+
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense Anzeigenblock (728x90 oder responsive)</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
+
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="ueber-uns.html">Über uns</a>
+        </div>
+
+        <div class="footer-info">
+            <p style="margin-top: 15px; font-size: 0.85em;">© 2026 Der Lernolotl – Alle Rechte vorbehalten</p>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+</script>
 <script src="cookies.js"></script>
 <script src="paypal-spende.js"></script>
 </body>
-
 </html>
