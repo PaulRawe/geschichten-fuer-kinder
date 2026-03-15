@@ -10,24 +10,18 @@
     <meta name="description" content="Theo und der leise Platz - Eine Geschichte über Einsamkeit und Alleinsein">
     <title>Theo und der leise Platz - Gefühlsgeschichten</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
             min-height: 100vh;
             padding: 20px;
+            padding-bottom: 90px;
             color: #333;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .container { max-width: 900px; margin: 0 auto; }
 
         .sticky-nav {
             position: sticky;
@@ -54,10 +48,7 @@
             font-size: 0.95em;
         }
 
-        .back-link:hover {
-            color: #7b9eb5;
-            transform: translateX(-5px);
-        }
+        .back-link:hover { color: #7b9eb5; transform: translateX(-5px); }
 
         .feeling-badge {
             background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
@@ -74,7 +65,7 @@
             padding: 50px 40px 40px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-            margin-bottom: 40px;
+            margin-bottom: 0;
         }
 
         .story-meta {
@@ -86,21 +77,9 @@
             letter-spacing: 1px;
         }
 
-        h1 {
-            color: #5a7d95;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
+        h1 { color: #5a7d95; font-size: 2.5em; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
 
-        .story-intro {
-            color: #666;
-            font-size: 1.1em;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
+        .story-intro { color: #666; font-size: 1.1em; line-height: 1.8; max-width: 700px; margin: 0 auto 30px; }
 
         .hero-image-container {
             border-radius: 20px;
@@ -109,11 +88,39 @@
             margin-top: 30px;
         }
 
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .hero-image-container img { width: 100%; height: auto; display: block; }
+
+        /* ===== INLINE BUNDLE TEASER ===== */
+        .bundle-teaser {
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            border-radius: 0 0 20px 20px;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(90,125,149,0.35);
         }
+
+        .bundle-teaser-text { color: rgba(255,255,255,0.92); font-size: 0.95em; line-height: 1.4; }
+        .bundle-teaser-text strong { color: white; font-size: 1.05em; }
+
+        .bundle-teaser-cta {
+            background: white;
+            color: #5a7d95;
+            font-weight: 800;
+            font-size: 0.88em;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .bundle-teaser-cta:hover { transform: scale(1.05); box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
 
         .story-section {
             background: white;
@@ -123,73 +130,21 @@
             margin-bottom: 40px;
         }
 
-        .story-content {
-            color: #333;
-            font-size: 1.15em;
-            line-height: 2;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        .story-content { color: #333; font-size: 1.15em; line-height: 2; max-width: 700px; margin: 0 auto; }
+        .story-content p { margin-bottom: 25px; }
+        .story-content strong { color: #5a7d95; font-weight: 700; }
+        .story-content em { color: #7b9eb5; font-style: italic; }
 
-        .story-content p {
-            margin-bottom: 25px;
-        }
+        .page-divider { text-align: center; margin: 50px 0; color: #5a7d95; font-size: 1.5em; font-weight: 600; }
+        .section-divider { text-align: center; margin: 50px 0; color: #5a7d95; font-size: 2em; }
 
-        .story-content strong {
-            color: #5a7d95;
-            font-weight: 700;
-        }
-
-        .story-content em {
-            color: #7b9eb5;
-            font-style: italic;
-        }
-
-        .page-divider {
-            text-align: center;
-            margin: 50px 0;
-            color: #5a7d95;
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-
-        .section-divider {
-            text-align: center;
-            margin: 50px 0;
-            color: #5a7d95;
-            font-size: 2em;
-        }
-
-        .ad-container {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        }
-
-        .ad-label {
-            color: #aaa;
-            font-size: 0.7em;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .ad-placeholder {
-            background: #fafafa;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            color: #bbb;
-            font-size: 0.9em;
-        }
+        .ad-container { background: white; border-radius: 15px; padding: 25px; margin: 40px 0; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .ad-label { color: #aaa; font-size: 0.7em; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ad-placeholder { background: #fafafa; border: 2px dashed #ddd; border-radius: 10px; padding: 30px; color: #bbb; font-size: 0.9em; }
 
         .progress-bar {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 0%;
             height: 4px;
             background: linear-gradient(90deg, #7b9eb5 0%, #a8c5d9 100%);
@@ -206,29 +161,10 @@
             border-left: 6px solid #5a7d95;
         }
 
-        .info-box-title {
-            color: #3d5a6d;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-box-text {
-            color: #2c3e50;
-            font-size: 1em;
-            line-height: 1.7;
-        }
-
-        .info-box-text p {
-            margin-bottom: 15px;
-        }
-
-        .info-box-text p:last-child {
-            margin-bottom: 0;
-        }
+        .info-box-title { color: #3d5a6d; font-size: 1.3em; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .info-box-text { color: #2c3e50; font-size: 1em; line-height: 1.7; }
+        .info-box-text p { margin-bottom: 15px; }
+        .info-box-text p:last-child { margin-bottom: 0; }
 
         .technique-box {
             background: linear-gradient(135deg, #a8c5d9 0%, #7b9eb5 100%);
@@ -239,150 +175,259 @@
             border-left: 6px solid #5a7d95;
         }
 
-        .technique-box-title {
-            color: #3d5a6d;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .technique-box-title { color: #3d5a6d; font-size: 1.3em; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .technique-box-text { color: #2c3e50; font-size: 1em; line-height: 1.7; }
+        .technique-box-text p { margin-bottom: 15px; }
+        .technique-box-text ul { margin: 15px 0; padding-left: 25px; }
+        .technique-box-text li { margin-bottom: 10px; }
+
+        /* ===== LERNMATERIAL SECTION ===== */
+        .lernmaterial-section {
+            background: white;
+            border-radius: 25px 25px 0 0;
+            padding: 40px 40px 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            margin-bottom: 0;
+        }
+
+        .lernmaterial-mascot { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; }
+        .lernmaterial-mascot img { width: 40px; height: 40px; }
+        .lernmaterial-mascot-label { color: #5a7d95; font-weight: 700; font-size: 1.1em; }
+        .lernmaterial-title { color: #5a7d95; font-size: 1.6em; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .lernmaterial-subtitle { text-align: center; color: #666; font-size: 0.97em; margin-bottom: 30px; }
+
+        .lernmaterial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+
+        .lernmaterial-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf5 100%);
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lernmaterial-card:hover { transform: translateY(-6px); border-color: #5a7d95; box-shadow: 0 10px 25px rgba(90, 125, 149, 0.2); }
+        .lernmaterial-card .card-icon { font-size: 2.2em; }
+
+        .lernmaterial-card .card-age {
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            color: white;
+            font-size: 0.8em;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .lernmaterial-card .card-title { font-weight: 700; font-size: 1em; color: #5a7d95; line-height: 1.4; }
+        .lernmaterial-card .card-desc { font-size: 0.88em; color: #777; line-height: 1.5; }
+
+        .lernmaterial-card .card-cta {
+            margin-top: 5px;
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9em;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .lernmaterial-card:hover .card-cta { opacity: 0.85; }
+
+        /* ===== BUNDLE UPSELL ===== */
+        .bundle-upsell {
+            background: linear-gradient(160deg, #1a1a2e 0%, #0f3460 100%);
+            border-radius: 0 0 25px 25px;
+            padding: 0 40px 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bundle-upsell::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(90,125,149,0.4), transparent);
+        }
+
+        .bundle-upsell::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -60px;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(90,125,149,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .bundle-divider { display: flex; align-items: center; gap: 15px; padding: 30px 0 25px; }
+        .bundle-divider::before, .bundle-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+        .bundle-divider-label { color: rgba(255,255,255,0.5); font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; white-space: nowrap; }
+
+        .bundle-hook { text-align: center; margin-bottom: 25px; position: relative; z-index: 1; }
+
+        .bundle-hook-eyebrow {
+            display: inline-block;
+            background: rgba(123,158,181,0.15);
+            border: 1px solid rgba(123,158,181,0.3);
+            color: #a8c5d9;
+            font-size: 0.78em;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .bundle-hook-headline { color: white; font-size: 1.55em; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
+
+        .bundle-hook-headline .highlight {
+            background: linear-gradient(135deg, #7b9eb5, #a8c5d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bundle-hook-sub { color: #94a3b8; font-size: 0.92em; line-height: 1.6; max-width: 540px; margin: 0 auto; }
+
+        .bundle-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; position: relative; z-index: 1; margin-bottom: 18px; }
+
+        .bundle-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 22px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
         }
 
-        .technique-box-text {
-            color: #2c3e50;
-            font-size: 1em;
-            line-height: 1.7;
+        .bundle-card:hover { background: rgba(255,255,255,0.11); border-color: rgba(90,125,149,0.5); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.3); }
+        .bundle-card-icon { font-size: 2.2em; }
+        .bundle-card-age { font-size: 0.75em; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+        .bundle-card-title { font-weight: 700; font-size: 0.95em; color: white; line-height: 1.4; }
+
+        .bundle-card-pill {
+            background: rgba(90,125,149,0.22);
+            border: 1px solid rgba(90,125,149,0.35);
+            color: #a8c5d9;
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 10px;
         }
 
-        .technique-box-text p {
-            margin-bottom: 15px;
-        }
-
-        .technique-box-text ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-
-        .technique-box-text li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            margin-top: 50px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .footer-brand {
-            color: #5a7d95;
+        .bundle-card-cta {
+            margin-top: 4px;
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            color: white;
+            padding: 11px 16px;
+            border-radius: 11px;
             font-weight: 700;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-
-        .footer-tagline {
-            color: #999;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-        }
-
-        .footer-links {
-            margin: 25px 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .footer-links a {
-            color: #5a7d95;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1em;
-            transition: all 0.3s;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #7b9eb5;
-            transition: width 0.3s;
-        }
-
-        .footer-links a:hover::after {
+            font-size: 0.87em;
             width: 100%;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(90,125,149,0.35);
         }
 
-        .footer-links a:hover {
-            color: #7b9eb5;
+        .bundle-card:hover .bundle-card-cta { box-shadow: 0 6px 18px rgba(90,125,149,0.55); }
+
+        .bundle-reassurance { text-align: center; color: #64748b; font-size: 0.82em; position: relative; z-index: 1; }
+        .bundle-reassurance span { color: #4ade80; font-weight: 600; }
+
+        /* ===== STICKY MOBILE BOTTOM BAR ===== */
+        .sticky-bundle-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 500;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            border-top: 1px solid rgba(90,125,149,0.3);
+            padding: 12px 20px;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.35);
         }
 
-        .footer-info {
-            color: #999;
-            font-size: 0.85em;
-            margin-top: 25px;
-            line-height: 1.6;
+        .sticky-bundle-bar-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .sticky-bundle-bar-text { color: white; font-size: 0.85em; line-height: 1.3; }
+        .sticky-bundle-bar-text strong { display: block; font-size: 1em; }
+        .sticky-bundle-bar-text span { color: #94a3b8; font-size: 0.88em; }
+        .sticky-bundle-bar-btns { display: flex; gap: 8px; flex-shrink: 0; }
+
+        .sticky-bundle-bar-btn {
+            background: linear-gradient(135deg, #7b9eb5 0%, #a8c5d9 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 0.78em;
+            padding: 9px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.3;
+            transition: opacity 0.2s;
         }
+
+        .sticky-bundle-bar-btn:hover { opacity: 0.85; }
+        .sticky-bundle-bar-close { background: none; border: none; color: #64748b; font-size: 1.2em; cursor: pointer; padding: 4px; flex-shrink: 0; }
+
+        footer { background: white; border-radius: 25px; padding: 40px; margin-top: 50px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .footer-brand { color: #5a7d95; font-weight: 700; font-size: 1.3em; margin-bottom: 10px; }
+        .footer-tagline { color: #999; margin-bottom: 25px; font-size: 0.95em; }
+
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+
+        .footer-links a { color: #5a7d95; text-decoration: none; font-weight: 500; font-size: 1em; transition: all 0.3s; padding: 5px 0; position: relative; }
+        .footer-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #7b9eb5; transition: width 0.3s; }
+        .footer-links a:hover::after { width: 100%; }
+        .footer-links a:hover { color: #7b9eb5; }
+        .footer-info { color: #999; font-size: 0.85em; margin-top: 25px; line-height: 1.6; }
 
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            .sticky-nav {
-                flex-direction: column;
-                gap: 10px;
-                padding: 15px 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            header,
-            .story-section {
-                padding: 35px 25px;
-            }
-
-            .story-content {
-                font-size: 1.05em;
-            }
-
-            footer {
-                padding: 30px 20px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
+            body { padding: 15px; padding-bottom: 90px; }
+            .sticky-nav { flex-direction: column; gap: 10px; padding: 15px 20px; }
+            h1 { font-size: 2em; }
+            header { padding: 35px 25px 35px; }
+            .bundle-teaser { flex-direction: column; text-align: center; gap: 12px; padding: 16px 20px; }
+            .bundle-teaser-cta { width: 100%; text-align: center; }
+            .story-section { padding: 35px 25px; }
+            .story-content { font-size: 1.05em; }
+            .lernmaterial-section { padding: 35px 25px 25px; }
+            .lernmaterial-grid { grid-template-columns: 1fr; }
+            .bundle-upsell { padding: 0 25px 40px; }
+            .bundle-hook-headline { font-size: 1.3em; }
+            .bundle-cards { grid-template-columns: 1fr; }
+            .sticky-bundle-bar { display: block; }
+            footer { padding: 30px 20px; }
+            .footer-links { flex-direction: column; gap: 15px; }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.7em;
-            }
-
-            .story-content {
-                font-size: 1em;
-                line-height: 1.8;
-            }
+            h1 { font-size: 1.7em; }
+            .story-content { font-size: 1em; line-height: 1.8; }
+            .lernmaterial-title { font-size: 1.3em; }
         }
     </style>
-<link rel="stylesheet" href="consent.css">
-  <link rel="canonical" href="https://www.lernolotl.de/einsamkeit1.html">
+    <link rel="stylesheet" href="consent.css">
+    <link rel="canonical" href="https://www.lernolotl.de/einsamkeit1.html">
 </head>
 <body>
+
 <div id="cookieBanner" class="cookie-banner">
   <div class="cookie-content">
     <div class="cookie-text">
@@ -395,155 +440,271 @@
     </div>
   </div>
 </div>
-    <div class="progress-bar" id="progressBar"></div>
 
-    <div class="container">
-        <nav class="sticky-nav">
-            <a href="geschichten-ueber-gefuehle.html" class="back-link">
-                <span>←</span>
-                <span>Zurück zu den Gefühlen</span>
-            </a>
+<div class="progress-bar" id="progressBar"></div>
 
-            <a href="index.html" class="back-link">
-                <span>←</span>
-                <span>Zurück zur Startseite</span>
-            </a>
-            <span class="feeling-badge">Einsamkeit / Alleinsein</span>
-        </nav>
-
-        <header>
-            <div class="story-meta">Gefühlsgeschichte • Einsamkeit / Alleinsein</div>
-            <h1>Theo und der leise Platz</h1>
-            <p class="story-intro">
-                Theo ist ein kleiner Igel, der gern für sich ist und Dinge genau beobachtet. Doch an diesem Nachmittag fühlt sich das Alleinsein anders an. Während die anderen Tiere auf der Wiese spielen, sitzt Theo unter seinem Lieblingsapfelbaum und spürt eine leise Leere in seinem Bauch. Eine einfühlsame Geschichte darüber, dass Alleinsein und Einsamkeit zwei verschiedene Dinge sind und dass es mutig ist, Nähe zu suchen, wenn man sie braucht.
-            </p>
-            <div class="hero-image-container">
-                <img src="bilder/gefühle/einsam1.png" alt="Theo und der leise Platz">
-            </div>
-        </header>
-
-        <div class="story-section">
-            <div class="story-content">
-                <div class="page-divider">— Seite 1 —</div>
-                
-                <p>Theo war ein kleiner Igel mit feinen Stacheln und einer sehr wachen Nase. Er lebte am Rand einer großen Wiese, dort, wo der Wald begann und die Gräser im Wind flüsterten. Theo war gern für sich. Er mochte es, Dinge genau zu beobachten. Doch manchmal fühlte sich das Alleinsein anders an.</p>
-
-                <p>An diesem Nachmittag spielten die anderen Tiere weiter hinten auf der Wiese. Sie lachten, rannten und riefen sich zu. Theo blieb an seinem Lieblingsplatz sitzen, unter einem alten Apfelbaum. Er hatte zuerst gedacht, es wäre schön, hier allein zu sein. Doch je länger er dort saß, desto stiller wurde es in ihm.</p>
-
-                <p>Theo hörte die Stimmen der anderen, aber sie fühlten sich weit weg an. In seinem Bauch entstand ein kleines Ziehen. Es war kein lauter Schmerz. Eher eine leise Leere. Theo kuschelte sich enger zusammen.</p>
-
-                <p><em>Warum bin ich gerade nicht dabei?</em>, fragte er sich. <em>Will mich niemand holen?</em> Diese Gedanken machten ihn schwer.</p>
-
-                <p>Der Wind bewegte die Blätter über ihm, und ein Apfel fiel leise ins Gras. Theo hob ihn auf, aber selbst der Duft machte ihn nicht fröhlich.</p>
-            </div>
+<!-- STICKY MOBILE BOTTOM BAR -->
+<div class="sticky-bundle-bar" id="stickyBundleBar">
+    <div class="sticky-bundle-bar-inner">
+        <div class="sticky-bundle-bar-text">
+            <strong>🌟 Alle 11 Gefühle als Bundle</strong>
+            <span>Kita · Klasse 1/2 · Klasse 3/4</span>
         </div>
-
-        <div class="section-divider">✨ 🦔 ✨</div>
-
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                Google AdSense Anzeigenblock (responsive)
-            </div>
+        <div class="sticky-bundle-bar-btns">
+            <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kita<br>Bundle</a>
+            <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kl. 1/2<br>Bundle</a>
+            <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34" target="_blank" rel="noopener" class="sticky-bundle-bar-btn">Kl. 3/4<br>Bundle</a>
         </div>
+        <button class="sticky-bundle-bar-close" onclick="document.getElementById('stickyBundleBar').style.display='none'" aria-label="Schließen">✕</button>
+    </div>
+</div>
 
-        <div class="story-section">
-            <div class="story-content">
-                <div class="page-divider">— Seite 2 —</div>
-                
-                <p>Theo merkte: Das war Einsamkeit. Sie fühlte sich anders an als Ruhe. Ruhe war angenehm. Einsamkeit fühlte sich kalt an.</p>
+<div class="container">
 
-                <p>Theo erinnerte sich an etwas, das ihm seine Mutter einmal gesagt hatte: <em>„Wenn sich Alleinsein schwer anfühlt, darfst du Nähe suchen."</em></p>
+    <nav class="sticky-nav">
+        <a href="geschichten-ueber-gefuehle.html" class="back-link">
+            <span>←</span>
+            <span>Zurück zu den Gefühlen</span>
+        </a>
+        <a href="index.html" class="back-link">
+            <span>←</span>
+            <span>Zurück zur Startseite</span>
+        </a>
+        <span class="feeling-badge">Einsamkeit / Alleinsein</span>
+    </nav>
 
-                <p>Langsam stand Theo auf. Seine Beine waren erst zögerlich, dann sicherer. Er lief nicht direkt zu den anderen. Zuerst setzte er sich an den Rand der Wiese, wo er sie sehen konnte.</p>
-
-                <p>Ein Kaninchen bemerkte ihn und winkte. Theo zögerte kurz – und winkte zurück. Das Ziehen in seinem Bauch wurde kleiner.</p>
-
-                <p>Schließlich setzte sich Theo dazu. Er musste nichts sagen. Er war einfach da.</p>
-
-                <p><strong>Theo verstand: Alleinsein kann schön sein. Einsamkeit sagt uns, dass wir Verbindung brauchen. Und beides darf da sein.</strong></p>
-            </div>
+    <header>
+        <div class="story-meta">Gefühlsgeschichte • Einsamkeit / Alleinsein</div>
+        <h1>Theo und der leise Platz</h1>
+        <p class="story-intro">
+            Theo ist ein kleiner Igel, der gern für sich ist und Dinge genau beobachtet. Doch an diesem Nachmittag fühlt sich das Alleinsein anders an. Während die anderen Tiere auf der Wiese spielen, sitzt Theo unter seinem Lieblingsapfelbaum und spürt eine leise Leere in seinem Bauch. Eine einfühlsame Geschichte darüber, dass Alleinsein und Einsamkeit zwei verschiedene Dinge sind und dass es mutig ist, Nähe zu suchen, wenn man sie braucht.
+        </p>
+        <div class="hero-image-container">
+            <img src="bilder/gefühle/einsam1.png" alt="Theo und der leise Platz">
         </div>
+    </header>
 
-        <div class="technique-box">
-            <div class="technique-box-title">
-                <span>🦔</span>
-                <span>Die Theo-Technik – Einsamkeit erkennen und handeln</span>
-            </div>
-            <div class="technique-box-text">
-                <p><strong>Diese Übung hilft Kindern, zwischen Alleinsein und Einsamkeit zu unterscheiden:</strong></p>
-                <ul>
-                    <li><strong>In sich hineinspüren:</strong> Fühlt sich das Alleinsein angenehm an oder entsteht ein Ziehen im Bauch?</li>
-                    <li><strong>Den Unterschied erkennen:</strong> Ruhe ist angenehm – Einsamkeit fühlt sich kalt und leer an</li>
-                    <li><strong>Die eigenen Gedanken wahrnehmen:</strong> Machen mich meine Gedanken schwer? Fühle ich mich ausgeschlossen?</li>
-                    <li><strong>Sich erinnern:</strong> Es ist okay, Nähe zu suchen, wenn sich Alleinsein schwer anfühlt</li>
-                    <li><strong>Langsam handeln:</strong> Erst beobachten, dann kleine Schritte machen – man muss nicht sofort mitten hinein</li>
-                    <li><strong>Ein Zeichen geben:</strong> Winken, sich dazusetzen oder einfach in die Nähe kommen – ohne Druck</li>
-                    <li><strong>Sich sagen: „Ich darf Verbindung suchen"</strong> – Das ist mutig, nicht schwach</li>
-                </ul>
-                <p>Diese Technik vermittelt, dass beide Gefühle – Alleinsein und Einsamkeit – ihre Berechtigung haben. Sie zeigt, dass Einsamkeit uns etwas Wichtiges sagt und dass es mutig ist, darauf zu reagieren.</p>
-            </div>
+    <!-- INLINE BUNDLE TEASER -->
+    <div class="bundle-teaser">
+        <div class="bundle-teaser-text">
+            <strong>📚 Diese Geschichte gefällt dir?</strong><br>
+            Alle 11 Gefühle gibt es auch als Komplett-Bundle – für Kita, Klasse 1/2 und Klasse 3/4.
         </div>
-
-        <div class="info-box">
-            <div class="info-box-title">
-                <span>💡</span>
-                <span>Gesprächsanregung für Eltern</span>
-            </div>
-            <div class="info-box-text">
-                <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
-                <p>• Was für ein Tier ist Theo?<br>
-                • Wo lebte Theo?<br>
-                • Was mochte Theo gerne?<br>
-                • Was spielten die anderen Tiere?<br>
-                • Wo saß Theo?<br>
-                • Was spürte Theo in seinem Bauch?<br>
-                • Wie fühlte sich Einsamkeit für Theo an?<br>
-                • Was hatte Theos Mutter ihm gesagt?<br>
-                • Wer winkte Theo zu?<br>
-                • Was ist der Unterschied zwischen Alleinsein und Einsamkeit?<br>
-                • Kennst du dieses Ziehen im Bauch auch manchmal?<br>
-                • Was machst du, wenn du dich einsam fühlst?</p>
-            </div>
-        </div>
-
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">
-                Google AdSense Anzeigenblock (728x90 oder responsive)
-            </div>
-        </div>
-
-        <footer>
-            <p class="footer-brand">Zauberhafte Kindergeschichten</p>
-            <p class="footer-tagline">Ihre Quelle für liebevoll ausgewählte Kindergeschichten</p>
-            
-            <div class="footer-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
-                <a href="kontakt.html">Kontakt</a>
-                <a href="ueber-uns.html">Über uns</a>
-            </div>
-
-            <div class="footer-info">
-                <p style="margin-top: 15px; font-size: 0.85em;">
-                    © 2024 Zauberhafte Kindergeschichten - Alle Rechte vorbehalten
-                </p>
-            </div>
-        </footer>
+        <a href="#bundle-auswahl" class="bundle-teaser-cta">→ Zum Bundle</a>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-        });
-    </script>
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 1 —</div>
+
+            <p>Theo war ein kleiner Igel mit feinen Stacheln und einer sehr wachen Nase. Er lebte am Rand einer großen Wiese, dort, wo der Wald begann und die Gräser im Wind flüsterten. Theo war gern für sich. Er mochte es, Dinge genau zu beobachten. Doch manchmal fühlte sich das Alleinsein anders an.</p>
+
+            <p>An diesem Nachmittag spielten die anderen Tiere weiter hinten auf der Wiese. Sie lachten, rannten und riefen sich zu. Theo blieb an seinem Lieblingsplatz sitzen, unter einem alten Apfelbaum. Er hatte zuerst gedacht, es wäre schön, hier allein zu sein. Doch je länger er dort saß, desto stiller wurde es in ihm.</p>
+
+            <p>Theo hörte die Stimmen der anderen, aber sie fühlten sich weit weg an. In seinem Bauch entstand ein kleines Ziehen. Es war kein lauter Schmerz. Eher eine leise Leere. Theo kuschelte sich enger zusammen.</p>
+
+            <p><em>Warum bin ich gerade nicht dabei?</em>, fragte er sich. <em>Will mich niemand holen?</em> Diese Gedanken machten ihn schwer.</p>
+
+            <p>Der Wind bewegte die Blätter über ihm, und ein Apfel fiel leise ins Gras. Theo hob ihn auf, aber selbst der Duft machte ihn nicht fröhlich.</p>
+        </div>
+    </div>
+
+    <div class="section-divider">✨ 🦔 ✨</div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense Anzeigenblock (responsive)</div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-content">
+            <div class="page-divider">— Seite 2 —</div>
+
+            <p>Theo merkte: Das war Einsamkeit. Sie fühlte sich anders an als Ruhe. Ruhe war angenehm. Einsamkeit fühlte sich kalt an.</p>
+
+            <p>Theo erinnerte sich an etwas, das ihm seine Mutter einmal gesagt hatte: <em>„Wenn sich Alleinsein schwer anfühlt, darfst du Nähe suchen."</em></p>
+
+            <p>Langsam stand Theo auf. Seine Beine waren erst zögerlich, dann sicherer. Er lief nicht direkt zu den anderen. Zuerst setzte er sich an den Rand der Wiese, wo er sie sehen konnte.</p>
+
+            <p>Ein Kaninchen bemerkte ihn und winkte. Theo zögerte kurz – und winkte zurück. Das Ziehen in seinem Bauch wurde kleiner.</p>
+
+            <p>Schließlich setzte sich Theo dazu. Er musste nichts sagen. Er war einfach da.</p>
+
+            <p><strong>Theo verstand: Alleinsein kann schön sein. Einsamkeit sagt uns, dass wir Verbindung brauchen. Und beides darf da sein.</strong></p>
+        </div>
+    </div>
+
+    <div class="technique-box">
+        <div class="technique-box-title">
+            <span>🦔</span>
+            <span>Die Theo-Technik – Einsamkeit erkennen und handeln</span>
+        </div>
+        <div class="technique-box-text">
+            <p><strong>Diese Übung hilft Kindern, zwischen Alleinsein und Einsamkeit zu unterscheiden:</strong></p>
+            <ul>
+                <li><strong>In sich hineinspüren:</strong> Fühlt sich das Alleinsein angenehm an oder entsteht ein Ziehen im Bauch?</li>
+                <li><strong>Den Unterschied erkennen:</strong> Ruhe ist angenehm – Einsamkeit fühlt sich kalt und leer an</li>
+                <li><strong>Die eigenen Gedanken wahrnehmen:</strong> Machen mich meine Gedanken schwer? Fühle ich mich ausgeschlossen?</li>
+                <li><strong>Sich erinnern:</strong> Es ist okay, Nähe zu suchen, wenn sich Alleinsein schwer anfühlt</li>
+                <li><strong>Langsam handeln:</strong> Erst beobachten, dann kleine Schritte machen – man muss nicht sofort mitten hinein</li>
+                <li><strong>Ein Zeichen geben:</strong> Winken, sich dazusetzen oder einfach in die Nähe kommen – ohne Druck</li>
+                <li><strong>Sich sagen: „Ich darf Verbindung suchen"</strong> – Das ist mutig, nicht schwach</li>
+            </ul>
+            <p>Diese Technik vermittelt, dass beide Gefühle – Alleinsein und Einsamkeit – ihre Berechtigung haben. Sie zeigt, dass Einsamkeit uns etwas Wichtiges sagt und dass es mutig ist, darauf zu reagieren.</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-box-title">
+            <span>💡</span>
+            <span>Gesprächsanregung für Eltern</span>
+        </div>
+        <div class="info-box-text">
+            <p><strong>Mögliche Fragen nach dem Vorlesen:</strong></p>
+            <p>• Was für ein Tier ist Theo?<br>
+            • Wo lebte Theo?<br>
+            • Was mochte Theo gerne?<br>
+            • Was spielten die anderen Tiere?<br>
+            • Wo saß Theo?<br>
+            • Was spürte Theo in seinem Bauch?<br>
+            • Wie fühlte sich Einsamkeit für Theo an?<br>
+            • Was hatte Theos Mutter ihm gesagt?<br>
+            • Wer winkte Theo zu?<br>
+            • Was ist der Unterschied zwischen Alleinsein und Einsamkeit?<br>
+            • Kennst du dieses Ziehen im Bauch auch manchmal?<br>
+            • Was machst du, wenn du dich einsam fühlst?</p>
+        </div>
+    </div>
+
+    <!-- EINZELPRODUKTE + BUNDLE -->
+    <div class="lernmaterial-section">
+        <div class="lernmaterial-mascot">
+            <img src="lernolotl-icon.png" alt="Lernolotl">
+            <span class="lernmaterial-mascot-label">Lernolotl-Materialien</span>
+        </div>
+        <div class="lernmaterial-title">📚 Passende Lernmaterialien zur Geschichte</div>
+        <p class="lernmaterial-subtitle">Von Katharina R. (Grundschullehrerin) — direkt zum Download auf Etsy</p>
+
+        <div class="lernmaterial-grid">
+
+            <a href="https://www.etsy.com/de/listing/4471208259/gefuhlsgeschichte-einsamkeit-kita-paket"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">🧸</div>
+                <div class="card-age">Kita · 3–6 Jahre</div>
+                <div class="card-title">Einsamkeit – Kita-Paket</div>
+                <div class="card-desc">Ausmalbilder, einfache Aufgaben & Gesprächskarten für die Kleinsten</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4471216610/gefuhlsgeschichte-einsamkeit-grundschule"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">✏️</div>
+                <div class="card-age">Klasse 1 & 2</div>
+                <div class="card-title">Einsamkeit – Grundschule 1/2</div>
+                <div class="card-desc">Arbeitsblätter & Aufgaben passend zur Geschichte für Erstklässler</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4471217530/gefuhlsgeschichte-einsamkeit-grundschule"
+               target="_blank" rel="noopener" class="lernmaterial-card">
+                <div class="card-icon">📖</div>
+                <div class="card-age">Klasse 3 & 4</div>
+                <div class="card-title">Einsamkeit – Grundschule 3/4</div>
+                <div class="card-desc">Vertiefende Arbeitsblätter & Reflexionsaufgaben für ältere Kinder</div>
+                <div class="card-cta">Auf Etsy ansehen →</div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- BUNDLE UPSELL -->
+    <div class="bundle-upsell" id="bundle-auswahl">
+
+        <div class="bundle-divider">
+            <span class="bundle-divider-label">oder noch besser</span>
+        </div>
+
+        <div class="bundle-hook">
+            <div class="bundle-hook-eyebrow">🌟 Komplettpaket · Alle 11 Gefühle</div>
+            <div class="bundle-hook-headline">
+                Warum nur Einsamkeit, wenn du<br>
+                <span class="highlight">alle 11 Gefühle auf einmal</span> haben kannst?
+            </div>
+            <p class="bundle-hook-sub">
+                Angst · Freude · Wut · Traurigkeit · Mut · Geduld · Eifersucht · Dankbarkeit · Einsamkeit · Frustration · Unsicherheit — alle pädagogisch aufgearbeitet, inkl. Ausmalbildern & Arbeitsblättern. Einmal kaufen, alles drin.
+            </p>
+        </div>
+
+        <div class="bundle-cards">
+
+            <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">🧸</div>
+                <div class="bundle-card-age">Kita · 3–6 Jahre</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Kita-Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">✏️</div>
+                <div class="bundle-card-age">Klasse 1 & 2</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Klasse 1/2 Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+            <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34"
+               target="_blank" rel="noopener" class="bundle-card">
+                <div class="bundle-card-icon">📖</div>
+                <div class="bundle-card-age">Klasse 3 & 4</div>
+                <div class="bundle-card-title">Alle 11 Geschichten<br>Klasse 3/4 Bundle</div>
+                <div class="bundle-card-pill">11 Pakete · 1 Download</div>
+                <div class="bundle-card-cta">Jetzt Bundle holen →</div>
+            </a>
+
+        </div>
+
+        <p class="bundle-reassurance">
+            <span>✅ Sofort-Download als PDF</span> &nbsp;·&nbsp; Einmal kaufen, dauerhaft nutzen
+        </p>
+
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Werbung</div>
+        <div class="ad-placeholder">Google AdSense Anzeigenblock (728x90 oder responsive)</div>
+    </div>
+
+    <footer>
+        <p class="footer-brand">Der Lernolotl</p>
+        <p class="footer-tagline">Pädagogisch aufgewertete Vorlesegeschichten</p>
+
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="ueber-uns.html">Über uns</a>
+        </div>
+
+        <div class="footer-info">
+            <p style="margin-top: 15px; font-size: 0.85em;">© 2026 Der Lernolotl – Alle Rechte vorbehalten</p>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+</script>
 <script src="cookies.js"></script>
 <script src="paypal-spende.js"></script>
 </body>
-
 </html>
