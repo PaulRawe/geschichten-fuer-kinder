@@ -181,7 +181,7 @@
     {
       titel: "Das Kita-Komplettpaket",
       untertitel: "Alle 10 Ratgeber · Bundle · PDF",
-      bild: "ratgeberbilder/kita_bundle.jpg",
+      bild: "ratgeberbilder/kita bundle.jpg",
       etsy: "https://www.etsy.com/de/listing/4474759126/lernolotl-kita-ratgeber-komplett-alle-10",
       urls: ["lernolotls-welt-kita"]
     },
