@@ -1,10 +1,13 @@
 name: Inject ratgeber.js
 
 on:
-  workflow_dispatch:  # manuell auslösbar
+  workflow_dispatch:
   push:
     paths:
-      - 'lernolotl/ratgeber.js'  # auch automatisch wenn ratgeber.js geändert wird
+      - 'lernolotl/ratgeber.js'
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   inject:
@@ -21,14 +24,12 @@ jobs:
           SKIPPED=0
 
           for file in lernolotl/*.html; do
-            # Überspringen wenn bereits vorhanden (idempotent)
             if grep -q 'ratgeber.js' "$file"; then
               echo "SKIP (already present): $file"
               SKIPPED=$((SKIPPED + 1))
               continue
             fi
 
-            # Vor </body> einfügen
             sed -i "s|</body>|${SCRIPT_TAG}\n</body>|" "$file"
             echo "INJECTED: $file"
             COUNT=$((COUNT + 1))
