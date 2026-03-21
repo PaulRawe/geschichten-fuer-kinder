@@ -1,0 +1,47 @@
+name: Inject ratgeber.js
+
+on:
+  workflow_dispatch:  # manuell auslösbar
+  push:
+    paths:
+      - 'lernolotl/ratgeber.js'  # auch automatisch wenn ratgeber.js geändert wird
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: ratgeber.js in alle lernolotl HTMLs injizieren
+        run: |
+          SCRIPT_TAG='<script src="ratgeber.js"></script>'
+          COUNT=0
+          SKIPPED=0
+
+          for file in lernolotl/*.html; do
+            # Überspringen wenn bereits vorhanden (idempotent)
+            if grep -q 'ratgeber.js' "$file"; then
+              echo "SKIP (already present): $file"
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+
+            # Vor </body> einfügen
+            sed -i "s|</body>|${SCRIPT_TAG}\n</body>|" "$file"
+            echo "INJECTED: $file"
+            COUNT=$((COUNT + 1))
+          done
+
+          echo ""
+          echo "✅ Injiziert: $COUNT Dateien"
+          echo "⏭️  Übersprungen: $SKIPPED Dateien"
+
+      - name: Änderungen committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lernolotl/*.html
+          git diff --cached --quiet && echo "Keine Änderungen." || git commit -m "chore: ratgeber.js in alle lernolotl HTMLs injiziert"
+          git push
