@@ -84,104 +84,104 @@
       urls: ["kita-geschichte-10-abschied-kita"]
     },
 
-    // ── FREUNDE (11–23) – exakte Dateinamen aus Sitemap ──────────────────────
+    // ── FREUNDE (11–23) ───────────────────────────────────────────────────────
     {
-      titel: "Ratgeber #11 – Erster Besuch",
+      titel: "Ratgeber #11",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/11.jpg",
       etsy: "https://www.etsy.com/de/listing/4475458896/kinder-pdf-ratgeber-nr11-zum-ersten-mal",
       urls: ["freunde-geschichte-1-besuch"]
     },
     {
-      titel: "Ratgeber #12 – Streit",
+      titel: "Ratgeber #12",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/12.jpg",
       etsy: "https://www.etsy.com/de/listing/4475459912/wut-bei-kindern-pdf-ratgeber-nr-12o",
       urls: ["freunde-geschichte-2-streit"]
     },
     {
-      titel: "Ratgeber #13 – Besuch von Oma",
+      titel: "Ratgeber #13",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/13.jpg",
       etsy: "https://www.etsy.com/de/listing/4475454687/besuch-von-oma-pdf-ratgeber-nr-13o",
       urls: ["freunde-geschichte-3-oma"]
     },
     {
-      titel: "Ratgeber #14 – Bester Freund",
+      titel: "Ratgeber #14",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/14.jpg",
       etsy: "https://www.etsy.com/de/listing/4475461670/ablehnung-durch-freunde-kinder-pdf",
       urls: ["freunde-geschichte-4-1-bester-freund"]
     },
     {
-      titel: "Ratgeber #15 – Spielregeln",
+      titel: "Ratgeber #15",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/15.jpg",
       etsy: "https://www.etsy.com/de/listing/4475462396/freundschaft-endet-kinder-pdf-ratgeber",
       urls: ["freunde-geschichte-4-2-spielregeln"]
     },
     {
-      titel: "Ratgeber #16 – Empathie",
+      titel: "Ratgeber #16",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/16.jpg",
       etsy: "https://www.etsy.com/de/listing/4475457321/spielregeln-kinder-pdf-ratgeber-nr-17",
       urls: ["freunde-geschichte-4-4-empathie"]
     },
     {
-      titel: "Ratgeber #17 – Einladung",
+      titel: "Ratgeber #17",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/17.jpg",
       etsy: "https://www.etsy.com/de/listing/4475465020/empathie-kinder-pdf-ratgeber-nr-17o",
       urls: ["freunde-geschichte-4-5-einladung"]
     },
     {
-      titel: "Ratgeber #18 – Alleine sein",
+      titel: "Ratgeber #18",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/18.jpg",
       etsy: "https://www.etsy.com/de/listing/4475466404/einladung-ablehnen-kinder-pdf-ratgeber",
       urls: ["freunde-geschichte-4-6-alleine"]
     },
     {
-      titel: "Ratgeber #19 – Anders sein",
+      titel: "Ratgeber #19",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/19.jpg",
       etsy: "https://www.etsy.com/de/listing/4475460821/mobbing-kinder-pdf-ratgeber-nr-19",
       urls: ["freunde-geschichte-4-7-anders"]
     },
     {
-      titel: "Ratgeber #20 – Geheimnisse",
+      titel: "Ratgeber #20",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/20.jpg",
       etsy: "https://www.etsy.com/de/listing/4475461337/alleine-sein-wollen-kinder-pdf-ratgeber",
       urls: ["freunde-geschichte-4-8-geheimnis"]
     },
     {
-      titel: "Ratgeber #21 – Streit & Versöhnung",
+      titel: "Ratgeber #21",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/21.jpg",
       etsy: "https://www.etsy.com/de/listing/4475462253/neue-freundschaft-kinder-pdf-ratgeber-nr",
       urls: ["freunde-geschichte-4-9-streit"]
     },
     {
-      titel: "Ratgeber #22 – Freundschaft endet",
+      titel: "Ratgeber #22",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/22.jpg",
       etsy: "https://www.etsy.com/de/listing/4475462657/gute-schlechte-geheimnisse-kinder-pdf",
       urls: ["freunde-geschichte-4-10-ende"]
     },
     {
-      titel: "Ratgeber #23 – Mobbing",
+      titel: "Ratgeber #23",
       untertitel: "Freunde · PDF",
       bild: "ratgeberbilder/23.jpg",
       etsy: "https://www.etsy.com/de/listing/4475463145/streit-versohnung-kinder-pdf-ratgeber-nr",
       urls: ["freunde-geschichte-mobbing"]
     },
 
-    // ── BUNDLES ───────────────────────────────────────────────────────────────
+        // ── BUNDLES ───────────────────────────────────────────────────────────────
     {
       titel: "Das Kita-Komplettpaket",
       untertitel: "Alle 10 Ratgeber · Bundle · PDF",
-      bild: "ratgeberbilder/kita bundle.jpg",
+      bild: "ratgeberbilder/kita_bundle.jpg",
       etsy: "https://www.etsy.com/de/listing/4474759126/lernolotl-kita-ratgeber-komplett-alle-10",
       urls: ["lernolotls-welt-kita"]
     },
