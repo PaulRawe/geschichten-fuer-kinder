@@ -6,16 +6,13 @@ on:
     paths:
       - 'lernolotl/ratgeber.js'
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   inject:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: ratgeber.js in alle lernolotl HTMLs injizieren
         run: |
