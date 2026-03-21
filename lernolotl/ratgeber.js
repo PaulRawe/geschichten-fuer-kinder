@@ -206,19 +206,11 @@
     return null;
   }
 
-  // ── 3. BILDPFAD RELATIV ZUR SEITENEBENE ──────────────────────────────────
-  // Seiten in /lernolotl/ (depth 2) → prefix "../"
-  // Seiten in Root / (depth 1)      → prefix "./"
-
-  function getPrefix() {
-    const depth = (window.location.pathname.match(/\//g) || []).length - 1;
-    return depth > 1 ? "../" : "./";
-  }
-
-  // ── 4. BOX HTML BAUEN ─────────────────────────────────────────────────────
+  // ── 3. BOX HTML BAUEN ─────────────────────────────────────────────────────
 
   function buildBox(ratgeber, position) {
-    const bildSrc = getPrefix() + ratgeber.bild;
+    // Absoluter Pfad vom Root – funktioniert auf jeder Unterseite
+    const bildSrc = "/" + ratgeber.bild;
     const label = position === "mitte" ? "Passend zur Geschichte" : "Passend dazu";
 
     return `
