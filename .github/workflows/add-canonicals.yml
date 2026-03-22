@@ -44,9 +44,9 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          git pull --rebase origin main
           git add -A
           git diff --staged --quiet && echo "Keine Änderungen." || (
             git commit -m "SEO: canonical tags automatisch gesetzt" &&
+            git pull --rebase origin main &&
             git push
           )
