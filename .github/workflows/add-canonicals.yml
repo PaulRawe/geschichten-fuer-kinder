@@ -1,5 +1,4 @@
 name: Add/Update Canonical Tags
-
 on:
   push:
     branches: [main]
@@ -8,8 +7,8 @@ on:
 jobs:
   canonicals:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'canonical tags automatisch gesetzt')"
-    
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'canonical tags automatisch gesetzt')"
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,7 +17,10 @@ jobs:
       - name: Inject canonical tags into all HTML files
         run: |
           BASE_URL="https://www.lernolotl.de"
-          find . -name "*.html" | while IFS= read -r file; do
+          find . -name "*.html" \
+            ! -path "./.github/*" \
+            ! -path "./node_modules/*" \
+          | while IFS= read -r file; do
             RELATIVE="${file#./}"
             ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
             if [[ "$RELATIVE" == "index.html" ]]; then
@@ -31,10 +33,10 @@ jobs:
             fi
             if grep -q 'rel="canonical"' "$file"; then
               sed -i "s|<link rel=\"canonical\"[^>]*>|<link rel=\"canonical\" href=\"${URL}\">|g" "$file"
-              echo "✏️ Updated: $RELATIVE"
+              echo "✏️ Updated: $RELATIVE → $URL"
             else
               sed -i "s|</head>|  <link rel=\"canonical\" href=\"${URL}\">\n</head>|g" "$file"
-              echo "✅ Added: $RELATIVE"
+              echo "✅ Added: $RELATIVE → $URL"
             fi
           done
 
@@ -42,10 +44,7 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          STASHED=false
-          git stash && STASHED=true || true
           git pull --rebase origin main
-          $STASHED && git stash pop || true
           git add -A
           git diff --staged --quiet && echo "Keine Änderungen." || (
             git commit -m "SEO: canonical tags automatisch gesetzt" &&
