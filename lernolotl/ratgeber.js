@@ -177,7 +177,79 @@
       urls: ["freunde-geschichte-4-10-ende"]
     },
 
-        // ── BUNDLES ───────────────────────────────────────────────────────────────
+    // ── ICH BIN ICH (24–33) ───────────────────────────────────────────────────
+    {
+      titel: "Ich bin anders – und das ist okay",
+      untertitel: "Ratgeber #24 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/24.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477424820/ich-bin-anders-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-anders"]
+    },
+    {
+      titel: "Angst – das komische Gefühl im Bauch",
+      untertitel: "Ratgeber #25 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/25.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477418017/angst-bei-kindern-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-angst"]
+    },
+    {
+      titel: "Dankbarkeit – die kleinen Dinge sehen",
+      untertitel: "Ratgeber #26 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/26.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477426162/dankbarkeit-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-dankbarkeit"]
+    },
+    {
+      titel: "Ich weiß nicht, wer ich bin – auf der Suche",
+      untertitel: "Ratgeber #27 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/27.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477419533/identitat-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-identitaet"]
+    },
+    {
+      titel: "Langeweile – und plötzlich kommt eine Idee",
+      untertitel: "Ratgeber #28 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/28.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477420779/langeweile-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-langeweile"]
+    },
+    {
+      titel: "Nein sagen – ich darf meine Grenzen schützen",
+      untertitel: "Ratgeber #29 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/29.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477421307/nein-sagen-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-neinsagen"]
+    },
+    {
+      titel: "Perfekt sein müssen – warum reicht es nie?",
+      untertitel: "Ratgeber #30 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/30.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477429308/perfektionismus-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-perfekt"]
+    },
+    {
+      titel: "In was bin ich gut? Meine Superkräfte",
+      untertitel: "Ratgeber #31 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/31.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477422355/starken-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-superkraefte"]
+    },
+    {
+      titel: "Wenn ich traurig bin – Traurigkeit ist kein Fehler",
+      untertitel: "Ratgeber #32 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/32.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477430464/traurigkeit-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-traurigkeit"]
+    },
+    {
+      titel: "Was kommt nach der Schule? Träume und Pläne",
+      untertitel: "Ratgeber #33 · Ich bin ich · PDF",
+      bild: "ratgeberbilder/33.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477431000/berufswunsche-kinder-vorlesegeschichte",
+      urls: ["ichbinich-geschichte-zukunft"]
+    },
+
+    // ── BUNDLES ───────────────────────────────────────────────────────────────
     {
       titel: "Das Kita-Komplettpaket",
       untertitel: "Alle 10 Ratgeber · Bundle · PDF",
@@ -191,6 +263,13 @@
       bild: "ratgeberbilder/Bundlefreunde.jpg",
       etsy: "https://www.etsy.com/de/listing/4475472110/lernolotl-freunde-reihe-komplettpaket-13",
       urls: ["lernolotls-welt-freunde"]
+    },
+    {
+      titel: "Ich bin ich – Komplettpaket",
+      untertitel: "Alle 10 Ratgeber · Bundle · PDF",
+      bild: "ratgeberbilder/ichbinichbundle.jpg",
+      etsy: "https://www.etsy.com/de/listing/4477424761/ich-bin-ich-komplettpaket-10-ratgeber",
+      urls: ["lernolotls-welt-ichbinich", "ichbinich-bundle"]
     }
   ];
 
