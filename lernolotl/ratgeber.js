@@ -269,56 +269,56 @@
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/36.jpg",
       etsy: "https://www.etsy.com/de/listing/4479568735/teamarbeit-kinder-vorlesegeschichte",
-      urls: ["sport-geschichte-3-teamarbeit"]
+      urls: ["sport-geschichte-3-team"]
     },
     {
       titel: "Ratgeber #37",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/37.jpg",
       etsy: "https://www.etsy.com/de/listing/4479576432/langsam-im-sport-vorlesegeschichte",
-      urls: ["sport-geschichte-4-langsam"]
+      urls: ["sport-geschichte-3-2-nicht-schnell"]
     },
     {
       titel: "Ratgeber #38",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/38.jpg",
       etsy: "https://www.etsy.com/de/listing/4479576832/ungeschriebene-regeln-vorlesegeschichte",
-      urls: ["sport-geschichte-5-regeln"]
+      urls: ["sport-geschichte-3-3-ungeschriebene-regeln"]
     },
     {
       titel: "Ratgeber #39",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/39.jpg",
       etsy: "https://www.etsy.com/de/listing/4479577174/uberforderung-sport-vorlesegeschichte",
-      urls: ["sport-geschichte-6-ueberforderung"]
+      urls: ["sport-geschichte-3-4-zu-viel-trubel"]
     },
     {
       titel: "Ratgeber #40",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/40.jpg",
       etsy: "https://www.etsy.com/de/listing/4479577508/aufhoren-wollen-kinder-vorlesegeschichte",
-      urls: ["sport-geschichte-7-aufhoeren"]
+      urls: ["sport-geschichte-3-5-aufhoeren"]
     },
     {
       titel: "Ratgeber #41",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/41.jpg",
       etsy: "https://www.etsy.com/de/listing/4479577852/gewinnen-mit-empathie-vorlesegeschichte",
-      urls: ["sport-geschichte-8-gewinnen"]
+      urls: ["sport-geschichte-3-6-gewonnen"]
     },
     {
       titel: "Ratgeber #42",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/42.jpg",
       etsy: "https://www.etsy.com/de/listing/4479570753/ausgrenzung-im-sport-vorlesegeschichte",
-      urls: ["sport-geschichte-9-ausgrenzung"]
+      urls: ["sport-geschichte-3-9-letzter"]
     },
     {
       titel: "Ratgeber #43",
       untertitel: "Sport · PDF",
       bild: "ratgeberbilder/43.jpg",
       etsy: "https://www.etsy.com/de/listing/4479578454/fahrrad-lernen-kinder-vorlesegeschichte",
-      urls: ["sport-geschichte-10-fahrrad"]
+      urls: ["sport-geschichte-3-10-fahrrad"]
     },
 
     // ── SCHULE (44–53) ────────────────────────────────────────────────────────
@@ -327,7 +327,7 @@
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/44.jpg",
       etsy: "https://www.etsy.com/de/listing/4483503587/lernolotl-meldet-sich-ratgeber-nr44-mut",
-      urls: ["schule-geschichte-1-melden"]
+      urls: ["schule-geschichte-1-meldet-sich"]
     },
     {
       titel: "Ratgeber #45",
@@ -348,49 +348,49 @@
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/47.jpg",
       etsy: "https://www.etsy.com/de/listing/4483504949/hausaufgaben-die-grosse-katastrophe-o",
-      urls: ["schule-geschichte-4-hausaufgaben"]
+      urls: ["schule-geschichte-hausaufgaben"]
     },
     {
       titel: "Ratgeber #48",
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/48.jpg",
       etsy: "https://www.etsy.com/de/listing/4483510188/springender-kopf-ratgeber-nr48",
-      urls: ["schule-geschichte-5-springender-kopf"]
+      urls: ["schule-geschichte-konzentration"]
     },
     {
       titel: "Ratgeber #49",
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/49.jpg",
       etsy: "https://www.etsy.com/de/listing/4483510570/prufungsangst-wenn-der-kopf-leer-wird-o",
-      urls: ["schule-geschichte-6-pruefungsangst"]
+      urls: ["schule-geschichte-pruefungsangst"]
     },
     {
       titel: "Ratgeber #50",
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/50.jpg",
       etsy: "https://www.etsy.com/de/listing/4483506185/wenn-es-zu-laut-wird-ratgeber-nr50",
-      urls: ["schule-geschichte-7-laut"]
+      urls: ["schule-geschichte-laerm"]
     },
     {
       titel: "Ratgeber #51",
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/51.jpg",
       etsy: "https://www.etsy.com/de/listing/4483506645/nach-dem-streit-ratgeber-nr51",
-      urls: ["schule-geschichte-8-streit"]
+      urls: ["schule-geschichte-streit"]
     },
     {
       titel: "Ratgeber #52",
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/52.jpg",
       etsy: "https://www.etsy.com/de/listing/4483511676/gruppenarbeit-ich-will-es-alleine-machen",
-      urls: ["schule-geschichte-9-gruppenarbeit"]
+      urls: ["schule-geschichte-gruppenarbeit"]
     },
     {
       titel: "Ratgeber #53",
       untertitel: "Schule · PDF",
       bild: "ratgeberbilder/53.jpg",
       etsy: "https://www.etsy.com/de/listing/4483507465/klassenfahrt-ich-will-nicht-weg-von",
-      urls: ["schule-geschichte-10-klassenfahrt"]
+      urls: ["schule-geschichte-klassenfahrt"]
     },
 
     // ── ZUHAUSE (54–65) ───────────────────────────────────────────────────────
@@ -399,7 +399,7 @@
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/54.jpg",
       etsy: "https://www.etsy.com/de/listing/4487112145/der-abend-der-nicht-klappt-ratgeber-nr54",
-      urls: ["zuhause-geschichte-1-abend"]
+      urls: ["zuhause-geschichte-1-routine"]
     },
     {
       titel: "Ratgeber #55",
@@ -420,63 +420,63 @@
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/57.jpg",
       etsy: "https://www.etsy.com/de/listing/4487113949/ich-kann-nicht-einschlafen-ratgeber-nr57",
-      urls: ["zuhause-geschichte-4-einschlafen"]
+      urls: ["zuhause-geschichte-einschlafen"]
     },
     {
       titel: "Ratgeber #58",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/58.jpg",
       etsy: "https://www.etsy.com/de/listing/4487121912/wut-wenn-alles-zu-viel-wird-o-ratgeber",
-      urls: ["zuhause-geschichte-5-wut"]
+      urls: ["zuhause-geschichte-wut"]
     },
     {
       titel: "Ratgeber #59",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/59.jpg",
       etsy: "https://www.etsy.com/de/listing/4487122448/aufraumen-das-ewige-streitthema-o",
-      urls: ["zuhause-geschichte-6-aufraumen"]
+      urls: ["zuhause-geschichte-aufraeumen"]
     },
     {
       titel: "Ratgeber #60",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/60.jpg",
       etsy: "https://www.etsy.com/de/listing/4487122972/geschwisterstreit-warum-ist-das",
-      urls: ["zuhause-geschichte-7-geschwister"]
+      urls: ["zuhause-geschichte-geschwister"]
     },
     {
       titel: "Ratgeber #61",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/61.jpg",
       etsy: "https://www.etsy.com/de/listing/4487115925/bildschirmzeit-wann-ist-schluss-o",
-      urls: ["zuhause-geschichte-8-bildschirmzeit"]
+      urls: ["zuhause-geschichte-bildschirmzeit"]
     },
     {
       titel: "Ratgeber #62",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/62.jpg",
       etsy: "https://www.etsy.com/de/listing/4487123804/wenn-die-eltern-streiten-ratgeber-nr62",
-      urls: ["zuhause-geschichte-9-eltern-streit"]
+      urls: ["zuhause-geschichte-eltern-streiten"]
     },
     {
       titel: "Ratgeber #63",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/63.jpg",
       etsy: "https://www.etsy.com/de/listing/4487116921/haustier-verantwortung-lernen-o-ratgeber",
-      urls: ["zuhause-geschichte-10-haustier"]
+      urls: ["zuhause-geschichte-haustier"]
     },
     {
       titel: "Ratgeber #64",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/64.jpg",
       etsy: "https://www.etsy.com/de/listing/4487124950/krank-sein-ich-will-nicht-pausieren-o",
-      urls: ["zuhause-geschichte-11-krank"]
+      urls: ["zuhause-geschichte-krank"]
     },
     {
       titel: "Ratgeber #65",
       untertitel: "Zuhause · PDF",
       bild: "ratgeberbilder/65.jpg",
       etsy: "https://www.etsy.com/de/listing/4487117869/kochen-mit-der-familie-ich-will-helfen-o",
-      urls: ["zuhause-geschichte-12-kochen"]
+      urls: ["zuhause-geschichte-kochen"]
     },
 
     // ── BUNDLES ───────────────────────────────────────────────────────────────
