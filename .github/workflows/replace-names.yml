@@ -1,0 +1,113 @@
+name: Replace Names (Privacy)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry Run (true = nur Vorschau, false = wirklich schreiben)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  replace-names:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run name replacement
+        id: replace
+        run: |
+          # ── Konfiguration ──────────────────────────────────────────────
+          declare -A REPLACEMENTS=(
+            ["Sam"]="Finn"
+            ["Johanna"]="Lena"
+            ["Katharina"]="Elisabeth"
+            ["Kathi"]="Elisabeth"
+          )
+
+          # Nur diese Dateitypen anfassen
+          EXTENSIONS=("html" "md" "txt")
+
+          DRY_RUN="${{ github.event.inputs.dry_run }}"
+          MATCH_COUNT=0
+          FILE_COUNT=0
+          SUMMARY=""
+
+          # ── Dateien sammeln ────────────────────────────────────────────
+          FILES=()
+          for EXT in "${EXTENSIONS[@]}"; do
+            while IFS= read -r -d '' f; do
+              FILES+=("$f")
+            done < <(find . \
+              -not -path './.git/*' \
+              -not -path './node_modules/*' \
+              -name "*.$EXT" \
+              -print0)
+          done
+
+          # ── Pro Datei prüfen / ersetzen ────────────────────────────────
+          for FILE in "${FILES[@]}"; do
+            FILE_HITS=0
+            FILE_SUMMARY=""
+
+            for NAME in "${!REPLACEMENTS[@]}"; do
+              REPLACEMENT="${REPLACEMENTS[$NAME]}"
+
+              # Zeilennummern + Treffer zählen (case-sensitive, ganzes Wort)
+              MATCHES=$(grep -nw "$NAME" "$FILE" 2>/dev/null || true)
+
+              if [ -n "$MATCHES" ]; then
+                COUNT=$(echo "$MATCHES" | wc -l)
+                FILE_HITS=$((FILE_HITS + COUNT))
+                MATCH_COUNT=$((MATCH_COUNT + COUNT))
+                FILE_SUMMARY+="    $NAME → $REPLACEMENT ($COUNT Treffer)\n"
+
+                if [ "$DRY_RUN" = "false" ]; then
+                  # Exakte Wort-Ersetzung, case-sensitive
+                  sed -i "s/\b$NAME\b/$REPLACEMENT/g" "$FILE"
+                fi
+              fi
+            done
+
+            if [ $FILE_HITS -gt 0 ]; then
+              FILE_COUNT=$((FILE_COUNT + 1))
+              SUMMARY+="📄 $FILE ($FILE_HITS Treffer)\n$FILE_SUMMARY\n"
+            fi
+          done
+
+          # ── Summary ausgeben ───────────────────────────────────────────
+          echo "## 🔍 Name-Ersetzung – $([ '$DRY_RUN' = 'true' ] && echo 'DRY RUN' || echo 'AUSGEFÜHRT')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Modus:** $([ '$DRY_RUN' = 'true' ] && echo '👁 Vorschau (keine Änderungen)' || echo '✅ Änderungen wurden geschrieben')" >> $GITHUB_STEP_SUMMARY
+          echo "**Betroffene Dateien:** $FILE_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "**Treffer gesamt:** $MATCH_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Details" >> $GITHUB_STEP_SUMMARY
+          echo -e "$SUMMARY" >> $GITHUB_STEP_SUMMARY
+
+          if [ $MATCH_COUNT -eq 0 ]; then
+            echo "✅ Keine Treffer gefunden – nichts zu tun." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Für den nächsten Step exportieren
+          echo "match_count=$MATCH_COUNT" >> $GITHUB_OUTPUT
+          echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        if: ${{ github.event.inputs.dry_run == 'false' && steps.replace.outputs.match_count != '0' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "privacy: replace real names with pseudonyms
+
+          Sam → Finn, Johanna → Lena, Katharina/Kathi → Elisabeth
+
+          Automated via replace-names workflow."
+          git push
