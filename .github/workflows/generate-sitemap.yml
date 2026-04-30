@@ -1,72 +1,75 @@
 name: Generate Sitemap
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 jobs:
   sitemap:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      # 1. Repository auschecken
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2. Sitemap generieren
       - name: Generate sitemap.xml
         run: |
           BASE_URL="https://www.lernolotl.de"
           OUTPUT="sitemap.xml"
-          
+
           echo '<?xml version="1.0" encoding="UTF-8"?>' > $OUTPUT
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $OUTPUT
-          
-          EXCLUDE="googlebe|datenschutz|impressum|cookie-richtlinie|kontakt"
 
-          # Alle HTML-Dateien rekursiv scannen, inkl. Unterordner
-          find . -name "*.html" | grep -vE "$EXCLUDE" | sort | while IFS= read -r file; do
-            RELATIVE="${file#./}"
-            ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
-            
-            if [[ "$RELATIVE" == "index.html" ]]; then
-              URL="${BASE_URL}/"
-              PRIORITY="1.0"
-              FREQ="weekly"
-            elif [[ "$RELATIVE" == *geschichte*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
-              URL="${BASE_URL}/${ENCODED}"
-              PRIORITY="0.8"
-              FREQ="weekly"
-            else
-              URL="${BASE_URL}/${ENCODED}"
-              PRIORITY="0.7"
-              FREQ="weekly"
-            fi
-            
-            TODAY=$(date +%Y-%m-%d)
-            
-            echo "  <url>" >> $OUTPUT
-            echo "    <loc>${URL}</loc>" >> $OUTPUT
-            echo "    <lastmod>${TODAY}</lastmod>" >> $OUTPUT
-            echo "    <changefreq>${FREQ}</changefreq>" >> $OUTPUT
-            echo "    <priority>${PRIORITY}</priority>" >> $OUTPUT
-            echo "  </url>" >> $OUTPUT
-          done
-          
+          # Seiten die NICHT indexiert werden sollen
+          EXCLUDE="googlebe|datenschutz|impressum|cookie-richtlinie|kontakt|pinterest-caf74|ratgeber\.js"
+
+          find . -name "*.html" \
+            ! -path "./.github/*" \
+            ! -path "./node_modules/*" \
+            ! -path "./ratgeberbilder/*" \
+            ! -path "./bilder/*" \
+            | grep -vE "$EXCLUDE" \
+            | sort \
+            | while IFS= read -r file; do
+              RELATIVE="${file#./}"
+              ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
+
+              if [[ "$RELATIVE" == "index.html" ]]; then
+                URL="${BASE_URL}/"
+                PRIORITY="1.0"
+              elif [[ "$RELATIVE" == lernolotl/*geschichte*.html ]]; then
+                URL="${BASE_URL}/${ENCODED}"
+                PRIORITY="0.8"
+              elif [[ "$RELATIVE" == lernolotl/lernolotls-welt*.html || "$RELATIVE" == lernolotl/ueber-uns.html ]]; then
+                URL="${BASE_URL}/${ENCODED}"
+                PRIORITY="0.7"
+              elif [[ "$RELATIVE" == *geschichte*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
+                URL="${BASE_URL}/${ENCODED}"
+                PRIORITY="0.8"
+              else
+                URL="${BASE_URL}/${ENCODED}"
+                PRIORITY="0.7"
+              fi
+
+              TODAY=$(date +%Y-%m-%d)
+
+              echo "  <url>" >> $OUTPUT
+              echo "    <loc>${URL}</loc>" >> $OUTPUT
+              echo "    <lastmod>${TODAY}</lastmod>" >> $OUTPUT
+              echo "    <changefreq>weekly</changefreq>" >> $OUTPUT
+              echo "    <priority>${PRIORITY}</priority>" >> $OUTPUT
+              echo "  </url>" >> $OUTPUT
+            done
+
           echo '</urlset>' >> $OUTPUT
           echo "✅ Sitemap generiert!"
-          cat $OUTPUT | grep -c "<url>" | xargs echo "Anzahl URLs:"
+          grep -c "<url>" $OUTPUT | xargs echo "Anzahl URLs:"
 
-      # 3. Commit & Push der Sitemap
       - name: Commit & Push sitemap
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          
           git add sitemap.xml
           git commit -m "SEO: sitemap.xml automatisch generiert" || echo "Keine Änderungen."
           git push origin main
