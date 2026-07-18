@@ -7,24 +7,24 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lernolotls Welt – Lerne den Lernolotl kennen! Sein Steckbrief, seine Lieblinge und seine Geschichten aus Kita, Schule, Sport und bei Freunden.">
-    <meta name="keywords" content="Lernolotl, Steckbrief, Kindergeschichten, Kita, Schule, Sport, Freunde, neurodivers, Vorlesegeschichten">
+    <meta name="description" content="Lernolotls Welt – Kostenlose Kindergeschichten aus Kita, Schule, Sport, Freundschaft und der inneren Welt des Lernolotl. Pädagogisch begleitet, für alle Kinder.">
+    <meta name="keywords" content="Lernolotl, Kindergeschichten, Kita, Schule, Sport, Freunde, neurodivers, Vorlesegeschichten, kostenlos">
     <meta name="author" content="Paul R.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.lernolotl.de/lernolotl/lernolotls-welt.html">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lernolotl.de/lernolotl/lernolotls-welt.html">
-    <meta property="og:title" content="Lernolotls Welt – Lerne ihn kennen!">
-    <meta property="og:description" content="Wer ist der Lernolotl wirklich? Sein Steckbrief, seine Welt – und jede Menge Geschichten aus seinem Alltag.">
+    <meta property="og:title" content="Lernolotls Welt – 55 kostenlose Kindergeschichten">
+    <meta property="og:description" content="Begleite den Lernolotl durch Kita, Schule, Sport, Freundschaft und seine innere Welt — 55 kostenlose, pädagogisch begleitete Geschichten.">
     <meta property="og:locale" content="de_DE">
     <meta property="og:image" content="https://www.lernolotl.de/lernolotl-icon.png">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Lernolotls Welt – Lerne ihn kennen!">
-    <meta property="twitter:description" content="Wer ist der Lernolotl wirklich? Sein Steckbrief und seine Alltagsgeschichten.">
+    <meta property="twitter:title" content="Lernolotls Welt – Kostenlose Kindergeschichten">
+    <meta property="twitter:description" content="Begleite den Lernolotl durch seinen Alltag — Kita, Schule, Sport, Freunde und seine innere Welt.">
 
-    <title>Lernolotls Welt – Sein Steckbrief & seine Geschichten | Der Lernolotl</title>
+    <title>Lernolotls Welt – Kostenlose Kindergeschichten aus Kita, Schule & mehr | Der Lernolotl</title>
 
     <script type="application/ld+json">
     {
@@ -32,12 +32,23 @@
       "@type": "CollectionPage",
       "name": "Lernolotls Welt",
       "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt.html",
-      "description": "Der Steckbrief des Lernolotl und seine Geschichten aus Kita, Schule, Sport und Freundschaft",
+      "description": "Der Steckbrief des Lernolotl und seine Geschichten aus Kita, Schule, Sport, Freundschaft und seiner inneren Welt",
       "inLanguage": "de-DE",
       "isPartOf": {
         "@type": "WebSite",
         "name": "Der Lernolotl",
-        "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt.html"
+        "url": "https://www.lernolotl.de/"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Lernolotl in der Kita", "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt-kita.html"},
+          {"@type": "ListItem", "position": 2, "name": "Lernolotl in der Schule", "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt-schule.html"},
+          {"@type": "ListItem", "position": 3, "name": "Lernolotl beim Sport", "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt-sport.html"},
+          {"@type": "ListItem", "position": 4, "name": "Lernolotl bei Freunden", "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt-freunde.html"},
+          {"@type": "ListItem", "position": 5, "name": "Lernolotl zu Hause", "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt-zuhause.html"},
+          {"@type": "ListItem", "position": 6, "name": "Lernolotl – Ich bin ich", "url": "https://www.lernolotl.de/lernolotl/lernolotls-welt-ichbinich.html"}
+        ]
       }
     }
     </script>
@@ -82,7 +93,6 @@
 
         .container { max-width: 960px; margin: 0 auto; }
 
-        /* ===== PROGRESS BAR ===== */
         .progress-bar {
             position: fixed; top: 0; left: 0;
             width: 0%; height: 4px;
@@ -90,7 +100,6 @@
             z-index: 1001; transition: width 0.1s;
         }
 
-        /* ===== STICKY NAV ===== */
         .sticky-nav {
             position: sticky; top: 16px;
             background: rgba(255,255,255,0.95);
@@ -122,21 +131,22 @@
             letter-spacing: 0.02em;
         }
 
-        /* ===== HERO ===== */
+        /* ===== HERO — kompakt, direkter Einstieg ===== */
         .hero {
             background: white;
             border-radius: var(--radius-xl);
-            padding: 0;
             box-shadow: var(--shadow);
-            margin-bottom: 36px;
+            margin-bottom: 28px;
             overflow: hidden;
             position: relative;
         }
 
         .hero-top {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--accent-mint) 100%);
-            padding: 50px 40px 80px;
-            text-align: center;
+            padding: 44px 40px 40px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
             position: relative;
             overflow: hidden;
         }
@@ -146,109 +156,115 @@
             position: absolute; inset: 0;
             background:
                 radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(126,202,195,0.2) 0%, transparent 45%),
-                radial-gradient(circle at 50% 90%, rgba(255,255,255,0.05) 0%, transparent 35%);
+                radial-gradient(circle at 85% 75%, rgba(126,202,195,0.2) 0%, transparent 45%);
             pointer-events: none;
         }
+
+        .hero-mascot {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.6);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #c8e8ea, #e0f4f8);
+            object-fit: cover;
+            flex-shrink: 0;
+            position: relative; z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+        .hero-text { position: relative; z-index: 1; }
 
         .hero-eyebrow {
             display: inline-block;
             background: rgba(255,255,255,0.18);
             color: rgba(255,255,255,0.95);
-            font-size: 0.82em;
+            font-size: 0.78em;
             font-weight: 700;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 6px 18px;
+            padding: 5px 14px;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             border: 1px solid rgba(255,255,255,0.25);
         }
 
         .hero-title {
             font-family: 'Fredoka One', cursive;
             color: white;
-            font-size: 3.2em;
+            font-size: 2.3em;
             line-height: 1.1;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             text-shadow: 0 3px 20px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
-            color: rgba(255,255,255,0.88);
-            font-size: 1.1em;
+            color: rgba(255,255,255,0.9);
+            font-size: 1em;
             font-weight: 600;
-            max-width: 560px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .hero-mascot-wrap {
-            position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .hero-mascot {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 12px 40px rgba(61,95,117,0.35);
-            background: linear-gradient(135deg, #c8e8ea, #e0f4f8);
-            object-fit: cover;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            line-height: 1.55;
+            max-width: 460px;
         }
 
         .hero-bottom {
-            padding: 80px 40px 40px;
-            text-align: center;
-        }
-
-        .hero-tagline {
-            font-size: 1.15em;
-            color: var(--text-soft);
-            line-height: 1.7;
-            max-width: 600px;
-            margin: 0 auto 28px;
-        }
-
-        .hero-tagline strong { color: var(--primary-dark); }
-
-        .trust-strip {
+            padding: 24px 40px 30px;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
         }
 
+        .hero-cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .btn-jump {
+            background: var(--primary-dark);
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.98em;
+            padding: 12px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-jump:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .btn-jump-outline {
+            background: transparent;
+            color: var(--primary-dark);
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.95em;
+            padding: 11px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid var(--primary-light);
+            transition: all 0.25s;
+        }
+        .btn-jump-outline:hover { border-color: var(--primary); background: var(--primary-pale); }
+
+        .trust-strip { display: flex; flex-wrap: wrap; gap: 8px; }
         .trust-badge {
             background: var(--primary-pale);
             color: var(--primary-dark);
-            font-size: 0.85em;
+            font-size: 0.78em;
             font-weight: 700;
-            padding: 8px 16px;
+            padding: 6px 13px;
             border-radius: 20px;
             border: 1.5px solid var(--primary-light);
         }
 
-        /* ===== STECKBRIEF ===== */
-        .steckbrief-section {
+        /* ===== GESCHICHTEN — direkt nach der Hero, das Herzstück ===== */
+        .stories-section {
             background: white;
             border-radius: var(--radius-xl);
-            padding: 50px 40px;
+            padding: 40px 40px 44px;
             box-shadow: var(--shadow);
-            margin-bottom: 36px;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 28px;
         }
 
         .section-label {
@@ -258,546 +274,164 @@
             background: linear-gradient(135deg, var(--primary), var(--accent-mint));
             color: white;
             font-family: 'Fredoka One', cursive;
-            font-size: 0.9em;
-            letter-spacing: 0.04em;
-            padding: 7px 20px;
+            font-size: 0.88em;
+            letter-spacing: 0.03em;
+            padding: 6px 18px;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .section-title {
             font-family: 'Fredoka One', cursive;
             color: var(--primary-dark);
-            font-size: 2.2em;
+            font-size: 1.9em;
             margin-bottom: 8px;
         }
 
         .section-intro {
             color: var(--text-soft);
-            font-size: 1.05em;
-            line-height: 1.7;
-            margin-bottom: 36px;
+            font-size: 1em;
+            line-height: 1.65;
+            margin-bottom: 28px;
             max-width: 640px;
         }
 
-        /* Steckbrief Grid */
-        .steckbrief-grid {
+        .story-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            margin-bottom: 36px;
         }
 
-        .steckbrief-card {
-            background: linear-gradient(135deg, var(--primary-pale) 0%, #f0f8fc 100%);
-            border-radius: 18px;
-            padding: 22px 24px;
-            border: 1.5px solid var(--primary-light);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-
-        .steckbrief-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(90,125,149,0.18);
-        }
-
-        .steckbrief-card.wide { grid-column: 1 / -1; }
-
-        .card-emoji { font-size: 2em; margin-bottom: 10px; display: block; }
-
-        .card-label {
-            font-size: 0.78em;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary-mid);
-            margin-bottom: 6px;
-        }
-
-        .card-value {
-            font-size: 1.05em;
-            font-weight: 700;
-            color: var(--primary-dark);
-            line-height: 1.5;
-        }
-
-        .card-value.large {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.5em;
-        }
-
-        /* Superkraft Box */
-        .superkraft-box {
-            background: linear-gradient(135deg, #e8f8f5 0%, #d0f0ea 100%);
-            border-radius: 20px;
-            padding: 28px 30px;
-            border: 2px solid var(--accent-mint);
-            margin-bottom: 36px;
-            position: relative;
-        }
-
-        .superkraft-box::before {
-            content: '⚡';
-            position: absolute;
-            top: -16px; left: 24px;
-            font-size: 1.8em;
-            background: white;
-            padding: 0 6px;
-            border-radius: 8px;
-        }
-
-        .superkraft-title {
-            font-family: 'Fredoka One', cursive;
-            color: #1a7a6e;
-            font-size: 1.4em;
-            margin-bottom: 14px;
-        }
-
-        .superkraft-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .superkraft-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            color: #1a5c55;
-            font-weight: 600;
-            font-size: 0.98em;
-            line-height: 1.4;
-        }
-
-        .superkraft-list li::before {
-            content: '✓';
-            color: var(--accent-mint);
-            font-weight: 900;
-            font-size: 1.1em;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
-        /* Ehrlich Box */
-        .ehrlich-box {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffefc7 100%);
-            border-radius: 20px;
-            padding: 28px 30px;
-            border: 2px solid var(--accent-sun);
-            margin-bottom: 36px;
-            position: relative;
-        }
-
-        .ehrlich-box::before {
-            content: '💛';
-            position: absolute;
-            top: -16px; left: 24px;
-            font-size: 1.6em;
-            background: white;
-            padding: 0 6px;
-            border-radius: 8px;
-        }
-
-        .ehrlich-title {
-            font-family: 'Fredoka One', cursive;
-            color: #b45309;
-            font-size: 1.4em;
-            margin-bottom: 8px;
-        }
-
-        .ehrlich-text { color: #78350f; font-size: 0.98em; line-height: 1.75; }
-        .ehrlich-text strong { color: #92400e; }
-
-        /* Kinder Quote */
-        .kinder-quote {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            border-radius: 20px;
-            padding: 30px 35px;
-            text-align: center;
-            margin-bottom: 36px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .kinder-quote::before {
-            content: '"';
-            position: absolute;
-            top: -20px; left: 20px;
-            font-size: 10em;
-            color: rgba(255,255,255,0.05);
-            font-family: Georgia, serif;
-            line-height: 1;
-            pointer-events: none;
-        }
-
-        .quote-text {
-            color: white;
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.6em;
-            line-height: 1.4;
-            margin-bottom: 12px;
-        }
-
-        .quote-sub { color: rgba(255,255,255,0.75); font-size: 0.9em; font-weight: 600; }
-
-        /* ===== ICH BIN ICH SEKTION IM STECKBRIEF ===== */
-        .ichbinich-section {
-            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
-            border-radius: 24px;
-            padding: 36px 32px;
-            border: 2px solid #5eead4;
-            margin-top: 8px;
-        }
-
-        .ichbinich-header {
+        .story-card {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 10px;
-        }
-
-        .ichbinich-icon {
-            width: 64px; height: 64px;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 12px rgba(13,148,136,0.3));
-            flex-shrink: 0;
-        }
-
-        .ichbinich-title {
-            font-family: 'Fredoka One', cursive;
-            color: #0d9488;
-            font-size: 1.8em;
-            line-height: 1.2;
-        }
-
-        .ichbinich-subtitle {
-            color: #0f766e;
-            font-size: 0.95em;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-
-        .ichbinich-intro {
-            color: #134e4a;
-            font-size: 1em;
-            line-height: 1.7;
-            margin-bottom: 28px;
-        }
-
-        .ichbinich-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .ichbinich-card {
-            background: white;
-            border-radius: 16px;
-            padding: 16px 20px;
-            border: 1.5px solid #99f6e4;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            transition: all 0.25s;
-        }
-
-        .ichbinich-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 28px rgba(13,148,136,0.18);
-            border-color: #0d9488;
-        }
-
-        .ichbinich-card-num {
-            font-size: 0.72em;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #0d9488;
-            margin-bottom: 4px;
-        }
-
-        .ichbinich-card-title {
-            font-family: 'Fredoka One', cursive;
-            color: #134e4a;
-            font-size: 1.05em;
-            line-height: 1.3;
-            margin-bottom: 4px;
-        }
-
-        .ichbinich-card-desc {
-            color: #3d7a74;
-            font-size: 0.82em;
-            line-height: 1.5;
-        }
-
-        /* ===== KATEGORIEN TAGESPLAN ===== */
-        .kategorien-section {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: 50px 40px;
-            box-shadow: var(--shadow);
-            margin-bottom: 36px;
-        }
-
-        .kategorien-intro {
-            color: var(--text-soft);
-            font-size: 1.05em;
-            line-height: 1.7;
-            margin-bottom: 36px;
-            max-width: 640px;
-        }
-
-        .tagesplan { position: relative; margin-bottom: 16px; }
-
-        .tagesplan::before {
-            content: '';
-            position: absolute;
-            left: 38px; top: 60px; bottom: 20px;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary-light), var(--accent-mint));
-            border-radius: 3px;
-        }
-
-        .tages-entry {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .tages-dot {
-            width: 80px; height: 80px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2em;
-            flex-shrink: 0;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            transition: transform 0.25s;
-            border: 3px solid white;
-        }
-
-        .tages-entry:hover .tages-dot { transform: scale(1.1) rotate(-5deg); }
-
-        .dot-kita    { background: linear-gradient(135deg, #fde68a, #fbbf24); }
-        .dot-schule  { background: linear-gradient(135deg, #bfdbfe, #60a5fa); }
-        .dot-sport   { background: linear-gradient(135deg, #bbf7d0, #34d399); }
-        .dot-freunde { background: linear-gradient(135deg, #fecdd3, #f87171); }
-        .dot-zuhause { background: linear-gradient(135deg, #ddd6fe, #a78bfa); }
-
-        .tages-content {
-            flex: 1;
             background: var(--primary-pale);
-            border-radius: 18px;
-            padding: 20px 24px;
             border: 1.5px solid var(--primary-light);
+            border-radius: 20px;
+            padding: 16px 20px;
             text-decoration: none;
             color: inherit;
-            display: block;
             transition: all 0.25s;
         }
-
-        .tages-content:hover {
+        .story-card:hover {
             background: white;
-            box-shadow: 0 8px 28px rgba(90,125,149,0.2);
-            transform: translateX(6px);
             border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 26px rgba(90,125,149,0.2);
         }
 
-        .tages-time {
-            font-size: 0.78em;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary-mid);
-            margin-bottom: 4px;
+        .story-avatar {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 3px solid white;
+            box-shadow: 0 4px 14px rgba(90,125,149,0.2);
+            background: linear-gradient(135deg, #c8e8ea, #e0f4f8);
         }
 
-        .tages-title {
-            font-family: 'Fredoka One', cursive;
-            color: var(--primary-dark);
-            font-size: 1.3em;
-            margin-bottom: 6px;
-        }
+        .story-content { flex: 1; min-width: 0; }
+        .story-meta { font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-mid); margin-bottom: 3px; }
+        .story-title { font-family: 'Fredoka One', cursive; color: var(--primary-dark); font-size: 1.15em; margin-bottom: 4px; line-height: 1.2; }
+        .story-desc { color: var(--text-soft); font-size: 0.85em; line-height: 1.4; }
+        .story-count { font-size: 0.78em; font-weight: 700; color: var(--accent-green); margin-top: 6px; display: inline-block; }
 
-        .tages-desc { color: var(--text-soft); font-size: 0.92em; line-height: 1.55; }
+        .story-card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+            border-color: #5eead4;
+        }
+        .story-card.featured:hover { border-color: #0d9488; }
+        .story-card.featured .story-title { color: #0d9488; }
+        .story-card.featured .story-meta { color: #0f766e; }
+
+        /* Steckbrief Quicklink */
+        .quicklink-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .quicklink-card {
+            flex: 1;
+            min-width: 240px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            border: 2px dashed var(--primary-light);
+            border-radius: 18px;
+            padding: 16px 18px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s;
+        }
+        .quicklink-card:hover { border-style: solid; border-color: var(--primary); box-shadow: 0 8px 22px rgba(90,125,149,0.15); }
+        .quicklink-icon { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--primary-pale); }
+        .quicklink-title { font-family: 'Fredoka One', cursive; color: var(--primary-dark); font-size: 1.02em; margin-bottom: 2px; }
+        .quicklink-sub { color: var(--text-soft); font-size: 0.82em; }
 
         /* ===== AD ===== */
-        .ad-container {
-            background: white; border-radius: 15px;
-            padding: 20px; margin: 24px 0;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        }
-
+        .ad-container { background: white; border-radius: 15px; padding: 20px; margin: 24px 0; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
         .ad-label { color: #bbb; font-size: 0.68em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
         .ad-placeholder { background: #fafafa; border: 2px dashed #e0e0e0; border-radius: 10px; padding: 28px; color: #ccc; font-size: 0.9em; }
 
-        /* ===== ELTERN BOX ===== */
+        /* ===== ELTERN BOX — kompakt ===== */
         .eltern-box {
             background: white;
             border-radius: var(--radius-xl);
-            padding: 50px 40px;
+            padding: 40px 40px;
             box-shadow: var(--shadow);
-            margin-bottom: 36px;
+            margin-bottom: 28px;
         }
 
-        .eltern-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .eltern-card {
-            background: var(--primary-pale);
-            border-radius: 18px;
-            padding: 24px 20px;
-            text-align: center;
-            border: 1.5px solid var(--primary-light);
-        }
-
-        .eltern-icon { font-size: 2.2em; margin-bottom: 12px; }
-        .eltern-title { font-family: 'Fredoka One', cursive; color: var(--primary-dark); font-size: 1.1em; margin-bottom: 8px; }
-        .eltern-text { color: var(--text-soft); font-size: 0.88em; line-height: 1.6; }
+        .eltern-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 22px; }
+        .eltern-card { background: var(--primary-pale); border-radius: 16px; padding: 20px 18px; text-align: center; border: 1.5px solid var(--primary-light); }
+        .eltern-icon { font-size: 1.9em; margin-bottom: 10px; }
+        .eltern-title { font-family: 'Fredoka One', cursive; color: var(--primary-dark); font-size: 1.05em; margin-bottom: 6px; }
+        .eltern-text { color: var(--text-soft); font-size: 0.85em; line-height: 1.55; }
 
         .eltern-testimonial {
             background: linear-gradient(135deg, #f0faf8 0%, #e0f5f0 100%);
             border-radius: 18px;
-            padding: 28px 30px;
+            padding: 24px 28px;
             border-left: 5px solid var(--accent-mint);
-            margin-top: 28px;
+            margin-top: 24px;
             position: relative;
         }
-
-        .eltern-testimonial::before {
-            content: '💬';
-            position: absolute;
-            top: -16px; right: 24px;
-            font-size: 1.8em;
-            background: white;
-            padding: 0 6px;
-            border-radius: 8px;
-        }
-
-        .testimonial-text { color: #1a6b60; font-size: 1.02em; line-height: 1.75; font-style: italic; margin-bottom: 14px; }
+        .eltern-testimonial::before { content: '💬'; position: absolute; top: -14px; right: 22px; font-size: 1.6em; background: white; padding: 0 6px; border-radius: 8px; }
+        .testimonial-text { color: #1a6b60; font-size: 0.98em; line-height: 1.7; font-style: italic; margin-bottom: 12px; }
         .testimonial-text strong { color: #0f4a42; font-style: normal; }
-        .testimonial-author { color: #1a7a6e; font-weight: 800; font-size: 0.88em; text-transform: uppercase; letter-spacing: 0.08em; }
-
-        /* ===== CTA ===== */
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--accent-mint) 100%);
-            border-radius: var(--radius-xl);
-            padding: 50px 40px;
-            text-align: center;
-            margin-bottom: 36px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-box::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
-        }
-
-        .cta-mascot {
-            width: 90px; height: 90px;
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.4);
-            margin: 0 auto 20px;
-            display: block;
-            background: rgba(255,255,255,0.15);
-            object-fit: cover;
-        }
-
-        .cta-title { font-family: 'Fredoka One', cursive; color: white; font-size: 2em; margin-bottom: 14px; line-height: 1.2; }
-        .cta-text { color: rgba(255,255,255,0.88); font-size: 1.05em; line-height: 1.7; max-width: 520px; margin: 0 auto 28px; font-weight: 600; }
-
-        .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-
-        .btn-primary {
-            background: white; color: var(--primary-dark);
-            font-family: 'Fredoka One', cursive; font-size: 1.1em;
-            padding: 14px 32px; border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-            transition: all 0.25s; border: none; cursor: pointer;
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.15); color: white;
-            font-family: 'Fredoka One', cursive; font-size: 1.05em;
-            padding: 14px 28px; border-radius: 50px;
-            text-decoration: none;
-            border: 2px solid rgba(255,255,255,0.4);
-            transition: all 0.25s;
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
+        .testimonial-author { color: #1a7a6e; font-weight: 800; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.06em; }
 
         /* ===== FOOTER ===== */
-        footer {
-            background: white; border-radius: var(--radius-xl);
-            padding: 40px; margin-top: 40px;
-            text-align: center; box-shadow: var(--shadow);
-        }
-
+        footer { background: white; border-radius: var(--radius-xl); padding: 40px; margin-top: 40px; text-align: center; box-shadow: var(--shadow); }
         .footer-brand { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.6em; margin-bottom: 8px; }
         .footer-tagline { color: #aaa; margin-bottom: 28px; font-size: 0.95em; }
-
-        .footer-credits {
-            background: var(--primary-pale); border-radius: 14px;
-            padding: 18px; margin: 20px 0;
-            font-size: 0.88em; color: var(--text-soft); line-height: 1.8;
-        }
-
+        .footer-credits { background: var(--primary-pale); border-radius: 14px; padding: 18px; margin: 20px 0; font-size: 0.88em; color: var(--text-soft); line-height: 1.8; }
         .footer-links { margin: 22px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 28px; }
         .footer-links a { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.95em; transition: color 0.2s; }
         .footer-links a:hover { color: var(--primary-dark); }
         .footer-info { color: #bbb; font-size: 0.82em; margin-top: 20px; }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in { animation: fadeInUp 0.6s ease forwards; }
         .delay-1 { animation-delay: 0.1s; opacity: 0; }
         .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.35s; opacity: 0; }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             body { padding: 12px; }
-            .hero-title { font-size: 2.3em; }
-            .hero-top { padding: 40px 24px 70px; }
-            .hero-bottom { padding: 70px 24px 30px; }
-            .steckbrief-section, .kategorien-section, .eltern-box { padding: 36px 24px; }
-            .steckbrief-grid { grid-template-columns: 1fr; }
-            .steckbrief-card.wide { grid-column: 1; }
-            .superkraft-list { grid-template-columns: 1fr; }
+            .hero-top { flex-direction: column; text-align: center; padding: 36px 24px 30px; gap: 18px; }
+            .hero-bottom { flex-direction: column; align-items: stretch; padding: 22px 24px 26px; }
+            .hero-title { font-size: 1.9em; }
+            .hero-subtitle { max-width: 100%; }
+            .stories-section, .eltern-box { padding: 30px 22px; }
+            .story-grid { grid-template-columns: 1fr; }
             .eltern-grid { grid-template-columns: 1fr; }
-            .ichbinich-grid { grid-template-columns: 1fr; }
-            .tagesplan::before { left: 30px; }
-            .tages-dot { width: 64px; height: 64px; font-size: 1.6em; }
-            .cta-box { padding: 36px 24px; }
-            .cta-title { font-size: 1.6em; }
             .sticky-nav { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
             .footer-links { flex-direction: column; gap: 14px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title { font-size: 1.9em; }
-            .trust-strip { flex-direction: column; align-items: center; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .ichbinich-header { flex-direction: column; text-align: center; }
+            .trust-strip { justify-content: center; }
         }
     </style>
 </head>
@@ -825,295 +459,118 @@
             <span class="nav-badge">Lernolotls Welt</span>
         </nav>
 
-        <!-- ===== HERO ===== -->
+        <!-- ===== HERO — kompakt ===== -->
         <header class="hero fade-in">
             <div class="hero-top">
-                <div class="hero-eyebrow">✨ Lernolotls Welt</div>
-                <h1 class="hero-title">Hallo, ich bin<br>der Lernolotl!</h1>
-                <p class="hero-subtitle">Ein mintgrüner Axolotl mit Brille, großem Herz<br>und einer ganz eigenen Art, die Welt zu sehen.</p>
-                <div class="hero-mascot-wrap">
-                    <img src="../lernolotl-icon.png" alt="Der Lernolotl" class="hero-mascot">
+                <img src="../lernolotl-icon.png" alt="Der Lernolotl" class="hero-mascot">
+                <div class="hero-text">
+                    <div class="hero-eyebrow">✨ Lernolotls Welt</div>
+                    <h1 class="hero-title">Hallo, ich bin der Lernolotl!</h1>
+                    <p class="hero-subtitle">Ein mintgrüner Axolotl mit Brille und großem Herz. Begleite mich durch meinen Alltag — und durch meine Gedanken.</p>
                 </div>
             </div>
             <div class="hero-bottom">
-                <p class="hero-tagline">
-                    Begleite mich bei meinen Abenteuern — in der <strong>Kita</strong>,
-                    der <strong>Schule</strong>, beim <strong>Sport</strong> und bei <strong>Freunden</strong>.
-                    Manchmal ist vieles ganz einfach für mich — und manchmal auch
-                    gar nicht. Genau davon erzähle ich euch.
-                </p>
+                <div class="hero-cta-group">
+                    <a href="#geschichten" class="btn-jump">📖 Zu den Geschichten</a>
+                    <a href="lernolotl-steckbrief.html" class="btn-jump-outline">Wer ist der Lernolotl?</a>
+                </div>
                 <div class="trust-strip">
-                    <span class="trust-badge">🆓 Alle Geschichten kostenlos</span>
-                    <span class="trust-badge">📚 Lernmaterialien verfügbar</span>
-                    <span class="trust-badge">💚 Pädagogisch begleitet</span>
-                    <span class="trust-badge">🌈 Für alle Kinder</span>
+                    <span class="trust-badge">🆓 Kostenlos</span>
+                    <span class="trust-badge">💚 Für alle Kinder</span>
+                    <span class="trust-badge">🎓 Pädagogisch begleitet</span>
                 </div>
             </div>
         </header>
 
-        <!-- ===== STECKBRIEF ===== -->
-        <section class="steckbrief-section fade-in delay-1">
+        <!-- ===== GESCHICHTEN — das Herzstück, ganz oben ===== -->
+        <section class="stories-section fade-in delay-1" id="geschichten">
 
-            <span class="section-label">📋 Mein Steckbrief</span>
-            <h2 class="section-title">Wer bin ich eigentlich?</h2>
-            <p class="section-intro">
-                Ich bin ein Axolotl — das sind besondere Wassertiere aus Mexiko,
-                die ihr ganzes Leben lang ein bisschen wie Kinder bleiben.
-                Ich finde das eigentlich ganz schön.
-            </p>
-
-            <div class="steckbrief-grid">
-
-                <div class="steckbrief-card">
-                    <span class="card-emoji">🎂</span>
-                    <div class="card-label">Wie alt bin ich?</div>
-                    <div class="card-value large">7 Jahre</div>
-                    <div class="card-value" style="font-size:0.85em; color:var(--text-soft); font-weight:600;">Gehe in die 2. Klasse</div>
-                </div>
-
-                <div class="steckbrief-card">
-                    <span class="card-emoji">🎨</span>
-                    <div class="card-label">Meine Lieblingsfarbe</div>
-                    <div class="card-value large">Mintgrün!</div>
-                    <div class="card-value" style="font-size:0.85em; color:var(--text-soft); font-weight:600;">Zum Glück bin ich ja selbst mintgrün 😄</div>
-                </div>
-
-                <div class="steckbrief-card">
-                    <span class="card-emoji">🍕</span>
-                    <div class="card-label">Lieblingsessen</div>
-                    <div class="card-value">Pizza mit Mais — aber bitte ohne Zwiebeln! Zwiebeln riechen so komisch stark.</div>
-                </div>
-
-                <div class="steckbrief-card">
-                    <span class="card-emoji">📚</span>
-                    <div class="card-label">Lieblingsbeschäftigung</div>
-                    <div class="card-value">Lesen & Zahlen sortieren. Ich kenne fast alle Hauptstädte der Welt!</div>
-                </div>
-
-                <div class="steckbrief-card wide">
-                    <span class="card-emoji">🌊</span>
-                    <div class="card-label">Etwas Besonderes über mich</div>
-                    <div class="card-value">
-                        Mein Gehirn funktioniert ein bisschen anders als bei vielen anderen.
-                        Manchmal nehme ich Dinge ganz besonders stark wahr — Geräusche, Gerüche, Licht.
-                        Manchmal brauche ich etwas mehr Zeit, um Neues auszuprobieren.
-                        Und manchmal bin ich einfach der Beste darin, Muster zu erkennen,
-                        die andere gar nicht sehen. <strong>Das macht mich aus — und das ist okay.</strong>
-                    </div>
-                </div>
-
-                <div class="steckbrief-card">
-                    <span class="card-emoji">🏠</span>
-                    <div class="card-label">Wo ich wohne</div>
-                    <div class="card-value">In einem gemütlichen Haus mit kleinem Garten, nicht weit von meiner Schule</div>
-                </div>
-
-                <div class="steckbrief-card">
-                    <span class="card-emoji">👫</span>
-                    <div class="card-label">Mein bester Freund</div>
-                    <div class="card-value">Finn! Er ist manchmal wild und laut — aber er hört mir immer zu.</div>
-                </div>
-
-            </div>
-
-            <!-- Superkräfte -->
-            <div class="superkraft-box">
-                <h3 class="superkraft-title">Meine Superkräfte</h3>
-                <ul class="superkraft-list">
-                    <li>Muster erkennen wie ein Computer</li>
-                    <li>Mich an ganz viele Details erinnern</li>
-                    <li>Immer ehrlich sein</li>
-                    <li>Bücher stundenlang lesen</li>
-                    <li>Freunden aufmerksam zuhören</li>
-                    <li>Zahlen & Fakten lieben</li>
-                </ul>
-            </div>
-
-            <!-- Ehrlich-Box -->
-            <div class="ehrlich-box">
-                <h3 class="ehrlich-title">Was mir manchmal schwerfällt</h3>
-                <p class="ehrlich-text">
-                    Wenn es in der Pause zu laut ist, dann brauche ich manchmal eine kurze Auszeit.
-                    Und wenn Pläne plötzlich geändert werden — das mag ich wirklich gar nicht.
-                    <strong>Aber ich lerne gerade, damit umzugehen.</strong>
-                    Manchmal fällt es mir schwer zu verstehen, was andere fühlen —
-                    dabei möchte ich eigentlich immer nett sein.
-                    Ich übe das gerade jeden Tag. Und ich werde besser darin, versprochen! 🤝
-                </p>
-            </div>
-
-            <!-- Kinder-Quote -->
-            <div class="kinder-quote">
-                <div class="quote-text">
-                    „Ich bin nicht falsch.<br>Ich bin einfach anders — und das ist wunderbar."
-                </div>
-                <div class="quote-sub">— Der Lernolotl, wenn er abends über seinen Tag nachdenkt</div>
-            </div>
-
-            <!-- ===== ICH BIN ICH — direkt im Steckbrief ===== -->
-            <div class="ichbinich-section">
-                <div class="ichbinich-header">
-                    <img src="../lernolotl-thinking.png" alt="Der Lernolotl denkt nach" class="ichbinich-icon">
-                    <div>
-                        <div class="ichbinich-title">Ich bin Ich — meine innere Welt</div>
-                        <div class="ichbinich-subtitle">10 Geschichten über Gefühle, Selbstwert und das, was mich ausmacht</div>
-                    </div>
-                </div>
-                <p class="ichbinich-intro">
-                    Manchmal frage ich mich: Warum bin ich so, wie ich bin? Warum fühle ich Dinge so stark?
-                    Darf ich auch Nein sagen? Diese Geschichten gehen nach innen — keine Schule, kein Sport,
-                    nur ich und meine Gedanken.
-                </p>
-                <div class="ichbinich-grid">
-
-                    <a href="ichbinich-geschichte-anders.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 1</div>
-                        <div class="ichbinich-card-title">Ich bin anders — und das ist okay</div>
-                        <div class="ichbinich-card-desc">Warum anders kein Fehler ist — sondern eine andere Art, die Welt zu sehen.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-superkraefte.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 2</div>
-                        <div class="ichbinich-card-title">In was bin ich gut? Meine Superkräfte</div>
-                        <div class="ichbinich-card-desc">Ein leeres Blatt füllen — und entdecken, was wirklich in einem steckt.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-angst.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 3</div>
-                        <div class="ichbinich-card-title">Angst — das komische Gefühl im Bauch</div>
-                        <div class="ichbinich-card-desc">Was Angst ist, warum sie da ist — und was man tun kann.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-traurigkeit.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 4</div>
-                        <div class="ichbinich-card-title">Wenn ich traurig bin — Traurigkeit ist kein Fehler</div>
-                        <div class="ichbinich-card-desc">Traurig sein darf man. Und manchmal hilft es, das einfach zuzulassen.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-identitaet.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 5</div>
-                        <div class="ichbinich-card-title">Ich weiß nicht, wer ich bin — auf der Suche</div>
-                        <div class="ichbinich-card-desc">Über das Herausfinden, wer man ist — und dass das Zeit braucht.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-neinsagen.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 6</div>
-                        <div class="ichbinich-card-title">Nein sagen — ich darf meine Grenzen schützen</div>
-                        <div class="ichbinich-card-desc">Warum Nein sagen keine Gemeinheit ist — sondern Selbstschutz.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-perfekt.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 7</div>
-                        <div class="ichbinich-card-title">Perfekt sein müssen — warum reicht es nie?</div>
-                        <div class="ichbinich-card-desc">Über Leistungsdruck, Fehler — und warum gut genug wirklich reicht.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-langeweile.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 8</div>
-                        <div class="ichbinich-card-title">Langeweile — und plötzlich kommt eine Idee</div>
-                        <div class="ichbinich-card-desc">Was passiert, wenn man einfach mal nichts tut — und warum das gut ist.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-dankbarkeit.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 9</div>
-                        <div class="ichbinich-card-title">Dankbarkeit — die kleinen Dinge sehen</div>
-                        <div class="ichbinich-card-desc">Wie man lernt, das Schöne zu bemerken — auch an ganz normalen Tagen.</div>
-                    </a>
-
-                    <a href="ichbinich-geschichte-zukunft.html" class="ichbinich-card">
-                        <div class="ichbinich-card-num">Geschichte 10</div>
-                        <div class="ichbinich-card-title">Was kommt nach der Schule? Träume und Pläne</div>
-                        <div class="ichbinich-card-desc">Wer will ich mal werden — und darf ich das noch nicht wissen?</div>
-                    </a>
-
-                </div>
-              <div class="ratgeber-box" role="complementary" aria-label="Ratgeber-Bundle kaufen" style="margin-top: 28px;">
-  <a href="https://www.etsy.com/de/listing/4477424761/ich-bin-ich-komplettpaket-10-ratgeber"
-     target="_blank" rel="noopener" class="ratgeber-box__link">
-    <img
-      src="/ratgeberbilder/ichbinichbundle.jpg"
-      alt="Ich bin ich – Komplettpaket"
-      class="ratgeber-box__img"
-      loading="lazy"
-      width="80"
-      height="80"
-    >
-    <div class="ratgeber-box__text">
-      <span class="ratgeber-box__label">Alle 10 Geschichten als Paket</span>
-      <span class="ratgeber-box__titel">Ich bin ich – Komplettpaket</span>
-      <span class="ratgeber-box__sub">Ratgeber #24–33 · Bundle · PDF</span>
-      <span class="ratgeber-box__cta">→ Auf Etsy ansehen</span>
-    </div>
-  </a>
-</div>
-            </div>
-
-        </section>
-
-        <div class="ad-container">
-            <div class="ad-label">Werbung</div>
-            <div class="ad-placeholder">Google AdSense — responsiv</div>
-        </div>
-
-        <!-- ===== KATEGORIEN TAGESPLAN — nur die 5 Alltagswelten ===== -->
-        <section class="kategorien-section fade-in delay-2">
-
-            <span class="section-label">🌟 Meine Alltagswelten</span>
+            <span class="section-label">📖 Alle Geschichten</span>
             <h2 class="section-title">Ein Tag mit dem Lernolotl</h2>
-            <p class="kategorien-intro">
-                Jeder Tag bringt neue Abenteuer! Begleite mich durch meinen Alltag —
-                von morgens in der Kita bis abends zu Hause.
-                In jeder Situation erlebst du, wie ich Dinge erlebe,
-                was mir Mut macht und was ich gelernt habe.
+            <p class="section-intro">
+                55 Geschichten, sechs Welten. Wähle, wo du einsteigen möchtest —
+                jede Kategorie erzählt von einem anderen Teil des Lernolotl-Alltags.
             </p>
 
-            <div class="tagesplan">
+            <div class="story-grid">
 
-                <a href="lernolotls-welt-kita.html" class="tages-entry">
-                    <div class="tages-dot dot-kita">🌈</div>
-                    <div class="tages-content">
-                        <div class="tages-time">🕗 Morgens · Für Kinder von 3–6 Jahren</div>
-                        <div class="tages-title">Lernolotl in der Kita (10 Geschichten)</div>
-                        <div class="tages-desc">Neue Kinder, neue Regeln — und manchmal zu viel Lärm auf einmal. Wie der Lernolotl Freundschaften schließt und seinen eigenen Weg findet.</div>
+                <a href="lernolotls-welt-kita.html" class="story-card">
+                    <img src="../lernolotl-waving.png" alt="Lernolotl in der Kita" class="story-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="story-content">
+                        <div class="story-meta">3–6 Jahre</div>
+                        <div class="story-title">In der Kita</div>
+                        <div class="story-desc">Neue Freunde, Morgenkreis & mehr</div>
+                        <span class="story-count">10 Geschichten →</span>
                     </div>
                 </a>
 
-                <a href="lernolotls-welt-schule.html" class="tages-entry">
-                    <div class="tages-dot dot-schule">🎒</div>
-                    <div class="tages-content">
-                        <div class="tages-time">🕗 Vormittags · Für Kinder von 6–10 Jahren</div>
-                        <div class="tages-title">Lernolotl in der Schule (10 Geschichten)</div>
-                        <div class="tages-desc">Mathe liebt er, große Pausen manchmal nicht. Ehrliche Geschichten über Lernen, Regeln und manche Überraschungen im Unterricht.</div>
+                <a href="lernolotls-welt-schule.html" class="story-card">
+                    <img src="../lernolotl-reading.png" alt="Lernolotl in der Schule" class="story-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="story-content">
+                        <div class="story-meta">6–10 Jahre</div>
+                        <div class="story-title">In der Schule</div>
+                        <div class="story-desc">Lernen, Regeln & Überraschungen</div>
+                        <span class="story-count">10 Geschichten →</span>
                     </div>
                 </a>
 
-                <a href="lernolotls-welt-sport.html" class="tages-entry">
-                    <div class="tages-dot dot-sport">⚽</div>
-                    <div class="tages-content">
-                        <div class="tages-time">🕑 Nachmittags · Für alle Kinder</div>
-                        <div class="tages-title">Lernolotl beim Sport (10 Geschichten)</div>
-                        <div class="tages-desc">Fußball in einer Gruppe? Das hat eigene Regeln — geschriebene und ungeschriebene. Wie der Lernolotl lernt, ein Teamplayer zu sein.</div>
+                <a href="lernolotls-welt-sport.html" class="story-card">
+                    <img src="../lernolotl-brave.png" alt="Lernolotl beim Sport" class="story-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="story-content">
+                        <div class="story-meta">Für alle Kinder</div>
+                        <div class="story-title">Beim Sport</div>
+                        <div class="story-desc">Teamgeist & eigene Regeln</div>
+                        <span class="story-count">10 Geschichten →</span>
                     </div>
                 </a>
 
-                <a href="lernolotls-welt-freunde.html" class="tages-entry">
-                    <div class="tages-dot dot-freunde">💛</div>
-                    <div class="tages-content">
-                        <div class="tages-time">🕓 Nachmittags · Für alle Kinder</div>
-                        <div class="tages-title">Lernolotl bei Freunden (13 Geschichten)</div>
-                        <div class="tages-desc">Was macht einen guten Freund aus? Warme Geschichten über Verbindung, Missverständnisse und echtes Zuhören.</div>
+                <a href="lernolotls-welt-freunde.html" class="story-card">
+                    <img src="../lernolotl-happy.png" alt="Lernolotl bei Freunden" class="story-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="story-content">
+                        <div class="story-meta">Für alle Kinder</div>
+                        <div class="story-title">Bei Freunden</div>
+                        <div class="story-desc">Verbindung & echtes Zuhören</div>
+                        <span class="story-count">13 Geschichten →</span>
                     </div>
                 </a>
 
-                <a href="lernolotls-welt-zuhause.html" class="tages-entry">
-                    <div class="tages-dot dot-zuhause">🏠</div>
-                    <div class="tages-content">
-                        <div class="tages-time">🌙 Abends · Für alle Kinder</div>
-                        <div class="tages-title">Lernolotl zu Hause (12 Geschichten)</div>
-                        <div class="tages-desc">Am Ende des Tages zieht sich der Lernolotl gern in sein Zimmer zurück — mit einem Buch, einem Glas Wasser und ganz vielen Gedanken.</div>
+                <a href="lernolotls-welt-zuhause.html" class="story-card">
+                    <img src="../lernolotl-whisper.png" alt="Lernolotl zu Hause" class="story-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="story-content">
+                        <div class="story-meta">Für alle Kinder</div>
+                        <div class="story-title">Zu Hause</div>
+                        <div class="story-desc">Ruhe, Rituale & der Tagesausklang</div>
+                        <span class="story-count">12 Geschichten →</span>
                     </div>
                 </a>
 
+                <a href="lernolotls-welt-ichbinich.html" class="story-card">
+                    <img src="../lernolotl-thinking.png" alt="Lernolotl – Ich bin ich" class="story-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="story-content">
+                        <div class="story-meta">6–10 Jahre</div>
+                        <div class="story-title">Ich bin ich</div>
+                        <div class="story-desc">Gefühle, Ängste & Selbstwert</div>
+                        <span class="story-count">10 Geschichten →</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="quicklink-row">
+                <a href="lernolotl-steckbrief.html" class="quicklink-card">
+                    <img src="../lernolotl-icon.png" alt="Steckbrief" class="quicklink-icon">
+                    <div>
+                        <div class="quicklink-title">Sein Steckbrief</div>
+                        <div class="quicklink-sub">Wer ist der Lernolotl? Alter, Superkräfte & mehr</div>
+                    </div>
+                </a>
+                <a href="lernolotls-welt-ichbinich.html" class="quicklink-card">
+                    <img src="../lernolotl-sad.png" alt="Ich bin ich – Geschichten über Gefühle" class="quicklink-icon" onerror="this.src='../lernolotl-icon.png'">
+                    <div>
+                        <div class="quicklink-title">Seine innere Welt</div>
+                        <div class="quicklink-sub">Geschichten über Gefühle & Selbstwert</div>
+                    </div>
+                </a>
             </div>
 
         </section>
@@ -1123,27 +580,27 @@
             <div class="ad-placeholder">Google AdSense — responsiv</div>
         </div>
 
-        <!-- ===== ELTERN VERTRAUEN ===== -->
-        <section class="eltern-box fade-in delay-3">
+        <!-- ===== ELTERN VERTRAUEN — kompakt ===== -->
+        <section class="eltern-box fade-in delay-2">
 
             <span class="section-label">👨‍👩‍👧 Für Eltern & Lehrkräfte</span>
-            <h2 class="section-title">Warum diese Geschichten wirken</h2>
+            <h2 class="section-title" style="font-size:1.6em;">Warum diese Geschichten wirken</h2>
 
             <div class="eltern-grid">
                 <div class="eltern-card">
                     <div class="eltern-icon">🧠</div>
                     <div class="eltern-title">Erprobt & echt</div>
-                    <div class="eltern-text">Entstanden aus dem Familienalltag mit Finn, der Autismus & ADHS hat. Kein theoretisches Konzept — gelebte Erfahrung.</div>
+                    <div class="eltern-text">Entstanden aus dem Familienalltag mit Finn, der Autismus & ADHS hat.</div>
                 </div>
                 <div class="eltern-card">
                     <div class="eltern-icon">🎯</div>
                     <div class="eltern-title">Für alle Kinder</div>
-                    <div class="eltern-text">Der Lernolotl spricht Kinder mit und ohne Diagnose an. Seine Erfahrungen sind universell — Lautstärke, Regeln, Freundschaft.</div>
+                    <div class="eltern-text">Der Lernolotl spricht Kinder mit und ohne Diagnose an.</div>
                 </div>
                 <div class="eltern-card">
                     <div class="eltern-icon">💬</div>
                     <div class="eltern-title">Gesprächsöffner</div>
-                    <div class="eltern-text">Jede Geschichte bietet Fragen zum Nachdenken und Reden — damit Kinder lernen, ihre eigenen Gefühle zu benennen.</div>
+                    <div class="eltern-text">Jede Geschichte bietet Fragen zum Nachdenken und Reden.</div>
                 </div>
             </div>
 
@@ -1158,9 +615,6 @@
             </div>
 
         </section>
-
-        <!-- ===== CTA ===== -->
-
 
         <!-- ===== FOOTER ===== -->
         <footer>
