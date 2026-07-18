@@ -37,7 +37,7 @@
       "isPartOf": {
         "@type": "WebSite",
         "name": "Der Lernolotl",
-        "url": "https://www.lernolotl.de/lernolotl/lernolotl-steckbrief.html"
+        "url": "https://www.lernolotl.de/"
       },
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -390,6 +390,36 @@
         .familie-role { font-size: 0.78em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-mid); margin-bottom: 8px; }
         .familie-desc { font-size: 0.88em; color: var(--text-soft); line-height: 1.55; }
 
+        /* CREW GRUPPEN */
+        .crew-divider { margin: 40px 0 28px; text-align: center; position: relative; }
+        .crew-divider::before {
+            content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1.5px;
+            background: var(--primary-light); z-index: 0;
+        }
+        .crew-divider span {
+            background: white; position: relative; z-index: 1; padding: 0 18px;
+            font-family: 'Fredoka One', cursive; color: var(--primary-mid); font-size: 1em;
+        }
+        .crew-group { margin-bottom: 30px; }
+        .crew-group:last-child { margin-bottom: 0; }
+        .crew-group-title {
+            display: flex; align-items: center; gap: 8px;
+            font-family: 'Fredoka One', cursive; color: var(--primary-dark);
+            font-size: 1.1em; margin-bottom: 14px;
+        }
+        .crew-group-count { font-size: 0.7em; font-weight: 700; color: var(--primary-mid); text-transform: none; font-family: 'Nunito', sans-serif; }
+        .crew-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .crew-card {
+            display: flex; align-items: center; gap: 12px;
+            background: var(--primary-pale); border: 1.5px solid var(--primary-light);
+            border-radius: 14px; padding: 12px 14px;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .crew-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(90,125,149,0.15); }
+        .crew-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid white; box-shadow: 0 3px 10px rgba(90,125,149,0.2); }
+        .crew-name { font-family: 'Fredoka One', cursive; color: var(--primary-dark); font-size: 0.95em; line-height: 1.2; }
+        .crew-role { font-size: 0.74em; color: var(--text-soft); font-weight: 600; }
+
         /* AD */
         .ad-container { background: white; border-radius: 15px; padding: 20px; margin: 24px 0; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
         .ad-label { color: #bbb; font-size: 0.68em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
@@ -458,6 +488,7 @@
             .steckbrief-card.wide { grid-column: 1; }
             .superkraft-list { grid-template-columns: 1fr; }
             .familie-grid { grid-template-columns: 1fr; }
+            .crew-grid { grid-template-columns: 1fr; }
             .cta-box { padding: 36px 24px; }
             .cta-title { font-size: 1.6em; }
             .sticky-nav { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
@@ -629,31 +660,108 @@
             <div class="ad-placeholder">Google AdSense — responsiv</div>
         </div>
 
-        <!-- FAMILIE & FREUNDE -->
+        <!-- FAMILIE -->
         <section class="familie-section fade-in delay-2">
             <span class="section-label">💛 Wer gehört zu mir?</span>
-            <h2 class="section-title">Meine Familie und Freunde</h2>
-            <p class="section-intro">Diese Gesichter begleiten den Lernolotl durch seinen Alltag — in der Kita, der Schule, beim Sport und zu Hause.</p>
+            <h2 class="section-title">Meine Familie</h2>
+            <p class="section-intro">Zu Hause ist der Lernolotl nie allein — Mama, Papa und seine kleine Schwester Lea sind immer da.</p>
             <div class="familie-grid">
                 <div class="familie-card">
-                    <img src="../lernolotl-happy.png" alt="Mama" class="familie-avatar" onerror="this.src='../lernolotl-icon.png'">
-                    <div class="familie-name">Mama & Papa</div>
+                    <img src="char-familie-mama.png" alt="Mama" class="familie-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="familie-name">Mama</div>
                     <div class="familie-role">Zuhause</div>
                     <p class="familie-desc">Immer da, wenn der Lernolotl über seinen Tag reden möchte — oder auch mal gar nicht.</p>
                 </div>
                 <div class="familie-card">
-                    <img src="../lernolotl-waving.png" alt="Finn" class="familie-avatar" onerror="this.src='../lernolotl-icon.png'">
-                    <div class="familie-name">Finn</div>
-                    <div class="familie-role">Bester Freund</div>
-                    <p class="familie-desc">Wild, laut und treu. Finn hört dem Lernolotl immer zu, auch wenn er ganz anders tickt.</p>
+                    <img src="char-familie-papa.png" alt="Papa" class="familie-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="familie-name">Papa</div>
+                    <div class="familie-role">Zuhause</div>
+                    <p class="familie-desc">Erklärt geduldig, warum die Welt manchmal so ist, wie sie ist — auch beim dritten Nachfragen.</p>
                 </div>
                 <div class="familie-card">
-                    <img src="../lernolotl-brave.png" alt="Lena" class="familie-avatar" onerror="this.src='../lernolotl-icon.png'">
-                    <div class="familie-name">Lena</div>
-                    <div class="familie-role">Schwester</div>
-                    <p class="familie-desc">Manchmal nervig, meistens großartig — Lena versteht den Lernolotl oft ohne viele Worte.</p>
+                    <img src="char-familie-lea.png" alt="Lea" class="familie-avatar" onerror="this.src='../lernolotl-icon.png'">
+                    <div class="familie-name">Lea</div>
+                    <div class="familie-role">Kleine Schwester</div>
+                    <p class="familie-desc">Noch ganz klein — aber schon jetzt die lauteste Fan-Klub-Vorsitzende des Lernolotl.</p>
                 </div>
             </div>
+
+            <!-- DIE CREW AUS ALLEN WELTEN -->
+            <div class="crew-divider"><span>🌍 Die ganze Crew</span></div>
+            <p class="section-intro" style="margin-bottom:24px;">Diese Gesichter begleiten den Lernolotl durch seinen Alltag — in der Kita, der Schule, beim Sport und unter Freunden.</p>
+
+            <div class="crew-group">
+                <div class="crew-group-title">🌈 Kita <span class="crew-group-count">— 3–6 Jahre</span></div>
+                <div class="crew-grid">
+                    <div class="crew-card">
+                        <img src="char-kita-frau-brandt.png" alt="Frau Brandt" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Frau Brandt</div><div class="crew-role">Erzieherin</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-kita-mia.png" alt="Mia" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Mia</div><div class="crew-role">Kitafreundin</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-kita-ben.png" alt="Ben" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Ben</div><div class="crew-role">Kita-Kumpel</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crew-group">
+                <div class="crew-group-title">🎒 Schule <span class="crew-group-count">— 6–10 Jahre</span></div>
+                <div class="crew-grid">
+                    <div class="crew-card">
+                        <img src="char-schule-herr-mayer.png" alt="Herr Mayer" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Herr Mayer</div><div class="crew-role">Lehrer</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-schule-finn.png" alt="Finn" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Finn</div><div class="crew-role">Bester Freund</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-schule-lena.png" alt="Lena" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Lena</div><div class="crew-role">Klassenkameradin</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crew-group">
+                <div class="crew-group-title">⚽ Sport <span class="crew-group-count">— für alle Kinder</span></div>
+                <div class="crew-grid">
+                    <div class="crew-card">
+                        <img src="char-sport-herr-koch.png" alt="Herr Koch" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Herr Koch</div><div class="crew-role">Trainer</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-sport-timo.png" alt="Timo" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Timo</div><div class="crew-role">Teamkollege</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-sport-nora.png" alt="Nora" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Nora</div><div class="crew-role">Teamkollegin</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crew-group">
+                <div class="crew-group-title">💛 Freunde <span class="crew-group-count">— für alle Kinder</span></div>
+                <div class="crew-grid">
+                    <div class="crew-card">
+                        <img src="char-freunde-jonas.png" alt="Jonas" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Jonas</div><div class="crew-role">Nachbarsjunge</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-freunde-sofia.png" alt="Sofia" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Sofia</div><div class="crew-role">Freundin</div></div>
+                    </div>
+                    <div class="crew-card">
+                        <img src="char-freunde-oma-hilde.png" alt="Oma Hilde" class="crew-avatar" onerror="this.src='../lernolotl-icon.png'">
+                        <div><div class="crew-name">Oma Hilde</div><div class="crew-role">Nachbarin</div></div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- CTA -->
