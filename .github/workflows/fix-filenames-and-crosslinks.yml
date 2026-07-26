@@ -1,0 +1,268 @@
+name: Dateinamen bereinigen + Querverlinkung einfuegen
+
+on:
+  workflow_dispatch:
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Umlaut-Dateinamen fixen, Sitemap neu bauen, Querverlinkung einfuegen
+        run: |
+          python3 << 'PYSCRIPT_EOF'
+          #!/usr/bin/env python3
+          """
+          Einmal-Migration für lernolotl.de:
+          1) Benennt Dateien mit Umlauten/Leerzeichen im Namen in ASCII um und
+             korrigiert ALLE internen Links darauf (roh + prozent-kodiert).
+          2) Erzeugt sitemap.xml neu (saubere, korrekt kodierte URLs).
+          3) Fügt auf allen Geschichten- und Welt-Seiten eine
+             "Das koennte dich auch interessieren"-Box mit 4 Querverlinkungen ein.
+          Mehrfach ausführbar (idempotent) - kann gefahrlos erneut laufen.
+          """
+          import re, os, glob, html, subprocess
+          from urllib.parse import quote
+          from datetime import date
+
+          REPO = os.getcwd()
+
+          # ---------------------------------------------------------------------------
+          # SCHRITT 1: Umlaut-/Leerzeichen-Dateinamen bereinigen
+          # ---------------------------------------------------------------------------
+          RENAME_MAP = {
+              "diekleineschildkröte.html": "diekleineschildkroete.html",
+              "lunaundderflüsterndestern.html": "lunaundderfluesterndestern.html",
+              "johannas-wunderwelt episode1.html": "johannas-wunderwelt-episode1.html",
+              "johannas-wunderwelt episode2.html": "johannas-wunderwelt-episode2.html",
+              "johannas-wunderwelt episode3.html": "johannas-wunderwelt-episode3.html",
+              "johannas-wunderwelt episode4.html": "johannas-wunderwelt-episode4.html",
+              "johannas-wunderwelt episode5.html": "johannas-wunderwelt-episode5.html",
+              "johannas-wunderwelt episode6.html": "johannas-wunderwelt-episode6.html",
+              "johannas-wunderwelt episode7.html": "johannas-wunderwelt-episode7.html",
+              "lernolotl/kita-geschichte-4-planänderung.html": "lernolotl/kita-geschichte-4-planaenderung.html",
+          }
+
+          replacements = []
+          for old_path, new_path in RENAME_MAP.items():
+              old_base, new_base = os.path.basename(old_path), os.path.basename(new_path)
+              replacements.append((old_base, new_base))
+              replacements.append((quote(old_base, safe='.-_'), new_base))
+          replacements = list(dict.fromkeys(replacements))
+
+          renamed_count = 0
+          for root, dirs, files in os.walk(REPO):
+              dirs[:] = [d for d in dirs if d != ".git"]
+              for fn in files:
+                  if not fn.endswith((".html", ".xml")):
+                      continue
+                  fp = os.path.join(root, fn)
+                  with open(fp, encoding="utf-8", errors="ignore") as f:
+                      content = f.read()
+                  original = content
+                  for old, new in replacements:
+                      if old in content:
+                          content = content.replace(old, new)
+                  if content != original:
+                      with open(fp, "w", encoding="utf-8") as f:
+                          f.write(content)
+
+          for old_path, new_path in RENAME_MAP.items():
+              if os.path.exists(old_path):
+                  subprocess.run(["git", "mv", old_path, new_path], check=True, cwd=REPO)
+                  renamed_count += 1
+
+          print(f"[1/3] {renamed_count} Dateien umbenannt, Referenzen aktualisiert.")
+
+          # ---------------------------------------------------------------------------
+          # SCHRITT 2: sitemap.xml neu erzeugen
+          # ---------------------------------------------------------------------------
+          BASE_URL = "https://www.lernolotl.de"
+          EXCLUDE = ("googlebe", "datenschutz", "impressum", "cookie-richtlinie", "kontakt", "pinterest-caf74")
+
+          entries = []
+          for root, dirs, files in os.walk(REPO):
+              dirs[:] = [d for d in dirs if d not in (".git", "node_modules", ".github", "ratgeberbilder", "bilder")]
+              for fn in sorted(files):
+                  if not fn.endswith(".html"):
+                      continue
+                  rel = os.path.relpath(os.path.join(root, fn), REPO).replace(os.sep, "/")
+                  if any(ex in rel for ex in EXCLUDE):
+                      continue
+                  encoded = quote(rel, safe="/:.-_~")
+                  if rel == "index.html":
+                      url, priority = BASE_URL + "/", "1.0"
+                  elif rel.startswith("lernolotl/lernolotls-welt") or rel == "lernolotl/ueber-uns.html":
+                      url, priority = f"{BASE_URL}/{encoded}", "0.7"
+                  else:
+                      url, priority = f"{BASE_URL}/{encoded}", "0.8"
+                  entries.append((url, priority))
+
+          today = date.today().isoformat()
+          lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          for url, priority in entries:
+              lines += ["  <url>", f"    <loc>{url}</loc>", f"    <lastmod>{today}</lastmod>",
+                        "    <changefreq>weekly</changefreq>", f"    <priority>{priority}</priority>", "  </url>"]
+          lines.append("</urlset>")
+          with open(os.path.join(REPO, "sitemap.xml"), "w", encoding="utf-8") as f:
+              f.write("\n".join(lines) + "\n")
+          print(f"[2/3] sitemap.xml neu erzeugt mit {len(entries)} URLs.")
+
+          # ---------------------------------------------------------------------------
+          # SCHRITT 3: Querverlinkungs-Boxen einfügen (4 Links pro Seite)
+          # ---------------------------------------------------------------------------
+          def natsort(files):
+              return sorted(files, key=lambda f: [int(n) for n in re.findall(r'\d+', f)])
+
+          os.chdir(REPO)
+          categories = {
+              "lernolotl-freunde": {"hub": "lernolotl/lernolotls-welt-freunde.html", "hub_title": "Lernolotl bei Freunden",
+                  "stories": ["lernolotl/"+s for s in ['freunde-geschichte-1-besuch.html','freunde-geschichte-2-streit.html','freunde-geschichte-3-oma.html','freunde-geschichte-mobbing.html','freunde-geschichte-4-1-bester-freund.html','freunde-geschichte-4-2-spielregeln.html','freunde-geschichte-4-4-empathie.html','freunde-geschichte-4-5-einladung.html','freunde-geschichte-4-6-alleine.html','freunde-geschichte-4-7-anders.html','freunde-geschichte-4-8-geheimnis.html','freunde-geschichte-4-9-streit.html','freunde-geschichte-4-10-ende.html']]},
+              "lernolotl-kita": {"hub": "lernolotl/lernolotls-welt-kita.html", "hub_title": "Lernolotl in der Kita",
+                  "stories": ["lernolotl/"+s for s in ['kita-geschichte-1-morgenkreis.html','kita-geschichte-2-spielplatz.html','kita-geschichte-3-verabschiedung.html','kita-geschichte-4-planaenderung.html','kita-geschichte-5-teilen.html','kita-geschichte-6-hallo-sagen.html','kita-geschichte-7-essen.html','kita-geschichte-8-weinen.html','kita-geschichte-9-schlafen.html','kita-geschichte-10-abschied-kita.html']]},
+              "lernolotl-schule": {"hub": "lernolotl/lernolotls-welt-schule.html", "hub_title": "Lernolotl in der Schule",
+                  "stories": ["lernolotl/"+s for s in ['schule-geschichte-1-meldet-sich.html','schule-geschichte-2-pause.html','schule-geschichte-3-roter-stift.html','schule-geschichte-hausaufgaben.html','schule-geschichte-konzentration.html','schule-geschichte-pruefungsangst.html','schule-geschichte-laerm.html','schule-geschichte-streit.html','schule-geschichte-gruppenarbeit.html','schule-geschichte-klassenfahrt.html']]},
+              "lernolotl-sport": {"hub": "lernolotl/lernolotls-welt-sport.html", "hub_title": "Lernolotl beim Sport",
+                  "stories": ["lernolotl/"+s for s in ['sport-geschichte-1-schwimmen.html','sport-geschichte-2-verlieren.html','sport-geschichte-3-team.html','sport-geschichte-3-2-nicht-schnell.html','sport-geschichte-3-3-ungeschriebene-regeln.html','sport-geschichte-3-4-zu-viel-trubel.html','sport-geschichte-3-5-aufhoeren.html','sport-geschichte-3-6-gewonnen.html','sport-geschichte-3-9-letzter.html','sport-geschichte-3-10-fahrrad.html']]},
+              "lernolotl-zuhause": {"hub": "lernolotl/lernolotls-welt-zuhause.html", "hub_title": "Lernolotl Zuhause",
+                  "stories": ["lernolotl/"+s for s in ['zuhause-geschichte-1-routine.html','zuhause-geschichte-2-akku.html','zuhause-geschichte-3-zimmer.html','zuhause-geschichte-einschlafen.html','zuhause-geschichte-wut.html','zuhause-geschichte-aufraeumen.html','zuhause-geschichte-geschwister.html','zuhause-geschichte-bildschirmzeit.html','zuhause-geschichte-eltern-streiten.html','zuhause-geschichte-haustier.html','zuhause-geschichte-krank.html','zuhause-geschichte-kochen.html']]},
+              "lernolotl-ichbinich": {"hub": "lernolotl/lernolotls-welt-ichbinich.html", "hub_title": "Ich bin ich",
+                  "stories": ["lernolotl/"+s for s in ['ichbinich-geschichte-anders.html','ichbinich-geschichte-superkraefte.html','ichbinich-geschichte-angst.html','ichbinich-geschichte-traurigkeit.html','ichbinich-geschichte-identitaet.html','ichbinich-geschichte-neinsagen.html','ichbinich-geschichte-perfekt.html','ichbinich-geschichte-langeweile.html','ichbinich-geschichte-dankbarkeit.html','ichbinich-geschichte-zukunft.html']]},
+              "gefuehle": {"hub": "geschichten-ueber-gefuehle.html", "hub_title": "Geschichten ueber Gefuehle",
+                  "stories": ['angst1.html','angst2.html','angst3.html','wut1.html','wut2.html','wut3.html','traurigkeit1.html','traurigkeit2.html','traurigkeit3.html','eifersucht1.html','eifersucht2.html','eifersucht3.html','unsicherheit1.html','unsicherheit2.html','unsicherheit3.html','mut1.html','mut2.html','mut3.html','freude1.html','freude2.html','freude3.html','einsamkeit1.html','einsamkeit2.html','einsamkeit3.html','dankbarkeit1.html','dankbarkeit2.html','dankbarkeit3.html','geduld1.html','geduld2.html','geduld3.html','frustration1.html','frustration2.html','frustration3.html']},
+              "maerchen": {"hub": "maerchen.html", "hub_title": "Maerchen-Geschichten",
+                  "stories": ['tim-singenden-steine.html','mia-regenbogenfisch.html','ben-fliegende-koffer.html','sophie-zauberblume.html','max-gluehwuermchen.html','emma-wolkenzauberer.html','leon-zauberschloss.html','lilli-wolkenwald.html']},
+              "tiergeschichten": {"hub": "tiergeschichten.html", "hub_title": "Tiergeschichten",
+                  "stories": ['lilli-entdeckermaus.html','benny-kleiner-biber.html','fina-fuchsfreundin.html','lilo-igelmaedchen.html','momo-waschbaer.html','tilda-kleine-eule.html']},
+              "gutenacht": {"hub": "gute-nacht-geschichten.html", "hub_title": "Gute-Nacht-Geschichten",
+                  "stories": ['lunaundderfluesterndestern.html','bruno.html','derkleineigel.html','derkleinemondfuchs.html','wolkenkatze.html','derkleinedachs.html','derkleinebieber.html','diekleineschildkroete.html','derkleinewaschbaer.html','daskleinelichtimflur.html','derabendhinterdemfenster.html','dasleisezimmer.html','derleereflur.html','dieleerestarasse.html','dasleisetreppenhaus.html']},
+              "abenteuer-tom": {"hub": "abenteuer-tom.html", "hub_title": "Toms Abenteuer", "stories": natsort(glob.glob("ts1e*.html"))},
+              "abenteuer-willi": {"hub": "abenteuer-willi.html", "hub_title": "Willi, der Wurm",
+                  "stories": natsort(glob.glob("willis1e*.html")) + natsort(glob.glob("willis2e*.html"))},
+              "abenteuer-alex": {"hub": "alexgrossekleinewelt.html", "hub_title": "Alex' grosse kleine Welt", "stories": natsort(glob.glob("as1e*.html"))},
+              "abenteuer-lena": {"hub": "johanna-und-die-wunderwelt.html", "hub_title": "Lena und die Wunderwelt", "stories": natsort(glob.glob("johannas-wunderwelt-episode*.html"))},
+          }
+          CAT_ORDER = list(categories.keys())
+          N_CATS = len(CAT_ORDER)
+          MARK_START, MARK_END = "<!-- LERNOLOTL-RELATED-START -->", "<!-- LERNOLOTL-RELATED-END -->"
+
+          def get_title(fp):
+              try:
+                  with open(fp, encoding="utf-8", errors="ignore") as f:
+                      content = f.read()
+              except FileNotFoundError:
+                  return os.path.basename(fp)
+              m = re.search(r"<title>(.*?)</title>", content, re.S)
+              if not m:
+                  return os.path.basename(fp).replace(".html", "").replace("-", " ").title()
+              t = html.unescape(m.group(1)).strip()
+              for sep in [" — ", " | ", " - "]:
+                  if sep in t:
+                      t = t.split(sep)[0].strip(); break
+              return t
+
+          def get_description(fp):
+              try:
+                  with open(fp, encoding="utf-8", errors="ignore") as f:
+                      content = f.read()
+              except FileNotFoundError:
+                  return ""
+              m = re.search(r'<meta name="description" content="([^"]*)"', content)
+              if not m:
+                  return ""
+              d = html.unescape(m.group(1)).strip()
+              return d[:87].rsplit(" ", 1)[0] + "…" if len(d) > 90 else d
+
+          title_cache, desc_cache = {}, {}
+          for cat, d in categories.items():
+              for fp in [d["hub"]] + d["stories"]:
+                  if fp not in title_cache:
+                      title_cache[fp] = get_title(fp)
+                      desc_cache[fp] = get_description(fp)
+
+          def symmetric_neighbors(lst, idx, k):
+              n = len(lst)
+              if n <= 1: return []
+              k = min(k, n - 1)
+              before = k // 2
+              idxs = [(idx - s) % n for s in range(1, before + 1)] + [(idx + s) % n for s in range(1, k - before + 1)]
+              return [lst[i] for i in idxs]
+
+          def relhref(from_file, to_file):
+              return os.path.relpath(to_file, start=os.path.dirname(from_file) or ".").replace(os.sep, "/")
+
+          def build_box(items, box_title, icon="📖"):
+              style = """
+          <style>
+          .ll-related-box {max-width:900px;margin:40px auto;padding:30px 28px;background:#fff7ed;border-radius:20px;border:2px solid #fed7aa;box-shadow:0 8px 24px rgba(0,0,0,0.06);font-family:'Nunito','Segoe UI',Verdana,sans-serif;}
+          .ll-related-box h3{font-size:1.25em;color:#c2410c;margin:0 0 16px;font-weight:800;}
+          .ll-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+          .ll-related-card{display:block;background:#ffffff;border-radius:14px;padding:16px 18px;text-decoration:none;color:#431407;border:1px solid #fed7aa;transition:transform .2s,box-shadow .2s;}
+          .ll-related-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(234,88,12,0.15);}
+          .ll-related-label{font-size:.72em;font-weight:800;color:#ea580c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+          .ll-related-title{font-weight:700;line-height:1.35;font-size:.98em;}
+          .ll-related-desc{font-size:.82em;color:#78716c;margin-top:6px;line-height:1.4;}
+          </style>"""
+              cards = []
+              for it in items:
+                  desc_html = f'<div class="ll-related-desc">{it["desc"]}</div>' if it["desc"] else ""
+                  cards.append(f'''    <a href="{it["href"]}" class="ll-related-card">
+                <div class="ll-related-label">{it["label"]}</div>
+                <div class="ll-related-title">{it["title"]}</div>
+                {desc_html}
+              </a>''')
+              return f'''{MARK_START}{style}
+          <section class="ll-related-box">
+            <h3>{icon} {box_title}</h3>
+            <div class="ll-related-grid">
+          {chr(10).join(cards)}
+            </div>
+          </section>
+          {MARK_END}'''
+
+          def inject(fp, box_html):
+              with open(fp, encoding="utf-8") as f:
+                  content = f.read()
+              if MARK_START in content:
+                  content = re.sub(re.escape(MARK_START) + r".*?" + re.escape(MARK_END), box_html, content, flags=re.S)
+              else:
+                  m = re.search(r"<footer", content, re.I)
+                  idx = m.start() if m else (content.rfind("</body>") if "</body>" in content else len(content))
+                  content = content[:idx] + box_html + "\n\n" + content[idx:]
+              with open(fp, "w", encoding="utf-8") as f:
+                  f.write(content)
+
+          injected = 0
+          for ci, cat in enumerate(CAT_ORDER):
+              d = categories[cat]
+              next_cat = categories[CAT_ORDER[(ci + 1) % N_CATS]]
+              for i, story in enumerate(d["stories"]):
+                  items = [{"href": relhref(story, nb), "label": d["hub_title"], "title": title_cache[nb], "desc": desc_cache[nb]}
+                           for nb in symmetric_neighbors(d["stories"], i, 3)]
+                  items.append({"href": relhref(story, next_cat["hub"]), "label": "Entdecke auch",
+                                "title": next_cat["hub_title"], "desc": "Weitere Geschichten aus einer anderen Lernolotl-Welt"})
+                  inject(story, build_box(items, "Das koennte dich auch interessieren"))
+                  injected += 1
+              hub_items = []
+              for step in range(1, 5):
+                  t = categories[CAT_ORDER[(ci + step) % N_CATS]]
+                  hub_items.append({"href": relhref(d["hub"], t["hub"]), "label": "Weitere Welt",
+                                     "title": t["hub_title"], "desc": f'{len(t["stories"])} Geschichten'})
+              inject(d["hub"], build_box(hub_items, "Entdecke weitere Welten", icon="🗺️"))
+              injected += 1
+
+          print(f"[3/3] {injected} Seiten mit Querverlinkungs-Box versehen.")
+          PYSCRIPT_EOF
+
+      - name: Commit & Push
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          git diff --staged --quiet && echo "Keine Aenderungen." || (
+            git commit -m "SEO: Dateinamen bereinigt, Sitemap erneuert, Querverlinkung eingefuegt" &&
+            git push
+          )
