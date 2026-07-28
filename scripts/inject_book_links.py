@@ -91,6 +91,29 @@ def inject_book_box(book: dict) -> bool:
     return False
 
 
+def inject_story_pages(book: dict) -> int:
+    """Fügt die Buch-Box auf JEDER einzelnen Geschichtenseite der passenden Welt ein
+    (z.B. sport-geschichte-1-schwimmen.html, sport-geschichte-2-verlieren.html, ...)."""
+    prefix = book.get("story_prefix")
+    if not prefix:
+        return 0
+    lernolotl_dir = REPO_ROOT / "lernolotl"
+    pages = sorted(lernolotl_dir.glob(f"{prefix}*.html"))
+    if not pages:
+        print(f"  [WARN] Keine Geschichtenseiten für Prefix '{prefix}' gefunden")
+        return 0
+    changed = 0
+    block = render_book_box(book)
+    for page_path in pages:
+        html = page_path.read_text(encoding="utf-8")
+        new_html = upsert_between_markers(html, BOOK_START, BOOK_END, block, RELATED_START)
+        if new_html != html:
+            page_path.write_text(new_html, encoding="utf-8")
+            changed += 1
+    print(f"  [OK] {changed}/{len(pages)} Geschichtenseiten aktualisiert (Prefix: {prefix})")
+    return changed
+
+
 def render_bookshelf(books: list[dict]) -> str:
     items = []
     for b in books:
@@ -167,11 +190,15 @@ def main() -> int:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     books = config["books"]
 
-    print("== Buch-Boxen auf Themenseiten ==")
+    print("== Buch-Boxen auf Themenseiten (Welt-Hub je Kategorie) ==")
     any_change = False
     for b in books:
         if b.get("page"):
             any_change |= inject_book_box(b)
+
+    print("\n== Buch-Boxen auf einzelnen Geschichtenseiten ==")
+    for b in books:
+        any_change |= inject_story_pages(b) > 0
 
     print("\n== Lernolotls Welt (Cover-Tausch + Bücherregal) ==")
     any_change |= update_welt_page(books)

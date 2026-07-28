@@ -7,7 +7,8 @@
       "amazon": "https://www.amazon.de/dp/B0H6GN31S4",
       "title": "Lernolotl in der Kita",
       "blurb": "Alle 10 Kita-Geschichten gesammelt in einem Buch – zum Vorlesen, ganz ohne Bildschirm.",
-      "welt_avatar_old": "../lernolotl-waving.png"
+      "welt_avatar_old": "../lernolotl-waving.png",
+      "story_prefix": "kita-geschichte-"
     },
     {
       "key": "schule",
@@ -16,7 +17,8 @@
       "amazon": "https://www.amazon.de/dp/B0H7KYDDQD",
       "title": "Lernolotl in der Schule",
       "blurb": "Alle 10 Schul-Geschichten gesammelt in einem Buch – für Vorlesestunden zu Hause und im Unterricht.",
-      "welt_avatar_old": "../lernolotl-reading.png"
+      "welt_avatar_old": "../lernolotl-reading.png",
+      "story_prefix": "schule-geschichte-"
     },
     {
       "key": "sport",
@@ -25,7 +27,8 @@
       "amazon": "https://www.amazon.de/dp/B0HBX9Y735",
       "title": "Lernolotl beim Sport",
       "blurb": "Alle 10 Sport-Geschichten gesammelt in einem Buch – über Teamgeist, Fairness und eigene Regeln.",
-      "welt_avatar_old": "../lernolotl-brave.png"
+      "welt_avatar_old": "../lernolotl-brave.png",
+      "story_prefix": "sport-geschichte-"
     },
     {
       "key": "freunde",
@@ -34,7 +37,8 @@
       "amazon": "https://www.amazon.de/dp/B0H6VW1K92",
       "title": "Lernolotl bei Freunden",
       "blurb": "Alle 13 Freundschafts-Geschichten gesammelt in einem Buch – über Verbindung, Streit und echtes Zuhören.",
-      "welt_avatar_old": "../lernolotl-happy.png"
+      "welt_avatar_old": "../lernolotl-happy.png",
+      "story_prefix": "freunde-geschichte-"
     },
     {
       "key": "zuhause",
@@ -43,7 +47,8 @@
       "amazon": "https://www.amazon.de/dp/B0H98D19WY",
       "title": "Lernolotl zu Hause",
       "blurb": "Alle 12 Zuhause-Geschichten gesammelt in einem Buch – für den ruhigen Tagesausklang.",
-      "welt_avatar_old": "../lernolotl-whisper.png"
+      "welt_avatar_old": "../lernolotl-whisper.png",
+      "story_prefix": "zuhause-geschichte-"
     },
     {
       "key": "ichbinich",
@@ -52,7 +57,8 @@
       "amazon": "https://www.amazon.de/dp/B0H7BN2MDM",
       "title": "Lernolotl – Ich bin ich",
       "blurb": "Alle 10 Geschichten über Gefühle und Selbstwert gesammelt in einem Buch.",
-      "welt_avatar_old": "../lernolotl-thinking.png"
+      "welt_avatar_old": "../lernolotl-thinking.png",
+      "story_prefix": "ichbinich-geschichte-"
     },
     {
       "key": "schulstarterheft",
