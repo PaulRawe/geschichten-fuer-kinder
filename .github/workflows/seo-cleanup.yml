@@ -1,0 +1,70 @@
+name: SEO aufräumen (Platzhalter, Branding, WebP, Sitemap)
+
+# Manuell starten über "Run workflow" – zuerst mit dry_run = true (nur Bericht),
+# dann mit false. Läuft außerdem jeden Montag automatisch, damit neu hochgeladene
+# Seiten und Bilder ebenfalls aufgeräumt werden. Idempotent: ohne neue Probleme
+# wird nichts committet.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry Run (true = nur Bericht, false = wirklich schreiben)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+  schedule:
+    - cron: '0 4 * * 1'   # Montag 04:00 UTC
+
+permissions:
+  contents: write
+
+# Nicht gleichzeitig mit der Sitemap-Erzeugung pushen
+concurrency:
+  group: lernolotl-site-writes
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken (volle Historie für Git-Daten)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pillow installieren (für WebP)
+        run: pip install --quiet pillow
+
+      - name: Aufräumen
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python3 scripts/seo_cleanup.py --dry-run
+          else
+            python3 scripts/seo_cleanup.py
+          fi
+
+      - name: Sitemap neu erzeugen
+        if: github.event.inputs.dry_run != 'true'
+        run: python3 scripts/generate_sitemap.py
+
+      - name: Commit & Push
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          git commit -m "SEO: Platzhalter entfernt, Branding vereinheitlicht, Bilder als WebP"
+          git pull --rebase origin main
+          git push origin main

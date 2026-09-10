@@ -1,75 +1,40 @@
 name: Generate Sitemap
+
+# Ersetzt die alte Version. Neu: <lastmod> = Datum deiner letzten echten Änderung
+# an der Seite (Bot-Commits zählen nicht), noindex-Seiten werden ausgelassen.
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lernolotl-site-writes
+  cancel-in-progress: false
+
 jobs:
   sitemap:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Repository auschecken (volle Historie für Git-Daten)
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Generate sitemap.xml
+      - name: sitemap.xml erzeugen
+        run: python3 scripts/generate_sitemap.py
+
+      - name: Commit & Push
         run: |
-          BASE_URL="https://www.lernolotl.de"
-          OUTPUT="sitemap.xml"
-
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > $OUTPUT
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $OUTPUT
-
-          # Seiten die NICHT indexiert werden sollen
-          EXCLUDE="googlebe|datenschutz|impressum|cookie-richtlinie|kontakt|pinterest-caf74|ratgeber\.js"
-
-          find . -name "*.html" \
-            ! -path "./.github/*" \
-            ! -path "./node_modules/*" \
-            ! -path "./ratgeberbilder/*" \
-            ! -path "./bilder/*" \
-            | grep -vE "$EXCLUDE" \
-            | sort \
-            | while IFS= read -r file; do
-              RELATIVE="${file#./}"
-              ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='/:.-_~'))" "$RELATIVE")
-
-              if [[ "$RELATIVE" == "index.html" ]]; then
-                URL="${BASE_URL}/"
-                PRIORITY="1.0"
-              elif [[ "$RELATIVE" == lernolotl/*geschichte*.html ]]; then
-                URL="${BASE_URL}/${ENCODED}"
-                PRIORITY="0.8"
-              elif [[ "$RELATIVE" == lernolotl/lernolotls-welt*.html || "$RELATIVE" == lernolotl/ueber-uns.html ]]; then
-                URL="${BASE_URL}/${ENCODED}"
-                PRIORITY="0.7"
-              elif [[ "$RELATIVE" == *geschichte*.html || "$RELATIVE" == *maerchen*.html || "$RELATIVE" == *tiergeschichten*.html || "$RELATIVE" == *abenteuer*.html || "$RELATIVE" == *gutenacht*.html ]]; then
-                URL="${BASE_URL}/${ENCODED}"
-                PRIORITY="0.8"
-              else
-                URL="${BASE_URL}/${ENCODED}"
-                PRIORITY="0.7"
-              fi
-
-              TODAY=$(date +%Y-%m-%d)
-
-              echo "  <url>" >> $OUTPUT
-              echo "    <loc>${URL}</loc>" >> $OUTPUT
-              echo "    <lastmod>${TODAY}</lastmod>" >> $OUTPUT
-              echo "    <changefreq>weekly</changefreq>" >> $OUTPUT
-              echo "    <priority>${PRIORITY}</priority>" >> $OUTPUT
-              echo "  </url>" >> $OUTPUT
-            done
-
-          echo '</urlset>' >> $OUTPUT
-          echo "✅ Sitemap generiert!"
-          grep -c "<url>" $OUTPUT | xargs echo "Anzahl URLs:"
-
-      - name: Commit & Push sitemap
-        run: |
-          git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
           git add sitemap.xml
-          git commit -m "SEO: sitemap.xml automatisch generiert" || echo "Keine Änderungen."
+          if git diff --staged --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          git commit -m "SEO: sitemap.xml automatisch generiert"
+          git pull --rebase origin main
           git push origin main
