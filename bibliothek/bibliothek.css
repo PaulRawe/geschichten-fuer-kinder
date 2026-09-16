@@ -1,0 +1,99 @@
+/* Lernolotl Bibliothek */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:linear-gradient(135deg,#7b9eb5 0%,#a8c5d9 100%);
+  min-height:100vh;padding:20px;color:#333;line-height:1.6;}
+.container{max-width:1100px;margin:0 auto;}
+a{color:#5a7d95;}
+.skip-link{position:absolute;left:-9999px;}
+.skip-link:focus{position:static;display:inline-block;background:#fff;padding:10px 16px;border-radius:10px;margin-bottom:10px;}
+:focus-visible{outline:3px solid #2A9DAB;outline-offset:2px;}
+
+header.bib-head{background:#fff;border-radius:25px;padding:38px 30px 30px;text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);margin-bottom:26px;}
+header.bib-head h1{color:#5a7d95;font-size:2.3em;line-height:1.2;margin-bottom:10px;}
+header.bib-head .sub{color:#666;font-size:1.05em;max-width:60ch;margin:0 auto 6px;}
+.krumen{font-size:.86em;color:#eaf2f7;margin-bottom:14px;}
+.krumen a{color:#fff;text-decoration:underline;}
+
+.card{background:#fff;border-radius:25px;padding:30px;box-shadow:0 15px 40px rgba(0,0,0,0.12);margin-bottom:26px;}
+.card h2{color:#5a7d95;font-size:1.5em;margin-bottom:12px;}
+.card h3{color:#5a7d95;font-size:1.15em;margin:22px 0 10px;}
+.card p{margin-bottom:12px;}
+.intro{font-size:1.02em;color:#555;max-width:68ch;}
+
+.suche-wrap{position:relative;}
+#suche{width:100%;padding:16px 18px;font-size:1.05em;font-family:inherit;
+  border:2px solid #d8e3ea;border-radius:16px;background:#f8fbfc;color:#333;}
+#suche:focus{border-color:#7b9eb5;outline:none;background:#fff;}
+.filter-zeile{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.fchip{border:2px solid #d8e3ea;background:#f8fbfc;color:#5a7d95;padding:8px 15px;
+  border-radius:999px;font-size:.9em;font-family:inherit;cursor:pointer;font-weight:600;}
+.fchip[aria-pressed="true"]{background:#5a7d95;border-color:#5a7d95;color:#fff;}
+#trefferzahl{color:#777;font-size:.9em;margin-top:12px;}
+
+.thema{border-bottom:2px solid #eef3f6;}
+.thema:last-child{border-bottom:none;}
+.thema-kopf{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:18px 4px;background:none;border:none;font-family:inherit;font-size:1.08em;
+  font-weight:700;color:#3f5a6d;cursor:pointer;text-align:left;}
+.thema-kopf .zahl{font-size:.75em;font-weight:600;color:#7b9eb5;background:#f0f5f8;
+  border-radius:999px;padding:3px 12px;white-space:nowrap;}
+.thema-kopf .pfeil{transition:transform .2s ease;color:#7b9eb5;}
+.thema[open] .pfeil{transform:rotate(90deg);}
+.thema-inhalt{padding:0 0 18px;}
+
+.produkte{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;}
+.produkt{background:#f8fbfc;border:1px solid #e4edf2;border-radius:16px;padding:16px 17px;
+  display:flex;flex-direction:column;gap:7px;}
+.produkt .kopf{display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+.tag{font-size:.7em;font-weight:700;padding:3px 10px;border-radius:999px;}
+.tag.buch{background:#e6f0e9;color:#3E6B57;}
+.tag.pdf{background:#fbf0dc;color:#8a6016;}
+.tag.frei{background:#e8f4f7;color:#2A9DAB;}
+.tag.meta{background:#fff;border:1px solid #e0e9ee;color:#7b8b95;font-weight:600;}
+.produkt h4{font-size:1em;line-height:1.35;color:#2f4657;}
+.produkt .kurz{font-size:.88em;color:#667;flex:1;}
+.produkt .kauf{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.btn{display:inline-block;padding:9px 15px;border-radius:11px;text-decoration:none;
+  font-weight:700;font-size:.86em;}
+.btn.amazon{background:#5a7d95;color:#fff;}
+.btn.etsy{background:#2A9DAB;color:#fff;}
+.btn.lesen{background:#fff;border:2px solid #7b9eb5;color:#5a7d95;}
+.btn:hover{filter:brightness(1.07);}
+
+.themen-gitter{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;}
+.themen-kachel{display:block;background:#f8fbfc;border:1px solid #e4edf2;border-radius:16px;
+  padding:18px;text-decoration:none;color:inherit;}
+.themen-kachel:hover{border-color:#7b9eb5;background:#fff;}
+.themen-kachel .name{font-weight:700;color:#3f5a6d;font-size:1.05em;margin-bottom:5px;}
+.themen-kachel .anz{font-size:.83em;color:#8899a5;}
+
+.werbehinweis{font-size:.82em;color:#7b8b95;background:#f4f8fa;border-left:4px solid #b9d0dd;
+  border-radius:0 10px 10px 0;padding:11px 15px;margin-bottom:18px;line-height:1.55;}
+.verwandt{display:flex;gap:9px;flex-wrap:wrap;}
+.verwandt a{background:#f0f5f8;border-radius:999px;padding:7px 15px;text-decoration:none;
+  font-size:.9em;font-weight:600;color:#5a7d95;}
+.verwandt a:hover{background:#e2ecf2;}
+.hinweisbox{background:#f4f8fa;border-left:4px solid #7b9eb5;border-radius:0 12px 12px 0;
+  padding:15px 18px;margin:16px 0;font-size:.93em;color:#556;}
+#leer{display:none;text-align:center;padding:40px 10px;color:#778;}
+
+footer{background:#fff;border-radius:25px;padding:30px;text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);margin-top:26px;}
+.footer-brand{color:#5a7d95;font-size:1.3em;font-weight:700;}
+.footer-tagline{color:#888;font-size:.92em;margin-bottom:16px;}
+.footer-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;}
+.footer-links a{color:#5a7d95;text-decoration:none;font-size:.92em;font-weight:600;}
+.footer-links a:hover{text-decoration:underline;}
+.footer-info{color:#999;font-size:.85em;}
+
+@media(max-width:640px){
+  body{padding:12px;}
+  header.bib-head{padding:26px 18px 22px;border-radius:20px;}
+  header.bib-head h1{font-size:1.65em;}
+  .card{padding:20px 17px;border-radius:20px;}
+  .produkte{grid-template-columns:1fr;}
+  .thema-kopf{font-size:1em;padding:16px 2px;}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;}}
