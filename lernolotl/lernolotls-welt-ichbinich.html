@@ -690,5 +690,54 @@ transition:transform .2s;}
     <script src="../cookies.js"></script>
 
 <script src="ratgeber.js"></script>
+<!-- bibliothek-link -->
+<style>
+.bib-sticky{position:fixed;right:18px;bottom:18px;z-index:9000;display:inline-flex;
+  align-items:center;gap:9px;background:#5a7d95;color:#fff;text-decoration:none;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-weight:700;font-size:.95rem;
+  padding:13px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);
+  transition:transform .15s ease,background .15s ease;}
+.bib-sticky:hover,.bib-sticky:focus{background:#4a6d85;transform:translateY(-2px);color:#fff;}
+.bib-sticky:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+.bib-sticky .bib-ico{font-size:1.1rem;line-height:1;}
+@media (max-width:640px){
+  .bib-sticky{right:12px;bottom:12px;padding:11px 16px;font-size:.88rem;}
+}
+@media print{.bib-sticky{display:none;}}
+@media (prefers-reduced-motion:reduce){.bib-sticky{transition:none;}}
+</style>
+<a class="bib-sticky" href="/bibliothek/" aria-label="Zur Lernolotl-Bibliothek">
+  <span class="bib-ico" aria-hidden="true">&#128218;</span>
+  <span>Zur Bibliothek</span>
+</a>
+<script>
+/* Haelt den Button frei von anderen fest positionierten Leisten
+   (Bundle-Leiste, Cookie-Banner), damit nichts ueberlappt. */
+(function(){
+  function hoehe(sel){
+    var e=document.querySelector(sel);
+    if(!e) return 0;
+    var s=getComputedStyle(e);
+    if(s.display==='none'||s.visibility==='hidden'||s.opacity==='0') return 0;
+    var r=e.getBoundingClientRect();
+    if(r.height===0) return 0;
+    if(r.bottom < window.innerHeight - 4) return 0;
+    return r.height;
+  }
+  function anpassen(){
+    var b=document.querySelector('.bib-sticky');
+    if(!b) return;
+    var h=Math.max(hoehe('.sticky-bundle-bar'), hoehe('.cookie-banner.show'));
+    if(h) b.style.bottom=(h+14)+'px';
+    if(!h) b.style.removeProperty('bottom');
+  }
+  window.addEventListener('load',anpassen);
+  window.addEventListener('resize',anpassen);
+  window.addEventListener('scroll',anpassen,{passive:true});
+  document.addEventListener('click',function(){ setTimeout(anpassen,80); });
+  setTimeout(anpassen,1500);
+})();
+</script>
+<!-- /bibliothek-link -->
 </body>
 </html>
