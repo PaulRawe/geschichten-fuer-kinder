@@ -38,13 +38,15 @@ function declineCookies() {
 }
 
 function applyConsent(level) {
-    // GoatCounter lädt immer (anonym, technisch notwendig)
+    // GoatCounter: cookiefreie, anonyme Reichweitenmessung.
+    // Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+    // Es werden keine Cookies gesetzt und keine Endgeräte-Informationen gespeichert,
+    // daher greift § 25 Abs. 1 TDDDG hier nicht.
     loadGoatCounter();
 
-    // AdSense NUR bei ausdrücklicher Zustimmung
-    if (level === 'all') {
-        loadAdSense();
-    }
+    // Derzeit sind keine einwilligungspflichtigen Dienste eingebunden.
+    // Wird später ein Werbenetzwerk ergänzt, gehört der Aufruf hier hinein
+    // UND muss vorher in Datenschutzerklärung und Cookie-Richtlinie beschrieben werden.
 }
 
 /* =====================
@@ -59,18 +61,6 @@ function loadGoatCounter() {
     document.head.appendChild(s);
     window.goatcounterLoaded = true;
     console.log('✓ GoatCounter geladen (anonym)');
-}
-
-function loadAdSense() {
-    if (window.adsbygoogleLoaded) return;
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    s.setAttribute("data-ad-client", "ca-pub-XXXXXXXXXXXXXXX"); // ← IHRE AdSense ID HIER EINTRAGEN!
-    s.setAttribute("crossorigin", "anonymous");
-    document.head.appendChild(s);
-    window.adsbygoogleLoaded = true;
-    console.log('✓ Google AdSense geladen (mit Einwilligung)');
 }
 
 /* =====================
@@ -115,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         text-transform: uppercase;
                         letter-spacing: 1px;
                         margin-bottom: 5px;
-                    ">🃏 Tipp für noch mehr Gespräche</div>
+                    ">Anzeige · Tipp für noch mehr Gespräche</div>
                     <div style="
                         color: #78350f;
                         font-size: 0.95em;
@@ -125,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <a href="https://www.etsy.com/de/listing/4466484225/vorlesezeit-karten-40-gesprachskarten"
                    target="_blank"
-                   rel="noopener"
+                   rel="noopener sponsored"
                    style="
                     display: inline-block;
                     background: linear-gradient(135deg, #2A9DAB 0%, #1a7a86 100%);
@@ -142,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "
                 onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(42,157,171,0.45)'"
                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(42,157,171,0.35)'">
-                    3,99 € · Jetzt holen →
+                    Auf Etsy ansehen
                 </a>
             </div>
         </div>`;
@@ -202,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     text-transform: uppercase;
                     letter-spacing: 1.5px;
                     margin-bottom: 14px;
-                ">🌟 Komplettpaket · Alle 11 Gefühle</div>
+                ">Anzeige · Komplettpaket · Alle 11 Gefühle</div>
                 <div style="
                     color: white;
                     font-size: 1.45em;
@@ -222,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; position: relative; z-index: 1; margin-bottom: 18px;">
 
                 <a href="https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11"
-                   target="_blank" rel="noopener" style="
+                   target="_blank" rel="noopener sponsored" style="
                     background: rgba(255,255,255,0.06);
                     border: 1px solid rgba(255,255,255,0.1);
                     border-radius: 18px;
@@ -246,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </a>
 
                 <a href="https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12"
-                   target="_blank" rel="noopener" style="
+                   target="_blank" rel="noopener sponsored" style="
                     background: rgba(255,255,255,0.06);
                     border: 1px solid rgba(255,255,255,0.1);
                     border-radius: 18px;
@@ -270,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </a>
 
                 <a href="https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34"
-                   target="_blank" rel="noopener" style="
+                   target="_blank" rel="noopener sponsored" style="
                     background: rgba(255,255,255,0.06);
                     border: 1px solid rgba(255,255,255,0.1);
                     border-radius: 18px;
