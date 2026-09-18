@@ -1,0 +1,95 @@
+name: Geschichten-Bilder in die Bibliothek
+
+# Zu jeder Geschichte liegt im Repo schon ein Bild. Dieser Lauf legt eine
+# kleine Vorschau davon an (hoechstens 70 KB) und setzt sie in die Bibliothek
+# ein - in die Themenseiten und in die Suche.
+#
+# Es wird nichts heruntergeladen, alle Bilder liegen bereits im Repo.
+# Der Lauf dauert deshalb nur wenige Sekunden.
+#
+# Starten: Reiter "Actions" -> diesen Eintrag waehlen -> "Run workflow".
+# Das ist auch der Weg, wenn du spaeter neue Geschichten ergaenzt hast.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/geschichten_bilder.py'
+      - '.github/workflows/geschichten-bilder.yml'
+  workflow_dispatch:
+    inputs:
+      neu_bauen:
+        description: 'Alle Vorschauen neu erzeugen (z. B. nach einer Stil-Aenderung)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lernolotl-site-writes
+  cancel-in-progress: false
+
+jobs:
+  vorschauen:
+    runs-on: ubuntu-latest
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'Geschichten-Bilder automatisch')"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Vollstaendige Historie - ohne sie schlaegt "git pull --rebase" fehl,
+          # sobald zwischendurch ein anderer Lauf gepusht hat.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Benoetigte Pakete
+        run: pip install --quiet Pillow
+
+      - name: Vorschauen erzeugen und einsetzen
+        run: |
+          python3 scripts/geschichten_bilder.py ${{ inputs.neu_bauen && '--neu-bauen' || '' }}
+
+      - name: Ergebnis zusammenfassen
+        run: |
+          {
+            echo "### Bilder der Geschichten"
+            echo ""
+            anzahl=$(ls bilder/thumbs/*.jpg 2>/dev/null | wc -l)
+            echo "- Vorschauen gesamt: **${anzahl}**"
+            if [ "$anzahl" -gt 0 ]; then
+              groesse=$(du -sh bilder/thumbs | cut -f1)
+              groesstes=$(ls -S bilder/thumbs/*.jpg | head -1 | xargs du -k | cut -f1)
+              echo "- Speicherplatz: **${groesse}**"
+              echo "- Groesstes Bild: **${groesstes} KB**"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Aenderungen speichern
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "Keine Aenderungen - nichts zu speichern."
+            exit 0
+          fi
+
+          git commit -m "Geschichten-Bilder automatisch in die Bibliothek uebernommen"
+
+          for versuch in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Gespeichert (Versuch ${versuch})."
+              exit 0
+            fi
+            echo "Push abgelehnt - hole die Zwischenstaende und versuche es erneut."
+            git pull --rebase origin main || exit 1
+            sleep 3
+          done
+
+          echo "Push nach fuenf Versuchen nicht moeglich."
+          exit 1
