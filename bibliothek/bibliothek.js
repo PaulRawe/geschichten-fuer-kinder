@@ -13,7 +13,7 @@
     });
     DATA.produkte.forEach(function(p){
       out.push({art:p.typ,titel:p.titel,kurz:p.kurz,themen:p.themen,
-        amazon:p.amazon,etsy:p.etsy,alter:p.alter,reihe:p.reihe,band:p.band});
+        amazon:p.amazon,etsy:p.etsy,alter:p.alter,reihe:p.reihe,band:p.band,seite:p.seite});
     });
     return out;
   }
@@ -33,6 +33,7 @@
     if(e.reihe) t+='<span class="tag meta">'+esc(e.reihe)+(e.band?' \u00b7 Band '+esc(e.band):'')+'</span>';
     var k='';
     if(e.link)   k+='<a class="btn lesen" href="'+esc(e.link)+'">Geschichte lesen</a>';
+    if(e.seite)  k+='<a class="btn buchseite" href="'+esc(e.seite)+'">Mehr zum Buch</a>';
     if(e.amazon) k+='<a class="btn amazon" href="'+esc(e.amazon)+'" target="_blank" rel="noopener sponsored">Bei Amazon ansehen</a>';
     if(e.etsy)   k+='<a class="btn etsy" href="'+esc(e.etsy)+'" target="_blank" rel="noopener sponsored">Auf Etsy ansehen</a>';
     return '<article class="produkt"><div class="kopf">'+t+'</div><h4>'+esc(e.titel)+'</h4>'+
