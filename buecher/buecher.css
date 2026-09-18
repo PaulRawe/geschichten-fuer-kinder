@@ -1,0 +1,43 @@
+/* Lernolotl Buchseiten – ergänzt bibliothek.css */
+.buch-grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:28px;align-items:start;}
+.buch-cover img,.buch-karte img{width:100%;height:auto;border-radius:18px;box-shadow:0 10px 26px rgba(0,0,0,.16);}
+.buch-text .hook{font-size:1.18em;color:#3f5a6d;font-weight:600;line-height:1.45;margin-bottom:14px;}
+.buch-text .unter{font-size:.93em;color:#667;margin:14px 0 16px;}
+.kauf{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+.werbehinweis{font-size:.78em;color:#7a8a94;margin-top:10px;max-width:70ch;}
+.vorteile{list-style:none;padding:0;margin:8px 0 0;}
+.vorteile li{position:relative;padding-left:26px;margin-bottom:10px;color:#4a5a66;}
+.vorteile li::before{content:"";position:absolute;left:6px;top:.62em;width:9px;height:9px;
+  border-radius:50%;background:#7b9eb5;}
+.vorteile li strong{color:#2f4657;}
+.leseprobe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.leseprobe figure{margin:0;}
+.leseprobe img{width:100%;height:auto;border-radius:14px;border:1px solid #e4edf2;}
+.tafel-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:24px;align-items:center;}
+.tafel-bild img{width:100%;height:auto;border-radius:14px;border:1px solid #e4edf2;}
+.eckdaten{display:grid;grid-template-columns:150px 1fr;gap:8px 18px;margin-bottom:18px;}
+.eckdaten dt{font-weight:700;color:#5a7d95;}
+.eckdaten dd{margin:0;color:#4a5a66;}
+.reihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.reihe-karte{display:flex;flex-direction:column;gap:7px;text-decoration:none;background:#f8fbfc;
+  border:1px solid #e4edf2;border-radius:16px;padding:12px;}
+.reihe-karte img{width:100%;height:auto;border-radius:11px;}
+.reihe-karte .rt{font-weight:700;color:#2f4657;font-size:.95em;line-height:1.3;}
+.reihe-karte .rb{font-size:.8em;color:#7b9eb5;}
+.reihe-karte:hover{background:#eef5f9;}
+.buchliste{display:flex;flex-direction:column;gap:22px;}
+.buchkarte{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:20px;align-items:start;
+  background:#f8fbfc;border:1px solid #e4edf2;border-radius:18px;padding:16px;}
+.buchkarte img{width:100%;height:auto;border-radius:13px;}
+.buchkarte h3{font-size:1.15em;color:#2f4657;margin-bottom:2px;}
+.buchkarte h3 a{color:#2f4657;text-decoration:none;}
+.buchkarte h3 a:hover{text-decoration:underline;}
+.buchkarte .band{font-size:.82em;color:#7b9eb5;margin-bottom:8px;}
+.buchkarte .kurz{font-size:.92em;color:#667;margin-bottom:12px;}
+@media(max-width:860px){
+  .buch-grid,.tafel-grid,.buchkarte{grid-template-columns:1fr;}
+  .buch-cover{max-width:280px;margin:0 auto;}
+  .reihe{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .leseprobe{grid-template-columns:1fr;}
+  .eckdaten{grid-template-columns:120px 1fr;}
+}
