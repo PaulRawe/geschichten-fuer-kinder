@@ -61,6 +61,14 @@ jobs:
               "Wetter-Tage — Wir werden zu kleinen Meteorolog:innen": "/buecher/die-kleinen-entdecker/",
               "Jahreszeiten-Tage — Wir erleben den Jahreskreis": "/buecher/die-kleinen-entdecker/",
               "Nachthimmel-Tage — Wir werden zu kleinen Nachtforscher:innen": "/buecher/die-kleinen-entdecker/",
+              # --- Reihe: Lernolotl-Geschichten ---
+              "Ist mein Kind bereit für die Schule? – Das große Lernolotl Schulstarter-Heft": "/buecher/lernolotl-geschichten/",
+              "Lernolotl Freunde": "/buecher/lernolotl-geschichten/",
+              "Lernolotl Ich bin ich": "/buecher/lernolotl-geschichten/",
+              "Lernolotl Sport": "/buecher/lernolotl-geschichten/",
+              "Lernolotl Zuhause": "/buecher/lernolotl-geschichten/",
+              "Lernolotl in der Kita": "/buecher/lernolotl-geschichten/",
+              "Lernolotl in der Schule": "/buecher/lernolotl-geschichten/",
           }
           BUTTON_TEXT = "Mehr zum Buch"
           # ============================================================
