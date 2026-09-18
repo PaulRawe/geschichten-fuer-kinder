@@ -42,16 +42,6 @@
   .eckdaten{grid-template-columns:120px 1fr;}
 }
 
-/* --- Reihenseite Lernolotl-Geschichten --- */
-.baendeliste{display:flex;flex-direction:column;gap:18px;}
-.bandkarte{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:18px;align-items:start;
-  background:#f8fbfc;border:1px solid #e4edf2;border-radius:18px;padding:15px;}
-.bandkarte img{width:100%;height:auto;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.12);}
-.bandkarte h3{font-size:1.06em;color:#2f4657;margin-bottom:3px;}
-.bandkarte .band{font-size:.82em;color:#7b9eb5;margin-bottom:7px;}
-.bandkarte .kurz{font-size:.9em;color:#667;margin-bottom:11px;}
-@media(max-width:860px){ .bandkarte{grid-template-columns:1fr;} .bandkarte img{max-width:200px;} }
-
 /* --- Reihenseite Die kleinen Entdecker --- */
 .aufbau{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:10px 0 18px;}
 .aufbau-karte{background:#f8fbfc;border:1px solid #e4edf2;border-radius:14px;padding:13px 15px;}
@@ -83,3 +73,13 @@ h3.gruppe{margin:22px 0 10px;color:#5a7d95;font-size:1.02em;}
 @media(max-width:860px){
   .aufbau,.kostproben,.baende{grid-template-columns:1fr;}
 }
+
+/* --- Reihenseite Lernolotl-Geschichten --- */
+.baendeliste{display:flex;flex-direction:column;gap:18px;}
+.bandkarte{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:18px;align-items:start;
+  background:#f8fbfc;border:1px solid #e4edf2;border-radius:18px;padding:15px;}
+.bandkarte img{width:100%;height:auto;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+.bandkarte h3{font-size:1.06em;color:#2f4657;margin-bottom:3px;}
+.bandkarte .band{font-size:.82em;color:#7b9eb5;margin-bottom:7px;}
+.bandkarte .kurz{font-size:.9em;color:#667;margin-bottom:11px;}
+@media(max-width:860px){ .bandkarte{grid-template-columns:1fr;} .bandkarte img{max-width:200px;} }
