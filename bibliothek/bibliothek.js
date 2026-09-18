@@ -9,7 +9,7 @@
   function eintraege(){
     var out=[];
     DATA.geschichten.forEach(function(s){
-      out.push({art:'frei',titel:s.titel,kurz:s.kurz,themen:s.themen,link:s.pfad});
+      out.push({art:'frei',titel:s.titel,kurz:s.kurz,themen:s.themen,link:s.pfad,bild:s.bild});
     });
     DATA.produkte.forEach(function(p){
       out.push({art:p.typ,titel:p.titel,kurz:p.kurz,themen:p.themen,
