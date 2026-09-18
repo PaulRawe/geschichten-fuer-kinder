@@ -41,3 +41,35 @@
   .leseprobe{grid-template-columns:1fr;}
   .eckdaten{grid-template-columns:120px 1fr;}
 }
+
+/* --- Reihenseite Die kleinen Entdecker --- */
+.aufbau{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:10px 0 18px;}
+.aufbau-karte{background:#f8fbfc;border:1px solid #e4edf2;border-radius:14px;padding:13px 15px;}
+.aufbau-karte h3{font-size:.92em;color:#5a7d95;margin-bottom:5px;}
+.aufbau-karte p{font-size:.88em;color:#4a5a66;margin:0;}
+.aufbau-bild img,.tag-bild img{width:100%;height:auto;border-radius:14px;border:1px solid #e4edf2;}
+.aufbau-bild,.tag-bild{margin:16px 0;}
+.aufbau-bild figcaption{font-size:.82em;color:#7b9eb5;margin-top:7px;}
+.beispieltag .quelle{font-size:.82em;color:#7b9eb5;margin-bottom:10px;}
+.tag-kopf{background:#f8fbfc;border:1px solid #e4edf2;border-radius:14px;padding:14px 16px;margin-bottom:6px;}
+.tag-kopf .tag-nr{font-size:.8em;color:#7b9eb5;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+.tag-kopf h3{margin:4px 0 8px;color:#2f4657;}
+.badges{margin:0;display:flex;gap:8px;flex-wrap:wrap;}
+.badge{background:#eef5f9;color:#5a7d95;border-radius:999px;padding:3px 11px;font-size:.8em;font-weight:600;}
+.beispieltag h4{margin:20px 0 4px;color:#5a7d95;font-size:1em;}
+.klein{font-size:.88em;color:#667;}
+.kostproben{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.kost{background:#f8fbfc;border:1px solid #e4edf2;border-radius:14px;padding:13px 15px;}
+.kost .quelle{font-size:.78em;color:#7b9eb5;margin:0 0 4px;}
+.kost h3{font-size:.98em;color:#2f4657;margin:0 0 6px;}
+.kost p{font-size:.88em;color:#4a5a66;margin:0;}
+h3.gruppe{margin:22px 0 10px;color:#5a7d95;font-size:1.02em;}
+.baende{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.band{background:#f8fbfc;border:1px solid #e4edf2;border-radius:14px;padding:13px 15px;display:flex;flex-direction:column;}
+.band h4{font-size:.96em;color:#2f4657;margin:8px 0 5px;line-height:1.35;}
+.band .kurz{font-size:.85em;color:#667;flex:1;margin-bottom:10px;}
+.faq dt{font-weight:700;color:#2f4657;margin-top:14px;}
+.faq dd{margin:4px 0 0;color:#4a5a66;font-size:.94em;}
+@media(max-width:860px){
+  .aufbau,.kostproben,.baende{grid-template-columns:1fr;}
+}
