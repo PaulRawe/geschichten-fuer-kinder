@@ -1,0 +1,155 @@
+name: Buchseiten verlinken
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verlinken:
+    runs-on: ubuntu-latest
+    # Verhindert Endlosschleife: der eigene Commit löst den Workflow nicht erneut aus
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'Buchseiten-Verlinkung automatisch')"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Buchseiten überall verlinken
+        run: |
+          python3 << 'PYEOF'
+          import os, re, json
+
+          # ============================================================
+          # HIER neue Buchseiten eintragen - sonst nichts ändern.
+          # Links: exakter Produkttitel aus produkte.json
+          # Rechts: die zugehörige Buchseite
+          # Für Reihenseiten (z. B. Die kleinen Entdecker) einfach
+          # jeden Bandtitel auf dieselbe Seite zeigen lassen.
+          # ============================================================
+          SEITEN = {
+              "Der Familienakku":            "/buecher/der-familienakku/",
+              "Guck mich an!":               "/buecher/guck-mich-an/",
+              "Der Sorgenrucksack":          "/buecher/der-sorgenrucksack/",
+              "Der Kümmerer-Funke":          "/buecher/der-kuemmerer-funke/",
+              "Der Lernolotl ist besonders": "/buecher/der-lernolotl-ist-besonders/",
+          }
+          BUTTON_TEXT = "Mehr zum Buch"
+          # ============================================================
+
+          MARK_A = '<!-- buchseite -->'
+          MARK_E = '<!-- /buchseite -->'
+          SKIP_DIRS = ('./.github', './node_modules', './buecher')
+
+          def esc(s):
+              return (s.replace('&', '&amp;').replace('<', '&lt;')
+                       .replace('>', '&gt;').replace('"', '&quot;'))
+
+          # ---------- 1. produkte.json: Feld "seite" setzen ----------
+          pj = 'bibliothek/produkte.json'
+          json_geaendert = 0
+          if os.path.exists(pj):
+              daten = json.load(open(pj, encoding='utf-8'))
+              for p in daten.get('produkte', []):
+                  ziel = SEITEN.get(p.get('titel', ''))
+                  if ziel and p.get('seite') != ziel:
+                      p['seite'] = ziel
+                      json_geaendert += 1
+              if json_geaendert:
+                  with open(pj, 'w', encoding='utf-8') as f:
+                      json.dump(daten, f, ensure_ascii=False, indent=1)
+                      f.write('\n')
+          print(f'produkte.json: {json_geaendert} Produkte verknüpft')
+
+          # ---------- 2. Statische Produktkarten in HTML ----------
+          # Karten auf den Themenseiten sind fest im HTML, nicht per JS erzeugt.
+          karten = 0
+          def karte_ergaenzen(html):
+              global karten
+              for titel, ziel in SEITEN.items():
+                  # <article class="produkt"> ... <h4>Titel</h4> ... <div class="kauf">
+                  muster = re.compile(
+                      r'<article class="produkt">(?:(?!</article>).)*?'
+                      r'<h4>' + re.escape(esc(titel)) + r'</h4>'
+                      r'(?:(?!</article>).)*?<div class="kauf">',
+                      re.S)
+                  knopf = (MARK_A + '<a class="btn buchseite" href="' + ziel + '">'
+                           + BUTTON_TEXT + '</a>' + MARK_E)
+
+                  def ersetzen(m):
+                      global karten
+                      block = m.group(0)
+                      # Steht der Knopf schon direkt dahinter? Dann nichts tun.
+                      if m.string[m.end():m.end() + len(MARK_A)] == MARK_A:
+                          return block
+                      karten += 1
+                      return block + knopf
+
+                  html = muster.sub(ersetzen, html)
+              return html
+
+          # ---------- 3. Footer-Link "Bücher" ----------
+          def footer_ergaenzen(html):
+              m = re.search(r'<div class="footer-links">(.*?)</div>', html, re.S)
+              if not m:
+                  return html, False
+              block = m.group(1)
+              if '/buecher/' in block:
+                  return html, False
+              link = '<a href="/buecher/">Bücher</a>'
+              bib = re.search(r'(\s*)(<a href="/?bibliothek/?[^"]*">[^<]*</a>)', block)
+              if bib:
+                  einzug = bib.group(1)
+                  neu = block.replace(bib.group(2), bib.group(2) + einzug + link, 1)
+              else:
+                  erster = re.search(r'(\s*)<a ', block)
+                  einzug = erster.group(1) if erster else '\n    '
+                  neu = einzug + link + block
+              return html[:m.start(1)] + neu + html[m.end(1):], True
+
+          footer = 0
+          for root, dirs, files in os.walk('.'):
+              dirs[:] = [d for d in dirs if d not in ('.git', 'node_modules', '.github')]
+              for fn in files:
+                  if not fn.endswith('.html'):
+                      continue
+                  pfad = os.path.join(root, fn)
+                  if any(pfad.startswith(d) for d in SKIP_DIRS) or fn == '404.html':
+                      continue
+                  try:
+                      html = open(pfad, encoding='utf-8').read()
+                  except Exception:
+                      continue
+                  original = html
+                  html = karte_ergaenzen(html)
+                  html, f_neu = footer_ergaenzen(html)
+                  if f_neu:
+                      footer += 1
+                  if html != original:
+                      open(pfad, 'w', encoding='utf-8').write(html)
+          print(f'Produktkarten ergänzt: {karten} | Footer ergänzt: {footer}')
+
+          # ---------- 4. CSS für den Button ----------
+          css = 'bibliothek/bibliothek.css'
+          regel = """
+          /* buchseite-button */
+          .btn.buchseite{background:#5a7d95;color:#fff;border:1px solid #5a7d95;}
+          .btn.buchseite:hover{background:#4a6d85;border-color:#4a6d85;color:#fff;}
+          """
+          if os.path.exists(css):
+              inhalt = open(css, encoding='utf-8').read()
+              if 'buchseite-button' not in inhalt:
+                  open(css, 'a', encoding='utf-8').write('\n' + regel.strip() + '\n')
+                  print('CSS-Regel ergänzt')
+          PYEOF
+
+      - name: Commit & Push
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          git diff --staged --quiet && echo "Keine Änderungen." || (
+            git commit -m "Buchseiten-Verlinkung automatisch gesetzt" &&
+            git pull --rebase origin main &&
+            git push
+          )
