@@ -1,0 +1,75 @@
+name: Etsy-Bilder in die Bibliothek
+
+# Holt die Produktbilder aus dem Etsy-CSV-Export, verkleinert sie auf
+# hoechstens 70 KB, legt sie unter bilder/produkte/ ab und setzt sie in die
+# Bibliothek ein. Neue Etsy-Produkte werden dabei mit aufgenommen.
+#
+# Laeuft automatisch, sobald ein neuer CSV-Export hochgeladen wird,
+# und laesst sich jederzeit von Hand starten (Reiter "Actions").
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bibliothek/etsy-listings.csv'
+      - 'scripts/etsy_bilder.py'
+      - '.github/workflows/etsy-bilder.yml'
+  workflow_dispatch:
+    inputs:
+      neu_laden:
+        description: 'Alle Bilder noch einmal herunterladen (sonst nur die fehlenden)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lernolotl-site-writes
+  cancel-in-progress: false
+
+jobs:
+  bilder:
+    runs-on: ubuntu-latest
+    # Verhindert eine Endlosschleife: der eigene Commit startet den Lauf nicht neu
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'Etsy-Bilder automatisch')"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Benoetigte Pakete
+        run: pip install --quiet Pillow requests
+
+      - name: Bilder holen und einsetzen
+        run: |
+          python3 scripts/etsy_bilder.py ${{ inputs.neu_laden && '--neu-laden' || '' }}
+
+      - name: Ergebnis zusammenfassen
+        run: |
+          {
+            echo "### Bilder in der Bibliothek"
+            echo ""
+            anzahl=$(ls bilder/produkte/*.jpg 2>/dev/null | wc -l)
+            echo "- Bilddateien gesamt: **${anzahl}**"
+            if [ "$anzahl" -gt 0 ]; then
+              groesse=$(du -sh bilder/produkte | cut -f1)
+              groesstes=$(ls -S bilder/produkte/*.jpg | head -1 | xargs du -k | cut -f1)
+              echo "- Speicherplatz: **${groesse}**"
+              echo "- Groesstes Bild: **${groesstes} KB**"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Aenderungen speichern
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          git diff --staged --quiet && echo "Keine Aenderungen." || (
+            git commit -m "Etsy-Bilder automatisch in die Bibliothek uebernommen" &&
+            git pull --rebase origin main &&
+            git push
+          )
