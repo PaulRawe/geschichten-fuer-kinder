@@ -36,6 +36,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Vollstaendige Historie - ohne sie schlaegt "git pull --rebase" fehl,
+          # sobald zwischendurch ein anderer Lauf gepusht hat.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -68,8 +72,25 @@ jobs:
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           git add -A
-          git diff --staged --quiet && echo "Keine Aenderungen." || (
-            git commit -m "Etsy-Bilder automatisch in die Bibliothek uebernommen" &&
-            git pull --rebase origin main &&
-            git push
-          )
+
+          if git diff --staged --quiet; then
+            echo "Keine Aenderungen - nichts zu speichern."
+            exit 0
+          fi
+
+          git commit -m "Etsy-Bilder automatisch in die Bibliothek uebernommen"
+
+          # Bis zu fuenf Versuche. Hat in der Zwischenzeit ein anderer Lauf
+          # gepusht, werden dessen Aenderungen davorgesetzt und erneut gepusht.
+          for versuch in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Gespeichert (Versuch ${versuch})."
+              exit 0
+            fi
+            echo "Push abgelehnt - hole die Zwischenstaende und versuche es erneut."
+            git pull --rebase origin main || exit 1
+            sleep 3
+          done
+
+          echo "Push nach fuenf Versuchen nicht moeglich."
+          exit 1
