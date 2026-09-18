@@ -144,6 +144,34 @@ def lade_csv(pfad):
 
 
 # --------------------------------------------------------------------------- Bild
+def cover_verkleinern(quelle, ziel):
+    """Bringt ein Buchcover aus dem Repo auf Kartengroesse.
+
+    Anders als bei den Etsy-Fotos wird hier nichts abgeschnitten: Auf einem
+    Cover steht der Titel, der nicht halb wegfallen darf. Das Bild wird
+    vollstaendig eingepasst, der Rest bekommt die Farbe der Karte.
+    """
+    from PIL import Image
+
+    bild = Image.open(quelle)
+    bild = bild.convert("RGBA") if bild.mode in ("RGBA", "LA", "P") else bild.convert("RGB")
+    flaeche = Image.new("RGB", (BREITE, HOEHE), (248, 251, 252))
+    rand = 6
+    bild.thumbnail((BREITE - 2 * rand, HOEHE - 2 * rand), Image.LANCZOS)
+    versatz = ((BREITE - bild.width) // 2, (HOEHE - bild.height) // 2)
+    flaeche.paste(bild, versatz, bild if bild.mode == "RGBA" else None)
+
+    for quali in range(START_QUALI, MIN_QUALI - 1, -6):
+        puffer = io.BytesIO()
+        flaeche.save(puffer, "JPEG", quality=quali, optimize=True, progressive=True)
+        if puffer.tell() <= MAX_BYTES or quali == MIN_QUALI:
+            os.makedirs(os.path.dirname(ziel), exist_ok=True)
+            with open(ziel, "wb") as f:
+                f.write(puffer.getvalue())
+            return puffer.tell()
+    return 0
+
+
 def bild_holen(url, ziel, sitzung):
     """Laedt ein Bild, beschneidet auf 4:3, verkleinert und speichert als JPG."""
     from PIL import Image
@@ -411,17 +439,31 @@ def main():
             produkt.pop("bild", None)
             print("   ! %s: %s" % (produkt["id"], str(e)[:90]))
 
-    # Buchcover, die schon im Repo liegen
+    # Buchcover, die schon im Repo liegen. Sie werden nicht direkt verlinkt,
+    # sondern auf Kartengroesse gebracht - ein Druckcover kann sonst ueber
+    # ein Megabyte gross sein und bremst die Bibliothek aus.
     buecher = 0
     for produkt in daten["produkte"]:
-        pfad = BUCH_BILDER.get(produkt["titel"])
+        quelle = BUCH_BILDER.get(produkt["titel"])
         # Entdecker-Baende: Cover werden automatisch gefunden, sobald sie
         # unter bilder/buecher/entdecker/band-01.jpg ... liegen
-        if not pfad and produkt.get("reihe") == "Die kleinen Entdecker" and produkt.get("band"):
-            pfad = "/bilder/buecher/entdecker/band-%02d.jpg" % int(produkt["band"])
-        if pfad and os.path.exists(pfad.lstrip("/")) and produkt.get("bild") != pfad:
-            produkt["bild"] = pfad
-            buecher += 1
+        if not quelle and produkt.get("reihe") == "Die kleinen Entdecker" and produkt.get("band"):
+            quelle = "/bilder/buecher/entdecker/band-%02d.jpg" % int(produkt["band"])
+        if not quelle or not os.path.exists(quelle.lstrip("/")):
+            continue
+
+        datei = os.path.join(BILD_DIR, "%s.jpg" % produkt["id"])
+        web = "%s/%s.jpg" % (BILD_WEB, produkt["id"])
+        if not os.path.exists(datei) or args.neu_laden:
+            try:
+                groesse = cover_verkleinern(quelle.lstrip("/"), datei)
+                groessen.append(groesse)
+            except Exception as e:
+                print("   ! Cover %s: %s" % (produkt["id"], str(e)[:80]))
+                continue
+        if produkt.get("bild") != web:
+            produkt["bild"] = web
+        buecher += 1
 
     print("Bilder: %d geladen, %d schon vorhanden, %d Buchcover verknuepft, %d Fehler"
           % (geladen, uebersprungen, buecher, fehler))
