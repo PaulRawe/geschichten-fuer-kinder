@@ -101,3 +101,7 @@ footer{background:#fff;border-radius:25px;padding:30px;text-align:center;
 /* buchseite-button */
 .btn.buchseite{background:#5a7d95;color:#fff;border:1px solid #5a7d95;}
 .btn.buchseite:hover{background:#4a6d85;border-color:#4a6d85;color:#fff;}
+
+/* produktbilder */
+.produkt .pbild{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;
+  display:block;margin-bottom:12px;background:#eef3f6;}

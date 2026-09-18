@@ -80,7 +80,8 @@
    "amazon": "https://www.amazon.de/dp/B0HG71FZJX",
    "asin": "B0HG71FZJX",
    "etsy": null,
-   "seite": "/buecher/der-sorgenrucksack/"
+   "seite": "/buecher/der-sorgenrucksack/",
+   "bild": "/bilder/buecher/der-sorgenrucksack/cover.jpg"
   },
   {
    "id": "kdp-003",
@@ -99,7 +100,8 @@
    "amazon": "https://www.amazon.de/dp/B0HG6ZHYKG",
    "asin": "B0HG6ZHYKG",
    "etsy": null,
-   "seite": "/buecher/guck-mich-an/"
+   "seite": "/buecher/guck-mich-an/",
+   "bild": "/bilder/buecher/guck-mich-an/cover.jpg"
   },
   {
    "id": "kdp-004",
@@ -119,7 +121,8 @@
    "amazon": "https://www.amazon.de/dp/B0HG54SKJK",
    "asin": "B0HG54SKJK",
    "etsy": null,
-   "seite": "/buecher/der-familienakku/"
+   "seite": "/buecher/der-familienakku/",
+   "bild": "/bilder/buecher/der-familienakku/cover.jpg"
   },
   {
    "id": "kdp-009",
@@ -137,7 +140,8 @@
    "amazon": "https://www.amazon.de/dp/B0HDK9QS6S",
    "asin": "B0HDK9QS6S",
    "etsy": null,
-   "seite": "/buecher/der-lernolotl-ist-besonders/"
+   "seite": "/buecher/der-lernolotl-ist-besonders/",
+   "bild": "/bilder/buecher/der-lernolotl-ist-besonders/cover.jpg"
   },
   {
    "id": "kdp-010",
@@ -155,7 +159,8 @@
    "amazon": "https://www.amazon.de/dp/B0H6VW1K92",
    "asin": "B0H6VW1K92",
    "etsy": null,
-   "seite": "/buecher/lernolotl-geschichten/"
+   "seite": "/buecher/lernolotl-geschichten/",
+   "bild": "/lernolotl/freunde.jpg"
   },
   {
    "id": "kdp-011",
@@ -172,7 +177,8 @@
    "amazon": "https://www.amazon.de/dp/B0H7BN2MDM",
    "asin": "B0H7BN2MDM",
    "etsy": null,
-   "seite": "/buecher/lernolotl-geschichten/"
+   "seite": "/buecher/lernolotl-geschichten/",
+   "bild": "/lernolotl/ichbinich.jpg"
   },
   {
    "id": "kdp-012",
@@ -191,7 +197,8 @@
    "amazon": "https://www.amazon.de/dp/B0H7KYDDQD",
    "asin": "B0H7KYDDQD",
    "etsy": null,
-   "seite": "/buecher/lernolotl-geschichten/"
+   "seite": "/buecher/lernolotl-geschichten/",
+   "bild": "/lernolotl/schule.jpg"
   },
   {
    "id": "kdp-013",
@@ -209,7 +216,8 @@
    "amazon": "https://www.amazon.de/dp/B0H98D19WY",
    "asin": "B0H98D19WY",
    "etsy": null,
-   "seite": "/buecher/lernolotl-geschichten/"
+   "seite": "/buecher/lernolotl-geschichten/",
+   "bild": "/lernolotl/zuhause.jpg"
   },
   {
    "id": "kdp-014",
@@ -226,7 +234,8 @@
    "amazon": "https://www.amazon.de/dp/B0HGBH7D5S",
    "asin": "B0HGBH7D5S",
    "etsy": null,
-   "seite": "/buecher/der-kuemmerer-funke/"
+   "seite": "/buecher/der-kuemmerer-funke/",
+   "bild": "/bilder/buecher/der-kuemmerer-funke/cover.jpg"
   },
   {
    "id": "kdp-015",
@@ -245,7 +254,8 @@
    "amazon": "https://www.amazon.de/dp/B0H6MN6YW9",
    "asin": "B0H6MN6YW9",
    "etsy": null,
-   "seite": "/buecher/schulstarter-heft/"
+   "seite": "/buecher/schulstarter-heft/",
+   "bild": "/lernolotl/schulstarterheft.jpg"
   },
   {
    "id": "kdp-017",
@@ -262,7 +272,8 @@
    "amazon": "https://www.amazon.de/dp/B0H6GN31S4",
    "asin": "B0H6GN31S4",
    "etsy": null,
-   "seite": "/buecher/lernolotl-geschichten/"
+   "seite": "/buecher/lernolotl-geschichten/",
+   "bild": "/lernolotl/kita.jpg"
   },
   {
    "id": "kdp-018",
@@ -280,7 +291,8 @@
    "amazon": "https://www.amazon.de/dp/B0HBX9Y735",
    "asin": "B0HBX9Y735",
    "etsy": null,
-   "seite": "/buecher/lernolotl-geschichten/"
+   "seite": "/buecher/lernolotl-geschichten/",
+   "bild": "/lernolotl/sport.jpg"
   },
   {
    "id": "kdp-019",
@@ -812,7 +824,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477424820/ich-bin-anders-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477424820/ich-bin-anders-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-001.jpg"
   },
   {
    "id": "etsy-002",
@@ -829,7 +842,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4574444836/pflegeordner-turkisch-deutsch-zum"
+   "etsy": "https://www.etsy.com/de/listing/4574444836/pflegeordner-turkisch-deutsch-zum",
+   "bild": "/bilder/produkte/etsy-002.jpg"
   },
   {
    "id": "etsy-003",
@@ -848,7 +862,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4503277482/armut-erklaren-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4503277482/armut-erklaren-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-003.jpg"
   },
   {
    "id": "etsy-004",
@@ -867,7 +882,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4503276850/krieg-erklaren-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4503276850/krieg-erklaren-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-004.jpg"
   },
   {
    "id": "etsy-005",
@@ -886,7 +902,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4503275506/krankheit-erklaren-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4503275506/krankheit-erklaren-kinder",
+   "bild": "/bilder/produkte/etsy-005.jpg"
   },
   {
    "id": "etsy-006",
@@ -905,7 +922,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4503268393/haustier-tod-erklaren-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4503268393/haustier-tod-erklaren-kinder",
+   "bild": "/bilder/produkte/etsy-006.jpg"
   },
   {
    "id": "etsy-007",
@@ -924,7 +942,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4503266901/trennung-erklaren-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4503266901/trennung-erklaren-kinder",
+   "bild": "/bilder/produkte/etsy-007.jpg"
   },
   {
    "id": "etsy-008",
@@ -942,7 +961,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4573892240/pflegeordner-pdf-zum-ausdrucken-47"
+   "etsy": "https://www.etsy.com/de/listing/4573892240/pflegeordner-pdf-zum-ausdrucken-47",
+   "bild": "/bilder/produkte/etsy-008.jpg"
   },
   {
    "id": "etsy-009",
@@ -960,7 +980,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4573872099/klinikmappe-pdf-zum-ausdrucken"
+   "etsy": "https://www.etsy.com/de/listing/4573872099/klinikmappe-pdf-zum-ausdrucken",
+   "bild": "/bilder/produkte/etsy-009.jpg"
   },
   {
    "id": "etsy-010",
@@ -979,7 +1000,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4502619319/den-tod-erklaren-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4502619319/den-tod-erklaren-kinder",
+   "bild": "/bilder/produkte/etsy-010.jpg"
   },
   {
    "id": "etsy-011",
@@ -998,7 +1020,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483511676/gruppenarbeit-ich-will-es-alleine-machen"
+   "etsy": "https://www.etsy.com/de/listing/4483511676/gruppenarbeit-ich-will-es-alleine-machen",
+   "bild": "/bilder/produkte/etsy-011.jpg"
   },
   {
    "id": "etsy-012",
@@ -1017,7 +1040,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475460821/mobbing-wenn-andere-gemein-sind-pdf"
+   "etsy": "https://www.etsy.com/de/listing/4475460821/mobbing-wenn-andere-gemein-sind-pdf",
+   "bild": "/bilder/produkte/etsy-012.jpg"
   },
   {
    "id": "etsy-013",
@@ -1035,7 +1059,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455465957/autismus-meltdown-management-lehrkrafte"
+   "etsy": "https://www.etsy.com/de/listing/4455465957/autismus-meltdown-management-lehrkrafte",
+   "bild": "/bilder/produkte/etsy-013.jpg"
   },
   {
    "id": "etsy-014",
@@ -1054,7 +1079,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4500206242/4-begleitgeschichten-reizuberflutung"
+   "etsy": "https://www.etsy.com/de/listing/4500206242/4-begleitgeschichten-reizuberflutung",
+   "bild": "/bilder/produkte/etsy-014.jpg"
   },
   {
    "id": "etsy-015",
@@ -1073,7 +1099,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4500205464/familienveranderung-kinder-erklaren-4"
+   "etsy": "https://www.etsy.com/de/listing/4500205464/familienveranderung-kinder-erklaren-4",
+   "bild": "/bilder/produkte/etsy-015.jpg"
   },
   {
    "id": "etsy-016",
@@ -1092,7 +1119,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4500204506/schulstart-autismus-kind-vorbereiten-5"
+   "etsy": "https://www.etsy.com/de/listing/4500204506/schulstart-autismus-kind-vorbereiten-5",
+   "bild": "/bilder/produkte/etsy-016.jpg"
   },
   {
    "id": "etsy-017",
@@ -1111,7 +1139,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4500191387/sozialverhalten-kinder-uben-4"
+   "etsy": "https://www.etsy.com/de/listing/4500191387/sozialverhalten-kinder-uben-4",
+   "bild": "/bilder/produkte/etsy-017.jpg"
   },
   {
    "id": "etsy-018",
@@ -1130,7 +1159,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4500200660/gefuhle-regulieren-kinder-4"
+   "etsy": "https://www.etsy.com/de/listing/4500200660/gefuhle-regulieren-kinder-4",
+   "bild": "/bilder/produkte/etsy-018.jpg"
   },
   {
    "id": "etsy-019",
@@ -1149,7 +1179,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4500189713/arztbesuch-autismus-kind-vorbereiten-4"
+   "etsy": "https://www.etsy.com/de/listing/4500189713/arztbesuch-autismus-kind-vorbereiten-4",
+   "bild": "/bilder/produkte/etsy-019.jpg"
   },
   {
    "id": "etsy-020",
@@ -1168,7 +1199,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4499862707/begleitgeschichte-grosseltern-besuchen"
+   "etsy": "https://www.etsy.com/de/listing/4499862707/begleitgeschichte-grosseltern-besuchen",
+   "bild": "/bilder/produkte/etsy-020.jpg"
   },
   {
    "id": "etsy-021",
@@ -1187,7 +1219,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479575310/schwimmen-lernen-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479575310/schwimmen-lernen-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-021.jpg"
   },
   {
    "id": "etsy-022",
@@ -1206,7 +1239,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4499510167/begleitgeschichte-fehler-machen-erlaubt"
+   "etsy": "https://www.etsy.com/de/listing/4499510167/begleitgeschichte-fehler-machen-erlaubt",
+   "bild": "/bilder/produkte/etsy-022.jpg"
   },
   {
    "id": "etsy-023",
@@ -1225,7 +1259,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4499260552/begleitgeschichte-schlechte-note-kind"
+   "etsy": "https://www.etsy.com/de/listing/4499260552/begleitgeschichte-schlechte-note-kind",
+   "bild": "/bilder/produkte/etsy-023.jpg"
   },
   {
    "id": "etsy-024",
@@ -1244,7 +1279,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4499249067/begleitgeschichte-ubernachtung-kind"
+   "etsy": "https://www.etsy.com/de/listing/4499249067/begleitgeschichte-ubernachtung-kind",
+   "bild": "/bilder/produkte/etsy-024.jpg"
   },
   {
    "id": "etsy-025",
@@ -1263,7 +1299,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4499240839/begleitgeschichte-schulkantine-autismus"
+   "etsy": "https://www.etsy.com/de/listing/4499240839/begleitgeschichte-schulkantine-autismus",
+   "bild": "/bilder/produkte/etsy-025.jpg"
   },
   {
    "id": "etsy-026",
@@ -1282,7 +1319,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4498969252/begleitgeschichte-warten-lernen-kind"
+   "etsy": "https://www.etsy.com/de/listing/4498969252/begleitgeschichte-warten-lernen-kind",
+   "bild": "/bilder/produkte/etsy-026.jpg"
   },
   {
    "id": "etsy-027",
@@ -1301,7 +1339,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4497685382/begleitgeschichte-kindergeburtstag"
+   "etsy": "https://www.etsy.com/de/listing/4497685382/begleitgeschichte-kindergeburtstag",
+   "bild": "/bilder/produkte/etsy-027.jpg"
   },
   {
    "id": "etsy-028",
@@ -1320,7 +1359,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4497245491/begleitgeschichte-supermarkt-autismus"
+   "etsy": "https://www.etsy.com/de/listing/4497245491/begleitgeschichte-supermarkt-autismus",
+   "bild": "/bilder/produkte/etsy-028.jpg"
   },
   {
    "id": "etsy-029",
@@ -1339,7 +1379,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4495379337/begleitgeschichte-umzug-kind-erklaren"
+   "etsy": "https://www.etsy.com/de/listing/4495379337/begleitgeschichte-umzug-kind-erklaren",
+   "bild": "/bilder/produkte/etsy-029.jpg"
   },
   {
    "id": "etsy-030",
@@ -1358,7 +1399,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4494403761/begleitgeschichte-verlieren-lernen-kind"
+   "etsy": "https://www.etsy.com/de/listing/4494403761/begleitgeschichte-verlieren-lernen-kind",
+   "bild": "/bilder/produkte/etsy-030.jpg"
   },
   {
    "id": "etsy-031",
@@ -1377,7 +1419,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4493342367/begleitgeschichte-traurigkeit-erklaren"
+   "etsy": "https://www.etsy.com/de/listing/4493342367/begleitgeschichte-traurigkeit-erklaren",
+   "bild": "/bilder/produkte/etsy-031.jpg"
   },
   {
    "id": "etsy-032",
@@ -1396,7 +1439,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4492735555/begleitgeschichte-teilen-lernen-kita"
+   "etsy": "https://www.etsy.com/de/listing/4492735555/begleitgeschichte-teilen-lernen-kita",
+   "bild": "/bilder/produkte/etsy-032.jpg"
   },
   {
    "id": "etsy-033",
@@ -1415,7 +1459,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4492051183/anziehen-klappkarten-kinder-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4492051183/anziehen-klappkarten-kinder-lernolotl",
+   "bild": "/bilder/produkte/etsy-033.jpg"
   },
   {
    "id": "etsy-034",
@@ -1434,7 +1479,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4492043229/abendroutine-klappkarten-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4492043229/abendroutine-klappkarten-kinder",
+   "bild": "/bilder/produkte/etsy-034.jpg"
   },
   {
    "id": "etsy-035",
@@ -1453,7 +1499,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4491876634/morgenroutine-klappkarten-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4491876634/morgenroutine-klappkarten-kinder",
+   "bild": "/bilder/produkte/etsy-035.jpg"
   },
   {
    "id": "etsy-036",
@@ -1472,7 +1519,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455751528/social-stories-autismus-medizin-alltag"
+   "etsy": "https://www.etsy.com/de/listing/4455751528/social-stories-autismus-medizin-alltag",
+   "bild": "/bilder/produkte/etsy-036.jpg"
   },
   {
    "id": "etsy-037",
@@ -1491,7 +1539,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4491516709/begleitgeschichte-bus-fahren-autismus"
+   "etsy": "https://www.etsy.com/de/listing/4491516709/begleitgeschichte-bus-fahren-autismus",
+   "bild": "/bilder/produkte/etsy-037.jpg"
   },
   {
    "id": "etsy-038",
@@ -1510,7 +1559,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4491059025/begleitgeschichte-freunde-finden-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4491059025/begleitgeschichte-freunde-finden-kinder",
+   "bild": "/bilder/produkte/etsy-038.jpg"
   },
   {
    "id": "etsy-039",
@@ -1529,7 +1579,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4490625348/begleitgeschichte-pause-schule-autismus"
+   "etsy": "https://www.etsy.com/de/listing/4490625348/begleitgeschichte-pause-schule-autismus",
+   "bild": "/bilder/produkte/etsy-039.jpg"
   },
   {
    "id": "etsy-040",
@@ -1548,7 +1599,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4490072037/begleitgeschichte-krankenhaus-kind"
+   "etsy": "https://www.etsy.com/de/listing/4490072037/begleitgeschichte-krankenhaus-kind",
+   "bild": "/bilder/produkte/etsy-040.jpg"
   },
   {
    "id": "etsy-041",
@@ -1567,7 +1619,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4489499592/begleitgeschichte-geschwisterkind"
+   "etsy": "https://www.etsy.com/de/listing/4489499592/begleitgeschichte-geschwisterkind",
+   "bild": "/bilder/produkte/etsy-041.jpg"
   },
   {
    "id": "etsy-042",
@@ -1586,7 +1639,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4488902451/begleitgeschichte-zahnarzt-angst-kind"
+   "etsy": "https://www.etsy.com/de/listing/4488902451/begleitgeschichte-zahnarzt-angst-kind",
+   "bild": "/bilder/produkte/etsy-042.jpg"
   },
   {
    "id": "etsy-043",
@@ -1605,7 +1659,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4488321255/begleitgeschichte-wut-regulieren-kinder"
+   "etsy": "https://www.etsy.com/de/listing/4488321255/begleitgeschichte-wut-regulieren-kinder",
+   "bild": "/bilder/produkte/etsy-043.jpg"
   },
   {
    "id": "etsy-044",
@@ -1624,7 +1679,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4488314727/begleitgeschichte-arztbesuch-vorbereiten"
+   "etsy": "https://www.etsy.com/de/listing/4488314727/begleitgeschichte-arztbesuch-vorbereiten",
+   "bild": "/bilder/produkte/etsy-044.jpg"
   },
   {
    "id": "etsy-045",
@@ -1643,7 +1699,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4488034024/begleitgeschichte-erster-kitamorgen"
+   "etsy": "https://www.etsy.com/de/listing/4488034024/begleitgeschichte-erster-kitamorgen",
+   "bild": "/bilder/produkte/etsy-045.jpg"
   },
   {
    "id": "etsy-046",
@@ -1662,7 +1719,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487851524/erster-schultag-begleitgeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4487851524/erster-schultag-begleitgeschichte",
+   "bild": "/bilder/produkte/etsy-046.jpg"
   },
   {
    "id": "etsy-047",
@@ -1681,7 +1739,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487119423/zuhause-reihe-komplett-bundle-o"
+   "etsy": "https://www.etsy.com/de/listing/4487119423/zuhause-reihe-komplett-bundle-o",
+   "bild": "/bilder/produkte/etsy-047.jpg"
   },
   {
    "id": "etsy-048",
@@ -1699,7 +1758,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487124950/krank-sein-ich-will-nicht-pausieren-o"
+   "etsy": "https://www.etsy.com/de/listing/4487124950/krank-sein-ich-will-nicht-pausieren-o",
+   "bild": "/bilder/produkte/etsy-048.jpg"
   },
   {
    "id": "etsy-049",
@@ -1718,7 +1778,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487117869/kochen-mit-der-familie-ich-will-helfen-o"
+   "etsy": "https://www.etsy.com/de/listing/4487117869/kochen-mit-der-familie-ich-will-helfen-o",
+   "bild": "/bilder/produkte/etsy-049.jpg"
   },
   {
    "id": "etsy-050",
@@ -1737,7 +1798,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487116921/haustier-verantwortung-lernen-o-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4487116921/haustier-verantwortung-lernen-o-ratgeber",
+   "bild": "/bilder/produkte/etsy-050.jpg"
   },
   {
    "id": "etsy-051",
@@ -1756,7 +1818,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487123804/wenn-die-eltern-streiten-ratgeber-nr62"
+   "etsy": "https://www.etsy.com/de/listing/4487123804/wenn-die-eltern-streiten-ratgeber-nr62",
+   "bild": "/bilder/produkte/etsy-051.jpg"
   },
   {
    "id": "etsy-052",
@@ -1775,7 +1838,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487122972/geschwisterstreit-warum-ist-das"
+   "etsy": "https://www.etsy.com/de/listing/4487122972/geschwisterstreit-warum-ist-das",
+   "bild": "/bilder/produkte/etsy-052.jpg"
   },
   {
    "id": "etsy-053",
@@ -1794,7 +1858,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487122448/aufraumen-das-ewige-streitthema-o"
+   "etsy": "https://www.etsy.com/de/listing/4487122448/aufraumen-das-ewige-streitthema-o",
+   "bild": "/bilder/produkte/etsy-053.jpg"
   },
   {
    "id": "etsy-054",
@@ -1813,7 +1878,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487115925/bildschirmzeit-wann-ist-schluss-o"
+   "etsy": "https://www.etsy.com/de/listing/4487115925/bildschirmzeit-wann-ist-schluss-o",
+   "bild": "/bilder/produkte/etsy-054.jpg"
   },
   {
    "id": "etsy-055",
@@ -1831,7 +1897,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487121912/wut-wenn-alles-zu-viel-wird-o-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4487121912/wut-wenn-alles-zu-viel-wird-o-ratgeber",
+   "bild": "/bilder/produkte/etsy-055.jpg"
   },
   {
    "id": "etsy-056",
@@ -1848,7 +1915,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487120814/das-zimmer-des-lernolotl-o-ratgeber-nr56"
+   "etsy": "https://www.etsy.com/de/listing/4487120814/das-zimmer-des-lernolotl-o-ratgeber-nr56",
+   "bild": "/bilder/produkte/etsy-056.jpg"
   },
   {
    "id": "etsy-057",
@@ -1867,7 +1935,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487113949/ich-kann-nicht-einschlafen-ratgeber-nr57"
+   "etsy": "https://www.etsy.com/de/listing/4487113949/ich-kann-nicht-einschlafen-ratgeber-nr57",
+   "bild": "/bilder/produkte/etsy-057.jpg"
   },
   {
    "id": "etsy-058",
@@ -1884,7 +1953,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487120082/wenn-der-akku-leer-ist-o-ratgeber-nr55"
+   "etsy": "https://www.etsy.com/de/listing/4487120082/wenn-der-akku-leer-ist-o-ratgeber-nr55",
+   "bild": "/bilder/produkte/etsy-058.jpg"
   },
   {
    "id": "etsy-059",
@@ -1902,7 +1972,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4487112145/der-abend-der-nicht-klappt-ratgeber-nr54"
+   "etsy": "https://www.etsy.com/de/listing/4487112145/der-abend-der-nicht-klappt-ratgeber-nr54",
+   "bild": "/bilder/produkte/etsy-059.jpg"
   },
   {
    "id": "etsy-060",
@@ -1921,7 +1992,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455720364/autismus-regulations-toolkit-6-visuelle"
+   "etsy": "https://www.etsy.com/de/listing/4455720364/autismus-regulations-toolkit-6-visuelle",
+   "bild": "/bilder/produkte/etsy-060.jpg"
   },
   {
    "id": "etsy-061",
@@ -1940,7 +2012,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475472110/lernolotl-freunde-reihe-komplettpaket-13"
+   "etsy": "https://www.etsy.com/de/listing/4475472110/lernolotl-freunde-reihe-komplettpaket-13",
+   "bild": "/bilder/produkte/etsy-061.jpg"
   },
   {
    "id": "etsy-062",
@@ -1959,7 +2032,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455756263/social-stories-bundle-autismus-alle-19"
+   "etsy": "https://www.etsy.com/de/listing/4455756263/social-stories-bundle-autismus-alle-19",
+   "bild": "/bilder/produkte/etsy-062.jpg"
   },
   {
    "id": "etsy-063",
@@ -1978,7 +2052,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455729800/autismus-geschwisterkinder-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4455729800/autismus-geschwisterkinder-ratgeber",
+   "bild": "/bilder/produkte/etsy-063.jpg"
   },
   {
    "id": "etsy-064",
@@ -1997,7 +2072,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483508177/lernolotl-schule-reihe-komplett-10"
+   "etsy": "https://www.etsy.com/de/listing/4483508177/lernolotl-schule-reihe-komplett-10",
+   "bild": "/bilder/produkte/etsy-064.jpg"
   },
   {
    "id": "etsy-065",
@@ -2016,7 +2092,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483507465/klassenfahrt-ich-will-nicht-weg-von"
+   "etsy": "https://www.etsy.com/de/listing/4483507465/klassenfahrt-ich-will-nicht-weg-von",
+   "bild": "/bilder/produkte/etsy-065.jpg"
   },
   {
    "id": "etsy-066",
@@ -2035,7 +2112,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483510570/prufungsangst-wenn-der-kopf-leer-wird-o"
+   "etsy": "https://www.etsy.com/de/listing/4483510570/prufungsangst-wenn-der-kopf-leer-wird-o",
+   "bild": "/bilder/produkte/etsy-066.jpg"
   },
   {
    "id": "etsy-067",
@@ -2053,7 +2131,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483506645/nach-dem-streit-ratgeber-nr51"
+   "etsy": "https://www.etsy.com/de/listing/4483506645/nach-dem-streit-ratgeber-nr51",
+   "bild": "/bilder/produkte/etsy-067.jpg"
   },
   {
    "id": "etsy-068",
@@ -2070,7 +2149,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483506185/wenn-es-zu-laut-wird-ratgeber-nr50"
+   "etsy": "https://www.etsy.com/de/listing/4483506185/wenn-es-zu-laut-wird-ratgeber-nr50",
+   "bild": "/bilder/produkte/etsy-068.jpg"
   },
   {
    "id": "etsy-069",
@@ -2089,7 +2169,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483510188/springender-kopf-ratgeber-nr48"
+   "etsy": "https://www.etsy.com/de/listing/4483510188/springender-kopf-ratgeber-nr48",
+   "bild": "/bilder/produkte/etsy-069.jpg"
   },
   {
    "id": "etsy-070",
@@ -2108,7 +2189,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483509208/der-rote-stift-ratgeber-nr46"
+   "etsy": "https://www.etsy.com/de/listing/4483509208/der-rote-stift-ratgeber-nr46",
+   "bild": "/bilder/produkte/etsy-070.jpg"
   },
   {
    "id": "etsy-071",
@@ -2127,7 +2209,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483504949/hausaufgaben-die-grosse-katastrophe-o"
+   "etsy": "https://www.etsy.com/de/listing/4483504949/hausaufgaben-die-grosse-katastrophe-o",
+   "bild": "/bilder/produkte/etsy-071.jpg"
   },
   {
    "id": "etsy-072",
@@ -2146,7 +2229,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483508824/was-macht-man-in-der-pause-ratgeber-nr45"
+   "etsy": "https://www.etsy.com/de/listing/4483508824/was-macht-man-in-der-pause-ratgeber-nr45",
+   "bild": "/bilder/produkte/etsy-072.jpg"
   },
   {
    "id": "etsy-073",
@@ -2165,7 +2249,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4483503587/lernolotl-meldet-sich-ratgeber-nr44-mut"
+   "etsy": "https://www.etsy.com/de/listing/4483503587/lernolotl-meldet-sich-ratgeber-nr44-mut",
+   "bild": "/bilder/produkte/etsy-073.jpg"
   },
   {
    "id": "etsy-074",
@@ -2184,7 +2269,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479579102/sport-reihe-bundle-10-ratgeber-pdf-o"
+   "etsy": "https://www.etsy.com/de/listing/4479579102/sport-reihe-bundle-10-ratgeber-pdf-o",
+   "bild": "/bilder/produkte/etsy-074.jpg"
   },
   {
    "id": "etsy-075",
@@ -2203,7 +2289,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479578454/fahrrad-lernen-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479578454/fahrrad-lernen-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-075.jpg"
   },
   {
    "id": "etsy-076",
@@ -2222,7 +2309,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479577852/gewinnen-mit-empathie-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479577852/gewinnen-mit-empathie-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-076.jpg"
   },
   {
    "id": "etsy-077",
@@ -2241,7 +2329,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479577508/aufhoren-wollen-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479577508/aufhoren-wollen-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-077.jpg"
   },
   {
    "id": "etsy-078",
@@ -2260,7 +2349,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479577174/uberforderung-sport-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479577174/uberforderung-sport-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-078.jpg"
   },
   {
    "id": "etsy-079",
@@ -2279,7 +2369,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479570753/ausgrenzung-im-sport-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479570753/ausgrenzung-im-sport-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-079.jpg"
   },
   {
    "id": "etsy-080",
@@ -2298,7 +2389,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479576832/ungeschriebene-regeln-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479576832/ungeschriebene-regeln-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-080.jpg"
   },
   {
    "id": "etsy-081",
@@ -2317,7 +2409,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479576432/langsam-im-sport-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479576432/langsam-im-sport-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-081.jpg"
   },
   {
    "id": "etsy-082",
@@ -2336,7 +2429,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479568735/teamarbeit-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479568735/teamarbeit-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-082.jpg"
   },
   {
    "id": "etsy-083",
@@ -2355,7 +2449,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4479575666/verlieren-lernen-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4479575666/verlieren-lernen-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-083.jpg"
   },
   {
    "id": "etsy-084",
@@ -2374,7 +2469,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4478807390/gefuhlskarten-kinder-zum-ausdrucken-11"
+   "etsy": "https://www.etsy.com/de/listing/4478807390/gefuhlskarten-kinder-zum-ausdrucken-11",
+   "bild": "/bilder/produkte/etsy-084.jpg"
   },
   {
    "id": "etsy-085",
@@ -2393,7 +2489,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477424761/ich-bin-ich-komplettpaket-10-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4477424761/ich-bin-ich-komplettpaket-10-ratgeber",
+   "bild": "/bilder/produkte/etsy-085.jpg"
   },
   {
    "id": "etsy-086",
@@ -2412,7 +2509,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477431000/berufswunsche-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477431000/berufswunsche-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-086.jpg"
   },
   {
    "id": "etsy-087",
@@ -2431,7 +2529,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477430464/traurigkeit-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477430464/traurigkeit-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-087.jpg"
   },
   {
    "id": "etsy-088",
@@ -2449,7 +2548,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477422355/starken-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477422355/starken-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-088.jpg"
   },
   {
    "id": "etsy-089",
@@ -2468,7 +2568,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477429308/perfektionismus-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477429308/perfektionismus-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-089.jpg"
   },
   {
    "id": "etsy-090",
@@ -2487,7 +2588,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477426162/dankbarkeit-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477426162/dankbarkeit-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-090.jpg"
   },
   {
    "id": "etsy-091",
@@ -2506,7 +2608,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477421307/nein-sagen-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477421307/nein-sagen-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-091.jpg"
   },
   {
    "id": "etsy-092",
@@ -2525,7 +2628,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477420779/langeweile-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477420779/langeweile-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-092.jpg"
   },
   {
    "id": "etsy-093",
@@ -2544,7 +2648,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477419533/identitat-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477419533/identitat-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-093.jpg"
   },
   {
    "id": "etsy-094",
@@ -2563,7 +2668,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4477418017/angst-bei-kindern-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4477418017/angst-bei-kindern-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-094.jpg"
   },
   {
    "id": "etsy-095",
@@ -2582,7 +2688,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455768145/adhs-lehrer-komplett-bundle-alle-5"
+   "etsy": "https://www.etsy.com/de/listing/4455768145/adhs-lehrer-komplett-bundle-alle-5",
+   "bild": "/bilder/produkte/etsy-095.jpg"
   },
   {
    "id": "etsy-096",
@@ -2601,7 +2708,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455725829/adhs-hausaufgaben-notfallplan-exekutive"
+   "etsy": "https://www.etsy.com/de/listing/4455725829/adhs-hausaufgaben-notfallplan-exekutive",
+   "bild": "/bilder/produkte/etsy-096.jpg"
   },
   {
    "id": "etsy-097",
@@ -2620,7 +2728,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475463145/streit-versohnung-kinder-pdf-ratgeber-nr"
+   "etsy": "https://www.etsy.com/de/listing/4475463145/streit-versohnung-kinder-pdf-ratgeber-nr",
+   "bild": "/bilder/produkte/etsy-097.jpg"
   },
   {
    "id": "etsy-098",
@@ -2638,7 +2747,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475462657/gute-schlechte-geheimnisse-kinder-pdf"
+   "etsy": "https://www.etsy.com/de/listing/4475462657/gute-schlechte-geheimnisse-kinder-pdf",
+   "bild": "/bilder/produkte/etsy-098.jpg"
   },
   {
    "id": "etsy-099",
@@ -2657,7 +2767,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475462253/neue-freundschaft-kinder-pdf-ratgeber-nr"
+   "etsy": "https://www.etsy.com/de/listing/4475462253/neue-freundschaft-kinder-pdf-ratgeber-nr",
+   "bild": "/bilder/produkte/etsy-099.jpg"
   },
   {
    "id": "etsy-100",
@@ -2676,7 +2787,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475461337/alleine-sein-wollen-kinder-pdf-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4475461337/alleine-sein-wollen-kinder-pdf-ratgeber",
+   "bild": "/bilder/produkte/etsy-100.jpg"
   },
   {
    "id": "etsy-101",
@@ -2695,7 +2807,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475466404/einladung-ablehnen-kinder-pdf-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4475466404/einladung-ablehnen-kinder-pdf-ratgeber",
+   "bild": "/bilder/produkte/etsy-101.jpg"
   },
   {
    "id": "etsy-102",
@@ -2714,7 +2827,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475465020/empathie-kinder-pdf-ratgeber-nr-17o"
+   "etsy": "https://www.etsy.com/de/listing/4475465020/empathie-kinder-pdf-ratgeber-nr-17o",
+   "bild": "/bilder/produkte/etsy-102.jpg"
   },
   {
    "id": "etsy-103",
@@ -2733,7 +2847,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475457321/spielregeln-kinder-pdf-ratgeber-nr-17"
+   "etsy": "https://www.etsy.com/de/listing/4475457321/spielregeln-kinder-pdf-ratgeber-nr-17",
+   "bild": "/bilder/produkte/etsy-103.jpg"
   },
   {
    "id": "etsy-104",
@@ -2752,7 +2867,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475462396/freundschaft-endet-kinder-pdf-ratgeber"
+   "etsy": "https://www.etsy.com/de/listing/4475462396/freundschaft-endet-kinder-pdf-ratgeber",
+   "bild": "/bilder/produkte/etsy-104.jpg"
   },
   {
    "id": "etsy-105",
@@ -2771,7 +2887,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475461670/ablehnung-durch-freunde-kinder-pdf"
+   "etsy": "https://www.etsy.com/de/listing/4475461670/ablehnung-durch-freunde-kinder-pdf",
+   "bild": "/bilder/produkte/etsy-105.jpg"
   },
   {
    "id": "etsy-106",
@@ -2790,7 +2907,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475459912/wut-bei-kindern-pdf-ratgeber-nr-12o"
+   "etsy": "https://www.etsy.com/de/listing/4475459912/wut-bei-kindern-pdf-ratgeber-nr-12o",
+   "bild": "/bilder/produkte/etsy-106.jpg"
   },
   {
    "id": "etsy-107",
@@ -2809,7 +2927,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475454687/besuch-von-oma-pdf-ratgeber-nr-13o"
+   "etsy": "https://www.etsy.com/de/listing/4475454687/besuch-von-oma-pdf-ratgeber-nr-13o",
+   "bild": "/bilder/produkte/etsy-107.jpg"
   },
   {
    "id": "etsy-108",
@@ -2828,7 +2947,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4475458896/kinder-pdf-ratgeber-nr11-zum-ersten-mal"
+   "etsy": "https://www.etsy.com/de/listing/4475458896/kinder-pdf-ratgeber-nr11-zum-ersten-mal",
+   "bild": "/bilder/produkte/etsy-108.jpg"
   },
   {
    "id": "etsy-109",
@@ -2847,7 +2967,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474759126/lernolotl-kita-ratgeber-komplett-alle-10"
+   "etsy": "https://www.etsy.com/de/listing/4474759126/lernolotl-kita-ratgeber-komplett-alle-10",
+   "bild": "/bilder/produkte/etsy-109.jpg"
   },
   {
    "id": "etsy-110",
@@ -2866,7 +2987,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474751387/lernolotl-ratgeber-10-tschuss-kita-o"
+   "etsy": "https://www.etsy.com/de/listing/4474751387/lernolotl-ratgeber-10-tschuss-kita-o",
+   "bild": "/bilder/produkte/etsy-110.jpg"
   },
   {
    "id": "etsy-111",
@@ -2885,7 +3007,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474750349/lernolotl-ratgeber-9-ich-will-nicht"
+   "etsy": "https://www.etsy.com/de/listing/4474750349/lernolotl-ratgeber-9-ich-will-nicht",
+   "bild": "/bilder/produkte/etsy-111.jpg"
   },
   {
    "id": "etsy-112",
@@ -2903,7 +3026,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474749273/lernolotl-ratgeber-8-ich-weine-und-weiss"
+   "etsy": "https://www.etsy.com/de/listing/4474749273/lernolotl-ratgeber-8-ich-weine-und-weiss",
+   "bild": "/bilder/produkte/etsy-112.jpg"
   },
   {
    "id": "etsy-113",
@@ -2922,7 +3046,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474647347/lernolotl-ratgeber-7-ich-esse-das-nicht"
+   "etsy": "https://www.etsy.com/de/listing/4474647347/lernolotl-ratgeber-7-ich-esse-das-nicht",
+   "bild": "/bilder/produkte/etsy-113.jpg"
   },
   {
    "id": "etsy-114",
@@ -2941,7 +3066,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474651476/lernolotl-ratgeber-5-das-gehort-doch-mir"
+   "etsy": "https://www.etsy.com/de/listing/4474651476/lernolotl-ratgeber-5-das-gehort-doch-mir",
+   "bild": "/bilder/produkte/etsy-114.jpg"
   },
   {
    "id": "etsy-115",
@@ -2960,7 +3086,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474645779/lernolotl-ratgeber-6-wie-sagt-man-hallo"
+   "etsy": "https://www.etsy.com/de/listing/4474645779/lernolotl-ratgeber-6-wie-sagt-man-hallo",
+   "bild": "/bilder/produkte/etsy-115.jpg"
   },
   {
    "id": "etsy-116",
@@ -2979,7 +3106,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474649738/lernolotl-ratgeber-4-wenn-der-plan-sich"
+   "etsy": "https://www.etsy.com/de/listing/4474649738/lernolotl-ratgeber-4-wenn-der-plan-sich",
+   "bild": "/bilder/produkte/etsy-116.jpg"
   },
   {
    "id": "etsy-117",
@@ -2998,7 +3126,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474640643/lernolotl-ratgeber-3-wenn-mama-geht-o"
+   "etsy": "https://www.etsy.com/de/listing/4474640643/lernolotl-ratgeber-3-wenn-mama-geht-o",
+   "bild": "/bilder/produkte/etsy-117.jpg"
   },
   {
    "id": "etsy-118",
@@ -3017,7 +3146,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474646274/lernolotl-ratgeber-2-darf-ich-mitspielen"
+   "etsy": "https://www.etsy.com/de/listing/4474646274/lernolotl-ratgeber-2-darf-ich-mitspielen",
+   "bild": "/bilder/produkte/etsy-118.jpg"
   },
   {
    "id": "etsy-119",
@@ -3034,7 +3164,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4474636785/lernolotl-ratgeber-1-wenn-es-zu-laut"
+   "etsy": "https://www.etsy.com/de/listing/4474636785/lernolotl-ratgeber-1-wenn-es-zu-laut",
+   "bild": "/bilder/produkte/etsy-119.jpg"
   },
   {
    "id": "etsy-120",
@@ -3050,7 +3181,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455650369/parent-teacher-conference-adhd-guide"
+   "etsy": "https://www.etsy.com/de/listing/4455650369/parent-teacher-conference-adhd-guide",
+   "bild": "/bilder/produkte/etsy-120.jpg"
   },
   {
    "id": "etsy-121",
@@ -3068,7 +3200,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472432659/gefuhlsgeschichte-wut-grundschule-klasse"
+   "etsy": "https://www.etsy.com/de/listing/4472432659/gefuhlsgeschichte-wut-grundschule-klasse",
+   "bild": "/bilder/produkte/etsy-121.jpg"
   },
   {
    "id": "etsy-122",
@@ -3086,7 +3219,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472436874/gefuhlsgeschichte-wut-grundschule-klasse"
+   "etsy": "https://www.etsy.com/de/listing/4472436874/gefuhlsgeschichte-wut-grundschule-klasse",
+   "bild": "/bilder/produkte/etsy-122.jpg"
   },
   {
    "id": "etsy-123",
@@ -3104,7 +3238,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472429503/gefuhlsgeschichte-wut-kita-paket-36"
+   "etsy": "https://www.etsy.com/de/listing/4472429503/gefuhlsgeschichte-wut-kita-paket-36",
+   "bild": "/bilder/produkte/etsy-123.jpg"
   },
   {
    "id": "etsy-124",
@@ -3122,7 +3257,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472427387/gefuhlsgeschichte-traurigkeit"
+   "etsy": "https://www.etsy.com/de/listing/4472427387/gefuhlsgeschichte-traurigkeit",
+   "bild": "/bilder/produkte/etsy-124.jpg"
   },
   {
    "id": "etsy-125",
@@ -3140,7 +3276,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472430836/gefuhlsgeschichte-traurigkeit"
+   "etsy": "https://www.etsy.com/de/listing/4472430836/gefuhlsgeschichte-traurigkeit",
+   "bild": "/bilder/produkte/etsy-125.jpg"
   },
   {
    "id": "etsy-126",
@@ -3158,7 +3295,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472429376/gefuhlsgeschichte-traurigkeit-kita-paket"
+   "etsy": "https://www.etsy.com/de/listing/4472429376/gefuhlsgeschichte-traurigkeit-kita-paket",
+   "bild": "/bilder/produkte/etsy-126.jpg"
   },
   {
    "id": "etsy-127",
@@ -3176,7 +3314,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472426520/gefuhlsgeschichte-mut-grundschule-klasse"
+   "etsy": "https://www.etsy.com/de/listing/4472426520/gefuhlsgeschichte-mut-grundschule-klasse",
+   "bild": "/bilder/produkte/etsy-127.jpg"
   },
   {
    "id": "etsy-128",
@@ -3194,7 +3333,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472425284/gefuhlsgeschichte-mut-grundschule-klasse"
+   "etsy": "https://www.etsy.com/de/listing/4472425284/gefuhlsgeschichte-mut-grundschule-klasse",
+   "bild": "/bilder/produkte/etsy-128.jpg"
   },
   {
    "id": "etsy-129",
@@ -3212,7 +3352,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472418709/gefuhlsgeschichte-mut-kita-paket-36"
+   "etsy": "https://www.etsy.com/de/listing/4472418709/gefuhlsgeschichte-mut-kita-paket-36",
+   "bild": "/bilder/produkte/etsy-129.jpg"
   },
   {
    "id": "etsy-130",
@@ -3231,7 +3372,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle"
+   "etsy": "https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle",
+   "bild": "/bilder/produkte/etsy-130.jpg"
   },
   {
    "id": "etsy-131",
@@ -3249,7 +3391,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471521411/gefuhlsgeschichte-geduld-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4471521411/gefuhlsgeschichte-geduld-grundschule",
+   "bild": "/bilder/produkte/etsy-131.jpg"
   },
   {
    "id": "etsy-132",
@@ -3267,7 +3410,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471526498/gefuhlsgeschichte-geduld-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4471526498/gefuhlsgeschichte-geduld-grundschule",
+   "bild": "/bilder/produkte/etsy-132.jpg"
   },
   {
    "id": "etsy-133",
@@ -3285,7 +3429,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471525238/gefuhlsgeschichte-geduld-kita-paket-36"
+   "etsy": "https://www.etsy.com/de/listing/4471525238/gefuhlsgeschichte-geduld-kita-paket-36",
+   "bild": "/bilder/produkte/etsy-133.jpg"
   },
   {
    "id": "etsy-134",
@@ -3303,7 +3448,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471227722/gefuhlsgeschichte-frustration"
+   "etsy": "https://www.etsy.com/de/listing/4471227722/gefuhlsgeschichte-frustration",
+   "bild": "/bilder/produkte/etsy-134.jpg"
   },
   {
    "id": "etsy-135",
@@ -3321,7 +3467,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471226748/gefuhlsgeschichte-frustration"
+   "etsy": "https://www.etsy.com/de/listing/4471226748/gefuhlsgeschichte-frustration",
+   "bild": "/bilder/produkte/etsy-135.jpg"
   },
   {
    "id": "etsy-136",
@@ -3339,7 +3486,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471218261/gefuhlsgeschichte-frustration-kita-paket"
+   "etsy": "https://www.etsy.com/de/listing/4471218261/gefuhlsgeschichte-frustration-kita-paket",
+   "bild": "/bilder/produkte/etsy-136.jpg"
   },
   {
    "id": "etsy-137",
@@ -3357,7 +3505,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471223814/gefuhlsgeschichte-freude-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4471223814/gefuhlsgeschichte-freude-grundschule",
+   "bild": "/bilder/produkte/etsy-137.jpg"
   },
   {
    "id": "etsy-138",
@@ -3375,7 +3524,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471221788/gefuhlsgeschichte-freude-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4471221788/gefuhlsgeschichte-freude-grundschule",
+   "bild": "/bilder/produkte/etsy-138.jpg"
   },
   {
    "id": "etsy-139",
@@ -3393,7 +3543,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471212449/gefuhlsgeschichte-freude-kita-paket-36"
+   "etsy": "https://www.etsy.com/de/listing/4471212449/gefuhlsgeschichte-freude-kita-paket-36",
+   "bild": "/bilder/produkte/etsy-139.jpg"
   },
   {
    "id": "etsy-140",
@@ -3412,7 +3563,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471217530/gefuhlsgeschichte-einsamkeit-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4471217530/gefuhlsgeschichte-einsamkeit-grundschule",
+   "bild": "/bilder/produkte/etsy-140.jpg"
   },
   {
    "id": "etsy-141",
@@ -3431,7 +3583,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471216610/gefuhlsgeschichte-einsamkeit-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4471216610/gefuhlsgeschichte-einsamkeit-grundschule",
+   "bild": "/bilder/produkte/etsy-141.jpg"
   },
   {
    "id": "etsy-142",
@@ -3450,7 +3603,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4471208259/gefuhlsgeschichte-einsamkeit-kita-paket"
+   "etsy": "https://www.etsy.com/de/listing/4471208259/gefuhlsgeschichte-einsamkeit-kita-paket",
+   "bild": "/bilder/produkte/etsy-142.jpg"
   },
   {
    "id": "etsy-143",
@@ -3467,7 +3621,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4466484225/vorlesezeit-karten-40-gesprachskarten"
+   "etsy": "https://www.etsy.com/de/listing/4466484225/vorlesezeit-karten-40-gesprachskarten",
+   "bild": "/bilder/produkte/etsy-143.jpg"
   },
   {
    "id": "etsy-144",
@@ -3485,7 +3640,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460952781/gefuhlsgeschichte-unsicherheit"
+   "etsy": "https://www.etsy.com/de/listing/4460952781/gefuhlsgeschichte-unsicherheit",
+   "bild": "/bilder/produkte/etsy-144.jpg"
   },
   {
    "id": "etsy-145",
@@ -3503,7 +3659,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460951477/gefuhlsgeschichte-unsicherheit"
+   "etsy": "https://www.etsy.com/de/listing/4460951477/gefuhlsgeschichte-unsicherheit",
+   "bild": "/bilder/produkte/etsy-145.jpg"
   },
   {
    "id": "etsy-146",
@@ -3522,7 +3679,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460950091/gefuhlsgeschichte-unsicherheit-kita"
+   "etsy": "https://www.etsy.com/de/listing/4460950091/gefuhlsgeschichte-unsicherheit-kita",
+   "bild": "/bilder/produkte/etsy-146.jpg"
   },
   {
    "id": "etsy-147",
@@ -3540,7 +3698,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460574580/gefuhlsgeschichte-eifersucht-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4460574580/gefuhlsgeschichte-eifersucht-grundschule",
+   "bild": "/bilder/produkte/etsy-147.jpg"
   },
   {
    "id": "etsy-148",
@@ -3558,7 +3717,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460572806/gefuhlsgeschichte-eifersucht-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4460572806/gefuhlsgeschichte-eifersucht-grundschule",
+   "bild": "/bilder/produkte/etsy-148.jpg"
   },
   {
    "id": "etsy-149",
@@ -3576,7 +3736,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460571384/gefuhlsgeschichte-eifersucht-kita-paket"
+   "etsy": "https://www.etsy.com/de/listing/4460571384/gefuhlsgeschichte-eifersucht-kita-paket",
+   "bild": "/bilder/produkte/etsy-149.jpg"
   },
   {
    "id": "etsy-150",
@@ -3594,7 +3755,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460525054/gefuhlsgeschichte-dankbarkeit"
+   "etsy": "https://www.etsy.com/de/listing/4460525054/gefuhlsgeschichte-dankbarkeit",
+   "bild": "/bilder/produkte/etsy-150.jpg"
   },
   {
    "id": "etsy-151",
@@ -3612,7 +3774,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460523520/gefuhlsgeschichte-dankbarkeit"
+   "etsy": "https://www.etsy.com/de/listing/4460523520/gefuhlsgeschichte-dankbarkeit",
+   "bild": "/bilder/produkte/etsy-151.jpg"
   },
   {
    "id": "etsy-152",
@@ -3630,7 +3793,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460514233/gefuhlsgeschichte-dankbarkeit-kita-paket"
+   "etsy": "https://www.etsy.com/de/listing/4460514233/gefuhlsgeschichte-dankbarkeit-kita-paket",
+   "bild": "/bilder/produkte/etsy-152.jpg"
   },
   {
    "id": "etsy-153",
@@ -3648,7 +3812,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34"
+   "etsy": "https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34",
+   "bild": "/bilder/produkte/etsy-153.jpg"
   },
   {
    "id": "etsy-154",
@@ -3667,7 +3832,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12"
+   "etsy": "https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12",
+   "bild": "/bilder/produkte/etsy-154.jpg"
   },
   {
    "id": "etsy-155",
@@ -3685,7 +3851,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11"
+   "etsy": "https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11",
+   "bild": "/bilder/produkte/etsy-155.jpg"
   },
   {
    "id": "etsy-156",
@@ -3703,7 +3870,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460128389/gefuhlsgeschichte-angst-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4460128389/gefuhlsgeschichte-angst-grundschule",
+   "bild": "/bilder/produkte/etsy-156.jpg"
   },
   {
    "id": "etsy-157",
@@ -3721,7 +3889,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460126511/gefuhlsgeschichte-angst-grundschule"
+   "etsy": "https://www.etsy.com/de/listing/4460126511/gefuhlsgeschichte-angst-grundschule",
+   "bild": "/bilder/produkte/etsy-157.jpg"
   },
   {
    "id": "etsy-158",
@@ -3739,7 +3908,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4460124029/gefuhlsgeschichte-angst-kita-paket-36"
+   "etsy": "https://www.etsy.com/de/listing/4460124029/gefuhlsgeschichte-angst-kita-paket-36",
+   "bild": "/bilder/produkte/etsy-158.jpg"
   },
   {
    "id": "etsy-159",
@@ -3756,7 +3926,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456015011/complete-autism-support-bundle-visual"
+   "etsy": "https://www.etsy.com/de/listing/4456015011/complete-autism-support-bundle-visual",
+   "bild": "/bilder/produkte/etsy-159.jpg"
   },
   {
    "id": "etsy-160",
@@ -3773,7 +3944,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456014013/autism-communication-scales-bundle-6"
+   "etsy": "https://www.etsy.com/de/listing/4456014013/autism-communication-scales-bundle-6",
+   "bild": "/bilder/produkte/etsy-160.jpg"
   },
   {
    "id": "etsy-161",
@@ -3790,7 +3962,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456013023/visual-daily-structure-cards-autism-135"
+   "etsy": "https://www.etsy.com/de/listing/4456013023/visual-daily-structure-cards-autism-135",
+   "bild": "/bilder/produkte/etsy-161.jpg"
   },
   {
    "id": "etsy-162",
@@ -3807,7 +3980,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456010985/homework-emergency-bundle-autism-adhd"
+   "etsy": "https://www.etsy.com/de/listing/4456010985/homework-emergency-bundle-autism-adhd",
+   "bild": "/bilder/produkte/etsy-162.jpg"
   },
   {
    "id": "etsy-163",
@@ -3824,7 +3998,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456010085/adhd-homework-emergency-plan-executive"
+   "etsy": "https://www.etsy.com/de/listing/4456010085/adhd-homework-emergency-plan-executive",
+   "bild": "/bilder/produkte/etsy-163.jpg"
   },
   {
    "id": "etsy-164",
@@ -3841,7 +4016,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456009329/autism-homework-emergency-plan-meltdown"
+   "etsy": "https://www.etsy.com/de/listing/4456009329/autism-homework-emergency-plan-meltdown",
+   "bild": "/bilder/produkte/etsy-164.jpg"
   },
   {
    "id": "etsy-165",
@@ -3858,7 +4034,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456016014/6-social-stories-autism-medical-daily"
+   "etsy": "https://www.etsy.com/de/listing/4456016014/6-social-stories-autism-medical-daily",
+   "bild": "/bilder/produkte/etsy-165.jpg"
   },
   {
    "id": "etsy-166",
@@ -3875,7 +4052,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456015304/6-social-stories-autism-school-leisure"
+   "etsy": "https://www.etsy.com/de/listing/4456015304/6-social-stories-autism-school-leisure",
+   "bild": "/bilder/produkte/etsy-166.jpg"
   },
   {
    "id": "etsy-167",
@@ -3892,7 +4070,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456014550/7-social-stories-autism-daily-life"
+   "etsy": "https://www.etsy.com/de/listing/4456014550/7-social-stories-autism-daily-life",
+   "bild": "/bilder/produkte/etsy-167.jpg"
   },
   {
    "id": "etsy-168",
@@ -3909,7 +4088,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456005483/complete-social-stories-bundle-autism-19"
+   "etsy": "https://www.etsy.com/de/listing/4456005483/complete-social-stories-bundle-autism-19",
+   "bild": "/bilder/produkte/etsy-168.jpg"
   },
   {
    "id": "etsy-169",
@@ -3925,7 +4105,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456011332/autism-classroom-essentials-bundle"
+   "etsy": "https://www.etsy.com/de/listing/4456011332/autism-classroom-essentials-bundle",
+   "bild": "/bilder/produkte/etsy-169.jpg"
   },
   {
    "id": "etsy-170",
@@ -3942,7 +4123,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456010512/autism-crisis-communication-bundle"
+   "etsy": "https://www.etsy.com/de/listing/4456010512/autism-crisis-communication-bundle",
+   "bild": "/bilder/produkte/etsy-170.jpg"
   },
   {
    "id": "etsy-171",
@@ -3959,7 +4141,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456009576/complete-autism-teacher-toolkit-bundle-5"
+   "etsy": "https://www.etsy.com/de/listing/4456009576/complete-autism-teacher-toolkit-bundle-5",
+   "bild": "/bilder/produkte/etsy-171.jpg"
   },
   {
    "id": "etsy-172",
@@ -3976,7 +4159,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4456008540/adhd-communication-crisis-bundle-parent"
+   "etsy": "https://www.etsy.com/de/listing/4456008540/adhd-communication-crisis-bundle-parent",
+   "bild": "/bilder/produkte/etsy-172.jpg"
   },
   {
    "id": "etsy-173",
@@ -3992,7 +4176,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455998469/adhd-classroom-essentials-bundle-setup"
+   "etsy": "https://www.etsy.com/de/listing/4455998469/adhd-classroom-essentials-bundle-setup",
+   "bild": "/bilder/produkte/etsy-173.jpg"
   },
   {
    "id": "etsy-174",
@@ -4008,7 +4193,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455996893/complete-adhd-teacher-toolkit-bundle-5"
+   "etsy": "https://www.etsy.com/de/listing/4455996893/complete-adhd-teacher-toolkit-bundle-5",
+   "bild": "/bilder/produkte/etsy-174.jpg"
   },
   {
    "id": "etsy-175",
@@ -4027,7 +4213,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455804374/klassenstart-autismus-checkliste"
+   "etsy": "https://www.etsy.com/de/listing/4455804374/klassenstart-autismus-checkliste",
+   "bild": "/bilder/produkte/etsy-175.jpg"
   },
   {
    "id": "etsy-176",
@@ -4046,7 +4233,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455794261/strukturplane-autismus-unterricht"
+   "etsy": "https://www.etsy.com/de/listing/4455794261/strukturplane-autismus-unterricht",
+   "bild": "/bilder/produkte/etsy-176.jpg"
   },
   {
    "id": "etsy-177",
@@ -4065,7 +4253,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455789543/autismus-alltags-fundament-bundle-lehrer"
+   "etsy": "https://www.etsy.com/de/listing/4455789543/autismus-alltags-fundament-bundle-lehrer",
+   "bild": "/bilder/produkte/etsy-177.jpg"
   },
   {
    "id": "etsy-178",
@@ -4084,7 +4273,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455787793/autismus-komplettpaket-lehrer-bundle-5"
+   "etsy": "https://www.etsy.com/de/listing/4455787793/autismus-komplettpaket-lehrer-bundle-5",
+   "bild": "/bilder/produkte/etsy-178.jpg"
   },
   {
    "id": "etsy-179",
@@ -4101,7 +4291,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455793332/autismus-krisenmanagement-bundle-lehrer"
+   "etsy": "https://www.etsy.com/de/listing/4455793332/autismus-krisenmanagement-bundle-lehrer",
+   "bild": "/bilder/produkte/etsy-179.jpg"
   },
   {
    "id": "etsy-180",
@@ -4120,7 +4311,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455781578/adhs-kommunikations-bundle-o"
+   "etsy": "https://www.etsy.com/de/listing/4455781578/adhs-kommunikations-bundle-o",
+   "bild": "/bilder/produkte/etsy-180.jpg"
   },
   {
    "id": "etsy-181",
@@ -4139,7 +4331,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455779898/adhs-classroom-bundle-o-management"
+   "etsy": "https://www.etsy.com/de/listing/4455779898/adhs-classroom-bundle-o-management",
+   "bild": "/bilder/produkte/etsy-181.jpg"
   },
   {
    "id": "etsy-182",
@@ -4158,7 +4351,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455770091/adhs-starter-bundle-o-3-ratgeber-o"
+   "etsy": "https://www.etsy.com/de/listing/4455770091/adhs-starter-bundle-o-3-ratgeber-o",
+   "bild": "/bilder/produkte/etsy-182.jpg"
   },
   {
    "id": "etsy-183",
@@ -4177,7 +4371,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455760018/social-stories-autismus-entwicklung"
+   "etsy": "https://www.etsy.com/de/listing/4455760018/social-stories-autismus-entwicklung",
+   "bild": "/bilder/produkte/etsy-183.jpg"
   },
   {
    "id": "etsy-184",
@@ -4196,7 +4391,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455753504/social-stories-autismus-schule-freizeit"
+   "etsy": "https://www.etsy.com/de/listing/4455753504/social-stories-autismus-schule-freizeit",
+   "bild": "/bilder/produkte/etsy-184.jpg"
   },
   {
    "id": "etsy-185",
@@ -4215,7 +4411,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455735786/autismus-hausaufgaben-notfallplan"
+   "etsy": "https://www.etsy.com/de/listing/4455735786/autismus-hausaufgaben-notfallplan",
+   "bild": "/bilder/produkte/etsy-185.jpg"
   },
   {
    "id": "etsy-186",
@@ -4234,7 +4431,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455727316/autismus-schulgesprache-leitfaden-eltern"
+   "etsy": "https://www.etsy.com/de/listing/4455727316/autismus-schulgesprache-leitfaden-eltern",
+   "bild": "/bilder/produkte/etsy-186.jpg"
   },
   {
    "id": "etsy-187",
@@ -4253,7 +4451,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455723462/bundle-tagesplan-regulations-toolkit"
+   "etsy": "https://www.etsy.com/de/listing/4455723462/bundle-tagesplan-regulations-toolkit",
+   "bild": "/bilder/produkte/etsy-187.jpg"
   },
   {
    "id": "etsy-188",
@@ -4272,7 +4471,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455716740/autismus-visueller-tagesplan-135"
+   "etsy": "https://www.etsy.com/de/listing/4455716740/autismus-visueller-tagesplan-135",
+   "bild": "/bilder/produkte/etsy-188.jpg"
   },
   {
    "id": "etsy-189",
@@ -4291,7 +4491,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455678765/autismus-schulstart-guide-eltern"
+   "etsy": "https://www.etsy.com/de/listing/4455678765/autismus-schulstart-guide-eltern",
+   "bild": "/bilder/produkte/etsy-189.jpg"
   },
   {
    "id": "etsy-190",
@@ -4310,7 +4511,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455682144/nachteilsausgleich-paket-adhs-autismus"
+   "etsy": "https://www.etsy.com/de/listing/4455682144/nachteilsausgleich-paket-adhs-autismus",
+   "bild": "/bilder/produkte/etsy-190.jpg"
   },
   {
    "id": "etsy-191",
@@ -4327,7 +4529,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455668566/autism-strengths-teacher-guide-strength"
+   "etsy": "https://www.etsy.com/de/listing/4455668566/autism-strengths-teacher-guide-strength",
+   "bild": "/bilder/produkte/etsy-191.jpg"
   },
   {
    "id": "etsy-192",
@@ -4344,7 +4547,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455666944/autism-meltdown-management-guide-crisis"
+   "etsy": "https://www.etsy.com/de/listing/4455666944/autism-meltdown-management-guide-crisis",
+   "bild": "/bilder/produkte/etsy-192.jpg"
   },
   {
    "id": "etsy-193",
@@ -4361,7 +4565,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455665450/autism-structure-routines-guide-visual"
+   "etsy": "https://www.etsy.com/de/listing/4455665450/autism-structure-routines-guide-visual",
+   "bild": "/bilder/produkte/etsy-193.jpg"
   },
   {
    "id": "etsy-194",
@@ -4378,7 +4583,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455663740/autism-communication-teacher-guide-clear"
+   "etsy": "https://www.etsy.com/de/listing/4455663740/autism-communication-teacher-guide-clear",
+   "bild": "/bilder/produkte/etsy-194.jpg"
   },
   {
    "id": "etsy-195",
@@ -4395,7 +4601,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455654113/autism-sensory-classroom-guide-sensory"
+   "etsy": "https://www.etsy.com/de/listing/4455654113/autism-sensory-classroom-guide-sensory",
+   "bild": "/bilder/produkte/etsy-195.jpg"
   },
   {
    "id": "etsy-196",
@@ -4411,7 +4618,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455656628/adhd-classroom-setup-guide-seating"
+   "etsy": "https://www.etsy.com/de/listing/4455656628/adhd-classroom-setup-guide-seating",
+   "bild": "/bilder/produkte/etsy-196.jpg"
   },
   {
    "id": "etsy-197",
@@ -4429,7 +4637,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455646631/adhd-classroom-management-toolkit"
+   "etsy": "https://www.etsy.com/de/listing/4455646631/adhd-classroom-management-toolkit",
+   "bild": "/bilder/produkte/etsy-197.jpg"
   },
   {
    "id": "etsy-198",
@@ -4445,7 +4654,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455644707/adhd-teaching-strategies-guide"
+   "etsy": "https://www.etsy.com/de/listing/4455644707/adhd-teaching-strategies-guide",
+   "bild": "/bilder/produkte/etsy-198.jpg"
   },
   {
    "id": "etsy-199",
@@ -4461,7 +4671,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455642771/adhd-teacher-guide-common-problems"
+   "etsy": "https://www.etsy.com/de/listing/4455642771/adhd-teacher-guide-common-problems",
+   "bild": "/bilder/produkte/etsy-199.jpg"
   },
   {
    "id": "etsy-200",
@@ -4480,7 +4691,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455483621/autismus-kommunikation-lehrer-guide"
+   "etsy": "https://www.etsy.com/de/listing/4455483621/autismus-kommunikation-lehrer-guide",
+   "bild": "/bilder/produkte/etsy-200.jpg"
   },
   {
    "id": "etsy-201",
@@ -4499,7 +4711,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455490748/autismus-struktur-routinen-lehrer"
+   "etsy": "https://www.etsy.com/de/listing/4455490748/autismus-struktur-routinen-lehrer",
+   "bild": "/bilder/produkte/etsy-201.jpg"
   },
   {
    "id": "etsy-202",
@@ -4518,7 +4731,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455489798/autismus-starken-fordern-lehrer-guide"
+   "etsy": "https://www.etsy.com/de/listing/4455489798/autismus-starken-fordern-lehrer-guide",
+   "bild": "/bilder/produkte/etsy-202.jpg"
   },
   {
    "id": "etsy-203",
@@ -4535,7 +4749,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455479403/autismus-sensorik-klassenzimmer"
+   "etsy": "https://www.etsy.com/de/listing/4455479403/autismus-sensorik-klassenzimmer",
+   "bild": "/bilder/produkte/etsy-203.jpg"
   },
   {
    "id": "etsy-204",
@@ -4554,7 +4769,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455470688/adhs-klassenraum-setup-optimale"
+   "etsy": "https://www.etsy.com/de/listing/4455470688/adhs-klassenraum-setup-optimale",
+   "bild": "/bilder/produkte/etsy-204.jpg"
   },
   {
    "id": "etsy-205",
@@ -4573,7 +4789,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455462001/adhs-classroom-management-toolkit-token"
+   "etsy": "https://www.etsy.com/de/listing/4455462001/adhs-classroom-management-toolkit-token",
+   "bild": "/bilder/produkte/etsy-205.jpg"
   },
   {
    "id": "etsy-206",
@@ -4592,7 +4809,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455460421/adhs-sos-sofortlosungen-o-typische"
+   "etsy": "https://www.etsy.com/de/listing/4455460421/adhs-sos-sofortlosungen-o-typische",
+   "bild": "/bilder/produkte/etsy-206.jpg"
   },
   {
    "id": "etsy-207",
@@ -4611,7 +4829,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455242868/adhs-elterngesprache-leitfaden-o"
+   "etsy": "https://www.etsy.com/de/listing/4455242868/adhs-elterngesprache-leitfaden-o",
+   "bild": "/bilder/produkte/etsy-207.jpg"
   },
   {
    "id": "etsy-208",
@@ -4630,7 +4849,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4455206764/adhs-lehrer-ratgeber-adhs-unterricht"
+   "etsy": "https://www.etsy.com/de/listing/4455206764/adhs-lehrer-ratgeber-adhs-unterricht",
+   "bild": "/bilder/produkte/etsy-208.jpg"
   },
   {
    "id": "etsy-209",
@@ -4649,7 +4869,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4518539604/verliebt-sein-kinder-vorlesegeschichte"
+   "etsy": "https://www.etsy.com/de/listing/4518539604/verliebt-sein-kinder-vorlesegeschichte",
+   "bild": "/bilder/produkte/etsy-209.jpg"
   },
   {
    "id": "etsy-210",
@@ -4668,7 +4889,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4516310851/familienspiele-geburtstag-pdf-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4516310851/familienspiele-geburtstag-pdf-lernolotl",
+   "bild": "/bilder/produkte/etsy-210.jpg"
   },
   {
    "id": "etsy-211",
@@ -4687,7 +4909,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4515534580/reisespiele-kleinkind-pdf-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4515534580/reisespiele-kleinkind-pdf-lernolotl",
+   "bild": "/bilder/produkte/etsy-211.jpg"
   },
   {
    "id": "etsy-212",
@@ -4706,7 +4929,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4515247984/draussen-spiele-kleinkind-pdf-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4515247984/draussen-spiele-kleinkind-pdf-lernolotl",
+   "bild": "/bilder/produkte/etsy-212.jpg"
   },
   {
    "id": "etsy-213",
@@ -4725,7 +4949,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4514689889/drinnen-spiele-kleinkind-pdf-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4514689889/drinnen-spiele-kleinkind-pdf-lernolotl",
+   "bild": "/bilder/produkte/etsy-213.jpg"
   },
   {
    "id": "etsy-214",
@@ -4744,7 +4969,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4514072298/badewanne-spiele-kleinkind-pdf-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4514072298/badewanne-spiele-kleinkind-pdf-lernolotl",
+   "bild": "/bilder/produkte/etsy-214.jpg"
   },
   {
    "id": "etsy-215",
@@ -4763,7 +4989,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4512028123/schulstart-bundle-pdf-schulstarter-heft"
+   "etsy": "https://www.etsy.com/de/listing/4512028123/schulstart-bundle-pdf-schulstarter-heft",
+   "bild": "/bilder/produkte/etsy-215.jpg"
   },
   {
    "id": "etsy-216",
@@ -4782,7 +5009,8 @@
    ],
    "amazon": null,
    "asin": null,
-   "etsy": "https://www.etsy.com/de/listing/4512001780/schulvorbereitung-heft-pdf-lernolotl"
+   "etsy": "https://www.etsy.com/de/listing/4512001780/schulvorbereitung-heft-pdf-lernolotl",
+   "bild": "/bilder/produkte/etsy-216.jpg"
   }
  ],
  "geschichten": [
