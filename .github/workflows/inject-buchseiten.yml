@@ -62,13 +62,16 @@ jobs:
               "Jahreszeiten-Tage — Wir erleben den Jahreskreis": "/buecher/die-kleinen-entdecker/",
               "Nachthimmel-Tage — Wir werden zu kleinen Nachtforscher:innen": "/buecher/die-kleinen-entdecker/",
               # --- Reihe: Lernolotl-Geschichten ---
-              "Ist mein Kind bereit für die Schule? – Das große Lernolotl Schulstarter-Heft": "/buecher/lernolotl-geschichten/",
+              "Ist mein Kind bereit für die Schule? – Das große Lernolotl Schulstarter-Heft": "/buecher/schulstarter-heft/",
               "Lernolotl Freunde": "/buecher/lernolotl-geschichten/",
               "Lernolotl Ich bin ich": "/buecher/lernolotl-geschichten/",
               "Lernolotl Sport": "/buecher/lernolotl-geschichten/",
               "Lernolotl Zuhause": "/buecher/lernolotl-geschichten/",
               "Lernolotl in der Kita": "/buecher/lernolotl-geschichten/",
               "Lernolotl in der Schule": "/buecher/lernolotl-geschichten/",
+              # Spielezeit-Sammelausgabe fehlt noch als Buch in produkte.json.
+              # Sobald sie drin ist, hier eintragen:
+              # "Lernolotl Spielezeit – Die große Sammelausgabe": "/buecher/lernolotl-spielezeit/",
           }
           BUTTON_TEXT = "Mehr zum Buch"
           # ============================================================
