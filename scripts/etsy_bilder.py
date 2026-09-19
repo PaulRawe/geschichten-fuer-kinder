@@ -8,8 +8,8 @@ Was das Skript macht:
 
 1. Liest  bibliothek/etsy-listings.csv  (der Etsy-Export, unveraendert)
 2. Ordnet jede CSV-Zeile einem Produkt in  bibliothek/produkte.json  zu
-3. Laedt fehlende Produktbilder herunter, beschneidet sie auf 4:3,
-   verkleinert auf 400x300 und speichert sie als JPG unter
+3. Laedt fehlende Produktbilder herunter und bringt sie auf 400x400,
+   ohne etwas abzuschneiden, und speichert sie als JPG unter
    bilder/produkte/<produkt-id>.jpg  -- Zielgroesse hoechstens 70 KB
 4. Traegt den Bildpfad als Feld "bild" in produkte.json ein
 5. Legt Produkte an, die in der CSV stehen, aber noch nicht in produkte.json
@@ -108,10 +108,11 @@ BUCH_BILDER["Ist mein Kind bereit für die Schule? – Das große Lernolotl Schu
     "/lernolotl/schulstarterheft.jpg"
 
 # ---------------------------------------------------------------------------
-BREITE, HOEHE = 400, 300          # Anzeigegroesse der Kartenbilder
+BREITE, HOEHE = 400, 400          # Kartenbilder sind quadratisch wie die Etsy-Fotos
 MAX_BYTES     = 70 * 1024         # harte Obergrenze pro Bild
 START_QUALI   = 72
 MIN_QUALI     = 40
+HINTERGRUND   = (248, 251, 252)   # Kartenfarbe, falls doch Raender noetig sind
 
 CSV_PFAD   = "bibliothek/etsy-listings.csv"
 JSON_PFAD  = "bibliothek/produkte.json"
@@ -144,19 +145,31 @@ def lade_csv(pfad):
 
 
 # --------------------------------------------------------------------------- Bild
-def cover_verkleinern(quelle, ziel):
-    """Bringt ein Buchcover aus dem Repo auf Kartengroesse.
+def format_passt(pfad):
+    """Prueft, ob eine vorhandene Datei schon das aktuelle Kartenformat hat.
 
-    Anders als bei den Etsy-Fotos wird hier nichts abgeschnitten: Auf einem
-    Cover steht der Titel, der nicht halb wegfallen darf. Das Bild wird
-    vollstaendig eingepasst, der Rest bekommt die Farbe der Karte.
+    Wird das Format im Skript geaendert, sollen die alten Bilder von selbst
+    erneuert werden - ohne dass jemand daran denken muss."""
+    try:
+        from PIL import Image
+        with Image.open(pfad) as im:
+            return im.size == (BREITE, HOEHE)
+    except Exception:
+        return False
+
+
+def einpassen(bild, ziel, rand=0):
+    """Bringt ein Bild auf Kartengroesse, OHNE etwas abzuschneiden.
+
+    Frueher wurde mittig zugeschnitten - dabei fiel auf den Etsy-Fotos oben
+    und unten der Text weg. Jetzt wird das ganze Bild eingepasst. Da die
+    Karten quadratisch sind und die Etsy-Fotos ebenfalls, entstehen dabei
+    in aller Regel nicht einmal Raender.
     """
     from PIL import Image
 
-    bild = Image.open(quelle)
     bild = bild.convert("RGBA") if bild.mode in ("RGBA", "LA", "P") else bild.convert("RGB")
-    flaeche = Image.new("RGB", (BREITE, HOEHE), (248, 251, 252))
-    rand = 6
+    flaeche = Image.new("RGB", (BREITE, HOEHE), HINTERGRUND)
     bild.thumbnail((BREITE - 2 * rand, HOEHE - 2 * rand), Image.LANCZOS)
     versatz = ((BREITE - bild.width) // 2, (HOEHE - bild.height) // 2)
     flaeche.paste(bild, versatz, bild if bild.mode == "RGBA" else None)
@@ -172,42 +185,20 @@ def cover_verkleinern(quelle, ziel):
     return 0
 
 
+def cover_verkleinern(quelle, ziel):
+    """Buchcover aus dem Repo auf Kartengroesse bringen."""
+    from PIL import Image
+    return einpassen(Image.open(quelle), ziel, rand=6)
+
+
 def bild_holen(url, ziel, sitzung):
-    """Laedt ein Bild, beschneidet auf 4:3, verkleinert und speichert als JPG."""
+    """Laedt ein Etsy-Foto und bringt es auf Kartengroesse."""
     from PIL import Image
 
     antwort = sitzung.get(url, timeout=45)
     antwort.raise_for_status()
-
-    bild = Image.open(io.BytesIO(antwort.content))
-    if bild.mode != "RGB":
-        bild = bild.convert("RGB")
-
-    # mittigen 4:3-Ausschnitt waehlen
-    soll = BREITE / HOEHE
-    b, h = bild.size
-    ist = b / h
-    if ist > soll:                       # zu breit -> links und rechts kuerzen
-        neu_b = int(h * soll)
-        links = (b - neu_b) // 2
-        bild = bild.crop((links, 0, links + neu_b, h))
-    elif ist < soll:                     # zu hoch -> oben und unten kuerzen
-        neu_h = int(b / soll)
-        oben = (h - neu_h) // 2
-        bild = bild.crop((0, oben, b, oben + neu_h))
-
-    bild = bild.resize((BREITE, HOEHE), Image.LANCZOS)
-
-    # Qualitaet so weit senken, bis die Groesse passt
-    for quali in range(START_QUALI, MIN_QUALI - 1, -6):
-        puffer = io.BytesIO()
-        bild.save(puffer, "JPEG", quality=quali, optimize=True, progressive=True)
-        if puffer.tell() <= MAX_BYTES or quali == MIN_QUALI:
-            os.makedirs(os.path.dirname(ziel), exist_ok=True)
-            with open(ziel, "wb") as f:
-                f.write(puffer.getvalue())
-            return puffer.tell(), quali
-    return 0, 0
+    groesse = einpassen(Image.open(io.BytesIO(antwort.content)), ziel)
+    return groesse, 0
 
 
 # --------------------------------------------------------------------------- Zuordnung
@@ -307,7 +298,10 @@ def themenseiten_bebildern(produkte):
             def ersetze(treffer):
                 nonlocal eingesetzt
                 karte = treffer.group(0)
-                if MARK_A in karte:
+                # Nur Produktkarten. Acht Titel gibt es sowohl als Buch wie
+                # als Geschichte -- ohne diese Pruefung wuerden sich die
+                # beiden Skripte gegenseitig ueberschreiben.
+                if 'class="tag frei"' in karte:
                     return karte
                 titel = re.search(r"<h4>(.*?)</h4>", karte, re.S)
                 if not titel:
@@ -318,6 +312,14 @@ def themenseiten_bebildern(produkte):
                 img = ('%s<img class="pbild" src="%s" alt="" width="%d" height="%d" '
                        'loading="lazy" decoding="async">%s\n'
                        % (MARK_A, produkt["bild"], BREITE, HOEHE, MARK_E))
+                if MARK_A in karte:
+                    # aelteren Block ersetzen -- die Bildmasse koennen sich
+                    # geaendert haben, sonst springt das Layout beim Laden
+                    neu_karte = re.sub(re.escape(MARK_A) + r".*?" + re.escape(MARK_E) + r"\n?",
+                                       img, karte, count=1, flags=re.S)
+                    if neu_karte != karte:
+                        eingesetzt += 1
+                    return neu_karte
                 eingesetzt += 1
                 return karte.replace('<article class="produkt">',
                                      '<article class="produkt">\n' + img, 1)
@@ -330,17 +332,24 @@ def themenseiten_bebildern(produkte):
 
 
 def css_ergaenzen():
-    regel = """
-/* produktbilder */
-.produkt .pbild{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;
-  display:block;margin-bottom:12px;background:#eef3f6;}
-"""
+    """Setzt die Regeln fuer die Kartenbilder - und ersetzt eine aeltere Fassung."""
     if not os.path.exists(CSS_PFAD):
         return False
+    block = ("/* produktbilder */\n"
+             ".produkt .pbild{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:12px;\n"
+             "  display:block;margin-bottom:8px;background:#f8fbfc;}\n"
+             ".produkt .bildunter{font-size:.78em;color:#7b8b95;margin:-2px 0 10px;text-align:center;}\n"
+             "/* /produktbilder */")
     inhalt = open(CSS_PFAD, encoding="utf-8").read()
-    if "produktbilder" in inhalt:
+    if block in inhalt:
         return False
-    open(CSS_PFAD, "a", encoding="utf-8").write("\n" + regel.strip() + "\n")
+    if "/* produktbilder */" in inhalt:
+        # aeltere Fassung ersetzen (mit oder ohne Endmarker)
+        inhalt = re.sub(r"/\* produktbilder \*/.*?(?:/\* /produktbilder \*/|(?=\n\s*\n)|$)",
+                        block, inhalt, count=1, flags=re.S)
+        open(CSS_PFAD, "w", encoding="utf-8").write(inhalt)
+        return True
+    open(CSS_PFAD, "a", encoding="utf-8").write("\n" + block + "\n")
     return True
 
 
@@ -422,7 +431,7 @@ def main():
         datei = os.path.join(BILD_DIR, "%s.jpg" % produkt["id"])
         produkt["bild"] = "%s/%s.jpg" % (BILD_WEB, produkt["id"])
 
-        if os.path.exists(datei) and not args.neu_laden:
+        if os.path.exists(datei) and format_passt(datei) and not args.neu_laden:
             uebersprungen += 1
             groessen.append(os.path.getsize(datei))
             continue
@@ -454,7 +463,7 @@ def main():
 
         datei = os.path.join(BILD_DIR, "%s.jpg" % produkt["id"])
         web = "%s/%s.jpg" % (BILD_WEB, produkt["id"])
-        if not os.path.exists(datei) or args.neu_laden:
+        if not os.path.exists(datei) or not format_passt(datei) or args.neu_laden:
             try:
                 groesse = cover_verkleinern(quelle.lstrip("/"), datei)
                 groessen.append(groesse)
