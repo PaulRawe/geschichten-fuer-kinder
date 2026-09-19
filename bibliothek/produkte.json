@@ -6187,7 +6187,8 @@
    "themen": [
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-3-zimmer.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-kita-geschichte-6-hallo-sagen",
@@ -6199,7 +6200,8 @@
     "sorgen-aengste",
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-6-hallo-sagen.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-9-letzter",
@@ -6211,7 +6213,8 @@
     "beschaeftigung",
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-9-letzter.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-eltern-streiten",
@@ -6223,7 +6226,8 @@
     "freundschaft",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-eltern-streiten.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-schule-geschichte-3-roter-stift",
@@ -6234,7 +6238,8 @@
    "themen": [
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-3-roter-stift.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-schule-geschichte-hausaufgaben",
@@ -6247,7 +6252,8 @@
     "familie-alltag",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-hausaufgaben.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-2-nicht-schnell",
@@ -6260,7 +6266,8 @@
     "gefuehle",
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-2-nicht-schnell.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-kita-geschichte-4-planaenderung",
@@ -6272,7 +6279,8 @@
     "gefuehle",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-4-planaenderung.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-2-streit",
@@ -6284,7 +6292,8 @@
     "freundschaft",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-2-streit.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-sport-geschichte-2-verlieren",
@@ -6297,7 +6306,8 @@
     "beschaeftigung",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-2-verlieren.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-kita-geschichte-7-essen",
@@ -6309,7 +6319,8 @@
     "gefuehle",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-7-essen.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-1-bester-freund",
@@ -6320,7 +6331,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-1-bester-freund.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-lernolotls-welt-sport",
@@ -6332,7 +6344,8 @@
     "beschaeftigung",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-lernolotls-welt-sport.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-5-aufhoeren",
@@ -6343,7 +6356,8 @@
    "themen": [
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-5-aufhoeren.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-1-besuch",
@@ -6354,7 +6368,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-1-besuch.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-kita-geschichte-9-schlafen",
@@ -6365,7 +6380,8 @@
    "themen": [
     "schlafen"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-9-schlafen.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-krank",
@@ -6377,7 +6393,8 @@
     "schlafen",
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-krank.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-9-streit",
@@ -6388,7 +6405,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-9-streit.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-8-geheimnis",
@@ -6399,7 +6417,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-8-geheimnis.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-einschlafen",
@@ -6412,7 +6431,8 @@
     "familie-alltag",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-einschlafen.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-team",
@@ -6424,7 +6444,8 @@
     "sorgen-aengste",
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-team.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-schule-geschichte-klassenfahrt",
@@ -6436,7 +6457,8 @@
     "gefuehle",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-klassenfahrt.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-identitaet",
@@ -6447,7 +6469,8 @@
    "themen": [
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-identitaet.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-kochen",
@@ -6460,7 +6483,8 @@
     "maerchen",
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-kochen.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-dankbarkeit",
@@ -6473,7 +6497,8 @@
     "familie-alltag",
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-dankbarkeit.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-2-spielregeln",
@@ -6486,7 +6511,8 @@
     "sorgen-aengste",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-2-spielregeln.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-4-zu-viel-trubel",
@@ -6497,7 +6523,8 @@
    "themen": [
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-4-zu-viel-trubel.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-geschwister",
@@ -6509,7 +6536,8 @@
     "freundschaft",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-geschwister.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-10-ende",
@@ -6522,7 +6550,8 @@
     "gefuehle",
     "sorgen-aengste"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-10-ende.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-perfekt",
@@ -6533,7 +6562,8 @@
    "themen": [
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-perfekt.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-lernolotls-welt-freunde",
@@ -6546,7 +6576,8 @@
     "sorgen-aengste",
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-lernolotls-welt-freunde.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-lernolotls-welt-kita",
@@ -6558,7 +6589,8 @@
     "freundschaft",
     "sorgen-aengste"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-lernolotls-welt-kita.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-schule-geschichte-gruppenarbeit",
@@ -6570,7 +6602,8 @@
     "freundschaft",
     "schule-lernen"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-gruppenarbeit.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-lernolotls-welt-schule",
@@ -6582,7 +6615,8 @@
     "schule-lernen",
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-lernolotls-welt-schule.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-angst",
@@ -6594,7 +6628,8 @@
     "sorgen-aengste",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-angst.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-2-akku",
@@ -6605,7 +6640,8 @@
    "themen": [
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-2-akku.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-schule-geschichte-streit",
@@ -6616,7 +6652,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-streit.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-haustier",
@@ -6627,7 +6664,8 @@
    "themen": [
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-haustier.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-3-ungeschriebene-regeln",
@@ -6641,7 +6679,8 @@
     "freundschaft",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-3-ungeschriebene-regeln.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-6-alleine",
@@ -6653,7 +6692,8 @@
     "freundschaft",
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-6-alleine.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-schule-geschichte-laerm",
@@ -6665,7 +6705,8 @@
     "gefuehle",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-laerm.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-zukunft",
@@ -6677,7 +6718,8 @@
     "schlafen",
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-zukunft.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-1-routine",
@@ -6690,7 +6732,8 @@
     "schlafen",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-1-routine.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-10-fahrrad",
@@ -6701,7 +6744,8 @@
    "themen": [
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-10-fahrrad.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-kita-geschichte-10-abschied-kita",
@@ -6713,7 +6757,8 @@
     "sorgen-aengste",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-10-abschied-kita.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-schule-geschichte-pruefungsangst",
@@ -6725,7 +6770,8 @@
     "sorgen-aengste",
     "schule-lernen"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-pruefungsangst.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-sport-geschichte-1-schwimmen",
@@ -6737,7 +6783,8 @@
     "sorgen-aengste",
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-1-schwimmen.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-schule-geschichte-1-meldet-sich",
@@ -6748,7 +6795,8 @@
    "themen": [
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-1-meldet-sich.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-sport-geschichte-3-6-gewonnen",
@@ -6760,7 +6808,8 @@
     "gefuehle",
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-sport-geschichte-3-6-gewonnen.jpg"
+   "bild": "/bilder/thumbs/kat-sport.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Sport"
   },
   {
    "id": "story-lernolotl-schule-geschichte-konzentration",
@@ -6772,7 +6821,8 @@
     "schule-lernen",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-konzentration.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-anders",
@@ -6784,7 +6834,8 @@
     "gefuehle",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-anders.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-schule-geschichte-2-pause",
@@ -6795,7 +6846,8 @@
    "themen": [
     "beschaeftigung"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-schule-geschichte-2-pause.jpg"
+   "bild": "/bilder/thumbs/kat-schule.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Schule"
   },
   {
    "id": "story-lernolotl-kita-geschichte-1-morgenkreis",
@@ -6806,7 +6858,8 @@
    "themen": [
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-1-morgenkreis.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-5-einladung",
@@ -6818,7 +6871,8 @@
     "sorgen-aengste",
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-5-einladung.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-lernolotl-steckbrief",
@@ -6841,7 +6895,8 @@
     "entdecken",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-superkraefte.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-kita-geschichte-2-spielplatz",
@@ -6854,7 +6909,8 @@
     "beschaeftigung",
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-2-spielplatz.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-mobbing",
@@ -6866,7 +6922,8 @@
     "freundschaft",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-mobbing.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-wut",
@@ -6878,7 +6935,8 @@
     "gefuehle",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-wut.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-traurigkeit",
@@ -6890,7 +6948,8 @@
     "gefuehle",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-traurigkeit.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-aufraeumen",
@@ -6901,7 +6960,8 @@
    "themen": [
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-aufraeumen.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-langeweile",
@@ -6912,7 +6972,8 @@
    "themen": [
     "entdecken"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-langeweile.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-kita-geschichte-5-teilen",
@@ -6923,7 +6984,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-5-teilen.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-3-oma",
@@ -6935,7 +6997,8 @@
     "familie-alltag",
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-3-oma.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-lernolotls-welt-ichbinich",
@@ -6947,7 +7010,8 @@
     "gefuehle",
     "sorgen-aengste"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-lernolotls-welt-ichbinich.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-7-anders",
@@ -6960,7 +7024,8 @@
     "entdecken",
     "autismus-adhs"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-7-anders.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-lernolotls-welt-zuhause",
@@ -6972,7 +7037,8 @@
     "familie-alltag",
     "schlafen"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-lernolotls-welt-zuhause.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-kita-geschichte-3-verabschiedung",
@@ -6984,7 +7050,8 @@
     "sorgen-aengste",
     "familie-alltag"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-3-verabschiedung.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-zuhause-geschichte-bildschirmzeit",
@@ -6995,7 +7062,8 @@
    "themen": [
     "handy-medien"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-zuhause-geschichte-bildschirmzeit.jpg"
+   "bild": "/bilder/thumbs/kat-zuhause.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Zuhause"
   },
   {
    "id": "story-lernolotl-freunde-geschichte-4-4-empathie",
@@ -7006,7 +7074,8 @@
    "themen": [
     "freundschaft"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-freunde-geschichte-4-4-empathie.jpg"
+   "bild": "/bilder/thumbs/kat-freunde.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Freunde"
   },
   {
    "id": "story-lernolotl-kita-geschichte-8-weinen",
@@ -7017,7 +7086,8 @@
    "themen": [
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-kita-geschichte-8-weinen.jpg"
+   "bild": "/bilder/thumbs/kat-kita.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Kita"
   },
   {
    "id": "story-lernolotl-ichbinich-geschichte-neinsagen",
@@ -7028,7 +7098,8 @@
    "themen": [
     "gefuehle"
    ],
-   "bild": "/bilder/thumbs/story-lernolotl-ichbinich-geschichte-neinsagen.jpg"
+   "bild": "/bilder/thumbs/kat-ichbinich.jpg",
+   "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
   }
  ]
 }

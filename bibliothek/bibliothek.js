@@ -9,7 +9,7 @@
   function eintraege(){
     var out=[];
     DATA.geschichten.forEach(function(s){
-      out.push({art:'frei',titel:s.titel,kurz:s.kurz,themen:s.themen,link:s.pfad,bild:s.bild});
+      out.push({art:'frei',titel:s.titel,kurz:s.kurz,themen:s.themen,link:s.pfad,bild:s.bild,bildunter:s.bildunter});
     });
     DATA.produkte.forEach(function(p){
       out.push({art:p.typ,titel:p.titel,kurz:p.kurz,themen:p.themen,
@@ -36,7 +36,7 @@
     if(e.seite)  k+='<a class="btn buchseite" href="'+esc(e.seite)+'">Mehr zum Buch</a>';
     if(e.amazon) k+='<a class="btn amazon" href="'+esc(e.amazon)+'" target="_blank" rel="noopener sponsored">Bei Amazon ansehen</a>';
     if(e.etsy)   k+='<a class="btn etsy" href="'+esc(e.etsy)+'" target="_blank" rel="noopener sponsored">Auf Etsy ansehen</a>';
-    var b = e.bild ? '<img class="pbild" src="'+esc(e.bild)+'" alt="" width="400" height="300" loading="lazy" decoding="async">' : '';
+var b = e.bild ? '<img class="pbild" src="'+esc(e.bild)+'" alt="" width="400" height="400" loading="lazy" decoding="async">'+(e.bildunter?'<p class="bildunter">'+esc(e.bildunter)+'</p>':'') : '';
     return '<article class="produkt">'+b+'<div class="kopf">'+t+'</div><h4>'+esc(e.titel)+'</h4>'+
            '<p class="kurz">'+esc(e.kurz)+'</p><div class="kauf">'+k+'</div></article>';
   }
