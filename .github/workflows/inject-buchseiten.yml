@@ -74,6 +74,11 @@ jobs:
               # "Lernolotl Spielezeit – Die große Sammelausgabe": "/buecher/lernolotl-spielezeit/",
           }
           BUTTON_TEXT = "Mehr zum Buch"
+          # Titel, die keine Buecher sind, bekommen eine passende Beschriftung
+          BUTTON_TEXTE = {
+              "Ist mein Kind bereit für die Schule? – Das große Lernolotl Schulstarter-Heft":
+                  "Mehr zum Heft",
+          }
           # ============================================================
 
           MARK_A = '<!-- buchseite -->'
@@ -107,22 +112,24 @@ jobs:
               global karten
               for titel, ziel in SEITEN.items():
                   # <article class="produkt"> ... <h4>Titel</h4> ... <div class="kauf">
+                  # Ein bereits vorhandener Knopf wird mit erfasst und ersetzt.
+                  # Sonst bliebe ein alter Link stehen, wenn sich das Ziel aendert.
                   muster = re.compile(
-                      r'<article class="produkt">(?:(?!</article>).)*?'
+                      r'(<article class="produkt">(?:(?!</article>).)*?'
                       r'<h4>' + re.escape(esc(titel)) + r'</h4>'
-                      r'(?:(?!</article>).)*?<div class="kauf">',
+                      r'(?:(?!</article>).)*?<div class="kauf">)'
+                      r'(' + re.escape(MARK_A) + r'.*?' + re.escape(MARK_E) + r')?',
                       re.S)
+                  text = BUTTON_TEXTE.get(titel, BUTTON_TEXT)
                   knopf = (MARK_A + '<a class="btn buchseite" href="' + ziel + '">'
-                           + BUTTON_TEXT + '</a>' + MARK_E)
+                           + text + '</a>' + MARK_E)
 
                   def ersetzen(m):
                       global karten
-                      block = m.group(0)
-                      # Steht der Knopf schon direkt dahinter? Dann nichts tun.
-                      if m.string[m.end():m.end() + len(MARK_A)] == MARK_A:
-                          return block
+                      if m.group(2) == knopf:
+                          return m.group(0)          # steht schon richtig da
                       karten += 1
-                      return block + knopf
+                      return m.group(1) + knopf
 
                   html = muster.sub(ersetzen, html)
               return html
