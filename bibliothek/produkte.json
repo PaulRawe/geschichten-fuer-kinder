@@ -5038,6 +5038,26 @@
    "asin": null,
    "etsy": "https://www.etsy.com/de/listing/4512001780/schulvorbereitung-heft-pdf-lernolotl",
    "bild": "/bilder/produkte/etsy-216.jpg"
+  },
+  {
+   "id": "kdp-048",
+   "typ": "buch",
+   "titel": "Der Ruhe-Same",
+   "kurz": "Ein Bilderbuch über Einschlafen, Geborgenheit und Zeit für die ganze Familie — mit Ruhe-Same-Tafel und ausführlichem Elternteil",
+   "alter": "3–8",
+   "reihe": "Lernolotl Bilderbücher",
+   "band": "",
+   "hauptthema": "schlafen",
+   "themen": [
+    "schlafen",
+    "familie-alltag",
+    "gefuehle"
+   ],
+   "amazon": "https://www.amazon.de/dp/B0HKDXXFGT",
+   "asin": "B0HKDXXFGT",
+   "etsy": null,
+   "seite": "/buecher/der-ruhe-same/",
+   "bild": "/bilder/produkte/kdp-048.jpg"
   }
  ],
  "geschichten": [

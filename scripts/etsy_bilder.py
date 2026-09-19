@@ -103,6 +103,7 @@ BUCH_BILDER = {
     "Der Sorgenrucksack":           "/bilder/buecher/der-sorgenrucksack/cover.jpg",
     "Der Kümmerer-Funke":           "/bilder/buecher/der-kuemmerer-funke/cover.jpg",
     "Der Lernolotl ist besonders":  "/bilder/buecher/der-lernolotl-ist-besonders/cover.jpg",
+    "Der Ruhe-Same":                "/bilder/buecher/der-ruhe-same/cover.jpg",
 }
 BUCH_BILDER["Ist mein Kind bereit für die Schule? – Das große Lernolotl Schulstarter-Heft"] = \
     "/lernolotl/schulstarterheft.jpg"
