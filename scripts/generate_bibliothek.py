@@ -236,7 +236,12 @@ def seite_bauen(thema, texte, geschichten, produkte, alle_themen):
         "url": "%s/bibliothek/%s/" % (BASIS_URL, key),
         "description": re.sub(r"<[^>]+>", "", t.get("intro") or ""),
         "inLanguage": "de-DE",
-        "isPartOf": {"@type": "WebSite", "name": "Der Lernolotl", "url": BASIS_URL + "/"},
+        # Die Seiten-URL, nicht die Startseite. Der Workflow add-canonicals
+        # ersetzt per sed JEDES "url"-Feld im JSON-LD durch die Adresse der
+        # jeweiligen Seite. Stuende hier die Startseite, schriebe der eine Lauf
+        # sie hin und der andere sie weg - bei jedem Durchgang ein Commit.
+        "isPartOf": {"@type": "WebSite", "name": "Der Lernolotl",
+                     "url": "%s/bibliothek/%s/" % (BASIS_URL, key)},
     }, ensure_ascii=False)
 
     teile = [KOPF.format(
