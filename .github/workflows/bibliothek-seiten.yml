@@ -1,0 +1,51 @@
+name: Bibliothek-Themenseiten neu bauen
+
+# Die Seiten unter bibliothek/<thema>/ werden aus bibliothek/produkte.json
+# erzeugt. Aendert sich die JSON - von Hand oder durch einen der anderen
+# Laeufe (Etsy-Bilder, Buchseiten-Verlinkung) - werden die Seiten hier
+# nachgezogen. Genau das hat vorher gefehlt: die Seiten waren ein
+# eingefrorener Stand und zeigten neue Geschichten nie an.
+#
+# Starten: Reiter "Actions" -> diesen Eintrag waehlen -> "Run workflow".
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bibliothek/produkte.json'
+      - 'bibliothek/themen-texte.json'
+      - 'scripts/generate_bibliothek.py'
+      - '.github/workflows/bibliothek-seiten.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Dieselbe Gruppe wie die anderen schreibenden Laeufe, damit sich zwei
+# Workflows nicht gegenseitig in die Quere kommen.
+concurrency:
+  group: lernolotl-site-writes
+  cancel-in-progress: false
+
+jobs:
+  seiten:
+    runs-on: ubuntu-latest
+    # Verhindert Endlosschleife: der eigene Commit loest den Lauf nicht erneut aus
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'Bibliothek-Seiten automatisch')"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Themenseiten erzeugen
+        run: python3 scripts/generate_bibliothek.py
+
+      - name: Aenderungen sichern
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bibliothek/
+          git diff --cached --quiet && echo "Nichts zu tun - die Seiten sind aktuell." && exit 0
+          git commit -m "Bibliothek-Seiten automatisch neu gebaut"
+          git push
