@@ -322,10 +322,10 @@ def themenseiten_bebildern(produkte):
                         eingesetzt += 1
                     return neu_karte
                 eingesetzt += 1
-                return karte.replace('<article class="produkt">',
-                                     '<article class="produkt">\n' + img, 1)
+                return re.sub(r'(<article class="produkt"[^>]*>)',
+                              lambda m: m.group(1) + '\n' + img, karte, count=1)
 
-            text = re.sub(r'<article class="produkt">.*?</article>', ersetze, text, flags=re.S)
+            text = re.sub(r'<article class="produkt"[^>]*>.*?</article>', ersetze, text, flags=re.S)
             if text != original:
                 open(pfad, "w", encoding="utf-8").write(text)
                 geaendert += 1

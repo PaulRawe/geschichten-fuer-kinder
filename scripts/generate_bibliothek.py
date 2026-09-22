@@ -65,13 +65,20 @@ def sortierschluessel(titel):
     return [int(t) if t.isdigit() else t for t in teile]
 
 
-def bild_tag(bildpfad):
-    """Bild nur ausgeben, wenn die Datei wirklich existiert - sonst tote Pfade."""
+def bild_tag(bildpfad, unterschrift=""):
+    """Bild nur ausgeben, wenn die Datei wirklich existiert - sonst tote Pfade.
+
+    Die Bildunterschrift steht INNERHALB der Marker. Das ist kein Schoenheits-
+    detail: scripts/geschichten_bilder.py ersetzt den Block zwischen den
+    Markern komplett. Stuende die Unterschrift ausserhalb, schriebe jedes
+    Skript sie an seine Stelle und sie erschiene doppelt.
+    """
     if not bildpfad or not os.path.exists(bildpfad.lstrip("/")):
         return ""
+    unter = ('<p class="bildunter">%s</p>' % esc(unterschrift)) if unterschrift else ""
     return ('%s<img class="pbild" src="%s" alt="" width="%d" height="%d" '
-            'loading="lazy" decoding="async">%s\n'
-            % (MARK_A, esc(bildpfad), BREITE, HOEHE, MARK_E))
+            'loading="lazy" decoding="async">%s%s\n'
+            % (MARK_A, esc(bildpfad), BREITE, HOEHE, unter, MARK_E))
 
 
 def kuerzen(text, grenze=158):
@@ -84,16 +91,15 @@ def kuerzen(text, grenze=158):
 
 # --------------------------------------------------------------------------- Karten
 def karte_geschichte(s):
-    b = bild_tag(s.get("bild"))
-    unter = ('<p class="bildunter">%s</p>' % esc(s["bildunter"])) if s.get("bildunter") else ""
+    b = bild_tag(s.get("bild"), s.get("bildunter", ""))
     # data-suche traegt den Text, nach dem der Seitenfilter sucht.
     such = esc(" ".join([s.get("titel", ""), s.get("kurz", "")]).lower())
-    return ('<article class="produkt" data-suche="%s">\n%s%s'
+    return ('<article class="produkt" data-suche="%s">\n%s'
             '<div class="kopf"><span class="tag frei">Kostenlos lesen</span></div>\n'
             '<h4>%s</h4>\n<p class="kurz">%s</p>\n'
             '<div class="kauf"><a class="btn lesen" href="%s">Geschichte lesen</a></div>\n'
             '</article>'
-            % (such, b, unter, esc(s["titel"]), esc(s.get("kurz", "")), esc(s["pfad"])))
+            % (such, b, esc(s["titel"]), esc(s.get("kurz", "")), esc(s["pfad"])))
 
 
 def karte_produkt(p):
