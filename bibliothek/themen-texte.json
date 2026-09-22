@@ -1,0 +1,158 @@
+{
+ "autismus-adhs": {
+  "title": "Autismus &amp; ADHS – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Vorbereitung statt Überraschung, Struktur statt Improvisation. Materialien für Situationen, die für andere Familien beiläufig sind und bei euch …",
+  "intro": "Vorbereitung statt Überraschung, Struktur statt Improvisation. Materialien für Situationen, die für andere Familien beiläufig sind und bei euch geplant werden müssen.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen"
+  ]
+ },
+ "beschaeftigung": {
+  "title": "Beschäftigung &amp; Ferien – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Regentage, Brückentage, Ferien. Fertige Ideen für Tage, an denen niemand Lust hat, sich etwas …",
+  "intro": "Regentage, Brückentage, Ferien. Fertige Ideen für Tage, an denen niemand Lust hat, sich etwas auszudenken.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen"
+  ]
+ },
+ "entdecken": {
+  "title": "Entdecken &amp; Wissen – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Dinosaurier, Weltraum, Baufahrzeuge, Wetter. Und nebenbei das, was länger hält als jedes Einzelthema: wie man sich Wissen selbst …",
+  "intro": "Dinosaurier, Weltraum, Baufahrzeuge, Wetter. Und nebenbei das, was länger hält als jedes Einzelthema: wie man sich Wissen selbst erarbeitet.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen"
+  ]
+ },
+ "familie-alltag": {
+  "title": "Familie &amp; Alltag – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Anziehen, Zähneputzen, Geschwisterstreit, Umzug, Großeltern besuchen. Der Familienalltag besteht aus vielen kleinen Übergängen — und genau die sind …",
+  "intro": "Anziehen, Zähneputzen, Geschwisterstreit, Umzug, Großeltern besuchen. Der Familienalltag besteht aus vielen kleinen Übergängen — und genau die sind für manche Kinder die schwersten Momente des Tages.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "freundschaft",
+   "schule-lernen",
+   "schlafen"
+  ]
+ },
+ "freundschaft": {
+  "title": "Freundschaft &amp; Miteinander – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Teilen, warten, verlieren können, jemanden ansprechen, den man nicht kennt. Soziale Regeln wirken selbstverständlich — sind es für Kinder aber …",
+  "intro": "Teilen, warten, verlieren können, jemanden ansprechen, den man nicht kennt. Soziale Regeln wirken selbstverständlich — sind es für Kinder aber nicht.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "schule-lernen",
+   "schlafen"
+  ]
+ },
+ "gefuehle": {
+  "title": "Gefühle &amp; Emotionen – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Wut, Angst, Trauer, Eifersucht — Kinder erleben Gefühle oft heftiger, als sie sie benennen können. Hier findest du Geschichten und Materialien, die …",
+  "intro": "Wut, Angst, Trauer, Eifersucht — Kinder erleben Gefühle oft heftiger, als sie sie benennen können. Hier findest du Geschichten und Materialien, die Gefühlen einen Namen geben.",
+  "verwandt": [
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen",
+   "schlafen"
+  ]
+ },
+ "handy-medien": {
+  "title": "Handynutzung &amp; Medien – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Das Handy ist selten das eigentliche Thema. Meistens geht es um Aufmerksamkeit, um Grenzen und darum, wer wem gerade …",
+  "intro": "Das Handy ist selten das eigentliche Thema. Meistens geht es um Aufmerksamkeit, um Grenzen und darum, wer wem gerade zuhört.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen",
+   "schlafen"
+  ]
+ },
+ "maerchen": {
+  "title": "Märchen &amp; Fantasie – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Kostenlose Vorlesegeschichten aus Welten, die es nicht gibt — für Kinder, die genau dorthin …",
+  "intro": "Kostenlose Vorlesegeschichten aus Welten, die es nicht gibt — für Kinder, die genau dorthin wollen.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen"
+  ]
+ },
+ "pflege-organisation": {
+  "title": "Struktur &amp; Bürokratie – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Anträge, Bescheide, Therapieberichte, Arztbriefe. Familien mit einem Kind mit Unterstützungsbedarf verwalten nebenbei ein kleines …",
+  "intro": "Anträge, Bescheide, Therapieberichte, Arztbriefe. Familien mit einem Kind mit Unterstützungsbedarf verwalten nebenbei ein kleines Archiv.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen"
+  ]
+ },
+ "schlafen": {
+  "title": "Schlafen &amp; Gute Nacht – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Ruhige Geschichten zum Vorlesen, wenn der Tag zu Ende geht — und Material für Kinder, denen das Einschlafen …",
+  "intro": "Ruhige Geschichten zum Vorlesen, wenn der Tag zu Ende geht — und Material für Kinder, denen das Einschlafen schwerfällt.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen"
+  ]
+ },
+ "schule-lernen": {
+  "title": "Schule &amp; Lernen – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Einschulung, Hausaufgaben, Gruppenarbeit, Pausenhof, Mensa. Schule bringt Anforderungen mit, die weit über den Unterricht …",
+  "intro": "Einschulung, Hausaufgaben, Gruppenarbeit, Pausenhof, Mensa. Schule bringt Anforderungen mit, die weit über den Unterricht hinausgehen.",
+  "verwandt": [
+   "gefuehle",
+   "sorgen-aengste",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schlafen"
+  ]
+ },
+ "sorgen-aengste": {
+  "title": "Sorgen &amp; Ängste – Geschichten &amp; Materialien für Kinder | Der Lernolotl",
+  "description": "Manche Sorgen sprechen Kinder aus. Viele nicht. Geschichten helfen, über etwas zu reden, das sich direkt nicht ansprechen lässt — weil es erst einmal …",
+  "intro": "Manche Sorgen sprechen Kinder aus. Viele nicht. Geschichten helfen, über etwas zu reden, das sich direkt nicht ansprechen lässt — weil es erst einmal jemand anderem passiert.",
+  "verwandt": [
+   "gefuehle",
+   "handy-medien",
+   "familie-alltag",
+   "freundschaft",
+   "schule-lernen",
+   "schlafen"
+  ]
+ }
+}

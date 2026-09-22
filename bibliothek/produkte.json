@@ -1,5 +1,5 @@
 {
- "stand": "2026-09-16",
+ "stand": "2026-09-22",
  "themen": [
   {
    "key": "gefuehle",
@@ -7120,6 +7120,29 @@
    ],
    "bild": "/bilder/thumbs/kat-ichbinich.jpg",
    "bildunter": "Eine Geschichte aus der Kategorie Ich bin ich"
+  },
+  {
+   "id": "story-alexgrossekleinewelt",
+   "titel": "Alex' große kleine Welt",
+   "kurz": "Staffel 1 mit 7 spannenden Episoden",
+   "pfad": "/alexgrossekleinewelt.html",
+   "hauptthema": "maerchen",
+   "themen": [
+    "maerchen",
+    "entdecken"
+   ],
+   "bild": "/bilder/thumbs/story-alexgrossekleinewelt.jpg"
+  },
+  {
+   "id": "story-johanna-und-die-wunderwelt",
+   "titel": "Lena und die Wunderwelt",
+   "kurz": "Staffel 1 mit 7 spannenden Episoden",
+   "pfad": "/johanna-und-die-wunderwelt.html",
+   "hauptthema": "maerchen",
+   "themen": [
+    "maerchen"
+   ],
+   "bild": "/bilder/thumbs/story-johanna-und-die-wunderwelt.jpg"
   }
  ]
 }
