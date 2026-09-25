@@ -75,7 +75,7 @@ jobs:
 
           # Seiten, die den Button nicht bekommen sollen
           SKIP_NAMES = {'404.html'}
-          SKIP_DIRS  = ('./.github', './node_modules', './bibliothek')
+          SKIP_DIRS  = ('./.github', './node_modules', './bibliothek', './spiele', './_werkstatt')
 
           def should_skip(path):
               if any(path.startswith(d) for d in SKIP_DIRS): return True
