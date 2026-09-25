@@ -374,3 +374,18 @@ footer { background: white; border-radius: var(--radius-xl); padding: 40px; marg
   .app-kopf-knoepfe { width: 100%; }
   .app-kopf-knoepfe .text-knopf { flex: 1; }
 }
+/* Eltern-Einstellungen gut sichtbar */
+.text-knopf.eltern-knopf { background: var(--t-haupt); border-color: var(--t-haupt); color: #fff; }
+.text-knopf.eltern-knopf:hover { background: var(--t-haupt-dunkel); }
+.eltern-hinweis {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  background: var(--t-tipp); border: 3px solid #e7c76a; border-radius: 22px; padding: 18px 20px;
+}
+.eltern-hinweis-text { flex: 1 1 300px; display: flex; flex-direction: column; gap: 4px; }
+.eltern-hinweis-text strong { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-weight: normal; font-size: 1.2em; }
+.eltern-hinweis-text span { font-size: 0.92em; color: var(--t-leise); line-height: 1.45; }
+.eltern-hinweis-knoepfe { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .eltern-hinweis-knoepfe { width: 100%; }
+  .eltern-hinweis-knoepfe .knopf { flex: 1; }
+}
