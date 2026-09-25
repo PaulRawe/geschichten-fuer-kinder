@@ -43,7 +43,8 @@
     einstellungen: { reizarm: false, animationen: true, geraeusche: true, vorlesen: false, aufgabenProRunde: 5 },
     spiele: {},
     teich: [],
-    gesamt: { runden: 0, aufgaben: 0 }
+    gesamt: { runden: 0, aufgaben: 0 },
+    elternGesehen: false
   };
 
   const spiele = [];
@@ -51,6 +52,7 @@
   let app = null;          // <div id="teich-app">
   let runde = null;        // aktuelle Runde
   let aufgabeZustand = null;
+  let elternSpaeter = false;   // "Später" gilt nur bis die Seite neu geladen wird
 
   /* =====================================================
      Speicher (localStorage, nur auf diesem Gerät)
@@ -64,6 +66,7 @@
       d.spiele = roh.spiele || {};
       d.teich = Array.isArray(roh.teich) ? roh.teich : [];
       Object.assign(d.gesamt, roh.gesamt || {});
+      d.elternGesehen = !!roh.elternGesehen;
     }
     return d;
   }
@@ -293,7 +296,7 @@
       h('div', { class: 'app-titel' }, 'Lernolotls Teich'),
       h('div', { class: 'app-kopf-knoepfe' }, [
         h('button', { type: 'button', class: 'text-knopf', onclick: zeigeTeich }, 'Mein Teich'),
-        h('button', { type: 'button', class: 'text-knopf', onclick: zeigeTor }, 'Eltern-Einstellungen')
+        h('button', { type: 'button', class: 'text-knopf eltern-knopf', onclick: zeigeTor }, 'Eltern-Einstellungen')
       ])
     ]);
     const held = h('div', { class: 'held' }, [
@@ -311,7 +314,21 @@
         h('span', { class: 'kachel-info' }, E().aufgabenProRunde + ' Aufgaben · Stufe ' + st.stufe)
       ]);
     }));
-    const teile = [kopf, held, kacheln];
+    // Solange die Eltern-Einstellungen noch nie geöffnet wurden: gut sichtbarer Hinweis ganz oben
+    let elternHinweis = null;
+    if (!daten.elternGesehen && !elternSpaeter) {
+      elternHinweis = h('section', { class: 'eltern-hinweis', 'aria-label': 'Hinweis für Eltern' }, [
+        h('div', { class: 'eltern-hinweis-text' }, [
+          h('strong', null, 'Liebe Eltern, bitte zuerst kurz einstellen'),
+          h('span', null, 'Reizarmer Modus, Vorlesen, Geräusche und wie viele Aufgaben eine Runde hat. Dauert etwa eine Minute.')
+        ]),
+        h('div', { class: 'eltern-hinweis-knoepfe' }, [
+          knopf('Jetzt einstellen', zeigeTor, 'haupt'),
+          h('button', { type: 'button', class: 'textlink', onclick: function () { elternSpaeter = true; zeigeAuswahl(nurSpiel); } }, 'Später')
+        ])
+      ]);
+    }
+    const teile = [kopf, elternHinweis, held, kacheln];
     if (nurSpiel && spiele.length > 1) {
       teile.push(h('p', { class: 'mitte' }, h('button', { type: 'button', class: 'textlink', onclick: function () { zeigeAuswahl(null); } }, 'Alle Spiele ansehen')));
     }
@@ -574,6 +591,7 @@
   }
 
   function zeigeErwachsene() {
+    if (!daten.elternGesehen) { daten.elternGesehen = true; speichere(); }
     leeren();
     const e = E();
     function schalter(schl, titel, text) {

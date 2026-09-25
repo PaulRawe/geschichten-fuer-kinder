@@ -1,0 +1,391 @@
+/* =====================================================
+   Lernolotls Teich – Gestaltung
+   Teil 1: Seitenrahmen wie auf lernolotl.de
+   Teil 2: Spiel
+   ===================================================== */
+
+/* ---------- Teil 1: Seitenrahmen (wie lernolotls-welt.html) ---------- */
+:root {
+  --primary: #5a7d95;
+  --primary-dark: #3d5f75;
+  --primary-mid: #7b9eb5;
+  --primary-light: #a8c5d9;
+  --primary-pale: #e8f4f8;
+  --accent-mint: #7ecac3;
+  --accent-sun: #fbbf24;
+  --accent-green: #66bb6a;
+  --accent-coral: #f28b5f;
+  --text: #2a2a2a;
+  --text-soft: #555;
+  --white: #ffffff;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow: 0 12px 40px rgba(61, 95, 117, 0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(160deg, #b8d8ea 0%, #cce6f4 40%, #ddeef6 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: var(--text);
+}
+.container { max-width: 960px; margin: 0 auto; }
+.sticky-nav {
+  position: sticky; top: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 14px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 30px rgba(61, 95, 117, 0.18);
+  z-index: 100;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.92em; transition: all 0.25s; }
+.back-link:hover { color: var(--primary-dark); transform: translateX(-4px); }
+.nav-badge {
+  background: linear-gradient(135deg, var(--primary), var(--accent-mint));
+  color: white; padding: 7px 18px; border-radius: 20px;
+  font-weight: 800; font-size: 0.88em; font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; letter-spacing: 0.02em;
+}
+.seiten-kopf { text-align: center; margin: 0 auto 22px; max-width: 700px; }
+.seiten-kopf h1 { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; color: var(--primary-dark); font-size: 2.1em; line-height: 1.2; margin-bottom: 8px; }
+.seiten-kopf p { color: var(--text-soft); font-size: 1.02em; line-height: 1.55; }
+.test-hinweis { display: inline-block; margin-top: 10px; background: #fff7df; border: 1px solid #f3d98a; color: #6b4e00; border-radius: 12px; padding: 6px 14px; font-size: 0.88em; font-weight: 700; }
+
+.info-bereich { background: white; border-radius: var(--radius-xl); padding: 36px; margin-top: 28px; box-shadow: var(--shadow); }
+.info-bereich h2 { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; color: var(--primary-dark); font-size: 1.5em; margin-bottom: 14px; }
+.info-raster { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 10px; }
+.info-karte { background: var(--primary-pale); border-radius: 18px; padding: 18px; }
+.info-karte h3 { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; color: var(--primary-dark); font-size: 1.05em; margin-bottom: 6px; font-weight: normal; }
+.info-karte p { color: var(--text-soft); font-size: 0.92em; line-height: 1.55; }
+.info-bereich > p { color: var(--text-soft); line-height: 1.65; margin-bottom: 10px; }
+.info-bereich a { color: var(--primary-dark); font-weight: 700; }
+
+footer { background: white; border-radius: var(--radius-xl); padding: 40px; margin-top: 40px; text-align: center; box-shadow: var(--shadow); }
+.footer-brand { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; color: var(--primary); font-size: 1.6em; margin-bottom: 8px; }
+.footer-tagline { color: #aaa; margin-bottom: 28px; font-size: 0.95em; }
+.footer-links { margin: 22px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 28px; }
+.footer-links a { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.95em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--primary-dark); }
+.footer-info { color: #999; font-size: 0.82em; margin-top: 20px; }
+
+@media (max-width: 768px) {
+  body { padding: 12px; }
+  .sticky-nav { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+  .seiten-kopf h1 { font-size: 1.6em; }
+  .info-bereich { padding: 26px 20px; }
+  .info-raster { grid-template-columns: 1fr; }
+  .footer-links { flex-direction: column; gap: 14px; }
+}
+
+/* ---------- Teil 2: Spiel ---------- */
+.teich-app {
+  --t-grund: #fbf8f0;
+  --t-karte: #ffffff;
+  --t-rand: #e6dfcc;
+  --t-tinte: #1f3a33;
+  --t-leise: #4f635c;
+  --t-wasser: #bfe3ec;
+  --t-wasser-hell: #e4f4f7;
+  --t-ufer: #8fcf97;
+  --t-sand: #f1e2c2;
+  --t-haupt: #2f6f62;
+  --t-haupt-dunkel: #1f5046;
+  --t-gruen: #3f8f5b;
+  --t-gruen-hell: #dcefe3;
+  --t-pad: #7dbf8e;
+  --t-neutral: #eceeec;
+  --t-neutral-rand: #8a8f8c;
+  --t-tipp: #fff4d6;
+  --t-holz: #c98b4f;
+  --t-holz-rand: #7a4f24;
+  position: relative;
+  background: var(--t-grund);
+  color: var(--t-tinte);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  min-height: 680px;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 18px;
+  display: flex; flex-direction: column; gap: 16px;
+  overflow: hidden;
+}
+.teich-app.reizarm {
+  --t-grund: #f3f3f0;
+  --t-wasser: #e3e6e3;
+  --t-wasser-hell: #eff0ee;
+  --t-ufer: #d2d5d0;
+  --t-sand: #e9e7e1;
+  --t-haupt: #4b5a55;
+  --t-haupt-dunkel: #36423e;
+  --t-gruen: #5d6d67;
+  --t-gruen-hell: #e3e8e5;
+  --t-pad: #b9c2be;
+  --t-tipp: #f1efe8;
+  --t-holz: #b0aaa0;
+  --t-holz-rand: #6f6a62;
+}
+.teich-app.reizarm .hg-bild, .teich-app.reizarm .planke-bild { display: none; }
+.teich-app.ruhig *, .teich-app.ruhig *::before, .teich-app.ruhig *::after { animation: none !important; transition: none !important; }
+.teich-app noscript, .teich-app .laden { color: var(--t-leise); text-align: center; margin: auto; }
+
+.teich-app button { font-family: inherit; }
+.teich-app :focus-visible { outline: 3px solid var(--primary-dark); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mitte { text-align: center; color: var(--t-leise); }
+.klein { font-size: 0.85em; color: var(--t-leise); line-height: 1.45; }
+
+/* Bilder mit Ersatz */
+.bild { display: inline-flex; align-items: center; justify-content: center; line-height: 0; }
+.bild img, .bild svg { max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; }
+.bild.ersatz svg { width: 100%; height: 100%; }
+.hg-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; }
+
+/* Knöpfe */
+.knopf {
+  min-height: 56px; padding: 0 22px; border-radius: 18px; border: 2px solid transparent;
+  font-size: 1em; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.knopf:active:not(:disabled) { transform: scale(0.97); }
+.knopf.haupt { background: var(--t-haupt); color: #fff; font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-weight: normal; font-size: 1.1em; letter-spacing: 0.01em; }
+.knopf.haupt:hover:not(:disabled) { background: var(--t-haupt-dunkel); }
+.knopf.neben { background: var(--t-karte); color: var(--t-tinte); border-color: var(--t-rand); }
+.knopf:disabled { opacity: 0.45; cursor: default; }
+.knopf-sym { display: inline-flex; }
+.symbol-knopf {
+  width: 52px; height: 52px; flex-shrink: 0; border-radius: 16px; background: var(--t-karte); border: 2px solid var(--t-rand);
+  color: var(--t-tinte); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; font-size: 26px; font-weight: 800; padding: 0;
+}
+.symbol-knopf.vorlesen { border-radius: 50%; background: #e3f1ee; border-color: transparent; color: var(--t-haupt); }
+.knopf-reihe { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.knopf-reihe .knopf { flex: 1 1 180px; }
+.textlink { background: none; border: none; color: var(--t-haupt); font-weight: 800; font-size: 0.95em; text-decoration: underline; cursor: pointer; padding: 10px; }
+.platzhalter { width: 52px; }
+
+/* Kopfzeilen */
+.app-kopf { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.app-titel { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-size: 1.35em; color: var(--t-tinte); }
+.app-kopf-knoepfe { display: flex; gap: 10px; }
+
+/* Auswahl */
+.held { position: relative; border-radius: 28px; background: var(--t-wasser); min-height: 260px; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; gap: 12px; padding: 20px 20px 0; }
+.held::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 46px; background: var(--t-ufer); z-index: 0; }
+.held-lolo { position: relative; z-index: 1; width: 190px; height: 220px; margin-bottom: 6px; }
+.sprechblase { position: relative; z-index: 2; align-self: flex-start; background: #fff; border-radius: 22px; padding: 14px 14px 14px 18px; display: flex; align-items: center; gap: 12px; max-width: 320px; box-shadow: 0 6px 18px rgba(31, 58, 51, 0.12); }
+.sprechblase p { font-size: 1.05em; line-height: 1.4; font-weight: 700; }
+.kacheln { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.kacheln.einzeln { grid-template-columns: minmax(0, 360px); justify-content: center; }
+.kachel {
+  background: var(--t-karte); border: 2px solid var(--t-rand); border-radius: 22px; padding: 12px 12px 16px; cursor: pointer; text-align: left;
+  display: flex; flex-direction: column; gap: 6px; color: var(--t-tinte); transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.kachel:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(31, 58, 51, 0.14); }
+.kachel-bild { width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: var(--t-wasser-hell); }
+.kachel-bild img { width: 100%; height: 100%; object-fit: cover; }
+.kachel-titel { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-size: 1.1em; margin-top: 4px; }
+.kachel-text { font-size: 0.9em; color: var(--t-leise); line-height: 1.35; }
+.kachel-info { font-size: 0.78em; font-weight: 800; color: var(--t-gruen); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
+
+/* Runde */
+.runde-kopf { display: flex; align-items: center; gap: 12px; }
+.fortschritt { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.pads { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.pad { width: 30px; height: 20px; border-radius: 50%; border: 3px solid var(--t-pad); }
+.pad.fertig { background: var(--t-gruen); border-color: var(--t-gruen); }
+.pad.jetzt { background: var(--t-pad); box-shadow: 0 0 0 3px var(--t-gruen); }
+.fortschritt-text { font-size: 0.8em; color: var(--t-leise); font-weight: 700; }
+.aufgabe-karte { background: var(--t-karte); border-radius: 22px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; }
+.aufgabe-lolo { width: 74px; height: 80px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.aufgabe-lolo .lolo { width: 74px; height: 80px; }
+.aufgabe-text { flex: 1; font-size: 1.12em; line-height: 1.4; font-weight: 700; }
+.spielflaeche { display: flex; flex-direction: column; gap: 14px; }
+.spielflaeche.gesperrt .eingabe button { pointer-events: none; }
+.rueckmeldung { min-height: 58px; border-radius: 18px; padding: 12px 18px; display: flex; align-items: center; font-size: 1.02em; line-height: 1.4; font-weight: 700; }
+.rueckmeldung:empty { background: transparent; }
+.rueckmeldung.richtig { background: var(--t-gruen-hell); }
+.rueckmeldung.neutral { background: var(--t-neutral); }
+.rueckmeldung.tipp { background: var(--t-tipp); }
+.runde-fuss { display: flex; gap: 12px; margin-top: auto; }
+.runde-fuss .knopf { flex: 1; }
+.hinweis-zeile { text-align: center; color: var(--t-leise); font-size: 0.92em; }
+
+/* Zahlen-Knöpfe */
+.eingabe { display: grid; gap: 12px; }
+.zahl-auswahl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.zahlenfeld { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.zahlenfeld.gross { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.zahl-knopf, .form-knopf {
+  background: var(--t-karte); border: 3px solid var(--t-rand); border-radius: 20px; cursor: pointer;
+  font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; color: var(--t-tinte); transition: transform 0.12s ease, background 0.15s ease;
+}
+.zahl-auswahl .zahl-knopf { height: 92px; font-size: 2.2em; }
+.zahlenfeld .zahl-knopf { height: 58px; font-size: 1.35em; border-radius: 14px; }
+.zahl-knopf:hover:not(:disabled), .form-knopf:hover:not(:disabled) { transform: translateY(-2px); }
+.zahl-knopf.richtig, .form-knopf.richtig { background: var(--t-gruen-hell); border-color: var(--t-gruen); }
+.zahl-knopf.daneben, .form-knopf.daneben { background: var(--t-neutral); border-color: var(--t-neutral-rand); opacity: 0.7; cursor: default; }
+
+/* Brücke */
+.bruecke-szene { position: relative; border-radius: 26px; background: var(--t-wasser); min-height: 230px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 30px 56px; }
+.ufer { position: absolute; top: 0; bottom: 0; width: 44px; background: var(--t-ufer); z-index: 1; }
+.ufer.links { left: 0; border-radius: 0 22px 22px 0; }
+.ufer.rechts { right: 0; border-radius: 22px 0 0 22px; }
+.bruecke { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.planken-reihe { display: grid; gap: 5px; }
+.planke { position: relative; height: 72px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.planke.holz { background: linear-gradient(90deg, var(--t-holz) 0 40%, #d59a5f 40% 55%, var(--t-holz) 55%); border: 3px solid var(--t-holz-rand); }
+.planke-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.planke.leer { border: 3px dashed #3d5f75; background: rgba(255, 255, 255, 0.35); }
+.planke.markiert { background: var(--t-tipp); }
+.planke-nr { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-size: 1.3em; color: var(--t-tinte); }
+.planke.neu { animation: planke-rein 0.45s ease backwards; }
+@keyframes planke-rein { from { transform: translateY(-26px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Muster */
+.muster-szene { position: relative; border-radius: 26px; background: var(--t-sand); padding: 36px 14px; overflow: hidden; }
+.muster-reihe { position: relative; z-index: 1; display: flex; gap: 6px; justify-content: center; flex-wrap: nowrap; }
+.muster-feld { width: 60px; height: 60px; flex: 0 1 60px; min-width: 0; border-radius: 14px; display: flex; align-items: center; justify-content: center; padding: 4px; }
+.muster-bild { width: 100%; height: 100%; }
+.muster-feld.luecke { border: 3px dashed #3d5f75; background: rgba(255, 255, 255, 0.55); }
+.luecke-zeichen { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-size: 1.6em; color: #3d5f75; }
+.muster-feld.eingesetzt { background: var(--t-gruen-hell); animation: planke-rein 0.4s ease; }
+.muster-feld.einheit-a { background: rgba(255, 255, 255, 0.75); }
+.muster-feld.einheit-b { background: rgba(126, 202, 195, 0.35); }
+.muster-feld.einheit-start { margin-left: 10px; }
+.muster-auswahl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.muster-auswahl.vier { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.form-knopf { height: 104px; display: flex; align-items: center; justify-content: center; padding: 14px; }
+.form-knopf .muster-bild { width: 70px; height: 70px; }
+
+/* Weg */
+.weg-szene { position: relative; border-radius: 26px; background: var(--t-wasser); padding: 12px; overflow: hidden; max-width: 460px; width: 100%; margin: 0 auto; }
+.weg-raster { position: relative; z-index: 1; display: grid; gap: 6px; }
+.weg-zelle { position: relative; aspect-ratio: 1; border-radius: 14px; background: rgba(255, 255, 255, 0.55); display: flex; align-items: center; justify-content: center; }
+.weg-zelle.stein { background: rgba(255, 255, 255, 0.3); }
+.weg-ding { width: 78%; height: 78%; }
+.weg-lolo { position: absolute; inset: 4%; z-index: 2; display: flex; align-items: center; justify-content: center; }
+.weg-lolo .bild { width: 100%; height: 100%; }
+.teich-app:not(.ruhig) .weg-lolo { animation: lolo-hops 0.3s ease; }
+@keyframes lolo-hops { from { transform: scale(0.8); } to { transform: none; } }
+.spur { width: 14px; height: 14px; border-radius: 50%; background: var(--t-haupt); position: absolute; }
+.spur.hinweis { background: transparent; border: 3px dashed #c47d00; width: 22px; height: 22px; }
+.programm-kopf { font-size: 0.85em; font-weight: 800; color: var(--t-leise); text-transform: uppercase; letter-spacing: 0.05em; }
+.programm { background: var(--t-karte); border: 2px solid var(--t-rand); border-radius: 18px; padding: 8px; display: grid; gap: 6px; }
+.platz { height: 44px; border-radius: 12px; border: 2px dashed #cfc6ae; display: flex; align-items: center; justify-content: center; color: var(--t-tinte); }
+.platz.voll { border-style: solid; background: #f3eee0; }
+.pfeile { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pfeil-knopf { height: 66px; border-radius: 18px; background: var(--t-karte); border: 3px solid var(--t-rand); color: var(--t-haupt); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.pfeil-knopf:disabled { opacity: 0.4; cursor: default; }
+.weg-steuerung .knopf { flex: 1 1 140px; }
+
+/* Fertig */
+.fertig { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; margin: auto 0; }
+.fertig-lolo { width: 200px; height: 210px; }
+.fertig-titel { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-weight: normal; font-size: 2.1em; }
+.fertig-text { font-size: 1.08em; color: var(--t-leise); max-width: 440px; line-height: 1.45; }
+.fertig-text.klein { font-size: 0.95em; }
+.geschenk { display: flex; align-items: center; gap: 16px; background: var(--t-gruen-hell); border: 3px solid var(--t-gruen); border-radius: 22px; padding: 12px 22px 12px 12px; text-align: left; }
+.geschenk-bild { width: 80px; height: 80px; background: #fff; border-radius: 16px; padding: 6px; }
+.geschenk-neu { font-size: 0.78em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1f5a3c; }
+.geschenk-name { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-size: 1.3em; }
+.teich-app:not(.ruhig) .geschenk { animation: planke-rein 0.6s ease 0.3s backwards; }
+
+/* Mein Teich */
+.teich-flaeche { position: relative; border-radius: 28px; background: var(--t-wasser); padding: 18px; overflow: hidden; }
+.teich-raster { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.teich-feld { aspect-ratio: 1; border-radius: 18px; border: 3px dashed rgba(61, 95, 117, 0.35); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 8px; }
+.teich-feld.hat { border: none; background: rgba(255, 255, 255, 0.85); }
+.teich-bild { width: 70%; height: 62%; }
+.teich-name { font-size: 0.72em; font-weight: 800; text-align: center; line-height: 1.1; }
+
+/* Overlay */
+.overlay { position: absolute; inset: 0; z-index: 50; background: rgba(31, 58, 51, 0.45); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.overlay-karte { background: var(--t-karte); border-radius: 26px; padding: 26px; max-width: 420px; width: 100%; text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.overlay-karte h2 { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-weight: normal; font-size: 1.6em; }
+.overlay-karte p { color: var(--t-leise); line-height: 1.45; }
+.overlay-karte .knopf-reihe { width: 100%; }
+.pause-lolo { width: 130px; height: 140px; }
+
+/* Erwachsene */
+.tor { background: var(--t-karte); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center; margin: auto 0; }
+.tor p { color: var(--t-leise); line-height: 1.5; max-width: 420px; }
+.tor-knopf { position: relative; overflow: hidden; min-width: 260px; user-select: none; -webkit-user-select: none; touch-action: none; }
+.tor-balken { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgba(255, 255, 255, 0.28); }
+.tor-text { position: relative; }
+.box { background: var(--t-karte); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.box h3 { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-weight: normal; font-size: 1.15em; }
+.schalter { display: flex; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px solid #efebe0; cursor: pointer; }
+.schalter:last-child { border-bottom: none; }
+.schalter-text { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.schalter-text span { font-size: 0.85em; color: var(--t-leise); line-height: 1.35; }
+.schalter input { width: 26px; height: 26px; accent-color: var(--t-haupt); flex-shrink: 0; cursor: pointer; }
+.segmente { display: flex; gap: 10px; }
+.segment { flex: 1; height: 52px; border-radius: 14px; border: 2px solid var(--t-haupt); background: #fff; color: var(--t-haupt); font-size: 1.1em; font-weight: 800; cursor: pointer; }
+.segment[aria-pressed="true"] { background: var(--t-haupt); color: #fff; }
+.spiel-zeile { border: 2px solid #efebe0; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.spiel-zeile-kopf { display: flex; flex-direction: column; gap: 2px; }
+.stufe { display: flex; align-items: center; gap: 10px; }
+.stufe-mitte { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.stufe-wert { font-weight: 800; }
+.stufe-beschr { font-size: 0.82em; color: var(--t-leise); }
+
+@media (max-width: 640px) {
+  .teich-app { padding: 14px; font-size: 17px; border-radius: 24px; min-height: 620px; }
+  .kacheln { grid-template-columns: 1fr; }
+  .kachel { display: grid; grid-template-columns: 110px minmax(0, 1fr); column-gap: 14px; row-gap: 2px; align-items: center; }
+  .kachel-bild { grid-row: span 3; }
+  .held { min-height: 220px; }
+  .held-lolo { width: 130px; height: 160px; }
+  .sprechblase p { font-size: 0.95em; }
+  .bruecke-szene { padding: 22px 40px; min-height: 190px; }
+  .ufer { width: 30px; }
+  .planke { height: 56px; }
+  .zahlenfeld, .zahlenfeld.gross { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .muster-reihe { gap: 3px; }
+  .muster-feld { padding: 2px; border-radius: 10px; }
+  .muster-feld.einheit-start { margin-left: 5px; }
+  .aufgabe-lolo, .aufgabe-lolo .lolo { width: 56px; height: 62px; }
+  .aufgabe-text { font-size: 1em; }
+  .teich-raster { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.fertig .knopf-reihe { width: 100%; max-width: 460px; }
+/* Auf der Spielseite bleibt die Navigation oben stehen, damit sie beim Spielen nichts verdeckt */
+.sticky-nav { position: relative; top: 0; }
+.weg-szene { max-width: 420px; }
+.teich-app { scroll-margin-top: 12px; }
+/* Wenn ein Hintergrundbild geladen ist, übernimmt es die gezeichneten Ufer */
+.held:has(> .hg-bild)::after { display: none; }
+.bruecke-szene:has(> .hg-bild) .ufer { display: none; }
+.teich-app.reizarm .held::after { display: block; }
+.teich-app.reizarm .bruecke-szene .ufer { display: block; }
+/* Text-Knöpfe oben in der Spielauswahl (Mein Teich, Eltern-Einstellungen) */
+.app-kopf { flex-wrap: wrap; }
+.text-knopf {
+  min-height: 48px; padding: 0 16px; border-radius: 14px; background: var(--t-karte); border: 2px solid var(--t-rand);
+  color: var(--t-tinte); font-weight: 800; font-size: 0.85em; cursor: pointer;
+}
+.text-knopf:hover { background: #f4f1e8; }
+.footer-credits { background: var(--primary-pale); border-radius: 14px; padding: 18px; margin: 20px 0; font-size: 0.88em; color: var(--text-soft); line-height: 1.8; }
+@media (max-width: 640px) {
+  .app-kopf-knoepfe { width: 100%; }
+  .app-kopf-knoepfe .text-knopf { flex: 1; }
+}
+/* Eltern-Einstellungen gut sichtbar */
+.text-knopf.eltern-knopf { background: var(--t-haupt); border-color: var(--t-haupt); color: #fff; }
+.text-knopf.eltern-knopf:hover { background: var(--t-haupt-dunkel); }
+.eltern-hinweis {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  background: var(--t-tipp); border: 3px solid #e7c76a; border-radius: 22px; padding: 18px 20px;
+}
+.eltern-hinweis-text { flex: 1 1 300px; display: flex; flex-direction: column; gap: 4px; }
+.eltern-hinweis-text strong { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-weight: normal; font-size: 1.2em; }
+.eltern-hinweis-text span { font-size: 0.92em; color: var(--t-leise); line-height: 1.45; }
+.eltern-hinweis-knoepfe { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .eltern-hinweis-knoepfe { width: 100%; }
+  .eltern-hinweis-knoepfe .knopf { flex: 1; }
+}
