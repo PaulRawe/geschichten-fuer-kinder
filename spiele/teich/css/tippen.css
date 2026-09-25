@@ -1,0 +1,79 @@
+/* =====================================================
+   Lernolotls Teich – Tasten-Teich (Tastaturschreiben)
+   ===================================================== */
+
+/* Mit vier Spielen: Auswahl als 2 × 2 */
+.kacheln:not(.einzeln) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.spiel-tippen { gap: 12px; }
+.spiel-tippen:focus { outline: none; }
+
+/* Bahn: Lernolotl schwimmt mit jeder richtigen Taste weiter */
+.tipp-bahn { position: relative; height: 78px; border-radius: 22px; background: var(--t-wasser); overflow: hidden; }
+.bahn-lolo { position: absolute; left: 0; bottom: 5px; width: 64px; height: 64px; z-index: 2; transition: left 0.25s ease; display: flex; align-items: center; justify-content: center; }
+.bahn-lolo .bild { width: 100%; height: 100%; }
+.bahn-ziel { position: absolute; right: 8px; bottom: 6px; width: 62px; height: 58px; z-index: 1; }
+.bahn-ziel .bild { width: 100%; height: 100%; }
+
+/* Die Zeile zum Abtippen – Schrift "Andika" ist für Leseanfänger gemacht */
+.tipp-zeile {
+  font-family: 'Andika', 'Nunito', system-ui, sans-serif;
+  font-size: 2.1em; line-height: 1.5; letter-spacing: 0.03em;
+  background: var(--t-karte); border-radius: 20px; padding: 14px 12px; text-align: center;
+  overflow-wrap: anywhere;
+}
+.tipp-zeile .z { display: inline-block; min-width: 0.55em; padding: 0 0.05em; border-radius: 8px; color: #8e9a96; }
+.tipp-zeile .z.leer { color: #c5cbc8; min-width: 0.7em; }
+.tipp-zeile .z.fertig { color: var(--t-gruen); }
+.tipp-zeile .z.leer.fertig { color: #a9d2b8; }
+.tipp-zeile .z.jetzt { color: var(--t-tinte); background: var(--t-tipp); box-shadow: 0 4px 0 var(--t-haupt); }
+.tipp-zeile .z.nochmal { animation: tipp-nochmal 0.5s ease; }
+@keyframes tipp-nochmal { 0% { background: #dfe3e1; } 100% { background: var(--t-tipp); } }
+
+/* Bildschirmtastatur (deutsch, QWERTZ) */
+.tastatur { background: #f1ede2; border-radius: 18px; padding: 10px; display: flex; flex-direction: column; gap: 6px; user-select: none; -webkit-user-select: none; }
+.reihe { display: flex; gap: 5px; justify-content: center; }
+.taste {
+  --k: calc((100% - 60px) / 12);
+  position: relative; flex: 0 0 auto; width: var(--k); max-width: 54px; height: 48px; padding: 0;
+  border-radius: 10px; border: 2px solid #d9d1bb; background: #fff; color: var(--t-tinte);
+  font-family: 'Andika', 'Nunito', system-ui, sans-serif; font-size: 1.05em; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.taste.an { background: #fff; background: color-mix(in srgb, var(--finger, #ffffff) 30%, #ffffff); }
+.taste.aus { opacity: 0.35; }
+.taste.neu::after { content: ''; position: absolute; top: 4px; right: 4px; width: 7px; height: 7px; border-radius: 50%; background: var(--t-haupt); }
+.taste.fuehler::before { content: ''; position: absolute; bottom: 6px; left: 35%; right: 35%; height: 3px; border-radius: 2px; background: var(--t-tinte); opacity: 0.55; }
+.taste.shift { width: calc(var(--k) * 1.3); max-width: 70px; font-size: 1.2em; }
+.taste.leertaste { width: 50%; max-width: 320px; height: 40px; }
+.taste.ziel { background: var(--finger, #cfe3da); border-color: var(--t-tinte); box-shadow: 0 0 0 3px var(--t-tinte); z-index: 1; }
+.taste.daneben { animation: taste-daneben 0.45s ease; }
+@keyframes taste-daneben { 0% { background: #d7dbd9; } 100% { } }
+.reihe.r2 { padding-left: calc((100% - 60px) / 12 * 0.3); }
+.reihe.r3 { padding-right: calc((100% - 60px) / 12 * 0.3); }
+
+/* Hände mit dem passenden Finger */
+.haende-zeile { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.haende { width: 260px; flex-shrink: 0; }
+.haende-svg { width: 100%; height: auto; display: block; }
+.haende-svg .finger, .haende-svg .handflaeche { fill: #fff; stroke: var(--t-tinte); stroke-width: 3; }
+.haende-svg .finger.aktiv { stroke-width: 4.5; }
+.haende.blinken { animation: haende-blinken 1.2s ease; border-radius: 16px; }
+@keyframes haende-blinken { 0%, 100% { box-shadow: none; } 30%, 70% { box-shadow: 0 0 0 6px var(--t-tipp); background: var(--t-tipp); } }
+.finger-text { font-weight: 800; font-size: 0.95em; line-height: 1.4; max-width: 260px; color: var(--t-tinte); }
+
+.teich-app.reizarm .taste.an { background: #fff; }
+.teich-app.reizarm .taste.ziel { background: #d5dcd9; }
+
+@media (max-width: 640px) {
+  .kacheln:not(.einzeln) { grid-template-columns: 1fr; }
+  .tipp-zeile { font-size: 1.55em; padding: 10px 8px; }
+  .tastatur { padding: 6px; gap: 4px; }
+  .reihe { gap: 3px; }
+  .taste { --k: calc((100% - 36px) / 12); height: 36px; border-radius: 7px; font-size: 0.9em; }
+  .taste.leertaste { height: 32px; }
+  .taste.neu::after { width: 5px; height: 5px; top: 3px; right: 3px; }
+  .haende-zeile { flex-direction: column; gap: 6px; }
+  .haende { width: 220px; }
+  .finger-text { text-align: center; }
+}

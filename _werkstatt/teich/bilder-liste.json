@@ -1,0 +1,151 @@
+{
+  "_info": "Welche Bilder das Spiel braucht. Wird von sprites_schneiden.py gelesen. 'namen' = Dateinamen in Lesereihenfolge (links nach rechts, oben nach unten).",
+  "ziel_ordner": "../../spiele/teich/bilder",
+  "saetze": {
+    "lernolotl-posen": {
+      "art": "sammel",
+      "spalten": 3,
+      "zeilen": 1,
+      "ordner": "lernolotl",
+      "max_px": 480,
+      "namen": [
+        "schwimmt",
+        "schlaeft",
+        "ruhig"
+      ]
+    },
+    "bruecke-planken": {
+      "art": "sammel",
+      "spalten": 3,
+      "zeilen": 1,
+      "ordner": "bruecke",
+      "max_px": 320,
+      "namen": [
+        "planke-1",
+        "planke-2",
+        "planke-3"
+      ]
+    },
+    "muster-dinge": {
+      "art": "sammel",
+      "spalten": 3,
+      "zeilen": 2,
+      "ordner": "muster",
+      "max_px": 320,
+      "namen": [
+        "muschel",
+        "stein",
+        "blatt",
+        "seerose",
+        "fisch",
+        "schnecke"
+      ]
+    },
+    "weg-dinge": {
+      "art": "sammel",
+      "spalten": 2,
+      "zeilen": 1,
+      "ordner": "weg",
+      "max_px": 320,
+      "namen": [
+        "stein",
+        "futter"
+      ]
+    },
+    "teich-sammlung": {
+      "art": "sammel",
+      "spalten": 4,
+      "zeilen": 3,
+      "ordner": "teich",
+      "max_px": 320,
+      "namen": [
+        "seerose",
+        "fisch",
+        "stein",
+        "schilf",
+        "muschel",
+        "libelle",
+        "frosch",
+        "schnecke",
+        "blume",
+        "krebs",
+        "entchen",
+        "kaefer"
+      ]
+    },
+    "hg-teich": {
+      "art": "einzeln",
+      "ordner": "hintergrund",
+      "name": "teich",
+      "max_px": 1600,
+      "qualitaet": 80
+    },
+    "hg-fluss": {
+      "art": "einzeln",
+      "ordner": "bruecke",
+      "name": "fluss",
+      "max_px": 1600,
+      "qualitaet": 80
+    },
+    "hg-ufer": {
+      "art": "einzeln",
+      "ordner": "muster",
+      "name": "ufer",
+      "max_px": 1600,
+      "qualitaet": 80
+    },
+    "hg-wasser": {
+      "art": "einzeln",
+      "ordner": "weg",
+      "name": "wasser",
+      "max_px": 1200,
+      "qualitaet": 80
+    },
+    "kachel-bruecke": {
+      "art": "einzeln",
+      "ordner": "kacheln",
+      "name": "bruecke",
+      "max_px": 800,
+      "qualitaet": 82
+    },
+    "kachel-muster": {
+      "art": "einzeln",
+      "ordner": "kacheln",
+      "name": "muster",
+      "max_px": 800,
+      "qualitaet": 82
+    },
+    "kachel-weg": {
+      "art": "einzeln",
+      "ordner": "kacheln",
+      "name": "weg",
+      "max_px": 800,
+      "qualitaet": 82
+    },
+    "tippen-dinge": {
+      "art": "sammel",
+      "spalten": 2,
+      "zeilen": 1,
+      "ordner": "",
+      "max_px": 480,
+      "namen": [
+        "lernolotl/tippt",
+        "tippen/ziel"
+      ]
+    },
+    "hg-bahn": {
+      "art": "einzeln",
+      "ordner": "tippen",
+      "name": "bahn",
+      "max_px": 1600,
+      "qualitaet": 80
+    },
+    "kachel-tippen": {
+      "art": "einzeln",
+      "ordner": "kacheln",
+      "name": "tippen",
+      "max_px": 800,
+      "qualitaet": 82
+    }
+  }
+}
