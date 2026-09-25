@@ -1,0 +1,80 @@
+name: Duplikate bereinigen (Weiterleitung + Sitemap)
+
+# Ersetzt doppelte Seiten durch eine Weiterleitung auf die aktuelle Version und
+# setzt Hilfsseiten (Pinterest-Bestätigung) auf noindex.
+# Einstellungen: scripts/duplikate.json
+#
+# - Manuell über "Run workflow": zuerst dry_run = true (nur Bericht), dann false.
+# - Läuft automatisch, wenn du eine der Doppelseiten oder die Einstellungen neu
+#   hochlädst. Ist die hochgeladene Doppelseite NEUER als das Ziel, wird sie nicht
+#   angefasst und im Bericht gemeldet – die aktuelle Fassung geht nie verloren.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry Run (true = nur Bericht, false = wirklich schreiben)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+  push:
+    branches: [main]
+    paths:
+      - 'fragen/Intensivstation-Patienten-Ratgeber-LESEPROBE.html'
+      - 'fragen/Intensivstation-Ratgeber-LESEPROBE.html'
+      - 'Intensivstation_Index.html'
+      - 'pinterest-5853b.html'
+      - 'scripts/duplikate.json'
+      - 'scripts/fix_duplicates.py'
+
+permissions:
+  contents: write
+  actions: write      # zum Anstoßen von "Sitemap erzeugen"
+
+concurrency:
+  group: intensiv-duplikate
+  cancel-in-progress: false
+
+jobs:
+  duplikate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken (volle Historie für Änderungsdaten)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Duplikate prüfen und ersetzen
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python3 scripts/fix_duplicates.py --dry-run
+          else
+            python3 scripts/fix_duplicates.py
+          fi
+
+      - name: Commit & Push
+        id: push
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Keine Änderungen."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "SEO: Duplikate durch Weiterleitung ersetzt"
+          git pull --rebase origin main
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes aus einer Action starten keine anderen Workflows –
+      # deshalb "Sitemap erzeugen" (build-sitemap.yml) ausdrücklich anstoßen.
+      - name: Sitemap-Workflow anstoßen
+        if: steps.push.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build-sitemap.yml --ref main
