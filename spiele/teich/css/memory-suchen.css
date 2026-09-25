@@ -1,0 +1,65 @@
+/* =====================================================
+   Lernolotls Teich – Teich-Memory und Such-Teich
+   ===================================================== */
+
+/* ---------- Memory ---------- */
+.memory-zaehler { text-align: center; font-weight: 800; color: var(--t-leise); }
+.memory-szene { position: relative; border-radius: 26px; background: var(--t-wasser); padding: 16px; overflow: hidden; }
+.memory-raster { position: relative; z-index: 1; display: grid; gap: 12px; max-width: 560px; margin: 0 auto; }
+.memory-szene.gross .memory-raster { gap: 8px; }
+.karte { position: relative; aspect-ratio: 3 / 4; padding: 0; border: none; background: none; cursor: pointer; perspective: 800px; }
+.karte-innen { position: absolute; inset: 0; transition: transform 0.4s ease; transform-style: preserve-3d; }
+.karte.offen .karte-innen, .karte.gefunden .karte-innen { transform: rotateY(180deg); }
+.karte-rueck, .karte-vorn {
+  position: absolute; inset: 0; border-radius: 14px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; align-items: center; justify-content: center; border: 3px solid var(--t-rand);
+}
+.karte-rueck {
+  background: radial-gradient(circle at 50% 55%, #9fd8a8 0 22%, transparent 23%), var(--t-haupt);
+  border-color: var(--t-haupt-dunkel);
+}
+.rueck-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.karte-vorn { background: #fff; transform: rotateY(180deg); padding: 10%; }
+.memory-bild { width: 100%; height: 100%; }
+.memory-wort { font-family: 'Andika', 'Nunito', system-ui, sans-serif; font-weight: 700; font-size: 1.15em; color: var(--t-tinte); text-align: center; overflow-wrap: anywhere; }
+.karte.gefunden .karte-vorn { border-color: var(--t-gruen); background: var(--t-gruen-hell); }
+.karte.spicken .karte-vorn { border-color: #c47d00; }
+.karte:focus-visible { outline: 3px solid var(--primary-dark); outline-offset: 3px; border-radius: 14px; }
+.teich-app.ruhig .karte-innen { transition: none; }
+.teich-app.reizarm .karte-rueck { background: #8e9c97; border-color: #6f7c77; }
+.teich-app.reizarm .rueck-bild { display: none; }
+
+/* ---------- Such-Teich ---------- */
+.such-leiste { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.such-ziel { display: flex; align-items: center; gap: 10px; background: var(--t-karte); border: 3px solid var(--t-rand); border-radius: 18px; padding: 6px 14px 6px 6px; }
+.such-ziel.erledigt { border-color: var(--t-gruen); background: var(--t-gruen-hell); }
+.such-ziel-bild { width: 52px; height: 52px; }
+.such-zahl { font-family: 'Fredoka One', 'Nunito', system-ui, sans-serif; font-size: 1.3em; color: var(--t-tinte); }
+.such-szene { position: relative; border-radius: 26px; background: var(--t-wasser); overflow: hidden; }
+.such-flaeche { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 3; }
+.such-ding {
+  position: absolute; aspect-ratio: 1; padding: 2px; border: 3px solid transparent; border-radius: 50%;
+  background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.such-ding .bild { width: 100%; height: 100%; }
+.such-ding:hover { background: rgba(255, 255, 255, 0.35); }
+.such-ding.gefunden { border-color: var(--t-gruen); background: rgba(220, 239, 227, 0.85); cursor: default; }
+.such-ding.gefunden::after {
+  content: '✓'; position: absolute; right: -4px; top: -4px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--t-gruen); color: #fff; font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center;
+}
+.such-ding.kein { animation: such-kein 0.5s ease; }
+@keyframes such-kein { 0% { background: rgba(120, 128, 125, 0.45); } 100% { background: transparent; } }
+.such-ding.leuchten { border-color: #c47d00; background: rgba(255, 244, 214, 0.9); animation: such-leuchten 1s ease 3; }
+@keyframes such-leuchten { 50% { box-shadow: 0 0 0 8px rgba(251, 191, 36, 0.45); } }
+.teich-app.reizarm .such-ding.leuchten { animation: none; }
+
+@media (max-width: 640px) {
+  .memory-szene { padding: 10px; }
+  .memory-raster { gap: 8px; }
+  .memory-wort { font-size: 0.9em; }
+  .karte-rueck, .karte-vorn { border-radius: 10px; border-width: 2px; }
+  .such-flaeche { aspect-ratio: 1; }
+  .such-ziel-bild { width: 40px; height: 40px; }
+  .such-ding.gefunden::after { width: 16px; height: 16px; font-size: 11px; right: -2px; top: -2px; }
+}
