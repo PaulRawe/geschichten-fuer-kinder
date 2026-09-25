@@ -1,10 +1,10 @@
 {
-  "base_url": "https://intensivstation-ratgeber.de",
+  "base_url": "https://www.lernolotl.de",
   "bot_autoren": ["GitHub Actions", "github-actions", "github-actions[bot]"],
   "paare": [
-    { "duplikat": "fragen/Intensivstation-Patienten-Ratgeber-LESEPROBE.html", "ziel": "Intensivstation-Patienten-Ratgeber-LESEPROBE.html", "min_aehnlichkeit": 0.8 },
-    { "duplikat": "fragen/Intensivstation-Ratgeber-LESEPROBE.html",           "ziel": "Intensivstation-Ratgeber-LESEPROBE.html",           "min_aehnlichkeit": 0.8 },
-    { "duplikat": "Intensivstation_Index.html",                               "ziel": "index.html",                                        "min_aehnlichkeit": 0.1 }
+    { "duplikat": "lernolotl-steckbrief.html",       "ziel": "lernolotl/lernolotl-steckbrief.html", "min_aehnlichkeit": 0.8 },
+    { "duplikat": "lernolotls-welt.html",            "ziel": "lernolotl/lernolotls-welt.html",      "min_aehnlichkeit": 0.8 },
+    { "duplikat": "spiele/spiele/teich/index.html",  "ziel": "spiele/teich/index.html",             "min_aehnlichkeit": 0.8 }
   ],
-  "noindex": ["pinterest-5853b.html"]
+  "noindex": []
 }
