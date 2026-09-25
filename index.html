@@ -515,6 +515,53 @@
         .cookie-decline { background: #e0e0e0; color: #333; }
         .cookie-decline:hover { background: #bdbdbd; }
 
+        /* ===== LERNOLOTL SPIELT (Lernspiele) ===== */
+        .lernolotl-spielt {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 30px;
+            align-items: center;
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4ecd6 100%);
+            border: 2.5px solid #7b9eb5;
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .lernolotl-spielt .spielt-bild {
+            display: block;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(90,125,149,0.25);
+            transition: transform 0.3s ease;
+        }
+        .lernolotl-spielt .spielt-bild:hover { transform: scale(1.02); }
+        .lernolotl-spielt .spielt-bild img { width: 100%; height: auto; display: block; }
+        .lernolotl-spielt h2 { color: #3d5f75; font-size: 2em; margin-bottom: 10px; line-height: 1.2; }
+        .lernolotl-spielt p { color: #2c3e50; font-size: 1.05em; line-height: 1.7; margin-bottom: 16px; }
+        .spielt-liste { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+        .spielt-liste li {
+            background: white;
+            border: 1.5px solid #7b9eb5;
+            color: #3d5f75;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+        .spielt-knopf {
+            display: inline-block;
+            background: #5a7d95;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 14px 30px;
+            border-radius: 14px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .spielt-knopf:hover { background: #3d5f75; transform: translateY(-2px); }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             body { padding: 15px; }
@@ -524,6 +571,9 @@
             .cookie-content { flex-direction: column; text-align: center; }
             .footer-links { flex-direction: column; gap: 15px; }
             .badge-erklaerung { flex-direction: column; text-align: center; }
+            .lernolotl-spielt { grid-template-columns: 1fr; padding: 22px; text-align: center; }
+            .lernolotl-spielt h2 { font-size: 1.6em; }
+            .spielt-liste { justify-content: center; }
         }
     </style>
     <link rel="stylesheet" href="consent.css">
@@ -613,6 +663,28 @@
     Zur Bibliothek
   </a>
 </section>
+        <!-- ===== LERNOLOTL SPIELT (Lernspiele) ===== -->
+        <section class="lernolotl-spielt" aria-labelledby="spielt-titel">
+            <span class="neu-ribbon">✨ Neu</span>
+            <a href="spiele/teich/" class="spielt-bild" aria-hidden="true" tabindex="-1">
+                <img src="spiele/teich/bilder/teaser.jpg" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="spielt-text">
+                <h2 id="spielt-titel">Lernolotl spielt</h2>
+                <p>
+                    Vier kostenlose Lernspiele im Lernolotl-Teich: Zahlen ergänzen, Muster fortsetzen,
+                    Wege planen und mit zehn Fingern schreiben. Ohne Werbung, ohne Zeitdruck und
+                    mit reizarmem Modus – gemacht mit Blick auf neurodivergente Kinder.
+                </p>
+                <ul class="spielt-liste">
+                    <li>Zehner-Brücke</li>
+                    <li>Muster am Ufer</li>
+                    <li>Lernolotls Weg</li>
+                    <li>Tasten-Teich</li>
+                </ul>
+                <a href="spiele/teich/" class="spielt-knopf">Jetzt spielen</a>
+            </div>
+        </section>
         <section class="categories-section">
             <h2 class="section-title">Entdecke unsere Geschichtenwelten</h2>
             <p class="section-description">
