@@ -16,7 +16,7 @@
   const KONFIG = {
     speicherSchluessel: 'lernolotlTeich.v1',
     // GoatCounter-Konto, das auch deine Seiten zählt:
-    goatcounter: 'https://lernolotl.goatcounter.com/count',
+    goatcounter: 'https://pauleheissta.goatcounter.com/count',
     zaehlerPrefix: 'teich',
     bilderOrdner: 'bilder/',
     // Ab 3 Aufgaben in Folge ohne Fehler und ohne Tipp: eine Stufe höher
