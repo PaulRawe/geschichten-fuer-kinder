@@ -96,6 +96,15 @@ footer{background:#fff;border-radius:25px;padding:30px;text-align:center;
   .produkte{grid-template-columns:1fr;}
   .thema-kopf{font-size:1em;padding:16px 2px;}
 }
+/* Titelbild nur auf der Bibliotheks-Startseite */
+header.bib-head.mit-bild{padding:16px 16px 26px;}
+.bib-bild{border-radius:18px;overflow:hidden;margin-bottom:22px;box-shadow:0 10px 30px rgba(90,125,149,.25);}
+.bib-bild img{display:block;width:100%;height:auto;aspect-ratio:21/8;object-fit:cover;object-position:50% 32%;}
+@media(max-width:640px){
+  header.bib-head.mit-bild{padding:12px 12px 20px;}
+  .bib-bild{border-radius:14px;margin-bottom:16px;}
+  .bib-bild img{aspect-ratio:16/9;object-position:50% 50%;}
+}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;}}
 
 /* buchseite-button */
