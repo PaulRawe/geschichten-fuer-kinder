@@ -562,6 +562,82 @@
         }
         .spielt-knopf:hover { background: #3d5f75; transform: translateY(-2px); }
 
+
+        /* ===== MINI-NAVIGATION ===== */
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+        .mini-nav {
+            display: flex; align-items: center; justify-content: space-between; gap: 14px;
+            flex-wrap: wrap;
+            background: rgba(255,255,255,0.92);
+            border-radius: 18px;
+            padding: 10px 14px 10px 12px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+        }
+        .mini-nav .marke {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: #3d5f75; font-weight: 700; font-size: 1.1em; text-decoration: none;
+        }
+        .mini-nav .marke img { width: 34px; height: auto; display: block; }
+        .mini-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+        .mini-nav ul a {
+            display: inline-block; text-decoration: none; color: #3d5f75; font-weight: 600;
+            font-size: 0.95em; padding: 8px 14px; border-radius: 999px;
+            background: #eef5f9; border: 1.5px solid #c9dbe6;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .mini-nav ul a:hover, .mini-nav ul a:focus-visible { background: #dcebf3; border-color: #7b9eb5; }
+        #warum, #so-gehts, #welten { scroll-margin-top: 16px; }
+
+        /* ===== BILD-LINKS-TEXT-RECHTS-KARTEN (wie "Lernolotl spielt") ===== */
+        .bt-karte {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 30px;
+            align-items: center;
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4ecd6 100%);
+            border: 2.5px solid #7b9eb5;
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            text-align: left;
+        }
+        .bt-karte .bt-bild {
+            display: block; border-radius: 18px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(90,125,149,0.25);
+            transition: transform 0.3s ease;
+        }
+        .bt-karte a.bt-bild:hover { transform: scale(1.02); }
+        .bt-karte .bt-bild img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+        .bt-karte h2 { color: #3d5f75; font-size: 2em; margin-bottom: 10px; line-height: 1.2; }
+        .bt-karte p { color: #2c3e50; font-size: 1.05em; line-height: 1.7; margin-bottom: 16px; }
+        .bt-knopf {
+            display: inline-block; background: #5a7d95; color: #fff; text-decoration: none;
+            font-weight: 700; padding: 14px 30px; border-radius: 14px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .bt-knopf:hover { background: #3d5f75; transform: translateY(-2px); color: #fff; }
+        .bt-knopf.zweit { background: #fff; color: #3d5f75; border: 2px solid #7b9eb5; padding: 12px 24px; }
+        .bt-knopf.zweit:hover { background: #eef5f9; color: #3d5f75; }
+        .bt-knoepfe { display: flex; flex-wrap: wrap; gap: 12px; }
+
+        /* Kopfbereich: gleiche Karte, aber weiß und mit größerem Bild */
+        header.hero-karte {
+            background: #fff;
+            border: none;
+            padding: 30px;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            text-align: left;
+        }
+        .hero-karte .bt-bild { box-shadow: 0 10px 30px rgba(123,158,181,0.3); }
+        .hero-karte .bt-bild img { aspect-ratio: auto; }
+        .hero-karte h1 { font-size: 2.6em; margin-bottom: 8px; }
+        .hero-karte .subtitle { margin-bottom: 8px; }
+        .hero-karte .tagline { margin-bottom: 22px; }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             body { padding: 15px; }
@@ -574,6 +650,13 @@
             .lernolotl-spielt { grid-template-columns: 1fr; padding: 22px; text-align: center; }
             .lernolotl-spielt h2 { font-size: 1.6em; }
             .spielt-liste { justify-content: center; }
+            .bt-karte, header.hero-karte { grid-template-columns: 1fr; padding: 18px; gap: 18px; text-align: center; }
+            .bt-karte h2 { font-size: 1.6em; }
+            .hero-karte h1 { font-size: 2.1em; }
+            .bt-knoepfe { justify-content: center; }
+            .mini-nav { justify-content: center; padding: 10px; }
+            .mini-nav ul { justify-content: center; }
+            .mini-nav ul a { font-size: 0.9em; padding: 7px 12px; }
         }
     </style>
     <link rel="stylesheet" href="consent.css">
@@ -581,90 +664,48 @@
 <body>
     <div class="container">
 
-        <!-- ===== HEADER ===== -->
-        <header>
-           
-            <h1>Der Lernolotl</h1>
-            <p class="subtitle">Pädagogisch aufgewertete Vorlesegeschichten</p>
-            <p class="tagline">Über 150 kostenlose Geschichten für Kinder von 3–10 Jahren</p>
-            <div class="hero-image-container">
-                <img src="1000112864.webp" alt="Der Lernolotl liest mit zwei Kindern zusammen in einer gemütlichen Bibliothek" loading="eager">
+        <!-- ===== MINI-NAVIGATION ===== -->
+        <nav class="mini-nav" aria-label="Schnellzugriff">
+            <a class="marke" href="/"><img src="lernolotl-icon.webp" alt="" width="34" height="41">Der Lernolotl</a>
+            <ul>
+                <li><a href="#warum">Warum der Lernolotl?</a></li>
+                <li><a href="#so-gehts">So funktioniert's</a></li>
+            </ul>
+        </nav>
+
+        <!-- ===== KOPFBEREICH: Bild links, Text rechts ===== -->
+        <header class="bt-karte hero-karte">
+            <div class="bt-bild">
+                <img src="bilder/startseite/start.webp" srcset="bilder/startseite/start-800.webp 800w, bilder/startseite/start.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Der Lernolotl läuft über eine Wiese zu einem großen offenen Märchenbuch, aus dem ein Schloss, ein Fuchs, ein Segelboot und ein lächelnder Mond aufsteigen" width="1600" height="900" loading="eager" fetchpriority="high">
+            </div>
+            <div>
+                <h1>Der Lernolotl</h1>
+                <p class="subtitle">Pädagogisch aufgewertete Vorlesegeschichten</p>
+                <p class="tagline">Über 150 kostenlose Geschichten für Kinder von 3–10 Jahren</p>
+                <div class="bt-knoepfe">
+                    <a href="/bibliothek/" class="bt-knopf">Zur Bibliothek</a>
+                    <a href="#welten" class="bt-knopf zweit">Geschichtenwelten</a>
+                </div>
             </div>
         </header>
 
-        <!-- ===== STORY BOX ===== -->
-        <div class="lernolotl-story-box">
-            <img loading="lazy" decoding="async" src="lernolotl-icon.webp" alt="Der Lernolotl" class="mascot-small">
-            <h3>Warum der Lernolotl?</h3>
-            <p>
-                Unser Sohn Finn hat Autismus und ADHS. Beim Vorlesen merkten wir: 
-                Die schönsten Geschichten blieben ohne pädagogische Begleitung oft 
-                wirkungslos. Gefühle wurden nicht verstanden, Lerninhalte nicht vertieft.
-            </p>
-            <p>
-                <strong>Gleichzeitig sahen wir bei unserer Tochter Lena:</strong> 
-                Geschichten mit gezielten Fragen, Arbeitsblättern und Gesprächsanregungen 
-                vertieften ihr Verständnis enorm. Sie lernte nicht nur zuzuhören — 
-                sondern nachzudenken, mitzufühlen und zu reflektieren.
-            </p>
-            <p>
-               Und so ist der Lernolotl 
-                entstanden — ein Maskottchen, das <strong>allen Kindern</strong> hilft, 
-                Geschichten wirklich zu <strong>verstehen</strong> statt nur zu <strong>hören</strong>.
-            </p>
-            <div class="highlight">
-                <p style="margin: 0;">
-                    ✨ <strong>Alle Geschichten bleiben kostenlos — für immer.</strong><br>
-                    📚 Die optionalen Arbeitsmaterialien sind unser Weg, diese Seite zu finanzieren.
+        <!-- ===== BIBLIOTHEK ===== -->
+        <section class="bt-karte" aria-labelledby="bib-titel">
+            <a href="/bibliothek/" class="bt-bild" aria-hidden="true" tabindex="-1">
+                <img src="bilder/startseite/bibliothek.webp" srcset="bilder/startseite/bibliothek-800.webp 800w, bilder/startseite/bibliothek.webp 1600w" sizes="(max-width: 768px) 100vw, 560px" alt="" width="1600" height="900" loading="lazy" decoding="async">
+            </a>
+            <div>
+                <h2 id="bib-titel">Die Lernolotl-Bibliothek</h2>
+                <p>
+                    Über 170 kostenlose Geschichten und mehr als 250 Bücher und Materialien –
+                    nach Thema durchsuchbar. Such dir aus, was gerade zu deinem Kind passt.
                 </p>
+                <a href="/bibliothek/" class="bt-knopf">Zur Bibliothek</a>
             </div>
-            <p class="small-print">
-                <em>Geschrieben mit Herz. Erprobt mit Finn &amp; Lena. Geteilt mit euch.</em>
-            </p>
-        </div>
+        </section>
 
-        <!-- ===== INFO BOX ===== -->
-        <div class="info-box">
-            <div class="info-box-title">
-                <span>💡</span>
-                <span>So funktioniert's</span>
-            </div>
-            <p class="info-box-text">
-                <strong>Alle Geschichten sind kostenlos</strong> <br><br>
-                
-                Zu vielen Geschichten gibt es <strong>optional kostenpflichtige Arbeitsmaterialien</strong> 
-                (Arbeitsblätter, Ausmalbilder, Aufgaben für Kita &amp; Grundschule) – 
-                perfekt für Eltern und Lehrkräfte, die tiefer einsteigen möchten.<br><br>
-                
-                <strong>Geschichten lesen = gratis &nbsp;•&nbsp; Lernmaterialien = optional zum Download</strong>
-            </p>
-
-            <!-- Badge-Erklärung -->
-            <div class="badge-erklaerung">
-                <img loading="lazy" decoding="async" src="lernolotl-icon.webp" alt="Lernolotl-Badge">
-                <span>
-                    <strong>Dieses Symbol</strong> auf einer Kategorie bedeutet: 
-                    Zu den Geschichten dort gibt es passende Lernmaterialien zum Download — 
-                    direkt bei der Geschichte verlinkt.
-                </span>
-            </div>
-        </div>
-
-        <!-- ===== KATEGORIEN ===== -->
-      <section class="card" style="background:#fff;border-radius:25px;padding:34px 30px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.12);margin-bottom:40px;text-align:center;">
-  <h2 style="color:#5a7d95;font-size:1.7em;margin-bottom:12px;">Die Lernolotl-Bibliothek</h2>
-  <p style="color:#666;max-width:60ch;margin:0 auto 22px;">
-    Über 170 kostenlose Geschichten und mehr als 250 Bücher und Materialien &ndash;
-    nach Thema durchsuchbar. Such dir aus, was gerade zu deinem Kind passt.
-  </p>
-  <a href="/bibliothek/" style="display:inline-block;background:#5a7d95;color:#fff;
-    text-decoration:none;font-weight:700;padding:14px 30px;border-radius:14px;">
-    Zur Bibliothek
-  </a>
-</section>
         <!-- ===== LERNOLOTL SPIELT (Lernspiele) ===== -->
-        <section class="lernolotl-spielt" aria-labelledby="spielt-titel">
+        <section class="bt-karte lernolotl-spielt" aria-labelledby="spielt-titel">
             <span class="neu-ribbon">✨ Neu</span>
             <a href="spiele/teich/" class="spielt-bild" aria-hidden="true" tabindex="-1">
                 <img src="spiele/teich/bilder/teaser.jpg" alt="" loading="lazy" decoding="async">
@@ -687,7 +728,7 @@
                 <a href="spiele/teich/" class="spielt-knopf">Jetzt spielen</a>
             </div>
         </section>
-        <section class="categories-section">
+        <section class="categories-section" id="welten">
             <h2 class="section-title">Entdecke unsere Geschichtenwelten</h2>
             <p class="section-description">
                 Wähle eine Kategorie und tauche ein in pädagogisch wertvolle Geschichten
@@ -769,6 +810,66 @@
 
             </div>
         </section>
+
+        <!-- ===== PLATZ FÜR DEN ARBEITSBLATT-GENERATOR (kommt später, gleiche bt-karte wie oben) ===== -->
+
+        <!-- ===== STORY BOX ===== -->
+        <div class="lernolotl-story-box" id="warum">
+            <img loading="lazy" decoding="async" src="lernolotl-icon.webp" alt="Der Lernolotl" class="mascot-small">
+            <h3>Warum der Lernolotl?</h3>
+            <p>
+                Unser Sohn Finn hat Autismus und ADHS. Beim Vorlesen merkten wir: 
+                Die schönsten Geschichten blieben ohne pädagogische Begleitung oft 
+                wirkungslos. Gefühle wurden nicht verstanden, Lerninhalte nicht vertieft.
+            </p>
+            <p>
+                <strong>Gleichzeitig sahen wir bei unserer Tochter Lena:</strong> 
+                Geschichten mit gezielten Fragen, Arbeitsblättern und Gesprächsanregungen 
+                vertieften ihr Verständnis enorm. Sie lernte nicht nur zuzuhören — 
+                sondern nachzudenken, mitzufühlen und zu reflektieren.
+            </p>
+            <p>
+               Und so ist der Lernolotl 
+                entstanden — ein Maskottchen, das <strong>allen Kindern</strong> hilft, 
+                Geschichten wirklich zu <strong>verstehen</strong> statt nur zu <strong>hören</strong>.
+            </p>
+            <div class="highlight">
+                <p style="margin: 0;">
+                    ✨ <strong>Alle Geschichten bleiben kostenlos — für immer.</strong><br>
+                    📚 Die optionalen Arbeitsmaterialien sind unser Weg, diese Seite zu finanzieren.
+                </p>
+            </div>
+            <p class="small-print">
+                <em>Geschrieben mit Herz. Erprobt mit Finn &amp; Lena. Geteilt mit euch.</em>
+            </p>
+        </div>
+
+        <!-- ===== INFO BOX ===== -->
+        <div class="info-box" id="so-gehts">
+            <div class="info-box-title">
+                <span>💡</span>
+                <span>So funktioniert's</span>
+            </div>
+            <p class="info-box-text">
+                <strong>Alle Geschichten sind kostenlos</strong> <br><br>
+                
+                Zu vielen Geschichten gibt es <strong>optional kostenpflichtige Arbeitsmaterialien</strong> 
+                (Arbeitsblätter, Ausmalbilder, Aufgaben für Kita &amp; Grundschule) – 
+                perfekt für Eltern und Lehrkräfte, die tiefer einsteigen möchten.<br><br>
+                
+                <strong>Geschichten lesen = gratis &nbsp;•&nbsp; Lernmaterialien = optional zum Download</strong>
+            </p>
+
+            <!-- Badge-Erklärung -->
+            <div class="badge-erklaerung">
+                <img loading="lazy" decoding="async" src="lernolotl-icon.webp" alt="Lernolotl-Badge">
+                <span>
+                    <strong>Dieses Symbol</strong> auf einer Kategorie bedeutet: 
+                    Zu den Geschichten dort gibt es passende Lernmaterialien zum Download — 
+                    direkt bei der Geschichte verlinkt.
+                </span>
+            </div>
+        </div>
 
         <!-- ===== FOOTER ===== -->
         <footer>
