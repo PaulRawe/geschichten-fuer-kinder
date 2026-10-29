@@ -1,3 +1,16 @@
+# Rechtliche Korrekturen lernolotl.de — November 2026
+
+5 geänderte Dateien, zum Drüberkopieren und Committen. Kein Rechtsrat – vor dem Start prüfen lassen.
+
+- `impressum.html`: Satz „Dieses Impressum gilt auch für den Lernolotl Creator unter creator.lernolotl.de“; Google AdSense aus der Liste der Werbepartner entfernt (nicht eingebunden).
+- `datenschutz.html`: GitHub verarbeitet die IP-Adresse (nicht „anonymisiert“) + Grundlage der USA-Übermittlung ([PRÜFEN] im Quelltext);
+  Abschnitt 10 ohne „Marketing-Cookies: AdSense“, jetzt „Cookies und Speicher im Browser“; neuer Abschnitt 10a „Lernolotl Creator“; Stand November 2026.
+- `cookie-richtlinie.html`: „Statistik (ohne Cookies)“, `cookieConsent` ist Local Storage, Banner-Abschnitt = Hinweis, AdSense-Reste raus, Abschnitt 7a Creator.
+- `cookies.js`: Der Banner ist jetzt ein ehrlicher Hinweis mit „Verstanden“ (keine Scheinauswahl). Text zentral im Skript, alle Seiten bleiben unverändert.
+- `index.html`: normaler Link „Arbeitsblätter erstellen (Creator)“ in der Kopfzeile und im Fuß (kein iframe). Die schöne Kachel kommt später.
+
+---
+
 # Rechtliche Korrekturen lernolotl.de — September 2026
 
 117 geänderte Dateien. Alle Pfade entsprechen der Repo-Struktur:

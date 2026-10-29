@@ -1,6 +1,6 @@
 /* =====================================
-   Cookie Consent Management
-   DSGVO / TTDSG konform
+   Datenschutz-Hinweis (kein Einwilligungsbanner nötig: nichts Einwilligungspflichtiges eingebunden)
+   acceptCookies()/declineCookies() bleiben für alte Seiten erhalten und tun dasselbe wie „Verstanden“.
    ===================================== */
 (function () {
     const consent = localStorage.getItem('cookieConsent');
@@ -14,8 +14,28 @@
 function showBanner() {
     const banner = document.getElementById('cookieBanner');
     if (banner) {
+        // Ehrlicher Hinweis statt Auswahl: Es gibt nichts Einwilligungspflichtiges (GoatCounter ist cookielos).
+        // Der Text wird hier zentral gesetzt – so muss keine der vielen Seiten einzeln geändert werden.
+        const text = banner.querySelector('.cookie-text');
+        const knoepfe = banner.querySelector('.cookie-buttons');
+        if (text) {
+            text.innerHTML = '<strong>Hinweis zum Datenschutz</strong><br>' +
+                'Wir nutzen nur technisch nötige Speicherung und eine cookielose, anonyme Besucherzählung. ' +
+                'Werbe- oder Tracking-Cookies gibt es nicht. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a> ' +
+                'und der <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>.';
+        }
+        if (knoepfe) {
+            knoepfe.innerHTML = '<button class="cookie-btn cookie-accept" type="button">Verstanden</button>';
+            knoepfe.querySelector('button').addEventListener('click', hinweisGesehen);
+        }
         banner.classList.add('show');
     }
+}
+
+function hinweisGesehen() {
+    localStorage.setItem('cookieConsent', 'hinweis');
+    applyConsent('hinweis');
+    hideBanner();
 }
 
 function hideBanner() {
