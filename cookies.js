@@ -3,6 +3,8 @@
    acceptCookies()/declineCookies() bleiben für alte Seiten erhalten und tun dasselbe wie „Verstanden“.
    ===================================== */
 (function () {
+    // Zähler sofort starten – nicht erst nach „Verstanden“ (GoatCounter ist cookielos, keine Einwilligung nötig).
+    loadGoatCounter();
     const consent = localStorage.getItem('cookieConsent');
     if (!consent) {
         showBanner();
