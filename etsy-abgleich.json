@@ -1,0 +1,18 @@
+{
+ "hinweis": "Einstellungen fuer scripts/etsy_aufraeumen.py (Etsy-Abgleich).",
+ "csv": "bibliothek/etsy-listings.csv",
+ "zuordnung": "bibliothek/etsy-zuordnung.json",
+ "bericht": "_werkstatt/etsy-abgleich-bericht.md",
+ "produkte_json": "bibliothek/produkte.json",
+ "ratgeber_js": "lernolotl/ratgeber.js",
+ "ueberspringen": [
+  ".git",
+  "node_modules",
+  ".github",
+  "_werkstatt"
+ ],
+ "eigene_domains": [
+  "lernolotl.de",
+  "www.lernolotl.de"
+ ]
+}

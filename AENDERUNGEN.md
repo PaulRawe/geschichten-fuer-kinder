@@ -1,13 +1,15 @@
 # Etsy-Abgleich: gelöschte Listings automatisch entfernen — November 2026
 
-4 Dateien, zum Drüberkopieren und Committen.
+Dateien zum Drüberkopieren und Committen:
 
 - `scripts/etsy_aufraeumen.py` (neu): gleicht die Etsy-CSV mit allen bekannten Listings ab. Was nicht mehr im Shop ist,
   fliegt aus `bibliothek/produkte.json` (samt Produktbild), aus `lernolotl/ratgeber.js` und als Link aus allen Seiten.
-  Leere Kästen (Lernmaterialien, Bundle, Sticky-Leiste, Ratgeber-Box, Vorlesekarten-Tipp) verschwinden mit.
-  Sicherheitsbremse: bricht ab, wenn mehr als 40 % auf einmal weg wären.
-- `bibliothek/etsy-zuordnung.json` (neu): Listing-Nummer ↔ Titel + Bildnummern (Stand der alten Übersicht, 218 Listings).
-  Wird bei jedem Lauf automatisch nachgeführt. Umbenannte Listings werden über ihre Bilder wiedererkannt.
+  Leere Kästen (Lernmaterialien inkl. „oder noch besser“-Trenner, Bundle, Sticky-Leiste, Ratgeber-Box, Vorlesekarten-Tipp)
+  verschwinden mit. Sicherheitsbremse: bricht ab, wenn mehr als 50 % auf einmal weg wären.
+  Dasselbe Skript liegt auch in autismus-adhs-erfahrungswissen und autism-adhd-family.
+- `etsy-abgleich.json` (neu): Einstellungen des Skripts für dieses Repo.
+- `bibliothek/etsy-zuordnung.json` (neu): Listing-Nummer ↔ Titel + Bildnummern. Wird bei jedem Lauf nachgeführt.
+  Umbenannte Listings werden über ihre Bilder wiedererkannt.
 - `.github/workflows/etsy-bilder.yml`: läuft wie bisher beim Hochladen von `bibliothek/etsy-listings.csv`,
   räumt jetzt aber zuerst auf und baut am Ende die Bibliothek-Themenseiten neu. Von Hand: „Nur prüfen“ zeigt nur an.
 - Bericht jedes Laufs: `_werkstatt/etsy-abgleich-bericht.md` und in der Actions-Zusammenfassung.

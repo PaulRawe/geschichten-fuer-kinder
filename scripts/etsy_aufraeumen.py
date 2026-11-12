@@ -1,48 +1,46 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Lernolotl - Nicht mehr vorhandene Etsy-Produkte von der Website entfernen
-=========================================================================
+Lernolotl / NeuroTeacherTools - Nicht mehr vorhandene Etsy-Produkte entfernen
+=============================================================================
 
-Wofuer
-------
-Wenn im Etsy-Shop aufgeraeumt wird (Listings geloescht oder deaktiviert),
-zeigen die Geschichten, die Bibliothek und die Ratgeber-Boxen sonst weiter
-auf Seiten, die es nicht mehr gibt. Dieses Skript gleicht ab und raeumt auf.
+Dasselbe Skript liegt in allen drei Website-Repos:
+  geschichten-fuer-kinder          (lernolotl.de)
+  autismus-adhs-erfahrungswissen   (autismus-adhs-alltag.de)
+  autism-adhd-family               (autismfamilyguide.com)
+Was es in welchem Repo tun soll, steht in  etsy-abgleich.json  im Repo-Hauptordner.
 
 Wie es erkennt, was weg ist
 ---------------------------
 Der Etsy-Export (CSV) enthaelt KEINE Listing-Nummern, nur Titel und Bilder.
-Deshalb gibt es  bibliothek/etsy-zuordnung.json : Listing-Nummer <-> Titel
-und Bildnummern. Ein Listing gilt als noch vorhanden, wenn in der neuen CSV
-  - eine Zeile mit gleichem Titel steht (Gross-/Kleinschreibung, Umlaute und
-    Sonderzeichen egal), ODER
+Deshalb gibt es eine Zuordnungsdatei: Listing-Nummer <-> Titel + Bildnummern.
+Ein Listing gilt als noch vorhanden, wenn in der neuen CSV
+  - eine Zeile mit gleichem Titel steht (Umlaute/Sonderzeichen egal), ODER
   - eine Zeile dasselbe Hauptbild bzw. mindestens zwei gleiche Bilder hat
-    (so ueberlebt auch ein Listing, dessen Titel du geaendert hast).
-Alles andere aus der Zuordnung gilt als entfernt.
+    (so ueberlebt auch ein Listing, dessen Titel geaendert wurde).
+Alles andere aus der Zuordnung gilt als entfernt. Listing-Nummern, die gar
+nicht in der Zuordnung stehen, werden NIE angefasst, nur gemeldet.
 
 Was dann passiert
 -----------------
-1. bibliothek/produkte.json   PDF-Produkte fliegen raus, bei Buechern wird
-                              nur der Etsy-Link geleert
-2. bilder/produkte/<id>.jpg    Bild des entfernten Produkts wird geloescht
-3. lernolotl/ratgeber.js       Eintrag des Ratgebers wird geloescht
-4. alle .html / .js-Dateien    Links (<a ...>...</a>) auf das Listing werden
-                              entfernt. Ist danach ein ganzer Kasten leer
-                              (Materialien, Bundle, Sticky-Leiste, Ratgeber-
-                              Box, Vorlesekarten-Tipp), faellt er mit raus.
-5. bibliothek/etsy-zuordnung.json wird auf den neuen Stand gebracht
-6. _werkstatt/etsy-abgleich-bericht.md  Bericht, was entfernt wurde
+1. Produktseiten (z.B. Leseproben/Previews) eines entfernten Produkts werden
+   geloescht - und alle Links darauf von den anderen Seiten entfernt,
+   ebenso die Eintraege in sitemap.xml und URL-Listen (.txt).
+2. Produktkarten (ganze Kaesten mit Bild, Text, Preis, Gumroad- und
+   Etsy-Knopf) eines entfernten Produkts werden komplett entfernt.
+3. Uebrige Links auf entfernte Listings fliegen raus. Ist danach ein Kasten
+   leer (Bundle-Leiste, Lernmaterialien, Ratgeber-Box, ...), faellt er mit.
+4. Nur lernolotl.de: produkte.json (+ Produktbild) und ratgeber.js.
+5. Zuordnung wird auf den neuen Stand gebracht, Bericht wird geschrieben.
 
-Sicherheitsbremse: Wuerden mehr als 40 % aller bekannten Listings entfernt,
-bricht das Skript ab (dann ist meist die falsche oder eine halbe CSV
-hochgeladen). Mit --erzwingen geht es trotzdem.
+Sicherheitsbremse: Wuerden mehr als 50 % aller bekannten Listings entfernt,
+bricht das Skript ab (meist falsche oder halbe CSV). --erzwingen hebt sie auf.
 
 Aufruf
 ------
     python3 scripts/etsy_aufraeumen.py                 # aufraeumen
     python3 scripts/etsy_aufraeumen.py --nur-pruefen   # nur Bericht, nichts aendern
-    python3 scripts/etsy_aufraeumen.py --csv pfad.csv  # andere CSV verwenden
+    python3 scripts/etsy_aufraeumen.py --csv datei.csv # andere CSV verwenden
 """
 
 import argparse
@@ -53,31 +51,48 @@ import os
 import re
 import sys
 import unicodedata
+from urllib.parse import unquote, urlparse
 
-CSV_PFAD       = "bibliothek/etsy-listings.csv"
-ZUORDNUNG_PFAD = "bibliothek/etsy-zuordnung.json"
-JSON_PFAD      = "bibliothek/produkte.json"
-RATGEBER_JS    = "lernolotl/ratgeber.js"
-BILD_DIR       = "bilder/produkte"
-BERICHT_PFAD   = "_werkstatt/etsy-abgleich-bericht.md"
+KONFIG_PFAD = "etsy-abgleich.json"
+STANDARD = {
+    "csv": "bibliothek/etsy-listings.csv",
+    "zuordnung": "bibliothek/etsy-zuordnung.json",
+    "bericht": "_werkstatt/etsy-abgleich-bericht.md",
+    "produkte_json": None,          # nur lernolotl.de
+    "produktbilder": None,          # Ordner der Produktbilder zu produkte.json
+    "ratgeber_js": None,            # nur lernolotl.de
+    "produktseiten_ordner": [],     # Ordner mit Seiten je Produkt (Leseproben ...)
+    "zusaetzlich_loeschen": [],     # Produktseiten ohne Etsy-Link, die weg sollen
+    "karten_klassen": [],           # Klassen ganzer Produktkarten
+    "leere_kaesten": [],            # weitere Kaesten, die leer verschwinden
+    "abschnitt_ueberschriften": [], # Klassen von Zwischenueberschriften (z.B. category-header)
+    "raster_klassen": [],           # Klassen der Kartenraster (z.B. products-grid)
+    "ueberspringen": [".git", "node_modules", ".github"],
+    "eigene_domains": [],           # absolute Bild-URLs dieser Domains zaehlen als eigene
+    "max_anteil": 0.50,
+}
 
-MAX_ANTEIL = 0.40          # Sicherheitsbremse
 MIN_ZEILEN = 10
-
-UEBERSPRINGEN = {".git", "node_modules", "_werkstatt", ".github"}
 
 LISTING_RE = re.compile(r"etsy\.com/(?:[a-z]{2}(?:-[a-z]{2})?/)?listing/(\d+)", re.I)
 BILD_RE    = re.compile(r"il_[0-9a-z]+\.(\d+)", re.I)
+A_TAG      = re.compile(r"""<a\b(?:[^>"']|"[^"]*"|'[^']*')*>""", re.I)
+HREF_RE    = re.compile(r"""\bhref\s*=\s*(["'])(.*?)\1""", re.I | re.S)
 
-# Kaesten, die komplett verschwinden, wenn kein Etsy-Link mehr drin ist.
-# (Merkmal im oeffnenden Tag, Tagname)
+# Kaesten, die verschwinden, sobald kein Etsy-Link mehr drin ist (alle Repos)
 KAESTEN = [
-    (r'class="[^"]*\blernmaterial-section\b', "div"),
-    (r'id="bundle-auswahl"',                  "div"),
-    (r'class="[^"]*\bsticky-bundle-bar\b(?!-)', "div"),
-    (r'class="[^"]*\bratgeber-box\b(?!__)',   "div"),
-    (r'id="vorlesekarten-cta"',               "div"),
+    'class="[^"]*\\blernmaterial-section\\b',
+    'id="bundle-auswahl"',
+    'class="[^"]*\\bsticky-bundle-bar\\b(?!-)',
+    'class="[^"]*\\bratgeber-box\\b(?!__)',
+    'id="vorlesekarten-cta"',
 ]
+
+# Faellt ein Kasten (links) weg, gehen diese Begleit-Elemente (rechts) mit,
+# z.B. der Trenner "oder noch besser" unter den weggefallenen Einzelprodukten.
+MIT_ENTFERNEN = {
+    'class="[^"]*\\blernmaterial-section\\b': ['class="[^"]*\\bbundle-divider\\b'],
+}
 
 
 # --------------------------------------------------------------------------- Hilfen
@@ -108,18 +123,25 @@ def listing_id(url):
 
 
 def lesen(pfad):
-    with open(pfad, encoding="utf-8") as f:
+    with open(pfad, encoding="utf-8", errors="surrogateescape") as f:
         return f.read()
 
 
 def schreiben(pfad, text):
-    with open(pfad, "w", encoding="utf-8", newline="") as f:
+    with open(pfad, "w", encoding="utf-8", errors="surrogateescape", newline="") as f:
         f.write(text)
+
+
+def dateien(cfg, endungen):
+    for wurzel, ordner, namen in os.walk("."):
+        ordner[:] = sorted(o for o in ordner if o not in cfg["ueberspringen"])
+        for name in sorted(namen):
+            if name.lower().endswith(endungen):
+                yield os.path.normpath(os.path.join(wurzel, name))
 
 
 # --------------------------------------------------------------------------- Abgleich
 def abgleichen(zuordnung, zeilen):
-    """Rueckgabe: (aktiv {listing_id: csv-zeile}, entfernt [eintraege])."""
     nach_titel = {}
     for z in zeilen:
         nach_titel.setdefault(norm(z["TITEL"]), z)
@@ -131,10 +153,7 @@ def abgleichen(zuordnung, zeilen):
         if treffer is None:
             bekannte = set(e.get("bild_ids") or [])
             for z, ids in zeilen_bilder:
-                if not ids:
-                    continue
-                gemeinsam = bekannte & set(ids)
-                if ids[0] in bekannte or len(gemeinsam) >= 2:
+                if ids and (ids[0] in bekannte or len(bekannte & set(ids)) >= 2):
                     treffer = z
                     break
         if treffer is None:
@@ -144,12 +163,8 @@ def abgleichen(zuordnung, zeilen):
     return aktiv, entfernt
 
 
-# --------------------------------------------------------------------------- HTML
-A_TAG = re.compile(r"""<a\b(?:[^>"']|"[^"]*"|'[^']*')*>""", re.I)
-
-
+# --------------------------------------------------------------------------- HTML-Bausteine
 def element_ende(text, start, tag):
-    """Ende des Elements, das bei start mit <tag ...> beginnt (verschachtelt gezaehlt)."""
     muster = re.compile(r"<(/?)%s\b[^>]*>" % tag, re.I)
     tiefe = 0
     for m in muster.finditer(text, start):
@@ -160,7 +175,6 @@ def element_ende(text, start, tag):
 
 
 def zeile_mitnehmen(text, a, b):
-    """Bereich auf ganze Zeilen erweitern, wenn davor/dahinter nur Leerraum steht."""
     zs = text.rfind("\n", 0, a) + 1
     if text[zs:a].strip() == "":
         a = zs
@@ -172,60 +186,28 @@ def zeile_mitnehmen(text, a, b):
 
 
 def kommentar_davor(text, a):
-    """Steht direkt davor eine Kommentarzeile wie <!-- CTA #1 -->, mit entfernen."""
-    davor = text[:a]
-    m = re.search(r"[ \t]*<!--(?:(?!-->).){0,200}-->[ \t]*\n$", davor, re.S)
+    m = re.search(r"[ \t]*<!--(?:(?!-->).){0,200}-->[ \t]*\n(?:[ \t]*\n)*$", text[:a], re.S)
     return m.start() if m else a
 
 
-def kaesten_finden(text):
+def bereich(text, a, b):
+    """Elementbereich inkl. eigener Zeile und Kommentarzeile darueber."""
+    a, b = zeile_mitnehmen(text, a, b)
+    return zeile_mitnehmen(text, kommentar_davor(text, a), b)
+
+
+def elemente(text, merkmal):
+    """Alle (start, ende) von Elementen, deren oeffnender Tag das Merkmal hat."""
     gefunden = []
-    for merkmal, tag in KAESTEN:
-        for m in re.finditer(r"<%s\b[^>]*%s[^>]*>" % (tag, merkmal), text, re.I):
-            ende = element_ende(text, m.start(), tag)
-            if ende > 0:
-                gefunden.append((m.start(), ende))
+    for m in re.finditer(r"<(div|article|section|li|aside)\b[^>]*%s[^>]*>" % merkmal, text, re.I):
+        ende = element_ende(text, m.start(), m.group(1))
+        if ende > 0:
+            gefunden.append((m.start(), ende))
     return gefunden
 
 
-def links_entfernen(text, weg_ids):
-    """Entfernt <a>-Elemente auf entfernte Listings. Rueckgabe: (text, anzahl)."""
-    if not LISTING_RE.search(text):
-        return text, 0
-
-    vorher_kaesten = [(a, b, bool(LISTING_RE.search(text[a:b]))) for a, b in kaesten_finden(text)]
-
-    bereiche = []
-    for m in A_TAG.finditer(text):
-        lid = listing_id(m.group(0))
-        if lid not in weg_ids:
-            continue
-        ende = text.find("</a>", m.end())
-        if ende == -1:
-            continue
-        a, b = m.start(), ende + 4
-        a = kommentar_davor(text, zeile_mitnehmen(text, a, b)[0])
-        a, b = zeile_mitnehmen(text, a, b)
-        bereiche.append((a, b))
-
-    if not bereiche:
-        return text, 0
-
-    # Kaesten, die vorher Etsy-Links hatten und danach keine mehr haetten
-    for ka, kb, hatte in vorher_kaesten:
-        if not hatte:
-            continue
-        rest = text[ka:kb]
-        for a, b in sorted(bereiche, reverse=True):
-            if ka <= a and b <= kb:
-                rest = rest[:a - ka] + rest[b - ka:]
-        if not LISTING_RE.search(rest):
-            ka2 = kommentar_davor(text, zeile_mitnehmen(text, ka, kb)[0])
-            ka2, kb2 = zeile_mitnehmen(text, ka2, kb)
-            bereiche.append((ka2, kb2))
-
-    # ueberlappende Bereiche zusammenfassen und von hinten entfernen
-    bereiche.sort()
+def entfernen(text, bereiche):
+    bereiche = sorted(bereiche)
     zusammen = []
     for a, b in bereiche:
         if zusammen and a <= zusammen[-1][1]:
@@ -234,13 +216,161 @@ def links_entfernen(text, weg_ids):
             zusammen.append((a, b))
     for a, b in reversed(zusammen):
         text = text[:a] + text[b:]
-    text = re.sub(r"\n{4,}", "\n\n\n", text)
-    return text, len([1 for _ in bereiche])
+    return re.sub(r"\n[ \t]*\n([ \t]*\n)+", "\n\n", text)
 
 
-# --------------------------------------------------------------------------- ratgeber.js
+# --------------------------------------------------------------------------- Seiten-Links
+class Ziele:
+    """Erkennt Links auf geloeschte Produktseiten (relativ, absolut, %20 ...)."""
+
+    def __init__(self, seiten):
+        self.seiten = [s.replace(os.sep, "/") for s in seiten]
+
+    def trifft(self, href, aus_datei):
+        if not self.seiten or not href:
+            return False
+        h = unquote(href.strip())
+        if h.startswith(("mailto:", "tel:", "#", "javascript:")):
+            return False
+        pfad = urlparse(h).path if "://" in h or h.startswith("//") else h.split("#")[0].split("?")[0]
+        if not pfad.lower().endswith((".html", ".htm")):
+            return False
+        if pfad.startswith("/") or "://" in h or h.startswith("//"):
+            ziel = pfad.lstrip("/")
+        else:
+            ziel = os.path.normpath(os.path.join(os.path.dirname(aus_datei), pfad)).replace(os.sep, "/")
+        return ziel in self.seiten
+
+
+def link_ziel(tag):
+    m = HREF_RE.search(tag)
+    return m.group(2) if m else ""
+
+
+# --------------------------------------------------------------------------- eine Datei
+def datei_bereinigen(pfad, text, weg_ids, aktiv_ids, ziele, cfg):
+    """Rueckgabe: (neuer Text, Anzahl entfernter Stellen)."""
+    hat_etsy = bool(LISTING_RE.search(text))
+    if not hat_etsy and not ziele.seiten:
+        return text, 0
+
+    def ist_weg_link(tag):
+        lid = listing_id(link_ziel(tag))
+        if lid:
+            return lid in weg_ids
+        return ziele.trifft(link_ziel(tag), pfad)
+
+    # Alle betroffenen <a>-Elemente
+    anker = []
+    for m in A_TAG.finditer(text):
+        if not ist_weg_link(m.group(0)):
+            continue
+        ende = text.find("</a>", m.end())
+        if ende != -1:
+            anker.append((m.start(), ende + 4))
+    if not anker:
+        return text, 0
+
+    bereiche = []
+
+    # 1) ganze Produktkarten
+    karten = []
+    for klasse in cfg["karten_klassen"]:
+        karten += elemente(text, r'class="(?:[^"]*\s)?%s(?:\s[^"]*)?"' % re.escape(klasse))
+    karten = sorted(set(karten))
+    innerste = [k for k in karten if not any(o != k and k[0] <= o[0] and o[1] <= k[1] for o in karten)]
+    for ka, kb in innerste:
+        inhalt = text[ka:kb]
+        betroffen = any(ka <= a and b <= kb for a, b in anker)
+        noch_aktiv = any(i in aktiv_ids for i in LISTING_RE.findall(inhalt))
+        etsy_im_kasten = LISTING_RE.findall(inhalt)
+        # Karte faellt, wenn sie auf ein entferntes Listing zeigt und auf kein
+        # aktives - oder (ohne Etsy-Link) nur auf eine geloeschte Produktseite.
+        if betroffen and not noch_aktiv and (any(i in weg_ids for i in etsy_im_kasten) or not etsy_im_kasten):
+            bereiche.append(bereich(text, ka, kb))
+
+    # 2) einzelne Links
+    for a, b in anker:
+        if not any(x <= a and b <= y for x, y in bereiche):
+            bereiche.append(bereich(text, a, b))
+
+    # 3) Kaesten, die vorher Etsy-Links hatten und danach keine mehr haetten
+    merkmale = KAESTEN + list(cfg["leere_kaesten"])
+    for merkmal in merkmale:
+        for ka, kb in elemente(text, merkmal):
+            if not LISTING_RE.search(text[ka:kb]):
+                continue
+            rest = text[ka:kb]
+            for a, b in sorted(bereiche, reverse=True):
+                if ka <= a and b <= kb:
+                    rest = rest[:a - ka] + rest[b - ka:]
+            if not LISTING_RE.search(rest):
+                bereiche.append(bereich(text, ka, kb))
+                for begleit in MIT_ENTFERNEN.get(merkmal, []):
+                    for ba, bb in elemente(text, begleit):
+                        bereiche.append(bereich(text, ba, bb))
+
+    neu = entfernen(text, bereiche)
+    neu = abschnitte_aufraeumen(text, neu, cfg)
+    return neu, len(bereiche)
+
+
+def klassen_muster(klasse):
+    return r'class="(?:[^"]*\s)?%s(?:\s[^"]*)?"' % re.escape(klasse)
+
+
+def karten_zahl(text, a, b, cfg):
+    stueck = text[a:b]
+    return sum(len(re.findall(r"<(?:div|article|section|li)\b[^>]*%s" % klassen_muster(k), stueck))
+               for k in cfg["karten_klassen"])
+
+
+def abschnitte_aufraeumen(alt, neu, cfg):
+    """Zwischenueberschriften, unter denen vorher Karten standen und jetzt keine
+    mehr, verschwinden samt leerem Kartenraster. Sprunglinks (href="#...") auf
+    dadurch verschwundene Anker werden ebenfalls entfernt."""
+    if not cfg["abschnitt_ueberschriften"] or alt == neu:
+        return neu
+
+    def kopfe(text):
+        k = []
+        for klasse in cfg["abschnitt_ueberschriften"]:
+            k += elemente(text, klassen_muster(klasse))
+        return sorted(k)
+
+    k_alt, k_neu = kopfe(alt), kopfe(neu)
+    if len(k_alt) != len(k_neu):
+        return neu
+    bereiche = []
+    for i, ((aa, ae), (na, ne)) in enumerate(zip(k_alt, k_neu)):
+        alt_ende = k_alt[i + 1][0] if i + 1 < len(k_alt) else len(alt)
+        neu_ende = k_neu[i + 1][0] if i + 1 < len(k_neu) else len(neu)
+        if karten_zahl(alt, ae, alt_ende, cfg) and not karten_zahl(neu, ne, neu_ende, cfg):
+            bereiche.append(bereich(neu, na, ne))
+            for klasse in cfg["raster_klassen"]:
+                for ra, rb in elemente(neu[:neu_ende], klassen_muster(klasse)):
+                    if ra >= ne and not re.sub(r"<!--.*?-->|<[^>]+>|\s", "", neu[ra:rb], flags=re.S):
+                        bereiche.append(bereich(neu, ra, rb))
+    if not bereiche:
+        return neu
+    neu = entfernen(neu, bereiche)
+
+    ids_alt = set(re.findall(r'\bid="([^"]+)"', alt))
+    ids_neu = set(re.findall(r'\bid="([^"]+)"', neu))
+    weg_anker = ids_alt - ids_neu
+    if weg_anker:
+        raus = []
+        for m in A_TAG.finditer(neu):
+            ziel = link_ziel(m.group(0))
+            if ziel.startswith("#") and ziel[1:] in weg_anker:
+                ende = neu.find("</a>", m.end())
+                if ende != -1:
+                    raus.append(zeile_mitnehmen(neu, m.start(), ende + 4))
+        neu = entfernen(neu, raus)
+    return neu
+
+
 def ratgeber_bereinigen(text, weg_ids):
-    """Entfernt Objekte { ... etsy: ".../listing/ID/..." ... } aus dem RATGEBER-Array."""
     entfernt = []
     for m in reversed(list(re.finditer(r'etsy\s*:\s*["\']([^"\']*)["\']', text))):
         lid = listing_id(m.group(1))
@@ -248,7 +378,7 @@ def ratgeber_bereinigen(text, weg_ids):
             continue
         a = text.rfind("{", 0, m.start())
         b = text.find("}", m.end())
-        if a == -1 or b == -1 or "{" in text[a + 1:m.start()] or "}" in text[a:m.start()]:
+        if a == -1 or b == -1 or "}" in text[a:m.start()]:
             continue
         titel = re.search(r'titel\s*:\s*"([^"]*)"', text[a:b])
         entfernt.append(titel.group(1) if titel else lid)
@@ -258,43 +388,55 @@ def ratgeber_bereinigen(text, weg_ids):
             b += komma.end()
         a, b = zeile_mitnehmen(text, a, b)
         text = text[:a] + text[b:]
-    # Komma vor schliessender Klammer ist in JS erlaubt, aber sauber halten
     return text, list(reversed(entfernt))
+
+
+def sitemap_bereinigen(text, urls_weg):
+    def raus(m):
+        return "" if any(u in unquote(m.group(0)) for u in urls_weg) else m.group(0)
+    return re.sub(r"[ \t]*<url>.*?</url>[ \t]*\n?", raus, text, flags=re.S)
 
 
 # --------------------------------------------------------------------------- Hauptteil
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv", default=CSV_PFAD)
+    ap.add_argument("--csv")
     ap.add_argument("--nur-pruefen", action="store_true")
     ap.add_argument("--erzwingen", action="store_true")
     args = ap.parse_args()
 
-    if not os.path.exists(args.csv) or not os.path.exists(ZUORDNUNG_PFAD):
-        print("CSV oder Zuordnung fehlt - nichts zu tun.")
+    cfg = dict(STANDARD)
+    if os.path.exists(KONFIG_PFAD):
+        cfg.update(json.load(open(KONFIG_PFAD, encoding="utf-8")))
+    csv_pfad = args.csv or cfg["csv"]
+
+    if not os.path.exists(csv_pfad) or not os.path.exists(cfg["zuordnung"]):
+        print("CSV (%s) oder Zuordnung (%s) fehlt - nichts zu tun." % (csv_pfad, cfg["zuordnung"]))
         return 0
 
-    zeilen = lade_csv(args.csv)
-    z_daten = json.load(open(ZUORDNUNG_PFAD, encoding="utf-8"))
+    zeilen = lade_csv(csv_pfad)
+    z_daten = json.load(open(cfg["zuordnung"], encoding="utf-8"))
     zuordnung = z_daten["listings"]
-    daten = json.load(open(JSON_PFAD, encoding="utf-8"))
+    daten = None
+    if cfg["produkte_json"] and os.path.exists(cfg["produkte_json"]):
+        daten = json.load(open(cfg["produkte_json"], encoding="utf-8"))
 
-    # Produkte mit Etsy-Link, die (noch) nicht in der Zuordnung stehen: ueber den
-    # kurzen Produkttitel nachtragen, damit auch sie kuenftig erkannt werden.
-    bekannt = {e["listing_id"] for e in zuordnung}
-    for p in daten["produkte"]:
-        lid = listing_id(p.get("etsy"))
-        if not lid or lid in bekannt:
-            continue
-        n = norm(p.get("titel"))
-        passend = [z for z in zeilen if n and (norm(z["TITEL"]).startswith(n) or n in norm(z["TITEL"]))]
-        if passend:
-            z = min(passend, key=lambda z: len(z["TITEL"]))
-            zuordnung.append({"listing_id": lid, "titel": z["TITEL"].strip(),
-                              "bild_ids": bild_ids(z), "produkt_id": p["id"],
-                              "link": p["etsy"]})
-            bekannt.add(lid)
-            print("Zuordnung ergaenzt:", p["id"], p["titel"])
+    # Produkte mit Etsy-Link, die noch nicht in der Zuordnung stehen, nachtragen
+    if daten:
+        bekannt = {e["listing_id"] for e in zuordnung}
+        for p in daten["produkte"]:
+            lid = listing_id(p.get("etsy"))
+            if not lid or lid in bekannt:
+                continue
+            n = norm(p.get("titel"))
+            passend = [z for z in zeilen if n and (norm(z["TITEL"]).startswith(n) or n in norm(z["TITEL"]))]
+            if passend:
+                z = min(passend, key=lambda z: len(z["TITEL"]))
+                zuordnung.append({"listing_id": lid, "titel": z["TITEL"].strip(),
+                                  "bild_ids": bild_ids(z), "produkt_id": p["id"],
+                                  "link": p["etsy"]})
+                bekannt.add(lid)
+                print("Zuordnung ergaenzt:", p["id"], p["titel"])
 
     print("CSV-Zeilen: %d | bekannte Listings: %d" % (len(zeilen), len(zuordnung)))
     if len(zeilen) < MIN_ZEILEN:
@@ -303,88 +445,147 @@ def main():
 
     aktiv, entfernt = abgleichen(zuordnung, zeilen)
     weg_ids = {e["listing_id"] for e in entfernt}
+    aktiv_ids = set(aktiv)
     print("Noch vorhanden: %d | Nicht mehr im Shop: %d" % (len(aktiv), len(entfernt)))
-    for e in entfernt:
-        print("   -", e["listing_id"], e["titel"][:90])
 
     anteil = len(entfernt) / max(1, len(zuordnung))
-    if anteil > MAX_ANTEIL and not args.erzwingen:
+    if anteil > cfg["max_anteil"] and not args.erzwingen:
         print("ABBRUCH: %.0f %% der Listings wuerden entfernt (Grenze %.0f %%). "
-              "Falsche CSV? Mit --erzwingen trotzdem ausfuehren." % (anteil * 100, MAX_ANTEIL * 100))
+              "Falsche CSV? Mit --erzwingen trotzdem ausfuehren." % (anteil * 100, cfg["max_anteil"] * 100))
         return 1
+
+    # --- Produktseiten bestimmen
+    seiten_weg = []
+    for ordner in cfg["produktseiten_ordner"]:
+        if not os.path.isdir(ordner):
+            continue
+        for pfad in dateien(dict(cfg, ueberspringen=cfg["ueberspringen"]), (".html", ".htm")):
+            if not pfad.replace(os.sep, "/").startswith(ordner.rstrip("/") + "/"):
+                continue
+            ids = set(LISTING_RE.findall(lesen(pfad)))
+            if ids & weg_ids and not ids & aktiv_ids:
+                seiten_weg.append(pfad)
+    for pfad in cfg["zusaetzlich_loeschen"]:
+        if os.path.exists(pfad) and os.path.normpath(pfad) not in seiten_weg:
+            seiten_weg.append(os.path.normpath(pfad))
+    seiten_weg.sort()
+    ziele = Ziele(seiten_weg)
 
     bericht = ["# Etsy-Abgleich vom %s" % datetime.date.today().isoformat(), "",
                "- CSV-Zeilen: **%d**" % len(zeilen),
                "- Bekannte Listings: **%d**" % len(zuordnung),
-               "- Nicht mehr im Shop: **%d**" % len(entfernt), ""]
+               "- Nicht mehr im Shop: **%d**" % len(entfernt),
+               "- Produktseiten, die geloescht werden: **%d**" % len(seiten_weg), ""]
     if entfernt:
-        bericht += ["## Entfernte Listings", ""]
-        bericht += ["- `%s` %s" % (e["listing_id"], e["titel"]) for e in entfernt]
-        bericht.append("")
-
-    # CSV-Zeilen ohne bekanntes Listing (neue Produkte) nur melden
-    zugeordnet = {id(z) for z in aktiv.values()}
-    neu = [z["TITEL"].strip() for z in zeilen if id(z) not in zugeordnet]
+        bericht += ["## Nicht mehr im Shop", ""]
+        bericht += ["- `%s` %s" % (e["listing_id"], e["titel"]) for e in entfernt] + [""]
+    if seiten_weg:
+        bericht += ["## Geloeschte Produktseiten", ""]
+        bericht += ["- %s" % s for s in seiten_weg] + [""]
 
     if args.nur_pruefen:
+        print("\n".join(bericht))
         print("\n--nur-pruefen: es wurde nichts geaendert.")
         return 0
 
-    # 1+2: produkte.json und Bilder
+    # Bildverweise merken, um danach verwaiste Bilder zu finden
+    alte_bilder = set()
+
+    def bilder_merken(text):
+        for m in re.finditer(r'''(?:src|href|srcset|content)\s*=\s*["']([^"']+\.(?:png|jpe?g|webp|gif|svg))''', text, re.I):
+            alte_bilder.add(m.group(1))
+
+    # --- 1: Produktseiten loeschen
+    for s in seiten_weg:
+        bilder_merken(lesen(s))
+        os.remove(s)
+
+    # --- 4: produkte.json und Bilder (lernolotl.de)
     raus_produkte, buch_geleert, bilder_weg = [], [], []
-    bleiben = []
-    for p in daten["produkte"]:
-        lid = listing_id(p.get("etsy"))
-        if lid in weg_ids:
-            if p.get("typ") == "pdf":
-                raus_produkte.append(p)
-                if p.get("bild"):
-                    datei = p["bild"].lstrip("/")
-                    if os.path.exists(datei):
+    if daten:
+        bleiben = []
+        for p in daten["produkte"]:
+            lid = listing_id(p.get("etsy"))
+            if lid in weg_ids:
+                if p.get("typ") == "pdf":
+                    raus_produkte.append(p)
+                    datei = (p.get("bild") or "").lstrip("/")
+                    if datei and os.path.exists(datei):
                         os.remove(datei)
                         bilder_weg.append(datei)
-                continue
-            p["etsy"] = None
-            buch_geleert.append(p)
-        bleiben.append(p)
-    if raus_produkte or buch_geleert:
-        daten["produkte"] = bleiben
-        daten["stand"] = datetime.date.today().isoformat()
-        schreiben(JSON_PFAD, json.dumps(daten, ensure_ascii=False, indent=1) + "\n")
+                    continue
+                p["etsy"] = None
+                buch_geleert.append(p)
+            bleiben.append(p)
+        if raus_produkte or buch_geleert:
+            daten["produkte"] = bleiben
+            daten["stand"] = datetime.date.today().isoformat()
+            schreiben(cfg["produkte_json"], json.dumps(daten, ensure_ascii=False, indent=1) + "\n")
 
-    # 3: ratgeber.js
     ratgeber_weg = []
-    if os.path.exists(RATGEBER_JS):
-        t = lesen(RATGEBER_JS)
+    if cfg["ratgeber_js"] and os.path.exists(cfg["ratgeber_js"]):
+        t = lesen(cfg["ratgeber_js"])
         t2, ratgeber_weg = ratgeber_bereinigen(t, weg_ids)
         if t2 != t:
-            schreiben(RATGEBER_JS, t2)
+            schreiben(cfg["ratgeber_js"], t2)
 
-    # 4: alle HTML- und JS-Dateien
+    # --- 2+3: Karten, Links, leere Kaesten in allen Seiten
     geaendert = []
-    for wurzel, ordner, dateien in os.walk("."):
-        ordner[:] = [o for o in ordner if o not in UEBERSPRINGEN]
-        for name in dateien:
-            if not name.endswith((".html", ".htm", ".js")):
-                continue
-            pfad = os.path.join(wurzel, name)
+    for pfad in dateien(cfg, (".html", ".htm", ".js")):
+        t = lesen(pfad)
+        t2, n = datei_bereinigen(pfad, t, weg_ids, aktiv_ids, ziele, cfg)
+        if t2 != t:
+            bilder_merken(t)
+            schreiben(pfad, t2)
+            geaendert.append((pfad, n))
+
+    # --- Sitemaps und URL-Listen
+    urls_weg = ["/" + s.replace(os.sep, "/") for s in seiten_weg]
+    if urls_weg:
+        for pfad in dateien(cfg, (".xml", ".txt")):
             t = lesen(pfad)
-            t2, n = links_entfernen(t, weg_ids)
-            if n:
+            if pfad.endswith(".xml"):
+                t2 = sitemap_bereinigen(t, urls_weg)
+            else:
+                t2 = "".join(z for z in t.splitlines(True) if not any(u in unquote(z) for u in urls_weg))
+            if t2 != t:
                 schreiben(pfad, t2)
-                geaendert.append((pfad[2:], n))
+                geaendert.append((pfad, 0))
 
-    # Reste melden: Listing-Nummern, die noch irgendwo stehen
+    # --- Bilder, auf die jetzt nichts mehr verweist, loeschen
+    if alte_bilder:
+        alles = "\n".join(unquote(lesen(p).replace("&amp;", "&"))
+                          for p in dateien(cfg, (".html", ".htm", ".js", ".css", ".json", ".xml", ".md", ".txt")))
+        for ref in sorted(alte_bilder):
+            if "://" in ref and not any(ref.split("://", 1)[1].startswith(d) for d in cfg.get("eigene_domains", [])):
+                continue
+            name = os.path.basename(unquote(urlparse(ref).path).replace("&amp;", "&"))
+            if not name or name in alles:
+                continue
+            treffer = [p for p in dateien(cfg, (os.path.splitext(name)[1].lower(),))
+                       if os.path.basename(p) == name]
+            for p in treffer:
+                os.remove(p)
+                bilder_weg.append(p)
+
+    # --- Reste melden
     reste = []
-    for wurzel, ordner, dateien in os.walk("."):
-        ordner[:] = [o for o in ordner if o not in UEBERSPRINGEN]
-        for name in dateien:
-            if name.endswith((".html", ".htm", ".js", ".json")) and name != os.path.basename(ZUORDNUNG_PFAD):
-                pfad = os.path.join(wurzel, name)
-                for lid in set(LISTING_RE.findall(lesen(pfad))) & weg_ids:
-                    reste.append((pfad[2:], lid))
+    for pfad in dateien(cfg, (".html", ".htm", ".js", ".json", ".xml")):
+        if os.path.normpath(pfad) == os.path.normpath(cfg["zuordnung"]):
+            continue
+        t = lesen(pfad)
+        for lid in set(LISTING_RE.findall(t)) & weg_ids:
+            reste.append((pfad, "Listing " + lid))
+        for m in HREF_RE.finditer(t):
+            if ziele.trifft(m.group(2), pfad):
+                reste.append((pfad, "Link auf " + m.group(2)))
 
-    # 5: Zuordnung aktualisieren (Titel/Bilder auf neuen Stand, entfernte raus)
+    unbekannt = set()
+    for pfad in dateien(cfg, (".html", ".htm", ".js")):
+        unbekannt |= set(LISTING_RE.findall(lesen(pfad)))
+    unbekannt -= aktiv_ids | weg_ids
+
+    # --- 5: Zuordnung aktualisieren
     neu_zuordnung = []
     for e in zuordnung:
         if e["listing_id"] in weg_ids:
@@ -395,9 +596,9 @@ def main():
         neu_zuordnung.append(e)
     z_daten["listings"] = sorted(neu_zuordnung, key=lambda e: e["listing_id"])
     z_daten["stand"] = datetime.date.today().isoformat()
-    schreiben(ZUORDNUNG_PFAD, json.dumps(z_daten, ensure_ascii=False, indent=1) + "\n")
+    schreiben(cfg["zuordnung"], json.dumps(z_daten, ensure_ascii=False, indent=1) + "\n")
 
-    # 6: Bericht
+    # --- Bericht
     if raus_produkte:
         bericht += ["## Aus der Bibliothek entfernt (%d)" % len(raus_produkte), ""]
         bericht += ["- %s %s" % (p["id"], p["titel"]) for p in raus_produkte] + [""]
@@ -405,22 +606,23 @@ def main():
         bericht += ["## Buecher: nur Etsy-Link entfernt", ""]
         bericht += ["- %s %s" % (p["id"], p["titel"]) for p in buch_geleert] + [""]
     if ratgeber_weg:
-        bericht += ["## Ratgeber-Boxen entfernt (lernolotl/ratgeber.js)", ""]
+        bericht += ["## Ratgeber-Boxen entfernt", ""]
         bericht += ["- %s" % t for t in ratgeber_weg] + [""]
     if geaendert:
-        bericht += ["## Links aus Seiten entfernt", ""]
-        bericht += ["- %s (%d Stellen)" % (p, n) for p, n in sorted(geaendert)] + [""]
+        bericht += ["## Bereinigte Dateien", ""]
+        bericht += ["- %s%s" % (p, " (%d Stellen)" % n if n else "") for p, n in sorted(geaendert)] + [""]
     if bilder_weg:
-        bericht += ["## Geloeschte Produktbilder: %d" % len(bilder_weg), ""]
+        bericht += ["## Geloeschte Bilder (nirgends mehr verwendet): %d" % len(bilder_weg), ""]
+        bericht += ["- %s" % b for b in sorted(bilder_weg) if not b.startswith("bilder/produkte/")] + [""]
     if reste:
-        bericht += ["## ACHTUNG: Hier steht noch ein entfernter Link (bitte von Hand pruefen)", ""]
-        bericht += ["- %s -> Listing %s" % r for r in sorted(set(reste))] + [""]
-    if neu:
-        bericht += ["## Neu in der CSV, aber (noch) ohne Etsy-Adresse auf der Website", ""]
-        bericht += ["- %s" % t for t in neu] + [""]
+        bericht += ["## ACHTUNG: Hier steht noch etwas Entferntes (bitte von Hand pruefen)", ""]
+        bericht += ["- %s -> %s" % r for r in sorted(set(reste))] + [""]
+    if unbekannt:
+        bericht += ["## Etsy-Links, die keinem bekannten Listing zugeordnet sind (nicht angefasst)", ""]
+        bericht += ["- %s" % i for i in sorted(unbekannt)] + [""]
 
-    os.makedirs(os.path.dirname(BERICHT_PFAD), exist_ok=True)
-    schreiben(BERICHT_PFAD, "\n".join(bericht) + "\n")
+    os.makedirs(os.path.dirname(cfg["bericht"]) or ".", exist_ok=True)
+    schreiben(cfg["bericht"], "\n".join(bericht) + "\n")
     print("\n".join(bericht))
     return 0
 
