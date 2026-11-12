@@ -1,0 +1,3429 @@
+{
+ "hinweis": "Zuordnung Etsy-Listing-Nummer <-> Titel/Bild. Wird von scripts/etsy_aufraeumen.py gepflegt - nicht von Hand aendern.",
+ "stand": "2026-11-12",
+ "listings": [
+  {
+   "listing_id": "4455206764",
+   "titel": "ADHS Lehrer-Ratgeber: ADHS-Unterricht gestalten - Motivation und Methoden",
+   "bild_ids": [
+    "7693579132",
+    "7693625496",
+    "7741526397",
+    "7741526403",
+    "7741526405",
+    "7741526413"
+   ],
+   "produkt_id": "etsy-208",
+   "link": "https://www.etsy.com/de/listing/4455206764/adhs-lehrer-ratgeber-adhs-unterricht"
+  },
+  {
+   "listing_id": "4455242868",
+   "titel": "ADHS Elterngespräche Leitfaden | Konstruktive Kommunikation | Lehrer Ratgeber | Vorlagen | Sofort Download | Deutsch",
+   "bild_ids": [
+    "7693680308",
+    "7693680484",
+    "7693681046",
+    "7741628441",
+    "7741629025",
+    "7741629191",
+    "7741629665"
+   ],
+   "produkt_id": "etsy-207",
+   "link": "https://www.etsy.com/de/listing/4455242868/adhs-elterngesprache-leitfaden-o"
+  },
+  {
+   "listing_id": "4455460421",
+   "titel": "ADHS SOS Sofortlösungen | Typische Probleme im Unterricht | Lehrer Ratgeber | Grundschule | Sofort Download | Deutsch",
+   "bild_ids": [
+    "7695183158",
+    "7695183296",
+    "7695183542",
+    "7695183678",
+    "7743127479",
+    "7743127875"
+   ],
+   "produkt_id": "etsy-206",
+   "link": "https://www.etsy.com/de/listing/4455460421/adhs-sos-sofortlosungen-o-typische"
+  },
+  {
+   "listing_id": "4455462001",
+   "titel": "ADHS Classroom Management Toolkit | Token-Systeme | Verhaltenssteuerung | Lehrer Ratgeber | Grundschule | Sofort Download",
+   "bild_ids": [
+    "7695197082",
+    "7743141151",
+    "7743141413",
+    "7743141579",
+    "7743141829",
+    "7743141947"
+   ],
+   "produkt_id": "etsy-205",
+   "link": "https://www.etsy.com/de/listing/4455462001/adhs-classroom-management-toolkit-token"
+  },
+  {
+   "listing_id": "4455465957",
+   "titel": "Autismus Meltdown Management Lehrkräfte - Notfall Protokoll Grundschule - Classroom Erste Hilfe für Lehrer Ressource PDF",
+   "bild_ids": [
+    "7695217932",
+    "7695218424",
+    "7695218580",
+    "7743162683",
+    "7743163207"
+   ],
+   "produkt_id": "etsy-013",
+   "link": "https://www.etsy.com/de/listing/4455465957/autismus-meltdown-management-lehrkrafte"
+  },
+  {
+   "listing_id": "4455470688",
+   "titel": "ADHS Klassenraum Setup | Optimale Sitzordnung | Raumgestaltung | Lehrer Ratgeber | Grundschule | Sofort Download | Deutsch",
+   "bild_ids": [
+    "7695205584",
+    "7695205760",
+    "7695205916",
+    "7743150559",
+    "7743150691",
+    "7743151041"
+   ],
+   "produkt_id": "etsy-204",
+   "link": "https://www.etsy.com/de/listing/4455470688/adhs-klassenraum-setup-optimale"
+  },
+  {
+   "listing_id": "4455479403",
+   "titel": "Autismus Sensorik Klassenzimmer - Sensorische Überlastung Lehrer Guide - Grundschule Inklusionsklasse Ressource Material PDF",
+   "bild_ids": [
+    "7695327442",
+    "7743270461",
+    "7743271005",
+    "7743271231",
+    "7743271431"
+   ],
+   "produkt_id": "etsy-203",
+   "link": "https://www.etsy.com/de/listing/4455479403/autismus-sensorik-klassenzimmer"
+  },
+  {
+   "listing_id": "4455483621",
+   "titel": "Autismus Kommunikation Lehrer Guide - Klare Sprache Grundschule - Missverständnisse vermeiden Inklusionsklasse Ressource PDF",
+   "bild_ids": [
+    "7695356656",
+    "7695356928",
+    "7743300187",
+    "7743300405",
+    "7743300587"
+   ],
+   "produkt_id": "etsy-200",
+   "link": "https://www.etsy.com/de/listing/4455483621/autismus-kommunikation-lehrer-guide"
+  },
+  {
+   "listing_id": "4455489798",
+   "titel": "Autismus Stärken fördern Lehrer Guide - Spezialinteressen nutzen Soziales Lernen - Grundschule Inklusionsklasse Ressource PDF",
+   "bild_ids": [
+    "7695340748",
+    "7695341562",
+    "7743285137",
+    "7743285383",
+    "7743285959"
+   ],
+   "produkt_id": "etsy-202",
+   "link": "https://www.etsy.com/de/listing/4455489798/autismus-starken-fordern-lehrer-guide"
+  },
+  {
+   "listing_id": "4455490748",
+   "titel": "Autismus Struktur Routinen Lehrer - Visueller Tagesplan Grundschule - Übergänge Classroom Management Inklusionsklasse PDF",
+   "bild_ids": [
+    "7695350132",
+    "7695350496",
+    "7695350612",
+    "7743294721"
+   ],
+   "produkt_id": "etsy-201",
+   "link": "https://www.etsy.com/de/listing/4455490748/autismus-struktur-routinen-lehrer"
+  },
+  {
+   "listing_id": "4455642771",
+   "titel": "ADHD Teacher Guide - Common Problems Immediate Solutions - Classroom Management Elementary School Special Education Resource PDF",
+   "bild_ids": [
+    "7696365130",
+    "7696365734",
+    "7696366138",
+    "7744311277",
+    "7744311889",
+    "7744312389",
+    "7744312799"
+   ],
+   "produkt_id": "etsy-199",
+   "link": "https://www.etsy.com/de/listing/4455642771/adhd-teacher-guide-common-problems"
+  },
+  {
+   "listing_id": "4455644707",
+   "titel": "ADHD Teaching Strategies Guide - Motivation Methods Elementary School - Classroom Engagement Special Education Teacher Resource PDF",
+   "bild_ids": [
+    "7696378330",
+    "7696378536",
+    "7696378716",
+    "7696378946",
+    "7696379100",
+    "7744324075",
+    "7744324485",
+    "7744324679"
+   ],
+   "produkt_id": "etsy-198",
+   "link": "https://www.etsy.com/de/listing/4455644707/adhd-teaching-strategies-guide"
+  },
+  {
+   "listing_id": "4455646631",
+   "titel": "ADHD Classroom Management Toolkit - Behavior Support Elementary School - Token Economy Special Education Teacher Resources PDF",
+   "bild_ids": [
+    "7696390658",
+    "7696390904",
+    "7696392208",
+    "7744337825",
+    "7744338063",
+    "7744338275",
+    "7744338543",
+    "7744338807"
+   ],
+   "produkt_id": "etsy-197",
+   "link": "https://www.etsy.com/de/listing/4455646631/adhd-classroom-management-toolkit"
+  },
+  {
+   "listing_id": "4455650369",
+   "titel": "Parent Teacher Conference ADHD Guide - Communication Templates Elementary School - Special Education Parent Meeting Resources PDF",
+   "bild_ids": [
+    "7696412940",
+    "7696413378",
+    "7696413730",
+    "7744359567",
+    "7744359803",
+    "7744360151",
+    "7744360273",
+    "7744360605"
+   ],
+   "produkt_id": "etsy-120",
+   "link": "https://www.etsy.com/de/listing/4455650369/parent-teacher-conference-adhd-guide"
+  },
+  {
+   "listing_id": "4455654113",
+   "titel": "Autism Sensory Classroom Guide - Sensory Overload Teacher Resource - Special Education Elementary School Accommodations PDF",
+   "bild_ids": [
+    "7696434170",
+    "7696434436",
+    "7696435278",
+    "7744381123",
+    "7744381889",
+    "7744382131",
+    "7744382333"
+   ],
+   "produkt_id": "etsy-195",
+   "link": "https://www.etsy.com/de/listing/4455654113/autism-sensory-classroom-guide-sensory"
+  },
+  {
+   "listing_id": "4455656628",
+   "titel": "ADHD Classroom Setup Guide - Seating Arrangement Elementary School - Physical Environment Special Education Teacher Resource PDF",
+   "bild_ids": [
+    "7696400052",
+    "7696400430",
+    "7696400776",
+    "7696400910",
+    "7696401482",
+    "7744347509",
+    "7744347985",
+    "7744348217"
+   ],
+   "produkt_id": "etsy-196",
+   "link": "https://www.etsy.com/de/listing/4455656628/adhd-classroom-setup-guide-seating"
+  },
+  {
+   "listing_id": "4455663740",
+   "titel": "Autism Communication Teacher Guide - Clear Language Literal Thinking - Special Education Elementary School Resource Strategies PDF",
+   "bild_ids": [
+    "7696445474",
+    "7696445704",
+    "7696445836",
+    "7696446388",
+    "7744393077",
+    "7744393309",
+    "7744393705",
+    "7744393887"
+   ],
+   "produkt_id": "etsy-194",
+   "link": "https://www.etsy.com/de/listing/4455663740/autism-communication-teacher-guide-clear"
+  },
+  {
+   "listing_id": "4455665450",
+   "titel": "Autism Structure Routines Guide - Visual Schedule Predictability - Special Education Elementary School Teacher Resource Classroom PDF",
+   "bild_ids": [
+    "7696454318",
+    "7696455202",
+    "7696455420",
+    "7696455546",
+    "7696455860",
+    "7744401679",
+    "7744401871",
+    "7744402055"
+   ],
+   "produkt_id": "etsy-193",
+   "link": "https://www.etsy.com/de/listing/4455665450/autism-structure-routines-guide-visual"
+  },
+  {
+   "listing_id": "4455666944",
+   "titel": "Autism Meltdown Management Guide - Crisis Response Teacher First Aid - Special Education Elementary School Classroom Strategies PDF",
+   "bild_ids": [
+    "7696465028",
+    "7696465342",
+    "7696465510",
+    "7696465670",
+    "7744411207",
+    "7744411445",
+    "7744411611",
+    "7744411849",
+    "7744412115"
+   ],
+   "produkt_id": "etsy-192",
+   "link": "https://www.etsy.com/de/listing/4455666944/autism-meltdown-management-guide-crisis"
+  },
+  {
+   "listing_id": "4455668566",
+   "titel": "Autism Strengths Teacher Guide - Strength-Based Special Interests - Special Education Elementary School Neurodiversity Resources PDF",
+   "bild_ids": [
+    "7696473010",
+    "7696473572",
+    "7696474036",
+    "7696475104",
+    "7744420599",
+    "7744421085",
+    "7744421451",
+    "7744421691",
+    "7744422081"
+   ],
+   "produkt_id": "etsy-191",
+   "link": "https://www.etsy.com/de/listing/4455668566/autism-strengths-teacher-guide-strength"
+  },
+  {
+   "listing_id": "4455678765",
+   "titel": "Autismus Schulstart Guide Eltern - Einschulung Vorbereitung Schulbegleitung Förderplan - Interaktiv Checklisten HTML Download",
+   "bild_ids": [
+    "7696577028",
+    "7696577590",
+    "7696577798",
+    "7696577988",
+    "7696578218",
+    "7696578342",
+    "7744523473",
+    "7744524229",
+    "7744524469"
+   ],
+   "produkt_id": "etsy-189",
+   "link": "https://www.etsy.com/de/listing/4455678765/autismus-schulstart-guide-eltern"
+  },
+  {
+   "listing_id": "4455682144",
+   "titel": "Nachteilsausgleich Paket ADHS Autismus - Fertige Anträge Checklisten Argumentationshilfen - Schule Studium Ausbildung PDF",
+   "bild_ids": [
+    "7696545846",
+    "7744491411",
+    "7744491759",
+    "7744491941",
+    "7744492111",
+    "7744492269",
+    "7744492429"
+   ],
+   "produkt_id": "etsy-190",
+   "link": "https://www.etsy.com/de/listing/4455682144/nachteilsausgleich-paket-adhs-autismus"
+  },
+  {
+   "listing_id": "4455716740",
+   "titel": "Autismus Visueller Tagesplan - 135 Bildkarten Tagesstruktur ADHS - Routinen Kinder Orientierung PDF Download",
+   "bild_ids": [
+    "7696732920",
+    "7696733242",
+    "7696734126",
+    "7696734844",
+    "7744680157",
+    "7744680385",
+    "7744680627",
+    "7744681119",
+    "7744681367"
+   ],
+   "produkt_id": "etsy-188",
+   "link": "https://www.etsy.com/de/listing/4455716740/autismus-visueller-tagesplan-135"
+  },
+  {
+   "listing_id": "4455720364",
+   "titel": "Autismus Regulations Toolkit - 6 Visuelle Skalen Kommunikation Gefühle - Überforderung Meltdown Prävention PDF Download",
+   "bild_ids": [
+    "7696759368",
+    "7696759632",
+    "7696759906",
+    "7696760426",
+    "7744705105",
+    "7744705583",
+    "7744706671"
+   ],
+   "produkt_id": "etsy-060",
+   "link": "https://www.etsy.com/de/listing/4455720364/autismus-regulations-toolkit-6-visuelle"
+  },
+  {
+   "listing_id": "4455723462",
+   "titel": "BUNDLE : Tagesplan + Regulations-Toolkit - Struktur Orientierung Kommunikation Skalen PDF Download",
+   "bild_ids": [
+    "7696777900",
+    "7696778626"
+   ],
+   "produkt_id": "etsy-187",
+   "link": "https://www.etsy.com/de/listing/4455723462/bundle-tagesplan-regulations-toolkit"
+  },
+  {
+   "listing_id": "4455725829",
+   "titel": "ADHS Hausaufgaben Notfallplan - Exekutive Dysfunktion Strategien Eltern - Chunking Body Doubling Motivationshilfen PDF",
+   "bild_ids": [
+    "7696840842",
+    "7696844286",
+    "7744787321",
+    "7744787519",
+    "7744787717",
+    "7744787907"
+   ],
+   "produkt_id": "etsy-096",
+   "link": "https://www.etsy.com/de/listing/4455725829/adhs-hausaufgaben-notfallplan-exekutive"
+  },
+  {
+   "listing_id": "4455727316",
+   "titel": "Autismus Schulgespräche Leitfaden - Eltern Rechte Nachteilsausgleich - Schulbegleitung Inklusion Argumentationshilfen PDF",
+   "bild_ids": [
+    "7696806544",
+    "7696806876",
+    "7696807156",
+    "7696807876",
+    "7696808084",
+    "7744754247",
+    "7744754433",
+    "7744755129"
+   ],
+   "produkt_id": "etsy-186",
+   "link": "https://www.etsy.com/de/listing/4455727316/autismus-schulgesprache-leitfaden-eltern"
+  },
+  {
+   "listing_id": "4455729800",
+   "titel": "Autismus Geschwisterkinder Ratgeber - Neurotypische Kinder unterstützen - Eifersucht Schuldgefühle Elternratgeber PDF",
+   "bild_ids": [
+    "7696817684",
+    "7696817946",
+    "7696818558",
+    "7696818750",
+    "7744764889",
+    "7744765023",
+    "7744765145"
+   ],
+   "produkt_id": "etsy-063",
+   "link": "https://www.etsy.com/de/listing/4455729800/autismus-geschwisterkinder-ratgeber"
+  },
+  {
+   "listing_id": "4455735786",
+   "titel": "Autismus Hausaufgaben Notfallplan - Sensorische Überlastung Struktur Meltdown Prävention - Theory of Mind Eltern Guide PDF",
+   "bild_ids": [
+    "7696853598",
+    "7696853824",
+    "7696854588",
+    "7744800305",
+    "7744800465",
+    "7744800703",
+    "7744801175"
+   ],
+   "produkt_id": "etsy-185",
+   "link": "https://www.etsy.com/de/listing/4455735786/autismus-hausaufgaben-notfallplan"
+  },
+  {
+   "listing_id": "4455751528",
+   "titel": "Begleitgeschichten: Autismus Medizin Alltag - Zahnarzt Arzt Krankenhaus Friseur Restaurant Einkaufen - 6 Stories PDF Download",
+   "bild_ids": [
+    "7696936822",
+    "7696937186",
+    "7696937426",
+    "7696937744",
+    "7696937920",
+    "7744882755",
+    "7744883363",
+    "7843275361"
+   ],
+   "produkt_id": "etsy-036",
+   "link": "https://www.etsy.com/de/listing/4455751528/social-stories-autismus-medizin-alltag"
+  },
+  {
+   "listing_id": "4455753504",
+   "titel": "Begleitgeschichten: Autismus Schule Freizeit - Schulstart Schulwechsel Zug Feier Verwandte Schwimmbad - 6 Stories PDF Download",
+   "bild_ids": [
+    "7696953444",
+    "7696954234",
+    "7696954458",
+    "7744898937",
+    "7744899125",
+    "7744899389",
+    "7744900013",
+    "7843285331"
+   ],
+   "produkt_id": "etsy-184",
+   "link": "https://www.etsy.com/de/listing/4455753504/social-stories-autismus-schule-freizeit"
+  },
+  {
+   "listing_id": "4455756263",
+   "titel": "Begleitgeschichten Bundle Autismus - Alle 19 Stories Komplett - Medizin Schule Alltag Entwicklung - PDF Download Paket",
+   "bild_ids": [
+    "7697004328",
+    "7697004558",
+    "7697004862",
+    "7697004944",
+    "7744949837",
+    "7744950011",
+    "7744950545",
+    "7795350124"
+   ],
+   "produkt_id": "etsy-062",
+   "link": "https://www.etsy.com/de/listing/4455756263/social-stories-bundle-autismus-alle-19"
+  },
+  {
+   "listing_id": "4455760018",
+   "titel": "Begleitgeschichten Autismus Entwicklung - Fahrrad Übernachten Alleine Geschwister Haustier Umzug Verlieren - 7 Stories PDF",
+   "bild_ids": [
+    "7696968226",
+    "7696968902",
+    "7744913455",
+    "7744913651",
+    "7744913985",
+    "7744914147",
+    "7744914343",
+    "7795351202"
+   ],
+   "produkt_id": "etsy-183",
+   "link": "https://www.etsy.com/de/listing/4455760018/social-stories-autismus-entwicklung"
+  },
+  {
+   "listing_id": "4455768145",
+   "titel": "ADHS Lehrer Komplett Bundle | Alle 5 Ratgeber | Classroom Management | Unterrichtsmethoden | Sofort Download | 43% Rabatt",
+   "bild_ids": [
+    "7697064772",
+    "7697064774",
+    "7697064776",
+    "7745011223",
+    "7745011231",
+    "7749927539"
+   ],
+   "produkt_id": "etsy-095",
+   "link": "https://www.etsy.com/de/listing/4455768145/adhs-lehrer-komplett-bundle-alle-5"
+  },
+  {
+   "listing_id": "4455770091",
+   "titel": "ADHS Starter Bundle | 3 Ratgeber | Unterricht Sitzordnung Sofortlösungen | Lehrer | Grundschule | Sofort Download | 29% Rabatt",
+   "bild_ids": [
+    "7697080110",
+    "7701987030",
+    "7745026337",
+    "7745026339"
+   ],
+   "produkt_id": "etsy-182",
+   "link": "https://www.etsy.com/de/listing/4455770091/adhs-starter-bundle-o-3-ratgeber-o"
+  },
+  {
+   "listing_id": "4455779898",
+   "titel": "ADHS Classroom Bundle | Management Toolkit | Sitzordnung | Sofortlösungen | Lehrer Ratgeber | Grundschule | 29% Rabatt",
+   "bild_ids": [
+    "7697090700",
+    "7697090706",
+    "7701985166",
+    "7745037119"
+   ],
+   "produkt_id": "etsy-181",
+   "link": "https://www.etsy.com/de/listing/4455779898/adhs-classroom-bundle-o-management"
+  },
+  {
+   "listing_id": "4455781578",
+   "titel": "ADHS Kommunikations Bundle | Unterrichtsmethoden & Elterngespräche | Lehrer Ratgeber | Grundschule | Sofort Download",
+   "bild_ids": [
+    "7701982572",
+    "7745045341",
+    "7745045345"
+   ],
+   "produkt_id": "etsy-180",
+   "link": "https://www.etsy.com/de/listing/4455781578/adhs-kommunikations-bundle-o"
+  },
+  {
+   "listing_id": "4455787793",
+   "titel": "Autismus Komplettpaket Lehrer Bundle - 5 Guides Inklusiver Unterricht Grundschule - Classroom Management Ressourcen PDF Set",
+   "bild_ids": [
+    "7697177360",
+    "7697177738",
+    "7745123961",
+    "7745125281",
+    "7745125665",
+    "7749956261"
+   ],
+   "produkt_id": "etsy-178",
+   "link": "https://www.etsy.com/de/listing/4455787793/autismus-komplettpaket-lehrer-bundle-5"
+  },
+  {
+   "listing_id": "4455789543",
+   "titel": "Autismus Alltags-Fundament Bundle Lehrer - Struktur Kommunikation Stärken Grundschule - Inklusion Classroom Management PDF Set",
+   "bild_ids": [
+    "7697188196",
+    "7697188548",
+    "7745134735",
+    "7749953617"
+   ],
+   "produkt_id": "etsy-177",
+   "link": "https://www.etsy.com/de/listing/4455789543/autismus-alltags-fundament-bundle-lehrer"
+  },
+  {
+   "listing_id": "4455793332",
+   "titel": "Autismus Krisenmanagement Bundle Lehrer - Meltdown + Sensorik Guide Grundschule - Notfall Protokoll Inklusionsklasse PDF Set",
+   "bild_ids": [
+    "7697163908",
+    "7702015380",
+    "7745111003"
+   ],
+   "produkt_id": "etsy-179",
+   "link": "https://www.etsy.com/de/listing/4455793332/autismus-krisenmanagement-bundle-lehrer"
+  },
+  {
+   "listing_id": "4455794261",
+   "titel": "Strukturpläne Autismus Unterricht - Tagesstruktur Stundenablauf Übergangshilfen - Lehrer Grundschule Inklusion PDF",
+   "bild_ids": [
+    "7697206218",
+    "7697211312",
+    "7745152777",
+    "7745152999",
+    "7745153639",
+    "7745154095",
+    "7745158155",
+    "7745158449"
+   ],
+   "produkt_id": "etsy-176",
+   "link": "https://www.etsy.com/de/listing/4455794261/strukturplane-autismus-unterricht"
+  },
+  {
+   "listing_id": "4455804374",
+   "titel": "Klassenstart Autismus Checkliste - Schuljahresbeginn Erste Schultage Inklusion - Lehrer Grundschule Schulstart PDF",
+   "bild_ids": [
+    "7697225648",
+    "7697225870",
+    "7697226126",
+    "7745169887",
+    "7745172767",
+    "7745172989",
+    "7745173449",
+    "7745173615"
+   ],
+   "produkt_id": "etsy-175",
+   "link": "https://www.etsy.com/de/listing/4455804374/klassenstart-autismus-checkliste"
+  },
+  {
+   "listing_id": "4455996893",
+   "titel": "Complete ADHD Teacher Toolkit Bundle - 5 Guides Classroom Management Teaching Strategies - Special Education Elementary Resources PDF Set",
+   "bild_ids": [
+    "7698470340",
+    "7698470350",
+    "7698470352",
+    "7698470354",
+    "7746417529",
+    "7749975755"
+   ],
+   "produkt_id": "etsy-174",
+   "link": "https://www.etsy.com/de/listing/4455996893/complete-adhd-teacher-toolkit-bundle-5"
+  },
+  {
+   "listing_id": "4455998469",
+   "titel": "ADHD Classroom Essentials Bundle - Setup Management Teaching Strategies - Elementary School Special Education Teacher Resources PDF Set",
+   "bild_ids": [
+    "7698478820",
+    "7746425905",
+    "7746425919",
+    "7749974783"
+   ],
+   "produkt_id": "etsy-173",
+   "link": "https://www.etsy.com/de/listing/4455998469/adhd-classroom-essentials-bundle-setup"
+  },
+  {
+   "listing_id": "4456005483",
+   "titel": "Complete My Storys Bundle Autism - 19 Stories Medical School Daily Life - Visual Support PDF Download",
+   "bild_ids": [
+    "7698537048",
+    "7698537056",
+    "7698537064",
+    "7698537066",
+    "7746484467",
+    "7746484473",
+    "7795404466"
+   ],
+   "produkt_id": "etsy-168",
+   "link": "https://www.etsy.com/de/listing/4456005483/complete-social-stories-bundle-autism-19"
+  },
+  {
+   "listing_id": "4456008540",
+   "titel": "ADHD Communication Crisis Bundle - Parent Conference Guide SOS Solutions - Elementary School Special Education Teacher Resources PDF Set",
+   "bild_ids": [
+    "7698499884",
+    "7746447357",
+    "7749973759"
+   ],
+   "produkt_id": "etsy-172",
+   "link": "https://www.etsy.com/de/listing/4456008540/adhd-communication-crisis-bundle-parent"
+  },
+  {
+   "listing_id": "4456009329",
+   "titel": "Autism Homework Emergency Plan - Meltdown Crisis Management Sensory Strategies - Teacher Parent Guide PDF",
+   "bild_ids": [
+    "7698567168",
+    "7698567180",
+    "7698567192",
+    "7698567202",
+    "7698567856",
+    "7746514463",
+    "7746514487",
+    "7746514497",
+    "7746514499"
+   ],
+   "produkt_id": "etsy-164",
+   "link": "https://www.etsy.com/de/listing/4456009329/autism-homework-emergency-plan-meltdown"
+  },
+  {
+   "listing_id": "4456009576",
+   "titel": "Complete Autism Teacher Toolkit Bundle - 5 Guides Classroom Management Sensory Communication - Special Education Elementary Resources PDF",
+   "bild_ids": [
+    "7698506570",
+    "7698506576",
+    "7702058456",
+    "7746453893",
+    "7746453899",
+    "7746453905"
+   ],
+   "produkt_id": "etsy-171",
+   "link": "https://www.etsy.com/de/listing/4456009576/complete-autism-teacher-toolkit-bundle-5"
+  },
+  {
+   "listing_id": "4456010085",
+   "titel": "ADHD Homework Emergency Plan - Executive Function Crisis Strategies Focus Motivation - Parent Teacher Guide PDF",
+   "bild_ids": [
+    "7698573786",
+    "7698574482",
+    "7746521097",
+    "7746521103",
+    "7746521109",
+    "7746521113"
+   ],
+   "produkt_id": "etsy-163",
+   "link": "https://www.etsy.com/de/listing/4456010085/adhd-homework-emergency-plan-executive"
+  },
+  {
+   "listing_id": "4456010512",
+   "titel": "Autism Crisis Communication Bundle - Meltdown Management Clear Language - Special Education Elementary School Teacher Resources PDF Set",
+   "bild_ids": [
+    "7698512874",
+    "7746460217",
+    "7749997671"
+   ],
+   "produkt_id": "etsy-170",
+   "link": "https://www.etsy.com/de/listing/4456010512/autism-crisis-communication-bundle"
+  },
+  {
+   "listing_id": "4456010985",
+   "titel": "Homework Emergency Bundle Autism ADHD - Complete Crisis Strategies Parent Teacher Guide - PDF Download",
+   "bild_ids": [
+    "7698580744",
+    "7698581008",
+    "7746527657"
+   ],
+   "produkt_id": "etsy-162",
+   "link": "https://www.etsy.com/de/listing/4456010985/homework-emergency-bundle-autism-adhd"
+  },
+  {
+   "listing_id": "4456011332",
+   "titel": "Autism Classroom Essentials Bundle - Sensory Structure Communication - Special Education Elementary School Teacher Resources PDF Set",
+   "bild_ids": [
+    "7698520722",
+    "7702056978",
+    "7746467889",
+    "7746467891"
+   ],
+   "produkt_id": "etsy-169",
+   "link": "https://www.etsy.com/de/listing/4456011332/autism-classroom-essentials-bundle"
+  },
+  {
+   "listing_id": "4456013023",
+   "titel": "Visual Daily Structure Cards Autism - 135+ Activity Cards Schedule Routine Transitions - Printable PDF Download",
+   "bild_ids": [
+    "7698589920",
+    "7698594650",
+    "7698594652",
+    "7698594672",
+    "7746541643"
+   ],
+   "produkt_id": "etsy-161",
+   "link": "https://www.etsy.com/de/listing/4456013023/visual-daily-structure-cards-autism-135"
+  },
+  {
+   "listing_id": "4456014013",
+   "titel": "Autism Communication Scales Bundle - 6 Visual Scales Regulation Sensory Meltdown Prevention - Printable PDF",
+   "bild_ids": [
+    "7698602526",
+    "7698602828",
+    "7698602830",
+    "7746549795",
+    "7746549799",
+    "7746549815",
+    "7746549819"
+   ],
+   "produkt_id": "etsy-160",
+   "link": "https://www.etsy.com/de/listing/4456014013/autism-communication-scales-bundle-6"
+  },
+  {
+   "listing_id": "4456014550",
+   "titel": "7 x My Storys Autism Daily Life Development - Bike Sleepover Sibling Moving Losing - Visual PDF Download",
+   "bild_ids": [
+    "7698546272",
+    "7746493723",
+    "7746493727",
+    "7746493733",
+    "7746493737",
+    "7746493739",
+    "7843333409"
+   ],
+   "produkt_id": "etsy-167",
+   "link": "https://www.etsy.com/de/listing/4456014550/7-social-stories-autism-daily-life"
+  },
+  {
+   "listing_id": "4456015011",
+   "titel": "Complete Autism Support Bundle - Visual Structure Cards Communication Scales Schedule Routine - PDF Download",
+   "bild_ids": [
+    "7698610666",
+    "7698611682",
+    "7746558017"
+   ],
+   "produkt_id": "etsy-159",
+   "link": "https://www.etsy.com/de/listing/4456015011/complete-autism-support-bundle-visual"
+  },
+  {
+   "listing_id": "4456015304",
+   "titel": "6 x My Storys Autism School Leisure - First Day School Change Train Birthday Pool - Visual PDF Download",
+   "bild_ids": [
+    "7698552366",
+    "7698552374",
+    "7698552376",
+    "7698552378",
+    "7746499789",
+    "7746499799",
+    "7795395826"
+   ],
+   "produkt_id": "etsy-166",
+   "link": "https://www.etsy.com/de/listing/4456015304/6-social-stories-autism-school-leisure"
+  },
+  {
+   "listing_id": "4456016014",
+   "titel": "6 x My Story Autism Medical Daily Life - Dentist Doctor Hospital Haircut Restaurant Shopping - Visual PDF",
+   "bild_ids": [
+    "7698557436",
+    "7698557442",
+    "7698557444",
+    "7698557446",
+    "7746504801",
+    "7746504809",
+    "7795390534"
+   ],
+   "produkt_id": "etsy-165",
+   "link": "https://www.etsy.com/de/listing/4456016014/6-social-stories-autism-medical-daily"
+  },
+  {
+   "listing_id": "4460124029",
+   "titel": "Gefühlsgeschichte Angst · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Milo und der Schatten hinter der Tür · Der Lernolotl",
+   "bild_ids": [
+    "7726358914",
+    "7726359188",
+    "7726359912",
+    "7726359920",
+    "7726359928",
+    "7727678220",
+    "7774302421",
+    "7774304507",
+    "7774304607"
+   ],
+   "produkt_id": "etsy-158",
+   "link": "https://www.etsy.com/de/listing/4460124029/gefuhlsgeschichte-angst-kita-paket-36"
+  },
+  {
+   "listing_id": "4460126511",
+   "titel": "Gefühlsgeschichte Angst · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Milo und der Schatten hinter der Tür · Der Lernolotl",
+   "bild_ids": [
+    "7726390650",
+    "7726391704",
+    "7726392570",
+    "7774336493",
+    "7774336501",
+    "7774337437",
+    "7774337439",
+    "7774337453",
+    "7775623009"
+   ],
+   "produkt_id": "etsy-157",
+   "link": "https://www.etsy.com/de/listing/4460126511/gefuhlsgeschichte-angst-grundschule"
+  },
+  {
+   "listing_id": "4460128389",
+   "titel": "Gefühlsgeschichte Angst · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Milo und der Schatten hinter der Tür · Der Lernolotl",
+   "bild_ids": [
+    "7726404348",
+    "7726404352",
+    "7726404744",
+    "7726404758",
+    "7727676110",
+    "7774350105",
+    "7774350111",
+    "7774350433",
+    "7777101973"
+   ],
+   "produkt_id": "etsy-156",
+   "link": "https://www.etsy.com/de/listing/4460128389/gefuhlsgeschichte-angst-grundschule"
+  },
+  {
+   "listing_id": "4460309739",
+   "titel": "Gefühlsgeschichten Kita · Alle 11 Geschichten · Komplettpaket 3–6 Jahre · Arbeitsblätter PDF · Der Lernolotl",
+   "bild_ids": [
+    "7727683110",
+    "7727683114",
+    "7727683116",
+    "7727683424",
+    "7727683426",
+    "7727683428",
+    "7775628635",
+    "7775628937",
+    "7777101467"
+   ],
+   "produkt_id": "etsy-155",
+   "link": "https://www.etsy.com/de/listing/4460309739/gefuhlsgeschichten-kita-alle-11"
+  },
+  {
+   "listing_id": "4460310667",
+   "titel": "Gefühlsgeschichten Grundschule Klasse 1–2 · Alle 11 Geschichten · Komplettpaket 6–8 Jahre · Arbeitsblätter PDF · Der Lernolotl",
+   "bild_ids": [
+    "7727721880",
+    "7727721890",
+    "7775668139",
+    "7775668143",
+    "7775668455",
+    "7775668457",
+    "7775668463",
+    "7775668465",
+    "7777100773"
+   ],
+   "produkt_id": "etsy-154",
+   "link": "https://www.etsy.com/de/listing/4460310667/gefuhlsgeschichten-grundschule-klasse-12"
+  },
+  {
+   "listing_id": "4460318214",
+   "titel": "Gefühlsgeschichten Grundschule Klasse 3–4 · Alle 11 Geschichten · Komplettpaket 8–10 Jahre · Arbeitsblätter PDF · Der Lernolotl",
+   "bild_ids": [
+    "7727728720",
+    "7727728722",
+    "7775674897",
+    "7775674901",
+    "7775675149",
+    "7775675151",
+    "7775675155",
+    "7775675159",
+    "7777100161"
+   ],
+   "produkt_id": "etsy-153",
+   "link": "https://www.etsy.com/de/listing/4460318214/gefuhlsgeschichten-grundschule-klasse-34"
+  },
+  {
+   "listing_id": "4460514233",
+   "titel": "Gefühlsgeschichte Dankbarkeit · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Mila und der geteilte Apfel · Der Lernolotl",
+   "bild_ids": [
+    "7729143134",
+    "7729143456",
+    "7729143462",
+    "7729143468",
+    "7777088941",
+    "7777088945",
+    "7777088957",
+    "7777089383",
+    "7777090449"
+   ],
+   "produkt_id": "etsy-152",
+   "link": "https://www.etsy.com/de/listing/4460514233/gefuhlsgeschichte-dankbarkeit-kita-paket"
+  },
+  {
+   "listing_id": "4460523520",
+   "titel": "Gefühlsgeschichte Dankbarkeit · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Mila und der geteilte Apfel · Der Lernolotl",
+   "bild_ids": [
+    "7729159950",
+    "7729159952",
+    "7729160288",
+    "7729160290",
+    "7777105617",
+    "7777105621",
+    "7777105927",
+    "7777105931",
+    "7777106143"
+   ],
+   "produkt_id": "etsy-151",
+   "link": "https://www.etsy.com/de/listing/4460523520/gefuhlsgeschichte-dankbarkeit"
+  },
+  {
+   "listing_id": "4460525054",
+   "titel": "Gefühlsgeschichte Dankbarkeit · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Mila und der geteilte Apfel · Der Lernolotl",
+   "bild_ids": [
+    "7729170032",
+    "7729170044",
+    "7777115453",
+    "7777115455",
+    "7777115457",
+    "7777115461",
+    "7777115917",
+    "7777115927",
+    "7777116241"
+   ],
+   "produkt_id": "etsy-150",
+   "link": "https://www.etsy.com/de/listing/4460525054/gefuhlsgeschichte-dankbarkeit"
+  },
+  {
+   "listing_id": "4460571384",
+   "titel": "Gefühlsgeschichte Eifersucht · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Max und die neue Schaukel · Der Lernolotl",
+   "bild_ids": [
+    "7729488842",
+    "7729488846",
+    "7729489466",
+    "7777433923",
+    "7777433925",
+    "7777434517",
+    "7777434523",
+    "7777434531",
+    "7777434739"
+   ],
+   "produkt_id": "etsy-149",
+   "link": "https://www.etsy.com/de/listing/4460571384/gefuhlsgeschichte-eifersucht-kita-paket"
+  },
+  {
+   "listing_id": "4460572806",
+   "titel": "Gefühlsgeschichte Eifersucht · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Max und die neue Schaukel · Der Lernolotl",
+   "bild_ids": [
+    "7729500084",
+    "7729500086",
+    "7729500092",
+    "7729500412",
+    "7729500430",
+    "7729500712",
+    "7777445155",
+    "7777445465",
+    "7777445473"
+   ],
+   "produkt_id": "etsy-148",
+   "link": "https://www.etsy.com/de/listing/4460572806/gefuhlsgeschichte-eifersucht-grundschule"
+  },
+  {
+   "listing_id": "4460574580",
+   "titel": "Gefühlsgeschichte Eifersucht · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Max und die neue Schaukel · Der Lernolotl",
+   "bild_ids": [
+    "7729510474",
+    "7729510516",
+    "7729512266",
+    "7729512284",
+    "7729512290",
+    "7729512660",
+    "7777455531",
+    "7777455533",
+    "7777457421"
+   ],
+   "produkt_id": "etsy-147",
+   "link": "https://www.etsy.com/de/listing/4460574580/gefuhlsgeschichte-eifersucht-grundschule"
+  },
+  {
+   "listing_id": "4460950091",
+   "titel": "Gefühlsgeschichte Unsicherheit · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Paul und die wackelnden Worte · Der Lernolotl",
+   "bild_ids": [
+    "7732220832",
+    "7732220838",
+    "7732221080",
+    "7780171505",
+    "7780171507",
+    "7780171509",
+    "7780171515",
+    "7780171829",
+    "7780171831"
+   ],
+   "produkt_id": "etsy-146",
+   "link": "https://www.etsy.com/de/listing/4460950091/gefuhlsgeschichte-unsicherheit-kita"
+  },
+  {
+   "listing_id": "4460951477",
+   "titel": "Gefühlsgeschichte Unsicherheit · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Paul und die wackelnden Worte · Der Lernolotl",
+   "bild_ids": [
+    "7732228982",
+    "7732228986",
+    "7732229464",
+    "7732229676",
+    "7780180167",
+    "7780180173",
+    "7780180691",
+    "7780180693",
+    "7780180697"
+   ],
+   "produkt_id": "etsy-145",
+   "link": "https://www.etsy.com/de/listing/4460951477/gefuhlsgeschichte-unsicherheit"
+  },
+  {
+   "listing_id": "4460952781",
+   "titel": "Gefühlsgeschichte Unsicherheit · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Paul und die wackelnden Worte · Der Lernolotl",
+   "bild_ids": [
+    "7732238206",
+    "7732238216",
+    "7732238514",
+    "7732238520",
+    "7780189665",
+    "7780189667",
+    "7780189963",
+    "7780189969",
+    "7780190125"
+   ],
+   "produkt_id": "etsy-144",
+   "link": "https://www.etsy.com/de/listing/4460952781/gefuhlsgeschichte-unsicherheit"
+  },
+  {
+   "listing_id": "4466484225",
+   "titel": "Vorlesezeit-Karten – 40 Gesprächskarten zum Vorlesen für Kinder ab 3 | Kita Grundschule Familie | Sofort-Download PDF",
+   "bild_ids": [
+    "7769403870",
+    "7769404066",
+    "7769404794",
+    "7769405368",
+    "7817346175",
+    "7817346417",
+    "7817346637",
+    "7817346901",
+    "7817347005",
+    "7817347077"
+   ],
+   "produkt_id": "etsy-143",
+   "link": "https://www.etsy.com/de/listing/4466484225/vorlesezeit-karten-40-gesprachskarten"
+  },
+  {
+   "listing_id": "4471208259",
+   "titel": "Gefühlsgeschichte Einsamkeit · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Theo und der leise Platz · Der Lernolotl**",
+   "bild_ids": [
+    "7800145730",
+    "7800146656",
+    "7800147420",
+    "7800147424",
+    "7800147426",
+    "7848085707",
+    "7848085731",
+    "7848085737",
+    "7848087463"
+   ],
+   "produkt_id": "etsy-142",
+   "link": "https://www.etsy.com/de/listing/4471208259/gefuhlsgeschichte-einsamkeit-kita-paket"
+  },
+  {
+   "listing_id": "4471212449",
+   "titel": "Gefühlsgeschichte Freude · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Maja und das warme Ja-Gefühl · Der Lernolotl**",
+   "bild_ids": [
+    "7800178556",
+    "7800178558",
+    "7800178560",
+    "7800180040",
+    "7800180042",
+    "7800180554",
+    "7848119005",
+    "7848120519",
+    "7848120521"
+   ],
+   "produkt_id": "etsy-139",
+   "link": "https://www.etsy.com/de/listing/4471212449/gefuhlsgeschichte-freude-kita-paket-36"
+  },
+  {
+   "listing_id": "4471216610",
+   "titel": "Gefühlsgeschichte Einsamkeit · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Theo und der leise Platz · Der Lernolotl**",
+   "bild_ids": [
+    "7800159264",
+    "7800159276",
+    "7800159278",
+    "7800159582",
+    "7800159584",
+    "7800159590",
+    "7800159940",
+    "7848099473",
+    "7848099761"
+   ],
+   "produkt_id": "etsy-141",
+   "link": "https://www.etsy.com/de/listing/4471216610/gefuhlsgeschichte-einsamkeit-grundschule"
+  },
+  {
+   "listing_id": "4471217530",
+   "titel": "Gefühlsgeschichte Einsamkeit · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Theo und der leise Platz · Der Lernolotl**",
+   "bild_ids": [
+    "7800167128",
+    "7800167130",
+    "7800167496",
+    "7800167498",
+    "7800167790",
+    "7848107473",
+    "7848107479",
+    "7848107801",
+    "7848107805"
+   ],
+   "produkt_id": "etsy-140",
+   "link": "https://www.etsy.com/de/listing/4471217530/gefuhlsgeschichte-einsamkeit-grundschule"
+  },
+  {
+   "listing_id": "4471218261",
+   "titel": "Gefühlsgeschichte Frustration · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Paul und der Turm, der immer wieder fiel · Der Lernolotl**",
+   "bild_ids": [
+    "7800216268",
+    "7800216278",
+    "7800216626",
+    "7800216630",
+    "7848157717",
+    "7848157719",
+    "7848158091",
+    "7848158097",
+    "7848158451"
+   ],
+   "produkt_id": "etsy-136",
+   "link": "https://www.etsy.com/de/listing/4471218261/gefuhlsgeschichte-frustration-kita-paket"
+  },
+  {
+   "listing_id": "4471221788",
+   "titel": "Gefühlsgeschichte Freude · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Maja und das warme Ja-Gefühl · Der Lernolotl",
+   "bild_ids": [
+    "7800189302",
+    "7800192478",
+    "7800194380",
+    "7800194484",
+    "7800194538",
+    "7848133085",
+    "7848133203",
+    "7848135047",
+    "7848135407"
+   ],
+   "produkt_id": "etsy-138",
+   "link": "https://www.etsy.com/de/listing/4471221788/gefuhlsgeschichte-freude-grundschule"
+  },
+  {
+   "listing_id": "4471223814",
+   "titel": "Gefühlsgeschichte Freude · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Maja und das warme Ja-Gefühl · Der Lernolotl**",
+   "bild_ids": [
+    "7800207870",
+    "7800207876",
+    "7800207882",
+    "7800208274",
+    "7800208438",
+    "7800208490",
+    "7800208774",
+    "7848148947",
+    "7848149459"
+   ],
+   "produkt_id": "etsy-137",
+   "link": "https://www.etsy.com/de/listing/4471223814/gefuhlsgeschichte-freude-grundschule"
+  },
+  {
+   "listing_id": "4471226748",
+   "titel": "Gefühlsgeschichte Frustration · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Paul und der Turm, der immer wieder fiel · Der Lernolotl**",
+   "bild_ids": [
+    "7800229250",
+    "7800229598",
+    "7800229604",
+    "7800229608",
+    "7800230056",
+    "7848170337",
+    "7848170339",
+    "7848170347",
+    "7848170667"
+   ],
+   "produkt_id": "etsy-135",
+   "link": "https://www.etsy.com/de/listing/4471226748/gefuhlsgeschichte-frustration"
+  },
+  {
+   "listing_id": "4471227722",
+   "titel": "Gefühlsgeschichte Frustration · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Paul und der Turm, der immer wieder fiel · Der Lernolotl**",
+   "bild_ids": [
+    "7800237290",
+    "7800237310",
+    "7800237318",
+    "7800237440",
+    "7848178735",
+    "7848178857",
+    "7848178871",
+    "7848178875",
+    "7848179019"
+   ],
+   "produkt_id": "etsy-134",
+   "link": "https://www.etsy.com/de/listing/4471227722/gefuhlsgeschichte-frustration"
+  },
+  {
+   "listing_id": "4471521411",
+   "titel": "Gefühlsgeschichte Geduld · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Ben und der Samen unter der Erde · Der Lernolotl**",
+   "bild_ids": [
+    "7802264040",
+    "7802264046",
+    "7802264534",
+    "7802264540",
+    "7802264550",
+    "7802264576",
+    "7802265126",
+    "7850206985",
+    "7850206989"
+   ],
+   "produkt_id": "etsy-131",
+   "link": "https://www.etsy.com/de/listing/4471521411/gefuhlsgeschichte-geduld-grundschule"
+  },
+  {
+   "listing_id": "4471525238",
+   "titel": "Gefühlsgeschichte Geduld · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Ben und der Samen unter der Erde · Der Lernolotl**",
+   "bild_ids": [
+    "7802245004",
+    "7802245008",
+    "7802245234",
+    "7850188257",
+    "7850188259",
+    "7850188495",
+    "7850188497",
+    "7850188503",
+    "7850188929"
+   ],
+   "produkt_id": "etsy-133",
+   "link": "https://www.etsy.com/de/listing/4471525238/gefuhlsgeschichte-geduld-kita-paket-36"
+  },
+  {
+   "listing_id": "4471526498",
+   "titel": "Gefühlsgeschichte Geduld · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Ben und der Samen unter der Erde · Der Lernolotl**",
+   "bild_ids": [
+    "7802255138",
+    "7802255142",
+    "7802255474",
+    "7802255476",
+    "7802255482",
+    "7802255486",
+    "7850198415",
+    "7850198427",
+    "7850198753",
+    "7850199061"
+   ],
+   "produkt_id": "etsy-132",
+   "link": "https://www.etsy.com/de/listing/4471526498/gefuhlsgeschichte-geduld-grundschule"
+  },
+  {
+   "listing_id": "4472000382",
+   "titel": "Gefühlskarten Kinder – 11 Gefühle Begleitung & Erziehung – Druckbare PDF Karten Eltern Grundschule Kita – Lernolotl",
+   "bild_ids": [
+    "7805499346",
+    "7805502586",
+    "7805531662",
+    "7805531668",
+    "7853441263",
+    "7853443639",
+    "7853443989",
+    "7853444259",
+    "7853474303",
+    "7853474309"
+   ],
+   "produkt_id": "etsy-130",
+   "link": "https://www.etsy.com/de/listing/4472000382/gefuhlskarten-kinder-11-gefuhle"
+  },
+  {
+   "listing_id": "4472418709",
+   "titel": "Gefühlsgeschichte Mut · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Emma und die mutige Frage · Der Lernolotl**",
+   "bild_ids": [
+    "7808354444",
+    "7808354448",
+    "7808354650",
+    "7808354944",
+    "7856294857",
+    "7856294865",
+    "7856295031",
+    "7856295039",
+    "7856295043"
+   ],
+   "produkt_id": "etsy-129",
+   "link": "https://www.etsy.com/de/listing/4472418709/gefuhlsgeschichte-mut-kita-paket-36"
+  },
+  {
+   "listing_id": "4472425284",
+   "titel": "Gefühlsgeschichte Mut · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Emma und die mutige Frage · Der Lernolotl**",
+   "bild_ids": [
+    "7808365130",
+    "7808365134",
+    "7808365936",
+    "7856305577",
+    "7856305581",
+    "7856306307",
+    "7856306311",
+    "7856306313",
+    "7856307351"
+   ],
+   "produkt_id": "etsy-128",
+   "link": "https://www.etsy.com/de/listing/4472425284/gefuhlsgeschichte-mut-grundschule-klasse"
+  },
+  {
+   "listing_id": "4472426520",
+   "titel": "Gefühlsgeschichte Mut · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Emma und die mutige Frage · Der Lernolotl**",
+   "bild_ids": [
+    "7808373696",
+    "7808373698",
+    "7808373700",
+    "7808373896",
+    "7808373898",
+    "7808373910",
+    "7856314213",
+    "7856314483",
+    "7856314743"
+   ],
+   "produkt_id": "etsy-127",
+   "link": "https://www.etsy.com/de/listing/4472426520/gefuhlsgeschichte-mut-grundschule-klasse"
+  },
+  {
+   "listing_id": "4472427387",
+   "titel": "Gefühlsgeschichte Traurigkeit · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Leni und das leise Gefühl · Der Lernolotl**",
+   "bild_ids": [
+    "7808409590",
+    "7808409598",
+    "7808409828",
+    "7808409842",
+    "7808410054",
+    "7856351081",
+    "7856351085",
+    "7856351295",
+    "7856351317"
+   ],
+   "produkt_id": "etsy-124",
+   "link": "https://www.etsy.com/de/listing/4472427387/gefuhlsgeschichte-traurigkeit"
+  },
+  {
+   "listing_id": "4472429376",
+   "titel": "Gefühlsgeschichte Traurigkeit · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Leni und das leise Gefühl · Der Lernolotl**",
+   "bild_ids": [
+    "7808390384",
+    "7808391048",
+    "7808391368",
+    "7856331283",
+    "7856331287",
+    "7856331289",
+    "7856331995",
+    "7856331997",
+    "7856331999"
+   ],
+   "produkt_id": "etsy-126",
+   "link": "https://www.etsy.com/de/listing/4472429376/gefuhlsgeschichte-traurigkeit-kita-paket"
+  },
+  {
+   "listing_id": "4472429503",
+   "titel": "Gefühlsgeschichte Wut · Kita-Paket 3–6 Jahre · Arbeitsblätter PDF · Leo Löwe und das Feuer im Bauch · Der Lernolotl**",
+   "bild_ids": [
+    "7808424748",
+    "7808424932",
+    "7808424934",
+    "7808424936",
+    "7808424952",
+    "7808425098",
+    "7856365823",
+    "7856365831",
+    "7856365839"
+   ],
+   "produkt_id": "etsy-123",
+   "link": "https://www.etsy.com/de/listing/4472429503/gefuhlsgeschichte-wut-kita-paket-36"
+  },
+  {
+   "listing_id": "4472430836",
+   "titel": "Gefühlsgeschichte Traurigkeit · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Leni und das leise Gefühl · Der Lernolotl**",
+   "bild_ids": [
+    "7808399744",
+    "7808399748",
+    "7808399750",
+    "7808399952",
+    "7808399956",
+    "7808399986",
+    "7808400180",
+    "7856341223",
+    "7856341467",
+    "7856341471"
+   ],
+   "produkt_id": "etsy-125",
+   "link": "https://www.etsy.com/de/listing/4472430836/gefuhlsgeschichte-traurigkeit"
+  },
+  {
+   "listing_id": "4472432659",
+   "titel": "Gefühlsgeschichte Wut · Grundschule Klasse 3–4 · Arbeitsblätter PDF · Leo Löwe und das Feuer im Bauch · Der Lernolotl**",
+   "bild_ids": [
+    "7808441950",
+    "7808441962",
+    "7808442018",
+    "7808442554",
+    "7808442562",
+    "7808442580",
+    "7808442770",
+    "7856383151",
+    "7856383159",
+    "7856383771"
+   ],
+   "produkt_id": "etsy-121",
+   "link": "https://www.etsy.com/de/listing/4472432659/gefuhlsgeschichte-wut-grundschule-klasse"
+  },
+  {
+   "listing_id": "4472436874",
+   "titel": "Gefühlsgeschichte Wut · Grundschule Klasse 1–2 · Arbeitsblätter PDF · Leo Löwe und das Feuer im Bauch · Der Lernolotl**",
+   "bild_ids": [
+    "7808433470",
+    "7808433646",
+    "7808433660",
+    "7808434050",
+    "7808434060",
+    "7856374863",
+    "7856374873",
+    "7856374943",
+    "7856375321",
+    "7856375323"
+   ],
+   "produkt_id": "etsy-122",
+   "link": "https://www.etsy.com/de/listing/4472436874/gefuhlsgeschichte-wut-grundschule-klasse"
+  },
+  {
+   "listing_id": "4474636785",
+   "titel": "Lernolotl Ratgeber #1 – Wenn es zu laut wird | Begleitgeschichte + Elternratgeber | PDF Download",
+   "bild_ids": [
+    "7822849216",
+    "7822850610",
+    "7822850612",
+    "7822850666",
+    "7870797399",
+    "7870799183",
+    "7870799187",
+    "7870799191",
+    "7870799193"
+   ],
+   "produkt_id": "etsy-119",
+   "link": "https://www.etsy.com/de/listing/4474636785/lernolotl-ratgeber-1-wenn-es-zu-laut"
+  },
+  {
+   "listing_id": "4474640643",
+   "titel": "Lernolotl Ratgeber #3 – Wenn Mama geht | Trennungsangst Kita | Begleitgeschichte PDF Download",
+   "bild_ids": [
+    "7822879226",
+    "7822879362",
+    "7822879448",
+    "7822879578",
+    "7822879624",
+    "7870827557",
+    "7870827669",
+    "7870828009",
+    "7870828231"
+   ],
+   "produkt_id": "etsy-117",
+   "link": "https://www.etsy.com/de/listing/4474640643/lernolotl-ratgeber-3-wenn-mama-geht-o"
+  },
+  {
+   "listing_id": "4474645779",
+   "titel": "Lernolotl Ratgeber #6 – Wie sagt man Hallo? | Soziale Kontakte | Begleitgeschichte PDF",
+   "bild_ids": [
+    "7822911710",
+    "7822911926",
+    "7822912082",
+    "7822912408",
+    "7822912504",
+    "7822912594",
+    "7870859843",
+    "7870860443",
+    "7870860549"
+   ],
+   "produkt_id": "etsy-115",
+   "link": "https://www.etsy.com/de/listing/4474645779/lernolotl-ratgeber-6-wie-sagt-man-hallo"
+  },
+  {
+   "listing_id": "4474646274",
+   "titel": "Lernolotl Ratgeber #2 – Darf ich mitspielen? | Begleitgeschichte + Elternratgeber | PDF Download",
+   "bild_ids": [
+    "7822863580",
+    "7822863774",
+    "7822865796",
+    "7822865972",
+    "7870812953",
+    "7870813035",
+    "7870813173",
+    "7870813275",
+    "7870814631"
+   ],
+   "produkt_id": "etsy-118",
+   "link": "https://www.etsy.com/de/listing/4474646274/lernolotl-ratgeber-2-darf-ich-mitspielen"
+  },
+  {
+   "listing_id": "4474647347",
+   "titel": "Lernolotl Ratgeber #7 – Ich esse das nicht! | Sensorik & Essen | Begleitgeschichte PDF",
+   "bild_ids": [
+    "7822920092",
+    "7822920514",
+    "7822920584",
+    "7870868209",
+    "7870868453",
+    "7870868539",
+    "7870868631",
+    "7870868831",
+    "7870868883"
+   ],
+   "produkt_id": "etsy-113",
+   "link": "https://www.etsy.com/de/listing/4474647347/lernolotl-ratgeber-7-ich-esse-das-nicht"
+  },
+  {
+   "listing_id": "4474649738",
+   "titel": "Lernolotl Ratgeber #4 – Wenn der Plan sich ändert | Wut & Flexibilität | Begleitgeschichte PDF",
+   "bild_ids": [
+    "7822888548",
+    "7822888722",
+    "7822889064",
+    "7822889328",
+    "7822889402",
+    "7870837377",
+    "7870837535",
+    "7870837611",
+    "7870838033"
+   ],
+   "produkt_id": "etsy-116",
+   "link": "https://www.etsy.com/de/listing/4474649738/lernolotl-ratgeber-4-wenn-der-plan-sich"
+  },
+  {
+   "listing_id": "4474651476",
+   "titel": "Lernolotl Ratgeber #5 – Das gehört doch mir! | Teilen lernen | Begleitgeschichte PDF Download",
+   "bild_ids": [
+    "7822900030",
+    "7822900172",
+    "7822900388",
+    "7822900548",
+    "7822900630",
+    "7822901058",
+    "7870848459",
+    "7870848729",
+    "7870849029"
+   ],
+   "produkt_id": "etsy-114",
+   "link": "https://www.etsy.com/de/listing/4474651476/lernolotl-ratgeber-5-das-gehort-doch-mir"
+  },
+  {
+   "listing_id": "4474749273",
+   "titel": "Lernolotl Ratgeber #8 – Ich weine und weiß nicht warum | Gefühle & Regulation | PDF",
+   "bild_ids": [
+    "7823521042",
+    "7823521118",
+    "7823521352",
+    "7823539546",
+    "7871469145",
+    "7871469393",
+    "7871469473",
+    "7871469649",
+    "7871487333"
+   ],
+   "produkt_id": "etsy-112",
+   "link": "https://www.etsy.com/de/listing/4474749273/lernolotl-ratgeber-8-ich-weine-und-weiss"
+  },
+  {
+   "listing_id": "4474750349",
+   "titel": "Lernolotl Ratgeber #9 – Ich will nicht schlafen! | Schlaf & ADHS | Begleitgeschichte PDF",
+   "bild_ids": [
+    "7823546378",
+    "7823546924",
+    "7823547438",
+    "7823547558",
+    "7871494669",
+    "7871495073",
+    "7871495183",
+    "7871495215",
+    "7871495691"
+   ],
+   "produkt_id": "etsy-111",
+   "link": "https://www.etsy.com/de/listing/4474750349/lernolotl-ratgeber-9-ich-will-nicht"
+  },
+  {
+   "listing_id": "4474751387",
+   "titel": "Lernolotl Ratgeber #10 – Tschüss Kita | Schulübergang & Abschied | Begleitgeschichte PDF",
+   "bild_ids": [
+    "7823552790",
+    "7823552948",
+    "7823553070",
+    "7823553134",
+    "7871501041",
+    "7871501079",
+    "7871501143",
+    "7871501411"
+   ],
+   "produkt_id": "etsy-110",
+   "link": "https://www.etsy.com/de/listing/4474751387/lernolotl-ratgeber-10-tschuss-kita-o"
+  },
+  {
+   "listing_id": "4474759126",
+   "titel": "Lernolotl Kita-Ratgeber KOMPLETT – Alle 10 Ausgaben | Begleitgeschichten + Elternratgeber | PDF Bundle",
+   "bild_ids": [
+    "7823559426",
+    "7823559550",
+    "7823559614",
+    "7823559816",
+    "7871507869",
+    "7871508043",
+    "7871508079",
+    "7871508153"
+   ],
+   "produkt_id": "etsy-109",
+   "link": "https://www.etsy.com/de/listing/4474759126/lernolotl-kita-ratgeber-komplett-alle-10"
+  },
+  {
+   "listing_id": "4475454687",
+   "titel": "Besuch von Oma PDF Ratgeber Nr 13| Körperkontakt ablehnen Kinder | Begleitgeschichte Autismus Download",
+   "bild_ids": [
+    "7828162306",
+    "7828162490",
+    "7828163120",
+    "7828163168",
+    "7876113043",
+    "7876113097",
+    "7876113147",
+    "7876113265",
+    "7876114079"
+   ],
+   "produkt_id": "etsy-107",
+   "link": "https://www.etsy.com/de/listing/4475454687/besuch-von-oma-pdf-ratgeber-nr-13o"
+  },
+  {
+   "listing_id": "4475457321",
+   "titel": "Spielregeln Kinder PDF Ratgeber Nr 16|Gemeinsam spielen, aber ich will meine Regeln | Begleitgeschichte Autismus ADHS Download",
+   "bild_ids": [
+    "7828179148",
+    "7828179304",
+    "7828179468",
+    "7828179494",
+    "7876129811",
+    "7876129893",
+    "7876130371",
+    "7876130603",
+    "7876130651"
+   ],
+   "produkt_id": "etsy-103",
+   "link": "https://www.etsy.com/de/listing/4475457321/spielregeln-kinder-pdf-ratgeber-nr-17"
+  },
+  {
+   "listing_id": "4475458896",
+   "titel": "Kinder PDF Ratgeber Nr.11: Zum ersten Mal bei Freunden  | Begleitgeschichten Autismus ADHS",
+   "bild_ids": [
+    "7828150676",
+    "7828150866",
+    "7828150968",
+    "7828151032",
+    "7828151064",
+    "7876101301",
+    "7876101569",
+    "7876101627",
+    "7876101689"
+   ],
+   "produkt_id": "etsy-108",
+   "link": "https://www.etsy.com/de/listing/4475458896/kinder-pdf-ratgeber-nr11-zum-ersten-mal"
+  },
+  {
+   "listing_id": "4475459912",
+   "titel": "Wut bei Kindern PDF Ratgeber Nr 12| Freunde — Streiten und Verstehen | Begleitgeschichte Autismus ADHS Download",
+   "bild_ids": [
+    "7828157912",
+    "7828158014",
+    "7876108277",
+    "7876108331",
+    "7876108485",
+    "7876108587",
+    "7876108643",
+    "7876108691",
+    "7876108897"
+   ],
+   "produkt_id": "etsy-106",
+   "link": "https://www.etsy.com/de/listing/4475459912/wut-bei-kindern-pdf-ratgeber-nr-12o"
+  },
+  {
+   "listing_id": "4475460821",
+   "titel": "Mobbing  - wenn andere gemein sind. PDF Ratgeber Nr 19| Grundschule | Begleitgeschichte Autismus ADHS Eltern Download",
+   "bild_ids": [
+    "7828199948",
+    "7828200224",
+    "7828200258",
+    "7828200282",
+    "7828200326",
+    "7828200374",
+    "7828200616",
+    "7876151533",
+    "7876151979"
+   ],
+   "produkt_id": "etsy-012",
+   "link": "https://www.etsy.com/de/listing/4475460821/mobbing-wenn-andere-gemein-sind-pdf"
+  },
+  {
+   "listing_id": "4475461337",
+   "titel": "Alleine sein wollen Kinder PDF Ratgeber Nr 20 | Soziale Erschöpfung Grundschule | Begleitgeschichte Autismus ADHS",
+   "bild_ids": [
+    "7828202952",
+    "7828203160",
+    "7828203222",
+    "7828203270",
+    "7876154327",
+    "7876154445",
+    "7876154483",
+    "7876154529",
+    "7876154603"
+   ],
+   "produkt_id": "etsy-100",
+   "link": "https://www.etsy.com/de/listing/4475461337/alleine-sein-wollen-kinder-pdf-ratgeber"
+  },
+  {
+   "listing_id": "4475461670",
+   "titel": "Ablehnung durch Freunde Kinder PDF Ratgeber Nr 14| Soziale Unsicherheit Grundschule | Begleitgeschichte Autismus ADHS",
+   "bild_ids": [
+    "7828167832",
+    "7828168008",
+    "7828168064",
+    "7828168210",
+    "7876118339",
+    "7876118713",
+    "7876118801",
+    "7876118915",
+    "7876119067"
+   ],
+   "produkt_id": "etsy-105",
+   "link": "https://www.etsy.com/de/listing/4475461670/ablehnung-durch-freunde-kinder-pdf"
+  },
+  {
+   "listing_id": "4475462253",
+   "titel": "Neue Freundschaft Kinder PDF Ratgeber Nr 21| Inklusion Anderssein Grundschule | Begleitgeschichte Autismus Download",
+   "bild_ids": [
+    "7828207928",
+    "7828207994",
+    "7828208054",
+    "7828208106",
+    "7828208132",
+    "7876159257",
+    "7876159457",
+    "7876159707"
+   ],
+   "produkt_id": "etsy-099",
+   "link": "https://www.etsy.com/de/listing/4475462253/neue-freundschaft-kinder-pdf-ratgeber-nr"
+  },
+  {
+   "listing_id": "4475462396",
+   "titel": "Freundschaft endet Kinder PDF Ratgeber Nr 15 | Trauer Verlust Grundschule | Begleitgeschichte Autismus Download",
+   "bild_ids": [
+    "7828173094",
+    "7828173312",
+    "7876124017",
+    "7876124349",
+    "7876124401",
+    "7876124421",
+    "7876124443",
+    "7876124477",
+    "7876124527"
+   ],
+   "produkt_id": "etsy-104",
+   "link": "https://www.etsy.com/de/listing/4475462396/freundschaft-endet-kinder-pdf-ratgeber"
+  },
+  {
+   "listing_id": "4475462657",
+   "titel": "Gute schlechte Geheimnisse Kinder PDF Ratgeber Nr 22| Kinderschutz Grundschule | Begleitgeschichte Autismus Download",
+   "bild_ids": [
+    "7828210876",
+    "7876161955",
+    "7876162045",
+    "7876162169",
+    "7876162225",
+    "7876162251",
+    "7876162291",
+    "7876162327",
+    "7876162419"
+   ],
+   "produkt_id": "etsy-098",
+   "link": "https://www.etsy.com/de/listing/4475462657/gute-schlechte-geheimnisse-kinder-pdf"
+  },
+  {
+   "listing_id": "4475463145",
+   "titel": "Streit Versöhnung Kinder PDF Ratgeber Nr 23| Entschuldigung Grundschule | Begleitgeschichte Autismus ADHS",
+   "bild_ids": [
+    "7828213162",
+    "7828213362",
+    "7828213508",
+    "7828213576",
+    "7876164653",
+    "7876164735",
+    "7876164829",
+    "7876164873",
+    "7876164941"
+   ],
+   "produkt_id": "etsy-097",
+   "link": "https://www.etsy.com/de/listing/4475463145/streit-versohnung-kinder-pdf-ratgeber-nr"
+  },
+  {
+   "listing_id": "4475465020",
+   "titel": "Empathie Kinder PDF Ratgeber Nr 17| Gefühle anderer erkennen | Begleitgeschichte Autismus ADHS Download",
+   "bild_ids": [
+    "7828187688",
+    "7828187734",
+    "7828187814",
+    "7828187858",
+    "7828187886",
+    "7876138361",
+    "7876138637",
+    "7876138819",
+    "7876138869"
+   ],
+   "produkt_id": "etsy-102",
+   "link": "https://www.etsy.com/de/listing/4475465020/empathie-kinder-pdf-ratgeber-nr-17o"
+  },
+  {
+   "listing_id": "4475466404",
+   "titel": "Einladung ablehnen Kinder PDF Ratgeber Nr 18| Soziale Angst Grundschule | Begleitgeschichte Autismus ADHS Download",
+   "bild_ids": [
+    "7828197304",
+    "7828197336",
+    "7828197390",
+    "7876148371",
+    "7876148451",
+    "7876148533",
+    "7876148569",
+    "7876148595",
+    "7876148619"
+   ],
+   "produkt_id": "etsy-101",
+   "link": "https://www.etsy.com/de/listing/4475466404/einladung-ablehnen-kinder-pdf-ratgeber"
+  },
+  {
+   "listing_id": "4475472110",
+   "titel": "Lernolotl Freunde-Reihe Komplettpaket | 13 Ratgeber PDF Bundle | Hochsensible Kinder Autismus ADHS Grundschule Begleitgeschichte",
+   "bild_ids": [
+    "7828226052",
+    "7828226084",
+    "7828226148",
+    "7828226184",
+    "7876177757",
+    "7876177831",
+    "7876177919",
+    "7876177955"
+   ],
+   "produkt_id": "etsy-061",
+   "link": "https://www.etsy.com/de/listing/4475472110/lernolotl-freunde-reihe-komplettpaket-13"
+  },
+  {
+   "listing_id": "4477418017",
+   "titel": "Angst bei Kindern – Vorlesegeschichte + Ratgeber Nr 25 PDF | Bauchgefühl erklären | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841047918",
+    "7841048002",
+    "7841048274",
+    "7841048340",
+    "7841048432",
+    "7841048600",
+    "7888997995",
+    "7888998291",
+    "7888998411"
+   ],
+   "produkt_id": "etsy-094",
+   "link": "https://www.etsy.com/de/listing/4477418017/angst-bei-kindern-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477419533",
+   "titel": "Identität Kinder – Vorlesegeschichte + Ratgeber Nr 27 PDF | Wer bin ich? | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841059290",
+    "7841059848",
+    "7889008745",
+    "7889009017",
+    "7889009101",
+    "7889009179",
+    "7889009291",
+    "7889009351",
+    "7889009523"
+   ],
+   "produkt_id": "etsy-093",
+   "link": "https://www.etsy.com/de/listing/4477419533/identitat-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477420779",
+   "titel": "Langeweile Kinder – Vorlesegeschichte + Ratgeber Nr28 PDF | Kreativität fördern | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841064826",
+    "7841065002",
+    "7841065058",
+    "7841065122",
+    "7841065310",
+    "7841065390",
+    "7889014407",
+    "7889014893",
+    "7889015169"
+   ],
+   "produkt_id": "etsy-092",
+   "link": "https://www.etsy.com/de/listing/4477420779/langeweile-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477421307",
+   "titel": "Nein sagen Kinder – Vorlesegeschichte + Ratgeber Nr 29 PDF | Grenzen setzen | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841075330",
+    "7841075508",
+    "7841075848",
+    "7841075882",
+    "7889025095",
+    "7889025435",
+    "7889025491",
+    "7889025597",
+    "7889025661"
+   ],
+   "produkt_id": "etsy-091",
+   "link": "https://www.etsy.com/de/listing/4477421307/nein-sagen-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477422355",
+   "titel": "Stärken Kinder – Vorlesegeschichte + Ratgeber Nr 31 PDF | Superkräfte entdecken | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841082774",
+    "7841083028",
+    "7841083150",
+    "7841083272",
+    "7841083350",
+    "7841083432",
+    "7889032825",
+    "7889033139",
+    "7889033339"
+   ],
+   "produkt_id": "etsy-088",
+   "link": "https://www.etsy.com/de/listing/4477422355/starken-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477424761",
+   "titel": "Ich bin Ich – Komplettpaket 10 Ratgeber PDF | Gefühle & Selbstbild | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841100914",
+    "7841101562",
+    "7889050939",
+    "7889051001",
+    "7889051075",
+    "7889051155",
+    "7889051243",
+    "7889051301"
+   ],
+   "produkt_id": "etsy-085",
+   "link": "https://www.etsy.com/de/listing/4477424761/ich-bin-ich-komplettpaket-10-ratgeber"
+  },
+  {
+   "listing_id": "4477424820",
+   "titel": "Ich bin anders – Vorlesegeschichte + Ratgeber Nr 24 PDF | Neurodiversität Kinder | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841031086",
+    "7841031214",
+    "7841031356",
+    "7841031432",
+    "7888980461",
+    "7888980849",
+    "7888981069",
+    "7888981123",
+    "7888981187"
+   ],
+   "produkt_id": "etsy-001",
+   "link": "https://www.etsy.com/de/listing/4477424820/ich-bin-anders-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477426162",
+   "titel": "Dankbarkeit Kinder – Vorlesegeschichte + Ratgeber Nr 26 PDF | Drei-Dinge-Ritual | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841052402",
+    "7841052568",
+    "7841052608",
+    "7841052734",
+    "7841052924",
+    "7841052986",
+    "7889002197",
+    "7889002517",
+    "7889002641"
+   ],
+   "produkt_id": "etsy-090",
+   "link": "https://www.etsy.com/de/listing/4477426162/dankbarkeit-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477429308",
+   "titel": "Perfektionismus Kinder – Vorlesegeschichte + Ratgeber Nr 30 PDF | Gut genug | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841079178",
+    "7841079236",
+    "7841079506",
+    "7841079748",
+    "7889029225",
+    "7889029299",
+    "7889029431",
+    "7889029515",
+    "7889029587"
+   ],
+   "produkt_id": "etsy-089",
+   "link": "https://www.etsy.com/de/listing/4477429308/perfektionismus-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477430464",
+   "titel": "Traurigkeit Kinder – Vorlesegeschichte + Ratgeber Nr 32 PDF | Gefühle begleiten | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841087870",
+    "7841088046",
+    "7841088194",
+    "7841088290",
+    "7841088398",
+    "7841088592",
+    "7889037855",
+    "7889038143",
+    "7889038465"
+   ],
+   "produkt_id": "etsy-087",
+   "link": "https://www.etsy.com/de/listing/4477430464/traurigkeit-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4477431000",
+   "titel": "Berufswünsche Kinder – Vorlesegeschichte + Ratgeber Nr 33 PDF | Zukunftsträume | Lernolotl Ich-bin-Ich-Reihe",
+   "bild_ids": [
+    "7841093114",
+    "7841093256",
+    "7841093364",
+    "7841093512",
+    "7889042971",
+    "7889043063",
+    "7889043217",
+    "7889043583",
+    "7889043735"
+   ],
+   "produkt_id": "etsy-086",
+   "link": "https://www.etsy.com/de/listing/4477431000/berufswunsche-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4478807390",
+   "titel": "Gefühlskarten Kinder zum Ausdrucken – 11 Emotionskarten PDF – Lernolotl – Kindergarten, Kita, Grundschule, Eltern, Inklusionspädagogik",
+   "bild_ids": [
+    "7850288106",
+    "7850288352",
+    "7850288474",
+    "7898250673",
+    "7898250757",
+    "7898250905",
+    "7898251045",
+    "7898251125",
+    "7898251253",
+    "7898251383"
+   ],
+   "produkt_id": "etsy-084",
+   "link": "https://www.etsy.com/de/listing/4478807390/gefuhlskarten-kinder-zum-ausdrucken-11"
+  },
+  {
+   "listing_id": "4479568735",
+   "titel": "Teamarbeit Kinder – Vorlesegeschichte + Ratgeber Nr 36 PDF | Staffelrennen | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855247788",
+    "7855247810",
+    "7855247892",
+    "7903207555",
+    "7903207595",
+    "7903207675",
+    "7903207727",
+    "7903207815",
+    "7903207851",
+    "7903207861"
+   ],
+   "produkt_id": "etsy-082",
+   "link": "https://www.etsy.com/de/listing/4479568735/teamarbeit-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479570753",
+   "titel": "Ausgrenzung im Sport – Vorlesegeschichte + Ratgeber Nr 42 PDF | Faire Teams | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855261940",
+    "7855262046",
+    "7855262084",
+    "7855262104",
+    "7855262186",
+    "7903222105",
+    "7903222153",
+    "7903222291",
+    "7903222313",
+    "7903222471"
+   ],
+   "produkt_id": "etsy-079",
+   "link": "https://www.etsy.com/de/listing/4479570753/ausgrenzung-im-sport-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479575310",
+   "titel": "Schwimmen lernen – Vorlesegeschichte + Ratgeber Nr 34 PDF | Neue Umgebung & Sinnesreize | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855240590",
+    "7855240662",
+    "7855240840",
+    "7903200551",
+    "7903200563",
+    "7903200565",
+    "7903200569",
+    "7903200579",
+    "7903200581",
+    "7903200583"
+   ],
+   "produkt_id": "etsy-021",
+   "link": "https://www.etsy.com/de/listing/4479575310/schwimmen-lernen-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479575666",
+   "titel": "Verlieren lernen – Vorlesegeschichte + Ratgeber Nr 35 PDF | Fair spielen Kinder | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855245386",
+    "7855245430",
+    "7855245642",
+    "7855245668",
+    "7903204839",
+    "7903204901",
+    "7903204957",
+    "7903204993",
+    "7903205183",
+    "7903205247"
+   ],
+   "produkt_id": "etsy-083",
+   "link": "https://www.etsy.com/de/listing/4479575666/verlieren-lernen-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479576432",
+   "titel": "Langsam im Sport – Vorlesegeschichte + Ratgeber Nr 37 PDF | Stärken entdecken | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855250126",
+    "7855250236",
+    "7855250280",
+    "7855250340",
+    "7855250494",
+    "7903210193",
+    "7903210385",
+    "7903210425",
+    "7903210445",
+    "7903210479"
+   ],
+   "produkt_id": "etsy-081",
+   "link": "https://www.etsy.com/de/listing/4479576432/langsam-im-sport-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479576832",
+   "titel": "Ungeschriebene Regeln – Vorlesegeschichte + Ratgeber Nr 38 PDF | Fußball & Sozialcodes | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855252670",
+    "7855252856",
+    "7855252976",
+    "7855253010",
+    "7903212855",
+    "7903212955",
+    "7903212977",
+    "7903213033",
+    "7903213069",
+    "7903213089"
+   ],
+   "produkt_id": "etsy-080",
+   "link": "https://www.etsy.com/de/listing/4479576832/ungeschriebene-regeln-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479577174",
+   "titel": "Überforderung Sport – Vorlesegeschichte + Ratgeber Nr 39 PDF | Sinnesreize regulieren | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855255226",
+    "7855255270",
+    "7855255356",
+    "7855255398",
+    "7855255430",
+    "7855255464",
+    "7903215517",
+    "7903215633",
+    "7903215661",
+    "7903215697"
+   ],
+   "produkt_id": "etsy-078",
+   "link": "https://www.etsy.com/de/listing/4479577174/uberforderung-sport-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479577508",
+   "titel": "Aufhören wollen Kinder – Vorlesegeschichte + Ratgeber Nr 40 PDF | Sport & Entscheidung | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855257688",
+    "7855257788",
+    "7855257824",
+    "7855257928",
+    "7855257958",
+    "7855257986",
+    "7903217991",
+    "7903218105",
+    "7903218133",
+    "7903218159"
+   ],
+   "produkt_id": "etsy-077",
+   "link": "https://www.etsy.com/de/listing/4479577508/aufhoren-wollen-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479577852",
+   "titel": "Gewinnen mit Empathie – Vorlesegeschichte + Ratgeber Nr 41 PDF | Gracious Winning | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855259944",
+    "7855260006",
+    "7855260030",
+    "7855260082",
+    "7855260154",
+    "7855260182",
+    "7855260210",
+    "7903220239",
+    "7903220437",
+    "7903220497"
+   ],
+   "produkt_id": "etsy-076",
+   "link": "https://www.etsy.com/de/listing/4479577852/gewinnen-mit-empathie-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479578454",
+   "titel": "Fahrrad lernen Kinder – Vorlesegeschichte + Ratgeber Nr 43 PDF | Hinfallen & aufstehen | Lernolotl Sport-Reihe",
+   "bild_ids": [
+    "7855264344",
+    "7855264384",
+    "7855264560",
+    "7855264600",
+    "7855264636",
+    "7855264734",
+    "7903224689",
+    "7903224731",
+    "7903224767",
+    "7903224903"
+   ],
+   "produkt_id": "etsy-075",
+   "link": "https://www.etsy.com/de/listing/4479578454/fahrrad-lernen-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4479579102",
+   "titel": "Sport-Reihe BUNDLE – 10 Ratgeber PDF | Kinder & Sport neurodiverser | Lernolotl #34–43 Komplett-Paket",
+   "bild_ids": [
+    "7855267522",
+    "7855267572",
+    "7855267680",
+    "7855267764",
+    "7855267806",
+    "7855267838",
+    "7855267924",
+    "7903227779",
+    "7903227857",
+    "7903228021"
+   ],
+   "produkt_id": "etsy-074",
+   "link": "https://www.etsy.com/de/listing/4479579102/sport-reihe-bundle-10-ratgeber-pdf-o"
+  },
+  {
+   "listing_id": "4483503587",
+   "titel": "Lernolotl meldet sich — Ratgeber Nr.44 Mut & Sichtbarkeit | Vorlesegeschichte Grundschule | ADHS Autismus | PDF Download",
+   "bild_ids": [
+    "7880887800",
+    "7880887864",
+    "7880887928",
+    "7880888004",
+    "7880888044",
+    "7880888174",
+    "7928847507",
+    "7928847569",
+    "7928847751",
+    "7928847777"
+   ],
+   "produkt_id": "etsy-073",
+   "link": "https://www.etsy.com/de/listing/4483503587/lernolotl-meldet-sich-ratgeber-nr44-mut"
+  },
+  {
+   "listing_id": "4483504949",
+   "titel": "Hausaufgaben — die große Katastrophe | Ratgeber Nr.47 Timer-Methode ADHS | Vorlesegeschichte Grundschule | PDF Download",
+   "bild_ids": [
+    "7880900880",
+    "7880901104",
+    "7880901156",
+    "7880901196",
+    "7880901222",
+    "7880901282",
+    "7880901314",
+    "7928860543",
+    "7928860653",
+    "7928860817"
+   ],
+   "produkt_id": "etsy-071",
+   "link": "https://www.etsy.com/de/listing/4483504949/hausaufgaben-die-grosse-katastrophe-o"
+  },
+  {
+   "listing_id": "4483506185",
+   "titel": "Wenn es zu laut wird — Ratgeber Nr.50 Reizverarbeitung Hochsensibilität | Vorlesegeschichte Klassenzimmer | Autismus ADHS | PDF Download",
+   "bild_ids": [
+    "7880909968",
+    "7880910092",
+    "7880910164",
+    "7880910200",
+    "7880910256",
+    "7880910354",
+    "7928869857",
+    "7928869969",
+    "7928870067",
+    "7928870137"
+   ],
+   "produkt_id": "etsy-068",
+   "link": "https://www.etsy.com/de/listing/4483506185/wenn-es-zu-laut-wird-ratgeber-nr50"
+  },
+  {
+   "listing_id": "4483506645",
+   "titel": "Nach dem Streit — Ratgeber Nr.51 Freundschaft & Versöhnung | Vorlesegeschichte Grundschule | Entschuldigung Kinder | PDF Download",
+   "bild_ids": [
+    "7880912942",
+    "7880913040",
+    "7880913094",
+    "7928872483",
+    "7928872553",
+    "7928872609",
+    "7928872669",
+    "7928872707",
+    "7928872765",
+    "7928872803"
+   ],
+   "produkt_id": "etsy-067",
+   "link": "https://www.etsy.com/de/listing/4483506645/nach-dem-streit-ratgeber-nr51"
+  },
+  {
+   "listing_id": "4483507465",
+   "titel": "Klassenfahrt — ich will nicht weg von Zuhause | Ratgeber Nr.53 Heimweh & Mut | Vorlesegeschichte Grundschule | PDF Download",
+   "bild_ids": [
+    "7880918062",
+    "7880918100",
+    "7880918134",
+    "7880918186",
+    "7880918220",
+    "7880918284",
+    "7880918326",
+    "7880918362",
+    "7928878001",
+    "7928878211"
+   ],
+   "produkt_id": "etsy-065",
+   "link": "https://www.etsy.com/de/listing/4483507465/klassenfahrt-ich-will-nicht-weg-von"
+  },
+  {
+   "listing_id": "4483508177",
+   "titel": "Lernolotl Schule-Reihe KOMPLETT — 10 Ratgeber #44–53 | Vorlesegeschichten Grundschule | Neurodiversität ADHS Hochsensibilität | PDF Download",
+   "bild_ids": [
+    "7880921270",
+    "7880921298",
+    "7880921338",
+    "7880921380",
+    "7928880997",
+    "7928881043",
+    "7928881081",
+    "7928881107",
+    "7928881151",
+    "7928881185"
+   ],
+   "produkt_id": "etsy-064",
+   "link": "https://www.etsy.com/de/listing/4483508177/lernolotl-schule-reihe-komplett-10"
+  },
+  {
+   "listing_id": "4483508824",
+   "titel": "Was macht man in der Pause? — Ratgeber Nr.45 Pause & Dazugehören | Vorlesegeschichte Schulhof | Hochsensibilität ADHS | PDF Download",
+   "bild_ids": [
+    "7880894412",
+    "7880894556",
+    "7880894594",
+    "7928854097",
+    "7928854277",
+    "7928854315",
+    "7928854345",
+    "7928854405",
+    "7928854451",
+    "7928854511"
+   ],
+   "produkt_id": "etsy-072",
+   "link": "https://www.etsy.com/de/listing/4483508824/was-macht-man-in-der-pause-ratgeber-nr45"
+  },
+  {
+   "listing_id": "4483509208",
+   "titel": "Der rote Stift — Ratgeber Nr.46 Fehlerkultur & Selbstbild | Vorlesegeschichte Grundschule | Perfektionismus Kinder | PDF Download",
+   "bild_ids": [
+    "7880897972",
+    "7880898108",
+    "7880898206",
+    "7880898278",
+    "7880898382",
+    "7928857719",
+    "7928857837",
+    "7928857877",
+    "7928857939",
+    "7928858153"
+   ],
+   "produkt_id": "etsy-070",
+   "link": "https://www.etsy.com/de/listing/4483509208/der-rote-stift-ratgeber-nr46"
+  },
+  {
+   "listing_id": "4483510188",
+   "titel": "Springender Kopf — Ratgeber Nr.48 Konzentration & ADHS | Vorlesegeschichte Grundschule | Aufmerksamkeit Kinder | PDF Download",
+   "bild_ids": [
+    "7880903588",
+    "7880903626",
+    "7880903702",
+    "7880903724",
+    "7880903738",
+    "7880903848",
+    "7880903956",
+    "7928863461",
+    "7928863543",
+    "7928863599"
+   ],
+   "produkt_id": "etsy-069",
+   "link": "https://www.etsy.com/de/listing/4483510188/springender-kopf-ratgeber-nr48"
+  },
+  {
+   "listing_id": "4483510570",
+   "titel": "Prüfungsangst — wenn der Kopf leer wird | Ratgeber Nr.49 Stressregulation | Vorlesegeschichte Grundschule | PDF Download",
+   "bild_ids": [
+    "7880907194",
+    "7880907268",
+    "7880907438",
+    "7880907694",
+    "7928867175",
+    "7928867199",
+    "7928867281",
+    "7928867329",
+    "7928867379",
+    "7928867489"
+   ],
+   "produkt_id": "etsy-066",
+   "link": "https://www.etsy.com/de/listing/4483510570/prufungsangst-wenn-der-kopf-leer-wird-o"
+  },
+  {
+   "listing_id": "4483511676",
+   "titel": "Gruppenarbeit — ich will es alleine machen | Ratgeber Nr.52 Teamarbeit Neurodiversität | Vorlesegeschichte Grundschule | PDF Download",
+   "bild_ids": [
+    "7880915598",
+    "7880915744",
+    "7880915808",
+    "7928875369",
+    "7928875415",
+    "7928875517",
+    "7928875637",
+    "7928875697",
+    "7928875765",
+    "7928875793"
+   ],
+   "produkt_id": "etsy-011",
+   "link": "https://www.etsy.com/de/listing/4483511676/gruppenarbeit-ich-will-es-alleine-machen"
+  },
+  {
+   "listing_id": "4487112145",
+   "titel": "Der Abend, der nicht klappt | Ratgeber Nr.54 Routinen Abendritual Kinder | Vorlesegeschichte Zuhause | PDF Download",
+   "bild_ids": [
+    "7902400924",
+    "7902401266",
+    "7902401296",
+    "7902401368",
+    "7902401414",
+    "7902401540",
+    "7950352161",
+    "7950352571",
+    "7950352681",
+    "7950352749"
+   ],
+   "produkt_id": "etsy-059",
+   "link": "https://www.etsy.com/de/listing/4487112145/der-abend-der-nicht-klappt-ratgeber-nr54"
+  },
+  {
+   "listing_id": "4487113949",
+   "titel": "Ich kann nicht einschlafen | Ratgeber Nr.57 Einschlafprobleme ADHS Kinder | Vorlesegeschichte Abendroutine | PDF Download",
+   "bild_ids": [
+    "7902413416",
+    "7902413498",
+    "7902413556",
+    "7902413600",
+    "7902413626",
+    "7902413738",
+    "7950364047",
+    "7950364183",
+    "7950364255",
+    "7950364369"
+   ],
+   "produkt_id": "etsy-057",
+   "link": "https://www.etsy.com/de/listing/4487113949/ich-kann-nicht-einschlafen-ratgeber-nr57"
+  },
+  {
+   "listing_id": "4487115925",
+   "titel": "Bildschirmzeit — wann ist Schluss? | Ratgeber Nr.61 Bildschirm ADHS Kinder | Vorlesegeschichte Selbstregulation | PDF Download",
+   "bild_ids": [
+    "7902425130",
+    "7902425278",
+    "7902425298",
+    "7902425420",
+    "7902425484",
+    "7902425574",
+    "7950376161",
+    "7950376333",
+    "7950376513",
+    "7950376619"
+   ],
+   "produkt_id": "etsy-054",
+   "link": "https://www.etsy.com/de/listing/4487115925/bildschirmzeit-wann-ist-schluss-o"
+  },
+  {
+   "listing_id": "4487116921",
+   "titel": "Haustier — Verantwortung lernen | Ratgeber Nr.63 Verantwortung Kinder ADHS | Vorlesegeschichte Haustier Vergessen | PDF Download",
+   "bild_ids": [
+    "7902430994",
+    "7902431220",
+    "7902431272",
+    "7902431368",
+    "7902431422",
+    "7902431472",
+    "7950382071",
+    "7950382169",
+    "7950382217",
+    "7950382357"
+   ],
+   "produkt_id": "etsy-050",
+   "link": "https://www.etsy.com/de/listing/4487116921/haustier-verantwortung-lernen-o-ratgeber"
+  },
+  {
+   "listing_id": "4487117869",
+   "titel": "Kochen mit der Familie — ich will helfen! | Ratgeber Nr.65 Impulskontrolle Warten Kinder | Vorlesegeschichte Zuhause | PDF Download",
+   "bild_ids": [
+    "7902437682",
+    "7902437722",
+    "7902437844",
+    "7902437998",
+    "7902438134",
+    "7902438172",
+    "7950388767",
+    "7950388801",
+    "7950388837",
+    "7950388887"
+   ],
+   "produkt_id": "etsy-049",
+   "link": "https://www.etsy.com/de/listing/4487117869/kochen-mit-der-familie-ich-will-helfen-o"
+  },
+  {
+   "listing_id": "4487119423",
+   "titel": "Zuhause-Reihe Komplett-Bundle | Lernolotl Ratgeber Nr.54–65 | 12 Vorlesegeschichten Neurodiversität Familie | PDF Download",
+   "bild_ids": [
+    "7902441578",
+    "7902441718",
+    "7902441764",
+    "7902441848",
+    "7950391799",
+    "7950392423",
+    "7950392451",
+    "7950392543",
+    "7950392613",
+    "7950392739"
+   ],
+   "produkt_id": "etsy-047",
+   "link": "https://www.etsy.com/de/listing/4487119423/zuhause-reihe-komplett-bundle-o"
+  },
+  {
+   "listing_id": "4487120082",
+   "titel": "Wenn der Akku leer ist | Ratgeber Nr.55 Erschöpfung nach Schule ADHS | Vorlesegeschichte Erholung Kinder | PDF Download",
+   "bild_ids": [
+    "7902405592",
+    "7902405944",
+    "7902405998",
+    "7902406040",
+    "7950356665",
+    "7950356777",
+    "7950356813",
+    "7950356867",
+    "7950356911",
+    "7950356951"
+   ],
+   "produkt_id": "etsy-058",
+   "link": "https://www.etsy.com/de/listing/4487120082/wenn-der-akku-leer-ist-o-ratgeber-nr55"
+  },
+  {
+   "listing_id": "4487120814",
+   "titel": "Das Zimmer des Lernolotl | Ratgeber Nr.56 Grenzen Ordnung Kinder | Vorlesegeschichte Zuhause Neurodiversität | PDF Download",
+   "bild_ids": [
+    "7902408890",
+    "7902408992",
+    "7902409116",
+    "7902409158",
+    "7902409364",
+    "7950359857",
+    "7950360065",
+    "7950360197",
+    "7950360223",
+    "7950360271"
+   ],
+   "produkt_id": "etsy-056",
+   "link": "https://www.etsy.com/de/listing/4487120814/das-zimmer-des-lernolotl-o-ratgeber-nr56"
+  },
+  {
+   "listing_id": "4487121912",
+   "titel": "Wut — wenn alles zu viel wird | Ratgeber Nr.58 Wutanfälle Kinder ADHS | Vorlesegeschichte Regulation | PDF Download",
+   "bild_ids": [
+    "7902416714",
+    "7902416756",
+    "7902416794",
+    "7902416818",
+    "7902416890",
+    "7950367269",
+    "7950367307",
+    "7950367357",
+    "7950367609",
+    "7950367717"
+   ],
+   "produkt_id": "etsy-055",
+   "link": "https://www.etsy.com/de/listing/4487121912/wut-wenn-alles-zu-viel-wird-o-ratgeber"
+  },
+  {
+   "listing_id": "4487122448",
+   "titel": "Aufräumen — das ewige Streitthema | Ratgeber Nr.59 Exekutivfunktionen ADHS Kinder | Vorlesegeschichte Zuhause | PDF Download",
+   "bild_ids": [
+    "7902419438",
+    "7902419530",
+    "7902419674",
+    "7902419818",
+    "7902419846",
+    "7950370345",
+    "7950370603",
+    "7950370657",
+    "7950370731",
+    "7950370781"
+   ],
+   "produkt_id": "etsy-053",
+   "link": "https://www.etsy.com/de/listing/4487122448/aufraumen-das-ewige-streitthema-o"
+  },
+  {
+   "listing_id": "4487122972",
+   "titel": "Geschwisterstreit — warum ist das ungerecht? | Ratgeber Nr.60 Gerechtigkeitssinn Kinder | Vorlesegeschichte Geschwister | PDF Download",
+   "bild_ids": [
+    "7902422742",
+    "7902422796",
+    "7902422900",
+    "7902422972",
+    "7902423018",
+    "7902423106",
+    "7950373529",
+    "7950373619",
+    "7950373807",
+    "7950374017"
+   ],
+   "produkt_id": "etsy-052",
+   "link": "https://www.etsy.com/de/listing/4487122972/geschwisterstreit-warum-ist-das"
+  },
+  {
+   "listing_id": "4487123804",
+   "titel": "Wenn die Eltern streiten | Ratgeber Nr.62 Elternstreit Kinder Sicherheit | Vorlesegeschichte Schutz & Bindung | PDF Download",
+   "bild_ids": [
+    "7902428042",
+    "7902428260",
+    "7902428350",
+    "7902428392",
+    "7902428478",
+    "7902428558",
+    "7950379091",
+    "7950379315",
+    "7950379429",
+    "7950379577"
+   ],
+   "produkt_id": "etsy-051",
+   "link": "https://www.etsy.com/de/listing/4487123804/wenn-die-eltern-streiten-ratgeber-nr62"
+  },
+  {
+   "listing_id": "4487124950",
+   "titel": "Krank sein — ich will nicht pausieren | Ratgeber Nr.64 Kranksein ADHS Kinder | Vorlesegeschichte Zuhause Erholung | PDF Download",
+   "bild_ids": [
+    "7902434718",
+    "7902434776",
+    "7902434936",
+    "7902434990",
+    "7902435032",
+    "7902435144",
+    "7902435238",
+    "7902435286",
+    "7950385991",
+    "7950386105"
+   ],
+   "produkt_id": "etsy-048",
+   "link": "https://www.etsy.com/de/listing/4487124950/krank-sein-ich-will-nicht-pausieren-o"
+  },
+  {
+   "listing_id": "4487851524",
+   "titel": "Begleitgeschichte Erster Schultag Lernolotl | Einschulung vorbereiten | PDF Download | Inklusion Vorschule",
+   "bild_ids": [
+    "7907501786",
+    "7907501828",
+    "7907501888",
+    "7955461311"
+   ],
+   "produkt_id": "etsy-046",
+   "link": "https://www.etsy.com/de/listing/4487851524/erster-schultag-begleitgeschichte"
+  },
+  {
+   "listing_id": "4488034024",
+   "titel": "Begleitgeschichte Erster Kitamorgen Lernolotl | Kita-Eingewöhnung vorbereiten | PDF Download | Inklusion Kindergarten",
+   "bild_ids": [
+    "7908585054",
+    "7956542561",
+    "7956542639",
+    "7956542731"
+   ],
+   "produkt_id": "etsy-045",
+   "link": "https://www.etsy.com/de/listing/4488034024/begleitgeschichte-erster-kitamorgen"
+  },
+  {
+   "listing_id": "4488314727",
+   "titel": "Begleitgeschichte  Arztbesuch vorbereiten Lernolotl | Arztangst Kinder PDF Download | Inklusion Kindergarten Autismus",
+   "bild_ids": [
+    "7910408632",
+    "7910408756",
+    "7910408834",
+    "7958363443"
+   ],
+   "produkt_id": "etsy-044",
+   "link": "https://www.etsy.com/de/listing/4488314727/begleitgeschichte-arztbesuch-vorbereiten"
+  },
+  {
+   "listing_id": "4488321255",
+   "titel": "Begleitgeschichte Wut regulieren Kinder – Lernolotl ist wütend | PDF Autismus ADHS Wutanfall Gefühle Kinder Emotion",
+   "bild_ids": [
+    "7910476054",
+    "7910476390",
+    "7958430735",
+    "7958430793"
+   ],
+   "produkt_id": "etsy-043",
+   "link": "https://www.etsy.com/de/listing/4488321255/begleitgeschichte-wut-regulieren-kinder"
+  },
+  {
+   "listing_id": "4488902451",
+   "titel": "Begleitgeschichte Zahnarzt Angst Kind – Lernolotl beim Zahnarzt | PDF Autismus ADHS Zahnarztbesuch vorbereiten Kinder",
+   "bild_ids": [
+    "7914305208",
+    "7914305220",
+    "7962255743",
+    "7962255747"
+   ],
+   "produkt_id": "etsy-042",
+   "link": "https://www.etsy.com/de/listing/4488902451/begleitgeschichte-zahnarzt-angst-kind"
+  },
+  {
+   "listing_id": "4489499592",
+   "titel": "Begleitgeschichte Geschwisterkind Autismus – Lernolotl bekommt ein Baby | PDF Eifersucht Geschwister neues Baby erklären Kinder",
+   "bild_ids": [
+    "7918304696",
+    "7966259143",
+    "7966259145",
+    "7966259171"
+   ],
+   "produkt_id": "etsy-041",
+   "link": "https://www.etsy.com/de/listing/4489499592/begleitgeschichte-geschwisterkind"
+  },
+  {
+   "listing_id": "4490072037",
+   "titel": "Begleitgeschichte Krankenhaus Kind vorbereiten – Lernolotl geht ins Krankenhaus |  PDF Autismus ADHS OP erklären Kinder stationär",
+   "bild_ids": [
+    "7922032152",
+    "7969983329",
+    "7969983331",
+    "7969983339"
+   ],
+   "produkt_id": "etsy-040",
+   "link": "https://www.etsy.com/de/listing/4490072037/begleitgeschichte-krankenhaus-kind"
+  },
+  {
+   "listing_id": "4490625348",
+   "titel": "Begleitgeschichte Pause Schule Autismus – Lernolotl macht eine Pause | PDF Schulhof überfordert ADHS Selbstregulation Kinder",
+   "bild_ids": [
+    "7973559817",
+    "7973559819",
+    "7973559829",
+    "7973559831"
+   ],
+   "produkt_id": "etsy-039",
+   "link": "https://www.etsy.com/de/listing/4490625348/begleitgeschichte-pause-schule-autismus"
+  },
+  {
+   "listing_id": "4491059025",
+   "titel": "Begleitgeschichte Freunde finden Kinder – Lernolotl findet einen Freund | PDF Autismus ADHS Freundschaft Grundschule kein Freund Kind",
+   "bild_ids": [
+    "7928487918",
+    "7928487920",
+    "7928487922",
+    "7976443665"
+   ],
+   "produkt_id": "etsy-038",
+   "link": "https://www.etsy.com/de/listing/4491059025/begleitgeschichte-freunde-finden-kinder"
+  },
+  {
+   "listing_id": "4491516709",
+   "titel": "Begleitgeschichte Bus fahren Autismus Kind – Lernolotl fährt Bus |  PDF ÖPNV Angst Kinder Autismus ADHS öffentliche Verkehrsmittel",
+   "bild_ids": [
+    "7931401316",
+    "7931401320",
+    "7931401324",
+    "7931401334"
+   ],
+   "produkt_id": "etsy-037",
+   "link": "https://www.etsy.com/de/listing/4491516709/begleitgeschichte-bus-fahren-autismus"
+  },
+  {
+   "listing_id": "4491876634",
+   "titel": "Morgenroutine Klappkarten Kinder Lernolotl | Routineplan druckbar PDF |Autismus ADHS Kita Grundschule | Tagesstruktur visuell Sofortdownload",
+   "bild_ids": [
+    "7933813610",
+    "7933813612",
+    "7933813616",
+    "7981768991",
+    "7981769011",
+    "7982789249"
+   ],
+   "produkt_id": "etsy-035",
+   "link": "https://www.etsy.com/de/listing/4491876634/morgenroutine-klappkarten-kinder"
+  },
+  {
+   "listing_id": "4492043229",
+   "titel": "Abendroutine Klappkarten Kinder Lernolotl | Routineplan druckbar PDF | Autismus ADHS Kita Grundschule | Tagesstruktur visuell Sofortdownload",
+   "bild_ids": [
+    "7934824016",
+    "7934824018",
+    "7934824024",
+    "7982778615",
+    "7982790043"
+   ],
+   "produkt_id": "etsy-034",
+   "link": "https://www.etsy.com/de/listing/4492043229/abendroutine-klappkarten-kinder"
+  },
+  {
+   "listing_id": "4492051183",
+   "titel": "Anziehen Klappkarten Kinder Lernolotl | Anziehreihenfolge druckbar PDF Autismus ADHS Kita Grundschule | Anziehen Sofortdownload",
+   "bild_ids": [
+    "7934895826",
+    "7934895828",
+    "7934895836",
+    "7982850475",
+    "7982850711",
+    "7982850713"
+   ],
+   "produkt_id": "etsy-033",
+   "link": "https://www.etsy.com/de/listing/4492051183/anziehen-klappkarten-kinder-lernolotl"
+  },
+  {
+   "listing_id": "4492735555",
+   "titel": "Begleitgeschichte Teilen lernen Kita Kinder – Lernolotl teilt | PDF Autismus ADHS mein und dein Teilen fällt schwer",
+   "bild_ids": [
+    "7939141494",
+    "7939141500",
+    "7939141508",
+    "7987097633"
+   ],
+   "produkt_id": "etsy-032",
+   "link": "https://www.etsy.com/de/listing/4492735555/begleitgeschichte-teilen-lernen-kita"
+  },
+  {
+   "listing_id": "4493342367",
+   "titel": "Begleitgeschichte Traurigkeit erklären Kinder – Lernolotl ist traurig | PDF Autismus ADHS Weinen Kinder Gefühle Trauer",
+   "bild_ids": [
+    "7943051802",
+    "7943051818",
+    "7943051820",
+    "7991012505"
+   ],
+   "produkt_id": "etsy-031",
+   "link": "https://www.etsy.com/de/listing/4493342367/begleitgeschichte-traurigkeit-erklaren"
+  },
+  {
+   "listing_id": "4494403761",
+   "titel": "Begleitgeschichte Verlieren lernen Kind – Lernolotl verliert | PDF Autismus ADHS schlechter Verlierer Spiel verlieren Frustration",
+   "bild_ids": [
+    "7950428454",
+    "7950428462",
+    "7998385667",
+    "7998385677"
+   ],
+   "produkt_id": "etsy-030",
+   "link": "https://www.etsy.com/de/listing/4494403761/begleitgeschichte-verlieren-lernen-kind"
+  },
+  {
+   "listing_id": "4495379337",
+   "titel": "Begleitgeschichte Umzug Kind erklären – Lernolotl zieht um | PDF Autismus ADHS neues Zuhause Ortswechsel Kinder",
+   "bild_ids": [
+    "7956611860",
+    "8004570907",
+    "8004570923",
+    "8004570927"
+   ],
+   "produkt_id": "etsy-029",
+   "link": "https://www.etsy.com/de/listing/4495379337/begleitgeschichte-umzug-kind-erklaren"
+  },
+  {
+   "listing_id": "4497245491",
+   "titel": "Begleitgeschichte Supermarkt Autismus Kind – Lernolotl geht einkaufen |  PDF Reizüberflutung Einkaufen ADHS überfordert Kinder",
+   "bild_ids": [
+    "7969132698",
+    "7969132712",
+    "8017085695",
+    "8017085699"
+   ],
+   "produkt_id": "etsy-028",
+   "link": "https://www.etsy.com/de/listing/4497245491/begleitgeschichte-supermarkt-autismus"
+  },
+  {
+   "listing_id": "4497685382",
+   "titel": "Begleitgeschichte Kindergeburtstag Autismus Kind – Lernolotl feiert Geburtstag | PDF Geburtstag überfordert Party Kinder ADHS",
+   "bild_ids": [
+    "7972036302",
+    "7972036304",
+    "7972036314",
+    "8019988027"
+   ],
+   "produkt_id": "etsy-027",
+   "link": "https://www.etsy.com/de/listing/4497685382/begleitgeschichte-kindergeburtstag"
+  },
+  {
+   "listing_id": "4498969252",
+   "titel": "Begleitgeschichte Warten lernen Kind – Lernolotl wartet | PDF Autismus ADHS Geduld Kinder Wartezimmer Impulskontrolle",
+   "bild_ids": [
+    "7980748316",
+    "7980748326",
+    "8028694663",
+    "8028694669"
+   ],
+   "produkt_id": "etsy-026",
+   "link": "https://www.etsy.com/de/listing/4498969252/begleitgeschichte-warten-lernen-kind"
+  },
+  {
+   "listing_id": "4499240839",
+   "titel": "Begleitgeschichte Schulkantine Autismus Kind – Lernolotl isst in der Schule | PDF Mensa überfordert Mittagessen Schule",
+   "bild_ids": [
+    "7982726530",
+    "7982726556",
+    "8030672063",
+    "8030672071"
+   ],
+   "produkt_id": "etsy-025",
+   "link": "https://www.etsy.com/de/listing/4499240839/begleitgeschichte-schulkantine-autismus"
+  },
+  {
+   "listing_id": "4499249067",
+   "titel": "Begleitgeschichte Übernachtung Kind Angst – Lernolotl schläft auswärts | PDF Autismus ADHS Klassenfahrt Freund Heimweh Kinder",
+   "bild_ids": [
+    "7982781608",
+    "7982781612",
+    "8030727899",
+    "8030727903"
+   ],
+   "produkt_id": "etsy-024",
+   "link": "https://www.etsy.com/de/listing/4499249067/begleitgeschichte-ubernachtung-kind"
+  },
+  {
+   "listing_id": "4499260552",
+   "titel": "Begleitgeschichte Schlechte Note Kind – Lernolotl bekommt schlechte Noten | PDF Autismus ADHS Schulangst Versagensangst Grundschule",
+   "bild_ids": [
+    "7982804082",
+    "8030750775",
+    "8030750799",
+    "8030750801"
+   ],
+   "produkt_id": "etsy-023",
+   "link": "https://www.etsy.com/de/listing/4499260552/begleitgeschichte-schlechte-note-kind"
+  },
+  {
+   "listing_id": "4499510167",
+   "titel": "Begleitgeschichte Fehler machen erlaubt Lernolotl – PDF | Perfektionismus Kind Autismus Fehler Selbstwert",
+   "bild_ids": [
+    "7984449694",
+    "8032392907",
+    "8032392913",
+    "8032392919"
+   ],
+   "produkt_id": "etsy-022",
+   "link": "https://www.etsy.com/de/listing/4499510167/begleitgeschichte-fehler-machen-erlaubt"
+  },
+  {
+   "listing_id": "4499862707",
+   "titel": "Begleitgeschichte Großeltern besuchen Autismus Kind – Lernolotl besucht die Großeltern |  PDF fremde Wohnung übernachten Oma Kind",
+   "bild_ids": [
+    "7986807010",
+    "7986807012",
+    "8034747287",
+    "8034747293"
+   ],
+   "produkt_id": "etsy-020",
+   "link": "https://www.etsy.com/de/listing/4499862707/begleitgeschichte-grosseltern-besuchen"
+  },
+  {
+   "listing_id": "4500189713",
+   "titel": "Arztbesuch Autismus Kind vorbereiten – 4 Begleitgeschichten Bundle PDF | Zahnarzt Krankenhaus Angst Warten Lernolotl",
+   "bild_ids": [
+    "7988835620",
+    "7988835718",
+    "7988835792",
+    "7988835840",
+    "8036775147",
+    "8036775525",
+    "8036775637",
+    "8036775751",
+    "8036775779",
+    "8036775811"
+   ],
+   "produkt_id": "etsy-019",
+   "link": "https://www.etsy.com/de/listing/4500189713/arztbesuch-autismus-kind-vorbereiten-4"
+  },
+  {
+   "listing_id": "4500191387",
+   "titel": "Sozialverhalten Kinder üben – 4 Begleitgeschichten Bundle PDF | Freunde Teilen Pause Warten Autismus ADHS Lernolotl",
+   "bild_ids": [
+    "7988851094",
+    "7988851352",
+    "7988851434",
+    "8036790617",
+    "8036790697",
+    "8036790789",
+    "8036790835",
+    "8036790871",
+    "8036790919",
+    "8036791011"
+   ],
+   "produkt_id": "etsy-017",
+   "link": "https://www.etsy.com/de/listing/4500191387/sozialverhalten-kinder-uben-4"
+  },
+  {
+   "listing_id": "4500200660",
+   "titel": "Gefühle regulieren Kinder – 4 Begleitgeschichten Bundle PDF | Wut Trauer Fehler Verlieren Autismus ADHS Emotionen",
+   "bild_ids": [
+    "7988844084",
+    "7988844138",
+    "7988844394",
+    "7988844494",
+    "7988844608",
+    "8036783897",
+    "8036784137",
+    "8036784319",
+    "8036784507",
+    "8036784561"
+   ],
+   "produkt_id": "etsy-018",
+   "link": "https://www.etsy.com/de/listing/4500200660/gefuhle-regulieren-kinder-4"
+  },
+  {
+   "listing_id": "4500204506",
+   "titel": "Schulstart Autismus Kind vorbereiten – 5 Begleitgeschichten Bundle PDF | Einschulung Schulalltag Schulangst Lernolotl",
+   "bild_ids": [
+    "7988857274",
+    "7988857412",
+    "7988857500",
+    "7988857538",
+    "7988857592",
+    "8036797015",
+    "8036797181",
+    "8036797237",
+    "8036797341",
+    "8036797575"
+   ],
+   "produkt_id": "etsy-016",
+   "link": "https://www.etsy.com/de/listing/4500204506/schulstart-autismus-kind-vorbereiten-5"
+  },
+  {
+   "listing_id": "4500205464",
+   "titel": "Familienveränderung Kinder erklären – 4 Begleitgeschichten Bundle PDF | Geschwister Umzug Großeltern schlafen Autismus",
+   "bild_ids": [
+    "7988882144",
+    "7988882230",
+    "7988882332",
+    "7988882454",
+    "7988882594",
+    "7988882646",
+    "8036822307",
+    "8036822445",
+    "8036822589",
+    "8036822727"
+   ],
+   "produkt_id": "etsy-015",
+   "link": "https://www.etsy.com/de/listing/4500205464/familienveranderung-kinder-erklaren-4"
+  },
+  {
+   "listing_id": "4500206242",
+   "titel": "4 Begleitgeschichten Reizüberflutung Alltag Kinder – Bundle PDF | Supermarkt Warten Bus Pause Autismus ADHS",
+   "bild_ids": [
+    "7988888620",
+    "7988888722",
+    "7988888886",
+    "7988889082",
+    "8036828699",
+    "8036828753",
+    "8036828861",
+    "8036828891",
+    "8036828927",
+    "8036828959"
+   ],
+   "produkt_id": "etsy-014",
+   "link": "https://www.etsy.com/de/listing/4500206242/4-begleitgeschichten-reizuberflutung"
+  },
+  {
+   "listing_id": "4502619319",
+   "titel": "Den Tod erklären Kinder – Vorlesegeschichte + Ratgeber Spezial PDF | Trauer begleiten | Lernolotl Spezial",
+   "bild_ids": [
+    "8004653358",
+    "8004653364",
+    "8052574175",
+    "8052574325",
+    "8052574331"
+   ],
+   "produkt_id": "etsy-010",
+   "link": "https://www.etsy.com/de/listing/4502619319/den-tod-erklaren-kinder"
+  },
+  {
+   "listing_id": "4503266901",
+   "titel": "Trennung erklären Kinder – Vorlesegeschichte + Ratgeber PDF | Scheidung begleiten | Lernolotl Spezial",
+   "bild_ids": [
+    "8008363032",
+    "8056238177",
+    "8056238309",
+    "8056238313",
+    "8056238315"
+   ],
+   "produkt_id": "etsy-007",
+   "link": "https://www.etsy.com/de/listing/4503266901/trennung-erklaren-kinder"
+  },
+  {
+   "listing_id": "4503268393",
+   "titel": "Haustier Tod erklären Kinder – Vorlesegeschichte + Ratgeber PDF | Tierverlust begleiten | Lernolotl Spezial",
+   "bild_ids": [
+    "8008334438",
+    "8008334722",
+    "8056250769",
+    "8056250781",
+    "8056282023"
+   ],
+   "produkt_id": "etsy-006",
+   "link": "https://www.etsy.com/de/listing/4503268393/haustier-tod-erklaren-kinder"
+  },
+  {
+   "listing_id": "4503275506",
+   "titel": "Krankheit erklären Kinder – Vorlesegeschichte + Ratgeber PDF | Schwere Krankheit begleiten | Lernolotl Spezial",
+   "bild_ids": [
+    "8008329356",
+    "8008329560",
+    "8008329634",
+    "8008329706",
+    "8056281029"
+   ],
+   "produkt_id": "etsy-005",
+   "link": "https://www.etsy.com/de/listing/4503275506/krankheit-erklaren-kinder"
+  },
+  {
+   "listing_id": "4503276850",
+   "titel": "Krieg erklären Kinder – Vorlesegeschichte + Ratgeber PDF | Gewalt Nachrichten Kind begleiten | Lernolotl Spezial",
+   "bild_ids": [
+    "8008339196",
+    "8008339394",
+    "8008365990",
+    "8056255493",
+    "8056255495"
+   ],
+   "produkt_id": "etsy-004",
+   "link": "https://www.etsy.com/de/listing/4503276850/krieg-erklaren-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4503277482",
+   "titel": "Armut erklären Kinder – Vorlesegeschichte + Ratgeber PDF | Soziale Ungerechtigkeit kindgerecht | Lernolotl Spezial",
+   "bild_ids": [
+    "8008343524",
+    "8008343528",
+    "8008343530",
+    "8008366648",
+    "8056259645"
+   ],
+   "produkt_id": "etsy-003",
+   "link": "https://www.etsy.com/de/listing/4503277482/armut-erklaren-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4512001780",
+   "titel": "Schulvorbereitung Heft PDF – Lernolotl Schulstarter | 50 Aufgaben Vorschule Autismus ADHS Feinmotorik Zahlen Sprache Gefühle Inklusiv",
+   "bild_ids": [
+    "8066406402",
+    "8066406408",
+    "8066406412",
+    "8066406414",
+    "8066406424",
+    "8066406512",
+    "8066406630",
+    "8114326027",
+    "8114326045",
+    "8114326131"
+   ],
+   "produkt_id": "etsy-216",
+   "link": "https://www.etsy.com/de/listing/4512001780/schulvorbereitung-heft-pdf-lernolotl"
+  },
+  {
+   "listing_id": "4512028123",
+   "titel": "Schulstart Bundle PDF – Schulstarter-Heft + Begleitgeschichte | Lernolotl Einschulung Vorschule Autismus ADHS Grundschullehrerin Sparpaket",
+   "bild_ids": [
+    "8066661914",
+    "8066663384",
+    "8066663396",
+    "8066663400",
+    "8066667518",
+    "8066675108",
+    "8114582543",
+    "8114582901",
+    "8114584401",
+    "8114595937"
+   ],
+   "produkt_id": "etsy-215",
+   "link": "https://www.etsy.com/de/listing/4512028123/schulstart-bundle-pdf-schulstarter-heft"
+  },
+  {
+   "listing_id": "4514072298",
+   "titel": "Badewanne Spiele Kleinkind PDF – Lernolotl Spielezeit | 20 kooperative Wasserspiele ab 1 Jahr Planschbecken Sommer Kind Familie",
+   "bild_ids": [
+    "8081057116",
+    "8081057118",
+    "8081057128",
+    "8128974359",
+    "8128974713"
+   ],
+   "produkt_id": "etsy-214",
+   "link": "https://www.etsy.com/de/listing/4514072298/badewanne-spiele-kleinkind-pdf-lernolotl"
+  },
+  {
+   "listing_id": "4514689889",
+   "titel": "Drinnen Spiele Kleinkind PDF – Lernolotl Spielezeit | 20 kooperative Spielideen für Zuhause ab 1 Jahr Regentag Kind Familie",
+   "bild_ids": [
+    "8085553036",
+    "8085553054",
+    "8085553064",
+    "8133463841",
+    "8133470623"
+   ],
+   "produkt_id": "etsy-213",
+   "link": "https://www.etsy.com/de/listing/4514689889/drinnen-spiele-kleinkind-pdf-lernolotl"
+  },
+  {
+   "listing_id": "4515247984",
+   "titel": "Draußen Spiele Kleinkind PDF – Lernolotl Spielezeit | 20 kooperative Naturspiele ab 1 Jahr Garten Park Frühling Sommer Familie",
+   "bild_ids": [
+    "8089583362",
+    "8089585616",
+    "8137491505",
+    "8137491527",
+    "8137491537"
+   ],
+   "produkt_id": "etsy-212",
+   "link": "https://www.etsy.com/de/listing/4515247984/draussen-spiele-kleinkind-pdf-lernolotl"
+  },
+  {
+   "listing_id": "4515534580",
+   "titel": "Reisespiele Kleinkind PDF – Lernolotl Spielezeit | 20 kooperative Spiele für Auto Zug Flugzeug ab 1 Jahr Urlaub Warten Familie",
+   "bild_ids": [
+    "8091448230",
+    "8091448244",
+    "8096782798",
+    "8139355323",
+    "8139355435"
+   ],
+   "produkt_id": "etsy-211",
+   "link": "https://www.etsy.com/de/listing/4515534580/reisespiele-kleinkind-pdf-lernolotl"
+  },
+  {
+   "listing_id": "4516310851",
+   "titel": "Familienspiele Geburtstag PDF – Lernolotl Spielezeit | 20 kooperative Festspiele für alle Generationen ab 1 Jahr Weihnachten Spieleabend",
+   "bild_ids": [
+    "8096776290",
+    "8096776894",
+    "8096776956",
+    "8096776998",
+    "8096777008"
+   ],
+   "produkt_id": "etsy-210",
+   "link": "https://www.etsy.com/de/listing/4516310851/familienspiele-geburtstag-pdf-lernolotl"
+  },
+  {
+   "listing_id": "4518539604",
+   "titel": "Verliebt sein Kinder – Vorlesegeschichte + Ratgeber PDF | Neurodivers Gefühle begleiten | Lernolotl Spezial",
+   "bild_ids": [
+    "8112707794",
+    "8112707800",
+    "8160617845",
+    "8160617853"
+   ],
+   "produkt_id": "etsy-209",
+   "link": "https://www.etsy.com/de/listing/4518539604/verliebt-sein-kinder-vorlesegeschichte"
+  },
+  {
+   "listing_id": "4573872099",
+   "titel": "Klinikmappe PDF zum Ausdrucken – vorbereitet, falls Mutter oder Vater ins Krankenhaus muss. 24 Kopiervorlagen A4 für Angehörige",
+   "bild_ids": [
+    "8513092014",
+    "8516991338",
+    "8560958963",
+    "8560959007",
+    "8560959031",
+    "8560959037",
+    "8560959039",
+    "8560959043",
+    "8560959151",
+    "8560959191"
+   ],
+   "produkt_id": "etsy-009",
+   "link": "https://www.etsy.com/de/listing/4573872099/klinikmappe-pdf-zum-ausdrucken"
+  },
+  {
+   "listing_id": "4573892240",
+   "titel": "Pflegeordner PDF zum Ausdrucken, 47 Kopiervorlagen A4 für die Pflege zu Hause – Notfallbogen, Protokolle, Ablage, vom Intensivpfleger",
+   "bild_ids": [
+    "8513113130",
+    "8513113188",
+    "8513113330",
+    "8516989522",
+    "8560979801",
+    "8560979837",
+    "8560979841",
+    "8560980063",
+    "8560980095",
+    "8560980113"
+   ],
+   "produkt_id": "etsy-008",
+   "link": "https://www.etsy.com/de/listing/4573892240/pflegeordner-pdf-zum-ausdrucken-47"
+  },
+  {
+   "listing_id": "4574444836",
+   "titel": "Pflegeordner Türkisch Deutsch zum Ausdrucken – Bakım Klasörü, 47 zweisprachige Kopiervorlagen A4 für pflegende Angehörige",
+   "bild_ids": [
+    "8517164024",
+    "8517164332",
+    "8517164338",
+    "8517164342",
+    "8517164348",
+    "8517166616",
+    "8565032453",
+    "8565033281",
+    "8565033291",
+    "8565033931"
+   ],
+   "produkt_id": "etsy-002",
+   "link": "https://www.etsy.com/de/listing/4574444836/pflegeordner-turkisch-deutsch-zum"
+  },
+  {
+   "listing_id": "4575980115",
+   "titel": "Kommunikationsbuch Deutsch zum Ausdrucken – Zeigetafeln A4 für Patienten die nicht sprechen können, Klinik Pflegeheim Pflege zu Hause",
+   "bild_ids": [
+    "8528757462",
+    "8528757468",
+    "8576619717",
+    "8576619847",
+    "8576620019",
+    "8576620237",
+    "8576620239",
+    "8576620253"
+   ],
+   "produkt_id": null,
+   "link": "https://www.etsy.com/de/listing/4575980115/kommunikationsbuch-deutsch-zum"
+  },
+  {
+   "listing_id": "4576063739",
+   "titel": "Kommunikationsbuch Deutsch - Polnisch zum Ausdrucken –Zeigetafeln A4 für Pat. die nicht sprechen können, Klinik Pflegeheim Pflege zu Hause",
+   "bild_ids": [
+    "8529351236",
+    "8529351722",
+    "8529351724",
+    "8529351736",
+    "8577214175",
+    "8577214397",
+    "8577214399",
+    "8577214405"
+   ],
+   "produkt_id": null,
+   "link": "https://www.etsy.com/de/listing/4576063739/kommunikationsbuch-deutsch-polnisch-zum"
+  }
+ ]
+}
